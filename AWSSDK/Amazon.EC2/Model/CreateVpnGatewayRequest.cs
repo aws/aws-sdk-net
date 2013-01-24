@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,13 +26,16 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint
-    /// for your VPN connection. You can create a VPN gateway before
+    /// Creates a new VPN gateway.
+    /// </summary>
+    /// <remarks>
+    /// A VPN gateway is the VPC-side endpoint for your VPN
+    /// connection. You can create a VPN gateway before
     /// creating the VPC itself. AWS might delete any VPN
     /// gateway that you create with this operation if you leave
     /// it inactive for an extended period of time (inactive means that
     /// there's no VPN connection in use with the VPN gateway)
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVpnGatewayRequest
     {    
@@ -40,10 +43,8 @@ namespace Amazon.EC2.Model
         private string availabilityZoneField;
 
         /// <summary>
-        /// Gets and sets the Type property.
-        /// The type of VPN connection this VPN gateway
-        /// supports. Valid
-        /// Values: ipsec.1
+        /// The type of VPN connection this VPN gateway supports. 
+        /// The only supported type is ipsec.1.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -53,11 +54,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection this VPN gateway supports. 
         /// </summary>
         /// <param name="type">The type of VPN connection this VPN gateway
-        /// supports. Valid
-        /// Values: ipsec.1</param>
+        /// supports. The only supported type is ipsec.1.</param>
         /// <returns>this instance</returns>
         public CreateVpnGatewayRequest WithType(string type)
         {
@@ -75,10 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone where you want the VPN
-        /// gateway.
-        /// Default: AWS selects a zone for you (recommended)
+        /// The Availability Zone where you want the VPN gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -88,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone where you want the VPN gateway.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where you want the VPN
         /// gateway.

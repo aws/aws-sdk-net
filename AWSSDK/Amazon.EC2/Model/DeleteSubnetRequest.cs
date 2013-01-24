@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a subnet from a VPC. You must terminate all running instances in
-    /// the subnet before deleting it, otherwise Amazon VPC returns an error.
-    ///
-    /// AWS might delete any subnet if you leave it inactive for an extended
-    /// period of time (inactive means that there are no running
-    /// Amazon EC2 instances in the subnet).
+    /// Deletes a subnet from a VPC.
     /// </summary>
+    /// <remarks>
+    /// You must terminate all running instances in the subnet
+    /// before deleting it, otherwise Amazon VPC returns an error.
+    ///
+    /// AWS might delete any subnet if you leave it inactive for
+    /// an extended period of time (inactive means that there are
+    /// no running Amazon EC2 instances in the subnet).
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteSubnetRequest
     {    
         private string subnetIdField;
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
         /// The ID of the subnet you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
@@ -50,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the ID of the subnet you want to delete.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet you want to delete.</param>
         /// <returns>this instance</returns>

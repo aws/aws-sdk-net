@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Configuration of the script to run during a bootstrap action.</para>
     /// </summary>
-    public class ScriptBootstrapActionConfig  
+    public class ScriptBootstrapActionConfig
     {
         
         private string path;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Args collection
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;       
+            return this.args.Count > 0;
         }
     }
 }

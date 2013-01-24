@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Returns information about instances that you own.
-    ///
+    /// </summary>
+    /// <remarks>
     /// If you specify one or more instance IDs, Amazon EC2 returns
     /// information for those instances.
     ///
@@ -40,7 +41,7 @@ namespace Amazon.EC2.Model
     ///
     /// Recently terminated instances might appear in the returned results.This
     /// interval is usually less than one hour.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeInstancesRequest
     {    
@@ -48,7 +49,6 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// Instance IDs to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance IDs to describe.
         /// </summary>
         /// <param name="list">Instance IDs to describe.</param>
         /// <returns>this instance</returns>
@@ -89,7 +89,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Instances.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -110,7 +109,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Instances.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Instances.

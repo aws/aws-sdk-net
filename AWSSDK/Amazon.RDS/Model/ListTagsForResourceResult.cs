@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ListTagsForResourceResult  
+    public class ListTagsForResourceResult
     {
         
         private List<Tag> tagList = new List<Tag>();
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TagList collection
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this.tagList.Count > 0;       
+            return this.tagList.Count > 0;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifier != null;       
+            return this.sourceIdentifier != null;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.ElastiCache.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>cache-cluster, cache-parameter-group, cache-security-group</description>
+        ///         <description>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -102,7 +102,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;       
+            return this.sourceType != null;
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;       
+            return this.endTime.HasValue;
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;       
+            return this.duration.HasValue;
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

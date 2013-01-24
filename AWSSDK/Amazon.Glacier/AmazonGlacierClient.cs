@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1778,6 +1778,7 @@ namespace Amazon.Glacier
         protected override void Initialize()
         {
             this.config.UseNagleAlgorithm = true;
+            this.config.ResignRetries = true;
         }
 
         /// <summary>
@@ -1795,7 +1796,7 @@ namespace Amazon.Glacier
             }
 
             base.ProcessRequestHandlers(request);
-            request.Headers.Add("x-amz-glacier-version", "2012-06-01");
+            request.Headers["x-amz-glacier-version"] = "2012-06-01";
         }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;       
+            return this.cacheParameterGroupName != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroupFamily property is set
         internal bool IsSetCacheParameterGroupFamily()
         {
-            return this.cacheParameterGroupFamily != null;       
+            return this.cacheParameterGroupFamily != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

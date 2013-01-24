@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,14 +26,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a set of DHCP options that you can then
-    /// associate with one or more VPCs, causing all
-    /// existing and new instances that you launch in those
-    /// VPCs to use the set of DHCP options. The following
-    /// table lists the individual DHCP options you
-    /// can specify. For more information about the options, go to
-    /// RFC
-    /// 2132.
+    /// Creates a set of DHCP options that you can then associate with one or more VPCs, causing all
+    /// existing and new instances that you launch in those VPCs to use the set of DHCP options.
+    /// </summary>
+    /// <remarks>
+    /// The following are DHCP options you can specify.
     ///
     /// Options:
     /// 1. domain-name
@@ -47,23 +44,19 @@ namespace Amazon.EC2.Model
     /// The IP address of a Network Time Protocol (NTP)
     /// server (e.g., 10.4.6.1). You can specify up to four addresses.
     ///
-    /// 4.
-    /// netbios-name-servers The IP address of a NetBIOS name server (e.g.,
-    /// 10.8.9.5). You can specify up to four addresses.
+    /// 4. netbios-name-servers
+    /// The IP address of a NetBIOS name server (e.g., 10.8.9.5).
+    /// You can specify up to four addresses.
     ///
-    /// 5.
-    /// netbios-node-type Value indicating the NetBIOS node type (1, 2, 4,
-    /// or 8). For more information about the values, go to RFC 2132.
-    /// We recommend you only use 2 at this time (broadcast and multicast
-    /// are currently not supported)
-    /// </summary>
+    /// 5. netbios-node-type
+    /// Value indicating the NetBIOS node type (1, 2, 4, or 8).
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateDhcpOptionsRequest
     {    
         private List<DhcpConfiguration> dhcpConfigurationField;
 
         /// <summary>
-        /// Gets and sets the DhcpConfiguration property.
         /// DHCP Configuration
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpConfiguration")]
@@ -81,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DhcpConfiguration property
+        /// Sets the DHCP Configuration
         /// </summary>
         /// <param name="list">DHCP Configuration</param>
         /// <returns>this instance</returns>

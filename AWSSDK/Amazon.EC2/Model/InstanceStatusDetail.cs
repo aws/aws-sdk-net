@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private List<InstanceStatusDetailType> instanceStatusDetailTypeField;
 
         /// <summary>
-        /// Gets and sets the Status property.
+        /// The status.
         /// Valid Values: ok | impaired | insufficient-data
         /// </summary>
         [XmlElement(ElementName = "Status")]
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property.
+        /// Sets the status.
         /// </summary>
         /// <param name="status">
         /// Valid Values: ok | impaired | insufficient-data
@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the detail property.
         /// Specific information about system instance health or application instance health.
         /// </summary>
         [XmlElement(ElementName = "InstanceStatusDetailType")]
@@ -86,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Detail property.
+        /// Sets the specific information about system instance health or application instance health.
         /// </summary>
         /// <param name="list">Set of InstanceStatusDetailType instances</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Describes the status of the job flow.</para>
     /// </summary>
-    public class JobFlowExecutionStatusDetail  
+    public class JobFlowExecutionStatusDetail
     {
         
         private string state;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;       
+            return this.creationDateTime.HasValue;
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if StartDateTime property is set
         internal bool IsSetStartDateTime()
         {
-            return this.startDateTime.HasValue;       
+            return this.startDateTime.HasValue;
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if ReadyDateTime property is set
         internal bool IsSetReadyDateTime()
         {
-            return this.readyDateTime.HasValue;       
+            return this.readyDateTime.HasValue;
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
-            return this.endDateTime.HasValue;       
+            return this.endDateTime.HasValue;
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if LastStateChangeReason property is set
         internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReason != null;       
+            return this.lastStateChangeReason != null;
         }
     }
 }

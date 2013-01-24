@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,21 +26,26 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Adds one or more egress rules to a VPC security group.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// This call permits instances in a security group to send traffic to one or more destination
+    /// CIDR IP address ranges, or to one or more destination security groups in the same VPC.
+    /// </para>
+    /// <para>
     /// This action applies only to security groups in a VPC; it's not supported for standard (EC2) security groups.
-    /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
-    /// Private Cloud User Guide.
-    /// 
-    /// The action adds one or more egress rules to a VPC security group. Specifically, this permits instances
-    /// in a security group to send traffic to either one or more destination CIDR IP address ranges, or to one or
-    /// more destination security groups in the same VPC.
-    /// 
+    /// </para>
+    /// <para>
     /// Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP
     /// and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you
     /// must also specify the ICMP type and code.You can use -1 as a wildcard for the ICMP type or code.
-    /// 
+    /// </para>
+    /// <para>
     /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
     /// small delay might occur.
-    /// </summary>
+    /// </para>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AuthorizeSecurityGroupEgressRequest
     {    
@@ -48,7 +53,6 @@ namespace Amazon.EC2.Model
         private List<IpPermissionSpecification> ipPermissionsField;
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// ID of the VPC security group to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -59,7 +63,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the ID of the VPC security group to modify.
         /// </summary>
         /// <param name="groupId">ID of the VPC security group to modify.</param>
         /// <returns>this instance</returns>
@@ -79,9 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpPermissions property.
-        /// Set of IP permissions associated with the
-        /// security group.
+        /// Set of IP permissions associated with the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermissions")]
         public List<IpPermissionSpecification> IpPermissions
@@ -98,7 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpPermissions property
+        /// Sets the IP permissions associated with the security group.
         /// </summary>
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>

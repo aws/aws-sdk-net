@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,10 +25,10 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///A software license that can be associated with an Amazon EC2
-    ///instance when launched (ex. a Microsoft Windows license).
-    ///</summary>
+    /// <summary>
+    /// A software license that can be associated with an Amazon EC2 instance
+    /// when launched (ex. a Microsoft Windows license).
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class License
     {    
@@ -39,7 +39,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the LicenseId property.
         /// The unique ID identifying the license.
         /// </summary>
         [XmlElementAttribute(ElementName = "LicenseId")]
@@ -50,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LicenseId property
+        /// Sets the unique ID identifying the license.
         /// </summary>
         /// <param name="licenseId">The unique ID identifying the license.</param>
         /// <returns>this instance</returns>
@@ -70,7 +69,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The license type (ex. "Microsoft/Windows/Standard").
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -81,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the license type (ex. "Microsoft/Windows/Standard").
         /// </summary>
         /// <param name="type">The license type (ex. "Microsoft/Windows/Standard").</param>
         /// <returns>this instance</returns>
@@ -101,7 +99,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Pool property.
         /// The name of the pool in which the license is kept.
         /// </summary>
         [XmlElementAttribute(ElementName = "Pool")]
@@ -112,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Pool property
+        /// Sets the name of the pool in which the license is kept.
         /// </summary>
         /// <param name="pool">The name of the pool in which the license is kept.</param>
         /// <returns>this instance</returns>
@@ -132,10 +129,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the LicenseCapacity property.
-        /// The capacities available for this license,
-        /// indicating how many licenses are in use, how many are available,
-        /// how many Amazon EC2 instances can be supported, etc.
+        /// The capacities available for this license, indicating how many licenses
+        /// are in use, how many are available, how many Amazon EC2 instances can be supported, etc.
         /// </summary>
         [XmlElementAttribute(ElementName = "LicenseCapacity")]
         public List<LicenseCapacity> LicenseCapacity
@@ -152,7 +147,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LicenseCapacity property
+        /// Sets the capacities available for this license.
         /// </summary>
         /// <param name="list">The capacities available for this license,
         /// indicating how many licenses are in use, how many are available,
@@ -177,7 +172,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the License.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -195,7 +189,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets a list of tags for the License.
         /// </summary>
         /// <param name="list">A list of tags for the License.</param>
         /// <returns>this instance</returns>

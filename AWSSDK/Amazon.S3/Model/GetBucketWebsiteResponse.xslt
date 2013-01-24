@@ -23,4 +23,69 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="s3:RedirectAllRequestsTo">
+    <xsl:element name="RedirectAllRequestsTo">
+      <xsl:element name="Protocol">
+        <xsl:value-of select="s3:Protocol" />
+      </xsl:element>
+      <xsl:element name="HostName">
+        <xsl:value-of select="s3:HostName" />
+      </xsl:element>
+      <xsl:element name="ReplaceKeyPrefixWith">
+        <xsl:value-of select="s3:ReplaceKeyPrefixWith" />
+      </xsl:element>
+      <xsl:element name="ReplaceKeyWith">
+        <xsl:value-of select="s3:ReplaceKeyWith" />
+      </xsl:element>
+      <xsl:element name="HttpRedirectCode">
+        <xsl:value-of select="s3:HttpRedirectCode" />
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="s3:RoutingRules">
+    <xsl:element name="RoutingRules">
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="s3:RoutingRule">
+    <xsl:element name="RoutingRule">
+
+      <xsl:apply-templates mode="RoutingRules"/>
+      
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="s3:Condition" mode="RoutingRules">
+    <xsl:element name="Condition">
+      <xsl:element name="KeyPrefixEquals">
+        <xsl:value-of select="s3:KeyPrefixEquals" />
+      </xsl:element>
+      <xsl:element name="HttpErrorCodeReturnedEquals">
+        <xsl:value-of select="s3:HttpErrorCodeReturnedEquals" />
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="s3:Redirect" mode="RoutingRules">
+    <xsl:element name="Redirect">
+      <xsl:element name="Protocol">
+        <xsl:value-of select="s3:Protocol" />
+      </xsl:element>
+      <xsl:element name="HostName">
+        <xsl:value-of select="s3:HostName" />
+      </xsl:element>
+      <xsl:element name="ReplaceKeyPrefixWith">
+        <xsl:value-of select="s3:ReplaceKeyPrefixWith" />
+      </xsl:element>
+      <xsl:element name="ReplaceKeyWith">
+        <xsl:value-of select="s3:ReplaceKeyWith" />
+      </xsl:element>
+      <xsl:element name="HttpRedirectCode">
+        <xsl:value-of select="s3:HttpRedirectCode" />
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+  
 </xsl:stylesheet>

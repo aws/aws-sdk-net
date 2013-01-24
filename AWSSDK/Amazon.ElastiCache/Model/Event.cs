@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> An event represents something interesting that has happened in the system. </para>
     /// </summary>
-    public class Event  
+    public class Event
     {
         
         private string sourceIdentifier;
@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifier != null;       
+            return this.sourceIdentifier != null;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>cache-cluster, cache-parameter-group, cache-security-group</description>
+        ///         <description>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -93,7 +93,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;       
+            return this.sourceType != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Date property is set
         internal bool IsSetDate()
         {
-            return this.date.HasValue;       
+            return this.date.HasValue;
         }
     }
 }

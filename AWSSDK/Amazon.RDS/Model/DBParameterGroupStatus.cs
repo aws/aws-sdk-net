@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class DBParameterGroupStatus  
+    public class DBParameterGroupStatus
     {
         
         private string dBParameterGroupName;
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this.dBParameterGroupName != null;       
+            return this.dBParameterGroupName != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.RDS.Model
         // Check to see if ParameterApplyStatus property is set
         internal bool IsSetParameterApplyStatus()
         {
-            return this.parameterApplyStatus != null;       
+            return this.parameterApplyStatus != null;
         }
     }
 }

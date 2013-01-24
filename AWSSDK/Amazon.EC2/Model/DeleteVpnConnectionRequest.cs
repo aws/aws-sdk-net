@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a VPN connection. Use this if you want to delete a VPC and all
-    /// its associated components. Another reason to use this operation is
-    /// if you believe the tunnel credentials for your VPN connection
-    /// have been compromised.
+    /// Deletes a VPN connection.
+    /// </summary>
+    /// <remarks>
+    /// This operation will delete a VPC and all its associated components.
+    /// Another reason to use this operation is if you believe the tunnel
+    /// credentials for your VPN connection have been compromised.
     ///
     /// In that situation, you can delete the VPN connection and create a
     /// new one that has new keys, without needing to delete
@@ -42,16 +44,14 @@ namespace Amazon.EC2.Model
     /// recommend you detach the VPN gateway from the
     /// VPC and delete the VPC before deleting the VPN
     /// connection.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteVpnConnectionRequest
     {    
         private string vpnConnectionIdField;
 
         /// <summary>
-        /// Gets and sets the VpnConnectionId property.
-        /// The ID of the VPN connection you want to
-        /// delete.
+        /// The ID of the VPN connection you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
         public string VpnConnectionId
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnConnectionId property
+        /// Sets the ID of the VPN connection you want to delete.
         /// </summary>
         /// <param name="vpnConnectionId">The ID of the VPN connection you want to
         /// delete.</param>

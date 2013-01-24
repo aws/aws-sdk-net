@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,13 +25,14 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Represents a placement group into which multiple Amazon EC2
-    ///instances can be launched. A placement group ensures that
-    ///Amazon EC2 instances are physically located close enough to
-    ///support HPC features, such as higher IO network connections between
-    ///instances in the group.
-    ///</summary>
+    /// <summary>
+    /// A placement group into which multiple Amazon EC2 instances can be launched.
+    /// </summary>
+    /// <remarks>
+    /// A placement group ensures that Amazon EC2 instances are physically
+    /// located close enough to support HPC features, such as higher IO
+    /// network connections between instances in the group.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class PlacementGroupInfo
     {    
@@ -40,7 +41,6 @@ namespace Amazon.EC2.Model
         private string stateField;
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// The name of the PlacementGroup.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the PlacementGroup.
         /// </summary>
         /// <param name="groupName">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
@@ -71,10 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Strategy property.
-        /// The strategy to use when allocating Amazon EC2
-        /// instances for the
-        /// PlacementGroup.
+        /// The strategy to use when allocating Amazon EC2 instances for the PlacementGroup.
         /// </summary>
         [XmlElementAttribute(ElementName = "Strategy")]
         public string Strategy
@@ -84,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Strategy property
+        /// Sets the strategy to use when allocating Amazon EC2 instances for the PlacementGroup.
         /// </summary>
         /// <param name="strategy">The strategy to use when allocating Amazon EC2
         /// instances for the
@@ -106,8 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
-        /// The state of this PlacementGroup.
+        /// The state of the PlacementGroup.
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
         public string State
@@ -117,7 +113,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the state of the PlacementGroup.
         /// </summary>
         /// <param name="state">The state of this PlacementGroup.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    /// This class describes the frequency and the amount of recurring charges.
-    ///</summary>
+    /// <summary>
+    /// The frequency and the amount of recurring charges.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class RecurringCharges
     {
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private Decimal? amountField;
 
         /// <summary>
-        /// Gets and sets the Frequency property.
         /// The frequency of the recurring charge. 
         /// 
         /// Valid values: Hourly, Monthly.
@@ -57,7 +56,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Amount property.
         /// The amount of the recurring charge.
         /// </summary>
         [XmlElementAttribute(ElementName = "Amount")]

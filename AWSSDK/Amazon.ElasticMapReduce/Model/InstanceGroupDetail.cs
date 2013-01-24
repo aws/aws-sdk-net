@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Detailed information about an instance group. </para>
     /// </summary>
-    public class InstanceGroupDetail  
+    public class InstanceGroupDetail
     {
         
         private string instanceGroupId;
@@ -79,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroupId property is set
         internal bool IsSetInstanceGroupId()
         {
-            return this.instanceGroupId != null;       
+            return this.instanceGroupId != null;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Market property is set
         internal bool IsSetMarket()
         {
-            return this.market != null;       
+            return this.market != null;
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceRole property is set
         internal bool IsSetInstanceRole()
         {
-            return this.instanceRole != null;       
+            return this.instanceRole != null;
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BidPrice property is set
         internal bool IsSetBidPrice()
         {
-            return this.bidPrice != null;       
+            return this.bidPrice != null;
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;       
+            return this.instanceType != null;
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceRequestCount property is set
         internal bool IsSetInstanceRequestCount()
         {
-            return this.instanceRequestCount.HasValue;       
+            return this.instanceRequestCount.HasValue;
         }
 
         /// <summary>
@@ -332,7 +332,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceRunningCount property is set
         internal bool IsSetInstanceRunningCount()
         {
-            return this.instanceRunningCount.HasValue;       
+            return this.instanceRunningCount.HasValue;
         }
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if LastStateChangeReason property is set
         internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReason != null;       
+            return this.lastStateChangeReason != null;
         }
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;       
+            return this.creationDateTime.HasValue;
         }
 
         /// <summary>
@@ -466,7 +466,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if StartDateTime property is set
         internal bool IsSetStartDateTime()
         {
-            return this.startDateTime.HasValue;       
+            return this.startDateTime.HasValue;
         }
 
         /// <summary>
@@ -494,7 +494,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if ReadyDateTime property is set
         internal bool IsSetReadyDateTime()
         {
-            return this.readyDateTime.HasValue;       
+            return this.readyDateTime.HasValue;
         }
 
         /// <summary>
@@ -522,7 +522,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
-            return this.endDateTime.HasValue;       
+            return this.endDateTime.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -219,9 +219,35 @@ namespace Amazon.Runtime
 
         protected void Invoke(AsyncResult asyncResult)
         {
-            ConfigureRequest(asyncResult);
-
+            if (asyncResult.RetriesAttempt == 0 || config.ResignRetries)
+            {
+                ConfigureRequest(asyncResult);
+            }
             InvokeConfiguredRequest(asyncResult);
+        }
+
+        private void ConfigureRequest(AsyncResult asyncResult)
+        {
+            IRequest request = asyncResult.Request;
+
+            request.Endpoint = new Uri(this.config.DetermineServiceURL());
+            request.Headers["User-Agent"] = this.config.UserAgent + " " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
+            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
+            {
+                if (request.UseQueryString)
+                    request.Headers[AWSSDKUtils.ContentTypeHeader] = "application/x-amz-json-1.0";
+                else
+                    request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+            }
+
+            ProcessRequestHandlers(request);
+
+            SignRequest(request, asyncResult.Signer);
+
+            if (request.ContentStream == null)
+                asyncResult.RequestData = GetRequestData(request);
+            else
+                asyncResult.RequestStream = request.ContentStream;
         }
 
         private void InvokeConfiguredRequest(AsyncResult asyncResult)
@@ -267,29 +293,6 @@ namespace Amazon.Runtime
             }
         }
 
-        private void ConfigureRequest(AsyncResult asyncResult)
-        {
-            IRequest request = asyncResult.Request;
-
-            request.Endpoint = new Uri(this.config.DetermineServiceURL());
-            request.Headers["User-Agent"] = this.config.UserAgent + " " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
-            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
-            {
-                if (request.UseQueryString)
-                    request.Headers[AWSSDKUtils.ContentTypeHeader] = "application/x-amz-json-1.0";
-                else
-                    request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-            }
-
-            ProcessRequestHandlers(request);
-
-            SignRequest(request, asyncResult.Signer);
-
-            if (request.ContentStream == null)
-                asyncResult.RequestData = GetRequestData(request);
-            else
-                asyncResult.RequestStream = request.ContentStream;
-        }
 
         private byte[] GetRequestData(IRequest request)
         {
@@ -375,7 +378,10 @@ namespace Amazon.Runtime
 
                                 if (callback != null)
                                 {
-                                    callback(this, new StreamTransferProgressArgs(bytesRead, totalBytesWritten, inputStream.Length));
+                                    AWSSDKUtils.InvokeInBackground(
+                                        callback,
+                                        new StreamTransferProgressArgs(bytesRead, totalBytesWritten, inputStream.Length),
+                                        this);
                                 }
                             }
 
@@ -406,7 +412,7 @@ namespace Amazon.Runtime
                 if (handleHttpWebErrorResponse(asyncResult, e))
                 {
                     asyncResult.RetriesAttempt++;
-                    InvokeConfiguredRequest(asyncResult);                    
+                    Invoke(asyncResult);
                 }
                 else
                 {
@@ -489,7 +495,7 @@ namespace Amazon.Runtime
                 {
                     asyncResult.RequestState.WebRequest.Abort();
                     asyncResult.RetriesAttempt++;
-                    InvokeConfiguredRequest(asyncResult);
+                    Invoke(asyncResult);
                 }
             }
             catch (Exception e)
@@ -825,7 +831,7 @@ namespace Amazon.Runtime
         private enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
         private static ClientProtocol DetermineProtocol(AbstractAWSSigner signer)
         {
-            if (signer is AWS3Signer || signer is AWS4Signer)
+            if (signer is AWS3Signer || signer is AWS4Signer || signer is CloudFrontSigner)
                 return ClientProtocol.RestProtocol;
             if (signer is QueryStringSigner)
                 return ClientProtocol.QueryStringProtocol;

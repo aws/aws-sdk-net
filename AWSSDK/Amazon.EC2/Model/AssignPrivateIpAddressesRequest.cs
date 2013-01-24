@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,6 +26,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Assigns one or more secondary private IP addresses to a network interface in Amazon VPC.
     /// </summary>
+    /// <remarks>
+    /// You can specify one or more specific secondary IP addresses that you want to assign,
+    /// or you can specify a number of secondary IP addresses to be automatically assigned
+    /// within the subnet’s CIDR block range.
+    /// The number of secondary IP addresses that you can assign to an instance varies by instance type.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AssignPrivateIpAddressesRequest
     {
@@ -35,8 +41,7 @@ namespace Amazon.EC2.Model
         private bool? allowReassignmentField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
-        /// Network interface ID.
+        /// The network interface to which the IP address will be assigned.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -46,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface to which the IP address will be assigned.
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID.</param>
         /// <returns>this instance</returns>
@@ -67,8 +72,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the SecondaryPrivateIpAddressCount property.
-        /// Instance Network Interface Association.
+        /// The number of secondary IP addresses to assign to the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
         public int SecondaryPrivateIpAddressCount
@@ -78,9 +82,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecondaryPrivateIpAddressCount property.
-        /// The number of secondary IP addresses to assign to the network interface. You cannot specify this 
-        /// parameter when also specifying multiple PrivateIPAddresses for the same network interface.
+        /// Sets the number of secondary IP addresses to assign to the network interface.
+        /// You cannot specify this parameter when also specifying multiple PrivateIPAddresses for the same network interface.
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Instance Network Interface Association.</param>
         /// <returns>this instance</returns>
@@ -101,7 +104,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the AllowReassignment property.
         /// Specifies whether to allow an IP address that is already assigned to another network interface or 
         /// instance to be reassigned to the specified network interface.
         /// </summary>
@@ -113,7 +115,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllowReassignment property
+        /// Sets whether to allow an IP address that is already assigned to another network interface or 
+        /// instance to be reassigned to the specified network interface.
         /// </summary>
         /// <param name="allowReassignment">Whether reassignment is allowed.</param>
         /// <returns>this instance</returns>
@@ -134,7 +137,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddresses property.
         /// Assigns the specified IP addresses as secondary IP address to the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
@@ -152,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property
+        /// Sets the specified IP addresses as secondary IP address to the network interface.
         /// </summary>
         /// <param name="privateIpAddresses">List of private IP addresses.</param>
         /// <returns>this instance</returns>

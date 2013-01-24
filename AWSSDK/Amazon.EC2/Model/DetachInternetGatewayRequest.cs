@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,13 +26,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC.The
-    /// VPC must not contain any running instances with elastic IP addresses. For more information about your
-    /// VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
-    /// 
-    /// For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual
-    /// Private Cloud User Guide.
+    /// Detaches an Internet gateway from a VPC, disabling connectivity
+    /// between the Internet and the VPC.
     /// </summary>
+    /// <remarks>
+    /// The VPC must not contain any running instances with elastic IP
+    /// addresses. For more information about your VPC and Internet gateway,
+    /// go to Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DetachInternetGatewayRequest
     {    
@@ -40,8 +41,7 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the InternetGatewayId property.
-        /// The ID of the Internet gateway to attach.
+        /// The ID of the Internet gateway to detach.
         /// </summary>
         [XmlElementAttribute(ElementName = "InternetGatewayId")]
         public string InternetGatewayId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InternetGatewayId property
+        /// Sets the ID of the Internet gateway to detach.
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to attach.</param>
         /// <returns>this instance</returns>
@@ -71,7 +71,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -82,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>

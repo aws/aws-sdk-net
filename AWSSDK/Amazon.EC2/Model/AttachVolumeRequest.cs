@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Attaches an Amazon EBS volume to a running
-    /// instance and exposes it as the
-    /// specified device.
-    ///
+    /// Attaches an Amazon EBS volume to a running instance and exposes it with the
+    /// specified device name.
+    /// </summary>
+    /// <remarks>
     /// Windows instances currently support devices xvda through xvdp. Devices
     /// xvda and xvdb are reserved by the operating system, xvdc is
     /// assigned to drive C:\, and, depending on the instance type, devices xvdd through
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// reserved can be attached to an Amazon EBS volume. For a list of
     /// devices that are reserved by the instance stores, go to the Amazon
     /// Elastic Compute Cloud Developer Guide.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AttachVolumeRequest
     {    
@@ -46,10 +46,8 @@ namespace Amazon.EC2.Model
         private string deviceField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
-        /// The ID of the Amazon EBS volume. The volume
-        /// and instance must be within
-        /// the same Availability Zone and the
+        /// The ID of the Amazon EBS volume.
+        /// The volume and instance must be within the same Availability Zone and the
         /// instance must be running.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -60,12 +58,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the Amazon EBS volume.
         /// </summary>
-        /// <param name="volumeId">The ID of the Amazon EBS volume. The volume
-        /// and instance must be within
-        /// the same Availability Zone and the
-        /// instance must be running.</param>
+        /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
         public AttachVolumeRequest WithVolumeId(string volumeId)
         {
@@ -83,12 +78,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// The ID of the instance to which the volume
-        /// attaches. The volume and
-        /// instance must be within the same
-        /// Availability Zone and the instance
-        /// must be running.
+        /// The ID of the instance to which the volume attaches.
+        /// The volume and instance must be within the same Availability Zone
+        /// and the instance must be running.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -98,13 +90,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance to which the volume attaches.
         /// </summary>
         /// <param name="instanceId">The ID of the instance to which the volume
-        /// attaches. The volume and
-        /// instance must be within the same
-        /// Availability Zone and the instance
-        /// must be running.</param>
+        /// attaches.</param>
         /// <returns>this instance</returns>
         public AttachVolumeRequest WithInstanceId(string instanceId)
         {
@@ -122,9 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Device property.
-        /// Specifies how the device is exposed to the
-        /// instance (e.g., /dev/sdh).
+        /// The device name as exposed to the instance (e.g., /dev/sdh, or xvdh).
         /// </summary>
         [XmlElementAttribute(ElementName = "Device")]
         public string Device
@@ -134,7 +121,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Device property
+        /// Sets the device name as exposed to the instance (e.g., /dev/sdh, or xvdh).
         /// </summary>
         /// <param name="device">Specifies how the device is exposed to the
         /// instance (e.g., /dev/sdh).</param>

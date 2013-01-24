@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Region
-    ///</summary>
+    /// <summary>
+    /// Region
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Region
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string endpointField;
 
         /// <summary>
-        /// Gets and sets the RegionName property.
         /// Name of the region.
         /// </summary>
         [XmlElementAttribute(ElementName = "RegionName")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RegionName property
+        /// Sets the name of the region.
         /// </summary>
         /// <param name="regionName">Name of the region.</param>
         /// <returns>this instance</returns>
@@ -66,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Endpoint property.
         /// Region service endpoint.
         /// </summary>
         [XmlElementAttribute(ElementName = "Endpoint")]
@@ -77,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Endpoint property
+        /// Sets the region service endpoint.
         /// </summary>
         /// <param name="endpoint">Region service endpoint.</param>
         /// <returns>this instance</returns>

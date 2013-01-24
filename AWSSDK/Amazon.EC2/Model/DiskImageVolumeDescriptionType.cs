@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Describes disk image volume.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DiskImageVolumeDescriptionType
     {    
@@ -33,7 +35,6 @@ namespace Amazon.EC2.Model
         private string idField;
 
         /// <summary>
-        /// Gets and sets the Size property.
         /// Size of the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Size property
+        /// Sets the size of the volume.
         /// </summary>
         /// <param name="size">Size of the volume.</param>
         /// <returns>this instance</returns>
@@ -64,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Id property.
         /// Volume identifier.
         /// </summary>
         [XmlElementAttribute(ElementName = "Id")]
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Id property
+        /// Sets the volume identifier.
         /// </summary>
         /// <param name="id">Volume identifier.</param>
         /// <returns>this instance</returns>

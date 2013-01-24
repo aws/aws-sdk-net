@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Customer Gateway
-    ///</summary>
+    /// <summary>
+    /// Customer Gateway
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CustomerGateway
     {    
@@ -39,7 +39,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayId property.
         /// The ID of the customer gateway
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
@@ -50,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayId property
+        /// Sets the ID of the customer gateway
         /// </summary>
         /// <param name="customerGatewayId">The ID of the customer gateway</param>
         /// <returns>this instance</returns>
@@ -70,7 +69,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayState property.
         /// The current state of the customer gateway
         /// (pending, available, deleting, deleted)
         /// </summary>
@@ -82,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayState property
+        /// Sets the current state of the customer gateway.
         /// </summary>
         /// <param name="customerGatewayState">The current state of the customer gateway
         /// (pending, available, deleting, deleted)</param>
@@ -103,9 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
-        /// The type of VPN connection the customer gateway
-        /// supports (ipsec.1).
+        /// The type of VPN connection the customer gateway supports (ipsec.1).
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -115,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection the customer gateway supports.
         /// </summary>
         /// <param name="type">The type of VPN connection the customer gateway
         /// supports (ipsec.1).</param>
@@ -136,9 +132,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpAddress property.
-        /// The Internet-routable IP address of the
-        /// customer gateway's outside
+        /// The Internet-routable IP address of the customer gateway's outside
         /// interface
         /// </summary>
         [XmlElementAttribute(ElementName = "IpAddress")]
@@ -149,7 +143,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpAddress property
+        /// Sets the Internet-routable IP address of the customer gateway's outside
+        /// interface
         /// </summary>
         /// <param name="ipAddress">The Internet-routable IP address of the
         /// customer gateway's outside
@@ -171,7 +166,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BgpAsn property.
         /// The customer gateway's Border Gateway Protocol
         /// (BGP) Autonomous System Number (ASN).
         /// </summary>
@@ -183,7 +177,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BgpAsn property
+        /// Sets the customer gateway's Border Gateway Protocol
+        /// (BGP) Autonomous System Number (ASN).
         /// </summary>
         /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
         /// (BGP) Autonomous System Number (ASN).</param>
@@ -204,8 +199,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
-        /// A list of tags for the CustomerGateway.
+        /// List of tags for the CustomerGateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
         public List<Tag> Tag
@@ -222,7 +216,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the list of tags for the CustomerGateway.
         /// </summary>
         /// <param name="list">A list of tags for the CustomerGateway.</param>
         /// <returns>this instance</returns>

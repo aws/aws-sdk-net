@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,6 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Modify Network Interface Attribute request.
     /// Modifies a network interface attribute. Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
@@ -39,7 +38,6 @@ namespace Amazon.EC2.Model
         private ModifyNetworkInterfaceAttachment attachmentField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
         /// The ID of the network interface with the attributes that you want to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
@@ -50,8 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property.
-        /// The ID of the network interface with the attributes that you want to modify.
+        /// Sets the ID of the network interface with the attributes that you want to modify.
         /// </summary>
         /// <param name="networkInterfaceId">The network interface ID.</param>
         /// <returns>this instance</returns>
@@ -71,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// The description of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -82,8 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property.
-        /// The description of the network interface.
+        /// Sets the description of the network interface.
         /// </summary>
         /// <param name="description">Network interface description</param>
         /// <returns>this instance</returns>
@@ -103,13 +98,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceDestCheck property.
+        /// Whether source/destination checking is enabled on the instance.
+        /// </summary>
+        /// <remarks>
         /// This attribute exists to enable a Network Address Translation (NAT) instance in a VPC 
-        /// to perform NAT. The attribute controls whether source/destination checking is enabled 
-        /// on the instance. A value of true means checking is enabled, and false means checking is 
+        /// to perform NAT. A value of true means checking is enabled, and false means checking is 
         /// disabled. The value must be false for the instance to perform NAT. For more information, 
         /// go to NAT Instances in the Amazon Virtual Private Cloud User Guide.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "SourceDestCheck")]
         public bool SourceDestCheck
         {
@@ -118,10 +114,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceDestCheck property.
+        /// Sets whether source/destination checking is enabled on the instance.
         /// </summary>
         /// <param name="sourceDestCheck">
-        /// true to enable a Network Address Translation (NAT) instance in a VPC 
+        /// True to enable a Network Address Translation (NAT) instance in a VPC 
         /// to perform NAT.
         /// </param>
         /// <returns>this instance</returns>
@@ -141,7 +137,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// The full set of group IDs to associate with the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -159,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property.
+        /// Sets the full set of group IDs to associate with the network interface.
         /// </summary>
         /// <param name="list">
         /// The full set of group IDs to associate with the network interface.
@@ -184,7 +179,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attachment property.
+        /// Interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attachment")]
         public ModifyNetworkInterfaceAttachment Attachment
@@ -194,7 +189,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attachment property.
+        /// Sets the Interface attachment.
         /// </summary>
         /// <param name="attachment">Modify network interface attachment</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,21 +27,21 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Creates a new 2048-bit RSA key pair with the specified name. The public
-    /// key is stored by Amazon EC2 and the private key is displayed on the console.
+    /// key is stored by Amazon EC2 and the private key is returned to you.
+    /// </summary>
+    /// <remarks>
     /// The private key is returned as an unencrypted PEM encoded PKCS#8 private key.
     /// If a key with the specified name already exists, Amazon EC2 returns an error.
-    /// </summary>
+    /// The key pair returned to you works only in the Region you're using when you
+    /// create the key pair. To create a key pair that works in all Regions, use ImportKeyPair.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateKeyPairRequest
     {    
         private string keyNameField;
 
         /// <summary>
-        /// Gets and sets the KeyName property.
         /// A unique name for the key pair.
-        ///
-        /// Constraints:
-        /// Accepts alphanumeric characters, spaces, dashes, and underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
@@ -51,12 +51,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyName property
+        /// Sets the unique name for the key pair.
         /// </summary>
-        /// <param name="keyName">A unique name for the key pair.
-        ///
-        /// Constraints:
-        /// Accepts alphanumeric characters, spaces, dashes, and underscores.</param>
+        /// <param name="keyName">A unique name for the key pair.</param>
         /// <returns>this instance</returns>
         public CreateKeyPairRequest WithKeyName(string keyName)
         {

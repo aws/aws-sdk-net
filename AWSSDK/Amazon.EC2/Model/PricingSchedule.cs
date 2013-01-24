@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// PricingSchedule
+    /// Pricing Schedule
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class PricingSchedule
@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
         private string currencyCodeField;
 
         /// <summary>
-        /// Gets and sets the number of months remaining in the reservation.
+        /// The number of months remaining in the reservation.
         /// </summary>
         /// <remarks>
         /// For example, 2 is the second to the last month before the capacity reservation expires.
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the fixed price for the term.
+        /// The fixed price for the term.
         /// </summary>
         [XmlElementAttribute(ElementName = "Price")]
         public Decimal Price

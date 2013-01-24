@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Details for an import instance volume item.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ImportInstanceVolumeDetailItemType
     {    
@@ -38,7 +40,6 @@ namespace Amazon.EC2.Model
         private string statusMessageField;
 
         /// <summary>
-        /// Gets and sets the BytesConverted property.
         /// Number of bytes converted so far.
         /// </summary>
         [XmlElementAttribute(ElementName = "BytesConverted")]
@@ -49,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BytesConverted property
+        /// Sets the number of bytes converted so far.
         /// </summary>
         /// <param name="bytesConverted">Number of bytes converted so far.</param>
         /// <returns>this instance</returns>
@@ -69,7 +70,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// The Availability Zone where the resulting instance will reside.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone where the resulting instance will reside.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where the resulting instance will reside.</param>
         /// <returns>this instance</returns>
@@ -100,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Image property.
         /// Information about the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Image")]
@@ -111,7 +110,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Image property
+        /// Sets the information about the image.
         /// </summary>
         /// <param name="image">Information about the image.</param>
         /// <returns>this instance</returns>
@@ -131,8 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// Description you provided when starting the import instance task.
+        /// Description provided when starting the import instance task.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -142,7 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description.
         /// </summary>
         /// <param name="description">Description you provided when starting the import instance task.</param>
         /// <returns>this instance</returns>
@@ -162,7 +160,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Volume property.
         /// Information about the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "Volume")]
@@ -173,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Volume property
+        /// Sets the information about the volume.
         /// </summary>
         /// <param name="volume">Information about the volume.</param>
         /// <returns>this instance</returns>
@@ -193,7 +190,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
         /// Status of the import of this particular disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
@@ -204,7 +200,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the status of the import of this particular disk image.
         /// </summary>
         /// <param name="status">Status of the import of this particular disk image.</param>
         /// <returns>this instance</returns>
@@ -224,7 +220,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StatusMessage property.
         /// Status information or errors related to the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "StatusMessage")]
@@ -235,7 +230,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StatusMessage property
+        /// Sets the status information or errors related to the disk image.
         /// </summary>
         /// <param name="statusMessage">Status information or errors related to the disk image.</param>
         /// <returns>this instance</returns>

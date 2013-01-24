@@ -1130,6 +1130,12 @@
         <Https>true</Https>
         <Hostname>elasticloadbalancing.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>rds</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>rds.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
   </Regions>
   <Services>
@@ -1235,6 +1241,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>route53</Name>

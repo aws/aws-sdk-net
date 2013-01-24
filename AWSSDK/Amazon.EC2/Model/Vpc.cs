@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///VPC
-    ///</summary>
+    /// <summary>
+    /// Virtual Private Cloud
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Vpc
     {    
@@ -37,9 +37,9 @@ namespace Amazon.EC2.Model
         private string dhcpOptionsIdField;
         private List<Tag> tagField;
         private string instanceTenancyField;
+        private bool? isDefaultField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The VPC's ID
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the VPC's ID
         /// </summary>
         /// <param name="vpcId">The VPC's ID</param>
         /// <returns>this instance</returns>
@@ -70,7 +70,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcState property.
         /// The current state of the VPC (pending or available).
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcState")]
@@ -81,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcState property
+        /// Sets the current state of the VPC (pending or available).
         /// </summary>
         /// <param name="vpcState">The current state of the VPC (pending or available).</param>
         /// <returns>this instance</returns>
@@ -101,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CidrBlock property.
         /// The CIDR block the VPC covers
         /// </summary>
         [XmlElementAttribute(ElementName = "CidrBlock")]
@@ -112,7 +110,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CidrBlock property
+        /// Sets the CIDR block the VPC covers
         /// </summary>
         /// <param name="cidrBlock">The CIDR block the VPC covers</param>
         /// <returns>this instance</returns>
@@ -132,12 +130,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DhcpOptionsId property.
-        /// The ID of the set of DHCP options you've
-        /// associated with the VPC
-        /// (or "default" if
-        /// the default options are
-        /// associated with the VPC).
+        /// The ID of the set of DHCP options you've associated with the VPC
+        /// (or "default" if the default options are associated with the VPC).
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
@@ -147,12 +141,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DhcpOptionsId property
+        /// Sets the ID of the set of DHCP options ve associated with the VPC
+        /// (or "default" if the default options are associated with the VPC).
         /// </summary>
         /// <param name="dhcpOptionsId">The ID of the set of DHCP options you've
-        /// associated with the VPC
-        /// (or "default" if
-        /// the default options are
+        /// associated with the VPC (or "default" if the default options are
         /// associated with the VPC).</param>
         /// <returns>this instance</returns>
         public Vpc WithDhcpOptionsId(string dhcpOptionsId)
@@ -171,8 +164,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
-        /// A list of tags for the Vpc.
+        /// A list of tags for the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
         public List<Tag> Tag
@@ -189,7 +181,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets tags for the VPC.
         /// </summary>
         /// <param name="list">A list of tags for the Vpc.</param>
         /// <returns>this instance</returns>
@@ -213,7 +205,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the InstanceTenancy property.
         /// The allowed tenancy of instances launched into the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceTenancy")]
@@ -234,7 +225,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceTenancy property
+        /// Sets the allowed tenancy of instances launched into the VPC.
         /// </summary>
         /// <param name="instanceTenancy">The allowed tenancy of instances launched into the VPC.</param>
         /// <returns>this instance</returns>
@@ -243,5 +234,37 @@ namespace Amazon.EC2.Model
             this.instanceTenancyField = instanceTenancy;
             return this;
         }
+
+
+        /// <summary>
+        /// Whether this is a default VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IsDefault")]
+        public bool IsDefault
+        {
+            get { return this.isDefaultField.GetValueOrDefault(); }
+            set { this.isDefaultField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether this is a default VPC.
+        /// </summary>
+        /// <param name="isDefault">Whether this is a default VPC.</param>
+        /// <returns>this instance</returns>
+        public Vpc WithIsDefault(bool isDefault)
+        {
+            this.isDefaultField = isDefault;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the IsDefault property is set
+        /// </summary>
+        /// <returns>true if the IsDefault property is set</returns>
+        public bool IsSetIsDefault()
+        {
+            return this.isDefaultField != null;
+        }
+
     }
 }

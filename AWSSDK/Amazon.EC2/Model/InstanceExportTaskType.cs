@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    /// InstanceExportTaskType; information about an instance being exported.
-    ///</summary>
+    /// <summary>
+    /// Information about an instance being exported.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceExportTaskType
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private string targetEnvironmentField;
 
         /// <summary>
-        /// Gets and sets EC2 the identifier of the resource being exported.
+        /// The ID of the resource being exported.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the target virtualization environment.
+        /// The target virtualization environment.
         /// </summary>
         /// <remarks>
         /// Valid Values: vmware | citrix

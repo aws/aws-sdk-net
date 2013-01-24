@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Instance State
-    ///</summary>
+    /// <summary>
+    /// Instance State
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceState
     {    
@@ -35,17 +35,15 @@ namespace Amazon.EC2.Model
         private string nameField;
 
         /// <summary>
-        /// Gets and sets the Code property.
-        /// A 16-bit unsigned integer. The high byte is an
-        /// opaque internal value and should be
-        /// ignored. The low byte is set
-        /// based on the state represented.
-        ///
-        /// Valid values are: 0 (pending) |
-        /// 16 (running) | 32 (shutting-down) |
-        /// 48 (terminated) | 64
-        /// (stopping) | 80 (stopped)
+        /// A code representing the state of the instance.
         /// </summary>
+        /// <remarks>
+        /// A 16-bit unsigned integer. The high byte is an opaque internal value
+        /// and should be ignored. The low byte is set based on the state represented.
+        ///
+        /// Valid values are: 0 (pending) | 16 (running) | 32 (shutting-down) |
+        /// 48 (terminated) | 64 (stopping) | 80 (stopped)
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Code")]
         public Decimal Code
         {
@@ -54,17 +52,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the code representing the state of the instance.
         /// </summary>
-        /// <param name="code">A 16-bit unsigned integer. The high byte is an
-        /// opaque internal value and should be
-        /// ignored. The low byte is set
-        /// based on the state represented.
+        /// <param name="code">
+        /// A 16-bit unsigned integer. The high byte is an opaque internal value
+        /// and should be ignored. The low byte is set based on the state represented.
         ///
-        /// Valid values are: 0 (pending) |
-        /// 16 (running) | 32 (shutting-down) |
-        /// 48 (terminated) | 64
-        /// (stopping) | 80 (stopped)</param>
+        /// Valid values are: 0 (pending) | 16 (running) | 32 (shutting-down) |
+        /// 48 (terminated) | 64 (stopping) | 80 (stopped)
+        /// </param>
         /// <returns>this instance</returns>
         public InstanceState WithCode(Decimal code)
         {
@@ -82,11 +78,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
         /// The current state of the instance.
         ///
-        /// Valid values are: pending | running | shutting-down | terminated |
-        /// stopping | stopped
+        /// Valid values are: pending | running | shutting-down | terminated | stopping | stopped
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
@@ -96,12 +90,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the current state of the instance.
         /// </summary>
         /// <param name="name">The current state of the instance.
         ///
-        /// Valid values are: pending | running | shutting-down | terminated |
-        /// stopping | stopped</param>
+        /// Valid values are: pending | running | shutting-down | terminated | stopping | stopped</param>
         /// <returns>this instance</returns>
         public InstanceState WithName(string name)
         {

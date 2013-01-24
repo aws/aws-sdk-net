@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSnapshots action.</para>
     /// </summary>
-    public class DBSnapshot  
+    public class DBSnapshot
     {
         
         private string dBSnapshotIdentifier;
@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.dBSnapshotIdentifier != null;       
+            return this.dBSnapshotIdentifier != null;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this.dBInstanceIdentifier != null;       
+            return this.dBInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         // Check to see if SnapshotCreateTime property is set
         internal bool IsSetSnapshotCreateTime()
         {
-            return this.snapshotCreateTime.HasValue;       
+            return this.snapshotCreateTime.HasValue;
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.RDS.Model
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;       
+            return this.allocatedStorage.HasValue;
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.RDS.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Amazon.RDS.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;       
+            return this.vpcId != null;
         }
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         // Check to see if InstanceCreateTime property is set
         internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTime.HasValue;       
+            return this.instanceCreateTime.HasValue;
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace Amazon.RDS.Model
         // Check to see if MasterUsername property is set
         internal bool IsSetMasterUsername()
         {
-            return this.masterUsername != null;       
+            return this.masterUsername != null;
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace Amazon.RDS.Model
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;       
+            return this.licenseModel != null;
         }
 
         /// <summary>
@@ -437,7 +437,7 @@ namespace Amazon.RDS.Model
         // Check to see if SnapshotType property is set
         internal bool IsSetSnapshotType()
         {
-            return this.snapshotType != null;       
+            return this.snapshotType != null;
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace Amazon.RDS.Model
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;       
+            return this.iops.HasValue;
         }
     }
 }

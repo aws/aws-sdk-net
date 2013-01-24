@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeEventsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEvents");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (describeEventsRequest != null && describeEventsRequest.IsSetSourceIdentifier())
             {
                 request.Parameters.Add("SourceIdentifier", StringUtils.FromString(describeEventsRequest.SourceIdentifier));
@@ -54,6 +54,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (describeEventsRequest != null && describeEventsRequest.IsSetDuration())
             {
                 request.Parameters.Add("Duration", StringUtils.FromInt(describeEventsRequest.Duration));
+            }
+            if (describeEventsRequest != null)
+            {
+                List<string> eventCategoriesList = describeEventsRequest.EventCategories;
+
+                int eventCategoriesListIndex = 1;
+                foreach (string eventCategoriesListValue in eventCategoriesList)
+                { 
+                    request.Parameters.Add("EventCategories.member." + eventCategoriesListIndex, StringUtils.FromString(eventCategoriesListValue));
+                    eventCategoriesListIndex++;
+                }
             }
             if (describeEventsRequest != null && describeEventsRequest.IsSetMaxRecords())
             {

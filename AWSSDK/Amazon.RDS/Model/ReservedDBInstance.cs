@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> This data type is used as a response element in the DescribeReservedDBInstances and PurchaseReservedDBInstancesOffering actions.
     /// </para>
     /// </summary>
-    public class ReservedDBInstance  
+    public class ReservedDBInstance
     {
         
         private string reservedDBInstanceId;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReservedDBInstanceId property is set
         internal bool IsSetReservedDBInstanceId()
         {
-            return this.reservedDBInstanceId != null;       
+            return this.reservedDBInstanceId != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;       
+            return this.reservedDBInstancesOfferingId != null;
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.RDS.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.RDS.Model
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;       
+            return this.duration.HasValue;
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.RDS.Model
         // Check to see if FixedPrice property is set
         internal bool IsSetFixedPrice()
         {
-            return this.fixedPrice.HasValue;       
+            return this.fixedPrice.HasValue;
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.RDS.Model
         // Check to see if UsagePrice property is set
         internal bool IsSetUsagePrice()
         {
-            return this.usagePrice.HasValue;       
+            return this.usagePrice.HasValue;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.RDS.Model
         // Check to see if CurrencyCode property is set
         internal bool IsSetCurrencyCode()
         {
-            return this.currencyCode != null;       
+            return this.currencyCode != null;
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
-            return this.dBInstanceCount.HasValue;       
+            return this.dBInstanceCount.HasValue;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;       
+            return this.productDescription != null;
         }
 
         /// <summary>
@@ -347,7 +347,7 @@ namespace Amazon.RDS.Model
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;       
+            return this.offeringType != null;
         }
 
         /// <summary>
@@ -375,7 +375,7 @@ namespace Amazon.RDS.Model
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
-            return this.multiAZ.HasValue;       
+            return this.multiAZ.HasValue;
         }
 
         /// <summary>
@@ -403,7 +403,7 @@ namespace Amazon.RDS.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
         }
 
         /// <summary>
@@ -429,7 +429,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the RecurringCharges collection
         /// </summary>
@@ -448,7 +448,7 @@ namespace Amazon.RDS.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this.recurringCharges.Count > 0;       
+            return this.recurringCharges.Count > 0;
         }
     }
 }

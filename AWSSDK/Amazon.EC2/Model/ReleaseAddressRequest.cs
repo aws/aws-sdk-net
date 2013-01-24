@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,29 +26,24 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Releases an elastic IP address associated with
-    /// your account.
+    /// Releases an elastic IP address associated with your account.
+    /// </summary>
+    ///<remarks>
+    /// If you run this operation on an elastic IP address that is
+    /// already released, the address might be assigned to another
+    /// account which will cause Amazon EC2 to return an error.
     ///
-    /// If you run this operation on an elastic IP address
-    /// that is already released,
-    /// the address might be assigned to another
-    /// account which will cause Amazon
-    /// EC2 to return an error.
-    ///
-    /// Note -
-    /// releasing an IP address automatically disassociates it from any
+    /// Releasing an IP address automatically disassociates it from any
     /// instance with which it is associated. To disassociate an IP
-    /// address without
-    /// releasing it, use the DisassociateAddress
+    /// address without releasing it, use the DisassociateAddress
     /// operation.
     ///
-    /// Important - after releasing an elastic IP address, it is
-    /// released to the IP
-    /// address pool and might no longer be available to
-    /// your account. Make sure
-    /// to update your DNS records and any servers
-    /// or devices that communicate with the address.
-    /// </summary>
+    /// After releasing an elastic IP address, it is
+    /// released to the IP // address pool and might no longer be
+    /// available to your account. Make sure to update your DNS
+    /// records and any servers or devices that communicate with
+    /// the address.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ReleaseAddressRequest
     {    
@@ -56,9 +51,7 @@ namespace Amazon.EC2.Model
         private string allocationIdField;
 
         /// <summary>
-        /// Gets and sets the PublicIp property.
-        /// The IP address that you are releasing from
-        /// your account.
+        /// The IP address that you are releasing from your account.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -68,7 +61,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property
+        /// Sets the IP address that you are releasing from your account.
         /// </summary>
         /// <param name="publicIp">The IP address that you are releasing from
         /// your account.</param>
@@ -89,13 +82,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AllocationId property.
-        /// The allocation ID that AWS provided when you allocated
-        /// the address for use with Amazon VPC.
-        /// 
-        /// Type: String
-        /// Default: None
-        /// Condition: Required for VPC elastic IP addresses
+        /// Address allocation ID.
+        /// This value was provided when you allocated the address for use with Amazon VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "AllocationId")]
         public string AllocationId
@@ -105,7 +93,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllocationId property
+        /// Sets the address allocation ID.
         /// </summary>
         /// <param name="allocationId">The allocation ID that AWS provided when you allocated
         /// the address for use with Amazon VPC.

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,11 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Verifies whether a Amazon DevPay product code is associated with an
-    /// instance. This can only be executed by the owner of the AMI and is
-    /// useful when an AMI owner wants to verify whether a user's instance is
-    /// eligible for support.
+    /// Determines whether a product code is associated with an instance.
     /// </summary>
+    /// <remarks>
+    /// This action can only be used by the owner of the product code.
+    /// It is useful when a product code owner needs to verify whether another EC2 user’s
+    /// instance is eligible for support.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ConfirmProductInstanceRequest
     {    
@@ -38,7 +40,6 @@ namespace Amazon.EC2.Model
         private string instanceIdField;
 
         /// <summary>
-        /// Gets and sets the ProductCode property.
         /// The product code to confirm.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCode")]
@@ -49,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCode property
+        /// Sets the product code to confirm.
         /// </summary>
         /// <param name="productCode">The product code to confirm.</param>
         /// <returns>this instance</returns>
@@ -69,7 +70,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The instance to confirm.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance to confirm.
         /// </summary>
         /// <param name="instanceId">The instance to confirm.</param>
         /// <returns>this instance</returns>

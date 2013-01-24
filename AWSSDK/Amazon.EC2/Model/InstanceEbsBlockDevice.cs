@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Information about the instance EBS block device.
-    ///</summary>
+    /// <summary>
+    /// Instance EBS block device.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceEbsBlockDevice
     {    
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private bool? deleteOnTerminationField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
         /// The ID of the Amazon EBS volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the Amazon EBS volume.
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
@@ -68,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
         /// Attachment state of the EBS volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the attachment state of the EBS volume.
         /// </summary>
         /// <param name="status">Attachment state of the EBS volume.</param>
         /// <returns>this instance</returns>
@@ -99,7 +97,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttachTime property.
         /// Time the volume was attached.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttachTime")]
@@ -110,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AttachTime property
+        /// Sets the time the volume was attached.
         /// </summary>
         /// <param name="attachTime">Time the volume was attached.</param>
         /// <returns>this instance</returns>
@@ -130,9 +127,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property.
-        /// Whether the volume will be deleted on instance
-        /// termination.
+        /// Whether the volume will be deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -142,7 +137,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property
+        /// Sets whether the volume will be deleted on instance termination.
         /// </summary>
         /// <param name="deleteOnTermination">Whether the volume will be deleted on instance
         /// termination.</param>

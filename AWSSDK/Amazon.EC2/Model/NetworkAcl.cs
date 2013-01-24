@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Network ACL description.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class NetworkAcl
     {    
@@ -37,7 +39,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
         /// The network ACL's ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the network ACL's ID.
         /// </summary>
         /// <param name="networkAclId">The network ACL's ID.</param>
         /// <returns>this instance</returns>
@@ -68,7 +69,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC the network ACL is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC the network ACL is in.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the network ACL is in.</param>
         /// <returns>this instance</returns>
@@ -99,7 +99,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Default property.
         /// Whether this is the default network ACL in the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "Default")]
@@ -110,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Default property
+        /// Sets whether this is the default network ACL in the VPC.
         /// </summary>
         /// <param name="isDefault">Whether this is the default network ACL in the VPC.</param>
         /// <returns>this instance</returns>
@@ -130,7 +129,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Entries property.
         /// A list of entries (rules) in the network ACL.
         /// </summary>
         [XmlElementAttribute(ElementName = "Entries")]
@@ -148,7 +146,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Entries property
+        /// Sets the entries (rules) in the network ACL.
         /// </summary>
         /// <param name="list">A list of entries (rules) in the network ACL.</param>
         /// <returns>this instance</returns>
@@ -171,9 +169,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Associations property.
-        /// A list of associations between the network ACL and one or more
-        /// subnets.
+        /// A list of associations between the network ACL and one or more subnets.
         /// </summary>
         [XmlElementAttribute(ElementName = "Associations")]
         public List<NetworkAclAssociation> Associations
@@ -190,7 +186,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Associations property
+        /// Sets the associations between the network ACL and one or more subnets.
         /// </summary>
         /// <param name="list">A list of associations between the network ACL and one or more
         /// subnets.</param>
@@ -214,7 +210,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the NetworkAcl.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -232,7 +227,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags for the NetworkAcl.
         /// </summary>
         /// <param name="list">A list of tags for the NetworkAcl.</param>
         /// <returns>this instance</returns>

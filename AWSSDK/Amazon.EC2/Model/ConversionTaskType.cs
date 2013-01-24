@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Conversion task
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ConversionTaskType
     {    
@@ -37,7 +39,6 @@ namespace Amazon.EC2.Model
         private string statusMessageField;
 
         /// <summary>
-        /// Gets and sets the ConversionTaskId property.
         /// ID of the conversion task.
         /// </summary>
         [XmlElementAttribute(ElementName = "ConversionTaskId")]
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ConversionTaskId property
+        /// Sets the ID of the conversion task.
         /// </summary>
         /// <param name="conversionTaskId">ID of the conversion task.</param>
         /// <returns>this instance</returns>
@@ -68,8 +69,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ExpirationTime property.
-        /// When the task expires. If the upload isn't complete before the expiration time, the task is automatically canceled.
+        /// The time when the task expires.
+        /// If the upload isn't complete before the expiration time, the task is automatically canceled.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExpirationTime")]
         public string ExpirationTime
@@ -79,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ExpirationTime property
+        /// Sets the time when the task expires.
         /// </summary>
         /// <param name="expirationTime">When the task expires. If the upload isn't complete before the expiration time, the task is automatically canceled.</param>
         /// <returns>this instance</returns>
@@ -99,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImportVolumeRequest property.
         /// If the task is for importing a volume, this contains information about the import volume task.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImportVolumeRequest")]
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImportVolumeRequest property
+        /// Sets the import volume task information.
         /// </summary>
         /// <param name="importVolumeRequest">If the task is for importing a volume, this contains information about the import volume task.</param>
         /// <returns>this instance</returns>
@@ -130,7 +130,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImportInstanceRequest property.
         /// If the task is for importing an instance, this contains information about the import instance task.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImportInstanceRequest")]
@@ -141,7 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImportInstanceRequest property
+        /// Sets the import instance task information.
         /// </summary>
         /// <param name="importInstanceRequest">If the task is for importing an instance, this contains information about the import instance task.</param>
         /// <returns>this instance</returns>
@@ -161,8 +160,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
-        /// State of the conversion task.
+        /// The state of the conversion task.
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
         public string State
@@ -172,7 +170,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the state of the conversion task.
+        /// Valid values: active | cancelling | cancelled | completed
         /// </summary>
         /// <param name="state">State of the conversion task.</param>
         /// <returns>this instance</returns>
@@ -192,7 +191,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StatusMessage property.
         /// Status message related to the conversion task.
         /// </summary>
         [XmlElementAttribute(ElementName = "StatusMessage")]
@@ -203,7 +201,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StatusMessage property
+        /// Sets the status message related to the conversion task.
         /// </summary>
         /// <param name="statusMessage">Status message related to the conversion task.</param>
         /// <returns>this instance</returns>

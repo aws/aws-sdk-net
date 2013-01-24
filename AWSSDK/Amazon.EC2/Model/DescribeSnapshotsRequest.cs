@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,33 +26,27 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about Amazon EBS snapshots
-    /// available to the user.
-    /// Information returned includes volume ID,
-    /// status, start time, progress, owner ID,
-    /// volume size, and
-    /// description. Snapshots available to the user include public
-    /// snapshots available for any
-    /// user to launch, private snapshots owned
-    /// by the user making the
-    /// request, and private
-    /// snapshots owned by other
-    /// users for which the user granted explicit create
+    /// Returns information about Amazon EBS snapshots available to the user.
+    /// </summary>
+    /// <remarks>
+    /// Information returned includes volume ID, status, start time, progress,
+    /// owner ID, volume size, and description. Snapshots available to the user
+    /// include public snapshots available for any user to launch, private
+    /// snapshots owned by the user making the request, and private snapshots
+    /// owned by other users for which the user granted explicit create
     /// volume permissions.
     ///
     /// The create volume permissions fall into 3 categories:
     ///
     /// public
     ///
-    /// The owner of the snapshot granted create volume permissions
-    /// for the snapshot to the all
-    /// group. All users have create volume
-    /// permissions for these snapshots.
+    /// The owner of the snapshot granted create volume permissions for the
+    /// snapshot to the all group. All users have create volume permissions
+    /// for these snapshots.
     ///
     /// explicit
     ///
-    /// The owner of the snapshot
-    /// granted create volume permissions to a
+    /// The owner of the snapshot granted create volume permissions to a
     /// specific user.
     ///
     /// implicit
@@ -63,31 +57,25 @@ namespace Amazon.EC2.Model
     /// The list of snapshots returned can be modified by specifying
     /// snapshot IDs, snapshot owners, or users with create volume permissions.
     ///
-    /// If no options are specified, Amazon EC2 returns all
-    /// snapshots for which the user has
-    /// create volume permissions.
+    /// If no options are specified, Amazon EC2 returns all snapshots for
+    /// which the user has create volume permissions.
     ///
     /// If you specify one or more snapshot IDs, only snapshots that have
     /// the specified IDs are returned. If you specify an invalid snapshot ID,
-    /// a fault is returned. If you specify a
-    /// snapshot ID for which you do not have access, it will not be included in
-    /// the returned results.
+    /// a fault is returned. If you specify a snapshot ID for which you do not
+    /// have access, it will not be included in the returned results.
     ///
     /// If you specify one or more snapshot owners, only snapshots from the
     /// specified owners and for which you have access are returned. The
-    /// results can include the AWS Account
-    /// IDs of the specified owners,
-    /// amazon for snapshots owned by Amazon or
-    /// self for snapshots that you own.
+    /// results can include the AWS Account IDs of the specified owners,
+    /// amazon for snapshots owned by Amazon or self for snapshots that you own.
     ///
     /// If you specify a list of restorable users, only users that
-    /// have create snapshot permissions
-    /// for the snapshots are returned. You
-    /// can specify AWS Account IDs (if
-    /// you own the snapshot(s)), self for
-    /// snapshots for which you own or have explicit
-    /// permissions, or all for public snapshots.
-    /// </summary>
+    /// have create snapshot permissions for the snapshots are returned.
+    /// You can specify AWS Account IDs (if you own the snapshot(s)), self for
+    /// snapshots for which you own or have explicit permissions, or all for
+    /// public snapshots.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeSnapshotsRequest
     {    
@@ -97,8 +85,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
-        /// The ID of the Amazon EBS snapshot.
+        /// One or more snapshot IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public List<string> SnapshotId
@@ -115,7 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets snapshot IDs.
         /// </summary>
         /// <param name="list">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
@@ -138,11 +125,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Owner property.
-        /// Returns snapshots owned by the specified
-        /// owner. Valid Values: self |
-        /// amazon | AWS
-        /// Account ID
+        /// Owner of the snapshots to return.
+        /// Valid Values: self |amazon | AWS Account ID
         /// </summary>
         [XmlElementAttribute(ElementName = "Owner")]
         public string Owner
@@ -152,12 +136,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Owner property
+        /// Sets the owner of the snapshots to return.
         /// </summary>
         /// <param name="owner">Returns snapshots owned by the specified
-        /// owner. Valid Values: self |
-        /// amazon | AWS
-        /// Account ID</param>
+        /// owner. Valid Values: self | amazon | AWS Account ID</param>
         /// <returns>this instance</returns>
         public DescribeSnapshotsRequest WithOwner(string owner)
         {
@@ -175,9 +157,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RestorableBy property.
-        /// Account ID of a user that can create volumes
-        /// from the snapshot.
+        /// Account ID of a user that can create volumes from the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "RestorableBy")]
         public string RestorableBy
@@ -187,7 +167,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RestorableBy property
+        /// Sets the Account ID of a user that can create volumes from the snapshot.
         /// </summary>
         /// <param name="restorableBy">Account ID of a user that can create volumes
         /// from the snapshot.</param>
@@ -208,7 +188,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Snapshots.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -229,7 +208,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Snapshots.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Snapshots.

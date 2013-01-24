@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class DescribeOptionGroupOptionsResult  
+    public class DescribeOptionGroupOptionsResult
     {
         
         private List<OptionGroupOption> optionGroupOptions = new List<OptionGroupOption>();
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionGroupOptions collection
         /// </summary>
@@ -71,8 +71,14 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupOptions property is set
         internal bool IsSetOptionGroupOptions()
         {
-            return this.optionGroupOptions.Count > 0;       
+            return this.optionGroupOptions.Count > 0;
         }
+
+        /// <summary>
+        /// An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the
+        /// marker, up to the value specified by <c>MaxRecords</c>.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -94,7 +100,7 @@ namespace Amazon.RDS.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

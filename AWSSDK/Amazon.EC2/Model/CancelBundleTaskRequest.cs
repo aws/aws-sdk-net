@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Cancels an Amazon EC2 bundling operation.
+    /// Cancels a bundling operation for an instance store-backed Windows instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CancelBundleTaskRequest
@@ -34,7 +34,6 @@ namespace Amazon.EC2.Model
         private string bundleIdField;
 
         /// <summary>
-        /// Gets and sets the BundleId property.
         /// The ID of the bundle task to cancel.
         /// </summary>
         [XmlElementAttribute(ElementName = "BundleId")]
@@ -45,7 +44,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BundleId property
+        /// Sets the ID of the bundle task to cancel.
         /// </summary>
         /// <param name="bundleId">The ID of the bundle task to cancel.</param>
         /// <returns>this instance</returns>

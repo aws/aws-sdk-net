@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -239,6 +239,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if (runJobFlowRequest != null && runJobFlowRequest.IsSetVisibleToAllUsers())
             {
                 request.Parameters.Add("VisibleToAllUsers", StringUtils.FromBool(runJobFlowRequest.VisibleToAllUsers));
+            }
+            if (runJobFlowRequest != null && runJobFlowRequest.IsSetJobFlowRole())
+            {
+                request.Parameters.Add("JobFlowRole", StringUtils.FromString(runJobFlowRequest.JobFlowRole));
             }
 
             return request;

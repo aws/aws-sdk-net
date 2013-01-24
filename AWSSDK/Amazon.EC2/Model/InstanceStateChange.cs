@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Instance state change
-    ///</summary>
+    /// <summary>
+    /// Instance state change
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceStateChange
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private InstanceState previousStateField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// Instance ID
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID
         /// </summary>
         /// <param name="instanceId">Instance ID</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CurrentState property.
         /// Current state
         /// </summary>
         [XmlElementAttribute(ElementName = "CurrentState")]
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CurrentState property
+        /// Sets the current state
         /// </summary>
         /// <param name="currentState">Current state</param>
         /// <returns>this instance</returns>
@@ -98,7 +96,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PreviousState property.
         /// Previous state
         /// </summary>
         [XmlElementAttribute(ElementName = "PreviousState")]
@@ -109,7 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PreviousState property
+        /// Sets the previous state
         /// </summary>
         /// <param name="previousState">Previous state</param>
         /// <returns>this instance</returns>

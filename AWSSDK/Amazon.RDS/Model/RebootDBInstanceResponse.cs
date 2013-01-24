@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,14 +34,14 @@ namespace Amazon.RDS.Model
         /// 
         public RebootDBInstanceResult RebootDBInstanceResult
         {
-            get 
+            get
             {
                 if(this.rebootDBInstanceResult == null)
                 {
                     this.rebootDBInstanceResult = new RebootDBInstanceResult();
                 }
 
-                return this.rebootDBInstanceResult; 
+                return this.rebootDBInstanceResult;
             }
             set { this.rebootDBInstanceResult = value; }
         }

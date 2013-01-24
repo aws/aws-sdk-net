@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,12 +23,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeEvents action. </para>
     /// </summary>
-    public class Event  
+    public class Event
     {
         
         private string sourceIdentifier;
         private string sourceType;
         private string message;
+        private List<string> eventCategories = new List<string>();
         private DateTime? date;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.RDS.Model
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifier != null;       
+            return this.sourceIdentifier != null;
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.RDS.Model
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;       
+            return this.sourceType != null;
         }
 
         /// <summary>
@@ -121,7 +122,52 @@ namespace Amazon.RDS.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
+        }
+
+        /// <summary>
+        /// Specifies the category for the event.
+        ///  
+        /// </summary>
+        public List<string> EventCategories
+        {
+            get { return this.eventCategories; }
+            set { this.eventCategories = value; }
+        }
+        /// <summary>
+        /// Adds elements to the EventCategories collection
+        /// </summary>
+        /// <param name="eventCategories">The values to add to the EventCategories collection </param>
+        /// <returns>this instance</returns>
+        public Event WithEventCategories(params string[] eventCategories)
+        {
+            foreach (string element in eventCategories)
+            {
+                this.eventCategories.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the EventCategories collection
+        /// </summary>
+        /// <param name="eventCategories">The values to add to the EventCategories collection </param>
+        /// <returns>this instance</returns>
+        public Event WithEventCategories(IEnumerable<string> eventCategories)
+        {
+            foreach (string element in eventCategories)
+            {
+                this.eventCategories.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if EventCategories property is set
+        internal bool IsSetEventCategories()
+        {
+            return this.eventCategories.Count > 0;
         }
 
         /// <summary>
@@ -149,7 +195,7 @@ namespace Amazon.RDS.Model
         // Check to see if Date property is set
         internal bool IsSetDate()
         {
-            return this.date.HasValue;       
+            return this.date.HasValue;
         }
     }
 }

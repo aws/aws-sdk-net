@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// ReservedInstanceLimitPrice
+    /// Reserved Instance Limit Price
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ReservedInstanceLimitPrice
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private string currencyCodeField;
 
         /// <summary>
-        /// Gets and sets the limit price on the total order (instanceCount * price) 
+        /// The limit price on the total order (instanceCount * price) 
         /// for Reserved Instance Marketplace offerings.
         /// </summary>
         [XmlElementAttribute(ElementName = "Amount")]
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the currency in which the limitPrice amount is specified. 
+        /// The currency in which the limitPrice amount is specified. 
         /// </summary>
         /// <remarks>
         /// At this time, the only supported currency is USD.

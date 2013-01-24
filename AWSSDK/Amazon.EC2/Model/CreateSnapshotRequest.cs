@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,14 +26,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a snapshot of an Amazon EBS volume and
-    /// stores it in Amazon S3. You can
-    /// use snapshots for backups, to make
-    /// identical copies of instance
-    /// devices, and to save data before
-    /// shutting down an instance. For more information about
-    /// Amazon EBS, go to the Amazon Elastic Compute Cloud Developer Guide.
-    ///
+    /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
+    /// You can use snapshots for backups, to make identical copies of instance
+    /// devices, and to save data before shutting down an instance.
+    /// </summary>
+    /// <remarks>
     /// When taking a snapshot of a file system, we recommend unmounting it
     /// first. This ensures the file system metadata is in a consistent state,
     /// that the 'mounted indicator' is cleared, and that all applications
@@ -48,9 +45,8 @@ namespace Amazon.EC2.Model
     ///
     /// For Windows, open Disk Management, right-click the volume to unmount,
     /// and select Change Drive Letter and Path. Then, select the mount
-    /// point to remove
-    /// and click Remove.
-    /// </summary>
+    /// point to remove and click Remove.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateSnapshotRequest
     {    
@@ -58,9 +54,7 @@ namespace Amazon.EC2.Model
         private string descriptionField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
-        /// The ID of the Amazon EBS volume of which to
-        /// take a snapshot.
+        /// The ID of the Amazon EBS volume of which to take a snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
@@ -70,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the Amazon EBS volume of which to take a snapshot.
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume of which to
         /// take a snapshot.</param>
@@ -91,7 +85,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// Description of the Amazon EBS snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -102,7 +95,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the Amazon EBS snapshot.
         /// </summary>
         /// <param name="description">Description of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>

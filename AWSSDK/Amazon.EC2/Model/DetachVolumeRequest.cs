@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,22 +27,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Detaches an Amazon EBS volume from an instance.
-    /// For more information about
-    /// Amazon EBS, go
-    /// to the Amazon Elastic
-    /// Compute Cloud Developer Guide.
+    /// </summary>
+    /// <remarks>
+    /// For more information about Amazon EBS, go
+    /// to the Amazon Elastic Compute Cloud Developer Guide.
     ///
-    /// Important - make sure to unmount any
-    /// file systems on the device within your
-    /// operating system before
+    /// Important - make sure to unmount any file systems
+    /// on the device within your operating system before
     /// detaching the volume.
     ///
     /// Failure to unmount file systems, or otherwise
-    /// properly release the device
-    /// from use, can result in
-    /// lost data and
-    /// will corrupt the file system.
-    /// </summary>
+    /// properly release the device from use, can result
+    /// in lost data and will corrupt the file system.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DetachVolumeRequest
     {    
@@ -52,7 +49,6 @@ namespace Amazon.EC2.Model
         private bool? forceField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
         /// The ID of the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -63,7 +59,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the volume.
         /// </summary>
         /// <param name="volumeId">The ID of the volume.</param>
         /// <returns>this instance</returns>
@@ -83,7 +79,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -94,7 +89,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
@@ -114,7 +109,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Device property.
         /// The device name.
         /// </summary>
         [XmlElementAttribute(ElementName = "Device")]
@@ -125,7 +119,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Device property
+        /// Sets the device name.
         /// </summary>
         /// <param name="device">The device name.</param>
         /// <returns>this instance</returns>
@@ -145,10 +139,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Force property.
+        /// Whether to force detachment.
+        /// </summary>
+        /// <remarks>
         /// Forces detachment if the previous detachment
-        /// attempt did not occur
-        /// cleanly (logging into an instance,
+        /// attempt did not occur cleanly (logging into an instance,
         /// unmounting the volume, and detaching normally). This option
         /// can lead to data loss or a corrupted file system.
         ///
@@ -157,7 +152,7 @@ namespace Amazon.EC2.Model
         /// to flush file system caches nor file
         /// system meta data. If you use this option, you
         /// must perform file system check and repair procedures.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Force")]
         public bool Force
         {
@@ -166,7 +161,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Force property
+        /// Sets whether to force detachment.
         /// </summary>
         /// <param name="force">Forces detachment if the previous detachment
         /// attempt did not occur

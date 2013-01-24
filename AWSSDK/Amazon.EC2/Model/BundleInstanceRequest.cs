@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,9 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Bundles the Windows instance. This procedure is not applicable for Linux
-    /// and UNIX instances. For more information, go to the Amazon Elastic Compute
-    /// Cloud Developer Guide or Amazon Elastic Compute Cloud Getting Started Guide.
+    /// Bundles an Amazon instance store-backed Windows instance.
+    /// This procedure is not applicable for Linux and UNIX instances.
+    /// During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class BundleInstanceRequest
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private Storage storageField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance to bundle.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance to bundle.
         /// </summary>
         /// <param name="instanceId">The ID of the instance to bundle.</param>
         /// <returns>this instance</returns>
@@ -68,8 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Storage property.
-        /// Storage
+        /// Storage configuration for the bundle
         /// </summary>
         [XmlElementAttribute(ElementName = "Storage")]
         public Storage Storage
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Storage property
+        /// Sets the storage configuration for the bundle
         /// </summary>
         /// <param name="storage">Storage</param>
         /// <returns>this instance</returns>

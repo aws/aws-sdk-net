@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         private NetworkInterfaceAttachment attachmentField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// The ID of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the ID of the network interface.
         /// </summary>
         /// <param name="networkInterfaceId">The ID of the network interface</param>
         /// <returns>this instance</returns>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property
+        /// Description of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the network interface.
         /// </summary>
         /// <param name="description">Description of the network interface</param>
         /// <returns>this instance</returns>
@@ -100,8 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceDestCheck property.
-        /// Flag indicating whether traffic to or from the instance is validated.
+        /// Whether source/destination checking is enabled on the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceDestCheck")]
         public bool SourceDestCheck
@@ -111,7 +110,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceDestCheck property.
+        /// Sets whether source/destination checking is enabled on the instance.
         /// </summary>
         /// <param name="sourceDestCheck">Flag indicating whether traffic to or from the instance is validated.</param>
         /// <returns>this instance</returns>
@@ -131,7 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property
+        /// The IDs of security groups the interface is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public List<string> GroupId
@@ -148,7 +147,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the IDs of security groups the interface is in.
         /// </summary>
         /// <param name="list">ID of the security group.</param>
         /// <returns>this instance</returns>
@@ -171,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property
+        /// The names of security groups the interface is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public List<string> GroupName
@@ -188,7 +187,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the names of security groups the interface is in.
         /// </summary>
         /// <param name="list">Name of the security group.</param>
         /// <returns>this instance</returns>
@@ -211,7 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attachment property
+        /// The interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attachment")]
         public NetworkInterfaceAttachment Attachment
@@ -221,7 +220,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attachment property
+        /// Sets the interface attachment.
         /// </summary>
         /// <param name="attachment">Network Interface Attachment</param>
         /// <returns>this instance</returns>

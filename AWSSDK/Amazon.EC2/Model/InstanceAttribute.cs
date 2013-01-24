@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///A list of instance attributes.
-    ///</summary>
+    /// <summary>
+    /// A list of instance attributes.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceAttribute
     {    
@@ -47,7 +47,6 @@ namespace Amazon.EC2.Model
         private bool? ebsOptimizedField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -58,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Set the ID of the instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
@@ -78,10 +77,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
         /// The instance type (e.g., m1.small, c1.medium,
-        /// m2.2xlarge, and so
-        /// on).
+        /// m2.2xlarge, and so on).
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -91,7 +88,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="instanceType">The instance type (e.g., m1.small, c1.medium,
         /// m2.2xlarge, and so
@@ -113,7 +110,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
         /// The kernel ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
@@ -124,7 +120,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the kernel ID.
         /// </summary>
         /// <param name="kernelId">The kernel ID.</param>
         /// <returns>this instance</returns>
@@ -144,7 +140,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
         /// The RAM disk ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
@@ -155,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the RAM disk ID.
         /// </summary>
         /// <param name="ramdiskId">The RAM disk ID.</param>
         /// <returns>this instance</returns>
@@ -175,7 +170,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserData property.
         /// MIME, Base64-encoded user data.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserData")]
@@ -186,7 +180,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserData property
+        /// Sets the MIME, Base64-encoded user data.
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
@@ -206,10 +200,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DisableApiTermination property.
-        /// Specifies whether the instance can be
-        /// terminated. You must
-        /// modify this attribute before you can
+        /// Whether the instance can be terminated.
+        /// You must modify this attribute before you can
         /// terminate any "locked" instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "DisableApiTermination")]
@@ -220,7 +212,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DisableApiTermination property
+        /// Sets whether the instance can be terminated.
         /// </summary>
         /// <param name="disableApiTermination">Specifies whether the instance can be
         /// terminated. You must
@@ -243,11 +235,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceInitiatedShutdownBehavior property.
-        /// Specifies whether the instance's Amazon EBS
-        /// volumes are deleted when the instance is shut down.
-        /// Type:
-        /// NullableAttributeBooleanValueType
+        /// Whether the instance's Amazon EBS volumes are deleted when
+        /// the instance is shut down.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceInitiatedShutdownBehavior")]
         public string InstanceInitiatedShutdownBehavior
@@ -257,12 +246,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceInitiatedShutdownBehavior property
+        /// Sets whether the instance's Amazon EBS volumes are deleted when
+        /// the instance is shut down.
         /// </summary>
         /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS
         /// volumes are deleted when the instance is shut down.
-        /// Type:
-        /// NullableAttributeBooleanValueType</param>
+        /// </param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
         {
@@ -280,7 +269,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RootDeviceName property.
         /// The root device name (e.g., /dev/sda1).
         /// </summary>
         [XmlElementAttribute(ElementName = "RootDeviceName")]
@@ -291,7 +279,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RootDeviceName property
+        /// Sets the root device name (e.g., /dev/sda1).
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
@@ -311,7 +299,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
         /// Block device mapping set.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
@@ -329,7 +316,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the block device mapping set.
         /// </summary>
         /// <param name="list">Block device mapping set.</param>
         /// <returns>this instance</returns>
@@ -352,8 +339,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceDestCheck property.
-        /// Controls whether source/destination checking is enabled on the instance.
+        /// Whether source/destination checking is enabled on the instance.
         /// A value of true means checking is enabled, and false means checking is disabled. 
         /// The value must be false for the instance to perform NAT. 
         /// </summary>
@@ -365,7 +351,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceDestCheck property.
+        /// Sets whether source/destination checking is enabled on the instance.
         /// </summary>
         /// <param name="sourceDestCheck">
         /// A value of true means checking is enabled, and false means checking is disabled. 
@@ -388,7 +374,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroup property.
         /// Names of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -406,7 +391,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets names of the security group.
         /// </summary>
         /// <param name="list">Names of the security groups.</param>
         /// <returns>this instance</returns>
@@ -429,7 +414,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// IDs of the security groups.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -447,7 +431,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets IDs of the security groups.
         /// </summary>
         /// <param name="list">IDs of the security groups.</param>
         /// <returns>this instance</returns>
@@ -470,7 +454,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCodes property.
+        /// Product codes.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodes")]
         public List<ProductCode> ProductCodes
@@ -487,7 +471,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCodes property
+        /// Sets the product codes.
         /// </summary>
         /// <param name="list">list of product codes and types</param>
         /// <returns>this instance</returns>
@@ -510,8 +494,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the EbsOptimized property.
-        /// Specifies whether to use the EBS IOPS optimized option.
+        /// Whether to use the EBS IOPS optimized option.
         /// </summary>
         [XmlElementAttribute(ElementName = "EbsOptimized")]
         public bool EbsOptimized
@@ -521,7 +504,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the EbsOptimized property
+        /// Sets whether to use the EBS IOPS optimized option.
         /// </summary>
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>

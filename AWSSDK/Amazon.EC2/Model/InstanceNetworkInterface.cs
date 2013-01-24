@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string descriptionField;
         private string ownerIdField;
         private string statusField;
+        private string macAddressField;
         private string privateIpAddressField;
         private string privateDnsNameField;
         private bool? sourceDestCheckField;
@@ -47,7 +48,6 @@ namespace Amazon.EC2.Model
         private List<InstancePrivateIpAddress> privateIpAddressesField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
         /// The ID of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the ID of the network interface.
         /// </summary>
         /// <param name="networkInterfaceId">The ID of the network interface.</param>
         /// <returns>this instance</returns>
@@ -78,7 +78,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
         /// The ID of the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
@@ -89,7 +88,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the ID of the subnet.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet</param>
         /// <returns>this instance</returns>
@@ -109,7 +108,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -120,7 +118,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
@@ -140,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
+        /// Description of the interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -150,7 +148,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the interface.
         /// </summary>
         /// <param name="description">Description</param>
         /// <returns>this instance</returns>
@@ -170,7 +168,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
         /// The ID of the customer who created the interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
@@ -181,7 +178,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the ID of the customer who created the interface.
         /// </summary>
         /// <param name="ownerId">The ID of the customer who created the interface.</param>
         /// <returns>this instance</returns>
@@ -201,8 +198,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
-        /// "available" or "in-use".
+        /// Status of the interface.
+        /// Valid values: "available" | "in-use".
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -212,7 +209,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the status of the interface.
         /// </summary>
         /// <param name="status">"available" or "in-use"</param>
         /// <returns>this instance</returns>
@@ -232,7 +229,36 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
+        /// MAC address of the interface within the subnet.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MacAddress")]
+        public string MacAddress
+        {
+            get { return this.macAddressField; }
+            set { this.macAddressField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MAC address of the interface within the subnet.
+        /// </summary>
+        /// <param name="macAddress">MAC address of the interface within the subnet.</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterface WithMacAddress(string macAddress)
+        {
+            this.macAddressField = macAddress;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MacAddress property is set
+        /// </summary>
+        /// <returns>true if the MacAddress property is set</returns>
+        public bool IsSetMacAddress()
+        {
+            return !string.IsNullOrEmpty(this.macAddressField);
+        }
+
+        /// <summary>
         /// IP address of the interface within the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
@@ -243,7 +269,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddress property
+        /// Sets the IP address of the interface within the subnet.
         /// </summary>
         /// <param name="privateIpAddress">IP address of the interface within the subnet.</param>
         /// <returns>this instance</returns>
@@ -263,8 +289,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateDnsName property.
-        /// The private DNS name.
+        /// Private DNS name.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateDnsName")]
         public string PrivateDnsName
@@ -274,7 +299,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateDnsName property
+        /// Sets the private DNS name.
         /// </summary>
         /// <param name="privateDnsName">Private Dns Name</param>
         /// <returns>this instance</returns>
@@ -294,8 +319,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceDestCheck property.
-        /// Flag indicating whether traffic to or from the instance is validated.
+        /// Whether traffic to or from the instance is validated.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceDestCheck")]
         public bool SourceDestCheck
@@ -305,7 +329,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceDestCheck property
+        /// Sets whether traffic to or from the instance is validated.
         /// </summary>
         /// <param name="sourceDestCheck">Flag indicating whether traffic to or from the instance is validated.</param>
         /// <returns>this instance</returns>
@@ -325,7 +349,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
+        /// Security group IDs for the interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public List<string> GroupId
@@ -342,7 +366,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the security groups for the interface.
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
@@ -365,8 +389,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
-        /// A list of security groups the instance is in.
+        /// Security group names for the interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public List<string> GroupName
@@ -383,7 +406,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the security group names for the interface.
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
@@ -406,7 +429,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attachment property
+        /// The network interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attachment")]
         public InstanceNetworkInterfaceAttachment Attachment
@@ -416,7 +439,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attachment property
+        /// Sets the network interface attachment.
         /// </summary>
         /// <param name="attachment">Network Interface Attachment</param>
         /// <returns>this instance</returns>
@@ -436,7 +459,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Association property
+        /// The association information for an Elastic IP associated with the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Association")]
         public InstanceNetworkInterfaceAssociation Association
@@ -446,7 +469,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Association property
+        /// Sets the association information for an Elastic IP associated with the network interface.
         /// </summary>
         /// <param name="association">Instance Network Interface Association</param>
         /// <returns>this instance</returns>
@@ -467,8 +490,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddresses property.
-        /// Private IP addresses.
+        /// The private IP addresses associated with the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
         public List<InstancePrivateIpAddress> PrivateIpAddresses
@@ -485,7 +507,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property
+        /// Sets the private IP addresses associated with the network interface.
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>

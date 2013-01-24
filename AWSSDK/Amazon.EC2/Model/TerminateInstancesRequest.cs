@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,22 +26,35 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Shuts down one or more instances. This operation
-    /// is idempotent; if you
-    /// terminate an instance more than once, each
-    /// call will succeed.
-    ///
-    /// Terminated instances will remain visible after
-    /// termination (approximately one hour).
+    /// Shuts down one or more instances.
     /// </summary>
+    /// <remarks>
+    /// <para>
+    /// This operation is idempotent; if you terminate an instance more than
+    /// once, each call will succeed. Terminated instances will remain visible
+    /// after termination (approximately one hour).
+    /// </para>
+    /// <para>
+    /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached
+    /// when the instance launched. Amazon EBS volumes attached after instance
+    /// launch continue running.
+    /// </para>
+    /// <para>
+    /// You can stop, start, and terminate EBS-backed instances. You can only
+    /// terminate S3-backed instances. What happens to an instance differs if
+    /// you stop it or terminate it. For example, when you stop an instance,
+    /// the root device and any other devices attached to the instance persist.
+    /// When you terminate an instance, the root device and any other devices
+    /// attached during the instance launch are automatically deleted.
+    /// </para>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class TerminateInstancesRequest
     {    
         private List<string> instanceIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// Instance ID to terminate.
+        /// Instance IDs to terminate.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public List<string> InstanceId
@@ -58,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets instance IDs to terminate.
         /// </summary>
         /// <param name="list">Instance ID to terminate.</param>
         /// <returns>this instance</returns>

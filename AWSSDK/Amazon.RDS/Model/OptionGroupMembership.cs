@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>Option Group Membership
     /// </summary>
-    public class OptionGroupMembership  
+    public class OptionGroupMembership
     {
         
         private string optionGroupName;
@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;       
+            return this.optionGroupName != null;
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

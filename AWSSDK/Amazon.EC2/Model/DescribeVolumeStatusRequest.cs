@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the components of a Describe Volume Status request.
+    /// Returns the status of one or more volumes.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeVolumeStatusRequest
@@ -37,7 +37,8 @@ namespace Amazon.EC2.Model
         private int? maxResultsField;
 
         /// <summary>
-        /// Gets and sets the list of volume IDs. If not specified, all volumes are described. 
+        /// List of volume IDs to retrieve statuses for.
+        /// If not specified, all volumes are described. 
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeSet")]
         public List<string> VolumeId
@@ -54,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the list of volume IDs.
+        /// Sets list of volume IDs to retrieve statuses for.
         /// </summary>
         /// <param name="list">Volume IDs to describe.</param>
         /// <returns>this instance</returns>
@@ -78,7 +79,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to specify which volumes to return.
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to specify which volumes to return.
         /// </summary>
         /// <param name="list">A list of filters used to specify which volumes to return.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets a string specifying the next paginated set of results to return. 
+        /// Token specifying the next paginated set of results to return. 
         /// </summary>
         public string NextToken
         {
@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the maximum number of paginated volume items per response.
+        /// The maximum number of paginated volume items per response.
         /// </summary>
         public int MaxResults
         {

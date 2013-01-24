@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ModifyCacheParameterGroupResult Unmarshaller
      /// </summary>
-    internal class ModifyCacheParameterGroupResultUnmarshaller : IUnmarshaller<ModifyCacheParameterGroupResult, XmlUnmarshallerContext> 
+    internal class ModifyCacheParameterGroupResultUnmarshaller : IUnmarshaller<ModifyCacheParameterGroupResult, XmlUnmarshallerContext>, IUnmarshaller<ModifyCacheParameterGroupResult, JsonUnmarshallerContext> 
     {
         public ModifyCacheParameterGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ModifyCacheParameterGroupResult modifyCacheParameterGroupResult = new ModifyCacheParameterGroupResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return modifyCacheParameterGroupResult;
+        }
+
+        public ModifyCacheParameterGroupResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ModifyCacheParameterGroupResultUnmarshaller instance;

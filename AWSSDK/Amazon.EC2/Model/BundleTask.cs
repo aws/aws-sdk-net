@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Bundle Task
-    ///</summary>
+    /// <summary>
+    /// Bundle Task
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class BundleTask
     {    
@@ -41,8 +41,7 @@ namespace Amazon.EC2.Model
         private BundleTaskError bundleTaskErrorField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// Instance associated with this bundle task.
+        /// The ID of the instance associated with this bundle task.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -52,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance associated with this bundle task.
         /// </summary>
         /// <param name="instanceId">Instance associated with this bundle task.</param>
         /// <returns>this instance</returns>
@@ -72,8 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BundleId property.
-        /// Identifier for this task.
+        /// The ID for this bundle task.
         /// </summary>
         [XmlElementAttribute(ElementName = "BundleId")]
         public string BundleId
@@ -83,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BundleId property
+        /// Sets the ID for this bundle task.
         /// </summary>
         /// <param name="bundleId">Identifier for this task.</param>
         /// <returns>this instance</returns>
@@ -103,12 +101,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BundleState property.
         /// The state of the task.
         ///
-        /// Valid Values: pending |
-        /// waiting-for-shutdown | storing | canceling |
-        /// complete | failed
+        /// Valid Values: pending | waiting-for-shutdown | bundling | storing | cancelling | complete | failed
         /// </summary>
         [XmlElementAttribute(ElementName = "BundleState")]
         public string BundleState
@@ -118,13 +113,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BundleState property
+        /// Sets the state of the task.
         /// </summary>
-        /// <param name="bundleState">The state of the task.
-        ///
-        /// Valid Values: pending |
-        /// waiting-for-shutdown | storing | canceling |
-        /// complete | failed</param>
+        /// <param name="bundleState">The state of the task.</param>
         /// <returns>this instance</returns>
         public BundleTask WithBundleState(string bundleState)
         {
@@ -142,7 +133,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StartTime property.
         /// The time this task started.
         /// </summary>
         [XmlElementAttribute(ElementName = "StartTime")]
@@ -153,7 +143,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StartTime property
+        /// Sets the time this task started.
         /// </summary>
         /// <param name="startTime">The time this task started.</param>
         /// <returns>this instance</returns>
@@ -173,9 +163,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UpdateTime property.
-        /// The time of the most recent update for the
-        /// task.
+        /// The time of the most recent update for the task.
         /// </summary>
         [XmlElementAttribute(ElementName = "UpdateTime")]
         public string UpdateTime
@@ -185,7 +173,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UpdateTime property
+        /// Sets the time of the most recent update for the task.
         /// </summary>
         /// <param name="updateTime">The time of the most recent update for the
         /// task.</param>
@@ -206,8 +194,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Storage property.
-        /// Amazon S3 storage locations.
+        /// The Amazon S3 storage locations.
         /// </summary>
         [XmlElementAttribute(ElementName = "Storage")]
         public Storage Storage
@@ -217,7 +204,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Storage property
+        /// Sets the Amazon S3 storage locations.
         /// </summary>
         /// <param name="storage">Amazon S3 storage locations.</param>
         /// <returns>this instance</returns>
@@ -237,9 +224,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Progress property.
-        /// The level of task completion, in percent
-        /// (e.g., 20%).
+        /// The level of task completion, as a percent (for example, 20%).
         /// </summary>
         [XmlElementAttribute(ElementName = "Progress")]
         public string Progress
@@ -249,10 +234,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Progress property
+        /// Sets the level of task completion, as a percent (for example, 20%).
         /// </summary>
-        /// <param name="progress">The level of task completion, in percent
-        /// (e.g., 20%).</param>
+        /// <param name="progress">The level of task completion, in percent (e.g., 20%).</param>
         /// <returns>this instance</returns>
         public BundleTask WithProgress(string progress)
         {
@@ -270,7 +254,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BundleTaskError property.
         /// If the task fails, a description of the error.
         /// </summary>
         [XmlElementAttribute(ElementName = "BundleTaskError")]
@@ -281,7 +264,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BundleTaskError property
+        /// Sets the description of an error if the task fails
         /// </summary>
         /// <param name="bundleTaskError">If the task fails, a description of the error.</param>
         /// <returns>this instance</returns>

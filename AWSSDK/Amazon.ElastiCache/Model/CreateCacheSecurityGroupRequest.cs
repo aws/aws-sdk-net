@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSecurityGroup operation.
-    /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para>
+    /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para> <para> Only use cache
+    /// security groups when you are creating a cluster outside of an Amazon Virtual Private Cloud (VPC). Inside of a VPC, use VPC security groups.
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.CreateCacheSecurityGroup"/>
     public class CreateCacheSecurityGroupRequest : AmazonWebServiceRequest
@@ -59,7 +61,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;       
+            return this.cacheSecurityGroupName != null;
         }
 
         /// <summary>
@@ -87,7 +89,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

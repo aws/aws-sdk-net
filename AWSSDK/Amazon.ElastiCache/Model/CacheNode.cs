@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para> A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
     /// </para>
     /// </summary>
-    public class CacheNode  
+    public class CacheNode
     {
         
         private string cacheNodeId;
@@ -58,7 +58,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeId property is set
         internal bool IsSetCacheNodeId()
         {
-            return this.cacheNodeId != null;       
+            return this.cacheNodeId != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeStatus property is set
         internal bool IsSetCacheNodeStatus()
         {
-            return this.cacheNodeStatus != null;       
+            return this.cacheNodeStatus != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeCreateTime property is set
         internal bool IsSetCacheNodeCreateTime()
         {
-            return this.cacheNodeCreateTime.HasValue;       
+            return this.cacheNodeCreateTime.HasValue;
         }
 
         /// <summary>
@@ -142,11 +142,11 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;       
+            return this.endpoint != null;
         }
 
         /// <summary>
-        /// Specified the status of teh parameter group applied to this Cache Node.
+        /// Specifies the status of the parameter group applied to this Cache Node.
         ///  
         /// </summary>
         public string ParameterGroupStatus
@@ -170,7 +170,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterGroupStatus property is set
         internal bool IsSetParameterGroupStatus()
         {
-            return this.parameterGroupStatus != null;       
+            return this.parameterGroupStatus != null;
         }
     }
 }

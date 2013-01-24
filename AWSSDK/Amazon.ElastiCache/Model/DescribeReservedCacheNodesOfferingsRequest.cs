@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodesOfferingId property is set
         internal bool IsSetReservedCacheNodesOfferingId()
         {
-            return this.reservedCacheNodesOfferingId != null;       
+            return this.reservedCacheNodesOfferingId != null;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeType property is set
         internal bool IsSetCacheNodeType()
         {
-            return this.cacheNodeType != null;       
+            return this.cacheNodeType != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration != null;       
+            return this.duration != null;
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;       
+            return this.productDescription != null;
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;       
+            return this.offeringType != null;
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

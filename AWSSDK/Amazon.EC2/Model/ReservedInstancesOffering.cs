@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Reserved Instances Offering
-    ///</summary>
+    /// <summary>
+    /// Reserved Instances Offering
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ReservedInstancesOffering
     {    
@@ -46,7 +46,6 @@ namespace Amazon.EC2.Model
         private List<PricingDetails> pricingDetailsField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesOfferingId property.
         /// The ID of the Reserved Instance offering.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesOfferingId")]
@@ -57,7 +56,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservedInstancesOfferingId property
+        /// Sets the ID of the Reserved Instance offering.
         /// </summary>
         /// <param name="reservedInstancesOfferingId">The ID of the Reserved Instance offering.</param>
         /// <returns>this instance</returns>
@@ -77,9 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// The instance type on which the Reserved
-        /// Instance can be used.
+        /// The instance type on which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -89,7 +86,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type on which the Reserved Instance can be used.
         /// </summary>
         /// <param name="instanceType">The instance type on which the Reserved
         /// Instance can be used.</param>
@@ -110,9 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which the Reserved
-        /// Instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -122,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which the Reserved
         /// Instance can be used.</param>
@@ -143,9 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Duration property.
-        /// The duration of the Reserved Instance, in
-        /// seconds.
+        /// The duration of the Reserved Instance, in seconds.
         /// </summary>
         [XmlElementAttribute(ElementName = "Duration")]
         public Decimal Duration
@@ -155,7 +148,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Duration property
+        /// Sets the duration of the Reserved Instance, in seconds.
         /// </summary>
         /// <param name="duration">The duration of the Reserved Instance, in
         /// seconds.</param>
@@ -176,9 +169,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UsagePrice property.
-        /// The usage price of the Reserved Instance, per
-        /// hour.
+        /// The usage price of the Reserved Instance, per hour.
         /// </summary>
         [XmlElementAttribute(ElementName = "UsagePrice")]
         public string UsagePrice
@@ -188,7 +179,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UsagePrice property
+        /// Sets the usage price of the Reserved Instance, per hour.
         /// </summary>
         /// <param name="usagePrice">The usage price of the Reserved Instance, per
         /// hour.</param>
@@ -209,7 +200,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the FixedPrice property.
         /// The purchase price of the Reserved Instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "FixedPrice")]
@@ -220,7 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the FixedPrice property
+        /// Sets the purchase price of the Reserved Instance.
         /// </summary>
         /// <param name="fixedPrice">The purchase price of the Reserved Instance.</param>
         /// <returns>this instance</returns>
@@ -240,7 +230,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductDescription property.
         /// The Reserved Instance description.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductDescription")]
@@ -251,7 +240,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductDescription property
+        /// Sets the Reserved Instance description.
         /// </summary>
         /// <param name="productDescription">The Reserved Instance description.</param>
         /// <returns>this instance</returns>
@@ -272,7 +261,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the InstanceTenancy property.
         /// The tenancy of the reserved instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceTenancy")]
@@ -292,7 +280,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceTenancy property
+        /// Sets the tenancy of the reserved instance.
         /// </summary>
         /// <param name="instanceTenancy">The tenancy of the reserved instance.</param>
         /// <returns>this instance</returns>
@@ -303,8 +291,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CurrencyCode property.
-        /// The currency of the Reserved Instance offering you are purchasing. It's specified using ISO 4217 standard (e.g., USD, JPY).
+        /// The currency of the Reserved Instance offering you are purchasing.
+        /// It's specified using ISO 4217 standard (e.g., USD, JPY).
         /// </summary>
         [XmlElementAttribute(ElementName = "CurrencyCode")]
         public string CurrencyCode
@@ -323,7 +311,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CurrencyCode property
+        /// Sets the currency of the Reserved Instance offering you are purchasing.
         /// </summary>
         /// <param name="currencyCode">The ISO 4217 CurrencyCode (e.g., USD, JPY).</param>
         /// <returns>this instance</returns>
@@ -334,7 +322,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CurrencyCode property.
         /// The Reserved Instance Offering type.
         /// </summary>
         [XmlElementAttribute(ElementName = "OfferingType")]
@@ -354,7 +341,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OfferingType property
+        /// Sets the Reserved Instance Offering type.
         /// </summary>
         /// <param name="offeringType">The Reserved Instance Offering type</param>
         /// <returns>this instance</returns>
@@ -365,7 +352,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RecurringCharges property.
         /// Zero or more recurring charges associated with the Reserved Instance offering.
         /// </summary>
         [XmlElementAttribute(ElementName = "RecurringCharges")]
@@ -383,7 +369,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RecurringCharges property.
+        /// Sets recurring charges associated with the Reserved Instance offering.
         /// </summary>
         /// <param name="list">Zero or more recurring charges associated with the Reserved Instance offering.</param>
         /// <returns>this instance</returns>
@@ -406,7 +392,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets whether the offering is available through the Reserved Instance
+        /// Whether the offering is available through the Reserved Instance
         /// Marketplace (resale) or AWS. True if it is a Marketplace offering.
         /// </summary>
         [XmlElementAttribute(ElementName = "IsMarketPlace")]
@@ -438,7 +424,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the pricing details of the Reserved Instance offering.
+        /// The pricing details of the Reserved Instance offering.
         /// </summary>
         [XmlElementAttribute(ElementName = "PricingDetails")]
         public List<PricingDetails> PricingDetails

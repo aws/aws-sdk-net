@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Detaches a VPN gateway from a VPC. You do this if
-    /// you're planning to turn off
-    /// the VPC and not use it anymore. You can
-    /// confirm a VPN gateway has been
-    /// completely detached from a VPC by
-    /// describing the VPN gateway (any
-    /// attachments to the VPN gateway are
+    /// Detaches a VPN gateway from a VPC.
+    /// </summary>
+    /// <remarks>
+    /// You do this if you're planning to turn off the VPC and
+    /// not use it anymore. You can confirm a VPN gateway has
+    /// been completely detached from a VPC by describing the
+    /// VPN gateway (any attachments to the VPN gateway are
     /// also described).
     ///
     /// You must wait for the attachment's state to switch
-    /// to detached before you
-    /// can delete the VPC or attach a different VPC
-    /// to the VPN gateway.
-    /// </summary>
+    /// to detached before you can delete the VPC
+    /// or attach a different VPC to the VPN gateway.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DetachVpnGatewayRequest
     {    
@@ -47,9 +46,7 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
-        /// The ID of the VPN gateway you want to detach
-        /// from the VPC
+        /// The ID of the VPN gateway you want to detach from the VPC
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
@@ -59,7 +56,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the VPN gateway you want to detach from the VPC
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway you want to detach
         /// from the VPC</param>
@@ -80,9 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
-        /// The ID of the VPC you want to detach the VPN
-        /// gateway from.
+        /// The ID of the VPC you want to detach the VPN gateway from.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -92,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC you want to detach the VPN gateway from.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC you want to detach the VPN
         /// gateway from.</param>

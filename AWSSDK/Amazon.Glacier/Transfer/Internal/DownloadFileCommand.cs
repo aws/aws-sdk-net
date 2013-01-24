@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ namespace Amazon.Glacier.Transfer.Internal
             "                \"AWS\" : \"*\"" +
             "            }," +
             "            \"Action\"    : \"sqs:SendMessage\"," +
-            "            \"Resource\"  : \"{QuernArn}\"," +
+            "            \"Resource\"  : \"{QuereArn}\"," +
             "            \"Condition\" : {" +
             "                \"ArnLike\" : {" +
             "                    \"aws:SourceArn\" : \"{TopicArn}\"" +
@@ -222,7 +222,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 TopicArn = this.topicArn
             });
 
-            var policy = SQS_POLICY.Replace("{QuernArn}", this.queueArn).Replace("{TopicArn}", this.topicArn);
+            var policy = SQS_POLICY.Replace("{QuereArn}", this.queueArn).Replace("{TopicArn}", this.topicArn);
             this.sqsClient.SetQueueAttributes(new SetQueueAttributesRequest()
             {
                 QueueUrl = this.queueUrl,

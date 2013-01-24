@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,17 +26,20 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it.You can't
-    /// delete the default network ACL. For more information about network ACLs, go to Network ACLs in the
-    /// Amazon Virtual Private Cloud User Guide.
+    /// Deletes a network ACL from a VPC.
     /// </summary>
+    /// <remarks>
+    /// The ACL must not have any subnets associated with it.
+    /// You can't delete the default network ACL. For more
+    /// information about network ACLs, go to Network ACLs in the
+    /// Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteNetworkAclRequest
     {    
         private string networkAclIdField;
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
         /// The ID of the network ACL to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
@@ -47,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the ID of the network ACL to be deleted.
         /// </summary>
         /// <param name="networkAclId">The ID of the network ACL to be deleted.</param>
         /// <returns>this instance</returns>

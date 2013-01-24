@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -33,12 +33,13 @@ namespace Amazon.EC2.Model
     public class NetworkInterfaceAssociation
     {
         private string publicIpField;
+        private string publicDnsNameField;
         private string ipOwnerIdField;
         private string allocationIdField;
         private string associationIdField;
 
         /// <summary>
-        /// Gets and sets the PublicIp property
+        /// The address of the Elastic IP address bound to the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property
+        /// Sets the address of the Elastic IP address bound to the network interface.
         /// </summary>
         /// <param name="publicIp">Public Ip</param>
         /// <returns>this instance</returns>
@@ -68,7 +69,37 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpOwnerId property
+        /// The DNS name for the network interface.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PublicDnsName")]
+        public string PublicDnsName
+        {
+            get { return this.publicDnsNameField; }
+            set { this.publicDnsNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the DNS name for the network interface.
+        /// </summary>
+        /// <param name="publicDnsName">PublicDnsName</param>
+        /// <returns>this instance</returns>
+        public NetworkInterfaceAssociation WithPublicDnsName(string publicDnsName)
+        {
+            this.publicDnsNameField = publicDnsName;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PublicDnsName property is set
+        /// </summary>
+        /// <returns>true if the PublicDnsName property is set</returns>
+        public bool IsSetPublicDnsName()
+        {
+            return !string.IsNullOrEmpty(this.publicDnsNameField);
+        }
+
+        /// <summary>
+        /// The ID of the Elastic IP address owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpOwnerId")]
         public string IpOwnerId
@@ -78,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpOwnerId property
+        /// Sets the ID of the Elastic IP address owner.
         /// </summary>
         /// <param name="ipOwnerId">Ip Owner Id</param>
         /// <returns>this instance</returns>
@@ -98,7 +129,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AllocationId property
+        /// The ID representing the allocation of the address for use with Amazon VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "AllocationId")]
         public string AllocationId
@@ -108,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllocationId property
+        /// Sets the ID representing the allocation of the address for use with Amazon VPC.
         /// </summary>
         /// <param name="allocationId">Allocation Id</param>
         /// <returns>this instance</returns>
@@ -128,7 +159,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AssociationId property
+        /// The association ID corresponding to the VPC Elastic IP Conditional address.
         /// </summary>
         [XmlElementAttribute(ElementName = "AssociationId")]
         public string AssociationId
@@ -138,7 +169,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the association ID corresponding to the VPC Elastic IP Conditional address.
         /// </summary>
         /// <param name="associationId">Association Id</param>
         /// <returns>this instance</returns>

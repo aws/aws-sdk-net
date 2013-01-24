@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Details about the image.
-    ///</summary>
+    /// <summary>
+    /// Details about a disk image.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DiskImageType
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private DiskImageVolumeType volumeField;
 
         /// <summary>
-        /// Gets and sets the Image property.
         /// Details about the format of the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Image")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Image property
+        /// Sets details about the format of the image.
         /// </summary>
         /// <param name="image">Details about the format of the image.</param>
         /// <returns>this instance</returns>
@@ -67,8 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// Optional description of the disk image.
+        /// Description of the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the disk image.
         /// </summary>
         /// <param name="description">Optional description of the disk image.</param>
         /// <returns>this instance</returns>
@@ -98,7 +96,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Volume property.
         /// Details about the size of the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Volume")]
@@ -109,7 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Volume property
+        /// Sets details about the size of the image.
         /// </summary>
         /// <param name="volume">Details about the size of the image.</param>
         /// <returns>this instance</returns>

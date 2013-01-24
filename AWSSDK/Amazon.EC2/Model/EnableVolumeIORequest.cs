@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the components of an Enable Volume IO request.
+    /// Enables I/O operations for a volume that had I/O operations disabled
+    /// because the data on the volume was potentially inconsistent.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class EnableVolumeIORequest
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property.
+        /// Sets the volume on which to turn on IO
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>

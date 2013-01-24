@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,10 +27,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes Reserved Instances that you purchased.
-    /// For more information about Reserved
-    /// Instances, go to the Amazon
-    /// Elastic Compute Cloud Developer Guide.
     /// </summary>
+    /// <remarks>
+    /// For more information about Reserved Instances, go to the
+    /// Amazon Elastic Compute Cloud Developer Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeReservedInstancesRequest
     {    
@@ -39,7 +40,6 @@ namespace Amazon.EC2.Model
         private string offeringTypeField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesId property.
         /// IDs of the Reserved Instance to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesId")]
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservedInstancesId property
+        /// Sets the IDs of the Reserved Instance to describe.
         /// </summary>
         /// <param name="list">IDs of the Reserved Instance to describe.</param>
         /// <returns>this instance</returns>
@@ -80,7 +80,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified ReservedInstancesOfferings.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -101,7 +100,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified ReservedInstancesOfferings.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified ReservedInstancesOfferings.
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Reserved Instance offering type.
+        /// Reserved Instance offering type.
         /// Valid Values: Heavy Utilization | Medium Utilization | Light Utilization
         /// </summary>
         [XmlElementAttribute(ElementName = "OfferingType")]

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private string typeField;
 
         /// <summary>
-        /// Gets and sets the ProductCodeId property.
+        /// The product code ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodeId")]
         public string ProductCodeId
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCodeId property
+        /// Sets the product code ID.
         /// </summary>
         /// <param name="productCodeId">The product code</param>
         /// <returns>this instance</returns>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductType property.
+        /// The product code type.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string ProductType
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductType property
+        /// Sets the product code type.
         /// </summary>
         /// <param name="productType">The product type</param>
         /// <returns>this instance</returns>

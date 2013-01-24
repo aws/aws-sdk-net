@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,12 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Feedback about an instance's status. This action works only for instances that are in the running 
-    /// state. If your experience with the instance differs from the instance status returned by the 
-    /// DescribeInstanceStatus action, use ReportInstanceStatus to report your experience with the instance. 
-    /// Amazon EC2 collects this information to improve the accuracy of status checks. 
+    /// Submits feedback about an instance's status.
     /// </summary>
     /// <remarks>
+    /// This action works only for instances that are in the running state.
+    /// If your experience with the instance differs from the instance status returned by the 
+    /// DescribeInstanceStatus action, use ReportInstanceStatus to report your experience with the instance. 
+    /// Amazon EC2 collects this information to improve the accuracy of status checks. 
     /// Use of this action does not change the value returned by DescribeInstanceStatus.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         private string descriptionField;
 
         /// <summary>
-        /// Gets and sets the list of instance IDs. 
+        /// One or more instance IDs. 
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public List<string> InstanceId
@@ -62,7 +63,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the list of instance IDs.
+        /// Sets one or more instance IDs. 
         /// </summary>
         /// <param name="list">Instance IDs to report on.</param>
         /// <returns>this instance</returns>
@@ -85,7 +86,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The status of all instances listed in the InstanceID parameter. 
+        /// The status of all submitted instances.
         /// </summary>
         /// <remarks>
         /// Valid Values: ok | impaired
@@ -98,7 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets status of all instances listed in the InstanceID parameter. 
+        /// Sets the status of all submitted instances.
         /// </summary>
         /// <param name="status">Status for the instances.</param>
         /// <returns>this instance</returns>
@@ -128,7 +129,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the start time at which the reported instance health state began.
+        /// Sets the time at which the reported instance health state began.
         /// </summary>
         /// <param name="startTime">The start time of the health state</param>
         /// <returns>this instance</returns>
@@ -178,12 +179,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the reason codes that describe the specified instances health states
+        /// Reason codes that describe the specified instances health states.
         /// </summary>
         /// <remarks>
         /// Each code you supply corresponds to an instance ID that you supply in the InstanceID
         /// collection.
-        /// Valid Values: instance-stuck-in-state | unresponsive | not-accepting-credentials | password-not-available | performance-network | performance-instance-store | performance-ebs-volume | performance-other | other 
+        /// Valid Values: instance-stuck-in-state | unresponsive | not-accepting-credentials |
+        /// password-not-available | performance-network | performance-instance-store |
+        /// performance-ebs-volume | performance-other | other 
         /// </remarks>
         [XmlElementAttribute(ElementName = "ReasonCode")]
         public List<string> ReasonCode
@@ -223,7 +226,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// Description text about the instance health state.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -233,7 +236,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// Sets the description text about the instance health state.
         /// </summary>
         /// <param name="description"></param>
         /// <returns>this instance</returns>

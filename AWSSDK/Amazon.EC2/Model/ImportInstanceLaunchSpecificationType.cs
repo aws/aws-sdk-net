@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Specifies additional launch instance information.
-    ///</summary>
+    /// <summary>
+    /// Additional launch instance information.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ImportInstanceLaunchSpecificationType
     {    
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
         private string privateIpAddressField;
 
         /// <summary>
-        /// Gets and sets the Architecture property.
         /// Architecture of the instance.
         /// 
         /// Valid Values: i386 | x86_64
@@ -56,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Architecture property
+        /// Sets the architecture of the instance.
         /// </summary>
         /// <param name="architecture">Architecture of the instance.
         /// 
@@ -78,7 +77,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroup property.
         /// One or more security group names.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroup")]
@@ -96,7 +94,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroup property
+        /// Sets security group names.
         /// </summary>
         /// <param name="list">One or more security group names.</param>
         /// <returns>this instance</returns>
@@ -119,7 +117,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroupId property.
         /// One or more security group IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroupId")]
@@ -137,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroupId property
+        /// Sets the security group IDs.
         /// </summary>
         /// <param name="list">One or more security group IDs.</param>
         /// <returns>this instance</returns>
@@ -160,7 +157,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserData property.
         /// User data to be made available to the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserData")]
@@ -171,7 +167,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserData property
+        /// Sets the user data to be made available to the instance.
         /// </summary>
         /// <param name="userData">User data to be made available to the instance.</param>
         /// <returns>this instance</returns>
@@ -191,8 +187,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// Specifies the instance type.
+        /// The instance type.
         ///
         /// Valid Values:
         /// m1.small | m1.medium | m1.large | m1.xlarge | c1.medium |
@@ -209,7 +204,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="instanceType">Specifies the instance type.
         ///
@@ -236,8 +231,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Placement property.
-        /// Specifies the placement constraints.
+        /// The placement constraints.
         /// </summary>
         [XmlElementAttribute(ElementName = "Placement")]
         public Placement Placement
@@ -247,7 +241,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Placement property
+        /// Sets the placement constraints.
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
@@ -267,8 +261,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Monitoring property.
-        /// Enables monitoring for the instance.
+        /// Instance monitoring configuration.
         /// </summary>
         [XmlElementAttribute(ElementName = "Monitoring")]
         public MonitoringSpecification Monitoring
@@ -278,7 +271,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Monitoring property
+        /// Sets the instance monitoring configuration.
         /// </summary>
         /// <param name="monitoring">Enables monitoring for the instance.</param>
         /// <returns>this instance</returns>
@@ -298,8 +291,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
-        /// If you're using Amazon Virtual Private Cloud, this specifies the ID of the subnet you want to launch the instance into.
+        /// The ID of the subnet you want to launch the instance into.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -309,7 +301,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the ID of the subnet you want to launch the instance into.
         /// </summary>
         /// <param name="subnetId">If you're using Amazon Virtual Private Cloud, this specifies the ID of the subnet you want to launch the instance into.</param>
         /// <returns>this instance</returns>
@@ -329,8 +321,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceInitiatedShutdownBehavior property.
-        /// Determines whether the instance stops or terminates on instance-initiated shutdown.
+        /// Whether the instance stops or terminates on instance-initiated shutdown.
         /// 
         /// Valid Values: stop | terminate
         /// </summary>
@@ -342,7 +333,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceInitiatedShutdownBehavior property
+        /// Sets whether the instance stops or terminates on instance-initiated shutdown.
         /// </summary>
         /// <param name="instanceInitiatedShutdownBehavior">Determines whether the instance stops or terminates on instance-initiated shutdown.
         /// 
@@ -364,9 +355,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
-        /// If you're using Amazon Virtual Private Cloud, you can optionally use this parameter to assign the instance a specific available IP address from the subnet (e.g., 10.0.0.25).
+        /// Private IP address for the instance.
         /// </summary>
+        /// <remarks>
+        /// If you're using Amazon Virtual Private Cloud, you can optionally
+        /// assign the instance a specific available IP address from the subnet
+        /// (e.g., 10.0.0.25).
+        /// </remarks>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
         {
@@ -375,7 +370,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddress property
+        /// Sets the private IP address for the instance.
         /// </summary>
         /// <param name="privateIpAddress">If you're using Amazon Virtual Private Cloud, you can optionally use this parameter to assign the instance a specific available IP address from the subnet (e.g., 10.0.0.25).</param>
         /// <returns>this instance</returns>

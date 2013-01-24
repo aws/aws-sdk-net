@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>A key value pair.</para>
     /// </summary>
-    public class KeyValue  
+    public class KeyValue
     {
         
         private string key;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;       
+            return this.key != null;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
     }
 }

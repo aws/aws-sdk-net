@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para> The output for the DescribeJobFlows operation. </para>
     /// </summary>
-    public class DescribeJobFlowsResult  
+    public class DescribeJobFlowsResult
     {
         
         private List<JobFlowDetail> jobFlows = new List<JobFlowDetail>();
@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the JobFlows collection
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlows property is set
         internal bool IsSetJobFlows()
         {
-            return this.jobFlows.Count > 0;       
+            return this.jobFlows.Count > 0;
         }
     }
 }

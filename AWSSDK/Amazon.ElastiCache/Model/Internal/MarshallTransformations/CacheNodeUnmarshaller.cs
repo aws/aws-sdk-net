@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CacheNode Unmarshaller
      /// </summary>
-    internal class CacheNodeUnmarshaller : IUnmarshaller<CacheNode, XmlUnmarshallerContext> 
+    internal class CacheNodeUnmarshaller : IUnmarshaller<CacheNode, XmlUnmarshallerContext>, IUnmarshaller<CacheNode, JsonUnmarshallerContext> 
     {
         public CacheNode Unmarshall(XmlUnmarshallerContext context) 
         {
             CacheNode cacheNode = new CacheNode();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return cacheNode;
+        }
+
+        public CacheNode Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CacheNodeUnmarshaller instance;

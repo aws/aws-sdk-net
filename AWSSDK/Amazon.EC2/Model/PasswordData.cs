@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Password Data
-    ///</summary>
+    /// <summary>
+    /// Password Data
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class PasswordData
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private string dataField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Timestamp property.
         /// The time the data was last updated.
         /// </summary>
         [XmlElementAttribute(ElementName = "Timestamp")]
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Timestamp property
+        /// Sets the time the data was last updated.
         /// </summary>
         /// <param name="timestamp">The time the data was last updated.</param>
         /// <returns>this instance</returns>
@@ -98,7 +96,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Data property.
         /// The password of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "Data")]
@@ -109,7 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Data property
+        /// Sets the password of the instance.
         /// </summary>
         /// <param name="data">The password of the instance.</param>
         /// <returns>this instance</returns>

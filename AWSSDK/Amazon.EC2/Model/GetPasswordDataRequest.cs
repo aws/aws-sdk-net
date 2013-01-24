@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,27 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Retrieves the encrypted administrator password
-    /// for the instances running
-    /// Windows.
-    ///
-    /// Note - the Windows password is
-    /// only generated the first time an AMI is launched.
+    /// Retrieves the encrypted administrator password for the instances running Windows.
+    /// </summary>
+    /// <remarks>
+    /// The Windows password is only generated the first time an AMI is launched.
     /// It is not generated for rebundled AMIs or after the password is
     /// changed on an instance.
-    ///
     /// The password is encrypted using the key pair that you
     /// provided.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class GetPasswordDataRequest
     {    
         private string instanceIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// The ID of the instance for which to get the
-        /// password.
+        /// The ID of the instance for which to get the password.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -56,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance for which to get the password.
         /// </summary>
         /// <param name="instanceId">The ID of the instance for which to get the
         /// password.</param>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Key-value pair representation of a tag.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteTags
     {    
@@ -33,7 +35,7 @@ namespace Amazon.EC2.Model
         private string valueField;
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// Tag's key.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -43,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Key property
+        /// Sets the tag's key.
         /// </summary>
         /// <param name="key">Key property</param>
         /// <returns>this instance</returns>
@@ -63,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
+        /// Tag's value.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
@@ -73,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets the tag's value.
         /// </summary>
         /// <param name="value">Value property</param>
         /// <returns>this instance</returns>

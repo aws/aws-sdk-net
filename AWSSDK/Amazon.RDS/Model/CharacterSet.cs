@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
-    public class CharacterSet  
+    public class CharacterSet
     {
         
         private string characterSetName;
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         // Check to see if CharacterSetName property is set
         internal bool IsSetCharacterSetName()
         {
-            return this.characterSetName != null;       
+            return this.characterSetName != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         // Check to see if CharacterSetDescription property is set
         internal bool IsSetCharacterSetDescription()
         {
-            return this.characterSetDescription != null;       
+            return this.characterSetDescription != null;
         }
     }
 }

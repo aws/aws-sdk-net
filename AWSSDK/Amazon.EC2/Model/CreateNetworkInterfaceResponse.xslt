@@ -86,6 +86,9 @@
         <xsl:element name="IpAddress">
           <xsl:value-of select="ec2:privateIpAddress"/>
         </xsl:element>
+        <xsl:element name="PrivateDnsName">
+          <xsl:value-of select="ec2:privateDnsName"/>
+        </xsl:element>
         <xsl:element name="Primary">
           <xsl:value-of select="ec2:primary"/>
         </xsl:element>
@@ -127,6 +130,9 @@
     <xsl:element name="Association">
       <xsl:element name="PublicIp">
         <xsl:value-of select="ec2:publicIp"/>
+      </xsl:element>
+      <xsl:element name="PublicDnsName">
+        <xsl:value-of select="ec2:publicDnsName"/>
       </xsl:element>
       <xsl:element name="IpOwnerId">
         <xsl:value-of select="ec2:ipOwnerId"/>

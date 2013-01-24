@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -28,7 +28,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Creates a new security group. Group names must be
     /// unique per account.
-    ///
+    /// </summary>
+    /// <remarks>
     /// Every instance is launched in a security group.
     /// If no security group is specified during launch,
     /// the instances are launched in the default security group.
@@ -37,8 +38,8 @@ namespace Amazon.EC2.Model
     /// other instances in a different security group. As the owner of instances you
     /// can grant or revoke specific permissions using the
     /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress
-    /// operations
-    /// </summary>
+    /// operations.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateSecurityGroupRequest
     {    
@@ -47,12 +48,7 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// Name of the security group.
-        ///
-        /// Constraints:
-        /// Accepts alphanumeric characters, spaces, dashes, and
-        /// underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -62,13 +58,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the security group.
         /// </summary>
-        /// <param name="groupName">Name of the security group.
-        ///
-        /// Constraints:
-        /// Accepts alphanumeric characters, spaces, dashes, and
-        /// underscores.</param>
+        /// <param name="groupName">Name of the security group.</param>
         /// <returns>this instance</returns>
         public CreateSecurityGroupRequest WithGroupName(string groupName)
         {
@@ -86,12 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupDescription property.
         /// Description of the group.
-        ///
-        /// Constraints: Accepts
-        /// alphanumeric characters, spaces, dashes, and
-        /// underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupDescription")]
         public string GroupDescription
@@ -101,13 +88,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupDescription property
+        /// Sets the description of the group.
         /// </summary>
-        /// <param name="groupDescription">Description of the group.
-        ///
-        /// Constraints: Accepts
-        /// alphanumeric characters, spaces, dashes, and
-        /// underscores.</param>
+        /// <param name="groupDescription">Description of the group.</param>
         /// <returns>this instance</returns>
         public CreateSecurityGroupRequest WithGroupDescription(string groupDescription)
         {
@@ -125,10 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// ID of the VPC.
-        ///
-        /// Condition: Required for VPC security groups
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -138,11 +118,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC.
         /// </summary>
-        /// <param name="vpcId">ID of the VPC.
-        ///
-        /// Condition: Required for VPC security groups</param>
+        /// <param name="vpcId">ID of the VPC.</param>
         /// <returns>this instance</returns>
         public CreateSecurityGroupRequest WithVpcId(string vpcId)
         {

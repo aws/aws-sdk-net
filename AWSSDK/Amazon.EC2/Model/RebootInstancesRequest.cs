@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,23 +26,23 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Requests a reboot of one or more instances. This operation is
-    /// asynchronous; it only queues a request to reboot the specified
-    /// instance(s). The operation will succeed if the instances
+    /// Requests a reboot of one or more instances.
+    /// </summary>
+    /// <remarks>
+    /// This operation is asynchronous; it only queues a request to
+    /// reboot the specified instance(s). The operation will succeed if the instances
     /// are valid and belong to you. Requests to reboot terminated instances
     /// are ignored.
     ///
     /// Note - if a Linux/UNIX instance does not cleanly shut
-    /// down within four
-    /// minutes, Amazon EC2 will perform a hard reboot.
-    /// </summary>
+    /// down within four minutes, Amazon EC2 will perform a hard reboot.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RebootInstancesRequest
     {    
         private List<string> instanceIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// One or more instance IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets instance IDs.
         /// </summary>
         /// <param name="list">One or more instance IDs.</param>
         /// <returns>this instance</returns>

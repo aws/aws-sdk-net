@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,16 +25,15 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Storage
-    ///</summary>
+    /// <summary>
+    /// Storage configuration
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Storage
     {    
         private S3Storage s3Field;
 
         /// <summary>
-        /// Gets and sets the S3 property.
         /// S3 Storage
         /// </summary>
         [XmlElementAttribute(ElementName = "S3")]
@@ -45,7 +44,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the S3 property
+        /// Sets the S3 Storage
         /// </summary>
         /// <param name="s3">S3 Storage</param>
         /// <returns>this instance</returns>

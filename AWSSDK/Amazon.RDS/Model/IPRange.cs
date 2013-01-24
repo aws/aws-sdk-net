@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,14 +23,14 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeDBSecurityGroups action. </para>
     /// </summary>
-    public class IPRange  
+    public class IPRange
     {
         
         private string status;
         private string cIDRIP;
 
         /// <summary>
-        /// Specifies the status of the IP range.
+        /// Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
         ///  
         /// </summary>
         public string Status
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;       
+            return this.cIDRIP != null;
         }
     }
 }

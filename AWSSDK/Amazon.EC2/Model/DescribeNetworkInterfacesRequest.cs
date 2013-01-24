@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describe Network Interfaces request
+    /// Describes one or more Network Interfaces.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeNetworkInterfacesRequest
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
+        /// One or more network interface IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public List<string> NetworkInterfaceId
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface IDs.
         /// </summary>
         /// <param name="list">Network Interface Ids to describe</param>
         /// <returns>this instance</returns>
@@ -75,7 +75,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
+        /// A list of filters used to match system-defined properties associated with the specified
+        /// network interfaces.
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.
         /// </summary>
@@ -94,7 +95,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties associated with the specified
+        /// network interfaces.
         /// </summary>
         /// <param name="list">A list of filters.
         /// For a complete reference to the available filter keys for this operation, see the

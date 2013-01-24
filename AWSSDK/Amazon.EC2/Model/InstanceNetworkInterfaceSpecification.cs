@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -42,7 +42,6 @@ namespace Amazon.EC2.Model
         private int? secondaryPrivateIpAddressCountField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
         /// The ID of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
@@ -53,8 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property.
-        /// The ID of the network interface.
+        /// Sets the ID of the network interface.
         /// </summary>
         /// <param name="networkInterfaceId">The network interface ID.</param>
         /// <returns>this instance</returns>
@@ -74,7 +72,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeviceIndex property.
         /// The index of the device on the instance for the network interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeviceIndex")]
@@ -85,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeviceIndex property.
+        /// Sets the index of the device on the instance for the network interface attachment.
         /// </summary>
         /// <param name="deviceIndex">The index of the device on the instance for the network interface attachment.</param>
         /// <returns>this instance</returns>
@@ -105,8 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
-        /// The ID of the subnet associated with the network string.
+        /// The ID of the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -116,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property.
+        /// Sets the ID of the subnet.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet associated with the network string.</param>
         /// <returns>this instance</returns>
@@ -136,7 +132,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// The description of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -147,7 +142,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property.
+        /// Sets the description of the network interface.
         /// </summary>
         /// <param name="description">The description of the network interface.</param>
         /// <returns>this instance</returns>
@@ -167,7 +162,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the private IP address of the network interface.
+        /// The private IP address of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -198,7 +193,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// The group IDs for use by the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -216,7 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property.
+        /// Sets the group IDs for use by the network interface.
         /// </summary>
         /// <param name="list">The group IDs for use by the network interface.</param>
         /// <returns>this instance</returns>
@@ -239,8 +233,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property.
-        /// If set to true, the interface will be deleted when the instance is terminated.
+        /// Whether the interface will be deleted when the instance is terminated.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -250,7 +243,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property.
+        /// Sets whether the interface will be deleted when the instance is terminated.
         /// </summary>
         /// <param name="deleteOnTermination">true to delete the interface when the instance is terminated</param>
         /// <returns>this instance</returns>
@@ -271,7 +264,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddresses property.
         /// Private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
@@ -289,7 +281,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property
+        /// Sets private IP addresses.
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
@@ -313,7 +305,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the SecondaryPrivateIpAddressCount property.
         /// Number of secondary private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
@@ -324,7 +315,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecondaryPrivateIpAddressCount property
+        /// Sets the number of secondary private IP addresses.
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
         /// <returns>this instance</returns>

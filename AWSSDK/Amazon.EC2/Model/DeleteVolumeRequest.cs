@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,11 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes an Amazon EBS volume that you own. For
-    /// more information about
-    /// Amazon EBS,
-    /// go to the Amazon Elastic Compute
-    /// Cloud Developer Guide.
+    /// Deletes an Amazon EBS volume that you own.
+    /// The volume must be in the available state (not attached to an instance).
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteVolumeRequest
@@ -38,7 +35,6 @@ namespace Amazon.EC2.Model
         private string volumeIdField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
         /// The ID of the volume to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -49,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the volume to delete.
         /// </summary>
         /// <param name="volumeId">The ID of the volume to delete.</param>
         /// <returns>this instance</returns>

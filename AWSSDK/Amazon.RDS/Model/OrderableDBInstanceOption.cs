@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> Contains a list of available options for a DB Instance </para> <para> This data type is used as a response element in the
     /// DescribeOrderableDBInstanceOptions action. </para>
     /// </summary>
-    public class OrderableDBInstanceOption  
+    public class OrderableDBInstanceOption
     {
         
         private string engine;
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.RDS.Model
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;       
+            return this.licenseModel != null;
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
@@ -190,7 +190,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.RDS.Model
         // Check to see if MultiAZCapable property is set
         internal bool IsSetMultiAZCapable()
         {
-            return this.multiAZCapable.HasValue;       
+            return this.multiAZCapable.HasValue;
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaCapable property is set
         internal bool IsSetReadReplicaCapable()
         {
-            return this.readReplicaCapable.HasValue;       
+            return this.readReplicaCapable.HasValue;
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Amazon.RDS.Model
         // Check to see if Vpc property is set
         internal bool IsSetVpc()
         {
-            return this.vpc.HasValue;       
+            return this.vpc.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private Object detailField;
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// Type of error
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of error
         /// </summary>
         /// <param name="type">Type of error</param>
         /// <returns>this instance</returns>
@@ -68,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Code property.
         /// Error code
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the error code
         /// </summary>
         /// <param name="code">Error code</param>
         /// <returns>this instance</returns>
@@ -99,7 +97,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
         /// Error message
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
@@ -110,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the error message
         /// </summary>
         /// <param name="message">Error message</param>
         /// <returns>this instance</returns>
@@ -130,8 +127,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Detail property.
-        /// Details
+        /// Details of the error
         /// </summary>
         [XmlElementAttribute(ElementName = "Detail")]
         public Object Detail
@@ -141,7 +137,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Detail property
+        /// Sets the details of the error
         /// </summary>
         /// <param name="detail">Details</param>
         /// <returns>this instance</returns>

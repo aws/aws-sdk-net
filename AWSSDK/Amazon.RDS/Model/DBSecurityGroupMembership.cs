@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class DBSecurityGroupMembership  
+    public class DBSecurityGroupMembership
     {
         
         private string dBSecurityGroupName;
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;       
+            return this.dBSecurityGroupName != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.RDS.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

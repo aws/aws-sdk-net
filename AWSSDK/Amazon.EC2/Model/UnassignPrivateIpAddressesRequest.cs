@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -24,7 +24,9 @@ using System.Xml.Serialization;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Unassigns one or more secondary private IP addresses from a network interface in Amazon VPC. 
+    /// Unassigns one or more secondary private IP addresses from a network
+    /// interface in Amazon VPC.
+    /// This command is only available in Amazon VPC
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class UnassignPrivateIpAddressesRequest
@@ -32,9 +34,7 @@ namespace Amazon.EC2.Model
         private string networkInterfaceIdField;
         private List<string> privateIpAddressesField;
 
-
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
         /// The network interface from which the secondary private IP address will be unassigned. 
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface from which the secondary private IP address will be unassigned. 
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID.</param>
         /// <returns>this instance</returns>
@@ -66,8 +66,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddresses property.
-        /// Specifies the secondary private IP addresses that you want to unassign from the network interface.
+        /// The secondary private IP addresses that you want to unassign from the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
         public List<string> PrivateIpAddresses
@@ -77,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property
+        /// Sets the secondary private IP addresses that you want to unassign from the network interface.
         /// </summary>
         /// <param name="privateIpAddresses">List of private IP addresses.</param>
         /// <returns>this instance</returns>

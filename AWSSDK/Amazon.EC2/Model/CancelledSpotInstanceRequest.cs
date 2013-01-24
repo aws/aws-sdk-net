@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///A cancelled Spot Instance Request.
-    ///</summary>
+    /// <summary>
+    /// A cancelled Spot Instance Request.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CancelledSpotInstanceRequest
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string stateField;
 
         /// <summary>
-        /// Gets and sets the SpotInstanceRequestId property.
         /// The ID of the Spot Instance Request.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SpotInstanceRequestId property
+        /// Sets the ID of the Spot Instance Request.
         /// </summary>
         /// <param name="spotInstanceRequestId">The ID of the Spot Instance Request.</param>
         /// <returns>this instance</returns>
@@ -66,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
         /// The State of the Spot Instance Request.
         /// Valid values are open | closed | cancelled | failed
         /// </summary>
@@ -78,10 +76,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the State of the Spot Instance Request.
         /// </summary>
-        /// <param name="state">The State of the Spot Instance Request.
-        /// Valid values are open | closed | cancelled | failed</param>
+        /// <param name="state">The State of the Spot Instance Request.</param>
         /// <returns>this instance</returns>
         public CancelledSpotInstanceRequest WithState(string state)
         {

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,6 +26,7 @@ using System.Collections.Specialized;
 using System.Text;
 
 using Amazon.S3.Model;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer
 {
@@ -582,24 +583,8 @@ namespace Amazon.S3.Transfer
         internal void OnRaiseProgressEvent(int numberOfFilesUploaded, int totalNumberOfFiles,
             string currentFile, long transferredBytesForCurrentFile, long totalNumberOfBytesForCurrentFile)
         {
-            // Make a temporary copy of the event to avoid the possibility of
-            // a race condition if the last and only subscriber unsubscribes
-            // immediately after the null check and before the event is raised.
-            EventHandler<UploadDirectoryProgressArgs> handler = UploadDirectoryProgressEvent;
-            try
-            {
-                // Event will be null if there are no subscribers
-                if (handler != null)
-                {
-                    // This automatically calls all subscribers sequentially
-                    // http://msdn.microsoft.com/en-us/library/ms173172%28VS.80%29.aspx
-                    handler(this, new UploadDirectoryProgressArgs(numberOfFilesUploaded, totalNumberOfFiles, currentFile,
-                        transferredBytesForCurrentFile, totalNumberOfBytesForCurrentFile));
-                }
-            }
-            catch
-            {
-            }
+            AWSSDKUtils.InvokeInBackground(UploadDirectoryProgressEvent, new UploadDirectoryProgressArgs(numberOfFilesUploaded, totalNumberOfFiles, currentFile,
+                        transferredBytesForCurrentFile, totalNumberOfBytesForCurrentFile), this);
         }
     }
 

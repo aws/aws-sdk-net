@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private string platformField;
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// Description of the instance being imported
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the instance being imported
         /// </summary>
         /// <param name="description">Description of the instance being imported</param>
         /// <returns>this instance</returns>
@@ -68,8 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the LaunchSpecification property.
-        /// Specifies additional launch instance information.
+        /// Additional launch instance information.
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchSpecification")]
         public ImportInstanceLaunchSpecificationType LaunchSpecification
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LaunchSpecification property
+        /// Sets additional launch instance information.
         /// </summary>
         /// <param name="launchSpecification">Specifies additional launch instance information.</param>
         /// <returns>this instance</returns>
@@ -99,7 +97,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DiskImage property.
         /// Details about the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "DiskImage")]
@@ -117,7 +114,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DiskImage property
+        /// Sets details about the image.
         /// </summary>
         /// <param name="list">Details about the image.</param>
         /// <returns>this instance</returns>
@@ -140,7 +137,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Platform property.
         /// The EC2 instance operating system.
         /// 
         /// Valid Value: Windows
@@ -153,7 +149,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Platform property
+        /// Sets the EC2 instance operating system.
         /// </summary>
         /// <param name="platform">The EC2 instance operating system.
         /// 

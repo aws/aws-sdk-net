@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,10 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Status details for the Spot Instance request, if
-    ///any.
-    ///</summary>
+    /// <summary>
+    /// Status details for the Spot Instance request.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class SpotInstanceStatusMessage
     {    
@@ -37,8 +36,7 @@ namespace Amazon.EC2.Model
         private string messageField;
 
         /// <summary>
-        /// Gets and sets the Code property.
-        /// The code for the Spot Instance request status
+        /// The code for the Spot Instance request status.
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
         public string Code
@@ -48,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the code for the Spot Instance request status.
         /// </summary>
         /// <param name="code">The code for the Spot Instance request status</param>
         /// <returns>this instance</returns>
@@ -69,7 +67,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the UpdateTime property.
         /// The time of the most recent update for the status.
         /// </summary>
         [XmlElementAttribute(ElementName = "UpdateTime")]
@@ -80,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UpdateTime property
+        /// Sets the time of the most recent update for the status.
         /// </summary>
         /// <param name="updateTime">The time of the most recent update for the
         /// status.</param>
@@ -102,9 +99,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the Message property.
-        /// The message for the Spot Instance request
-        /// status.
+        /// The message for the Spot Instance request status.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
@@ -114,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the message for the Spot Instance request status.
         /// </summary>
         /// <param name="message">The message for the Spot Instance request
         /// status.</param>

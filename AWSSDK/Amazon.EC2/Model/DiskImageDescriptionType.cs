@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,10 +35,7 @@ namespace Amazon.EC2.Model
         private string checksumField;
 
         /// <summary>
-        /// Gets and sets the Format property.
         /// Disk image format.
-        /// 
-        /// Valid Values: VMDK | RAW
         /// </summary>
         [XmlElementAttribute(ElementName = "Format")]
         public string Format
@@ -48,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Format property
+        /// Sets the disk image format.
         /// </summary>
         /// <param name="format">Disk image format.
         /// 
@@ -70,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Size property.
         /// Size of the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
@@ -81,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Size property
+        /// Sets the size of the disk image.
         /// </summary>
         /// <param name="size">Size of the disk image.</param>
         /// <returns>this instance</returns>
@@ -101,11 +97,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImportManifestUrl property.
-        /// The manifest for the disk image, stored in Amazon S3 and presented here as an Amazon S3 pre-signed URL. For information about
-        /// creating a pre-signed URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the
-        /// Authenticating REST Requests topic in the Amazon Simple Storage Service Developer Guide.
+        /// A presigned URL for the import manifest stored in Amazon S3.
         /// </summary>
+        /// <remarks>
+        /// For information about creating a pre-signed URL for an Amazon S3 object,
+        /// read the "Query String Request Authentication Alternative" section of the
+        /// Authenticating REST Requests topic in the Amazon Simple Storage Service Developer Guide.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ImportManifestUrl")]
         public string ImportManifestUrl
         {
@@ -114,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImportManifestUrl property
+        /// Sets the presigned URL for the import manifest stored in Amazon S3.
         /// </summary>
         /// <param name="importManifestUrl">The manifest for the disk image, stored in Amazon S3 and presented here as an Amazon S3 pre-signed URL. For information about
         /// creating a pre-signed URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the
@@ -136,7 +134,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Checksum property.
         /// Checksum computed for the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Checksum")]
@@ -147,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Checksum property
+        /// Sets the checksum computed for the disk image.
         /// </summary>
         /// <param name="checksum">Checksum computed for the disk image.</param>
         /// <returns>this instance</returns>

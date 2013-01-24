@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -36,8 +36,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the RegionName property.
-        /// Name of a region.
+        /// One of more names of regions to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "RegionName")]
         public List<string> RegionName
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RegionName property
+        /// Sets names of regions to describe.
         /// </summary>
         /// <param name="list">Name of a region.</param>
         /// <returns>this instance</returns>
@@ -77,7 +76,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified Region.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -98,7 +96,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified Region.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified Region.

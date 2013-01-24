@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Internet gateway description.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InternetGateway
     {    
@@ -34,7 +36,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the InternetGatewayId property.
         /// The ID of the Internet gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "InternetGatewayId")]
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InternetGatewayId property
+        /// Sets the ID of the Internet gateway.
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway.</param>
         /// <returns>this instance</returns>
@@ -65,9 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attachments property.
-        /// A list of VPCs attached to the Internet gateway. Each VPC's
-        /// information is wrapped in an item element.
+        /// A list of VPCs attached to the Internet gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attachments")]
         public List<InternetGatewayAttachment> Attachments
@@ -84,10 +83,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attachments property
+        /// Sets the list of VPCs attached to the Internet gateway.
         /// </summary>
-        /// <param name="list">A list of VPCs attached to the Internet gateway. Each VPC's
-        /// information is wrapped in an item element.</param>
+        /// <param name="list">A list of VPCs attached to the Internet gateway.</param>
         /// <returns>this instance</returns>
         public InternetGateway WithAttachments(params InternetGatewayAttachment[] list)
         {
@@ -108,7 +106,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the License.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -126,7 +123,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the list of tags for the License.
         /// </summary>
         /// <param name="list">A list of tags for the License.</param>
         /// <returns>this instance</returns>

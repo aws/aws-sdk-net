@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Enables monitoring for a running instance. For
-    /// more information, refer to
-    /// the Amazon CloudWatch Developer Guide.
+    /// Enables monitoring for a running instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class MonitorInstancesRequest
@@ -36,7 +34,6 @@ namespace Amazon.EC2.Model
         private List<string> instanceIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// Instance ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -54,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID.
         /// </summary>
         /// <param name="list">Instance ID.</param>
         /// <returns>this instance</returns>

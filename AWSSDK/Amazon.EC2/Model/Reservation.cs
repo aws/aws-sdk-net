@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Reservation
-    ///</summary>
+    /// <summary>
+    /// Reservation information.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Reservation
     {    
@@ -39,7 +39,6 @@ namespace Amazon.EC2.Model
         private List<RunningInstance> runningInstanceField;
 
         /// <summary>
-        /// Gets and sets the ReservationId property.
         /// Unique ID of the reservation.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservationId")]
@@ -50,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservationId property
+        /// Sets the unique ID of the reservation.
         /// </summary>
         /// <param name="reservationId">Unique ID of the reservation.</param>
         /// <returns>this instance</returns>
@@ -70,9 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the user who owns the
-        /// reservation
+        /// AWS Access Key ID of the user who owns the reservation
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -82,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the AWS Access Key ID of the user who owns the reservation
         /// </summary>
         /// <param name="ownerId">AWS Access Key ID of the user who owns the
         /// reservation</param>
@@ -103,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RequesterId property.
         /// ID of the requester.
         /// </summary>
         [XmlElementAttribute(ElementName = "RequesterId")]
@@ -114,7 +110,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RequesterId property
+        /// Sets the ID of the requester.
         /// </summary>
         /// <param name="requesterId">ID of the requester.</param>
         /// <returns>this instance</returns>
@@ -134,8 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
-        /// Ids of the security groups.
+        /// Security group IDs for the reservation.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public List<string> GroupId
@@ -152,7 +147,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the security group IDs for the reservation.
         /// </summary>
         /// <param name="list">Ids of the security groups.</param>
         /// <returns>this instance</returns>
@@ -175,8 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
-        /// Names of the security groups.
+        /// Security group names for the reservation.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public List<string> GroupName
@@ -193,7 +187,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the security group names for the reservation.
         /// </summary>
         /// <param name="list">Names of the security groups.</param>
         /// <returns>this instance</returns>
@@ -216,8 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RunningInstance property.
-        /// Running instance
+        /// Running instances
         /// </summary>
         [XmlElementAttribute(ElementName = "RunningInstance")]
         public List<RunningInstance> RunningInstance
@@ -234,7 +227,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RunningInstance property
+        /// Sets the running instances
         /// </summary>
         /// <param name="list">Running instance</param>
         /// <returns>this instance</returns>

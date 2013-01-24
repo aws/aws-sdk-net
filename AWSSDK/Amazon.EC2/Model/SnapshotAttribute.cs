@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Snapshot Attribute
-    ///</summary>
+    /// <summary>
+    /// Snapshot Attribute
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class SnapshotAttribute
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private List<ProductCode> productCodesField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the Amazon EBS snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the Amazon EBS snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
@@ -67,8 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CreateVolumePermission property.
-        /// list of create volume permissions
+        /// List of create volume permissions
         /// </summary>
         [XmlElementAttribute(ElementName = "CreateVolumePermission")]
         public List<CreateVolumePermission> CreateVolumePermission
@@ -85,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CreateVolumePermission property
+        /// Sets the list of create volume permissions
         /// </summary>
         /// <param name="list">list of create volume permissions</param>
         /// <returns>this instance</returns>
@@ -108,7 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCodes property.
+        /// The product codes associated with the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCode")]
         public List<ProductCode> ProductCodes
@@ -125,7 +123,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCodes property
+        /// Sets the product codes associated with the snapshot.
         /// </summary>
         /// <param name="list">Product codes.</param>
         /// <returns>this instance</returns>

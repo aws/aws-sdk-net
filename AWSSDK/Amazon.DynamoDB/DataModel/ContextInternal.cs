@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,12 +50,14 @@ namespace Amazon.DynamoDB.DataModel
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
+            bool backwardQuery = operationConfig.BackwardQuery ?? false;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
             IgnoreNullValues = ignoreNullValues;
             OverrideTableName = overrideTableName;
             TableNamePrefix = tableNamePrefix;
+            BackwardQuery = backwardQuery;
         }
     }
 

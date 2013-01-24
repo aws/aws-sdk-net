@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,18 +25,16 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Specifies whether to enable monitoring for the
-    ///Spot Instance.
-    ///</summary>
+    /// <summary>
+    /// Whether to enable monitoring for the Spot Instance.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class MonitoringSpecification
     {    
         private bool? enabledField;
 
         /// <summary>
-        /// Gets and sets the Enabled property.
-        /// Enable monitoring for the Spot instance.
+        /// Whether to enable monitoring for the Spot instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "Enabled")]
         public bool Enabled
@@ -46,7 +44,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Enabled property
+        /// Sets whether to enable monitoring for the Spot instance.
         /// </summary>
         /// <param name="enabled">Enable monitoring for the Spot instance.</param>
         /// <returns>this instance</returns>

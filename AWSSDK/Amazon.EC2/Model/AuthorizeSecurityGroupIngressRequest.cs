@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Adds permissions to a security group.
-    ///
+    /// Adds one or more ingress rules to a security group.
+    /// This action applies to both EC2 security groups and VPC security groups.
+    /// </summary>
+    /// <remarks>
     /// Permissions are specified by the IP protocol (TCP, UDP or ICMP),
     /// the source of the request (by IP range or an Amazon EC2 user-group pair),
     /// the source and destination port ranges (for TCP and UDP), and the
@@ -42,7 +44,7 @@ namespace Amazon.EC2.Model
     /// GroupName, SourceSecurityGroupName and SourceSecurityGroupOwnerId
     /// must be specified. When authorizing a CIDR IP permission,
     /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AuthorizeSecurityGroupIngressRequest
     {    
@@ -58,7 +60,6 @@ namespace Amazon.EC2.Model
         private List<IpPermissionSpecification> ipPermissionsField;
 
         /// <summary>
-        /// Gets and sets the UserId property.
         /// AWS Access Key ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserId property
+        /// Sets the AWS Access Key ID.
         /// </summary>
         /// <param name="userId">AWS Access Key ID.</param>
         /// <returns>this instance</returns>
@@ -89,8 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
-        /// Id of the standard (EC2) or VPC security group to modify. Conditional
+        /// Id of the standard (EC2) or VPC security group to modify.
         /// The group must belong to your account.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -101,10 +101,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the Id of the standard (EC2) or VPC security group to modify.
         /// </summary>
-        /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify. Conditional
-        /// The group must belong to your account.</param>
+        /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify.
+        /// </param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithGroupId(string groupId)
         {
@@ -122,9 +122,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
-        /// Name of the group to modify. The name must be
-        /// valid and belong to the account
+        /// The name of the EC2 security group to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -134,10 +132,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the EC2 security group to modify.
         /// </summary>
-        /// <param name="groupName">Name of the group to modify. The name must be
-        /// valid and belong to the account</param>
+        /// <param name="groupName">Name of the group to modify.</param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithGroupName(string groupName)
         {
@@ -155,9 +152,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceSecurityGroupName property.
-        /// Name of the security group. Cannot be used
-        /// when specifying a CIDR IP address.
+        /// The name of the source security group.
+        /// Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupName")]
         public string SourceSecurityGroupName
@@ -167,7 +163,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceSecurityGroupName property
+        /// Sets the name of the source security group.
         /// </summary>
         /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used
         /// when specifying a CIDR IP address.</param>
@@ -188,9 +184,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SourceSecurityGroupOwnerId property.
-        /// AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// The ID of the source security group.
+        /// Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupOwnerId")]
         public string SourceSecurityGroupOwnerId
@@ -200,7 +195,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SourceSecurityGroupOwnerId property
+        /// Sets the ID of the source security group.
         /// </summary>
         /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when
         /// specifying a CIDR IP address.</param>
@@ -221,8 +216,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpProtocol property.
-        /// IP protocol.
+        /// The IP protocol name or number.
+        /// EC2 security groups can have rules only for TCP, UDP, and ICMP,
+        /// whereas VPC security groups can have rules assigned to any protocol number.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpProtocol")]
         public string IpProtocol
@@ -232,7 +228,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpProtocol property
+        /// Sets the IP protocol name or number.
         /// </summary>
         /// <param name="ipProtocol">IP protocol.</param>
         /// <returns>this instance</returns>
@@ -252,9 +248,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the FromPort property.
-        /// Start of port range for the TCP and UDP protocols, or an ICMP type number.
-        /// An ICMP type number of -1 indicates a wildcard (i.e., any ICMP type number).
+        /// The start of port range for the TCP and UDP protocols, or an ICMP type number.
+        /// For the ICMP type number, you can use -1 to specify all ICMP types.
         /// </summary>
         [XmlElementAttribute(ElementName = "FromPort")]
         public Decimal FromPort
@@ -264,10 +259,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the FromPort property
+        /// Sets the start of port range for the TCP and UDP protocols, or an ICMP type number.
         /// </summary>
-        /// <param name="fromPort">Start of port range for the TCP and UDP protocols, or an ICMP type number.
-        /// An ICMP type number of -1 indicates a wildcard (i.e., any ICMP type number).</param>
+        /// <param name="fromPort">The start of port range for the TCP and UDP protocols, or an ICMP type number.
+        /// </param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithFromPort(Decimal fromPort)
         {
@@ -285,9 +280,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ToPort property.
-        /// End of port range for the TCP and UDP protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+        /// The end of port range for the TCP and UDP protocols, or an ICMP code number.
+        /// For the ICMP code number, you can use -1 to specify all ICMP codes for the given ICMP type.
         /// </summary>
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
@@ -297,7 +291,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ToPort property
+        /// Sets the end of port range for the TCP and UDP protocols, or an ICMP code number.
         /// </summary>
         /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code.
         /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).</param>
@@ -318,8 +312,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CidrIp property.
-        /// CIDR range.
+        /// The CIDR range.
+        /// Cannot be used when specifying a source security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "CidrIp")]
         public string CidrIp
@@ -329,7 +323,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CidrIp property
+        /// Sets the CIDR range.
         /// </summary>
         /// <param name="cidrIp">CIDR range.</param>
         /// <returns>this instance</returns>
@@ -349,9 +343,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpPermissions property.
-        /// Set of IP permissions associated with the
-        /// security group.
+        /// Set of IP permissions associated with the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermissions")]
         public List<IpPermissionSpecification> IpPermissions
@@ -368,7 +360,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpPermissions property
+        /// Sets the IP permissions associated with the security group.
         /// </summary>
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>

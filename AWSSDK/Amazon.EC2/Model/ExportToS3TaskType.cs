@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    /// ExportToS3TaskType; information about the destination Amazon S3 bucket
-    /// for a VM export task.
+    /// Information about the destination Amazon S3 bucket for a VM export task.
     ///</summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ExportToS3TaskType
@@ -39,7 +38,7 @@ namespace Amazon.EC2.Model
         private string s3KeyField;
 
         /// <summary>
-        /// Gets and sets the format for the exported image.
+        /// The format for the exported image.
         /// </summary>
         /// <remarks>Valid Values: vmdk | vhd</remarks>
         [XmlElementAttribute(ElementName = "DiskImageFormat")]
@@ -71,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the container format used to combine disk images with metadata (such as OVF).
+        /// The container format used to combine disk images with metadata (such as OVF).
         /// If absent, only the disk image will be exported.
         /// Default: ova if TargetEnvironment = vmare, otherwise blank.
         /// </summary>
@@ -104,7 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Amazon S3 bucket for the destination image.
+        /// The Amazon S3 bucket for the destination image.
         /// </summary>
         /// <remarks>The bucket must exist and grant write permissions to AWS account vm-import-export@amazon.com.</remarks>
         [XmlElementAttribute(ElementName = "S3Bucket")]
@@ -135,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the key prefix used when writing the image to a single object in the bucket.
+        /// The key prefix used when writing the image to a single object in the bucket.
         /// </summary>
         /// <remarks>This property is used when the ExportToS3TaskType instance is used as input to
         /// the CreateInstanceExportTask operation. The resulting S3 object key will be set as
@@ -169,7 +168,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the full S3 key that was used when writing the exported instance to S3.
+        /// The full S3 key that was used when writing the exported instance to S3.
         /// </summary>
         /// <remarks>
         /// This property is only set on return from the CreateInstanceExportTask operation.

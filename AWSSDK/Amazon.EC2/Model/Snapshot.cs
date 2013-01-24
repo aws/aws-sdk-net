@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///A Snapshot of an EBS volume.
-    ///</summary>
+    /// <summary>
+    /// A Snapshot of an EBS volume.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Snapshot
     {    
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
@@ -74,9 +73,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
-        /// The ID of the volume from which the snapshot
-        /// was created.
+        /// The ID of the volume from which the snapshot was created.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
@@ -86,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the volume from which the snapshot was created.
         /// </summary>
         /// <param name="volumeId">The ID of the volume from which the snapshot
         /// was created.</param>
@@ -107,8 +104,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
-        /// Snapshot state - can be one of pending | completed | error
+        /// Snapshot state.
+        /// Valid values: pending | completed | error
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -118,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the snapshot state.
         /// </summary>
         /// <param name="status">Snapshot state - can be one of pending | completed | error</param>
         /// <returns>this instance</returns>
@@ -138,7 +135,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StartTime property.
         /// Time stamp when the snapshot was initiated.
         /// </summary>
         [XmlElementAttribute(ElementName = "StartTime")]
@@ -149,7 +145,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StartTime property
+        /// Sets the time stamp when the snapshot was initiated.
         /// </summary>
         /// <param name="startTime">Time stamp when the snapshot was initiated.</param>
         /// <returns>this instance</returns>
@@ -169,7 +165,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Progress property.
         /// The progress of the snapshot, in percentage.
         /// </summary>
         [XmlElementAttribute(ElementName = "Progress")]
@@ -180,7 +175,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Progress property
+        /// Sets the progress of the snapshot, in percentage.
         /// </summary>
         /// <param name="progress">The progress of the snapshot, in percentage.</param>
         /// <returns>this instance</returns>
@@ -200,9 +195,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the user who owns the
-        /// snapshot.
+        /// AWS Access Key ID of the user who owns the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -212,7 +205,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the AWS Access Key ID of the user who owns the snapshot.
         /// </summary>
         /// <param name="ownerId">AWS Access Key ID of the user who owns the
         /// snapshot.</param>
@@ -233,7 +226,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeSize property.
         /// Size of the volume
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeSize")]
@@ -244,7 +236,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeSize property
+        /// Sets the size of the volume
         /// </summary>
         /// <param name="volumeSize">Size of the volume</param>
         /// <returns>this instance</returns>
@@ -264,7 +256,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// Description of the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -275,7 +266,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the snapshot.
         /// </summary>
         /// <param name="description">Description of the snapshot.</param>
         /// <returns>this instance</returns>
@@ -295,7 +286,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OwnerAlias property.
+        /// The AWS account alias (amazon, self, etc.) or AWS account ID that owns the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerAlias")]
         public string OwnerAlias
@@ -305,7 +296,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerAlias property
+        /// Sets the AWS account alias (amazon, self, etc.) or AWS account ID that owns the AMI.
         /// </summary>
         /// <param name="ownerAlias">OwnerAlias property</param>
         /// <returns>this instance</returns>
@@ -325,7 +316,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the Snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -343,7 +333,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags for the Snapshot.
         /// </summary>
         /// <param name="list">A list of tags for the Snapshot.</param>
         /// <returns>this instance</returns>

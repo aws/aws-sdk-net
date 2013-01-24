@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,23 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a customer gateway. You must delete the
-    /// VPN connection before deleting the customer gateway.
-    ///
-    /// AWS might delete any customer gateway if you leave it inactive for an
-    /// extended period of time (inactive means that there's no VPN connection in
-    /// use with the customer gateway).
+    /// Deletes a customer gateway.
     /// </summary>
+    /// <remarks>
+    /// You must delete the VPN connection before deleting
+    /// the customer gateway.
+    ///
+    /// AWS might delete any customer gateway if you leave
+    /// it inactive for an extended period of time (inactive
+    /// means that there's no VPN connection in use with the
+    /// customer gateway).
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteCustomerGatewayRequest
     {    
         private string customerGatewayIdField;
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayId property.
         /// The ID of the customer gateway you want to
         /// delete.
         /// </summary>
@@ -51,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayId property
+        /// Sets the ID of the customer gateway you want to delete.
         /// </summary>
         /// <param name="customerGatewayId">The ID of the customer gateway you want to
         /// delete.</param>

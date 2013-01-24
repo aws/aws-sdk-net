@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,6 +27,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Gives you information about your VPN gateways.
+    /// </summary>
+    /// <remarks>
     /// You can filter the results to return information
     /// only about VPN gateways that match criteria you specify. For example,
     /// you could ask to get information about a particular VPN gateway (or all) only
@@ -45,7 +47,7 @@ namespace Amazon.EC2.Model
     /// 3. The Availability Zone where the VPN gateway was created.
     /// 4. The VPCs the VPN gateway is attached to and the state of each
     /// attachment (attaching, attached, detaching, detached)
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeVpnGatewaysRequest
     {    
@@ -53,8 +55,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
-        /// A VPN gateway ID.
+        /// One or more VPN gateway IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public List<string> VpnGatewayId
@@ -71,7 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets VPN gateway IDs.
         /// </summary>
         /// <param name="list">A VPN gateway ID.</param>
         /// <returns>this instance</returns>
@@ -94,9 +95,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
-        /// The filter to apply on the results of DescribeVpnGateways. Filters
-        /// can be:
+        /// The filter to apply on the results of DescribeVpnGateways.
+        /// Filters can be:
         /// a. state - The state of the VPN gateway. (pending, available, deleting, deleted).
         /// b. type - The type of VPN gateway. Currently the only supported type is ipsec.1.
         /// c. availabilityZone - The Availability Zone the VPN gateway is in.
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filter to apply on the results of DescribeVpnGateways.
         /// </summary>
         /// <param name="list">The filter to apply on the results of DescribeVpnGateways. Filters
         /// can be:

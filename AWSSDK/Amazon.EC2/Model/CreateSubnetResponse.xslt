@@ -35,7 +35,17 @@
 			<xsl:element name="AvailabilityZone">
 				<xsl:value-of select="ec2:availabilityZone" />
 			</xsl:element>
-		</xsl:element>
+      <xsl:if test="ec2:defaultForAz">
+        <xsl:element name="DefaultForAz">
+          <xsl:value-of select="ec2:defaultForAz"/>
+        </xsl:element>
+      </xsl:if>
+      <xsl:if test="ec2:mapPublicIpOnLaunch">
+        <xsl:element name="MapPublicIpOnLaunch">
+          <xsl:value-of select="ec2:mapPublicIpOnLaunch"/>
+        </xsl:element>
+      </xsl:if>
+    </xsl:element>
 	</xsl:template>
 
 

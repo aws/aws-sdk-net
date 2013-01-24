@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Port range.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class PortRange
     {    
@@ -33,8 +35,8 @@ namespace Amazon.EC2.Model
         private Decimal? toField;
 
         /// <summary>
-        /// Gets and sets the From property.
-        /// The first port in the range. A value of -1 indicates all ports.
+        /// The first port in the range.
+        /// A value of -1 indicates all ports.
         /// </summary>
         [XmlElementAttribute(ElementName = "From")]
         public Decimal From
@@ -44,7 +46,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the From property
+        /// Sets the first port in the range.
+        /// A value of -1 indicates all ports.
         /// </summary>
         /// <param name="from">The first port in the range. A value of -1 indicates all ports.</param>
         /// <returns>this instance</returns>
@@ -64,8 +67,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the To property.
-        /// The last port in the range. A value of -1 indicates all ports
+        /// The last port in the range.
+        /// A value of -1 indicates all ports
         /// </summary>
         [XmlElementAttribute(ElementName = "To")]
         public Decimal To
@@ -75,7 +78,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the To property
+        /// Sets the last port in the range.
+        /// A value of -1 indicates all ports
         /// </summary>
         /// <param name="to">The last port in the range. A value of -1 indicates all ports</param>
         /// <returns>this instance</returns>

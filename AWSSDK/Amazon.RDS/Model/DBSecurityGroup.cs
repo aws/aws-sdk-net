@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSecurityGroups action.</para>
     /// </summary>
-    public class DBSecurityGroup  
+    public class DBSecurityGroup
     {
         
         private string ownerId;
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         // Check to see if OwnerId property is set
         internal bool IsSetOwnerId()
         {
-            return this.ownerId != null;       
+            return this.ownerId != null;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;       
+            return this.dBSecurityGroupName != null;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.dBSecurityGroupDescription != null;       
+            return this.dBSecurityGroupDescription != null;
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;       
+            return this.vpcId != null;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the EC2SecurityGroups collection
         /// </summary>
@@ -195,7 +195,7 @@ namespace Amazon.RDS.Model
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this.eC2SecurityGroups.Count > 0;       
+            return this.eC2SecurityGroups.Count > 0;
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the IPRanges collection
         /// </summary>
@@ -240,7 +240,7 @@ namespace Amazon.RDS.Model
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this.iPRanges.Count > 0;       
+            return this.iPRanges.Count > 0;
         }
     }
 }

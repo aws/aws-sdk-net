@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Changes which network ACL a subnet is associated with. By default when you create a subnet, it's
-    /// automatically associated with the default network ACL. For more information about network ACLs, go to
-    /// Network ACLs in the Amazon Virtual Private Cloud User Guide.
+    /// Changes which network ACL a subnet is associated with.
     /// </summary>
+    /// <remarks>
+    /// By default when you create a subnet, it's automatically associated with the
+    /// default network ACL. For more information about network ACLs, go to
+    /// Network ACLs in the Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ReplaceNetworkAclAssociationRequest
     {    
@@ -37,10 +40,8 @@ namespace Amazon.EC2.Model
         private string networkAclIdField;
 
         /// <summary>
-        /// Gets and sets the AssociationId property.
-        /// The ID representing the current association 
-        /// between the original network ACL and the
-        /// subnet.
+        /// The ID representing the current association  between the original network
+        /// ACL and the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "AssociationId")]
         public string AssociationId
@@ -50,7 +51,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the ID representing the current association  between the original network
+        /// ACL and the subnet.
         /// </summary>
         /// <param name="associationId">The ID representing the current association 
         /// between the original network ACL and the
@@ -72,9 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
-        /// The ID of the new ACL to associate with the 
-        /// subnet.
+        /// The ID of the new ACL to associate with the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
         public string NetworkAclId
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the ID of the new ACL to associate with the subnet.
         /// </summary>
         /// <param name="networkAclId">The ID of the new ACL to associate with the 
         /// subnet.</param>

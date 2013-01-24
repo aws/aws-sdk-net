@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
     /// </para>
     /// </summary>
-    public class RecurringCharge  
+    public class RecurringCharge
     {
         
         private double? recurringChargeAmount;
@@ -55,7 +55,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if RecurringChargeAmount property is set
         internal bool IsSetRecurringChargeAmount()
         {
-            return this.recurringChargeAmount.HasValue;       
+            return this.recurringChargeAmount.HasValue;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if RecurringChargeFrequency property is set
         internal bool IsSetRecurringChargeFrequency()
         {
-            return this.recurringChargeFrequency != null;       
+            return this.recurringChargeFrequency != null;
         }
     }
 }

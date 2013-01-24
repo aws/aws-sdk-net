@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// ICMP description.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Icmp
     {    
@@ -33,7 +35,6 @@ namespace Amazon.EC2.Model
         private Decimal? typeField;
 
         /// <summary>
-        /// Gets and sets the Code property.
         /// The ICMP code. A value of -1 is a wildcard meaning all codes.
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the ICMP code.
         /// </summary>
         /// <param name="code">The ICMP code. A value of -1 is a wildcard meaning all codes.</param>
         /// <returns>this instance</returns>
@@ -64,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The ICMP type. A value of -1 is a wildcard meaning all types.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the ICMP type.
         /// </summary>
         /// <param name="type">The ICMP type. A value of -1 is a wildcard meaning all types.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
         private bool? deleteOnTerminationField;
 
         /// <summary>
-        /// Gets and sets the AttachmentId property.
+        /// Attachment ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttachmentId")]
         public string AttachmentId
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AttachmentId property.
+        /// Sets the attachment ID.
         /// </summary>
         /// <param name="attachmentId">Attachment Id</param>
         /// <returns>this instance</returns>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property
+        /// Whether the attachment is deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property
+        /// Sets whether the attachment is deleted on instance termination.
         /// </summary>
         /// <param name="deleteOnTermination">true to delete on termination</param>
         /// <returns>this instance</returns>

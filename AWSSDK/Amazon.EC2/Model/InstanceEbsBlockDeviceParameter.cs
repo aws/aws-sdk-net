@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Information about the instance EBS block device.
-    ///</summary>
+    /// <summary>
+    /// Instance EBS block device parameter.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceEbsBlockDeviceParameter
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private bool? deleteOnTerminationField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
         /// The ID of the Amazon EBS volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the Amazon EBS volume.
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
@@ -66,9 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property.
-        /// Specifies whether the Amazon EBS volume is
-        /// deleted on instance termination.
+        /// Whether the Amazon EBS volume is deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -78,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property
+        /// Sets whether the Amazon EBS volume is deleted on instance termination.
         /// </summary>
         /// <param name="deleteOnTermination">Specifies whether the Amazon EBS volume is
         /// deleted on instance termination.</param>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a
-    /// set of numbered ingress rules and a separate set of numbered egress rules. When determining whether
-    /// a packet should be allowed in or out of a subnet associated with the ACL, Amazon VPC processes the
-    /// entries in the ACL according to the rule numbers, in ascending order.
+    /// Creates an entry (i.e., rule) in a network ACL with a rule number you specify.
+    /// </summary>
+    /// <remarks>
+    /// Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
+    /// When determining whether a packet should be allowed in or out of a subnet associated with the ACL,
+    /// Amazon VPC processes the entries in the ACL according to the rule numbers, in ascending order.
     ///
     /// We recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number
     /// them sequentially (101, 102, 103, etc.). This allows you to easily add a new rule between existing
@@ -37,10 +39,7 @@ namespace Amazon.EC2.Model
     ///
     /// After you add an entry, you can't modify it; you must either replace it, or create a new entry and delete
     /// the old one.
-    /// 
-    /// For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User
-    /// Guide.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateNetworkAclEntryRequest
     {    
@@ -54,7 +53,6 @@ namespace Amazon.EC2.Model
         private PortRange portRangeField;
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
         /// ID of the ACL where the entry will be created.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
@@ -65,7 +63,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the ID of the ACL where the entry will be created.
         /// </summary>
         /// <param name="networkAclId">ID of the ACL where the entry will be created.</param>
         /// <returns>this instance</returns>
@@ -85,11 +83,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RuleNumber property.
-        /// Rule number to assign to the entry (e.g., 100). ACL 
-        /// entries are processed in ascending order by rule
-        /// number.
+        /// Rule number to assign to the entry (e.g., 100).
         /// </summary>
+        /// <remarks>
+        /// ACL  entries are processed in ascending order by rule
+        /// number.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "RuleNumber")]
         public Decimal RuleNumber
         {
@@ -98,11 +97,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RuleNumber property
+        /// Sets the rule number to assign to the entry (e.g., 100).
         /// </summary>
-        /// <param name="ruleNumber">Rule number to assign to the entry (e.g., 100). ACL 
-        /// entries are processed in ascending order by rule
-        /// number.</param>
+        /// <param name="ruleNumber">Rule number to assign to the entry (e.g., 100).</param>
         /// <returns>this instance</returns>
         public CreateNetworkAclEntryRequest WithRuleNumber(Decimal ruleNumber)
         {
@@ -120,10 +117,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Protocol property.
-        /// IP protocol the rule applies to.
-        ///
-        /// Valid Values: 6 for tcp | 17 for udp | 1 for icmp or an IP protocol number.
+        /// The IP protocol the rule applies to.
+        /// You can use -1 to mean all protocols.
         /// </summary>
         [XmlElementAttribute(ElementName = "Protocol")]
         public string Protocol
@@ -133,11 +128,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Protocol property
+        /// Sets the IP protocol the rule applies to.
         /// </summary>
-        /// <param name="protocol">IP protocol the rule applies to.
-        ///
-        /// Valid Values: 6 for tcp | 17 for udp | 1 for icmp or an IP protocol number.</param>
+        /// <param name="protocol">IP protocol the rule applies to.</param>
         /// <returns>this instance</returns>
         public CreateNetworkAclEntryRequest WithProtocol(string protocol)
         {
@@ -155,11 +148,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RuleAction property.
         /// Whether to allow or deny traffic that matches the rule.
-        ///
-        /// Valid Values: allow | deny
         /// </summary>
+        /// <remarks>
+        /// Valid Values: allow | deny
+        /// </remarks>
         [XmlElementAttribute(ElementName = "RuleAction")]
         public string RuleAction
         {
@@ -168,11 +161,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RuleAction property
+        /// Sets whether to allow or deny traffic that matches the rule.
         /// </summary>
-        /// <param name="ruleAction">Whether to allow or deny traffic that matches the rule.
-        ///
-        /// Valid Values: allow | deny</param>
+        /// <param name="ruleAction">Whether to allow or deny traffic that matches the rule.</param>
         /// <returns>this instance</returns>
         public CreateNetworkAclEntryRequest WithRuleAction(string ruleAction)
         {
@@ -190,9 +181,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Egress property.
-        /// Whether this rule applies to egress traffic from the 
-        /// subnet (true) or ingress traffic to the subnet (false).
+        /// Whether this rule applies to egress traffic from the subnet (true)
+        /// or ingress traffic to the subnet (false).
         /// </summary>
         [XmlElementAttribute(ElementName = "Egress")]
         public bool Egress
@@ -202,7 +192,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Egress property
+        /// Sets whether this rule applies to egress traffic from the subnet (true)
+        /// or ingress traffic to the subnet (false).
         /// </summary>
         /// <param name="egress">Whether this rule applies to egress traffic from the 
         /// subnet (true) or ingress traffic to the subnet (false).</param>
@@ -223,7 +214,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CidrBlock property.
         /// The CIDR range to allow or deny, in CIDR notation
         /// (e.g., 172.16.0.0/24).
         /// </summary>
@@ -235,7 +225,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CidrBlock property
+        /// Sets the CIDR range to allow or deny, in CIDR notation.
         /// </summary>
         /// <param name="cidrBlock">The CIDR range to allow or deny, in CIDR notation
         /// (e.g., 172.16.0.0/24).</param>
@@ -256,8 +246,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Icmp property.
-        /// For the ICMP protocol, this is the ICMP type and code.
+        /// The ICMP type and code for the ICMP protocol.
         /// </summary>
         [XmlElementAttribute(ElementName = "Icmp")]
         public Icmp Icmp
@@ -267,7 +256,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Icmp property
+        /// Sets the ICMP type and code for the ICMP protocol.
         /// </summary>
         /// <param name="icmp">For the ICMP protocol, this is the ICMP type and code.</param>
         /// <returns>this instance</returns>
@@ -287,8 +276,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PortRange property.
-        /// For the TCP or UDP protocols, the range of ports the rule applies to.
+        /// The range of ports the rule applies to, for TCP or UDP protocols.
         /// </summary>
         [XmlElementAttribute(ElementName = "PortRange")]
         public PortRange PortRange
@@ -298,7 +286,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PortRange property
+        /// Sets the range of ports the rule applies to, for TCP or UDP protocols.
         /// </summary>
         /// <param name="portRange">For the TCP or UDP protocols, the range of ports the rule applies to.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about an attribute of an AMI.
+    /// Gets information about an attribute of an AMI.
     /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// The ID of the AMI for which an attribute will
         /// be described.
         /// </summary>
@@ -48,7 +47,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the ID of the AMI for which an attribute will
+        /// be described.
         /// </summary>
         /// <param name="imageId">The ID of the AMI for which an attribute will
         /// be described.</param>
@@ -69,11 +69,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Attribute name to be described.Valid values:
-        /// launchPermission | productCodes | kernel
-        /// | ramdisk | blockDeviceMapping | platform
+        /// Attribute name to be described.
         /// </summary>
+        /// <remarks>
+        /// Valid values: launchPermission | productCodes | kernel
+        /// | ramdisk | blockDeviceMapping | platform
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute name to be described.
         /// </summary>
         /// <param name="attribute">Attribute name to be described.Valid values:
         /// launchPermission | productCodes | kernel

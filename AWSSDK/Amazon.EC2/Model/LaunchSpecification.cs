@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -49,7 +49,6 @@ namespace Amazon.EC2.Model
         private bool? ebsOptimizedField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// The AMI ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
@@ -60,7 +59,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the AMI ID.
         /// </summary>
         /// <param name="imageId">The AMI ID.</param>
         /// <returns>this instance</returns>
@@ -80,7 +79,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KeyName property.
         /// The name of the key pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
@@ -91,7 +89,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyName property
+        /// Sets the name of the key pair.
         /// </summary>
         /// <param name="keyName">The name of the key pair.</param>
         /// <returns>this instance</returns>
@@ -111,9 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroup property.
-        /// The Security Groups to associate the launched
-        /// instance with.
+        /// The Security Groups to associate the launched instance with.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroup")]
         public List<string> SecurityGroup
@@ -130,7 +126,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroup property
+        /// Sets the Security Groups to associate the launched instance with.
         /// </summary>
         /// <param name="list">The Security Groups to associate the launched
         /// instance with.</param>
@@ -154,8 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroupId property.
-        /// IDs of the security group.
+        /// IDs of the security groups.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroupId")]
         public List<string> SecurityGroupId
@@ -172,7 +167,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroupId property
+        /// Sets the IDs of the security groups.
         /// </summary>
         /// <param name="list">IDs of the security group.</param>
         /// <returns>this instance</returns>
@@ -195,7 +190,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserData property.
         /// MIME, Base64-encoded user data.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserData")]
@@ -206,7 +200,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserData property
+        /// Sets the MIME, Base64-encoded user data.
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
@@ -226,7 +220,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AddressingType property.
+        /// Addressing type.
         /// Deprecated.
         /// </summary>
         [XmlElementAttribute(ElementName = "AddressingType")]
@@ -237,7 +231,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AddressingType property
+        /// Sets Addressing type.
         /// </summary>
         /// <param name="addressingType">Deprecated.</param>
         /// <returns>this instance</returns>
@@ -257,11 +251,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// Specifies the instance type. Valid values are:
-        /// m1.small | m1.medium | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge |
-        /// m2.2xlarge | m2.4xlarge.
+        /// The instance type.
+        /// Valid values are: m1.small | m1.medium | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.2xlarge | m2.4xlarge.
         /// Default: m1.small
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
@@ -272,12 +264,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="instanceType">Specifies the instance type. Valid values are:
         /// m1.small | m1.medium | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge |
-        /// m2.2xlarge | m2.4xlarge.
+        /// c1.medium | c1.xlarge | m2.2xlarge | m2.4xlarge.
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
         public LaunchSpecification WithInstanceType(string instanceType)
@@ -296,8 +287,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Placement property.
-        /// Specifies the placement constraints.
+        /// Placement constraints.
         /// </summary>
         [XmlElementAttribute(ElementName = "Placement")]
         public Placement Placement
@@ -307,7 +297,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Placement property
+        /// Sets the placement constraints.
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
@@ -327,7 +317,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
         /// The ID of the kernel to select.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
@@ -338,7 +327,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the ID of the kernel to select.
         /// </summary>
         /// <param name="kernelId">The ID of the kernel to select.</param>
         /// <returns>this instance</returns>
@@ -358,12 +347,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
-        /// The ID of the RAM disk to select. Some kernels
-        /// require additional drivers at launch. Check the kernel
-        /// requirements for information on whether you need to
-        /// specify a RAM
-        /// disk.
+        /// The ID of the RAM disk to select.
+        /// Some kernels require additional drivers at launch.
+        /// Check the kernel requirements for information on
+        /// whether you need to specify a RAM disk.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
@@ -373,13 +360,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the ID of the RAM disk to select.
         /// </summary>
         /// <param name="ramdiskId">The ID of the RAM disk to select. Some kernels
         /// require additional drivers at launch. Check the kernel
         /// requirements for information on whether you need to
-        /// specify a RAM
-        /// disk.</param>
+        /// specify a RAM disk.</param>
         /// <returns>this instance</returns>
         public LaunchSpecification WithRamdiskId(string ramdiskId)
         {
@@ -397,10 +383,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
-        /// Specifies how block devices are exposed to the
-        /// instance. Each mapping is made up of a virtualName
-        /// and a deviceName.
+        /// List of how block devices are exposed to the instance.
+        /// Each mapping is made up of a virtualName and a deviceName.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -417,7 +401,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the list of how block devices are exposed to the instance.
         /// </summary>
         /// <param name="list">Specifies how block devices are exposed to the
         /// instance. Each mapping is made up of a virtualName
@@ -442,8 +426,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Monitoring property.
-        /// Specifies whether to enable monitoring for the Spot Instance.
+        /// Whether to enable monitoring for the Spot Instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "Monitoring")]
         public MonitoringSpecification Monitoring
@@ -453,7 +436,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Monitoring property
+        /// Sets whether to enable monitoring for the Spot Instance.
         /// </summary>
         /// <param name="monitoring">Specifies whether to enable monitoring for the Spot Instance.</param>
         /// <returns>this instance</returns>
@@ -473,9 +456,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
-        /// Specifies the Amazon VPC subnet ID within which to
-        /// launch the instance(s) for Amazon Virtual Private Cloud.
+        /// Amazon VPC subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -485,7 +466,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the Amazon VPC subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.
         /// </summary>
         /// <param name="subnetId">Specifies the Amazon VPC subnet ID within which to
         /// launch the instance(s) for Amazon Virtual Private Cloud.</param>
@@ -506,7 +487,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceSet property.
+        /// List of Instance Network Interface Specifications.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceNetworkInterfaceSpecification")]
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaceSet
@@ -523,7 +504,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceSet property.
+        /// Sets the list of Instance Network Interface Specifications.
         /// </summary>
         /// <param name="list">Collection of NetworkInterfaceSet</param>
         /// <returns>this instance</returns>
@@ -546,7 +527,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceProfile property.
         /// An Identity and Access Management Instance Profile to associate with the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceProfile")]
@@ -557,7 +537,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceProfile property.
+        /// Sets an Identity and Access Management Instance Profile to associate with the instance.
         /// </summary>
         /// <param name="instanceProfile">
         /// An Identity and Access Management Instance Profile to associate with the instance.
@@ -579,8 +559,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the EbsOptimized property.
-        /// Specifies whether to use the EBS IOPS optimized option.
+        /// Whether to use the EBS IOPS optimized option.
         /// </summary>
         [XmlElementAttribute(ElementName = "EbsOptimized")]
         public bool EbsOptimized
@@ -590,7 +569,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the EbsOptimized property
+        /// Sets whether to use the EBS IOPS optimized option.
         /// </summary>
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>

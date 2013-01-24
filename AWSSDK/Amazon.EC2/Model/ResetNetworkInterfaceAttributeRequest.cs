@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property.
+        /// ID of the network interface on which the attribute will be reset.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the ID of the network interface on which the attribute will be reset.
         /// </summary>
         /// <param name="networkInterfaceId">Network Interface ID</param>
         /// <returns>this instance</returns>
@@ -64,6 +64,9 @@ namespace Amazon.EC2.Model
             return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
+        /// <summary>
+        /// Name of the attribute to reset.
+        /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
@@ -72,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name of the attribute to reset.
         /// </summary>
         /// <param name="attribute">Name of the attribute to reset.
         /// If not set, defaults to sourceDestCheck.

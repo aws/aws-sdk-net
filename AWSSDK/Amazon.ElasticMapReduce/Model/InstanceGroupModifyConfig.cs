@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Modify an instance group size.</para>
     /// </summary>
-    public class InstanceGroupModifyConfig  
+    public class InstanceGroupModifyConfig
     {
         
         private string instanceGroupId;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroupId property is set
         internal bool IsSetInstanceGroupId()
         {
-            return this.instanceGroupId != null;       
+            return this.instanceGroupId != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;       
+            return this.instanceCount.HasValue;
         }
     }
 }

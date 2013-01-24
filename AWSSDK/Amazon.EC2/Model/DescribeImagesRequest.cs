@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,21 +27,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Returns information about AMIs, AKIs, and ARIs.
-    /// This includes image type, product
-    /// codes, architecture, and kernel
-    /// and RAM disk IDs. Images available to
-    /// you include public images,
+    /// This includes image type, product codes, architecture, and kernel
+    /// and RAM disk IDs. Images available to you include public images,
     /// private images that you own, and private images owned by other
     /// users for which you have explicit launch permissions.
-    ///
-    /// Launch
-    /// permissions fall into three categories:
+    /// </summary>
+    /// <remarks>
+    /// Launch permissions fall into three categories:
     ///
     /// 1. public:
     /// The owner of the AMI granted launch permissions for the AMI to the
     /// all group. All users have launch permissions for these AMIs.
     ///
-    /// explicit:
+    /// 2. explicit:
     /// The owner of the AMI granted launch permissions to a specific user.
     ///
     /// 3. implicit:
@@ -69,7 +67,7 @@ namespace Amazon.EC2.Model
     /// launch permissions for the AMIs are returned. You can specify account IDs
     /// (if you own the AMI(s)), self for AMIs for which you own or have
     /// explicit permissions, or all for public AMIs.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeImagesRequest
     {    
@@ -79,7 +77,6 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// AMI IDs to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
@@ -97,7 +94,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets AMI IDs to describe.
         /// </summary>
         /// <param name="list">AMI IDs to describe.</param>
         /// <returns>this instance</returns>
@@ -120,8 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Owner property.
-        /// Returns AMIs owned by the specified owner.
+        /// Owner(s) for the AMIs to return.
         /// Multiple owners can be specified.
         /// </summary>
         [XmlElementAttribute(ElementName = "Owner")]
@@ -139,7 +135,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Owner property
+        /// Sets owner(s) for the AMIs to return.
         /// </summary>
         /// <param name="list">Returns AMIs owned by the specified owner.
         /// Multiple owners can be specified.</param>
@@ -163,8 +159,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ExecutableBy property.
-        /// Returns AMIs for which the specified user has
+        /// List of executor user IDs.
+        /// AMIs will be returned
+        /// for which the specified user(s) have
         /// explicit launch permissions.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExecutableBy")]
@@ -182,7 +179,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ExecutableBy property
+        /// Sets executor user IDs.
         /// </summary>
         /// <param name="list">Returns AMIs for which the specified user has
         /// explicit launch permissions.</param>
@@ -206,7 +203,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified Images.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -227,7 +223,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified Images.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified Images.

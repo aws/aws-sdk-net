@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Route Table Association
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class RouteTableAssociation
     {    
@@ -35,9 +37,7 @@ namespace Amazon.EC2.Model
         private bool? mainField;
 
         /// <summary>
-        /// Gets and sets the RouteTableAssociationId property.
-        /// An identifier representing the association between a route table and
-        /// a subnet.
+        /// An identifier representing the association between a route table and a subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableAssociationId")]
         public string RouteTableAssociationId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableAssociationId property
+        /// Sets an identifier representing the association between a route table and a subnet.
         /// </summary>
         /// <param name="routeTableAssociationId">An identifier representing the association between a route table and
         /// a subnet.</param>
@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
         /// The ID of the route table in the association.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
@@ -79,7 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the ID of the route table in the association.
         /// </summary>
         /// <param name="routeTableId">The ID of the route table in the association.</param>
         /// <returns>this instance</returns>
@@ -99,7 +98,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
         /// The ID of the subnet in the association.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
@@ -110,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the ID of the subnet in the association.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet in the association.</param>
         /// <returns>this instance</returns>
@@ -130,7 +128,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Main property.
         /// Whether this is the main route table.
         /// </summary>
         [XmlElementAttribute(ElementName = "Main")]
@@ -141,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Main property
+        /// Sets whether this is the main route table.
         /// </summary>
         /// <param name="main">Whether this is the main route table.</param>
         /// <returns>this instance</returns>

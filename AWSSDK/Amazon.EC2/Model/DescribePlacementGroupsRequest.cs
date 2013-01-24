@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about one or more
-    /// PlacementGroup instances
+    /// Returns information about one or more PlacementGroup instances
     /// in a user's account.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
@@ -37,7 +36,6 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// The name of the PlacementGroup.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -55,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the PlacementGroup.
         /// </summary>
         /// <param name="list">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
@@ -78,7 +76,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with the 
         /// specified PlacementGroups.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -99,7 +96,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated with the 
+        /// specified PlacementGroups.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with the 
         /// specified PlacementGroups.

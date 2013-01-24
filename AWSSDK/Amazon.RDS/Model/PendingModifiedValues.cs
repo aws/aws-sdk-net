@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the ModifyDBInstance action. </para>
     /// </summary>
-    public class PendingModifiedValues  
+    public class PendingModifiedValues
     {
         
         private string dBInstanceClass;
@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private bool? multiAZ;
         private string engineVersion;
         private int? iops;
+        private string dBInstanceIdentifier;
 
         /// <summary>
         /// Contains the new <c>DBInstanceClass</c> for the DB Instance that will be applied or is in progress.
@@ -60,7 +61,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.RDS.Model
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;       
+            return this.allocatedStorage.HasValue;
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.RDS.Model
         // Check to see if MasterUserPassword property is set
         internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPassword != null;       
+            return this.masterUserPassword != null;
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.RDS.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.RDS.Model
         // Check to see if BackupRetentionPeriod property is set
         internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriod.HasValue;       
+            return this.backupRetentionPeriod.HasValue;
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace Amazon.RDS.Model
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
-            return this.multiAZ.HasValue;       
+            return this.multiAZ.HasValue;
         }
 
         /// <summary>
@@ -228,7 +229,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -256,7 +257,35 @@ namespace Amazon.RDS.Model
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;       
+            return this.iops.HasValue;
+        }
+
+        /// <summary>
+        /// Contains the new <c>DBInstanceIdentifier</c> for the DB Instance that will be applied or is in progress.
+        ///  
+        /// </summary>
+        public string DBInstanceIdentifier
+        {
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBInstanceIdentifier property
+        /// </summary>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
+        /// <returns>this instance</returns>
+        public PendingModifiedValues WithDBInstanceIdentifier(string dBInstanceIdentifier)
+        {
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
+        {
+            return this.dBInstanceIdentifier != null;
         }
     }
 }

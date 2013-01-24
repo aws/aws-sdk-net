@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private string strategyField;
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// The name of the PlacementGroup.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the PlacementGroup.
         /// </summary>
         /// <param name="groupName">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
@@ -68,9 +67,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Strategy property.
-        /// The PlacementGroup strategy.
+        /// The placement group strategy.
         /// </summary>
+        /// <remarks>
+        /// Valid values: cluster
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Strategy")]
         public string Strategy
         {
@@ -79,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Strategy property
+        /// Sets the placement group strategy.
         /// </summary>
         /// <param name="strategy">The PlacementGroup strategy.</param>
         /// <returns>this instance</returns>

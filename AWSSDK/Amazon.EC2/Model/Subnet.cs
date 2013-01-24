@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Subnet
-    ///</summary>
+    /// <summary>
+    /// Subnet
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Subnet
     {    
@@ -37,10 +37,11 @@ namespace Amazon.EC2.Model
         private string cidrBlockField;
         private Decimal? availableIpAddressCountField;
         private string availabilityZoneField;
+        private bool? defaultForAzField;
+        private bool? mapPublicIpOnLaunchField;
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
         /// The subnet's ID
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the subnet's ID
         /// </summary>
         /// <param name="subnetId">The subnet's ID</param>
         /// <returns>this instance</returns>
@@ -71,9 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetState property.
-        /// The current state of the subnet (pending or
-        /// available).
+        /// The current state of the subnet (pending or available).
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetState")]
         public string SubnetState
@@ -83,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetState property
+        /// Sets the current state of the subnet (pending or available).
         /// </summary>
         /// <param name="subnetState">The current state of the subnet (pending or
         /// available).</param>
@@ -104,7 +103,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC the subnet is in
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -115,7 +113,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC the subnet is in
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the subnet is in</param>
         /// <returns>this instance</returns>
@@ -135,7 +133,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CidrBlock property.
         /// The CIDR block assigned to the subnet
         /// </summary>
         [XmlElementAttribute(ElementName = "CidrBlock")]
@@ -146,7 +143,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CidrBlock property
+        /// Sets the CIDR block assigned to the subnet
         /// </summary>
         /// <param name="cidrBlock">The CIDR block assigned to the subnet</param>
         /// <returns>this instance</returns>
@@ -166,9 +163,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailableIpAddressCount property.
-        /// The number of unused IP addresses in the
-        /// subnet.
+        /// The number of unused IP addresses in the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailableIpAddressCount")]
         public Decimal AvailableIpAddressCount
@@ -178,7 +173,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailableIpAddressCount property
+        /// Sets the number of unused IP addresses in the subnet.
         /// </summary>
         /// <param name="availableIpAddressCount">The number of unused IP addresses in the
         /// subnet.</param>
@@ -199,7 +194,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// The Availability Zone the subnet is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -210,7 +204,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone the subnet is in.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone the subnet is in.</param>
         /// <returns>this instance</returns>
@@ -230,7 +224,66 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
+        /// Whether the subnet is default for the availability zone.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "DefaultForAz")]
+        public bool DefaultForAz
+        {
+            get { return this.defaultForAzField.GetValueOrDefault(); }
+            set { this.defaultForAzField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether the subnet is default for the availability zone.
+        /// </summary>
+        /// <param name="defaultForAz">Whether the subnet is default for the availability zone.</param>
+        /// <returns>this instance</returns>
+        public Subnet WithDefaultForAz(bool defaultForAz)
+        {
+            this.defaultForAzField = defaultForAz;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the DefaultForAz property is set
+        /// </summary>
+        /// <returns>true if the DefaultForAz property is set</returns>
+        public bool IsSetDefaultForAz()
+        {
+            return this.defaultForAzField != null;
+        }
+
+        /// <summary>
+        /// Whether to map the public IP on launch.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MapPublicIpOnLaunch")]
+        public bool MapPublicIpOnLaunch
+        {
+            get { return this.defaultForAzField.GetValueOrDefault(); }
+            set { this.defaultForAzField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether to map the public IP on launch.
+        /// </summary>
+        /// <param name="mapPublicIpOnLaunch">Whether to map the public IP on launch.</param>
+        /// <returns>this instance</returns>
+        public Subnet WithMapPublicIpOnLaunch(bool mapPublicIpOnLaunch)
+        {
+            this.mapPublicIpOnLaunchField = mapPublicIpOnLaunch;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MapPublicIpOnLaunch property is set
+        /// </summary>
+        /// <returns>true if the MapPublicIpOnLaunch property is set</returns>
+        public bool IsSetMapPublicIpOnLaunch()
+        {
+            return this.mapPublicIpOnLaunchField != null;
+        }
+
+        /// <summary>
         /// A list of tags for the Subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -248,7 +301,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets tags for the Subnet.
         /// </summary>
         /// <param name="list">A list of tags for the Subnet.</param>
         /// <returns>this instance</returns>

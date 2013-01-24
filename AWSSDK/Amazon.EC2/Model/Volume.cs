@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Volume
-    ///</summary>
+    /// <summary>
+    /// Volume description
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Volume
     {    
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
         private string iopsField;
 
         /// <summary>
-        /// Gets and sets the VolumeId property.
         /// The ID of the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeId property
+        /// Sets the ID of the volume.
         /// </summary>
         /// <param name="volumeId">The ID of the volume.</param>
         /// <returns>this instance</returns>
@@ -74,7 +73,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Size property.
         /// The size of the volume, in GiBs.
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
@@ -85,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Size property
+        /// Sets the size of the volume, in GiBs.
         /// </summary>
         /// <param name="size">The size of the volume, in GiBs.</param>
         /// <returns>this instance</returns>
@@ -105,8 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
-        /// Snapshot from which the volume was created (optional).
+        /// Snapshot from which the volume was created.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
@@ -116,7 +113,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the snapshot from which the volume was created.
         /// </summary>
         /// <param name="snapshotId">Snapshot from which the volume was created (optional).</param>
         /// <returns>this instance</returns>
@@ -136,7 +133,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// Availability Zone in which the volume was created.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -147,7 +143,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone in which the volume was created.
         /// </summary>
         /// <param name="availabilityZone">Availability Zone in which the volume was created.</param>
         /// <returns>this instance</returns>
@@ -167,7 +163,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
         /// Volume state
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
@@ -178,7 +173,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the volume state
         /// </summary>
         /// <param name="status">Volume state</param>
         /// <returns>this instance</returns>
@@ -198,7 +193,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CreateTime property.
         /// Time stamp when volume creation was initiated.
         /// </summary>
         [XmlElementAttribute(ElementName = "CreateTime")]
@@ -209,7 +203,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CreateTime property
+        /// Sets the time stamp when volume creation was initiated.
         /// </summary>
         /// <param name="createTime">Time stamp when volume creation was initiated.</param>
         /// <returns>this instance</returns>
@@ -229,7 +223,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attachment property.
         /// List of attachments
         /// </summary>
         [XmlElementAttribute(ElementName = "Attachment")]
@@ -247,7 +240,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attachment property
+        /// Sets the list of attachments
         /// </summary>
         /// <param name="list">List of attachments</param>
         /// <returns>this instance</returns>
@@ -270,7 +263,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the Volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -288,7 +280,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets a list of tags for the Volume.
         /// </summary>
         /// <param name="list">A list of tags for the Volume.</param>
         /// <returns>this instance</returns>
@@ -311,7 +303,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IOPS property.
         /// Quantity of desired throughput in IOPS.
         /// </summary>
         [XmlElementAttribute(ElementName = "IOPS")]
@@ -322,7 +313,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IOPS property
+        /// Sets the quantity of desired throughput in IOPS.
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
@@ -342,8 +333,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeType property.
-        /// Constraints: may be either "io1" or "standard".
+        /// Volume type.
+        /// May be either "io1" or "standard".
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeType")]
@@ -354,7 +345,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeType property
+        /// Sets the volume type.
         /// </summary>
         /// <param name="volumeType">Volume Type.
         /// Constraints: may be either "io1" or "standard".

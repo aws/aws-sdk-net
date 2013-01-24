@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// VolumeStatusEvent
+    /// Volume Status Event
     /// </summary>
     public class VolumeStatusEvent
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private string descriptionField;
 
         /// <summary>
-        /// The type of this event
+        /// The event's type
         /// </summary>
         public string EventType
         {
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
             return this.eventTypeField != null;
         }
         /// <summary>
-        /// Sets the EventType property.
+        /// Sets the event's type
         /// </summary>
         /// <param name="eventType">The new event type</param>
         /// <returns>this instance</returns>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
             return this.notBeforeField.HasValue;
         }
         /// <summary>
-        /// Sets the NotBefore property.
+        /// Sets the earliest start time of this event
         /// </summary>
         /// <param name="notBefore">The new NotBefore value</param>
         /// <returns>this instance</returns>
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
             return this.notAfterField.HasValue;
         }
         /// <summary>
-        /// Sets the NotAfter property.
+        /// Sets the latest end time of this event
         /// </summary>
         /// <param name="notAfter">The new NotAfter value</param>
         /// <returns>this instance</returns>
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
             return this.eventIdField != null;
         }
         /// <summary>
-        /// Sets the EventId property.
+        /// Sets the ID of this event
         /// </summary>
         /// <param name="eventId">The new event id</param>
         /// <returns>this instance</returns>
@@ -162,7 +162,7 @@ namespace Amazon.EC2.Model
             return this.descriptionField != null;
         }
         /// <summary>
-        /// Sets the Description property.
+        /// Sets the description of this event
         /// </summary>
         /// <param name="description">The new description</param>
         /// <returns>this instance</returns>

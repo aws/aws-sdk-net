@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> A name and value pair used to update the value of a Parameter. </para>
     /// </summary>
-    public class ParameterNameValue  
+    public class ParameterNameValue
     {
         
         private string parameterName;
@@ -54,7 +54,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterName property is set
         internal bool IsSetParameterName()
         {
-            return this.parameterName != null;       
+            return this.parameterName != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;       
+            return this.parameterValue != null;
         }
     }
 }

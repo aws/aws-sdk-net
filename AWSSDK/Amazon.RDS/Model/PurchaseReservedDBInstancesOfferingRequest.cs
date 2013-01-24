@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;       
+            return this.reservedDBInstancesOfferingId != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReservedDBInstanceId property is set
         internal bool IsSetReservedDBInstanceId()
         {
-            return this.reservedDBInstanceId != null;       
+            return this.reservedDBInstanceId != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
-            return this.dBInstanceCount.HasValue;       
+            return this.dBInstanceCount.HasValue;
         }
     }
 }

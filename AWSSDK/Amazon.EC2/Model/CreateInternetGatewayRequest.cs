@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach
-    /// it to a VPC using AttachInternetGateway. For more information about your VPC and Internet gateway,
-    /// go to Amazon Virtual Private Cloud User Guide.
+    /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you attach
+    /// it to a VPC using AttachInternetGateway.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateInternetGatewayRequest

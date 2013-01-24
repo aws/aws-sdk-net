@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,13 +26,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Removes one or more egress rules from a VPC security group. 
+    /// </summary>
+    /// <remarks>
     /// This action applies only to security groups in a VPC. It doesn't work with standard (EC2) security groups.
     /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
     /// Private Cloud User Guide.
     /// 
-    /// The action removes one or more egress rules from a VPC security group. The values that you specify in
-    /// the revoke request (e.g., ports, etc.) must match the existing rule's values in order for the rule to be
-    /// revoked.
+    /// The values that you specify in the revoke request (e.g., ports, etc.) must match the existing rule's values
+    /// in order for the rule to be revoked.
     /// 
     /// Each rule consists of the protocol, and the CIDR range or destination security group. For the TCP and
     /// UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you
@@ -40,7 +42,7 @@ namespace Amazon.EC2.Model
     /// 
     /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
     /// small delay might occur.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RevokeSecurityGroupEgressRequest
     {    
@@ -48,7 +50,6 @@ namespace Amazon.EC2.Model
         private List<IpPermissionSpecification> ipPermissionsField;
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// ID of the VPC security group to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -59,7 +60,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the ID of the VPC security group to modify.
         /// </summary>
         /// <param name="groupId">ID of the VPC security group to modify.</param>
         /// <returns>this instance</returns>
@@ -79,9 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpPermissions property.
-        /// Set of IP permissions associated with the
-        /// security group.
+        /// Set of IP permissions associated with the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermissions")]
         public List<IpPermissionSpecification> IpPermissions
@@ -98,7 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpPermissions property
+        /// Sets the IP permissions associated with the security group.
         /// </summary>
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>

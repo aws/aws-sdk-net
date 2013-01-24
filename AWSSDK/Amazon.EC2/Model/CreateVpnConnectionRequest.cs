@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,17 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The response includes information that you need
-    /// to configure your customer gateway, in XML format.
+    /// Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway.
+    /// The only supported connection type is ipsec.1.
     /// </summary>
+    /// <remarks>
+    /// The response includes information that you need to configure your customer gateway, in XML format.
+    /// 
+    /// It is strongly recommend that you use HTTPS when calling this operation because the response
+    /// contains sensitive cryptographic information for configuring your customer gateway.
+    /// If you shut down your VPN connection for any reason and later create a new VPN connection, you must
+    /// reconfigure your customer gateway with the new information returned from CreateVpnConnection.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVpnConnectionRequest
     {    
@@ -38,8 +46,8 @@ namespace Amazon.EC2.Model
         private bool? staticRoutesOnlyField;
 
         /// <summary>
-        /// Gets and sets the Type property.
-        /// The type of VPN connection
+        /// The type of VPN connection.
+        /// The only supported connection type is ipsec.1.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -49,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection.
         /// </summary>
         /// <param name="type">The type of VPN connection</param>
         /// <returns>this instance</returns>
@@ -69,7 +77,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayId property.
         /// The ID of the customer gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
@@ -80,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayId property
+        /// Sets the ID of the customer gateway.
         /// </summary>
         /// <param name="customerGatewayId">The ID of the customer gateway.</param>
         /// <returns>this instance</returns>
@@ -100,7 +107,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
         /// The ID of the VPN gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
@@ -111,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the VPN gateway.
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway.</param>
         /// <returns>this instance</returns>
@@ -131,12 +137,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StaticRoutesOnly option for the VPN connection.
+        /// Whether or not the VPN connection requires static routes.
         /// </summary>
         /// <remarks>
-        /// A Boolean value indicating whether or not the VPN connection requires static routes. 
-        /// If you are creating a VPN connection for a device that does not support BGP, you must 
-        /// specify this value as true.
+        /// If you are creating a VPN connection for a device that does not support BGP,
+        /// you must specify this value as true.
         /// </remarks>
         [XmlElementAttribute(ElementName = "StaticRoutesOnly")]
         public bool StaticRoutesOnly
@@ -146,7 +151,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StaticRoutesOnly option for the VPN connection.
+        /// Sets whether or not the VPN connection requires static routes.
         /// </summary>
         /// <param name="staticRoutesOnly">Static routes only value</param>
         /// <returns>This instance</returns>

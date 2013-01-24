@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets permission settings for the specified
-    /// snapshot
+    /// Resets permission settings for the specified snapshot
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ResetSnapshotAttributeRequest
@@ -36,7 +35,6 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -47,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
@@ -67,9 +65,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Resets the create volume permissions of the
-        /// snapshot.
+        /// The attribute to reset.
+        /// Currently only the attribute for permission to create volumes can be reset.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -79,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute to reset.
         /// </summary>
         /// <param name="attribute">Resets the create volume permissions of the
         /// snapshot.</param>

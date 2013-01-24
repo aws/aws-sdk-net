@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSubnetGroups action.</para>
     /// </summary>
-    public class DBSubnetGroup  
+    public class DBSubnetGroup
     {
         
         private string dBSubnetGroupName;
@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this.dBSubnetGroupName != null;       
+            return this.dBSubnetGroupName != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSubnetGroupDescription property is set
         internal bool IsSetDBSubnetGroupDescription()
         {
-            return this.dBSubnetGroupDescription != null;       
+            return this.dBSubnetGroupDescription != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;       
+            return this.vpcId != null;
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.RDS.Model
         // Check to see if SubnetGroupStatus property is set
         internal bool IsSetSubnetGroupStatus()
         {
-            return this.subnetGroupStatus != null;       
+            return this.subnetGroupStatus != null;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Subnets collection
         /// </summary>
@@ -194,7 +194,7 @@ namespace Amazon.RDS.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;       
+            return this.subnets.Count > 0;
         }
     }
 }

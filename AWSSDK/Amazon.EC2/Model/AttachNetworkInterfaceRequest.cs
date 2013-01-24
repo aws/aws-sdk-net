@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to attach a network interface to an instance.
+    /// Attaches a network interface to an instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class AttachNetworkInterfaceRequest
@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
         private int? deviceIndexField;
 
         /// <summary>
-        /// Gets and sets the ID of the network interface to attach.
+        /// The ID of the network interface to attach.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ID of the instance that will be attached to the network interface.
+        /// The ID of the instance to attach to the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ID of the instance that will be attached to the network interface.
+        /// Sets the ID of the instance to attach to the network interface.
         /// </summary>
         /// <param name="instanceId">The instance ID</param>
         /// <returns>this instance</returns>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the index of the device for the network interface attachment on the instance.
+        /// The index of the device for the network interface attachment on the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeviceIndex")]
         public int DeviceIndex

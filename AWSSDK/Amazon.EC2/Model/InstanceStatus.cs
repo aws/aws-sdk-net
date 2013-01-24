@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         private InstanceStatusDetail instanceStatusDetailField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
+        /// Instance ID
         /// </summary>
         [XmlElement(ElementName = "InstanceId")]
         public string InstanceId
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID
         /// </summary>
         /// <param name="instanceId">Unique ID of the instance launched.</param>
         /// <returns>this instance</returns>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Amazon EC2 instance's availability zone.
+        /// The instance's availability zone.
         /// </summary>
         [XmlElement(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the instance's availability zone.
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceStatusEvent collection
+        /// Sets the extra information regarding instance status.
         /// </summary>
         /// <param name="instanceStatusEvent">Collection of InstanceStatusEvent instances</param>
         /// <returns>this instance</returns>
@@ -132,7 +132,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceState property.
         /// The current state of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceState")]
@@ -143,7 +142,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceState property
+        /// Sets the current state of the instance.
         /// </summary>
         /// <param name="instanceState">The current state of the instance.</param>
         /// <returns>this instance</returns>
@@ -163,7 +162,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SystemStatusDetail property.
+        /// System status detail.
         /// </summary>
         [XmlElementAttribute(ElementName = "SystemStatusDetail")]
         public InstanceStatusDetail SystemStatusDetail
@@ -173,7 +172,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SystemStatusDetail property.
+        /// Sets the system status detail.
         /// </summary>
         /// <param name="systemStatusDetail">System status</param>
         /// <returns>this instance</returns>
@@ -193,7 +192,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceStatusDetail property
+        /// Instance status detail.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceStatusDetail")]
         public InstanceStatusDetail InstanceStatusDetail
@@ -203,7 +202,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceStatusDetail property.
+        /// Sets the instance status detail.
         /// </summary>
         /// <param name="instanceStatusDetail">Instance status</param>
         /// <returns>this instance</returns>

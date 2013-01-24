@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Creat Volume Permission
-    ///</summary>
+    /// <summary>
+    /// Permissions for creating a volume.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVolumePermission
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string groupNameField;
 
         /// <summary>
-        /// Gets and sets the UserId property.
         /// User ID of a user that can create volumes from
         /// the snapshot.
         /// </summary>
@@ -47,7 +46,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserId property
+        /// Sets the user ID of a user that can create volumes from
+        /// the snapshot.
         /// </summary>
         /// <param name="userId">User ID of a user that can create volumes from
         /// the snapshot.</param>
@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// Group that is allowed to create volumes from
         /// the snapshot (currently supports "all").
         /// </summary>
@@ -80,7 +79,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the group that is allowed to create volumes from
+        /// the snapshot (currently supports "all").
         /// </summary>
         /// <param name="groupName">Group that is allowed to create volumes from
         /// the snapshot (currently supports "all").</param>

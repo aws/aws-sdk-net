@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createCacheClusterRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "CreateCacheCluster");
-            request.Parameters.Add("Version", "2012-03-09");
+            request.Parameters.Add("Version", "2012-11-15");
             if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetCacheClusterId())
             {
                 request.Parameters.Add("CacheClusterId", StringUtils.FromString(createCacheClusterRequest.CacheClusterId));
@@ -59,6 +59,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(createCacheClusterRequest.CacheParameterGroupName));
             }
+            if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetCacheSubnetGroupName())
+            {
+                request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(createCacheClusterRequest.CacheSubnetGroupName));
+            }
             if (createCacheClusterRequest != null)
             {
                 List<string> cacheSecurityGroupNamesList = createCacheClusterRequest.CacheSecurityGroupNames;
@@ -68,6 +72,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("CacheSecurityGroupNames.member." + cacheSecurityGroupNamesListIndex, StringUtils.FromString(cacheSecurityGroupNamesListValue));
                     cacheSecurityGroupNamesListIndex++;
+                }
+            }
+            if (createCacheClusterRequest != null)
+            {
+                List<string> securityGroupIdsList = createCacheClusterRequest.SecurityGroupIds;
+
+                int securityGroupIdsListIndex = 1;
+                foreach (string securityGroupIdsListValue in securityGroupIdsList)
+                { 
+                    request.Parameters.Add("SecurityGroupIds.member." + securityGroupIdsListIndex, StringUtils.FromString(securityGroupIdsListValue));
+                    securityGroupIdsListIndex++;
                 }
             }
             if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetPreferredAvailabilityZone())

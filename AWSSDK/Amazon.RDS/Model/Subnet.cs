@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeDBSubnetGroups action. </para>
     /// </summary>
-    public class Subnet  
+    public class Subnet
     {
         
         private string subnetIdentifier;
@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
         // Check to see if SubnetIdentifier property is set
         internal bool IsSetSubnetIdentifier()
         {
-            return this.subnetIdentifier != null;       
+            return this.subnetIdentifier != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         // Check to see if SubnetAvailabilityZone property is set
         internal bool IsSetSubnetAvailabilityZone()
         {
-            return this.subnetAvailabilityZone != null;       
+            return this.subnetAvailabilityZone != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.RDS.Model
         // Check to see if SubnetStatus property is set
         internal bool IsSetSubnetStatus()
         {
-            return this.subnetStatus != null;       
+            return this.subnetStatus != null;
         }
     }
 }

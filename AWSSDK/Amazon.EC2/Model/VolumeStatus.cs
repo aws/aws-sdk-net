@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// VolumeStatus
+    /// Volume Status
     /// </summary>
     public class VolumeStatus
     {
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
             return this.volumeIdField != null;
         }
         /// <summary>
-        /// Sets the VolumeId property.
+        /// Sets the volume ID
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
             return this.availabilityZoneField != null;
         }
         /// <summary>
-        /// Sets the AvailabilityZone property.
+        /// Sets the Availability Zone of the volume
         /// </summary>
         /// <param name="availabilityZone">The new availability zone</param>
         /// <returns>this instance</returns>
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
             return this.volumeStatusInfoField != null;
         }
         /// <summary>
-        /// Sets the VolumeStatusInfo property.
+        /// Sets the status of the volume
         /// </summary>
         /// <param name="volumeStatusInfo">The new VolumeStatusInfo</param>
         /// <returns>this instance</returns>
@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
             return this.volumeStatusEventField != null;
         }
         /// <summary>
-        /// Sets the VolumeStatusEvent property.
+        /// Sets a list of events associated with the volume
         /// </summary>
         /// <param name="list">The new VolumeStatusEvent</param>
         /// <returns>this instance</returns>
@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
             return this.volumeStatusActionField != null;
         }
         /// <summary>
-        /// Sets the VolumeStatusAction property.
+        /// Sets a list of actions associated with the volume
         /// </summary>
         /// <param name="list">The new VolumeStatusAction</param>
         /// <returns>this instance</returns>

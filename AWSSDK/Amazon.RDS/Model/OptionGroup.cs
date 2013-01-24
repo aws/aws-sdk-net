@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class OptionGroup  
+    public class OptionGroup
     {
         
         private string optionGroupName;
@@ -59,8 +59,13 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;       
+            return this.optionGroupName != null;
         }
+
+        /// <summary>
+        /// Provides the description of the option group.
+        ///  
+        /// </summary>
         public string OptionGroupDescription
         {
             get { return this.optionGroupDescription; }
@@ -82,7 +87,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupDescription property is set
         internal bool IsSetOptionGroupDescription()
         {
-            return this.optionGroupDescription != null;       
+            return this.optionGroupDescription != null;
         }
 
         /// <summary>
@@ -110,7 +115,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineName property is set
         internal bool IsSetEngineName()
         {
-            return this.engineName != null;       
+            return this.engineName != null;
         }
 
         /// <summary>
@@ -138,8 +143,13 @@ namespace Amazon.RDS.Model
         // Check to see if MajorEngineVersion property is set
         internal bool IsSetMajorEngineVersion()
         {
-            return this.majorEngineVersion != null;       
+            return this.majorEngineVersion != null;
         }
+
+        /// <summary>
+        /// Indicates what options are available in the option group.
+        ///  
+        /// </summary>
         public List<Option> Options
         {
             get { return this.options; }
@@ -159,7 +169,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Options collection
         /// </summary>
@@ -178,11 +188,12 @@ namespace Amazon.RDS.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options.Count > 0;       
+            return this.options.Count > 0;
         }
 
         /// <summary>
-        /// Indicates whether this option group can be applied to both VPC and non-VPC instances.
+        /// Indicates whether this option group can be applied to both VPC and non-VPC instances. The value 'true' indicates the option group can be
+        /// applied to both VPC and non-VPC instances.
         ///  
         /// </summary>
         public bool AllowsVpcAndNonVpcInstanceMemberships
@@ -206,13 +217,13 @@ namespace Amazon.RDS.Model
         // Check to see if AllowsVpcAndNonVpcInstanceMemberships property is set
         internal bool IsSetAllowsVpcAndNonVpcInstanceMemberships()
         {
-            return this.allowsVpcAndNonVpcInstanceMemberships.HasValue;       
+            return this.allowsVpcAndNonVpcInstanceMemberships.HasValue;
         }
 
         /// <summary>
         /// If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field
-        /// is blank, then this option group can only be applied to non-VPC instances. Otherwise, this option group can only be applied to instances
-        /// that are in the VPC indicated by this field.
+        /// is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group
+        /// can only be applied to instances that are in the VPC indicated by this field.
         ///  
         /// </summary>
         public string VpcId
@@ -236,7 +247,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;       
+            return this.vpcId != null;
         }
     }
 }

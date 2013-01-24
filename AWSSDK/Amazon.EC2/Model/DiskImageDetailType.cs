@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Details about the format of the image.
-    ///</summary>
+    /// <summary>
+    /// Details about the format of the image.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DiskImageDetailType
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private string importManifestUrlField;
 
         /// <summary>
-        /// Gets and sets the Format property.
         /// File format of the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Format")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Format property
+        /// Sets the file format of the disk image.
         /// </summary>
         /// <param name="format">File format of the disk image.</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Bytes property.
         /// Number of bytes in the disk image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bytes")]
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Bytes property
+        /// Sets the number of bytes in the disk image.
         /// </summary>
         /// <param name="bytes">Number of bytes in the disk image.</param>
         /// <returns>this instance</returns>
@@ -98,11 +96,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImportManifestUrl property.
+        /// A presigned URL for the import manifest stored in Amazon S3.
+        /// </summary>
+        /// <remarks>
         /// The manifest for the disk image, stored in Amazon S3 and presented here as an Amazon S3 pre-signed URL. For information about 
         /// creating a pre-signed URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the 
         /// Authenticating REST Requests topic in the Amazon Simple Storage Service Developer Guide.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ImportManifestUrl")]
         public string ImportManifestUrl
         {
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImportManifestUrl property
+        /// Sets a presigned URL for the import manifest stored in Amazon S3.
         /// </summary>
         /// <param name="importManifestUrl">The manifest for the disk image, stored in Amazon S3 and presented here as an Amazon S3 pre-signed URL. For information about 
         /// creating a pre-signed URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the 

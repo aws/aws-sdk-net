@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Reason for the state change.
-    ///</summary>
+    /// <summary>
+    /// Reason for the state change.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class StateReason
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string messageField;
 
         /// <summary>
-        /// Gets and sets the Code property.
         /// Reason code for the state change.
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the reason code for the state change.
         /// </summary>
         /// <param name="code">Reason code for the state change.</param>
         /// <returns>this instance</returns>
@@ -66,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
         /// Message for the state change.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
@@ -77,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the message for the state change.
         /// </summary>
         /// <param name="message">Message for the state change.</param>
         /// <returns>this instance</returns>

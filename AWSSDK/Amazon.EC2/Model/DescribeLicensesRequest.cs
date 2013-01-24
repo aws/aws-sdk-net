@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,10 +27,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Provides details of a user's registered licenses.
+    /// </summary>
+    /// <remarks>
     /// Zero or more IDs may be specified on the call.
     /// When one or more license IDs are specified,
     /// only data for the specified IDs are returned.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeLicensesRequest
     {    
@@ -38,9 +40,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the LicenseId property.
-        /// Specifies the license registration for which
-        /// details are to be returned.
+        /// Licenses for which details are to be returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "LicenseId")]
         public List<string> LicenseId
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LicenseId property
+        /// Sets the licenses for which details are to be returned.
         /// </summary>
         /// <param name="list">Specifies the license registration for which
         /// details are to be returned.</param>
@@ -81,7 +81,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags 
         /// associated with the specified Licenses.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -102,7 +101,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags 
+        /// associated with the specified Licenses.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags 
         /// associated with the specified Licenses.
@@ -126,6 +126,5 @@ namespace Amazon.EC2.Model
         {
             return (Filter.Count > 0);
         }
-
     }
 }

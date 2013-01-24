@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///If the task fails, a description of the error.
-    ///</summary>
+    /// <summary>
+    /// If the task fails, a description of the error.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class BundleTaskError
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string messageField;
 
         /// <summary>
-        /// Gets and sets the Code property.
         /// Error code.
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the error code.
         /// </summary>
         /// <param name="code">Error code.</param>
         /// <returns>this instance</returns>
@@ -66,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
         /// Error message.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
@@ -77,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the error message.
         /// </summary>
         /// <param name="message">Error message.</param>
         /// <returns>this instance</returns>

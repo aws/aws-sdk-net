@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> Defines a set of EC2 Security groups that are allowed to access a Cache Cluster. </para>
     /// </summary>
-    public class CacheSecurityGroup  
+    public class CacheSecurityGroup
     {
         
         private string ownerId;
@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if OwnerId property is set
         internal bool IsSetOwnerId()
         {
-            return this.ownerId != null;       
+            return this.ownerId != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;       
+            return this.cacheSecurityGroupName != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the EC2SecurityGroups collection
         /// </summary>
@@ -157,7 +157,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this.eC2SecurityGroups.Count > 0;       
+            return this.eC2SecurityGroups.Count > 0;
         }
     }
 }

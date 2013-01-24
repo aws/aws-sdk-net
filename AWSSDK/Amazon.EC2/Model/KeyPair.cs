@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Key Pair
-    ///</summary>
+    /// <summary>
+    /// Key pair.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class KeyPair
     {    
@@ -36,9 +36,7 @@ namespace Amazon.EC2.Model
         private string keyMaterialField;
 
         /// <summary>
-        /// Gets and sets the KeyName property.
-        /// The key pair name provided in the original
-        /// request.
+        /// Name of the key pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
@@ -48,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyName property
+        /// Sets the name of the key pair.
         /// </summary>
         /// <param name="keyName">The key pair name provided in the original
         /// request.</param>
@@ -69,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KeyFingerprint property.
         /// A SHA-1 digest of the DER encoded private key.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyFingerprint")]
@@ -80,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyFingerprint property
+        /// Sets the SHA-1 digest of the DER encoded private key.
         /// </summary>
         /// <param name="keyFingerprint">A SHA-1 digest of the DER encoded private key.</param>
         /// <returns>this instance</returns>
@@ -100,8 +97,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KeyMaterial property.
-        /// Only returned on create
+        /// An unencrypted PEM encoded RSA private key.
+        /// Only returned on during a create operation.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyMaterial")]
         public string KeyMaterial
@@ -111,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyMaterial property
+        /// Set an unencrypted PEM encoded RSA private key.
         /// </summary>
         /// <param name="keyMaterial">Only returned on create</param>
         /// <returns>this instance</returns>

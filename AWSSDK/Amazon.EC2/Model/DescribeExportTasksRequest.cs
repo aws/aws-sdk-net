@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes your export tasks. If no export task IDs are specified, all export tasks initiated by you are returned.
+    /// Describes your export tasks.
+    /// If no export task IDs are specified, all export tasks initiated by you are returned.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeExportTasksRequest
@@ -34,7 +35,8 @@ namespace Amazon.EC2.Model
         private List<string> exportTaskIdsField;
 
         /// <summary>
-        /// Gets and sets one or more export task IDs. If no task IDs are provided, all active export tasks will be described.
+        /// One or more export task IDs.
+        /// If no task IDs are provided, all active export tasks will be described.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExportTaskIds")]
         public List<string> ExportTaskIds
@@ -52,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// sets one or more export task IDs.
+        /// Sets export task IDs.
         /// </summary>
         /// <param name="list">Collection of export task ids to describe</param>
         /// <returns>this instance</returns>

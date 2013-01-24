@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///S3 Storage
-    ///</summary>
+    /// <summary>
+    /// S3 storage configuration
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class S3Storage
     {    
@@ -38,14 +38,10 @@ namespace Amazon.EC2.Model
         private string uploadPolicySignatureField;
 
         /// <summary>
-        /// Gets and sets the Bucket property.
-        /// The bucket in which to store the AMI. You can
-        /// specify a bucket that you
-        /// already own or a new bucket that Amazon
-        /// EC2 creates on your behalf. If you
-        /// specify a bucket that belongs
-        /// to someone else, Amazon EC2 returns an
-        /// error.
+        /// The bucket in which to store the AMI.
+        /// You can specify a bucket that you already own or a new bucket that Amazon
+        /// EC2 creates on your behalf. If you specify a bucket that belongs
+        /// to someone else, Amazon EC2 returns an error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -55,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Bucket property
+        /// Sets the bucket in which to store the AMI.
         /// </summary>
         /// <param name="bucket">The bucket in which to store the AMI. You can
         /// specify a bucket that you
@@ -81,8 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Prefix property.
-        /// Specifies the beginning of the file name of the AMI.
+        /// The beginning of the file name of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
@@ -92,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property
+        /// Sets the beginning of the file name of the AMI.
         /// </summary>
         /// <param name="prefix">Specifies the beginning of the file name of the AMI.</param>
         /// <returns>this instance</returns>
@@ -112,7 +107,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AWSAccessKeyId property.
         /// The Access Key ID of the owner of the Amazon S3 bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "AWSAccessKeyId")]
@@ -123,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AWSAccessKeyId property
+        /// Sets the Access Key ID of the owner of the Amazon S3 bucket.
         /// </summary>
         /// <param name="AWSAccessKeyId">The Access Key ID of the owner of the Amazon S3 bucket.</param>
         /// <returns>this instance</returns>
@@ -143,10 +137,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UploadPolicy property.
-        /// A Base64-encoded Amazon S3 upload policy that
-        /// gives Amazon EC2 permission to upload items into
-        /// Amazon S3 on the user's behalf
+        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
+        /// permission to upload items into Amazon S3 on the user's behalf.
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadPolicy")]
         public string UploadPolicy
@@ -156,7 +148,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UploadPolicy property
+        /// Sets a Base64-encoded Amazon S3 upload policy that gives Amazon EC2
+        /// permission to upload items into Amazon S3 on the user's behalf.
         /// </summary>
         /// <param name="uploadPolicy">A Base64-encoded Amazon S3 upload policy that
         /// gives Amazon EC2 permission to upload items into
@@ -178,9 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UploadPolicySignature property.
-        /// The signature of the Base64 encoded JSON
-        /// document.
+        /// The signature of the Base64 encoded JSON document.
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadPolicySignature")]
         public string UploadPolicySignature
@@ -190,7 +181,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UploadPolicySignature property
+        /// Sets the signature of the Base64 encoded JSON document.
         /// </summary>
         /// <param name="uploadPolicySignature">The signature of the Base64 encoded JSON
         /// document.</param>

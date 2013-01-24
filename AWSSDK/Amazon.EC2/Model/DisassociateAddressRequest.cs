@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,12 +27,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Disassociates the specified elastic IP address
-    /// from the instance to which it is
-    /// assigned. This is an idempotent
-    /// operation. If you enter it more
-    /// than once, Amazon EC2 does not
-    /// return an error.
+    /// from the instance to which it is assigned.
     /// </summary>
+    /// <remarks>
+    /// This is an idempotent operation. If you call it more
+    /// than once, Amazon EC2 does not return an error.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DisassociateAddressRequest
     {    
@@ -40,9 +40,7 @@ namespace Amazon.EC2.Model
         private string associationIdField;
 
         /// <summary>
-        /// Gets and sets the PublicIp property.
-        /// IP address that you are disassociating from
-        /// the instance.
+        /// IP address that you are disassociating from the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -52,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property
+        /// Sets the IP address that you are disassociating from the instance.
         /// </summary>
         /// <param name="publicIp">IP address that you are disassociating from
         /// the instance.</param>
@@ -73,7 +71,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AssociationId property.
         /// Association ID corresponding to the VPC elastic IP address 
         /// you want to disassociate.
         ///
@@ -87,7 +84,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the Association ID corresponding to the VPC elastic IP address 
+        /// you want to disassociate.
         /// </summary>
         /// <param name="associationId">Association ID corresponding to the VPC elastic IP address 
         /// you want to disassociate.

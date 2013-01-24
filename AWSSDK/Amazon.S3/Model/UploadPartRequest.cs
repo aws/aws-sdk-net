@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Amazon.Util;
 
 namespace Amazon.S3.Model
 {
@@ -511,23 +512,7 @@ namespace Amazon.S3.Model
         /// <param name="total">The total number of bytes to be transferred</param>
         internal override void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
         {
-            // Make a temporary copy of the event to avoid the possibility of
-            // a race condition if the last and only subscriber unsubscribes
-            // immediately after the null check and before the event is raised.
-            EventHandler<UploadPartProgressArgs> handler = UploadPartProgressEvent;
-            try
-            {
-                // Event will be null if there are no subscribers
-                if (handler != null)
-                {
-                    // This automatically calls all subscribers sequentially
-                    // http://msdn.microsoft.com/en-us/library/ms173172%28VS.80%29.aspx
-                    handler(this, new UploadPartProgressArgs(incrementTransferred, transferred, total));
-                }
-            }
-            catch
-            {
-            }
+            AWSSDKUtils.InvokeInBackground(UploadPartProgressEvent, new UploadPartProgressArgs(incrementTransferred, transferred, total), this);
         }
 
 

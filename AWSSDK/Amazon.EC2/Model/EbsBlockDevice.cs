@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Information about the EBS block device.
-    ///</summary>
+    /// <summary>
+    /// Information about an EBS block device.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class EbsBlockDevice
     {    
@@ -38,7 +38,6 @@ namespace Amazon.EC2.Model
         private string iopsField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -49,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeSize property.
         /// Size of the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeSize")]
@@ -80,7 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeSize property
+        /// Sets the size of the volume.
         /// </summary>
         /// <param name="volumeSize">Size of the volume.</param>
         /// <returns>this instance</returns>
@@ -100,9 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property.
-        /// Whether the EBS block device is deleted on
-        /// instance termination.
+        /// Whether the EBS block device is deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -112,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property
+        /// Sets whether the EBS block device is deleted on instance termination.
         /// </summary>
         /// <param name="deleteOnTermination">Whether the EBS block device is deleted on
         /// instance termination.</param>
@@ -133,7 +129,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IOPS property.
         /// Quantity of desired throughput in IOPS.
         /// </summary>
         [XmlElementAttribute(ElementName = "IOPS")]
@@ -144,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IOPS property
+        /// Sets quantity of desired throughput in IOPS.
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
@@ -164,7 +159,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeType property.
+        /// The volume type.
         /// Constraints: may be either "io1" or "standard".
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </summary>
@@ -176,7 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeType property
+        /// Sets the volume type.
         /// </summary>
         /// <param name="volumeType">Volume Type.
         /// Constraints: may be either "io1" or "standard".

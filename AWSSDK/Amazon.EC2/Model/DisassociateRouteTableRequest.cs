@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,18 +27,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Disassociates a subnet from a route table.
-    /// 
-    /// After you perform this action, the subnet no longer uses the routes in the route table. Instead it uses the
-    /// routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
-    /// Amazon Virtual Private Cloud User Guide.
     /// </summary>
+    /// <remarks>
+    /// After you perform this action, the subnet no longer
+    /// uses the routes in the route table. Instead it uses
+    /// the routes in the VPC's main route table.
+    /// For more information about route tables, go to Route
+    /// Tables in the Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DisassociateRouteTableRequest
     {    
         private string associationIdField;
 
         /// <summary>
-        /// Gets and sets the AssociationId property.
         /// The association ID representing the current 
         /// association between the route table and
         /// subnet.
@@ -51,7 +53,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the association ID representing the current 
+        /// association between the route table and
+        /// subnet.
         /// </summary>
         /// <param name="associationId">The association ID representing the current 
         /// association between the route table and

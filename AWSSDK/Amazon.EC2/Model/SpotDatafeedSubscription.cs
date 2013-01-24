@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Describes the Spot Datafeed subscription.
-    ///</summary>
+    /// <summary>
+    /// Spot Datafeed subscription.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class SpotDatafeedSubscription
     {    
@@ -38,9 +38,7 @@ namespace Amazon.EC2.Model
         private SpotInstanceStateFault faultField;
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
-        /// The AWS account ID associated with the
-        /// subscription.
+        /// The AWS account ID associated with the subscription.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -50,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the AWS account ID associated with the subscription.
         /// </summary>
         /// <param name="ownerId">The AWS account ID associated with the
         /// subscription.</param>
@@ -71,9 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Bucket property.
-        /// The Amazon S3 bucket where the Spot Instance
-        /// datafeed is located.
+        /// The Amazon S3 bucket where the Spot Instance datafeed is located.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -83,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Bucket property
+        /// Sets the Amazon S3 bucket where the Spot Instance datafeed is located.
         /// </summary>
         /// <param name="bucket">The Amazon S3 bucket where the Spot Instance
         /// datafeed is located.</param>
@@ -104,8 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Prefix property.
-        /// The Prefix prepended to the datafeed files.
+        /// The prefix prepended to the datafeed files.
         /// </summary>
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
@@ -115,9 +110,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property
+        /// Sets the prefix prepended to the datafeed files.
         /// </summary>
-        /// <param name="prefix">The Prefix prepended to the datafeed files.</param>
+        /// <param name="prefix">The prefix prepended to the datafeed files.</param>
         /// <returns>this instance</returns>
         public SpotDatafeedSubscription WithPrefix(string prefix)
         {
@@ -135,7 +130,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
         /// The state of the Spot Instance request.
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
@@ -146,7 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the state of the Spot Instance request.
         /// </summary>
         /// <param name="state">The state of the Spot Instance request.</param>
         /// <returns>this instance</returns>
@@ -166,9 +160,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Fault property.
-        /// Fault details for the Spot Instance request, if
-        /// any.
+        /// Fault details for the Spot Instance request, if any.
         /// </summary>
         [XmlElementAttribute(ElementName = "Fault")]
         public SpotInstanceStateFault Fault
@@ -178,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Fault property
+        /// Sets the fault details for the Spot Instance request, if any.
         /// </summary>
         /// <param name="fault">Fault details for the Spot Instance request, if
         /// any.</param>

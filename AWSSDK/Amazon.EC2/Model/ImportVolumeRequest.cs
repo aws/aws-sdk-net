@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private DiskImageVolumeType volumeField;
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// Availability Zone where the resulting Amazon EBS volume will reside.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone where the resulting Amazon EBS volume will reside.
         /// </summary>
         /// <param name="availabilityZone">Availability Zone where the resulting Amazon EBS volume will reside.</param>
         /// <returns>this instance</returns>
@@ -68,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Image property.
         /// Details about the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Image")]
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Image property
+        /// Sets the details about the image.
         /// </summary>
         /// <param name="image">Details about the image.</param>
         /// <returns>this instance</returns>
@@ -99,8 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// Optional description of the volume being imported.
+        /// Description of the volume being imported.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -110,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the volume being imported.
         /// </summary>
         /// <param name="description">Optional description of the volume being imported.</param>
         /// <returns>this instance</returns>
@@ -130,7 +127,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Volume property.
         /// Details about the volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "Volume")]
@@ -141,7 +137,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Volume property
+        /// Sets details about the volume.
         /// </summary>
         /// <param name="volume">Details about the volume.</param>
         /// <returns>this instance</returns>

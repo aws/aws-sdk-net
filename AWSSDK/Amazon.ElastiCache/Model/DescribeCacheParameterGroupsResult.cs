@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> Contains a list of CacheParameterGroups. </para>
     /// </summary>
-    public class DescribeCacheParameterGroupsResult  
+    public class DescribeCacheParameterGroupsResult
     {
         
         private string marker;
@@ -54,7 +54,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheParameterGroups collection
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroups property is set
         internal bool IsSetCacheParameterGroups()
         {
-            return this.cacheParameterGroups.Count > 0;       
+            return this.cacheParameterGroups.Count > 0;
         }
     }
 }

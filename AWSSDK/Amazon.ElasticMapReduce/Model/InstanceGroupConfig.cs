@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Configuration defining a new instance group.</para>
     /// </summary>
-    public class InstanceGroupConfig  
+    public class InstanceGroupConfig
     {
         
         private string name;
@@ -71,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Market property is set
         internal bool IsSetMarket()
         {
-            return this.market != null;       
+            return this.market != null;
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceRole property is set
         internal bool IsSetInstanceRole()
         {
-            return this.instanceRole != null;       
+            return this.instanceRole != null;
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BidPrice property is set
         internal bool IsSetBidPrice()
         {
-            return this.bidPrice != null;       
+            return this.bidPrice != null;
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;       
+            return this.instanceType != null;
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;       
+            return this.instanceCount.HasValue;
         }
     }
 }

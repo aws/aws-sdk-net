@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,12 +26,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Exports a running or stopped instance to an Amazon S3 bucket.
+    /// </summary>
+    /// <remarks>
     /// Creates a new export task, produces an image of an EC2 instance for use in another virtualization environment, and 
     /// then writes the image to the specified Amazon S3 bucket. If the instance is running at the time of export, Amazon EC2 
     /// will attempt to shut down the instance, initiate the export process, and then reboot the instance. Only instances derived 
     /// from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your 
     /// Amazon S3 bucket.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateInstanceExportTaskRequest
     {
@@ -41,7 +44,7 @@ namespace Amazon.EC2.Model
         private ExportToS3TaskType exportToS3TaskTypeField;
 
         /// <summary>
-        /// Gets and set the description of the conversion task or the resource being exported
+        /// A description of the conversion task or the resource being exported.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -51,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the description of the conversion task or the resource being exported
+        /// Sets the description of the conversion task or the resource being exported.
         /// </summary>
         /// <param name="description">Description</param>
         /// <returns>this instance</returns>
@@ -71,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and set the ID of the instance being exported
+        /// The ID of the instance being exported.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -81,7 +84,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ID of the instance being exported
+        /// Sets the ID of the instance being exported.
         /// </summary>
         /// <param name="instanceId">Id of the instance to export</param>
         /// <returns>this instance</returns>
@@ -101,7 +104,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and set the target virtualization environment
+        /// The target virtualization environment
         /// </summary>
         /// <remarks>Valid Values: vmware | citrix | microsoft</remarks>
         [XmlElementAttribute(ElementName = "TargetEnvironment")]
@@ -132,7 +135,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets details of the S3 object to be written on export
+        /// Details of the S3 object to be written on export
         /// </summary>
         [XmlElementAttribute(ElementName = "ExportToS3TaskType")]
         public ExportToS3TaskType ExportToS3Task
@@ -142,7 +145,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// sets details of the S3 object to be written on export.
+        /// Sets the details of the S3 object to be written on export.
         /// </summary>
         /// <param name="exportToS3TaskType"></param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and PurchaseReservedCacheNodesOffering actions.
     /// </para>
     /// </summary>
-    public class ReservedCacheNode  
+    public class ReservedCacheNode
     {
         
         private string reservedCacheNodeId;
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodeId property is set
         internal bool IsSetReservedCacheNodeId()
         {
-            return this.reservedCacheNodeId != null;       
+            return this.reservedCacheNodeId != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodesOfferingId property is set
         internal bool IsSetReservedCacheNodesOfferingId()
         {
-            return this.reservedCacheNodesOfferingId != null;       
+            return this.reservedCacheNodesOfferingId != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeType property is set
         internal bool IsSetCacheNodeType()
         {
-            return this.cacheNodeType != null;       
+            return this.cacheNodeType != null;
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;       
+            return this.duration.HasValue;
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if FixedPrice property is set
         internal bool IsSetFixedPrice()
         {
-            return this.fixedPrice.HasValue;       
+            return this.fixedPrice.HasValue;
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UsagePrice property is set
         internal bool IsSetUsagePrice()
         {
-            return this.usagePrice.HasValue;       
+            return this.usagePrice.HasValue;
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeCount property is set
         internal bool IsSetCacheNodeCount()
         {
-            return this.cacheNodeCount.HasValue;       
+            return this.cacheNodeCount.HasValue;
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;       
+            return this.productDescription != null;
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;       
+            return this.offeringType != null;
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
         }
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the RecurringCharges collection
         /// </summary>
@@ -390,7 +390,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this.recurringCharges.Count > 0;       
+            return this.recurringCharges.Count > 0;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Network ACL association.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class NetworkAclAssociation
     {    
@@ -34,9 +36,7 @@ namespace Amazon.EC2.Model
         private string subnetIdField;
 
         /// <summary>
-        /// Gets and sets the NetworkAclAssociationId property.
-        /// An identifier representing the association between a network ACL
-        /// and a subnet.
+        /// An identifier representing the association between a network ACL and a subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclAssociationId")]
         public string NetworkAclAssociationId
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclAssociationId property
+        /// Sets an identifier representing the association between a network ACL and a subnet.
         /// </summary>
         /// <param name="networkAclAssociationId">An identifier representing the association between a network ACL
         /// and a subnet.</param>
@@ -67,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
         /// The ID of the network ACL in the association.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
@@ -78,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the ID of the network ACL in the association.
         /// </summary>
         /// <param name="networkAclId">The ID of the network ACL in the association.</param>
         /// <returns>this instance</returns>
@@ -98,7 +97,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
         /// The ID of the subnet in the association.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
@@ -109,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the ID of the subnet in the association.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet in the association.</param>
         /// <returns>this instance</returns>

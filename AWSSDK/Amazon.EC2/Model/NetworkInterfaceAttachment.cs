@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         private bool? deleteOnTerminationField;
 
         /// <summary>
-        /// Gets and sets the AttachmentId property
+        /// The ID of the network interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttachmentId")]
         public string AttachmentId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AttachmentId property
+        /// Sets the ID of the network interface attachment.
         /// </summary>
         /// <param name="attachmentId">Attachment Id</param>
         /// <returns>this instance</returns>
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property
+        /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance.
         /// </summary>
         /// <param name="instanceId">Instance ID</param>
         /// <returns>this instance</returns>
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceOwnerId property
+        /// The owner of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceOwnerId")]
         public string InstanceOwnerId
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceOwnerId property
+        /// Sets the owner of the instance.
         /// </summary>
         /// <param name="instanceOwnerId">Instance Owner ID</param>
         /// <returns>this instance</returns>
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeviceIndex property
+        /// The index of the device for the network interface attachment on the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeviceIndex")]
         public int DeviceIndex
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeviceIndex property
+        /// Sets the index of the device for the network interface attachment on the instance.
         /// </summary>
         /// <param name="deviceIndex">Device Index</param>
         /// <returns>this instance</returns>
@@ -161,7 +161,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property
+        /// The status of the network interface attachment.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -171,7 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the status of the network interface attachment.
         /// </summary>
         /// <param name="status">Status</param>
         /// <returns>this instance</returns>
@@ -191,7 +191,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttachTime property
+        /// The time stamp when the attachment initiated.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttachTime")]
         public string AttachTime
@@ -201,7 +201,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AttachTime property
+        /// Sets the time stamp when the attachment initiated.
         /// </summary>
         /// <param name="attachTime">Attach Time</param>
         /// <returns>this instance</returns>
@@ -221,7 +221,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteOnTermination property
+        /// Whether the attachment is deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -231,7 +231,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeleteOnTermination property
+        /// Sets whether the attachment is deleted on instance termination.
         /// </summary>
         /// <param name="deleteOnTermination">True if the attachment should be deleted on termination</param>
         /// <returns>this instance</returns>

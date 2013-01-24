@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,18 +26,25 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Gives you information about your VPCs. You can filter the results to
-    /// return information only about VPCs that match criteria you specify.
+    /// Gives you information about your VPCs.
+    /// </summary>
+    /// <remarks>
+    /// You can filter the results to return information only
+    /// about VPCs that match criteria you specify.
     ///
-    /// For example, you could ask to get information about a particular VPC
-    /// or VPCs (or all your VPCs) only if the VPC's state is available.
+    /// For example, you could ask to get information about a
+    /// particular VPC or VPCs (or all your VPCs) only if the
+    /// VPC's state is available.
     ///
-    /// You can specify multiple filters (e.g., the VPC uses one of several
-    /// sets of DHCP options, and the VPC's state is available).
+    /// You can specify multiple filters (e.g., the VPC uses
+    /// one of several sets of DHCP options, and the VPC's
+    /// state is available).
     ///
-    /// The result includes information for a particular VPC only if the VPC matches all your filters.
+    /// The result includes information for a particular VPC
+    /// only if the VPC matches all your filters.
     ///
-    /// If there's no match, no special message is returned; the response is simply empty.
+    /// If there's no match, no special message is returned;
+    /// the response is simply empty.
     ///
     /// The information returned consists of:
     /// a) The VPC ID.
@@ -47,7 +54,7 @@ namespace Amazon.EC2.Model
     /// (or "default" if the default options are associated with the VPC)
     ///
     /// The current state of the VPC (pending or available)
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeVpcsRequest
     {    
@@ -55,8 +62,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
-        /// The ID of a VPC you want information about.
+        /// List of VPC IDs for which you want information.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public List<string> VpcId
@@ -73,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets list of VPC IDs for which you want information.
         /// </summary>
         /// <param name="list">The ID of a VPC you want information about.</param>
         /// <returns>this instance</returns>
@@ -96,10 +102,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
+        /// List of filters used to specify which VPCs to describe.
         /// The available filters are:
-        /// 1. state - The state of the VPC. Valid Values: pending,
-        /// available.
+        /// 1. state - The state of the VPC.
+        /// Valid Values: pending, available.
         /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you
         /// specify must exactly match the VPC's CIDR block for information to be
         /// returned for the VPC.
@@ -122,7 +128,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to specify which VPCs to describe.
         /// </summary>
         /// <param name="list">The available filters are:
         /// 1. state - The state of the VPC. Valid Values: pending,

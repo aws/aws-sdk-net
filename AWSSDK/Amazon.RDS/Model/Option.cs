@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,15 +20,17 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Option
+    /// <summary>
+    /// <para> Option details. </para>
     /// </summary>
-    public class Option  
+    public class Option
     {
         
         private string optionName;
         private string optionDescription;
         private int? port;
         private List<DBSecurityGroupMembership> dBSecurityGroupMemberships = new List<DBSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> vpcSecurityGroupMemberships = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
         /// The name of the option.
@@ -55,7 +57,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;       
+            return this.optionName != null;
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionDescription property is set
         internal bool IsSetOptionDescription()
         {
-            return this.optionDescription != null;       
+            return this.optionDescription != null;
         }
 
         /// <summary>
@@ -111,8 +113,13 @@ namespace Amazon.RDS.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
+
+        /// <summary>
+        /// If the Option requires access to a port, then this DB Security Group allows access to the port.
+        ///  
+        /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroupMemberships
         {
             get { return this.dBSecurityGroupMemberships; }
@@ -132,7 +139,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DBSecurityGroupMemberships collection
         /// </summary>
@@ -151,7 +158,52 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupMemberships property is set
         internal bool IsSetDBSecurityGroupMemberships()
         {
-            return this.dBSecurityGroupMemberships.Count > 0;       
+            return this.dBSecurityGroupMemberships.Count > 0;
+        }
+
+        /// <summary>
+        /// If the Option requires access to a port, then this VPC Security Group allows access to the port.
+        ///  
+        /// </summary>
+        public List<VpcSecurityGroupMembership> VpcSecurityGroupMemberships
+        {
+            get { return this.vpcSecurityGroupMemberships; }
+            set { this.vpcSecurityGroupMemberships = value; }
+        }
+        /// <summary>
+        /// Adds elements to the VpcSecurityGroupMemberships collection
+        /// </summary>
+        /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
+        /// <returns>this instance</returns>
+        public Option WithVpcSecurityGroupMemberships(params VpcSecurityGroupMembership[] vpcSecurityGroupMemberships)
+        {
+            foreach (VpcSecurityGroupMembership element in vpcSecurityGroupMemberships)
+            {
+                this.vpcSecurityGroupMemberships.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the VpcSecurityGroupMemberships collection
+        /// </summary>
+        /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
+        /// <returns>this instance</returns>
+        public Option WithVpcSecurityGroupMemberships(IEnumerable<VpcSecurityGroupMembership> vpcSecurityGroupMemberships)
+        {
+            foreach (VpcSecurityGroupMembership element in vpcSecurityGroupMemberships)
+            {
+                this.vpcSecurityGroupMemberships.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if VpcSecurityGroupMemberships property is set
+        internal bool IsSetVpcSecurityGroupMemberships()
+        {
+            return this.vpcSecurityGroupMemberships.Count > 0;
         }
     }
 }

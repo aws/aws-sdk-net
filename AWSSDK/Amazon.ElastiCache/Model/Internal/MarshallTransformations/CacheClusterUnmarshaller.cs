@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CacheCluster Unmarshaller
      /// </summary>
-    internal class CacheClusterUnmarshaller : IUnmarshaller<CacheCluster, XmlUnmarshallerContext> 
+    internal class CacheClusterUnmarshaller : IUnmarshaller<CacheCluster, XmlUnmarshallerContext>, IUnmarshaller<CacheCluster, JsonUnmarshallerContext> 
     {
         public CacheCluster Unmarshall(XmlUnmarshallerContext context) 
         {
             CacheCluster cacheCluster = new CacheCluster();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -42,6 +43,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheClusterId", targetDepth))
                     {
                         cacheCluster.CacheClusterId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ConfigurationEndpoint", targetDepth))
+                    {
+                        cacheCluster.ConfigurationEndpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ClientDownloadLandingPage", targetDepth))
+                    {
+                        cacheCluster.ClientDownloadLandingPage = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
@@ -117,6 +130,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("CacheSubnetGroupName", targetDepth))
+                    {
+                        cacheCluster.CacheSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("CacheNodes/CacheNode", targetDepth))
                     {
                         cacheCluster.CacheNodes.Add(CacheNodeUnmarshaller.GetInstance().Unmarshall(context));
@@ -126,6 +145,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
                         cacheCluster.AutoMinorVersionUpgrade = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("SecurityGroups/member", targetDepth))
+                    {
+                        cacheCluster.SecurityGroups.Add(SecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
                     }
@@ -139,6 +164,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return cacheCluster;
+        }
+
+        public CacheCluster Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CacheClusterUnmarshaller instance;

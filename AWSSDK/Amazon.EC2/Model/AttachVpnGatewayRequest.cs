@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,12 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Attaches a VPN gateway to a VPC. This is the last step
-    /// required to get your VPC fully connected to your data center
-    /// before launching instances in it. For more information, go to
-    /// Process for Using Amazon VPC in the Amazon Virtual Private Cloud
-    /// Developer Guide.
+    /// Attaches a virtual private gateway to a VPC.
     /// </summary>
+    /// <remarks>
+    /// This is the last step required to get your VPC fully connected
+    /// to your data center before launching instances in it.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AttachVpnGatewayRequest
     {    
@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
-        /// The ID of the VPN gateway you want to attach
+        /// The ID of the virtual private gateway you want to attach
         /// to the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
@@ -51,9 +50,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the virtual private gateway you want to attach
+        /// to the VPC.
         /// </summary>
-        /// <param name="vpnGatewayId">The ID of the VPN gateway you want to attach
+        /// <param name="vpnGatewayId">The ID of the virtual private gateway you want to attach
         /// to the VPC.</param>
         /// <returns>this instance</returns>
         public AttachVpnGatewayRequest WithVpnGatewayId(string vpnGatewayId)
@@ -72,9 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
-        /// The ID of the VPC you want to attach to the
-        /// VPN gateway
+        /// The ID of the VPC you want to attach to the virtual private gateway
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -84,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC you want to attach to the virtual private gateway
         /// </summary>
         /// <param name="vpcId">The ID of the VPC you want to attach to the
         /// VPN gateway</param>

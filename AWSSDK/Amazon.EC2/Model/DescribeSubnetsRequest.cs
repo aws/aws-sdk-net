@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,21 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Gives you information about your subnets. You can
-    /// filter the results to return information
-    /// only about subnets that match criteria you specify. For example, you
-    /// could ask to get information about a particular subnet
-    /// (or all) only if the subnet's state is available. You
-    /// can specify multiple filters (e.g.,
-    /// the subnet is in a particular
-    /// VPC, and the subnet's state is available).
+    /// Gives you information about your subnets.
+    /// </summary>
+    /// <remarks>
+    /// You can filter the results to return information only about
+    /// subnets that match criteria you specify.
+    /// For example, you could ask to get information about a particular
+    /// subnet (or all) only if the subnet's state is available.
+    /// You can specify multiple filters (e.g., the subnet is in a
+    /// particular VPC, and the subnet's state is available).
     ///
     /// The result includes information for a particular subnet
     /// only if the subnet matches all your filters. If there's
     /// no match, no special message is returned; the response
     /// is simply empty
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeSubnetsRequest
     {    
@@ -47,8 +48,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
-        /// A subnet ID.
+        /// One or more subnet IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public List<string> SubnetId
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets subnet IDs.
         /// </summary>
         /// <param name="list">A subnet ID.</param>
         /// <returns>this instance</returns>
@@ -88,8 +88,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
-        /// The filter to apply on the results of DescribeSubnets. Filters can be:
+        /// The filter to apply on the results of DescribeSubnets.
+        /// 
+        /// Filters can be:
         /// a. state - The state of the subnet. (pending, available).
         /// b. vpcId - The ID of the VPC the subnet is in.
         /// c. cidrBlock - The CIDR block of the subnet. The
@@ -114,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filter to apply on the results of DescribeSubnets.
         /// </summary>
         /// <param name="list">The filter to apply on the results of DescribeSubnets. Filters can be:
         /// a. state - The state of the subnet. (pending, available).

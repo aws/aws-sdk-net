@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network
-    /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+    /// Deletes an ingress or egress entry (i.e., rule) from a network ACL.
     /// </summary>
+    /// <remarks>
+    /// For more information about network ACLs, go to Network ACLs
+    /// in the Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteNetworkAclEntryRequest
     {    
@@ -37,7 +40,6 @@ namespace Amazon.EC2.Model
         private bool? egressField;
 
         /// <summary>
-        /// Gets and sets the NetworkAclId property.
         /// ID of the network ACL.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkAclId")]
@@ -48,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkAclId property
+        /// Sets the ID of the network ACL.
         /// </summary>
         /// <param name="networkAclId">ID of the network ACL.</param>
         /// <returns>this instance</returns>
@@ -68,7 +70,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RuleNumber property.
         /// Rule number for the entry to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "RuleNumber")]
@@ -79,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RuleNumber property
+        /// Sets the rule number for the entry to delete.
         /// </summary>
         /// <param name="ruleNumber">Rule number for the entry to delete.</param>
         /// <returns>this instance</returns>
@@ -99,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Egress property.
         /// Whether the rule to delete is an egress rule (true) or 
         /// ingress rule (false).
         /// </summary>
@@ -111,7 +111,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Egress property
+        /// Sets whether the rule to delete is an egress rule (true) or 
+        /// ingress rule (false).
         /// </summary>
         /// <param name="egress">Whether the rule to delete is an egress rule (true) or 
         /// ingress rule (false).</param>

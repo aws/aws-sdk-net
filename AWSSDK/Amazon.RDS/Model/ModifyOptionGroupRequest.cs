@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;       
+            return this.optionGroupName != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionsToInclude collection
         /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsToInclude property is set
         internal bool IsSetOptionsToInclude()
         {
-            return this.optionsToInclude.Count > 0;       
+            return this.optionsToInclude.Count > 0;
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionsToRemove collection
         /// </summary>
@@ -151,7 +151,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this.optionsToRemove.Count > 0;       
+            return this.optionsToRemove.Count > 0;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.RDS.Model
         // Check to see if ApplyImmediately property is set
         internal bool IsSetApplyImmediately()
         {
-            return this.applyImmediately.HasValue;       
+            return this.applyImmediately.HasValue;
         }
     }
 }

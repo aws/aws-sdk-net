@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Security Group
-    ///</summary>
+    /// <summary>
+    /// Security group
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class SecurityGroup
     {    
@@ -41,9 +41,7 @@ namespace Amazon.EC2.Model
         private List<IpPermission> ipPermissionsEgressField;
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the owner of the security
-        /// group.
+        /// AWS Access Key ID of the owner of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -53,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the AWS Access Key ID of the owner of the security group.
         /// </summary>
         /// <param name="ownerId">AWS Access Key ID of the owner of the security
         /// group.</param>
@@ -74,8 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
-        /// The vpc to which the group belongs.
+        /// The ID of the VPC to which the group belongs.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -85,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC to which the group belongs.
         /// </summary>
         /// <param name="vpcId">The vpc to which the group belongs.</param>
         /// <returns>this instance</returns>
@@ -105,8 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
-        /// Id of the security group.
+        /// ID of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public string GroupId
@@ -116,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the ID of the security group.
         /// </summary>
         /// <param name="groupId">Id of the security group.</param>
         /// <returns>this instance</returns>
@@ -136,7 +132,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// Name of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -147,7 +142,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the security group.
         /// </summary>
         /// <param name="groupName">Name of the security group.</param>
         /// <returns>this instance</returns>
@@ -167,7 +162,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupDescription property.
         /// Description of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupDescription")]
@@ -178,7 +172,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupDescription property
+        /// Sets the description of the security group.
         /// </summary>
         /// <param name="groupDescription">Description of the security group.</param>
         /// <returns>this instance</returns>
@@ -198,7 +192,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -216,7 +209,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags for the security group.
         /// </summary>
         /// <param name="list">A list of tags for the security group.</param>
         /// <returns>this instance</returns>
@@ -239,9 +232,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpPermission property.
-        /// Set of IP permissions associated with the
-        /// security group.
+        /// Set of IP permissions associated with the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermission")]
         public List<IpPermission> IpPermission
@@ -258,7 +249,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpPermission property
+        /// Sets the IP permissions associated with the security group.
         /// </summary>
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>
@@ -282,7 +273,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpPermissionsEgress property.
         /// A list of outbound rules associated with the security group (for VPC security groups).
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermissionsEgress")]
@@ -300,7 +290,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpPermissionsEgress property
+        /// Sets the outbound rules associated with the security group (for VPC security groups).
         /// </summary>
         /// <param name="list">A list of outbound rules associated with the security group (for VPC security groups).</param>
         /// <returns>this instance</returns>

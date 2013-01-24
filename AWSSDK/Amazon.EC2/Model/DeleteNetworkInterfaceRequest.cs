@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Delete Network Interface request
+    /// Deletes the specified network interface.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteNetworkInterfaceRequest
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
         private string networkInterfaceIdField;
 
         /// <summary>
-        /// Gets and sets the ID of the network interface to delete.
+        /// The ID of the network interface to delete.
         /// </summary>
         public string NetworkInterfaceId
         {

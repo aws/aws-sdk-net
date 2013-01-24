@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,11 +26,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If
-    /// you add more than one subnet to a VPC, they're set up in a star topology with a
-    /// logical router in the middle. If you feel you need more than 20 subnets, you can
-    /// request more by going to http://aws.amazon.com/contact-us/vpc-request/.
-    ///
+    /// Creates a subnet in an existing VPC.
+    /// </summary>
+    /// <remarks>
+    /// You can create up to 20 subnets in a VPC. If you add more than one subnet to a
+    /// VPC, they're set up in a star topology with a logical router in the middle.
+    /// If you feel you need more than 20 subnets, you can request more by going
+    /// to http://aws.amazon.com/contact-us/vpc-request/.
+    /// 
     /// When you create each subnet, you provide the VPC ID and the CIDR block you
     /// want for the subnet. Once you create a subnet, you can't change its CIDR block.
     /// The subnet's CIDR block can be the same as the VPC's CIDR block (assuming you
@@ -47,7 +50,7 @@ namespace Amazon.EC2.Model
     /// AWS might delete any subnet you create with this operation if you leave it inactive
     /// for an extended period of time (inactive means that there are no running Amazon
     /// EC2 instances in the subnet).
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateSubnetRequest
     {    
@@ -56,9 +59,7 @@ namespace Amazon.EC2.Model
         private string availabilityZoneField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
-        /// The ID of the VPC where you want to create the
-        /// subnet.
+        /// The ID of the VPC where you want to create the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -68,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC where you want to create the subnet.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC where you want to create the
         /// subnet.</param>
@@ -89,7 +90,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CidrBlock property.
         /// The CIDR block you want the subnet to cover.
         /// </summary>
         [XmlElementAttribute(ElementName = "CidrBlock")]
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CidrBlock property
+        /// Sets the CIDR block you want the subnet to cover.
         /// </summary>
         /// <param name="cidrBlock">The CIDR block you want the subnet to cover.</param>
         /// <returns>this instance</returns>
@@ -120,7 +120,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// The Availability Zone you want the subnet in.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -131,7 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone you want the subnet in.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone you want the subnet in.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new route table within a VPC. After you create a new route table, you can add routes and
-    /// associate the table with a subnet. For more information about route tables, go to Route Tables in the
-    /// Amazon Virtual Private Cloud User Guide.
+    /// Creates a route table within a VPC.
+    /// After you create a new route table, you can add routes and associate the table with a subnet.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateRouteTableRequest
@@ -36,7 +35,6 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -47,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>

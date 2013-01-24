@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///IP Permission
-    ///</summary>
+    /// <summary>
+    /// IP Permission
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class IpPermission
     {    
@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         private List<string> ipRangeField;
 
         /// <summary>
-        /// Gets and sets the IpProtocol property.
-        /// IP protocol.Valid Values: tcp | udp | icmp
+        /// IP protocol.
+        /// Valid Values: tcp | udp | icmp
         /// </summary>
         [XmlElementAttribute(ElementName = "IpProtocol")]
         public string IpProtocol
@@ -49,9 +49,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpProtocol property
+        /// Sets the IP protocol.
         /// </summary>
-        /// <param name="ipProtocol">IP protocol.Valid Values: tcp | udp | icmp</param>
+        /// <param name="ipProtocol">IP protocol. Valid Values: tcp | udp | icmp</param>
         /// <returns>this instance</returns>
         public IpPermission WithIpProtocol(string ipProtocol)
         {
@@ -69,11 +69,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the FromPort property.
-        /// Start of port range for the TCP and UDP
-        /// protocols, or an ICMP type
-        /// number. An ICMP type number of -1
-        /// indicates a wildcard (i.e., any ICMP type
+        /// Start of port range for the TCP and UDP protocols, or an ICMP type number.
+        /// An ICMP type number of -1 indicates a wildcard (i.e., any ICMP type
         /// number).
         /// </summary>
         [XmlElementAttribute(ElementName = "FromPort")]
@@ -84,13 +81,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the FromPort property
+        /// Sets the start of port range for the TCP and UDP protocols, or an ICMP type number.
         /// </summary>
         /// <param name="fromPort">Start of port range for the TCP and UDP
-        /// protocols, or an ICMP type
-        /// number. An ICMP type number of -1
-        /// indicates a wildcard (i.e., any ICMP type
-        /// number).</param>
+        /// protocols, or an ICMP type number. An ICMP type number of -1
+        /// indicates a wildcard (i.e., any ICMP type number).</param>
         /// <returns>this instance</returns>
         public IpPermission WithFromPort(Decimal fromPort)
         {
@@ -108,11 +103,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ToPort property.
-        /// End of port range for the TCP and UDP
-        /// protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a
-        /// wildcard (i.e., any ICMP code).
+        /// End of port range for the TCP and UDP protocols, or an ICMP code.
+        /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
         /// </summary>
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
@@ -122,7 +114,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ToPort property
+        /// Sets the end of port range for the TCP and UDP protocols, or an ICMP code.
         /// </summary>
         /// <param name="toPort">End of port range for the TCP and UDP
         /// protocols, or an ICMP code.
@@ -145,7 +137,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserIdGroupPair property.
         /// List of security group and user ID pairs.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserIdGroupPair")]
@@ -163,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserIdGroupPair property
+        /// Sets the list of security group and user ID pairs.
         /// </summary>
         /// <param name="list">List of security group and user ID pairs.</param>
         /// <returns>this instance</returns>
@@ -186,8 +177,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpRange property.
-        /// IP ranges.
+        /// A list of IP ranges.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpRange")]
         public List<string> IpRange
@@ -204,7 +194,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpRange property
+        /// Sets the list of IP ranges.
         /// </summary>
         /// <param name="list">IP ranges.</param>
         /// <returns>this instance</returns>

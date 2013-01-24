@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///A single Spot Price history data point.
-    ///</summary>
+    /// <summary>
+    /// A single Spot Price history data point.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class SpotPriceHistory
     {
@@ -38,7 +38,6 @@ namespace Amazon.EC2.Model
         private string availabilityZoneField;
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
         /// The instance type.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
@@ -49,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="instanceType">The instance type.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductDescription property.
         /// The description of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductDescription")]
@@ -80,7 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductDescription property
+        /// Sets the description of the AMI.
         /// </summary>
         /// <param name="productDescription">The description of the AMI.</param>
         /// <returns>this instance</returns>
@@ -100,9 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SpotPrice property.
-        /// Specifies the price paid to launch one or more
-        /// instances.
+        /// The price paid to launch one or more instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -112,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SpotPrice property
+        /// Sets the price paid to launch one or more instances.
         /// </summary>
         /// <param name="spotPrice">Specifies the price paid to launch one or more
         /// instances.</param>
@@ -133,9 +129,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Timestamp property.
-        /// Specifies the creation timestamp of the
-        /// request.
+        /// The creation timestamp of the request.
         /// </summary>
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
@@ -145,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Timestamp property
+        /// Sets the creation timestamp of the request.
         /// </summary>
         /// <param name="timestamp">Specifies the creation timestamp of the
         /// request.</param>
@@ -166,7 +160,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// The Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -177,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone.</param>
         /// <returns>this instance</returns>

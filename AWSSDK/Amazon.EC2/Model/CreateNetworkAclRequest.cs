@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,17 +26,18 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of
-    /// security groups) for the instances in your VPC. For more information about network ACLs, go to Network
-    /// ACLs in the Amazon Virtual Private Cloud User Guide.
+    /// Creates a network ACL in a VPC.
     /// </summary>
+    /// <remarks>
+    /// Network ACLs provide an optional layer of security (on top of security groups)
+    /// for the instances in your VPC.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateNetworkAclRequest
     {    
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC where the network ACL will be created.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -47,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC where the network ACL will be created.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC where the network ACL will be created.</param>
         /// <returns>this instance</returns>

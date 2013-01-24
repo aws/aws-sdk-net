@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,12 @@
               if (context.TestExpression("LastDecreaseDateTime", targetDepth)) 
               {
                 provisionedThroughputDescription.LastDecreaseDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue; 
+              }
+   
+              if (context.TestExpression("NumberOfDecreasesToday", targetDepth)) 
+              {
+                provisionedThroughputDescription.NumberOfDecreasesToday = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue; 
               }
    

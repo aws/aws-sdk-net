@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///VPN Tunnel Telemetry
-    ///</summary>
+    /// <summary>
+    /// VPN Tunnel Telemetry
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class VpnTunnelTelemetry
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private int? acceptedRouteCountField;
 
         /// <summary>  
-        /// Gets and sets the Internet-routable IP address of the virtual private gateway's outside interface.
+        /// The Internet-routable IP address of the virtual private gateway's outside interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "OutsideIpAddress")]
         public string OutsideIpAddress
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the status of the VPN tunnel.
+        /// The status of the VPN tunnel.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the date and time of the last change in status.
+        /// The date and time of the last change in status.
         /// </summary>
         [XmlElementAttribute(ElementName = "LastStatusChange")]
         public string LastStatusChange
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If an error occurs, a description of the error.
+        /// Description of an error, if an error occurs.
         /// </summary>
         [XmlElementAttribute(ElementName = "StatusMessage")]
         public string StatusMessage
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets a description of the error.
+        /// Sets the description of an error, if an error occurs.
         /// </summary>
         /// <param name="statusMessage">The description of the error.</param>
         /// <returns>this instance</returns>
@@ -158,7 +158,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the number of accepted routes.
+        /// The number of accepted routes.
         /// </summary>
         [XmlElementAttribute(ElementName = "AcceptedRouteCount")]
         public int AcceptedRouteCount

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a route table from a VPC. The route table must not be associated with a subnet.You can't delete
-    /// the main route table. For more information about route tables, go to Route Tables in the Amazon Virtual
-    /// Private Cloud User Guide.
+    /// Deletes a route table from a VPC. The route table must not be associated with a subnet.
+    /// You can't delete the main route table.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteRouteTableRequest
@@ -36,7 +35,6 @@ namespace Amazon.EC2.Model
         private string routeTableIdField;
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
         /// The ID of the route table to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
             return this.volumeIdField != null;
         }
         /// <summary>
-        /// Sets the VolumeId property.
+        /// Sets the volume against which to make the modify call.
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The value of AutoEnableIO attribute to set.
+        /// Whether to auto-enable the I/O operations on the volume.
         /// </summary>
         public bool AutoEnableIO
         {
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
             return this.autoEnableIOField.HasValue;
         }
         /// <summary>
-        /// Sets the AutoEnableIO property.
+        /// Sets whether to auto-enable the I/O operations on the volume.
         /// </summary>
         /// <param name="autoEnableIO">The new AutoEnableIO value</param>
         /// <returns>this instance</returns>

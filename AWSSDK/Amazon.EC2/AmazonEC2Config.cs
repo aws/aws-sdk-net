@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,7 @@ namespace Amazon.EC2
     /// </summary>
     public class AmazonEC2Config
     {
-        private string serviceVersion = "2012-12-01";
+        private string serviceVersion = "2012-10-15";
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://ec2.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;

@@ -270,6 +270,9 @@
         <xsl:element name="Status">
           <xsl:value-of select="ec2:status"/>
         </xsl:element>
+        <xsl:element name="MacAddress">
+          <xsl:value-of select="ec2:macAddress"/>
+        </xsl:element>
         <xsl:element name="PrivateIpAddress">
           <xsl:value-of select="ec2:privateIpAddress"/>
         </xsl:element>
@@ -326,6 +329,9 @@
     <xsl:element name="Association">
       <xsl:element name="PublicIp">
         <xsl:value-of select="ec2:publicIp"/>
+      </xsl:element>
+      <xsl:element name="PublicDnsName">
+        <xsl:value-of select="ec2:publicDnsName"/>
       </xsl:element>
       <xsl:element name="IpOwnerId">
         <xsl:value-of select="ec2:ipOwnerId"/>

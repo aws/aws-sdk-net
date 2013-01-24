@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Console Output
-    ///</summary>
+    /// <summary>
+    /// Instance console output
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ConsoleOutput
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private string outputField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The instance ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Timestamp property.
         /// The time the output was last updated.
         /// </summary>
         [XmlElementAttribute(ElementName = "Timestamp")]
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Timestamp property
+        /// Sets the time the output was last updated.
         /// </summary>
         /// <param name="timestamp">The time the output was last updated.</param>
         /// <returns>this instance</returns>
@@ -98,7 +96,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Output property.
         /// The console output, Base64 encoded.
         /// </summary>
         [XmlElementAttribute(ElementName = "Output")]
@@ -109,7 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Output property
+        /// Sets the console output, Base64 encoded.
         /// </summary>
         /// <param name="output">The console output, Base64 encoded.</param>
         /// <returns>this instance</returns>

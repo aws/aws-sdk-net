@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets an attribute of an instance to its default
-    /// value.
+    /// Resets an attribute of an instance to its default value.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ResetInstanceAttributeRequest
@@ -36,9 +35,7 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// ID of the instance on which the attribute will
-        /// be reset.
+        /// ID of the instance on which the attribute will be reset.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -48,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance on which the attribute will be reset.
         /// </summary>
         /// <param name="instanceId">ID of the instance on which the attribute will
         /// be reset.</param>
@@ -69,9 +66,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Name of the attribute to reset. Values are
-        /// "sourceDestCheck", "kernel" and "ramdisk".
+        /// Name of the attribute to reset.
+        /// Valid Values are "sourceDestCheck", "kernel" and "ramdisk".
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -81,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name of the attribute to reset.
         /// </summary>
         /// <param name="attribute">Name of the attribute to reset. Values are
         /// "sourceDestCheck", "kernel" and "ramdisk".</param>

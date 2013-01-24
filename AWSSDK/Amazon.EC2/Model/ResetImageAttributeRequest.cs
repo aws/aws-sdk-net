@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets an attribute of an AMI to its default
-    /// value.
+    /// Resets an attribute of an AMI to its default value.
     /// Note - The productCodes attribute cannot be reset.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
@@ -37,9 +36,7 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
-        /// ID of the AMI on which the attribute will be
-        /// reset
+        /// ID of the AMI on which the attribute will be reset
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -49,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the ID of the AMI on which the attribute will be reset
         /// </summary>
         /// <param name="imageId">ID of the AMI on which the attribute will be
         /// reset</param>
@@ -70,8 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Specifies the attribute to reset
+        /// The attribute to reset
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -81,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute to reset
         /// </summary>
         /// <param name="attribute">Specifies the attribute to reset</param>
         /// <returns>this instance</returns>

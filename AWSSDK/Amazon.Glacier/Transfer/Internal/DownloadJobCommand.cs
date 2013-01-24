@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ using System.Net;
 using System.Threading;
 
 using Amazon.Glacier.Model;
+using Amazon.Util;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
@@ -125,9 +126,11 @@ namespace Amazon.Glacier.Transfer.Internal
                                         partStream.Write(buffer, offset, bytesRead - offset);
                                     }
 
-                                    // Make callback on progress if a callback is attached.
-                                    if (this.options.StreamTransferProgress != null)
-                                        this.options.StreamTransferProgress(this.manager, new Runtime.StreamTransferProgressArgs(bytesRead, transferredBytes, contentLength));
+                                    // Make callback on progress
+                                    AWSSDKUtils.InvokeInBackground(
+                                        this.options.StreamTransferProgress,
+                                        new Runtime.StreamTransferProgressArgs(bytesRead, transferredBytes, contentLength),
+                                        this.manager);
                                 }
 
                                 if (retryAttempts > 0)

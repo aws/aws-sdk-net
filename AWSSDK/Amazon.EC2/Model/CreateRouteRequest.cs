@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,25 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new route in a route table within a VPC. The route's target can be either a gateway attached
+    /// Creates a new route in a route table within a VPC.
+    /// The route's target can be either a gateway attached
     /// to the VPC or a NAT instance in the VPC.
-    /// 
-    /// When determining how to route traffic, we use the route with the most specific match. For example, let's
-    /// say the traffic is destined for 192.0.2.3, and the route table includes the following two routes:
+    /// </summary>
+    /// <remarks>
+    /// When determining how to route traffic, we use the route
+    /// with the most specific match. For example, let's say the
+    /// traffic is destined for 192.0.2.3, and the route table
+    /// includes the following two routes:
     /// 192.0.2.0/24 (goes to some target A)
     /// 192.0.2.0/28 (goes to some target B)
     /// 
-    /// Both routes apply to the traffic destined for 192.0.2.3. However, the second route in the list is more specific,
+    /// Both routes apply to the traffic destined for 192.0.2.3.
+    /// However, the second route in the list is more specific,
     /// so we use that route to determine where to target the traffic.
     /// 
-    /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
-    /// Guide.
-    /// </summary>
+    /// For more information about route tables, go to Route
+    /// Tables in the Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateRouteRequest
     {    
@@ -50,9 +55,7 @@ namespace Amazon.EC2.Model
         private string networkInterfaceIdField;
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
-        /// The ID of the route table where the route will 
-        /// be added.
+        /// The ID of the route table where the route will be added.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
         public string RouteTableId
@@ -62,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the ID of the route table where the route will be added.
         /// </summary>
         /// <param name="routeTableId">The ID of the route table where the route will 
         /// be added.</param>
@@ -83,12 +86,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DestinationCidrBlock property.
-        /// The CIDR address block used for the 
-        /// destination match. For example: 0.0.0.0/0.
-        /// Routing decisions are based on the most
-        /// specific match.
+        /// The CIDR address block used for the destination match.
         /// </summary>
+        /// <remarks>
+        /// For example: 0.0.0.0/0.
+        /// Routing decisions are based on the most specific match.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
         public string DestinationCidrBlock
         {
@@ -97,7 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DestinationCidrBlock property
+        /// Sets the CIDR address block used for the destination match.
         /// </summary>
         /// <param name="destinationCidrBlock">The CIDR address block used for the 
         /// destination match. For example: 0.0.0.0/0.
@@ -120,7 +123,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GatewayId property.
         /// The ID of a gateway attached to your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "GatewayId")]
@@ -131,7 +133,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GatewayId property
+        /// Sets the ID of a gateway attached to your VPC.
         /// </summary>
         /// <param name="gatewayId">The ID of a gateway attached to your VPC.</param>
         /// <returns>this instance</returns>
@@ -151,7 +153,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of a NAT instance in your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -162,7 +163,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of a NAT instance in your VPC.
         /// </summary>
         /// <param name="instanceId">The ID of a NAT instance in your VPC.</param>
         /// <returns>this instance</returns>
@@ -182,7 +183,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// Allows the routing of network interface IDs.
+        /// <remarks>
+        /// Exactly one interface must be attached when specifying an instance ID or it fails.
+        /// Value provided must be one of the following: GatewayID, InstanceID, or NetworkdInterfaceId.
+        /// </remarks>
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -192,7 +197,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface id.
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> The default Parameters and CacheNodeTypeSpecificParameters for a CacheParameterGroupFamily. </para>
     /// </summary>
-    public class EngineDefaults  
+    public class EngineDefaults
     {
         
         private string cacheParameterGroupFamily;
@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroupFamily property is set
         internal bool IsSetCacheParameterGroupFamily()
         {
-            return this.cacheParameterGroupFamily != null;       
+            return this.cacheParameterGroupFamily != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -129,7 +129,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheNodeTypeSpecificParameters collection
         /// </summary>
@@ -174,7 +174,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeTypeSpecificParameters property is set
         internal bool IsSetCacheNodeTypeSpecificParameters()
         {
-            return this.cacheNodeTypeSpecificParameters.Count > 0;       
+            return this.cacheNodeTypeSpecificParameters.Count > 0;
         }
     }
 }

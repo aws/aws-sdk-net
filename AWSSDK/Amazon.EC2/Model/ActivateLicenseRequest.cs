@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Activates a license.
+    /// Activates a specific number of licenses for a 90-day period.
+    /// Activations can be done against a specific license ID.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ActivateLicenseRequest
@@ -35,9 +36,7 @@ namespace Amazon.EC2.Model
         private Decimal? capacityField;
 
         /// <summary>
-        /// Gets and sets the LicenseId property.
-        /// Specifies the ID for the specific license to
-        /// activate against.
+        /// The ID for the specific license to activate against.
         /// </summary>
         [XmlElementAttribute(ElementName = "LicenseId")]
         public string LicenseId
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LicenseId property
+        /// Sets the ID for the specific license to activate against.
         /// </summary>
         /// <param name="licenseId">Specifies the ID for the specific license to
         /// activate against.</param>
@@ -68,9 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Capacity property.
-        /// Specifies the additional number of licenses to
-        /// activate.
+        /// The additional number of licenses to activate.
         /// </summary>
         [XmlElementAttribute(ElementName = "Capacity")]
         public Decimal Capacity
@@ -80,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Capacity property
+        /// Sets the additional number of licenses to activate.
         /// </summary>
         /// <param name="capacity">Specifies the additional number of licenses to
         /// activate.</param>

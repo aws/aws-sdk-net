@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,16 +25,15 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Represents an active license in use and attached to an Amazon EC2 instance.
-    ///</summary>
+    /// <summary>
+    /// An active license in use and attached to an Amazon EC2 instance.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceLicense
     {    
         private string poolField;
 
         /// <summary>
-        /// Gets and sets the Pool property.
         /// The license pool from which to take a license when starting
         /// Amazon EC2 instances in the associated RunInstances request.
         /// </summary>
@@ -46,7 +45,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Pool property
+        /// Sets the license pool from which to take a license when starting
+        /// Amazon EC2 instances in the associated RunInstances request.
         /// </summary>
         /// <param name="pool">The license pool from which to take a license when starting
         /// Amazon EC2 instances in the associated RunInstances request.</param>

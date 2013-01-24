@@ -59,6 +59,24 @@
         <xsl:apply-templates select="ec2:attachment"/>
         <xsl:apply-templates select="ec2:association"/>
         <xsl:apply-templates select="ec2:tagSet" />
+        <xsl:apply-templates select="ec2:privateIpAddressesSet" />
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:privateIpAddressesSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="PrivateIpAddresses">
+        <xsl:element name="IpAddress">
+          <xsl:value-of select="ec2:privateIpAddress"/>
+        </xsl:element>
+        <xsl:element name="PrivateDnsName">
+          <xsl:value-of select="ec2:privateDnsName"/>
+        </xsl:element>
+        <xsl:element name="Primary">
+          <xsl:value-of select="ec2:primary"/>
+        </xsl:element>
+        <xsl:apply-templates select="ec2:association"/>
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
@@ -113,6 +131,9 @@
     <xsl:element name="Association">
       <xsl:element name="PublicIp">
         <xsl:value-of select="ec2:publicIp"/>
+      </xsl:element>
+      <xsl:element name="PublicDnsName">
+        <xsl:value-of select="ec2:publicDnsName"/>
       </xsl:element>
       <xsl:element name="IpOwnerId">
         <xsl:value-of select="ec2:ipOwnerId"/>

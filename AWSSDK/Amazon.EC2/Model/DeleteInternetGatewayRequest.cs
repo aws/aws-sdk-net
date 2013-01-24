@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string internetGatewayIdField;
 
         /// <summary>
-        /// Gets and sets the InternetGatewayId property.
         /// The ID of the Internet gateway to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "InternetGatewayId")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InternetGatewayId property
+        /// Sets the ID of the Internet gateway to be deleted.
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to be deleted.</param>
         /// <returns>this instance</returns>

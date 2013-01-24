@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> List of option groups. </para>
     /// </summary>
-    public class DescribeOptionGroupsResult  
+    public class DescribeOptionGroupsResult
     {
         
         private List<OptionGroup> optionGroupsList = new List<OptionGroup>();
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionGroupsList collection
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupsList property is set
         internal bool IsSetOptionGroupsList()
         {
-            return this.optionGroupsList.Count > 0;       
+            return this.optionGroupsList.Count > 0;
         }
         public string Marker
         {
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

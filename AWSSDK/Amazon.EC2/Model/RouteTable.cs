@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -40,7 +40,6 @@ namespace Amazon.EC2.Model
         private List<PropagatedRoute> propagatedRoutesField; 
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
         /// The route table's ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
@@ -51,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the route table's ID.
         /// </summary>
         /// <param name="routeTableId">The route table's ID.</param>
         /// <returns>this instance</returns>
@@ -71,7 +70,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC the route table is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -82,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC the route table is in.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the route table is in.</param>
         /// <returns>this instance</returns>
@@ -102,7 +100,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Routes property.
         /// A list of routes in the route table.
         /// </summary>
         [XmlElementAttribute(ElementName = "Routes")]
@@ -120,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Routes property
+        /// Sets the list of routes in the route table.
         /// </summary>
         /// <param name="list">A list of routes in the route table.</param>
         /// <returns>this instance</returns>
@@ -143,9 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Associations property.
-        /// A list of associations between the route table and one or more
-        /// subnets.
+        /// A list of associations between the route table and one or more subnets.
         /// </summary>
         [XmlElementAttribute(ElementName = "Associations")]
         public List<RouteTableAssociation> Associations
@@ -162,7 +157,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Associations property
+        /// Sets the associations between the route table and one or more subnets.
         /// </summary>
         /// <param name="list">A list of associations between the route table and one or more
         /// subnets.</param>
@@ -186,7 +181,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the RouteTable.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -204,7 +198,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags for the RouteTable.
         /// </summary>
         /// <param name="list">A list of tags for the RouteTable.</param>
         /// <returns>this instance</returns>

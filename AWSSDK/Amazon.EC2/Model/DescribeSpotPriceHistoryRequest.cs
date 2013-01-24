@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to describe historical pricing for Spot
-    /// Instances.
+    /// Describes the Spot Price history.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeSpotPriceHistoryRequest
@@ -42,9 +41,7 @@ namespace Amazon.EC2.Model
         private string nextTokenField;
 
         /// <summary>
-        /// Gets and sets the StartTime property.
-        /// Start date and time of the Spot Instance price
-        /// history data.
+        /// Start date and time of the Spot Instance price history data.
         /// </summary>
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
@@ -54,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StartTime property
+        /// Sets the start date and time of the Spot Instance price history data.
         /// </summary>
         /// <param name="startTime">Start date and time of the Spot Instance price
         /// history data.</param>
@@ -75,9 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the EndTime property.
-        /// End date and time of the Spot Instance price
-        /// history data.
+        /// End date and time of the Spot Instance price history data.
         /// </summary>
         [XmlElementAttribute(ElementName = "EndTime")]
         public string EndTime
@@ -87,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the EndTime property
+        /// Sets end date and time of the Spot Instance price history data.
         /// </summary>
         /// <param name="endTime">End date and time of the Spot Instance price
         /// history data.</param>
@@ -108,8 +103,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// A list of instance types.
+        /// One ore more instance types to return.
+        /// <remarks>
+        /// Valid values:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | m3.xlarge | m3.2xlarge | t1.micro
+        /// </remarks>
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public List<string> InstanceType
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets instance types to return.
         /// </summary>
         /// <param name="list">A list of instance types.</param>
         /// <returns>this instance</returns>
@@ -149,9 +149,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductDescription property.
-        /// A list of AMI descriptions
+        /// A list of AMI descriptions to filter by.
         /// </summary>
+        /// <remarks>
+        /// Valie values: Linux/UNIX | SUSE Linux | Windows |
+        /// Linux/UNIX (Amazon VPC) | SUSE Linux (Amazon VPC) |
+        /// Windows (Amazon VPC)
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public List<string> ProductDescription
         {
@@ -167,7 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductDescription property
+        /// Sets a list of AMI descriptions to filter by.
         /// </summary>
         /// <param name="list">A list of AMI descriptions</param>
         /// <returns>this instance</returns>
@@ -190,7 +194,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified SpotPriceHistory.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -211,7 +214,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified SpotPriceHistory.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified SpotPriceHistory.
@@ -238,8 +242,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// Filters the results by availability zone.
+        /// Availability zone to filter the results by.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -249,7 +252,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property.
+        /// Sets the availability zone to filter the results by.
         /// </summary>
         /// <param name="availabilityZone">Filters the results by availability zone.</param>
         /// <returns>this instance</returns>
@@ -269,8 +272,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the MaxResults property.
-        /// Specifies the number of rows to return.
+        /// The number of rows to return.
         /// </summary>
         [XmlElementAttribute(ElementName = "MaxResults")]
         public int MaxResults
@@ -280,7 +282,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the MaxResults property.
+        /// Sets the number of rows to return.
         /// </summary>
         /// <param name="maxResults">Specifies the number of rows to return.</param>
         /// <returns>this instance</returns>
@@ -300,8 +302,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NextToken property.
-        /// Specifies the next set of rows to return.
+        /// Token for the next set of rows to return.
         /// </summary>
         public string NextToken
         {
@@ -310,7 +311,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NextToken property.
+        /// Sets the token for the next set of rows to return.
         /// </summary>
         /// <param name="nextToken">Specifies the next set of rows to return.</param>
         /// <returns>this instance</returns>

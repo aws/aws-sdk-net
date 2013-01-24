@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -39,9 +39,8 @@ namespace Amazon.EC2.Model
         private string networkInterfaceIdField;
 
         /// <summary>
-        /// Gets and sets the DestinationCidrBlock property.
-        /// The CIDR address block used for the destination match. For example:
-        /// 0.0.0.0/0.
+        /// The CIDR address block used for the destination match.
+        /// For example: 0.0.0.0/0.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
         public string DestinationCidrBlock
@@ -51,10 +50,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DestinationCidrBlock property
+        /// Sets the CIDR address block used for the destination match.
         /// </summary>
-        /// <param name="destinationCidrBlock">The CIDR address block used for the destination match. For example:
-        /// 0.0.0.0/0.</param>
+        /// <param name="destinationCidrBlock">The CIDR address block used for the destination match.
+        /// For example: 0.0.0.0/0.</param>
         /// <returns>this instance</returns>
         public Route WithDestinationCidrBlock(string destinationCidrBlock)
         {
@@ -72,7 +71,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GatewayId property.
         /// The ID of a gateway attached to your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "GatewayId")]
@@ -83,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GatewayId property
+        /// Sets the ID of a gateway attached to your VPC.
         /// </summary>
         /// <param name="gatewayId">The ID of a gateway attached to your VPC.</param>
         /// <returns>this instance</returns>
@@ -103,7 +101,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of a NAT instance in your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -114,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of a NAT instance in your VPC.
         /// </summary>
         /// <param name="instanceId">The ID of a NAT instance in your VPC.</param>
         /// <returns>this instance</returns>
@@ -134,8 +131,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
-        /// The state of the route.The blackhole state indicates that the route's
+        /// The state of the route.
+        /// The blackhole state indicates that the route's
         /// target isn't available (e.g., the specified gateway isn't attached to the
         /// VPC, the specified NAT instance has been terminated, etc.).
         /// </summary>
@@ -147,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the state of the route.
         /// </summary>
         /// <param name="state">The state of the route.The blackhole state indicates that the route's
         /// target isn't available (e.g., the specified gateway isn't attached to the
@@ -169,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceOwnerId property
+        /// The owner of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceOwnerId")]
         public string InstanceOwnerId
@@ -179,7 +176,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceOwnerId property
+        /// Sets the owner of the instance.
         /// </summary>
         /// <param name="instanceOwnerId">The owner of the instance.</param>
         /// <returns>this instance</returns>
@@ -199,7 +196,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// The network interface ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -209,7 +206,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface ID.
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>

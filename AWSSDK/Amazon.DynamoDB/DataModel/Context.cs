@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,6 +92,12 @@ namespace Amazon.DynamoDB.DataModel
         /// declared for the type.
         /// </summary>
         public string OverrideTableName { get; set; }
+
+        /// <summary>
+        /// Property that indicates a query should traverse the index backward.
+        /// If the property is false (or not set), traversal shall be forward.
+        /// </summary>
+        public bool? BackwardQuery { get; set; }
     }
 
     /// <summary>
@@ -865,7 +871,7 @@ namespace Amazon.DynamoDB.DataModel
 
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, currentConfig);
-            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value });
+            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value, BackwardSearch = currentConfig.BackwardQuery.Value });
             query.AttributesToGet = storageConfig.AttributesToGet;
 
             return FromSearch<T>(query);

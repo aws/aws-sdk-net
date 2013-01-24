@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Represents the capacity that a license is able to support.
-    ///</summary>
+    /// <summary>
+    /// Capacity that a license is able to support.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class LicenseCapacity
     {    
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private string earliestAllowedDeactivationTimeField;
 
         /// <summary>
-        /// Gets and sets the Capacity property.
         /// The number of licenses available.
         /// </summary>
         [XmlElementAttribute(ElementName = "Capacity")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Capacity property
+        /// Sets the number of licenses available.
         /// </summary>
         /// <param name="capacity">The number of licenses available.</param>
         /// <returns>this instance</returns>
@@ -68,10 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceCapacity property.
-        /// The number of Amazon EC2 instances that can be
-        /// supported with the
-        /// license's capacity.
+        /// The number of Amazon EC2 instances that can be supported with the license's capacity.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceCapacity")]
         public Decimal InstanceCapacity
@@ -81,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceCapacity property
+        /// Sets the number of Amazon EC2 instances that can be supported with the license's capacity.
         /// </summary>
         /// <param name="instanceCapacity">The number of Amazon EC2 instances that can be
         /// supported with the
@@ -103,10 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the State property.
-        /// The state of this license capacity,
-        /// indicating
-        /// whether the license is actively being used or not.
+        /// The state of this license capacity, indicating whether the license is actively being used or not.
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
         public string State
@@ -116,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the State property
+        /// Sets the state of this license capacity, indicating whether the license is actively being used or not.
         /// </summary>
         /// <param name="state">The state of this license capacity,
         /// indicating
@@ -138,11 +131,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the EarliestAllowedDeactivationTime property.
-        /// The earliest allowed time at which a license
-        /// can be deactivated.
-        /// Some licenses have time restrictions on when
-        /// they can be activated and reactivated.
+        /// The earliest allowed time at which a license can be deactivated.
+        /// Some licenses have time restrictions on when they can be activated and reactivated.
         /// </summary>
         [XmlElementAttribute(ElementName = "EarliestAllowedDeactivationTime")]
         public string EarliestAllowedDeactivationTime
@@ -152,7 +142,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the EarliestAllowedDeactivationTime property
+        /// Sets the earliest allowed time at which a license can be deactivated.
         /// </summary>
         /// <param name="earliestAllowedDeactivationTime">The earliest allowed time at which a license
         /// can be deactivated.

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.Glacier.Transfer.Internal
         // The minimum part size for a Glacier multipart upload.
         const long MINIMUM_PART_SIZE = 1024L * 1024;
 
+        object currentUploadProgressArgsLock = new object();
         StreamTransferProgressArgs currentUploadProgressArgs;
 
         internal MultipartUploadCommand(ArchiveTransferManager manager, string vaultName, string archiveDescription, string filePath, UploadOptions options)
@@ -133,12 +134,15 @@ namespace Amazon.Glacier.Transfer.Internal
 
         void ProgressCallback(object sender, Runtime.StreamTransferProgressArgs args)
         {
-            this.currentUploadProgressArgs = new StreamTransferProgressArgs(args.IncrementTransferred, 
-                this.currentUploadProgressArgs.TransferredBytes + args.IncrementTransferred, 
-                this.currentUploadProgressArgs.TotalBytes);
+            lock (currentUploadProgressArgsLock)
+            {
+                this.currentUploadProgressArgs = new StreamTransferProgressArgs(args.IncrementTransferred,
+                    this.currentUploadProgressArgs.TransferredBytes + args.IncrementTransferred,
+                    this.currentUploadProgressArgs.TotalBytes);
+            }
 
-            if(this.options.StreamTransferProgress != null)
-                this.options.StreamTransferProgress(this.manager, this.currentUploadProgressArgs);
+            AWSSDKUtils.InvokeInBackground(this.options.StreamTransferProgress,
+                this.currentUploadProgressArgs, this);
         }
 
         /// <summary>

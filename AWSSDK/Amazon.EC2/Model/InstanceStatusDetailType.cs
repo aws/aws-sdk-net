@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private string impairedSinceField;
 
         /// <summary>
-        /// Gets and sets the Name property.
         /// The type of instance status detail.
         /// Valid Values: reachability 
         /// </summary>
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property.
+        /// Sets the type of instance status detail.
         /// </summary>
         /// <param name="name">
         /// The type of instance status detail.
@@ -71,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
+        /// The status.
         /// Valid Values: passed | failed | insufficient-data
         /// </summary>
         [XmlElement(ElementName = "Status")]
@@ -82,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Status property
+        /// Sets the status.
         /// </summary>
         /// <param name="status">
         /// Valid Values: passed | failed | insufficient-data
@@ -104,7 +103,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.
+        /// The time when a status check failed.
+        /// For an instance that was launched and impaired, this is the time when the instance was launched.
         /// </summary>
         [XmlElement(ElementName = "ImpairedSince")]
         public string ImpairedSince

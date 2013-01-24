@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to create a Spot Instance request.
+    /// Creates a Spot Instance request.
     /// </summary>
+    /// <remarks>
+    /// Spot Instances are instances that Amazon EC2 starts on your behalf
+    /// when the maximum price that you specify exceeds the current Spot Price.
+    /// Amazon EC2 periodically sets the Spot Price based on available
+    /// Spot Instance capacity and current Spot Instance requests.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RequestSpotInstancesRequest
     {    
@@ -41,9 +47,7 @@ namespace Amazon.EC2.Model
         private LaunchSpecification launchSpecificationField;
 
         /// <summary>
-        /// Gets and sets the SpotPrice property.
-        /// Specifies the maximum price you will pay to
-        /// launch one or more Spot Instances.
+        /// The maximum price you will pay to launch one or more Spot Instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -53,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SpotPrice property
+        /// Sets the maximum price you will pay to launch one or more Spot Instances.
         /// </summary>
         /// <param name="spotPrice">Specifies the maximum price you will pay to
         /// launch one or more Spot Instances.</param>
@@ -74,8 +78,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceCount property.
-        /// The maximum number of Spot Instances to launch. Default - 1.
+        /// The maximum number of Spot Instances to launch.
+        /// Default is 1.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceCount")]
         public Decimal InstanceCount
@@ -85,7 +89,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceCount property
+        /// Sets the maximum number of Spot Instances to launch.
         /// </summary>
         /// <param name="instanceCount">The maximum number of Spot Instances to launch. Default - 1.</param>
         /// <returns>this instance</returns>
@@ -105,9 +109,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
-        /// The instance type. Valid values:
-        /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
+        /// The instance type.
+        /// Valid values: m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge
         /// Default - m1.small.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -118,7 +121,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="type">The instance type. Valid values:
         /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
@@ -140,9 +143,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ValidFrom property.
-        /// Start date of the request. If this is a one-time request,
-        /// the request remains active until all instances
+        /// Start date of the request.
+        /// If this is a one-time request, the request remains active until all instances
         /// launch, the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
         /// is canceled.
@@ -156,7 +158,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ValidFrom property
+        /// Sets the start date of the request.
         /// </summary>
         /// <param name="validFrom">Start date of the request. If this is a one-time request,
         /// the request remains active until all instances
@@ -181,12 +183,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ValidUntil property.
-        /// End date of the request. If this is a one-time request,
-        /// the request remains active until all instances launch,
-        /// the request expires, or the request is canceled. If the
-        /// request is persistent, it remains active until it expires or
-        /// is canceled.
+        /// End date of the request.
+        /// If this is a one-time request, the request remains active
+        /// until all instances launch, the request expires, or the
+        /// request is canceled. If the request is persistent, it remains
+        /// active until it expires or is canceled.
         /// Default: Request remains open until criteria for closing are met
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidUntil")]
@@ -197,7 +198,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ValidUntil property
+        /// Sets the end date of the request.
         /// </summary>
         /// <param name="validUntil">End date of the request. If this is a one-time request,
         /// the request remains active until all instances launch,
@@ -222,9 +223,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the LaunchGroup property.
-        /// Specifies the instance launch group. Launch
-        /// groups are Spot Instances that launch together and terminate
+        /// The instance launch group.
+        /// Launch groups are Spot Instances that launch together and terminate
         /// together.
         /// Default: Instances are launched and terminated individually
         /// </summary>
@@ -236,7 +236,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LaunchGroup property
+        /// Sets the instance launch group.
         /// </summary>
         /// <param name="launchGroup">Specifies the instance launch group. Launch
         /// groups are Spot Instances that launch together and terminate
@@ -259,11 +259,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZoneGroup property.
-        /// Specifies the Availability Zone group. If you specify
-        /// the same Availability Zone group for all Spot Instance
-        /// requests, all Spot Instances are launched in the same
-        /// Availability Zone.
+        /// The Availability Zone group.
+        /// If you specify the same Availability Zone group for all
+        /// Spot Instance requests, all Spot Instances are launched
+        /// in the same Availability Zone.
         /// Default: Instances are launched in any available Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZoneGroup")]
@@ -274,7 +273,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZoneGroup property
+        /// Sets the Availability Zone group.
         /// </summary>
         /// <param name="availabilityZoneGroup">Specifies the Availability Zone group. If you specify
         /// the same Availability Zone group for all Spot Instance
@@ -298,8 +297,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the LaunchSpecification property.
-        /// Specifies additional launch instance information.
+        /// Additional launch instance information.
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchSpecification")]
         public LaunchSpecification LaunchSpecification
@@ -309,7 +307,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LaunchSpecification property
+        /// Sets additional launch instance information.
         /// </summary>
         /// <param name="launchSpecification">Specifies additional launch instance information.</param>
         /// <returns>this instance</returns>

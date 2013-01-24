@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,16 +27,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Deletes a security group that you own.
-    ///
-    /// If you attempt to delete a security group that contains instances, a
-    /// fault is returned.
+    /// </summary>
+    ///<remarks>
+    /// If you attempt to delete a security group that contains instances, an
+    /// error is returned.
     ///
     /// If you attempt to delete a security group that is referenced by
-    /// another security group, a fault is returned. For example,
+    /// another security group, an error is returned. For example,
     /// if security group B has a rule that allows access from
     /// security group A, security group A cannot be deleted until the
     /// allow rule is removed.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteSecurityGroupRequest
     {    
@@ -44,7 +45,6 @@ namespace Amazon.EC2.Model
         private string groupNameField;
 
         /// <summary>
-        /// Gets and sets the GroupId property.
         /// ID of the security group to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the ID of the security group to delete.
         /// </summary>
         /// <param name="groupId">ID of the security group to delete.</param>
         /// <returns>this instance</returns>
@@ -75,7 +75,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
         /// Name of the security group to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
@@ -86,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the security group to delete.
         /// </summary>
         /// <param name="groupName">Name of the security group to delete.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
-    public class DBEngineVersion  
+    public class DBEngineVersion
     {
         
         private string engine;
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;       
+            return this.dBParameterGroupFamily != null;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBEngineDescription property is set
         internal bool IsSetDBEngineDescription()
         {
-            return this.dBEngineDescription != null;       
+            return this.dBEngineDescription != null;
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBEngineVersionDescription property is set
         internal bool IsSetDBEngineVersionDescription()
         {
-            return this.dBEngineVersionDescription != null;       
+            return this.dBEngineVersionDescription != null;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.RDS.Model
         // Check to see if DefaultCharacterSet property is set
         internal bool IsSetDefaultCharacterSet()
         {
-            return this.defaultCharacterSet != null;       
+            return this.defaultCharacterSet != null;
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SupportedCharacterSets collection
         /// </summary>
@@ -245,7 +245,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedCharacterSets property is set
         internal bool IsSetSupportedCharacterSets()
         {
-            return this.supportedCharacterSets.Count > 0;       
+            return this.supportedCharacterSets.Count > 0;
         }
     }
 }

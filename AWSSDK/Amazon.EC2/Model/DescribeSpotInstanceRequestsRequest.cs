@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,11 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to describe Spot Instance requests. Spot
-    /// Instances are instances that automatically launch
+    /// Describes the Spot Instance requests that belong to your account.
+    /// </summary>
+    /// <remarks>
+    /// Spot Instances are instances that automatically launch
     /// when your request price exceeds that Spot Price
     /// that Amazon EC2 periodically calculates.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeSpotInstanceRequestsRequest
     {    
@@ -38,8 +40,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the SpotInstanceRequestId property.
-        /// The ID of the Spot Instance request.
+        /// One or more Spot Instance request IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
         public List<string> SpotInstanceRequestId
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SpotInstanceRequestId property
+        /// Sets Spot Instance request IDs.
         /// </summary>
         /// <param name="list">The ID of the Spot Instance request.</param>
         /// <returns>this instance</returns>
@@ -79,7 +80,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified SpotInstances.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -100,7 +100,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified SpotInstances.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated 
         /// with the specified SpotInstances.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ namespace Amazon.RDS.Model
     {
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
-        private string eC2VpcId;
 
         /// <summary>
         /// The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
@@ -60,7 +59,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;       
+            return this.dBSecurityGroupName != null;
         }
 
         /// <summary>
@@ -88,36 +87,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.dBSecurityGroupDescription != null;       
-        }
-
-        /// <summary>
-        /// The Id of VPC. Indicates which VPC this DB Security Group should belong to. Must be specified to create a DB Security Group for a VPC; may
-        /// not be specified otherwise.
-        ///  
-        /// </summary>
-        public string EC2VpcId
-        {
-            get { return this.eC2VpcId; }
-            set { this.eC2VpcId = value; }
-        }
-
-        /// <summary>
-        /// Sets the EC2VpcId property
-        /// </summary>
-        /// <param name="eC2VpcId">The value to set for the EC2VpcId property </param>
-        /// <returns>this instance</returns>
-        public CreateDBSecurityGroupRequest WithEC2VpcId(string eC2VpcId)
-        {
-            this.eC2VpcId = eC2VpcId;
-            return this;
-        }
-            
-
-        // Check to see if EC2VpcId property is set
-        internal bool IsSetEC2VpcId()
-        {
-            return this.eC2VpcId != null;       
+            return this.dBSecurityGroupDescription != null;
         }
     }
 }

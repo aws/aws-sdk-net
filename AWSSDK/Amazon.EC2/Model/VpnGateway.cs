@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///VPN Gateway
-    ///</summary>
+    /// <summary>
+    /// VPN Gateway
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class VpnGateway
     {    
@@ -39,7 +39,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
         /// The ID of the VPN gateway
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
@@ -50,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the VPN gateway
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway</param>
         /// <returns>this instance</returns>
@@ -70,9 +69,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpnGatewayState property.
-        /// The current state of the VPN gateway (pending,
-        /// available, deleting, deleted)
+        /// The current state of the VPN gateway.
+        /// Valid values: pending, available, deleting, deleted
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayState")]
         public string VpnGatewayState
@@ -82,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayState property
+        /// Sets the current state of the VPN gateway.
         /// </summary>
         /// <param name="vpnGatewayState">The current state of the VPN gateway (pending,
         /// available, deleting, deleted)</param>
@@ -103,7 +101,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The type of VPN connection the VPN gateway supports (ipsec.1)
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -114,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection the VPN gateway supports
         /// </summary>
         /// <param name="type">The type of VPN connection the VPN gateway supports (ipsec.1)</param>
         /// <returns>this instance</returns>
@@ -134,7 +131,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
         /// The Availability Zone where the VPN gateway was created
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
@@ -145,7 +141,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone where the VPN gateway was created
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where the VPN gateway was created</param>
         /// <returns>this instance</returns>
@@ -165,8 +161,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcAttachment property.
-        /// list of VPC attachments
+        /// List of VPC attachments.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcAttachment")]
         public List<VpcAttachment> VpcAttachment
@@ -183,7 +178,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcAttachment property
+        /// Sets the list of VPC attachments.
         /// </summary>
         /// <param name="list">list of VPC attachments</param>
         /// <returns>this instance</returns>
@@ -206,7 +201,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the VpnGateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -224,7 +218,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets a list of tags for the VpnGateway.
         /// </summary>
         /// <param name="list">A list of tags for the VpnGateway.</param>
         /// <returns>this instance</returns>

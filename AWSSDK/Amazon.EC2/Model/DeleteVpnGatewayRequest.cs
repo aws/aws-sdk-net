@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,24 +26,26 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a VPN gateway. Use this when you want to delete a VPC and all its
-    /// associated components because you no longer need them. We recommend that before you
-    /// delete a VPN gateway, you detach it from the VPC and delete the VPN
-    /// connection. Note that you don't need to delete the VPN gateway
-    /// if you just want to delete and re-create the VPN connection between your
-    /// VPC and data center.
+    /// Deletes a VPN gateway.
+    /// </summary>
+    /// <remarks>
+    /// Use this when you want to delete a VPC and all its
+    /// associated components because you no longer need them. We recommend
+    /// that before you delete a VPN gateway, you detach it from the VPC
+    /// and delete the VPN connection. Note that you don't need to delete
+    /// the VPN gateway if you just want to delete and re-create the VPN
+    /// connection between your VPC and data center.
     ///
     /// AWS might delete any VPN gateway if you leave it inactive for an
     /// extended period of time (inactive means that there's no VPN
     /// connection in use with the VPN gateway).
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteVpnGatewayRequest
     {    
         private string vpnGatewayIdField;
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
         /// The ID of the VPN gateway you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
@@ -54,7 +56,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the VPN gateway you want to delete.
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway you want to delete.</param>
         /// <returns>this instance</returns>

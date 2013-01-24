@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,11 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a snapshot of an Amazon EBS volume that
-    /// you own.
-    ///
-    /// For more information, go to the Amazon Elastic Compute Cloud
-    /// Developer Guide
+    /// Deletes a snapshot of an Amazon EBS volume that you own.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteSnapshotRequest
@@ -38,7 +34,6 @@ namespace Amazon.EC2.Model
         private string snapshotIdField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the Amazon EBS snapshot to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -49,7 +44,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the Amazon EBS snapshot to delete.
         /// </summary>
         /// <param name="snapshotId">The ID of the Amazon EBS snapshot to delete.</param>
         /// <returns>this instance</returns>

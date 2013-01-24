@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For
-    /// more information about your VPC and Internet gateway, go to the Amazon Virtual Private Cloud User
-    /// Guide.
+    /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class AttachInternetGatewayRequest
@@ -37,7 +35,6 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
 
         /// <summary>
-        /// Gets and sets the InternetGatewayId property.
         /// The ID of the Internet gateway to attach.
         /// </summary>
         [XmlElementAttribute(ElementName = "InternetGatewayId")]
@@ -48,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InternetGatewayId property
+        /// Sets the ID of the Internet gateway to attach.
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to attach.</param>
         /// <returns>this instance</returns>
@@ -68,7 +65,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -79,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC.
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>

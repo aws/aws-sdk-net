@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///VPC Attachment
-    ///</summary>
+    /// <summary>
+    /// VPC Attachment
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class VpcAttachment
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private string vpcAttachmentStateField;
 
         /// <summary>
-        /// Gets and sets the VpcId property.
         /// The ID of the VPC the VPN gateway is attached to
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcId property
+        /// Sets the ID of the VPC the VPN gateway is attached to
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the VPN gateway is attached to</param>
         /// <returns>this instance</returns>
@@ -66,10 +65,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpcAttachmentState property.
-        /// The current state of the attachment (attaching,
-        /// attached,
-        /// detaching, detached)
+        /// The current state of the attachment.
+        /// Valid values: attaching, attached, detaching, detached
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcAttachmentState")]
         public string VpcAttachmentState
@@ -79,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpcAttachmentState property
+        /// Sets the current state of the attachment.
         /// </summary>
         /// <param name="vpcAttachmentState">The current state of the attachment (attaching,
         /// attached,

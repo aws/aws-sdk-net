@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -131,7 +131,8 @@ namespace Amazon.S3.Model
         #region AmazonId2
 
         /// <summary>
-        /// Gets and sets the AmzId2 property.
+        /// Gets and sets the AmazonId2 property. 
+        /// This property corresponds to the x-amz-id-2 header in the HTTP response from the Amazon S3 service. The value of this header is used for internal troubleshooting purposes.
         /// </summary>
         [XmlElementAttribute(ElementName = "AmazonId2")]
         public string AmazonId2

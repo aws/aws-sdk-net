@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Specifies the Amazon EC2 location for the job flow.</para>
     /// </summary>
-    public class PlacementType  
+    public class PlacementType
     {
         
         private string availabilityZone;
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
     }
 }

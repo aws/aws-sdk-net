@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ namespace Amazon.DynamoDB.Model
         
         private DateTime? lastIncreaseDateTime;
         private DateTime? lastDecreaseDateTime;
+        private long? numberOfDecreasesToday;
         private long? readCapacityUnits;
         private long? writeCapacityUnits;
         public DateTime LastIncreaseDateTime
@@ -74,6 +75,29 @@ namespace Amazon.DynamoDB.Model
         internal bool IsSetLastDecreaseDateTime()
         {
             return this.lastDecreaseDateTime.HasValue;       
+        }
+        public long NumberOfDecreasesToday
+        {
+            get { return this.numberOfDecreasesToday ?? default(long); }
+            set { this.numberOfDecreasesToday = value; }
+        }
+
+        /// <summary>
+        /// Sets the NumberOfDecreasesToday property
+        /// </summary>
+        /// <param name="numberOfDecreasesToday">The value to set for the NumberOfDecreasesToday property </param>
+        /// <returns>this instance</returns>
+        public ProvisionedThroughputDescription WithNumberOfDecreasesToday(long numberOfDecreasesToday)
+        {
+            this.numberOfDecreasesToday = numberOfDecreasesToday;
+            return this;
+        }
+            
+
+        // Check to see if NumberOfDecreasesToday property is set
+        internal bool IsSetNumberOfDecreasesToday()
+        {
+            return this.numberOfDecreasesToday.HasValue;       
         }
         public long ReadCapacityUnits
         {

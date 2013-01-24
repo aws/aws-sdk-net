@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(modifyOptionGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ModifyOptionGroup");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (modifyOptionGroupRequest != null && modifyOptionGroupRequest.IsSetOptionGroupName())
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(modifyOptionGroupRequest.OptionGroupName));
@@ -63,6 +63,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         { 
                             request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".DBSecurityGroupMemberships.member." + dBSecurityGroupMembershipsListIndex, StringUtils.FromString(dBSecurityGroupMembershipsListValue));
                             dBSecurityGroupMembershipsListIndex++;
+                        }
+                    }
+                    if (optionsToIncludeListValue != null)
+                    {
+                        List<string> vpcSecurityGroupMembershipsList = optionsToIncludeListValue.VpcSecurityGroupMemberships;
+
+                        int vpcSecurityGroupMembershipsListIndex = 1;
+                        foreach (string vpcSecurityGroupMembershipsListValue in vpcSecurityGroupMembershipsList)
+                        { 
+                            request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".VpcSecurityGroupMemberships.member." + vpcSecurityGroupMembershipsListIndex, StringUtils.FromString(vpcSecurityGroupMembershipsListValue));
+                            vpcSecurityGroupMembershipsListIndex++;
                         }
                     }
 

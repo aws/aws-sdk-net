@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> A setting controlling some apsect of the service's behavior. </para>
     /// </summary>
-    public class Parameter  
+    public class Parameter
     {
         
         private string parameterName;
@@ -60,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterName property is set
         internal bool IsSetParameterName()
         {
-            return this.parameterName != null;       
+            return this.parameterName != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;       
+            return this.parameterValue != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this.source != null;       
+            return this.source != null;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if DataType property is set
         internal bool IsSetDataType()
         {
-            return this.dataType != null;       
+            return this.dataType != null;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this.allowedValues != null;       
+            return this.allowedValues != null;
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if IsModifiable property is set
         internal bool IsSetIsModifiable()
         {
-            return this.isModifiable.HasValue;       
+            return this.isModifiable.HasValue;
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if MinimumEngineVersion property is set
         internal bool IsSetMinimumEngineVersion()
         {
-            return this.minimumEngineVersion != null;       
+            return this.minimumEngineVersion != null;
         }
     }
 }

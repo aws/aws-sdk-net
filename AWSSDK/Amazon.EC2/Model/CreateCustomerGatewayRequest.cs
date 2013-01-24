@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Provides information to AWS about your customer gateway device. The
-    /// customer gateway is the appliance at your end of the VPN connection
+    /// Provides information to AWS about your customer gateway device.
+    /// </summary>
+    /// <remarks>
+    /// The customer gateway is the appliance at your end of the VPN connection
     /// (compared to the VPN gateway, which is the device at the AWS side of the
     /// VPN connection). AWS might delete any customer gateway that you create
     /// with this operation if you leave it inactive for an extended period of
@@ -46,7 +48,10 @@ namespace Amazon.EC2.Model
     /// Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the 
     /// exception of 7224, which is reserved in US East, and 9059, which is reserved in 
     /// EU West
-    /// </summary>
+    /// 
+    /// For more information about ASNs, go to the Wikipedia article -
+    /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateCustomerGatewayRequest
     {    
@@ -55,7 +60,6 @@ namespace Amazon.EC2.Model
         private Decimal? bgpAsnField;
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The type of VPN connection this customer gateway supports.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -66,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection this customer gateway supports.
         /// </summary>
         /// <param name="type">The type of VPN connection this customer gateway supports.</param>
         /// <returns>this instance</returns>
@@ -86,9 +90,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpAddress property.
-        /// The Internet-routable IP address for the customer gateway's
-        /// outside interface. The address must be static.
+        /// The Internet-routable IP address for the customer gateway's outside interface.
+        /// The address must be static.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpAddress")]
         public string IpAddress
@@ -98,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpAddress property
+        /// Sets the Internet-routable IP address for the customer gateway's outside interface.
         /// </summary>
         /// <param name="ipAddress">The Internet-routable IP address for the customer gateway's
         /// outside interface. The address must be static.</param>
@@ -119,9 +122,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BgpAsn property.
-        /// The customer gateway's Border Gateway Protocol
-        /// (BGP) Autonomous System Number (ASN) for devices 
+        /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN) for devices 
         /// that support BGP.
         /// </summary>
         [XmlElementAttribute(ElementName = "BgpAsn")]
@@ -132,7 +133,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BgpAsn property
+        /// Sets the customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN) for devices 
+        /// that support BGP.
         /// </summary>
         /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
         /// (BGP) Autonomous System Number (ASN).</param>

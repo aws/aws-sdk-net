@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -65,8 +65,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the VpnConnectionId property.
-        /// A VPN connection ID
+        /// One or more VPN connection IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
         public List<string> VpnConnectionId
@@ -83,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnConnectionId property
+        /// Sets VPN connection IDs.
         /// </summary>
         /// <param name="list">A VPN connection ID</param>
         /// <returns>this instance</returns>
@@ -106,7 +105,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// The filter to apply on the results of DescribeVpnConnections.
         /// </summary>
         /// <remarks>
@@ -145,7 +143,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filter to apply on the results of DescribeVpnConnections.
         /// </summary>
         /// <param name="list">The filter to apply on the results of DescribeVpnConnections.</param>
         /// <returns>this instance</returns>

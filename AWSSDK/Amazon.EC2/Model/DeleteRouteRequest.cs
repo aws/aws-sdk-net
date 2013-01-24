@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables
-    /// in the Amazon Virtual Private Cloud User Guide.
+    /// Deletes a route from a route table in a VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteRouteRequest
@@ -36,9 +35,7 @@ namespace Amazon.EC2.Model
         private string destinationCidrBlockField;
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
-        /// The ID of the route table where the route will 
-        /// be deleted.
+        /// The ID of the route table where the route will be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
         public string RouteTableId
@@ -48,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the ID of the route table where the route will be deleted.
         /// </summary>
         /// <param name="routeTableId">The ID of the route table where the route will 
         /// be deleted.</param>
@@ -69,11 +66,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DestinationCidrBlock property.
-        /// The CIDR range for the route you want to 
-        /// delete. The value you specify must exactly
-        /// match the CIDR for the route you want to
-        /// delete.
+        /// The CIDR range for the route you want to delete.
+        /// The value you specify must exactly
+        /// match the CIDR for the route you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
         public string DestinationCidrBlock
@@ -83,7 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DestinationCidrBlock property
+        /// Sets the CIDR range for the route you want to delete.
         /// </summary>
         /// <param name="destinationCidrBlock">The CIDR range for the route you want to 
         /// delete. The value you specify must exactly

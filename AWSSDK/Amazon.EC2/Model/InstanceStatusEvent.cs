@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,8 @@ namespace Amazon.EC2.Model
         private string notAfterField;
 
         /// <summary>
-        /// The associated code of the event. Valid parameters are instance-reboot|system-reboot|instance-retirement.
+        /// The associated code of the event.
+        /// Valid values: instance-reboot | system-reboot | instance-retirement.
         /// </summary>
         [XmlElement(ElementName = "Code")]
         public string Code

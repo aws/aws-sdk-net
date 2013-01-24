@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,7 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
+    /// <summary>
+    /// Resource tag
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ResourceTag
     {    
@@ -35,7 +37,6 @@ namespace Amazon.EC2.Model
         private string valueField;
 
         /// <summary>
-        /// Gets and sets the ResourceId property.
         /// The resource ID for the Tag.
         /// </summary>
         [XmlElementAttribute(ElementName = "ResourceId")]
@@ -46,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResourceId property
+        /// Sets the resource ID for the Tag.
         /// </summary>
         /// <param name="resourceId">The resource ID for the Tag.</param>
         /// <returns>this instance</returns>
@@ -66,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ResourceType property.
         /// The type of resource identified by the associated resource ID 
         /// (ex: instance, AMI, EBS volume, etc).
         /// </summary>
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResourceType property
+        /// Sets the type of resource identified by the associated resource ID 
         /// </summary>
         /// <param name="resourceType">The type of resource identified by the associated resource ID 
         /// (ex: instance, AMI, EBS volume, etc).</param>
@@ -99,7 +99,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Key property.
         /// The tag's key.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
@@ -110,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Key property
+        /// Sets the tag's key.
         /// </summary>
         /// <param name="key">The tag's key.</param>
         /// <returns>this instance</returns>
@@ -130,7 +129,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
         /// The tag's value.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
@@ -141,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets the tag's value.
         /// </summary>
         /// <param name="value">The tag's value.</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///DHCP Configuration
-    ///</summary>
+    /// <summary>
+    /// DHCP Configuration
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DhcpConfiguration
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private List<string> valueField;
 
         /// <summary>
-        /// Gets and sets the Key property.
         /// The name of a DHCP option.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Key property
+        /// Sets the name of a DHCP option.
         /// </summary>
         /// <param name="key">The name of a DHCP option.</param>
         /// <returns>this instance</returns>
@@ -66,8 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
-        /// A value for the DHCP option.
+        /// Values for the DHCP option.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
         public List<string> Value
@@ -84,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets the values for the DHCP option.
         /// </summary>
         /// <param name="list">A value for the DHCP option.</param>
         /// <returns>this instance</returns>

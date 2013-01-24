@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Image Attribute
-    ///</summary>
+    /// <summary>
+    /// Image Attribute
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ImageAttribute
     {    
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> blockDeviceMappingField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// The ID of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the ID of the AMI.
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
         /// <returns>this instance</returns>
@@ -74,7 +73,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the LaunchPermission property.
         /// Launch permissions.
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchPermission")]
@@ -92,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LaunchPermission property
+        /// Sets the launch permissions.
         /// </summary>
         /// <param name="list">Launch permissions.</param>
         /// <returns>this instance</returns>
@@ -115,8 +113,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCode property.
-        /// Product codes.
+        /// Image product codes.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodeId")]
         [Obsolete("This member has been deprecated and will be removed in a future release. Please use the ProductCodes member instead.")]
@@ -134,7 +131,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCode property
+        /// Sets the image product codes.
         /// </summary>
         /// <param name="list">Product codes.</param>
         /// <returns>this instance</returns>
@@ -159,7 +156,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCodes property.
         /// Product codes attached to this instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodes")]
@@ -177,7 +173,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCodes property
+        /// Sets the product codes attached to this instance.
         /// </summary>
         /// <param name="list">Product codes attached to this instance.</param>
         /// <returns>this instance</returns>
@@ -200,7 +196,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
         /// Kernel ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
@@ -211,7 +206,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the kernel ID.
         /// </summary>
         /// <param name="kernelId">Kernel ID.</param>
         /// <returns>this instance</returns>
@@ -231,7 +226,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
         /// RAM disk ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
@@ -242,7 +236,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the RAM disk ID.
         /// </summary>
         /// <param name="ramdiskId">RAM disk ID.</param>
         /// <returns>this instance</returns>
@@ -262,7 +256,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
+        /// Image description.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -272,7 +266,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the image description.
         /// </summary>
         /// <param name="description">Description property</param>
         /// <returns>this instance</returns>
@@ -292,7 +286,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
+        /// List of BlockDeviceMappings.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -309,7 +303,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets list of BlockDeviceMappings.
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>

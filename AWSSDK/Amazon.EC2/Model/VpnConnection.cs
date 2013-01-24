@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
+    /// <summary>
     /// VPN Connection
-    ///</summary>
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class VpnConnection
     {    
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
         private List<VpnStaticRoute> routesField;
 
         /// <summary>
-        /// Gets and sets the VpnConnectionId property.
         /// The ID of the VPN connection
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnConnectionId property
+        /// Sets the ID of the VPN connection
         /// </summary>
         /// <param name="vpnConnectionId">The ID of the VPN connection</param>
         /// <returns>this instance</returns>
@@ -74,9 +73,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpnConnectionState property.
-        /// The current state of the VPN connection
-        /// (pending, available, deleting, deleted)
+        /// The current state of the VPN connection.
+        /// Valid values: pending, available, deleting, deleted
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionState")]
         public string VpnConnectionState
@@ -86,7 +84,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnConnectionState property
+        /// Sets the current state of the VPN connection.
         /// </summary>
         /// <param name="vpnConnectionState">The current state of the VPN connection
         /// (pending, available, deleting, deleted)</param>
@@ -107,10 +105,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayConfiguration property.
-        /// Configuration information for the VPN
-        /// connection's customer gateway (in the
-        /// native XML format).
+        /// Configuration information for the VPN connection's customer gateway.
+        /// Configuration is in the native XML format.
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayConfiguration")]
         public string CustomerGatewayConfiguration
@@ -120,7 +116,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayConfiguration property
+        /// Sets the configuration information for the VPN connection's customer gateway.
         /// </summary>
         /// <param name="customerGatewayConfiguration">Configuration information for the VPN
         /// connection's customer gateway (in the
@@ -142,7 +138,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The type of VPN connection (ipsec.1).
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -153,7 +148,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the type of VPN connection.
         /// </summary>
         /// <param name="type">The type of VPN connection (ipsec.1).</param>
         /// <returns>this instance</returns>
@@ -173,9 +168,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CustomerGatewayId property.
-        /// ID of the customer gateway at your end of the
-        /// VPN connection
+        /// ID of the customer gateway at your end of the VPN connection.
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
@@ -185,7 +178,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the CustomerGatewayId property
+        /// Sets the ID of the customer gateway at your end of the VPN connection.
         /// </summary>
         /// <param name="customerGatewayId">ID of the customer gateway at your end of the
         /// VPN connection</param>
@@ -206,9 +199,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VpnGatewayId property.
-        /// ID of the VPN gateway at the VPC end of the VPN
-        /// connection
+        /// ID of the VPN gateway at the VPC end of the VPN connection.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
@@ -218,7 +209,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGatewayId property
+        /// Sets the ID of the VPN gateway at the VPC end of the VPN connection.
         /// </summary>
         /// <param name="vpnGatewayId">ID of the VPN gateway at the VPC end of the VPN
         /// connection</param>
@@ -239,7 +230,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
+        /// Tags assigned to the resource.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
         public List<Tag> Tag
@@ -256,7 +247,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags assigned to the resource.
         /// </summary>
         /// <param name="list">Tag property</param>
         /// <returns>this instance</returns>
@@ -279,7 +270,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets information about the virtual private gateways.
+        /// Information about the virtual private gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "VgwTelemetry")]
         public List<VpnTunnelTelemetry> VgwTelemetry
@@ -297,7 +288,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets information about the virtual private gateways.
+        /// Sets the information about the virtual private gateway.
         /// </summary>
         /// <param name="list">The virtual private gateways.</param>
         /// <returns>this instance</returns>
@@ -321,7 +312,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StaticRoutesOnly option for the VPN connection.
+        /// Whether or not the VPN connection uses static routes only.
+        /// Static routes must be used for devices that do not support BGP.
         /// </summary>
         [XmlElementAttribute(ElementName = "StaticRoutesOnly")]
         public bool StaticRoutesOnly
@@ -331,7 +323,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StaticRoutesOnly option for the VPN connection.
+        /// Sets whether or not the VPN connection uses static routes only.
         /// </summary>
         /// <param name="staticRoutesOnly">Static routes only value</param>
         /// <returns>This instance</returns>
@@ -351,7 +343,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the set of static routes associated with a VPN connection.
+        /// Static routes associated with a VPN connection.
         /// </summary>
         [XmlElementAttribute(ElementName = "Routes")]
         public List<VpnStaticRoute> Routes

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodesOfferingId property is set
         internal bool IsSetReservedCacheNodesOfferingId()
         {
-            return this.reservedCacheNodesOfferingId != null;       
+            return this.reservedCacheNodesOfferingId != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodeId property is set
         internal bool IsSetReservedCacheNodeId()
         {
-            return this.reservedCacheNodeId != null;       
+            return this.reservedCacheNodeId != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeCount property is set
         internal bool IsSetCacheNodeCount()
         {
-            return this.cacheNodeCount.HasValue;       
+            return this.cacheNodeCount.HasValue;
         }
     }
 }

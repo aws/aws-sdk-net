@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.RDS.Model
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;       
+            return this.licenseModel != null;
         }
 
         /// <summary>
@@ -175,12 +175,13 @@ namespace Amazon.RDS.Model
         // Check to see if Vpc property is set
         internal bool IsSetVpc()
         {
-            return this.vpc.HasValue;       
+            return this.vpc.HasValue;
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
-        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a pagination
+        /// token called a marker is included in the response so that the remaining results can be retrieved. Default: 100 Constraints: minimum 20,
+        /// maximum 100
         ///  
         /// </summary>
         public int MaxRecords
@@ -204,11 +205,11 @@ namespace Amazon.RDS.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response
+        /// An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c> .
         ///  
         /// </summary>
@@ -233,7 +234,7 @@ namespace Amazon.RDS.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

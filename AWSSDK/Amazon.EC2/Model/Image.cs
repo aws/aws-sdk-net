@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///AMI
-    ///</summary>
+    /// <summary>
+    /// Image (AMI) description.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Image
     {    
@@ -57,7 +57,6 @@ namespace Amazon.EC2.Model
         private string hypervisorField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// The ID of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
@@ -68,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the ID of the AMI.
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
         /// <returns>this instance</returns>
@@ -88,7 +87,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImageLocation property.
         /// The location of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageLocation")]
@@ -99,7 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageLocation property
+        /// Sets the location of the AMI.
         /// </summary>
         /// <param name="imageLocation">The location of the AMI.</param>
         /// <returns>this instance</returns>
@@ -119,9 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImageState property.
-        /// Current state of the AMI. If the operation
-        /// return
+        /// Current state of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageState")]
         public string ImageState
@@ -131,10 +127,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageState property
+        /// Sets current state of the AMI.
         /// </summary>
-        /// <param name="imageState">Current state of the AMI. If the operation
-        /// return</param>
+        /// <param name="imageState">Current state of the AMI.</param>
         /// <returns>this instance</returns>
         public Image WithImageState(string imageState)
         {
@@ -152,7 +147,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
         /// AWS Access Key ID of the image owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
@@ -163,7 +157,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OwnerId property
+        /// Sets the AWS Access Key ID of the image owner.
         /// </summary>
         /// <param name="ownerId">AWS Access Key ID of the image owner.</param>
         /// <returns>this instance</returns>
@@ -183,8 +177,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Visibility property.
-        /// Visibility - public or private
+        /// Image visibility.
+        /// Valid values: public | private
         /// </summary>
         [XmlElementAttribute(ElementName = "Visibility")]
         public string Visibility
@@ -194,7 +188,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Visibility property
+        /// Sets the image visibility.
         /// </summary>
         /// <param name="visibility">Visibility - public or private</param>
         /// <returns>this instance</returns>
@@ -214,7 +208,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCode property.
         /// Product codes of the AMI
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodeId")]
@@ -233,7 +226,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCode property
+        /// Sets the product codes of the AMI
         /// </summary>
         /// <param name="list">Product codes of the AMI</param>
         /// <returns>this instance</returns>
@@ -258,7 +251,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCodes property.
         /// Product codes attached to this instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCodes")]
@@ -276,7 +268,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCodes property
+        /// Sets the product codes attached to this instance.
         /// </summary>
         /// <param name="list">Product codes attached to this instance.</param>
         /// <returns>this instance</returns>
@@ -299,7 +291,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Architecture property.
         /// The architecture of the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Architecture")]
@@ -310,7 +301,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Architecture property
+        /// Sets the architecture of the image.
         /// </summary>
         /// <param name="architecture">The architecture of the image.</param>
         /// <returns>this instance</returns>
@@ -330,8 +321,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImageType property.
-        /// The type of image
+        /// The image type.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageType")]
         public string ImageType
@@ -341,7 +331,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageType property
+        /// Sets the image type.
         /// </summary>
         /// <param name="imageType">The type of image</param>
         /// <returns>this instance</returns>
@@ -361,7 +351,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
         /// The kernel associated with the image, if any.
         /// Only applicable for machine images.
         /// </summary>
@@ -373,7 +362,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the kernel associated with the image.
         /// </summary>
         /// <param name="kernelId">The kernel associated with the image, if any.
         /// Only applicable for machine images.</param>
@@ -394,7 +383,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
         /// The RAM disk associated with the image, if any.
         /// Only applicable for machine images.
         /// </summary>
@@ -406,7 +394,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the RAM disk associated with the image.
         /// </summary>
         /// <param name="ramdiskId">The RAM disk associated with the image, if any.
         /// Only applicable for machine images.</param>
@@ -427,7 +415,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Platform property.
         /// The operating platform of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "Platform")]
@@ -438,7 +425,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Platform property
+        /// Sets the operating platform of the instance.
         /// </summary>
         /// <param name="platform">The operating platform of the instance.</param>
         /// <returns>this instance</returns>
@@ -458,7 +445,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the StateReason property.
         /// The reason for the state change.
         /// </summary>
         [XmlElementAttribute(ElementName = "StateReason")]
@@ -469,7 +455,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the StateReason property
+        /// Ses the reason for the state change.
         /// </summary>
         /// <param name="stateReason">The reason for the state change.</param>
         /// <returns>this instance</returns>
@@ -489,7 +475,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ImageOwnerAlias property.
         /// The AWS account alias (e.g., "amazon") or AWS
         /// account ID that owns the AMI.
         /// </summary>
@@ -501,7 +486,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageOwnerAlias property
+        /// Sets the AWS account alias (e.g., "amazon") or AWS
+        /// account ID that owns the AMI.
         /// </summary>
         /// <param name="imageOwnerAlias">The AWS account alias (e.g., "amazon") or AWS
         /// account ID that owns the AMI.</param>
@@ -522,7 +508,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
         /// The name of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
@@ -533,7 +518,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name of the AMI.
         /// </summary>
         /// <param name="name">The name of the AMI.</param>
         /// <returns>this instance</returns>
@@ -553,7 +538,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
         /// The description of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -564,7 +548,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the AMI.
         /// </summary>
         /// <param name="description">The description of the AMI.</param>
         /// <returns>this instance</returns>
@@ -584,9 +568,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RootDeviceType property.
-        /// The root device type used by the AMI. The AMI
-        /// can use an Amazon EBS or instance store root device.
+        /// The root device type used by the AMI.
+        /// The AMI can use an Amazon EBS or instance store root device.
         /// </summary>
         [XmlElementAttribute(ElementName = "RootDeviceType")]
         public string RootDeviceType
@@ -596,7 +579,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RootDeviceType property
+        /// Sets the root device type used by the AMI.
         /// </summary>
         /// <param name="rootDeviceType">The root device type used by the AMI. The AMI
         /// can use an Amazon EBS or instance store root device.</param>
@@ -617,7 +600,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RootDeviceName property.
         /// The root device name (e.g., /dev/sda1).
         /// </summary>
         [XmlElementAttribute(ElementName = "RootDeviceName")]
@@ -628,7 +610,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RootDeviceName property
+        /// Sets the root device name (e.g., /dev/sda1).
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
@@ -648,9 +630,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
-        /// Specifies how block devices are exposed to the
-        /// instance.
+        /// One or more specifications of how block devices are exposed to the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -667,7 +647,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets specifications of how block devices are exposed to the instance.
         /// </summary>
         /// <param name="list">Specifies how block devices are exposed to the
         /// instance.</param>
@@ -691,10 +671,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VirtualizationType property.
-        /// Specifies whether the Amazon EC2 instance is a
-        /// hardware virtual machine
-        /// (HVM) or a para-virtual machine (PVM).
+        /// Specifies whether the Amazon EC2 instance is a hardware virtual
+        /// machine (HVM) or a para-virtual machine (PVM).
         /// </summary>
         [XmlElementAttribute(ElementName = "VirtualizationType")]
         public string VirtualizationType
@@ -704,7 +682,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VirtualizationType property
+        /// Sets whether the Amazon EC2 instance is a hardware virtual
+        /// machine (HVM) or a para-virtual machine (PVM).
         /// </summary>
         /// <param name="virtualizationType">Specifies whether the Amazon EC2 instance is a
         /// hardware virtual machine
@@ -726,7 +705,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// A list of tags for the Image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
@@ -744,7 +722,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the list of tags for the Image.
         /// </summary>
         /// <param name="list">A list of tags for the Image.</param>
         /// <returns>this instance</returns>
@@ -767,7 +745,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Hypervisor property.
+        /// The image hypervisor type.
         /// </summary>
         [XmlElementAttribute(ElementName = "Hypervisor")]
         public string Hypervisor
@@ -777,7 +755,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Hypervisor property
+        /// Sets the image hypervisor type.
         /// </summary>
         /// <param name="hypervisor">Hypervisor property</param>
         /// <returns>this instance</returns>

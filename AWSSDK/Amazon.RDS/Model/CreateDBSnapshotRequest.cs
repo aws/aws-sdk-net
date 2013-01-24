@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.dBSnapshotIdentifier != null;       
+            return this.dBSnapshotIdentifier != null;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this.dBInstanceIdentifier != null;       
+            return this.dBInstanceIdentifier != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// VolumeStatusInfo
+    /// Volume Status Info
     /// </summary>
     public class VolumeStatusInfo
     {
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
             return this.statusField != null;
         }
         /// <summary>
-        /// Sets the Status property.
+        /// Sets the status of the volume
         /// </summary>
         /// <param name="status">The new status</param>
         /// <returns>this instance</returns>
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
             return this.volumeStatusDetailField != null;
         }
         /// <summary>
-        /// Sets the VolumeStatusDetail property.
+        /// Sets the details of the volume status
         /// </summary>
         /// <param name="list">The new details</param>
         /// <returns>this instance</returns>

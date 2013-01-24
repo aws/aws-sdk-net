@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -28,9 +28,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Associates an elastic IP address with an instance. If the IP address is
     /// currently assigned to another instance, the IP address is assigned
-    /// to the new instance. This is an idempotent operation. If you enter it more than once,
-    /// Amazon EC2 does not return an error.
+    /// to the new instance.
     /// </summary>
+    /// <remarks>
+    /// This is an idempotent operation. If you call it more than once, Amazon EC2 does not return an error.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class AssociateAddressRequest
     {    
@@ -42,7 +44,6 @@ namespace Amazon.EC2.Model
         private bool? allowReassociationField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The instance to associate with the IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance to associate with the IP address.
         /// </summary>
         /// <param name="instanceId">The instance to associate with the IP address.</param>
         /// <returns>this instance</returns>
@@ -73,9 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PublicIp property.
-        /// IP address that you are assigning to the
-        /// instance.
+        /// The Elastic IP address to assign to the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -85,7 +84,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property
+        /// Sets the Elastic IP address to assign to the instance.
         /// </summary>
         /// <param name="publicIp">IP address that you are assigning to the
         /// instance.</param>
@@ -106,7 +105,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AllocationId property.
         /// The allocation ID that AWS returned when you allocated
         /// the elastic IP address for use with Amazon VPC.
         ///
@@ -120,12 +118,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllocationId property
+        /// Sets the allocation ID for use with Amazon VPC.
         /// </summary>
         /// <param name="allocationId">The allocation ID that AWS returned when you allocated
-        /// the elastic IP address for use with Amazon VPC.
-        ///
-        /// Condition: Required for VPC elastic IP addresses</param>
+        /// the elastic IP address for use with Amazon VPC.</param>
         /// <returns>this instance</returns>
         public AssociateAddressRequest WithAllocationId(string allocationId)
         {
@@ -143,7 +139,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// The network interface ID to associate with an instance.
+        /// Association fails when specifying an instance ID unless exactly one interface is attached.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -153,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface ID to associate with an instance.
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
@@ -173,8 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
-        /// The primary or secondary private IP address to associate with the Elastic IP address. 
+        /// The primary or secondary private IP address to associate with the Elastic IP address.
         /// If no private IP is specified, the Elastic IP address is associated with the primary 
         /// private IP address. This is only available in Amazon VPC.
         /// </summary>
@@ -186,7 +182,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddress property
+        /// Sets the primary or secondary private IP address to associate with the Elastic IP address.
         /// </summary>
         /// <param name="privateIpAddress">Private IP address.</param>
         /// <returns>this instance</returns>
@@ -207,8 +203,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the AllowReassociation property.
-        /// Specify this option to allow an Elastic IP address that is already associated with another 
+        /// Specify whether to allow an Elastic IP address that is already associated with another 
         /// network interface or instance to be re-associated with the specified instance or interface. 
         /// If the Elastic IP address is associated, and this option is not specified, the operation will 
         /// fail. This is only available in Amazon VPC.
@@ -221,7 +216,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllowReassociation property
+        /// Sets whether to allow an Elastic IP address that is already associated with another 
+        /// network interface or instance to be re-associated with the specified instance or interface. 
         /// </summary>
         /// <param name="allowReassociation">Whether reassociation is allowed.</param>
         /// <returns>this instance</returns>

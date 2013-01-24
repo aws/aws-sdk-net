@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para>Specify the type of Amazon EC2 instances to run the job flow on.</para>
     /// </summary>
-    public class JobFlowInstancesDetail  
+    public class JobFlowInstancesDetail
     {
         
         private string masterInstanceType;
@@ -78,7 +78,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if MasterInstanceType property is set
         internal bool IsSetMasterInstanceType()
         {
-            return this.masterInstanceType != null;       
+            return this.masterInstanceType != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if MasterPublicDnsName property is set
         internal bool IsSetMasterPublicDnsName()
         {
-            return this.masterPublicDnsName != null;       
+            return this.masterPublicDnsName != null;
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if MasterInstanceId property is set
         internal bool IsSetMasterInstanceId()
         {
-            return this.masterInstanceId != null;       
+            return this.masterInstanceId != null;
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SlaveInstanceType property is set
         internal bool IsSetSlaveInstanceType()
         {
-            return this.slaveInstanceType != null;       
+            return this.slaveInstanceType != null;
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;       
+            return this.instanceCount.HasValue;
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceGroups collection
         /// </summary>
@@ -275,7 +275,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this.instanceGroups.Count > 0;       
+            return this.instanceGroups.Count > 0;
         }
 
         /// <summary>
@@ -305,7 +305,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if NormalizedInstanceHours property is set
         internal bool IsSetNormalizedInstanceHours()
         {
-            return this.normalizedInstanceHours.HasValue;       
+            return this.normalizedInstanceHours.HasValue;
         }
 
         /// <summary>
@@ -346,7 +346,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Ec2KeyName property is set
         internal bool IsSetEc2KeyName()
         {
-            return this.ec2KeyName != null;       
+            return this.ec2KeyName != null;
         }
 
         /// <summary>
@@ -388,7 +388,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Ec2SubnetId property is set
         internal bool IsSetEc2SubnetId()
         {
-            return this.ec2SubnetId != null;       
+            return this.ec2SubnetId != null;
         }
 
         /// <summary>
@@ -416,7 +416,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Placement property is set
         internal bool IsSetPlacement()
         {
-            return this.placement != null;       
+            return this.placement != null;
         }
 
         /// <summary>
@@ -444,7 +444,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if KeepJobFlowAliveWhenNoSteps property is set
         internal bool IsSetKeepJobFlowAliveWhenNoSteps()
         {
-            return this.keepJobFlowAliveWhenNoSteps.HasValue;       
+            return this.keepJobFlowAliveWhenNoSteps.HasValue;
         }
 
         /// <summary>
@@ -473,7 +473,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if TerminationProtected property is set
         internal bool IsSetTerminationProtected()
         {
-            return this.terminationProtected.HasValue;       
+            return this.terminationProtected.HasValue;
         }
 
         /// <summary>
@@ -514,7 +514,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if HadoopVersion property is set
         internal bool IsSetHadoopVersion()
         {
-            return this.hadoopVersion != null;       
+            return this.hadoopVersion != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(modifyDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ModifyDBInstance");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(modifyDBInstanceRequest.DBInstanceIdentifier));
@@ -56,6 +56,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.FromString(dBSecurityGroupsListValue));
                     dBSecurityGroupsListIndex++;
+                }
+            }
+            if (modifyDBInstanceRequest != null)
+            {
+                List<string> vpcSecurityGroupIdsList = modifyDBInstanceRequest.VpcSecurityGroupIds;
+
+                int vpcSecurityGroupIdsListIndex = 1;
+                foreach (string vpcSecurityGroupIdsListValue in vpcSecurityGroupIdsList)
+                { 
+                    request.Parameters.Add("VpcSecurityGroupIds.member." + vpcSecurityGroupIdsListIndex, StringUtils.FromString(vpcSecurityGroupIdsListValue));
+                    vpcSecurityGroupIdsListIndex++;
                 }
             }
             if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetApplyImmediately())
@@ -105,6 +116,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetOptionGroupName())
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(modifyDBInstanceRequest.OptionGroupName));
+            }
+            if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetNewDBInstanceIdentifier())
+            {
+                request.Parameters.Add("NewDBInstanceIdentifier", StringUtils.FromString(modifyDBInstanceRequest.NewDBInstanceIdentifier));
             }
 
             return request;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Instance Monitoring
-    ///</summary>
+    /// <summary>
+    /// Instance Monitoring
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceMonitoring
     {    
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private Monitoring monitoringField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// Instance ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID.
         /// </summary>
         /// <param name="instanceId">Instance ID.</param>
         /// <returns>this instance</returns>
@@ -66,11 +65,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Monitoring property.
-        /// State of monitoring for the instance. Valid
-        /// Values:
-        /// monitoring-enabled (enabled)
-        /// | monitoring-pending
+        /// State of monitoring for the instance.
+        /// 
+        /// Valid Values:
+        /// monitoring-enabled (enabled) | monitoring-pending
         /// (pending) | monitoring-disabled (disabled)
         /// </summary>
         [XmlElementAttribute(ElementName = "Monitoring")]
@@ -81,12 +79,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Monitoring property
+        /// Sets the State of monitoring for the instance.
         /// </summary>
-        /// <param name="monitoring">State of monitoring for the instance. Valid
-        /// Values:
-        /// monitoring-enabled (enabled)
-        /// | monitoring-pending
+        /// <param name="monitoring">State of monitoring for the instance.
+        /// Valid Values: monitoring-enabled (enabled) | monitoring-pending
         /// (pending) | monitoring-disabled (disabled)</param>
         /// <returns>this instance</returns>
         public InstanceMonitoring WithMonitoring(Monitoring monitoring)

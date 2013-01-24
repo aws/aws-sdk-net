@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet
-    /// uses the routes in the new route table it's associated with. For more information about route tables, go
-    /// to Route Tables in the Amazon Virtual Private Cloud User Guide.
+    /// Changes the route table associated with a given subnet in a VPC.
     /// </summary>
+    /// <remarks>
+    /// After you execute this action, the subnet uses the routes in the
+    /// new route table it's associated with. For more information about
+    /// route tables, go to Route Tables in the Amazon Virtual Private
+    /// Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ReplaceRouteTableAssociationRequest
     {    
@@ -37,9 +41,7 @@ namespace Amazon.EC2.Model
         private string routeTableIdField;
 
         /// <summary>
-        /// Gets and sets the AssociationId property.
-        /// The ID representing the current association 
-        /// between the original route table and the
+        /// The ID representing the current association between the original route table and the
         /// subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "AssociationId")]
@@ -50,7 +52,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the ID representing the current association between the original route table and the
+        /// subnet.
         /// </summary>
         /// <param name="associationId">The ID representing the current association 
         /// between the original route table and the
@@ -72,9 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
-        /// The ID of the new route table to associate with 
-        /// the subnet.
+        /// The ID of the new route table to associate with the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
         public string RouteTableId
@@ -84,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the ID of the new route table to associate with the subnet.
         /// </summary>
         /// <param name="routeTableId">The ID of the new route table to associate with 
         /// the subnet.</param>

@@ -49,6 +49,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
+            // clean up request from previous execution
+            request.Headers.Remove("Authorization");
+
             string signingAlgorithm = SigningAlgorithm.HmacSHA256.ToString().ToUpper();
 
             DateTime dt = DateTime.UtcNow;
@@ -65,7 +68,7 @@ namespace Amazon.Runtime.Internal.Auth
                     hostHeader += ":" + request.Endpoint.Port;
                 request.Headers.Add("Host", hostHeader);
             }
-            request.Headers.Add("X-Amz-Date", dateTime);
+            request.Headers["X-Amz-Date"] = dateTime;
 
             string scope = string.Format("{0}/{1}/{2}/{3}", dateStamp, region, service, TERMINATOR);
             List<string> headersToSign = GetHeadersForSigning(request.Headers);
@@ -96,7 +99,7 @@ namespace Amazon.Runtime.Internal.Auth
             authorizationHeader.AppendFormat("SignedHeaders={0}, ", GetSignedHeaders(headersToSign));
             authorizationHeader.AppendFormat("Signature={0}", AWSSDKUtils.ToHex(signature, true));
 
-            request.Headers.Add("Authorization", authorizationHeader.ToString());
+            request.Headers["Authorization"] = authorizationHeader.ToString();
         }
 
         /// <summary>

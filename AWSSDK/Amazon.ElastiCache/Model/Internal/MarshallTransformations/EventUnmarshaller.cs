@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Event Unmarshaller
      /// </summary>
-    internal class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext> 
+    internal class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext>, IUnmarshaller<Event, JsonUnmarshallerContext> 
     {
         public Event Unmarshall(XmlUnmarshallerContext context) 
         {
             Event eventValue = new Event();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return eventValue;
+        }
+
+        public Event Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EventUnmarshaller instance;

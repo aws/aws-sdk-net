@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    /// ExportTaskType; details of an ExportVM task.
+    /// Details of an ExportVM task.
     ///</summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ExportTaskType
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         private ExportToS3TaskType exportToS3TaskTypeField;
 
         /// <summary>
-        /// Gets and sets the ID of the export task.
+        /// The ID of the export task.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExportTaskId")]
         public string ExportTaskId
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the description of the resource being exported.
+        /// The description of the resource being exported.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the state of the conversion task.
+        /// The state of the conversion task.
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
         public string State
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the status message related to the export task.
+        /// The status message related to the export task.
         /// </summary>
         [XmlElementAttribute(ElementName = "StatusMessage")]
         public string StatusMessage
@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets information about the instance being exported.
+        /// Information about the instance being exported.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceExportTaskType")]
         public InstanceExportTaskType InstanceExportTask
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets information about the destination Amazon S3 bucket.
+        /// Information about the destination Amazon S3 bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExportToS3TaskType")]
         public ExportToS3TaskType ExportToS3Task

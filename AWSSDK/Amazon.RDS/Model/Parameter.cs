@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> This data type is used as a request parameter in the ModifyDBParameterGroup and ResetDBParameterGroup actions. </para> <para>This
     /// data type is used as a response element in the DescribeEngineDefaultParameters and DescribeDBParameters actions.</para>
     /// </summary>
-    public class Parameter  
+    public class Parameter
     {
         
         private string parameterName;
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         // Check to see if ParameterName property is set
         internal bool IsSetParameterName()
         {
-            return this.parameterName != null;       
+            return this.parameterName != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.RDS.Model
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;       
+            return this.parameterValue != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.RDS.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.RDS.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this.source != null;       
+            return this.source != null;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
         // Check to see if ApplyType property is set
         internal bool IsSetApplyType()
         {
-            return this.applyType != null;       
+            return this.applyType != null;
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.RDS.Model
         // Check to see if DataType property is set
         internal bool IsSetDataType()
         {
-            return this.dataType != null;       
+            return this.dataType != null;
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.RDS.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this.allowedValues != null;       
+            return this.allowedValues != null;
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.RDS.Model
         // Check to see if IsModifiable property is set
         internal bool IsSetIsModifiable()
         {
-            return this.isModifiable.HasValue;       
+            return this.isModifiable.HasValue;
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.RDS.Model
         // Check to see if MinimumEngineVersion property is set
         internal bool IsSetMinimumEngineVersion()
         {
-            return this.minimumEngineVersion != null;       
+            return this.minimumEngineVersion != null;
         }
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         // Check to see if ApplyMethod property is set
         internal bool IsSetApplyMethod()
         {
-            return this.applyMethod != null;       
+            return this.applyMethod != null;
         }
     }
 }

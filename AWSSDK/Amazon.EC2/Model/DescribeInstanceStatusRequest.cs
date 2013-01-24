@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the components of a Describe Instance Status request.
+    /// Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+    /// Instance status provides information about two types of scheduled events for
+    /// an instance that may require your attention, Scheduled Reboot and Scheduled Retirement.
+    /// Only information about instances in the running state is returned.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeInstanceStatusRequest
@@ -37,7 +40,8 @@ namespace Amazon.EC2.Model
         private int? maxResultsField;
 
         /// <summary>
-        /// Gets and sets the list of instance IDs. If not specified, all instances are described. 
+        /// List of instance IDs.
+        /// If not specified, all instances are described. 
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public List<string> InstanceId
@@ -54,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the list of instance IDs.
+        /// Sets instance IDs.
         /// </summary>
         /// <param name="list">Instance IDs to describe.</param>
         /// <returns>this instance</returns>
@@ -77,7 +81,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Instances.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -98,7 +101,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Instances.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified Instances.
@@ -124,7 +128,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets a string specifying the next paginated set of results to return. 
+        /// Token specifying the next paginated set of results to return. 
         /// </summary>
         public string NextToken
         {
@@ -153,7 +157,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the maximum number of paginated instance items per response.
+        /// The maximum number of paginated instance items per response.
         /// </summary>
         public int MaxResults
         {

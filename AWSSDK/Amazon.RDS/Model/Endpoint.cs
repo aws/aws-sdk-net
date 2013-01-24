@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Endpoint  
+    public class Endpoint
     {
         
         private string address;
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         // Check to see if Address property is set
         internal bool IsSetAddress()
         {
-            return this.address != null;       
+            return this.address != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Enable Virtual Gateway (VGW) Route Propagation Request
+    /// Enables a virtual private gateway (VGW) to propagate routes to the
+    /// routing tables of an Amazon VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class EnableVGWRoutePropagationRequest
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
         private string gatewayIdField;
 
         /// <summary>
-        /// Gets and sets the ID of the routing table.
+        /// ID of the routing table.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
         public string RouteTableId
@@ -65,7 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ID of the Virtual Private Gateway.
+        /// ID of the Virtual Private Gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "GatewayId")]
         public string GatewayId

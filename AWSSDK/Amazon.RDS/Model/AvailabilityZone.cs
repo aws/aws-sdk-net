@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// </para>
     /// </summary>
-    public class AvailabilityZone  
+    public class AvailabilityZone
     {
         
         private string name;
@@ -59,8 +59,13 @@ namespace Amazon.RDS.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
+
+        /// <summary>
+        /// True indicates the availability zone is capable of provisioned IOPs.
+        ///  
+        /// </summary>
         public bool ProvisionedIopsCapable
         {
             get { return this.provisionedIopsCapable ?? default(bool); }
@@ -82,7 +87,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProvisionedIopsCapable property is set
         internal bool IsSetProvisionedIopsCapable()
         {
-            return this.provisionedIopsCapable.HasValue;       
+            return this.provisionedIopsCapable.HasValue;
         }
     }
 }

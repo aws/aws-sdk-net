@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Adds or remove permission settings for the
-    /// specified snapshot
+    /// Adds or remove permission settings for the specified snapshot
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ModifySnapshotAttributeRequest
@@ -39,7 +38,6 @@ namespace Amazon.EC2.Model
         private List<string> userGroupField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -50,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
@@ -70,9 +68,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Specifies the attribute to modify. Valid
-        /// Values: createVolumePermission
+        /// The attribute to modify.
+        /// Valid Values: createVolumePermission
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -82,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute to modify.
         /// </summary>
         /// <param name="attribute">Specifies the attribute to modify. Valid
         /// Values: createVolumePermission</param>
@@ -103,9 +100,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OperationType property.
-        /// Specifies the operation to perform on the
-        /// attribute.
+        /// The operation to perform on the attribute.
         /// Valid Values: add | remove
         /// </summary>
         [XmlElementAttribute(ElementName = "OperationType")]
@@ -116,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OperationType property
+        /// Sets the operation to perform on the attribute.
         /// </summary>
         /// <param name="operationType">Specifies the operation to perform on the
         /// attribute.
@@ -138,9 +133,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserId property.
-        /// User ID of a user that can create volumes from
-        /// the snapshot.
+        /// User ID of a user that can create volumes from the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public List<string> UserId
@@ -157,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserId property
+        /// Sets the user ID of a user that can create volumes from the snapshot.
         /// </summary>
         /// <param name="list">User ID of a user that can create volumes from
         /// the snapshot.</param>
@@ -181,10 +174,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserGroup property.
-        /// Group that is allowed to create volumes from
-        /// the snapshot (currently
-        /// supports "all").
+        /// Group that is allowed to create volumes from the snapshot.
+        /// Valid values: "all".
         /// </summary>
         [XmlElementAttribute(ElementName = "UserGroup")]
         public List<string> UserGroup
@@ -201,7 +192,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserGroup property
+        /// Sets the group that is allowed to create volumes from the snapshot.
         /// </summary>
         /// <param name="list">Group that is allowed to create volumes from
         /// the snapshot (currently

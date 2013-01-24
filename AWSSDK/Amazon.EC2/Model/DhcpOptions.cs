@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///DHCP Options
-    ///</summary>
+    /// <summary>
+    /// DHCP Options
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DhcpOptions
     {    
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the DhcpOptionsId property.
         /// The ID of the set of DHCP options
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DhcpOptionsId property
+        /// Sets the ID of the set of DHCP options
         /// </summary>
         /// <param name="dhcpOptionsId">The ID of the set of DHCP options</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Configuration property.
         /// Information about the set of DHCP options
         /// </summary>
         [XmlElementAttribute(ElementName = "Configuration")]
@@ -85,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Configuration property
+        /// Sets the information about the set of DHCP options
         /// </summary>
         /// <param name="list">Information about the set of DHCP options</param>
         /// <returns>this instance</returns>
@@ -108,8 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
-        /// A list of tags for the DhcpOptions.
+        /// List of tags for the DhcpOptions.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
         public List<Tag> Tag
@@ -126,7 +123,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the list of tags for the DhcpOptions.
         /// </summary>
         /// <param name="list">A list of tags for the DhcpOptions.</param>
         /// <returns>this instance</returns>

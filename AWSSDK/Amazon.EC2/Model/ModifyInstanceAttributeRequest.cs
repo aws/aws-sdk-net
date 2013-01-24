@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -38,7 +38,6 @@ namespace Amazon.EC2.Model
         private List<string> groupIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The instance ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -49,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <returns>this instance</returns>
@@ -69,14 +68,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Name of the attribute to modify. Values are
-        /// "instanceType", "kernel", "ramdisk",
-        /// "userData", "disableApiTermination",
-        /// "instanceInitiatedShutdownBehavior",
-        /// "sourceDestCheck", "rootDeviceName",
-        /// "blockDeviceMapping" and "ebsOptimized"
+        /// Name of the attribute to modify.
         /// </summary>
+        /// <remarks>
+        /// Valid values:
+        /// "instanceType", "kernel", "ramdisk", "userData", "disableApiTermination",
+        /// "instanceInitiatedShutdownBehavior", "sourceDestCheck", "rootDeviceName",
+        /// "blockDeviceMapping" and "ebsOptimized"
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
@@ -85,13 +84,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name of the attribute to modify.
         /// </summary>
         /// <param name="attribute">Name of the attribute to modify. Values are
-        /// "instanceType", "kernel", "ramdisk",
-        /// "userData", "disableApiTermination",
-        /// "instanceInitiatedShutdownBehavior",
-        /// "sourceDestCheck", "rootDeviceName",
+        /// "instanceType", "kernel", "ramdisk", "userData", "disableApiTermination",
+        /// "instanceInitiatedShutdownBehavior", "sourceDestCheck", "rootDeviceName",
         /// "blockDeviceMapping" and "ebsOptimized"</param>
         /// <returns>this instance</returns>
         public ModifyInstanceAttributeRequest WithAttribute(string attribute)
@@ -110,7 +107,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
         /// New value of the attribute.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
@@ -121,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets the new value of the attribute.
         /// </summary>
         /// <param name="value">New value of the attribute.</param>
         /// <returns>this instance</returns>
@@ -141,9 +137,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
-        /// Modifies the mapping that defines native device names
-        /// to use when exposing virtual devices.
+        /// New mapping that defines native device names to use when exposing virtual devices.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<InstanceBlockDeviceMappingParameter> BlockDeviceMapping
@@ -160,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the new mapping that defines native device names to use when exposing virtual devices.
         /// </summary>
         /// <param name="list">Modifies the mapping that defines native device names
         /// to use when exposing virtual devices.</param>
@@ -184,13 +178,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
+        /// New security groups that an instance belongs to.
+        /// </summary>
+        /// <remarks>
         /// This is applicable only to instances running in a VPC. Use
         /// this parameter when you want to change the security
         /// groups an instance is in. The new set of groups you specify
         /// replaces the current set. You must specify at least one
         /// group, even if it's just the default security group in the VPC.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "GroupId")]
         public List<string> GroupId
         {
@@ -206,7 +202,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the new security groups that an instance belongs to.
         /// </summary>
         /// <param name="list">This is applicable only to instances running in a VPC. Use
         /// this parameter when you want to change the security

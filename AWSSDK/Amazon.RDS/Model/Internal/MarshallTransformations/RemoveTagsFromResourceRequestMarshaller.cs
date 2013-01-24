@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(removeTagsFromResourceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RemoveTagsFromResource");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (removeTagsFromResourceRequest != null && removeTagsFromResourceRequest.IsSetResourceName())
             {
                 request.Parameters.Add("ResourceName", StringUtils.FromString(removeTagsFromResourceRequest.ResourceName));

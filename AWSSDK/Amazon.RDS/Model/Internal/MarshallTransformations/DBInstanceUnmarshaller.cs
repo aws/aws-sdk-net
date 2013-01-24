@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -112,6 +112,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))
+                    {
+                        dBInstance.VpcSecurityGroups.Add(VpcSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("DBParameterGroups/DBParameterGroup", targetDepth))
                     {
                         dBInstance.DBParameterGroups.Add(DBParameterGroupStatusUnmarshaller.GetInstance().Unmarshall(context));
@@ -199,6 +205,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CharacterSetName", targetDepth))
                     {
                         dBInstance.CharacterSetName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))
+                    {
+                        dBInstance.SecondaryAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("PubliclyAccessible", targetDepth))
+                    {
+                        dBInstance.PubliclyAccessible = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

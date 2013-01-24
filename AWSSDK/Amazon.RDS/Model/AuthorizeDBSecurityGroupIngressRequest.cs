@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;       
+            return this.dBSecurityGroupName != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;       
+            return this.cIDRIP != null;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this.eC2SecurityGroupName != null;       
+            return this.eC2SecurityGroupName != null;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.RDS.Model
         // Check to see if EC2SecurityGroupId property is set
         internal bool IsSetEC2SecurityGroupId()
         {
-            return this.eC2SecurityGroupId != null;       
+            return this.eC2SecurityGroupId != null;
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.RDS.Model
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;       
+            return this.eC2SecurityGroupOwnerId != null;
         }
     }
 }

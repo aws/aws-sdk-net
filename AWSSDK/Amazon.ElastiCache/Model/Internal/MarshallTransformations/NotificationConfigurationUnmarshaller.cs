@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   NotificationConfiguration Unmarshaller
      /// </summary>
-    internal class NotificationConfigurationUnmarshaller : IUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext> 
+    internal class NotificationConfigurationUnmarshaller : IUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NotificationConfiguration, JsonUnmarshallerContext> 
     {
         public NotificationConfiguration Unmarshall(XmlUnmarshallerContext context) 
         {
             NotificationConfiguration notificationConfiguration = new NotificationConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return notificationConfiguration;
+        }
+
+        public NotificationConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static NotificationConfigurationUnmarshaller instance;

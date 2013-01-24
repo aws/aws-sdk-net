@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> Contains pair of Topic and Topic Status. </para>
     /// </summary>
-    public class NotificationConfiguration  
+    public class NotificationConfiguration
     {
         
         private string topicArn;
@@ -54,7 +54,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;       
+            return this.topicArn != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if TopicStatus property is set
         internal bool IsSetTopicStatus()
         {
-            return this.topicStatus != null;       
+            return this.topicStatus != null;
         }
     }
 }

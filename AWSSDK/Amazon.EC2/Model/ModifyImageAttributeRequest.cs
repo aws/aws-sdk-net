@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -40,7 +40,6 @@ namespace Amazon.EC2.Model
         private string descriptionField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
         /// The AMI ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
@@ -51,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the AMI ID.
         /// </summary>
         /// <param name="imageId">The AMI ID.</param>
         /// <returns>this instance</returns>
@@ -71,10 +70,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Specifies the attribute to modify. Valid
-        /// Values: launchPermission |
-        /// productCodes
+        /// The attribute to modify.
+        /// Valid Values: launchPermission | productCodes
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -84,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute to modify.
         /// </summary>
         /// <param name="attribute">Specifies the attribute to modify. Valid
         /// Values: launchPermission |
@@ -106,9 +103,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the OperationType property.
-        /// Specifies the operation to perform on the
-        /// attribute. Valid Values: add | remove
+        /// The operation to perform on the attribute.
+        /// Valid Values: add | remove
         /// </summary>
         [XmlElementAttribute(ElementName = "OperationType")]
         public string OperationType
@@ -118,7 +114,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the OperationType property
+        /// Sets the operation to perform on the attribute.
         /// </summary>
         /// <param name="operationType">Specifies the operation to perform on the
         /// attribute. Valid Values: add | remove</param>
@@ -139,8 +135,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserId property.
-        /// AWS Access Key ID.
+        /// AWS Access Key IDs to add/remove.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public List<string> UserId
@@ -157,7 +152,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserId property
+        /// Sets the AWS Access Key IDs to add/remove.
         /// </summary>
         /// <param name="list">AWS Access Key ID.</param>
         /// <returns>this instance</returns>
@@ -180,8 +175,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserGroup property.
-        /// Name of the group. Currently supports "all."
+        /// Names of the groups to add/remove.
+        /// Currently supports "all."
         /// </summary>
         [XmlElementAttribute(ElementName = "UserGroup")]
         public List<string> UserGroup
@@ -198,7 +193,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserGroup property
+        /// Sets names of the groups to add/remove.
         /// </summary>
         /// <param name="list">Name of the group. Currently supports "all."</param>
         /// <returns>this instance</returns>
@@ -221,8 +216,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductCode property.
-        /// Product code.
+        /// Product codes to add.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductCode")]
         public List<string> ProductCode
@@ -239,7 +233,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductCode property
+        /// Sets product codes to add.
         /// </summary>
         /// <param name="list">Product code.</param>
         /// <returns>this instance</returns>
@@ -262,7 +256,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
+        /// New description for the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -272,7 +266,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the new description for the AMI.
         /// </summary>
         /// <param name="description">Description property</param>
         /// <returns>this instance</returns>

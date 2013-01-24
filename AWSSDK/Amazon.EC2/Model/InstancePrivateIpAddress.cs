@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -29,12 +29,12 @@ namespace Amazon.EC2.Model
     public class InstancePrivateIpAddress
     {
         private string ipAddressField;
+        private string privateDnsNameField;
         private bool? primaryField;
         private InstanceNetworkInterfaceAssociation associationField;
 
 
         /// <summary>
-        /// Gets and sets the IpAddress property.
         /// Private IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpAddress")]
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpAddress property
+        /// Sets the private IP address.
         /// </summary>
         /// <param name="ipAddress">Private IP address.</param>
         /// <returns>this instance</returns>
@@ -66,7 +66,37 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the Primary property.
+        /// Private DNS name.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateDnsName")]
+        public string PrivateDnsName
+        {
+            get { return this.privateDnsNameField; }
+            set { this.privateDnsNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the private DNS name.
+        /// </summary>
+        /// <param name="privateDnsName">Private DNS name.</param>
+        /// <returns>this instance</returns>
+        public InstancePrivateIpAddress WithPrivateDnsName(string privateDnsName)
+        {
+            this.privateDnsNameField = privateDnsName;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateDnsName property is set
+        /// </summary>
+        /// <returns>true if the PrivateDnsName property is set</returns>
+        public bool IsSetPrivateDnsName()
+        {
+            return !string.IsNullOrEmpty(this.privateDnsNameField);
+        }
+
+
+        /// <summary>
         /// Whether this is a primary IP.
         /// </summary>
         [XmlElementAttribute(ElementName = "Primary")]
@@ -77,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Primary property
+        /// Sets whether this is a primary IP.
         /// </summary>
         /// <param name="primary">Whether this is a primary IP.</param>
         /// <returns>this instance</returns>
@@ -98,7 +128,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the Association property.
         /// Instance Network Interface Association.
         /// </summary>
         [XmlElementAttribute(ElementName = "Association")]
@@ -109,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Association property
+        /// Sets the Instance Network Interface Association.
         /// </summary>
         /// <param name="association">Instance Network Interface Association.</param>
         /// <returns>this instance</returns>

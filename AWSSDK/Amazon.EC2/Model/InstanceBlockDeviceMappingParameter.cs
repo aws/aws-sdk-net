@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,10 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Information about the instance block device
-    ///mapping.
-    ///</summary>
+    /// <summary>
+    /// Instance block device mapping parameter.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceBlockDeviceMappingParameter
     {    
@@ -38,8 +37,7 @@ namespace Amazon.EC2.Model
         private string noDeviceField;
 
         /// <summary>
-        /// Gets and sets the DeviceName property.
-        /// The device name (e.g., /dev/sdh).
+        /// The device name exposed to the instance (e.g., /dev/sdh).
         /// </summary>
         [XmlElementAttribute(ElementName = "DeviceName")]
         public string DeviceName
@@ -49,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeviceName property
+        /// Sets the device name exposed to the instance (e.g., /dev/sdh).
         /// </summary>
         /// <param name="deviceName">The device name (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
@@ -69,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VirtualName property.
         /// The virtual device name.
         /// </summary>
         [XmlElementAttribute(ElementName = "VirtualName")]
@@ -80,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VirtualName property
+        /// Sets the virtual device name.
         /// </summary>
         /// <param name="virtualName">The virtual device name.</param>
         /// <returns>this instance</returns>
@@ -100,9 +97,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Ebs property.
-        /// Specifies parameters used to automatically
-        /// setup Amazon EBS volumes when the instance is launched.
+        /// Parameters used to automatically setup Amazon EBS volumes
+        /// when the instance is launched.
         /// </summary>
         [XmlElementAttribute(ElementName = "Ebs")]
         public InstanceEbsBlockDeviceParameter Ebs
@@ -112,7 +108,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Ebs property
+        /// Sets parameters used to automatically setup Amazon EBS volumes
+        /// when the instance is launched.
         /// </summary>
         /// <param name="ebs">Specifies parameters used to automatically
         /// setup Amazon EBS volumes when the instance is launched.</param>
@@ -133,9 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NoDevice property.
-        /// Specifies the device name (e.g., /dev/sdb) to
-        /// suppress during instance launch.
+        /// The device name (e.g., /dev/sdb) to suppress during instance launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "NoDevice")]
         public string NoDevice
@@ -145,7 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NoDevice property
+        /// Sets the device name (e.g., /dev/sdb) to suppress during instance launch.
         /// </summary>
         /// <param name="noDevice">Specifies the device name (e.g., /dev/sdb) to
         /// suppress during instance launch.</param>

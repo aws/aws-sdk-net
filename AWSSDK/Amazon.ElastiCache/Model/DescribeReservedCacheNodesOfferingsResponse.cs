@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,14 +34,14 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public DescribeReservedCacheNodesOfferingsResult DescribeReservedCacheNodesOfferingsResult
         {
-            get 
+            get
             {
                 if(this.describeReservedCacheNodesOfferingsResult == null)
                 {
                     this.describeReservedCacheNodesOfferingsResult = new DescribeReservedCacheNodesOfferingsResult();
                 }
 
-                return this.describeReservedCacheNodesOfferingsResult; 
+                return this.describeReservedCacheNodesOfferingsResult;
             }
             set { this.describeReservedCacheNodesOfferingsResult = value; }
         }

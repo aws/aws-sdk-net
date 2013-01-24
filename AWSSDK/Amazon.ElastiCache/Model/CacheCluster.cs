@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,10 +23,12 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> Contains information about a Cache Cluster. </para>
     /// </summary>
-    public class CacheCluster  
+    public class CacheCluster
     {
         
         private string cacheClusterId;
+        private Endpoint configurationEndpoint;
+        private string clientDownloadLandingPage;
         private string cacheNodeType;
         private string engine;
         private string engineVersion;
@@ -39,8 +41,10 @@ namespace Amazon.ElastiCache.Model
         private NotificationConfiguration notificationConfiguration;
         private List<CacheSecurityGroupMembership> cacheSecurityGroups = new List<CacheSecurityGroupMembership>();
         private CacheParameterGroupStatus cacheParameterGroup;
+        private string cacheSubnetGroupName;
         private List<CacheNode> cacheNodes = new List<CacheNode>();
         private bool? autoMinorVersionUpgrade;
+        private List<SecurityGroupMembership> securityGroups = new List<SecurityGroupMembership>();
 
         /// <summary>
         /// Specifies a user-supplied identifier. This is the unique key that identifies a Cache Cluster.
@@ -67,7 +71,63 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;       
+            return this.cacheClusterId != null;
+        }
+
+        /// <summary>
+        /// Specifies a user-supplied identifier. This is the unique key that identifies a Cache Cluster.
+        ///  
+        /// </summary>
+        public Endpoint ConfigurationEndpoint
+        {
+            get { return this.configurationEndpoint; }
+            set { this.configurationEndpoint = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConfigurationEndpoint property
+        /// </summary>
+        /// <param name="configurationEndpoint">The value to set for the ConfigurationEndpoint property </param>
+        /// <returns>this instance</returns>
+        public CacheCluster WithConfigurationEndpoint(Endpoint configurationEndpoint)
+        {
+            this.configurationEndpoint = configurationEndpoint;
+            return this;
+        }
+            
+
+        // Check to see if ConfigurationEndpoint property is set
+        internal bool IsSetConfigurationEndpoint()
+        {
+            return this.configurationEndpoint != null;
+        }
+
+        /// <summary>
+        /// Provides the landing page to download the latest ElastiCache client library.
+        ///  
+        /// </summary>
+        public string ClientDownloadLandingPage
+        {
+            get { return this.clientDownloadLandingPage; }
+            set { this.clientDownloadLandingPage = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClientDownloadLandingPage property
+        /// </summary>
+        /// <param name="clientDownloadLandingPage">The value to set for the ClientDownloadLandingPage property </param>
+        /// <returns>this instance</returns>
+        public CacheCluster WithClientDownloadLandingPage(string clientDownloadLandingPage)
+        {
+            this.clientDownloadLandingPage = clientDownloadLandingPage;
+            return this;
+        }
+            
+
+        // Check to see if ClientDownloadLandingPage property is set
+        internal bool IsSetClientDownloadLandingPage()
+        {
+            return this.clientDownloadLandingPage != null;
         }
 
         /// <summary>
@@ -95,7 +155,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeType property is set
         internal bool IsSetCacheNodeType()
         {
-            return this.cacheNodeType != null;       
+            return this.cacheNodeType != null;
         }
 
         /// <summary>
@@ -123,7 +183,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -151,7 +211,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -179,7 +239,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterStatus property is set
         internal bool IsSetCacheClusterStatus()
         {
-            return this.cacheClusterStatus != null;       
+            return this.cacheClusterStatus != null;
         }
 
         /// <summary>
@@ -207,7 +267,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NumCacheNodes property is set
         internal bool IsSetNumCacheNodes()
         {
-            return this.numCacheNodes.HasValue;       
+            return this.numCacheNodes.HasValue;
         }
 
         /// <summary>
@@ -235,7 +295,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredAvailabilityZone property is set
         internal bool IsSetPreferredAvailabilityZone()
         {
-            return this.preferredAvailabilityZone != null;       
+            return this.preferredAvailabilityZone != null;
         }
 
         /// <summary>
@@ -263,7 +323,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterCreateTime property is set
         internal bool IsSetCacheClusterCreateTime()
         {
-            return this.cacheClusterCreateTime.HasValue;       
+            return this.cacheClusterCreateTime.HasValue;
         }
 
         /// <summary>
@@ -291,7 +351,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredMaintenanceWindow property is set
         internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindow != null;       
+            return this.preferredMaintenanceWindow != null;
         }
 
         /// <summary>
@@ -320,7 +380,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PendingModifiedValues property is set
         internal bool IsSetPendingModifiedValues()
         {
-            return this.pendingModifiedValues != null;       
+            return this.pendingModifiedValues != null;
         }
 
         /// <summary>
@@ -348,7 +408,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NotificationConfiguration property is set
         internal bool IsSetNotificationConfiguration()
         {
-            return this.notificationConfiguration != null;       
+            return this.notificationConfiguration != null;
         }
 
         /// <summary>
@@ -375,7 +435,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheSecurityGroups collection
         /// </summary>
@@ -394,7 +454,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroups property is set
         internal bool IsSetCacheSecurityGroups()
         {
-            return this.cacheSecurityGroups.Count > 0;       
+            return this.cacheSecurityGroups.Count > 0;
         }
 
         /// <summary>
@@ -422,7 +482,35 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroup property is set
         internal bool IsSetCacheParameterGroup()
         {
-            return this.cacheParameterGroup != null;       
+            return this.cacheParameterGroup != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the Cache Subnet Group associated with the Cache Cluster.
+        ///  
+        /// </summary>
+        public string CacheSubnetGroupName
+        {
+            get { return this.cacheSubnetGroupName; }
+            set { this.cacheSubnetGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the CacheSubnetGroupName property
+        /// </summary>
+        /// <param name="cacheSubnetGroupName">The value to set for the CacheSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        public CacheCluster WithCacheSubnetGroupName(string cacheSubnetGroupName)
+        {
+            this.cacheSubnetGroupName = cacheSubnetGroupName;
+            return this;
+        }
+            
+
+        // Check to see if CacheSubnetGroupName property is set
+        internal bool IsSetCacheSubnetGroupName()
+        {
+            return this.cacheSubnetGroupName != null;
         }
 
         /// <summary>
@@ -448,7 +536,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheNodes collection
         /// </summary>
@@ -467,7 +555,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodes property is set
         internal bool IsSetCacheNodes()
         {
-            return this.cacheNodes.Count > 0;       
+            return this.cacheNodes.Count > 0;
         }
 
         /// <summary>
@@ -495,7 +583,52 @@ namespace Amazon.ElastiCache.Model
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;       
+            return this.autoMinorVersionUpgrade.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the VPC Security Groups associated with the Cache Cluster.
+        ///  
+        /// </summary>
+        public List<SecurityGroupMembership> SecurityGroups
+        {
+            get { return this.securityGroups; }
+            set { this.securityGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CacheCluster WithSecurityGroups(params SecurityGroupMembership[] securityGroups)
+        {
+            foreach (SecurityGroupMembership element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CacheCluster WithSecurityGroups(IEnumerable<SecurityGroupMembership> securityGroups)
+        {
+            foreach (SecurityGroupMembership element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this.securityGroups.Count > 0;
         }
     }
 }

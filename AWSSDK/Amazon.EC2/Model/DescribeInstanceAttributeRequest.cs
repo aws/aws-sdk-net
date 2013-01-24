@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about an attribute of an
-    /// instance. Only one attribute
-    /// can be specified per call.
+    /// Gets information about an attribute of an instance.
+    /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeInstanceAttributeRequest
@@ -37,8 +36,7 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// Instance IDs to describe.
+        /// Instance ID to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -48,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the instance ID to describe.
         /// </summary>
         /// <param name="instanceId">Instance IDs to describe.</param>
         /// <returns>this instance</returns>
@@ -68,13 +66,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Specifies the attribute to return. Values are
+        /// The attribute to return.
+        /// </summary>
+        /// <remarks>
+        /// Valid values are
         /// "instanceType", "kernel", "ramdisk", "userData",
         /// "disableApiTermination", "instanceInitiatedShutdownBehavior",
         /// "sourceDestCheck", "groupSet",
         /// "rootDeviceName", "blockDeviceMapping", "productCodes" and "ebsOptimized"
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the attribute to return.
         /// </summary>
         /// <param name="attribute">Specifies the attribute to return. Values are
         /// "instanceType", "kernel", "ramdisk", "userData",

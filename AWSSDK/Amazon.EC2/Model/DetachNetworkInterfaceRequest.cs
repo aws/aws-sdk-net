@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Detach Network Interface request
+    /// Detaches a network interface from an instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DetachNetworkInterfaceRequest
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
         private bool? forceField;
 
         /// <summary>
-        /// Gets and sets the ID of the attachment to detach
+        /// The ID of the attachment to detach.
         /// </summary>
         public string AttachmentId
         {
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets whether to force the detachment
+        /// Whether to force the detachment
         /// </summary>
         public bool Force
         {

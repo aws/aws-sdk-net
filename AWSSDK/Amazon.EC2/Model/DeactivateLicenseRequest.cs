@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deactivates a license.
+    /// Deactivates a specific number of licenses.
     /// </summary>
+    /// <remarks>
+    /// Deactivations can be done against a specific license ID
+    /// after they have persisted for at least a 90-day period.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeactivateLicenseRequest
     {    
@@ -35,7 +39,7 @@ namespace Amazon.EC2.Model
         private Decimal? capacityField;
 
         /// <summary>
-        /// Gets and sets the LicenseId property.
+        /// License ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "LicenseId")]
         public string LicenseId
@@ -45,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the LicenseId property
+        /// Sets the license ID.
         /// </summary>
         /// <param name="licenseId">LicenseId property</param>
         /// <returns>this instance</returns>
@@ -65,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Capacity property.
+        /// Capacity.
         /// </summary>
         [XmlElementAttribute(ElementName = "Capacity")]
         public Decimal Capacity
@@ -75,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Capacity property
+        /// Sets the Capacity.
         /// </summary>
         /// <param name="capacity">Capacity property</param>
         /// <returns>this instance</returns>

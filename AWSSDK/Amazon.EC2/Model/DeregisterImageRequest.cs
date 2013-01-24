@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -28,19 +28,17 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Deregisters the specified AMI. Once deregistered,
     /// the AMI cannot be used to launch new instances.
-    ///
-    /// This command does not
-    /// delete the AMI from Amazon S3.
     /// </summary>
+    /// <remarks>
+    /// This command does not delete the AMI from Amazon S3.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeregisterImageRequest
     {    
         private string imageIdField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
-        /// Unique ID of the AMI which was assigned during
-        /// registration.
+        /// Unique ID of the AMI which was assigned during registration.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -50,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the unique ID of the AMI to deregister.
         /// </summary>
         /// <param name="imageId">Unique ID of the AMI which was assigned during
         /// registration.</param>

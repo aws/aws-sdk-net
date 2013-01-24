@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(modifyCacheClusterRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "ModifyCacheCluster");
-            request.Parameters.Add("Version", "2012-03-09");
+            request.Parameters.Add("Version", "2012-11-15");
             if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetCacheClusterId())
             {
                 request.Parameters.Add("CacheClusterId", StringUtils.FromString(modifyCacheClusterRequest.CacheClusterId));
@@ -63,6 +63,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("CacheSecurityGroupNames.member." + cacheSecurityGroupNamesListIndex, StringUtils.FromString(cacheSecurityGroupNamesListValue));
                     cacheSecurityGroupNamesListIndex++;
+                }
+            }
+            if (modifyCacheClusterRequest != null)
+            {
+                List<string> securityGroupIdsList = modifyCacheClusterRequest.SecurityGroupIds;
+
+                int securityGroupIdsListIndex = 1;
+                foreach (string securityGroupIdsListValue in securityGroupIdsList)
+                { 
+                    request.Parameters.Add("SecurityGroupIds.member." + securityGroupIdsListIndex, StringUtils.FromString(securityGroupIdsListValue));
+                    securityGroupIdsListIndex++;
                 }
             }
             if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetPreferredMaintenanceWindow())

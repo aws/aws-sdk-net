@@ -1,5 +1,5 @@
 AWS SDK for .NET
-Copyright 2009-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved. 
+Copyright 2009-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved. 
 
 **********************
 THIRD PARTY COMPONENTS

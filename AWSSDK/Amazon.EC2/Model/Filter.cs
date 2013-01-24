@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -45,8 +45,7 @@ namespace Amazon.EC2.Model
         private List<string> valueField;
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// Specifies the name of the filter.
+        /// The name of the filter.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
@@ -56,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name of the filter.
         /// </summary>
         /// <param name="name">Specifies the name of the filter.</param>
         /// <returns>this instance</returns>
@@ -76,8 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
-        /// Contains one or more values for the filter.
+        /// One or more values for the filter.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
         public List<string> Value
@@ -94,7 +92,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets values for the filter.
         /// </summary>
         /// <param name="list">Contains one or more values for the filter.</param>
         /// <returns>this instance</returns>

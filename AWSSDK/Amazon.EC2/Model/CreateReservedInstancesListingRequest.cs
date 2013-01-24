@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to create a new listing for Amazon EC2 Reserved Instances that will be 
-    /// sold in the Reserved Instance Marketplace.
+    /// Creates a new listing for Amazon EC2 Reserved Instances that will be sold in
+    /// the Reserved Instance Marketplace. You can submit one Reserved Instance listing
+    /// at a time.
     /// </summary>
+    /// <remarks>
+    /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+    /// capacity that they no longer need with buyers who want to purchase additional capacity.
+    /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+    /// like any other Reserved Instances.
+    /// 
+    /// If you want to sell your Reserved Instances, you must first register as a Seller in
+    /// the Reserved Instance Marketplace. After completing the registration process, you can
+    /// create a Reserved Instance Marketplace listing of some or all of your Reserved Instances,
+    /// and specify the upfront price you want to receive for them.
+    /// Your Reserved Instance listings then become available for purchase.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateReservedInstancesListingRequest
     {
@@ -38,7 +51,7 @@ namespace Amazon.EC2.Model
         private string clientTokenField;
 
         /// <summary>
-        /// Gets and sets the ID of the Reserved Instance that will be listed.
+        /// The ID of the Reserved Instance that will be listed.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesId")]
         public string ReservedInstancesId
@@ -68,9 +81,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The number of instances that are a part of a
-        /// Reserved Instance account that will be listed in the 
-        /// Reserved Instance Marketplace. 
+        /// The number of instances that are a part of a Reserved Instance account
+        /// that will be listed in the Reserved Instance Marketplace.
         /// </summary>
         /// <remarks>
         /// This number should be less or equal to the instance count 
@@ -112,7 +124,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the price listed for the Reserved Instance.
+        /// A list specifying the price of the Reserved Instance for each
+        /// month remaining in the Reserved Instance term.
         /// </summary>
         [XmlElementAttribute(ElementName = "PricingSchedules")]
         public List<PricingSchedule> PricingSchedules
@@ -150,8 +163,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets a unique, case-sensitive identifier you provide 
-        /// to ensure idempotency of your listings. 
+        /// A unique, case-sensitive identifier you provide to ensure
+        /// idempotency of your listings. 
         /// </summary>
         /// <remarks>
         /// This helps avoid duplicate listings. For more information, see 

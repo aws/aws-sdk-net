@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,16 +25,15 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Details about the size of the image.
-    ///</summary>
+    /// <summary>
+    /// Details about the size of the image.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DiskImageVolumeType
     {    
         private Decimal? sizeField;
 
         /// <summary>
-        /// Gets and sets the Size property.
         /// The size, in GB (2^30 bytes), of the Amazon EBS volume that will hold the converted image.
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
@@ -45,7 +44,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Size property
+        /// Sets the size, in GB (2^30 bytes), of the Amazon EBS volume that will hold the converted image.
         /// </summary>
         /// <param name="size">The size, in GB (2^30 bytes), of the Amazon EBS volume that will hold the converted image.</param>
         /// <returns>this instance</returns>

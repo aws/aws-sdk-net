@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,17 +26,9 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new Amazon EBS volume to which any
-    /// Amazon EC2 instance can attach
-    /// within the same Availability Zone.
-    /// For more information about Amazon
-    /// EBS, go to the Amazon Elastic
-    /// Compute Cloud Developer Guide.
-    ///
-    /// You must specify an Availability
-    /// Zone when creating a volume. The
-    /// volume and the instance to which it
-    /// attaches must be in the same Availability Zone.
+    /// Creates a new Amazon EBS volume that can be attached to any Amazon EC2
+    /// instance in the same Availability Zone.
+    /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVolumeRequest
@@ -48,10 +40,8 @@ namespace Amazon.EC2.Model
         private string iopsField;
 
         /// <summary>
-        /// Gets and sets the Size property.
-        /// The size of the volume, in GiBs. Required if
-        /// you are not creating
-        /// a volume from a snapshot.
+        /// The size of the volume, in GiBs.
+        /// Required if you are not creating a volume from a snapshot.
         ///
         /// Valid Values: 1-1024
         /// </summary>
@@ -63,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Size property
+        /// Sets the size of the volume, in GiBs.
         /// </summary>
         /// <param name="size">The size of the volume, in GiBs. Required if
         /// you are not creating
@@ -87,9 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
-        /// The snapshot from which to create the new
-        /// volume.
+        /// The snapshot from which to create the new volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
@@ -99,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the snapshot from which to create the new volume.
         /// </summary>
         /// <param name="snapshotId">The snapshot from which to create the new
         /// volume.</param>
@@ -120,9 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which to create the
-        /// new volume.
+        /// The Availability Zone in which to create the new volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -132,7 +118,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone in which to create the new volume.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the
         /// new volume.</param>
@@ -153,8 +139,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IOPS property.
-        /// Quantity of desired throughput in IOPS.
+        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// Range is 100 to 1000.
         /// </summary>
         [XmlElementAttribute(ElementName = "IOPS")]
         public string IOPS
@@ -164,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IOPS property
+        /// Sets the number of I/O operations per second (IOPS) that the volume supports.
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
@@ -184,8 +170,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VolumeType property.
-        /// Constraints: may be either "io1" or "standard".
+        /// The volume type.
+        /// Value may be either "io1" or "standard".
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeType")]
@@ -196,7 +182,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VolumeType property
+        /// Sets the volume type.
         /// </summary>
         /// <param name="volumeType">Volume Type.
         /// Constraints: may be either "io1" or "standard".

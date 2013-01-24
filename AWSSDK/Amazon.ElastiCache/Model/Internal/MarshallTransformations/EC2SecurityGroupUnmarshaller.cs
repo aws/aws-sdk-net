@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EC2SecurityGroup Unmarshaller
      /// </summary>
-    internal class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext> 
+    internal class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<EC2SecurityGroup, JsonUnmarshallerContext> 
     {
         public EC2SecurityGroup Unmarshall(XmlUnmarshallerContext context) 
         {
             EC2SecurityGroup eC2SecurityGroup = new EC2SecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
 
             return eC2SecurityGroup;
+        }
+
+        public EC2SecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EC2SecurityGroupUnmarshaller instance;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,18 +26,17 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Purchases a Reserved Instance for use with your
-    /// account. With Amazon
-    /// EC2 Reserved Instances, you purchase the right
-    /// to launch Amazon EC2
-    /// instances for a period of time (without
-    /// getting insufficient capacity errors)
-    /// and pay a lower usage rate for
-    /// the actual time used. For more information
-    /// about Reserved Instances,
-    /// go to the Amazon Elastic Compute Cloud
-    /// Developer Guide.
+    /// Purchases a Reserved Instance for use with your account.
     /// </summary>
+    /// <remarks>
+    /// With Amazon EC2 Reserved Instances, you purchase the right
+    /// to launch Amazon EC2 instances for a period of time (without
+    /// getting insufficient capacity errors) and pay a lower usage rate for
+    /// the actual time used.
+    /// 
+    /// For more information about Reserved Instances, go to the Amazon
+    /// Elastic Compute Cloud Developer Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class PurchaseReservedInstancesOfferingRequest
     {    
@@ -46,9 +45,7 @@ namespace Amazon.EC2.Model
         private ReservedInstanceLimitPrice limitPriceField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesOfferingId property.
-        /// The offering ID of the Reserved Instance to
-        /// purchase.
+        /// The offering ID of the Reserved Instance to purchase.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesOfferingId")]
         public string ReservedInstancesOfferingId
@@ -58,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservedInstancesOfferingId property
+        /// Sets the offering ID of the Reserved Instance to purchase.
         /// </summary>
         /// <param name="reservedInstancesOfferingId">The offering ID of the Reserved Instance to
         /// purchase.</param>
@@ -79,7 +76,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceCount property.
         /// The number of Reserved Instances to purchase.
         /// Default: None
         /// </summary>
@@ -91,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceCount property
+        /// Sets the number of Reserved Instances to purchase.
         /// </summary>
         /// <param name="instanceCount">The number of Reserved Instances to purchase.
         /// Default: None</param>
@@ -112,8 +108,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the limiting price for Reserved Instance Marketplace 
-        /// offerings to limit the total order and ensure that the Reserved 
+        /// The limiting price for Reserved Instance Marketplace offerings.
+        /// 
+        /// This limits the total order and ensures that the Reserved 
         /// Instances are not purchased at unexpected prices.
         /// </summary>
         [XmlElementAttribute(ElementName = "LimitPrice")]
@@ -124,9 +121,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the limiting price for Reserved Instance Marketplace 
-        /// offerings to limit the total order and ensure that the Reserved 
-        /// Instances are not purchased at unexpected prices.
+        /// Sets the limiting price for Reserved Instance Marketplace offerings.
         /// </summary>
         /// <param name="limitPrice">Price limit</param>
         /// <returns>this instance</returns>

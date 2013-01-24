@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+    /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeReservedInstancesListingsRequest
@@ -36,7 +36,6 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesListingId property.
         /// Ids of the Reserved Instance Listings to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesListingId")]
@@ -76,7 +75,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesId property.
         /// IDs of the Reserved Instances to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesId")]
@@ -94,7 +92,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservedInstancesId property
+        /// Sets the IDs of the Reserved Instances to describe.
         /// </summary>
         /// <param name="list">IDs of the Reserved Instances to describe.</param>
         /// <returns>this instance</returns>
@@ -117,7 +115,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified ReservedInstancesOfferings.
         /// </summary>
@@ -143,7 +140,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified ReservedInstancesOfferings.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
         /// the specified ReservedInstancesOfferings.

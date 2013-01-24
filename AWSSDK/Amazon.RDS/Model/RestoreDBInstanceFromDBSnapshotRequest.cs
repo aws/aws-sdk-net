@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this.dBInstanceIdentifier != null;       
+            return this.dBInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -101,12 +101,12 @@ namespace Amazon.RDS.Model
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.dBSnapshotIdentifier != null;       
+            return this.dBSnapshotIdentifier != null;
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-        /// db.m2.2xlarge | db.m2.4xlarge</c>
+        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+        /// db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -130,7 +130,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.RDS.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this.dBSubnetGroupName != null;       
+            return this.dBSubnetGroupName != null;
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.RDS.Model
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
-            return this.multiAZ.HasValue;       
+            return this.multiAZ.HasValue;
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.RDS.Model
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;       
+            return this.autoMinorVersionUpgrade.HasValue;
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Amazon.RDS.Model
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;       
+            return this.licenseModel != null;
         }
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this.dBName != null;       
+            return this.dBName != null;
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -388,7 +388,7 @@ namespace Amazon.RDS.Model
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;       
+            return this.iops.HasValue;
         }
         public string OptionGroupName
         {
@@ -411,7 +411,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;       
+            return this.optionGroupName != null;
         }
     }
 }

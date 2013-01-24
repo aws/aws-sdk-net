@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> Contains the result of a successful invocation of the CreateDBParameterGroup action. </para> <para> This data type is used as a
     /// request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups action. </para>
     /// </summary>
-    public class DBParameterGroup  
+    public class DBParameterGroup
     {
         
         private string dBParameterGroupName;
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this.dBParameterGroupName != null;       
+            return this.dBParameterGroupName != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;       
+            return this.dBParameterGroupFamily != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.RDS.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <para>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute
     /// and waits for the job to finish or fail. </para>
     /// </summary>
-    public class HadoopJarStepConfig  
+    public class HadoopJarStepConfig
     {
         
         private List<KeyValue> properties = new List<KeyValue>();
@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Properties collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this.properties.Count > 0;       
+            return this.properties.Count > 0;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Jar property is set
         internal bool IsSetJar()
         {
-            return this.jar != null;       
+            return this.jar != null;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if MainClass property is set
         internal bool IsSetMainClass()
         {
-            return this.mainClass != null;       
+            return this.mainClass != null;
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Args collection
         /// </summary>
@@ -201,7 +201,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;       
+            return this.args.Count > 0;
         }
     }
 }

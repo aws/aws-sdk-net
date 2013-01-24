@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.10.0";
+        internal const string SDKVersionNumber = "1.5.11.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -472,6 +472,26 @@ namespace Amazon.Util
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Calls a specific EventHandler in a background thread
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="args"></param>
+        /// <param name="sender"></param>
+        internal static void InvokeInBackground<T>(EventHandler<T> handler, T args, object sender) where T : EventArgs
+        {
+            if (handler == null) return;
+
+            var list = handler.GetInvocationList();
+            foreach (var call in list)
+            {
+                var eventHandler = ((EventHandler<T>)call);
+                if (eventHandler != null)
+                {
+                    eventHandler.BeginInvoke(sender, args, null, null);
+                }
+            }
+        }
 
         #endregion
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> The status of the Cache Parameter Group. </para>
     /// </summary>
-    public class CacheParameterGroupStatus  
+    public class CacheParameterGroupStatus
     {
         
         private string cacheParameterGroupName;
@@ -55,7 +55,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;       
+            return this.cacheParameterGroupName != null;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterApplyStatus property is set
         internal bool IsSetParameterApplyStatus()
         {
-            return this.parameterApplyStatus != null;       
+            return this.parameterApplyStatus != null;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheNodeIdsToReboot collection
         /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToReboot property is set
         internal bool IsSetCacheNodeIdsToReboot()
         {
-            return this.cacheNodeIdsToReboot.Count > 0;       
+            return this.cacheNodeIdsToReboot.Count > 0;
         }
     }
 }

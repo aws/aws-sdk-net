@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Acquires an elastic IP address for use with your account.
+    /// Acquires an elastic IP address for use with your account or your VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class AllocateAddressRequest
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
         private string domainField;
 
         /// <summary>
-        /// Gets and sets the Domain property.
+        /// The domain of the address.
         /// Set to vpc to allocate the address to your VPC.
         ///
         /// Default: Address is standard (allocated to EC2)
@@ -49,13 +49,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Domain property
+        /// Sets the domain of the address.
         /// </summary>
-        /// <param name="domain">Set to vpc to allocate the address to your VPC.
-        ///
-        /// Default: Address is standard (allocated to EC2)
-        /// Valid Values: vpc | standard
-        /// Condition: Required when allocating an address to a VPC</param>
+        /// <param name="domain">The domain of the address.</param>
         /// <returns>this instance</returns>
         public AllocateAddressRequest WithDomain(string domain)
         {

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Create Network Interface request
+    /// Creates a network interface in the specified subnet.
     /// </summary>
+    /// <remarks>
+    /// This action is supported only in Amazon VPC.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateNetworkInterfaceRequest
     {
@@ -39,7 +42,7 @@ namespace Amazon.EC2.Model
         private int? secondaryPrivateIpAddressCountField;
 
         /// <summary>
-        /// Gets and sets the ID of the subnet to associate with the network interface.
+        /// The ID of the subnet to associate with the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -69,7 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the description of the network interface.
+        /// The description of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -99,7 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the private IP address of the network interface.
+        /// The primary private IP address of the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -109,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the private IP address of the network interface.
+        /// Sets the primary private IP address of the network interface.
         /// </summary>
         /// <param name="ipAddress">IP address of the network interface</param>
         /// <returns>this instance</returns>
@@ -129,7 +132,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the list of security group IDs for use by the network interface.
+        /// A list of security group IDs for use by the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public List<string> GroupId
@@ -170,7 +173,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddresses property.
         /// Private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
@@ -188,7 +190,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property
+        /// Sets private IP addresses.
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
@@ -212,7 +214,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the SecondaryPrivateIpAddressCount property.
         /// Number of secondary private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
@@ -223,7 +224,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecondaryPrivateIpAddressCount property
+        /// Sets the number of secondary private IP addresses.
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
         /// <returns>this instance</returns>

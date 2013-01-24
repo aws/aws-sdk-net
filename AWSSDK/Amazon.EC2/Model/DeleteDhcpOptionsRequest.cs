@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,20 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a set of DHCP options that you specify. Amazon VPC returns an
-    /// error if the set of options you specify is currently associated with
-    /// a VPC. You can disassociate the set of options by associating
-    /// either a new set of options or the default options with the VPC.
+    /// Deletes a set of DHCP options that you specify.
     /// </summary>
+    /// <remarks>
+    /// Amazon VPC returns an error if the set of options
+    /// you specify is currently associated with a VPC.
+    /// You can disassociate the set of options by associating
+    /// either a new set of options or the default options
+    /// with the VPC.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DeleteDhcpOptionsRequest
     {    
         private string dhcpOptionsIdField;
 
         /// <summary>
-        /// Gets and sets the DhcpOptionsId property.
-        /// The ID of the DHCP options set you want to
-        /// delete.
+        /// The ID of the DHCP options set you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
@@ -49,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DhcpOptionsId property
+        /// Sets the ID of the DHCP options set you want to delete.
         /// </summary>
         /// <param name="dhcpOptionsId">The ID of the DHCP options set you want to
         /// delete.</param>

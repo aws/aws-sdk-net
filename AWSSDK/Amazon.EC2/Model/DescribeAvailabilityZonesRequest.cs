@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,15 +26,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Displays Availability Zones that are currently
+    /// Lists Availability Zones that are currently
     /// available to the account and their states.
-    ///
-    /// Availability Zones are
-    /// not the same across accounts. The Availability Zone
-    /// us-east-1a for account A is not necessarily the
-    /// same as us-east-1a for account B.
-    /// Zone assignments are mapped independently for each account.
     /// </summary>
+    /// <remarks>
+    /// Availability Zones are not the same across accounts.
+    /// The Availability Zone us-east-1a for account A is not
+    /// necessarily the same as us-east-1a for account B.
+    /// Zone assignments are mapped independently for each account.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeAvailabilityZonesRequest
     {    
@@ -42,8 +42,7 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
 
         /// <summary>
-        /// Gets and sets the ZoneName property.
-        /// Availability Zone name.
+        /// One or more Availability Zone names.
         /// </summary>
         [XmlElementAttribute(ElementName = "ZoneName")]
         public List<string> ZoneName
@@ -60,7 +59,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ZoneName property
+        /// Sets Availability Zone names.
         /// </summary>
         /// <param name="list">Availability Zone name.</param>
         /// <returns>this instance</returns>
@@ -83,7 +82,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags associated with the specified 
         /// AvailabilityZones.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -104,7 +102,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filters used to match system-defined properties and user-defined tags associated with the specified 
+        /// AvailabilityZones.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with the specified 
         /// AvailabilityZones.

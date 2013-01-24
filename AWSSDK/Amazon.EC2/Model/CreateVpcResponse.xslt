@@ -30,6 +30,11 @@
           <xsl:element name="InstanceTenancy">
             <xsl:value-of select="ec2:instanceTenancy"/>
           </xsl:element>
+          <xsl:if test="ec2:isDefault">
+            <xsl:element name="IsDefault">
+              <xsl:value-of select="ec2:isDefault"/>
+            </xsl:element>
+          </xsl:if>
         </xsl:element>
     </xsl:template>
 </xsl:stylesheet>

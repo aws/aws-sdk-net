@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,19 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Launches a specified number of instances of an
-    /// AMI for which you have
-    /// permissions.
-    ///
-    /// If Amazon EC2 cannot launch the
-    /// minimum number AMIs you request, no
-    /// instances will be launched. If
-    /// there is insufficient capacity to
-    /// launch the
-    /// maximum number of AMIs
-    /// you request, Amazon EC2 launches the minimum
-    /// number specified for
-    /// each AMI and allocate the remaining available
+    /// Launches a specified number of instances of an AMI for which you have permissions.
+    /// </summary>
+    /// <remarks>
+    /// If Amazon EC2 cannot launch the minimum number AMIs you request, no
+    /// instances will be launched. If there is insufficient capacity to
+    /// launch the maximum number of AMIs you request, Amazon EC2 launches the minimum
+    /// number specified for each AMI and allocate the remaining available
     /// instances using round robin.
     ///
     /// In the following example, Libby generates a request to
@@ -58,45 +52,32 @@ namespace Amazon.EC2.Model
     /// Amazon EC2 launches the minimum number of instances for each
     /// AMI (5 database, 20 web_server).
     ///
-    /// The remaining 5 instances are
-    /// allocated using round robin.
+    /// The remaining 5 instances are allocated using round robin.
     ///
-    /// Libby adjusts the number of instances
-    /// she needs and runs the RunInstances
-    /// operation again to launch
-    /// database instances (min. 5, max. 10) and
-    /// web_server instances (min.
-    /// 20, max. 40).
+    /// Libby adjusts the number of instances she needs and runs the RunInstances
+    /// operation again to launch database instances (min. 5, max. 10) and
+    /// web_server instances (min. 20, max. 40).
     ///
     /// Note - every instance is launched in a security group
     /// (created using the CreateSecurityGroup operation.)
     ///
-    /// You can provide
-    /// an optional key pair ID for each image in the launch request
+    /// You can provide an optional key pair ID for each image in the launch request
     /// (created using the CreateKeyPair operation). All instances that
     /// are created from images that use this key pair will have access to
     /// the associated public key at boot. You can use this key to provide
-    /// secure access to an instance of
-    /// an image on a per-instance basis.
-    /// Amazon EC2 public images use this
-    /// feature to provide secure access
+    /// secure access to an instance of an image on a per-instance basis.
+    /// Amazon EC2 public images use this feature to provide secure access
     /// without passwords.
     ///
-    /// Important - launching public images without a
-    /// key pair ID will leave them
+    /// Important - launching public images without a key pair ID will leave them
     /// inaccessible.
     ///
-    /// The public key material is
-    /// made available to the instance at boot
-    /// time by placing it in the
-    /// openssh_id.pub file on a logical device that is exposed
+    /// The public key material is made available to the instance at boot
+    /// time by placing it in the openssh_id.pub file on a logical device that is exposed
     /// to the instance as /dev/sda2 (the instance store). The format of this
-    /// file is suitable
-    /// for use as an entry within ~/.ssh/authorized_keys
-    /// (the OpenSSH format).
-    /// This can be done at boot (e.g., as part of
-    /// rc.local) allowing for secure access
-    /// without passwords.
+    /// file is suitable for use as an entry within ~/.ssh/authorized_keys
+    /// (the OpenSSH format). This can be done at boot (e.g., as part of rc.local) allowing
+    /// for secure access without passwords.
     ///
     /// Optional user data can be provided in the launch request. All instances that
     /// collectively comprise the launch request have access to this data.
@@ -108,14 +89,10 @@ namespace Amazon.EC2.Model
     ///
     /// Important - we strongly recommend using the 2.6.18 Xen stock
     /// kernel with High-CPU and High-Memory instances. Although the
-    /// default Amazon EC2
-    /// kernels will work, the new kernels provide
-    /// greater stability and performance
-    /// for these instance types. For more
-    /// information about kernels, go the Amazon
-    /// Elastic Compute Cloud
-    /// Developer Guide
-    /// </summary>
+    /// default Amazon EC2 kernels will work, the new kernels provide
+    /// greater stability and performance for these instance types. For more
+    /// information about kernels, go the Amazon Elastic Compute Cloud Developer Guide
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RunInstancesRequest
     {    
@@ -144,8 +121,7 @@ namespace Amazon.EC2.Model
         private IAMInstanceProfile instanceProfileField;
 
         /// <summary>
-        /// Gets and sets the ImageId property.
-        /// Unique ID of a machine image,
+        /// Unique ID of a machine image.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -155,7 +131,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageId property
+        /// Sets the unique ID of a machine image.
         /// </summary>
         /// <param name="imageId">Unique ID of a machine image,</param>
         /// <returns>this instance</returns>
@@ -175,10 +151,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the MinCount property.
-        /// Minimum number of instances to launch. If the
-        /// value is more than Amazon
-        /// EC2 can launch, no instances are launched at all.
+        /// Minimum number of instances to launch.
+        /// If the value is more than Amazon EC2 can launch,
+        /// no instances are launched at all.
         ///
         /// Constraints: Between 1 and the maximum number
         /// allowed for your account (default: 20).
@@ -191,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the MinCount property
+        /// Sets the minimum number of instances to launch.
         /// </summary>
         /// <param name="minCount">Minimum number of instances to launch. If the
         /// value is more than Amazon
@@ -216,10 +191,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the MaxCount property.
-        /// Maximum number of instances to launch. If the
-        /// value is more than Amazon
-        /// EC2 can launch, the largest possible
+        /// Maximum number of instances to launch.
+        /// If the value is more than Amazon EC2 can launch, the largest possible
         /// number above minCount will be launched instead.
         ///
         /// Constraints:
@@ -234,7 +207,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the MaxCount property
+        /// Sets the maximum number of instances to launch.
         /// </summary>
         /// <param name="maxCount">Maximum number of instances to launch. If the
         /// value is more than Amazon
@@ -261,8 +234,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KeyName property.
-        /// The name of the key pair.
+        /// The name of the key pair to use.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
@@ -272,7 +244,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyName property
+        /// Sets the name of the key pair to use.
         /// </summary>
         /// <param name="keyName">The name of the key pair.</param>
         /// <returns>this instance</returns>
@@ -292,8 +264,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroup property.
-        /// Names of the security group.
+        /// Names of the security groups.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroup")]
         public List<string> SecurityGroup
@@ -310,7 +281,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroup property
+        /// Sets the names of the security groups.
         /// </summary>
         /// <param name="list">Names of the security group.</param>
         /// <returns>this instance</returns>
@@ -333,8 +304,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroupId property.
-        /// IDs of the security group.
+        /// IDs of the security groups.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroupId")]
         public List<string> SecurityGroupId
@@ -351,7 +321,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SecurityGroupId property
+        /// Sets the IDs of the security groups.
         /// </summary>
         /// <param name="list">IDs of the security group.</param>
         /// <returns>this instance</returns>
@@ -374,7 +344,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the UserData property.
         /// MIME, Base64-encoded user data.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserData")]
@@ -385,7 +354,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserData property
+        /// Sets the MIME, Base64-encoded user data.
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
@@ -405,13 +374,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// Specifies the instance type.
+        /// The instance type.
         ///
         /// Valid Values:
         /// m1.small | m1.medium | m1.large | m1.xlarge | c1.medium |
-        /// c1.xlarge |
-        /// m2.2xlarge | m2.4xlarge
+        /// c1.xlarge | m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small
         /// </summary>
@@ -423,14 +390,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type.
         /// </summary>
         /// <param name="instanceType">Specifies the instance type.
         ///
         /// Valid Values:
         /// m1.small | m1.medium | m1.large | m1.xlarge | c1.medium |
-        /// c1.xlarge |
-        /// m2.2xlarge | m2.4xlarge
+        /// c1.xlarge | m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
@@ -450,8 +416,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Placement property.
-        /// Specifies the placement constraints.
+        /// The placement constraints.
         /// </summary>
         [XmlElementAttribute(ElementName = "Placement")]
         public Placement Placement
@@ -461,7 +426,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Placement property
+        /// Sets the placement constraints.
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
@@ -481,9 +446,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
-        /// The ID of the kernel with which to launch the
-        /// instance.
+        /// The ID of the kernel with which to launch the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
@@ -493,7 +456,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the ID of the kernel with which to launch the instance.
         /// </summary>
         /// <param name="kernelId">The ID of the kernel with which to launch the
         /// instance.</param>
@@ -514,16 +477,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
-        /// The ID of the RAM disk with which to launch
-        /// the instance. Some kernels
-        /// require additional drivers at launch.
-        /// Check the kernel requirements for
-        /// information on whether you need
-        /// to specify a RAM disk. To find kernel
-        /// requirements, go to the
-        /// Resource Center and search for the
-        /// kernel ID.
+        /// The ID of the RAM disk with which to launch the instance.
+        /// Some kernels require additional drivers at launch.
+        /// Check the kernel requirements for information on whether you need
+        /// to specify a RAM disk. To find kernel requirements, go to the
+        /// Resource Center and search for the kernel ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
@@ -533,7 +491,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the ID of the RAM disk with which to launch the instance.
         /// </summary>
         /// <param name="ramdiskId">The ID of the RAM disk with which to launch
         /// the instance. Some kernels
@@ -561,7 +519,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
         /// Block device mapping.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
@@ -579,7 +536,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the block device mapping.
         /// </summary>
         /// <param name="list">Block device mapping.</param>
         /// <returns>this instance</returns>
@@ -602,8 +559,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Monitoring property.
-        /// Enables monitoring for the instance.
+        /// Monitoring for the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "Monitoring")]
         public MonitoringSpecification Monitoring
@@ -613,7 +569,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Monitoring property
+        /// Sets the monitoring for the instance.
         /// </summary>
         /// <param name="monitoring">Enables monitoring for the instance.</param>
         /// <returns>this instance</returns>
@@ -633,10 +589,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the SubnetId property.
-        /// Specifies the subnet ID within which to launch
-        /// the instance(s) for
-        /// Amazon Virtual Private Cloud.
+        /// The subnet ID within which to launch the instance(s) for Amazon
+        /// Virtual Private Cloud.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -646,7 +600,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SubnetId property
+        /// Sets the subnet ID within which to launch the instance(s) for Amazon
+        /// Virtual Private Cloud.
         /// </summary>
         /// <param name="subnetId">Specifies the subnet ID within which to launch
         /// the instance(s) for
@@ -668,9 +623,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AdditionalInfo property.
-        /// Specifies additional information to make
-        /// available to the instance(s)
+        /// Additional information to make available to the instance(s)
         /// </summary>
         [XmlElementAttribute(ElementName = "AdditionalInfo")]
         public string AdditionalInfo
@@ -680,7 +633,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AdditionalInfo property
+        /// Sets the additional information to make available to the instance(s)
         /// </summary>
         /// <param name="additionalInfo">Specifies additional information to make
         /// available to the instance(s)</param>
@@ -701,10 +654,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DisableApiTermination property.
-        /// Specifies whether the instance can be
-        /// terminated using the APIs. You must modify this attribute before
-        /// you can terminate any "locked" instances from the APIs.
+        /// Whether the instance can be terminated using the APIs.
+        /// You must modify this attribute before you can terminate any "locked"
+        /// instances from the APIs.
         /// </summary>
         [XmlElementAttribute(ElementName = "DisableApiTermination")]
         public bool DisableApiTermination
@@ -714,7 +666,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DisableApiTermination property
+        /// Sets whether the instance can be terminated using the APIs.
         /// </summary>
         /// <param name="disableApiTermination">Specifies whether the instance can be
         /// terminated using the APIs. You must modify this attribute before
@@ -736,10 +688,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceInitiatedShutdownBehavior property.
-        /// Specifies whether the instance's Amazon EBS
-        /// volumes are stopped or terminated when the instance is shut
-        /// down.
+        /// Whether the instance's Amazon EBS volumes are stopped or terminated
+        /// when the instance is shut down.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceInitiatedShutdownBehavior")]
         public string InstanceInitiatedShutdownBehavior
@@ -749,7 +699,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceInitiatedShutdownBehavior property
+        /// Sets whether the instance's Amazon EBS volumes are stopped or terminated
+        /// when the instance is shut down.
         /// </summary>
         /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS
         /// volumes are stopped or terminated when the instance is shut
@@ -771,9 +722,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the License property.
-        /// Specifies active licenses in use and attached
-        /// to an Amazon EC2 instance.
+        /// Active licenses in use and attached to an Amazon EC2 instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "License")]
         public InstanceLicenseSpecification License
@@ -783,7 +732,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the License property
+        /// Sets the active licenses in use and attached to an Amazon EC2 instance.
         /// </summary>
         /// <param name="license">Specifies active licenses in use and attached
         /// to an Amazon EC2 instance.</param>
@@ -804,12 +753,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
-        /// If you're using Amazon Virtual Private Cloud,
-        /// you can optionally use this
-        /// parameter to assign the instance a
-        /// specific available IP address from the
+        /// Private IP address for this instance.
+        /// <remarks>
+        /// If you're using Amazon Virtual Private Cloud, you can optionally use this
+        /// parameter to assign the instance a specific available IP address from the
         /// subnet.
+        /// </remarks>
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -819,7 +768,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddress property
+        /// Sets the private IP address for this instance.
         /// </summary>
         /// <param name="privateIpAddress">If you're using Amazon Virtual Private Cloud,
         /// you can optionally use this
@@ -843,7 +792,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ClientToken property.
+        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
         /// </summary>
         [XmlElementAttribute(ElementName = "ClientToken")]
         public string ClientToken
@@ -853,7 +802,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ClientToken property
+        /// Sets the unique, case-sensitive identifier to ensure idempotency of the request.
         /// </summary>
         /// <param name="clientToken">ClientToken property</param>
         /// <returns>this instance</returns>
@@ -873,7 +822,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceSet property.
         /// A set of one or more existing network interfaces to attach to the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceSet")]
@@ -891,7 +839,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceSet property.
+        /// Sets one or more existing network interfaces to attach to the instance.
         /// </summary>
         /// <param name="list">A set of one or more existing network interfaces to attach to the instance.</param>
         /// <returns>this instance</returns>
@@ -914,8 +862,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the EbsOptimized property.
-        /// Specifies whether to use the EBS IOPS optimized option.
+        /// Whether to use the EBS IOPS optimized option.
         /// </summary>
         [XmlElementAttribute(ElementName = "EbsOptimized")]
         public bool EbsOptimized
@@ -925,7 +872,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the EbsOptimized property
+        /// Sets whether to use the EBS IOPS optimized option.
         /// </summary>
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>
@@ -947,7 +894,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the InstanceProfile property.
         /// An Identity and Access Management Instance Profile to associate with the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceProfile")]
@@ -958,7 +904,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceProfile property.
+        /// Sets an Identity and Access Management Instance Profile to associate with the instance.
         /// </summary>
         /// <param name="instanceProfile">
         /// An Identity and Access Management Instance Profile to associate with the instance.

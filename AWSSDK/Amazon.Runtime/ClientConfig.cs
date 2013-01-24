@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ namespace Amazon.Runtime
         private int? connectionLimit;
         private bool useNagleAlgorithm = false;
         private int bufferSize = Amazon.S3.Util.S3Constants.DefaultBufferSize;
+        private bool resignRetries = false;
 
         /// <summary>
         /// Gets Service Version
@@ -293,6 +294,15 @@ namespace Amazon.Runtime
         {
             get { return this.bufferSize; }
             set { this.bufferSize = value; }
+        }
+
+        /// <summary>
+        /// Flag on whether to resign requests on retry or not.
+        /// </summary>
+        internal bool ResignRetries
+        {
+            get { return this.resignRetries; }
+            set { this.resignRetries = value; }
         }
     }
 }

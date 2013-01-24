@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,25 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Retrieves console output for the specified
-    /// instance.
-    ///
-    /// Instance console output is buffered and posted shortly
-    /// after instance boot,
-    /// reboot, and termination. Amazon EC2 preserves
-    /// the most recent 64 KB output which
-    /// will be available for at least
-    /// one hour after the most recent post
+    /// Retrieves console output for the specified instance.
     /// </summary>
+    /// <remarks>
+    /// Instance console output is buffered and posted shortly
+    /// after instance boot, reboot, and termination.
+    /// Amazon EC2 preserves the most recent 64 KB output which
+    /// will be available for at least one hour after the most
+    /// recent post.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class GetConsoleOutputRequest
     {    
         private string instanceIdField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// ID of the instance for which you want console
-        /// output.
+        /// ID of the instance for which you want console output.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -54,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance for which you want console output.
         /// </summary>
         /// <param name="instanceId">ID of the instance for which you want console
         /// output.</param>

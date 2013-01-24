@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstance");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBName())
             {
                 request.Parameters.Add("DBName", StringUtils.FromString(createDBInstanceRequest.DBName));
@@ -72,6 +72,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.FromString(dBSecurityGroupsListValue));
                     dBSecurityGroupsListIndex++;
+                }
+            }
+            if (createDBInstanceRequest != null)
+            {
+                List<string> vpcSecurityGroupIdsList = createDBInstanceRequest.VpcSecurityGroupIds;
+
+                int vpcSecurityGroupIdsListIndex = 1;
+                foreach (string vpcSecurityGroupIdsListValue in vpcSecurityGroupIdsList)
+                { 
+                    request.Parameters.Add("VpcSecurityGroupIds.member." + vpcSecurityGroupIdsListIndex, StringUtils.FromString(vpcSecurityGroupIdsListValue));
+                    vpcSecurityGroupIdsListIndex++;
                 }
             }
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetAvailabilityZone())

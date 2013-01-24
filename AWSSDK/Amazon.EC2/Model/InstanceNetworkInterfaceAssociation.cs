@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -32,10 +32,10 @@ namespace Amazon.EC2.Model
     public class InstanceNetworkInterfaceAssociation
     {
         private string publicIpField;
+        private string publicDnsNameField;
         private string ipOwnerIdField;
 
         /// <summary>
-        /// Gets and sets the PublicIp property.
         /// The address of the Elastic IP address bound to the network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
@@ -46,8 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property.
-        /// The address of the Elastic IP address bound to the network interface.
+        /// Sets the address of the Elastic IP address bound to the network interface.
         /// </summary>
         /// <param name="publicIp">Public IP</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,36 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the IpOwnerId property.
+        /// The DNS name for the network interface.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PublicDnsName")]
+        public string PublicDnsName
+        {
+            get { return this.publicDnsNameField; }
+            set { this.publicDnsNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the DNS name for the network interface.
+        /// </summary>
+        /// <param name="publicDnsName">PublicDnsName</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterfaceAssociation WithPublicDnsName(string publicDnsName)
+        {
+            this.publicDnsNameField = publicDnsName;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PublicDnsName property is set
+        /// </summary>
+        /// <returns>true if the PublicDnsName property is set</returns>
+        public bool IsSetPublicDnsName()
+        {
+            return !string.IsNullOrEmpty(this.publicDnsNameField);
+        }
+
+        /// <summary>
         /// The ID of the Elastic IP address owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpOwnerId")]
@@ -78,8 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the IpOwnerId property.
-        /// The ID of the Elastic IP address owner.
+        /// Sets the ID of the Elastic IP address owner.
         /// </summary>
         /// <param name="ipOwnerId">IP Owner ID</param>
         /// <returns>this instance</returns>

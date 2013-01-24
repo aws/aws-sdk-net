@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -49,7 +49,6 @@ namespace Amazon.EC2.Model
         private string privateIpAddressField;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -60,7 +59,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
@@ -80,7 +79,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PublicIp property.
         /// The public IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
@@ -91,7 +89,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicIp property
+        /// Sets the public IP address.
         /// </summary>
         /// <param name="publicIp">The public IP address.</param>
         /// <returns>this instance</returns>
@@ -111,9 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AllocationId property.
-        /// The ID representing the allocation of the address for use with Amazon
-        /// VPC
+        /// The ID representing the allocation of the address for use with Amazon VPC
         /// </summary>
         [XmlElementAttribute(ElementName = "AllocationId")]
         public string AllocationId
@@ -123,7 +119,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AllocationId property
+        /// Sets the ID representing the allocation of the address for use with Amazon VPC
         /// </summary>
         /// <param name="allocationId">The ID representing the allocation of the address for use with Amazon
         /// VPC</param>
@@ -144,9 +140,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AssociationId property.
-        /// The ID representing the association of a VPC elastic IP address with
-        /// an instance in a VPC.
+        /// The ID representing the association of a VPC elastic IP address with an instance in a VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "AssociationId")]
         public string AssociationId
@@ -156,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AssociationId property
+        /// Sets the ID representing the association of a VPC elastic IP address with an instance in a VPC.
         /// </summary>
         /// <param name="associationId">The ID representing the association of a VPC elastic IP address with
         /// an instance in a VPC.</param>
@@ -177,9 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Domain property.
-        /// Whether this elastic IP address is for instances in EC2 (i.e., standard)
-        /// or Amazon VPC.
+        /// The domain of the address: either "standard" or "vpc" for VPC addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "Domain")]
         public string Domain
@@ -189,7 +181,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Domain property
+        /// Sets the domain of the address.
         /// </summary>
         /// <param name="domain">Whether this elastic IP address is for instances in EC2 (i.e., standard)
         /// or Amazon VPC.</param>
@@ -210,7 +202,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// The network interface (if any) that the address is associated with (for VPC addresses only).
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -220,7 +212,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the network interface (if any) that the address is associated with (for VPC addresses only).
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
@@ -240,7 +232,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceOwnerId property
+        /// The owner ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceOwnerId")]
         public string NetworkInterfaceOwnerId
@@ -250,7 +242,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceOwnerId property
+        /// Sets the owner ID.
         /// </summary>
         /// <param name="networkInterfaceOwnerId">Network interface owner ID</param>
         /// <returns>this instance</returns>
@@ -270,8 +262,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
-        /// Private IP address.
+        /// The private IP address associated with the Elastic IP address (for VPC addresses only).
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -281,7 +272,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddress property
+        /// Sets the private IP address associated with the Elastic IP address (for VPC addresses only).
         /// </summary>
         /// <param name="privateIpAddress">Private IP address.</param>
         /// <returns>this instance</returns>

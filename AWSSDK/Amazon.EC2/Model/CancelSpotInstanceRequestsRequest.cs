@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,18 +26,21 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to cancel existing Spot Instance
-    /// requests.
+    /// Cancels one or more Spot Instance requests.
     /// </summary>
+    /// <remarks>
+    /// Spot Instances are instances that Amazon EC2 starts on your behalf when the
+    /// maximum price that you specify exceeds the current Spot Price.
+    /// Amazon EC2 periodically sets the Spot Price based on available Spot Instance
+    /// capacity and current Spot Instance requests.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CancelSpotInstanceRequestsRequest
     {    
         private List<string> spotInstanceRequestIdField;
 
         /// <summary>
-        /// Gets and sets the SpotInstanceRequestId property.
-        /// The list of Spot Instance requests that you
-        /// want to cancel.
+        /// The list of Spot Instance requests that you want to cancel.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
         public List<string> SpotInstanceRequestId
@@ -54,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SpotInstanceRequestId property
+        /// Sets the Spot Instance requests that you want to cancel.
         /// </summary>
         /// <param name="list">The list of Spot Instance requests that you
         /// want to cancel.</param>

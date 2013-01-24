@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,11 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Part of a request to launch Amazon EC2 instances,
-    ///specifying which IAM Instance Profile to use if a profile should be
-    ///attached to the new Amazon EC2 instance.
-    ///</summary>
+    /// <summary>
+    /// Description of an Amazon EC2 Instance Profile.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class IAMInstanceProfile
     {    
@@ -37,7 +35,7 @@ namespace Amazon.EC2.Model
         private string idField;
 
         /// <summary>
-        /// Gets and sets the Arn property.
+        /// The ARN of the instance profile.
         /// </summary>
         [XmlElementAttribute(ElementName = "Arn")]
         public string Arn
@@ -47,7 +45,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Arn property
+        /// Sets the ARN of the instance profile.
         /// </summary>
         /// <param name="arn">IAM Instance Profile to use if a profile should be
         /// attached to the new Amazon EC2 instance.</param>
@@ -69,7 +67,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the Id property.
+        /// The Id of the instance profile.
         /// </summary>
         [XmlElementAttribute(ElementName = "Id")]
         public string Id
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Id property
+        /// Sets the Id of the instance profile.
         /// </summary>
         /// <param name="id">IAM Instance Profile to use if a profile should be
         /// attached to the new Amazon EC2 instance.</param>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,8 +37,7 @@ namespace Amazon.EC2.Model
         private string noDeviceField;
 
         /// <summary>
-        /// Gets and sets the DeviceName property.
-        /// The device name (e.g., /dev/sdh).
+        /// The device name exposed to the instance (e.g., /dev/sdh).
         /// </summary>
         [XmlElementAttribute(ElementName = "DeviceName")]
         public string DeviceName
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DeviceName property
+        /// Sets the device name exposed to the instance (e.g., /dev/sdh).
         /// </summary>
         /// <param name="deviceName">The device name (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
@@ -68,8 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the VirtualName property.
-        /// The virtual name.
+        /// The virtual device name.
         /// </summary>
         [XmlElementAttribute(ElementName = "VirtualName")]
         public string VirtualName
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VirtualName property
+        /// Sets the virtual device name.
         /// </summary>
         /// <param name="virtualName">The virtual name.</param>
         /// <returns>this instance</returns>
@@ -99,10 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Ebs property.
-        /// Specifies parameters used to automatically
-        /// setup Amazon EBS
-        /// volumes when the instance is launched.
+        /// Parameters that are used to automatically set up Amazon EBS volumes when the instance is launched.
         /// </summary>
         [XmlElementAttribute(ElementName = "Ebs")]
         public EbsBlockDevice Ebs
@@ -112,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Ebs property
+        /// Sets parameters that are used to automatically set up Amazon EBS volumes when the instance is launched.
         /// </summary>
         /// <param name="ebs">Specifies parameters used to automatically
         /// setup Amazon EBS
@@ -134,9 +129,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NoDevice property.
-        /// Specifies the device name to suppress during
-        /// instance launch.
+        /// The name of a device to suppress in the block device mapping of the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "NoDevice")]
         public string NoDevice
@@ -146,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NoDevice property
+        /// Sets the name of a device to suppress in the block device mapping of the AMI.
         /// </summary>
         /// <param name="noDevice">Specifies the device name to suppress during
         /// instance launch.</param>

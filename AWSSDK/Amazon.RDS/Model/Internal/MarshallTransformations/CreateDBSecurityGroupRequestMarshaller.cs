@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBSecurityGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSecurityGroup");
-            request.Parameters.Add("Version", "2012-09-17");
+            request.Parameters.Add("Version", "2013-01-10");
             if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupName())
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupName));
@@ -42,10 +42,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupDescription())
             {
                 request.Parameters.Add("DBSecurityGroupDescription", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupDescription));
-            }
-            if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetEC2VpcId())
-            {
-                request.Parameters.Add("EC2VpcId", StringUtils.FromString(createDBSecurityGroupRequest.EC2VpcId));
             }
 
             return request;

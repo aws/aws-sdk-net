@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,8 +61,14 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;       
+            return this.optionGroupName != null;
         }
+
+        /// <summary>
+        /// An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -84,8 +90,15 @@ namespace Amazon.RDS.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
+
+        /// <summary>
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a pagination
+        /// token called a marker is included in the response so that the remaining results can be retrieved. Default: 100 Constraints: minimum 20,
+        /// maximum 100
+        ///  
+        /// </summary>
         public int MaxRecords
         {
             get { return this.maxRecords ?? default(int); }
@@ -107,7 +120,7 @@ namespace Amazon.RDS.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
@@ -135,7 +148,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineName property is set
         internal bool IsSetEngineName()
         {
-            return this.engineName != null;       
+            return this.engineName != null;
         }
 
         /// <summary>
@@ -164,7 +177,7 @@ namespace Amazon.RDS.Model
         // Check to see if MajorEngineVersion property is set
         internal bool IsSetMajorEngineVersion()
         {
-            return this.majorEngineVersion != null;       
+            return this.majorEngineVersion != null;
         }
     }
 }

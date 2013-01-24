@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,21 +25,17 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Monitoring
-    ///</summary>
+    /// <summary>
+    /// Monitoring configuration.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Monitoring
     {    
         private string monitoringStateField;
 
         /// <summary>
-        /// Gets and sets the MonitoringState property.
-        /// State of monitoring for the instance. Valid
-        /// Values:
-        /// monitoring-enabled (enabled)
-        /// | monitoring-pending
-        /// (pending) | monitoring-disabled (disabled)
+        /// State of monitoring for the instance.
+        /// Valid Values: monitoring-enabled (enabled) | monitoring-pending (pending) | monitoring-disabled (disabled)
         /// </summary>
         [XmlElementAttribute(ElementName = "MonitoringState")]
         public string MonitoringState
@@ -49,13 +45,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the MonitoringState property
+        /// Sets the state of monitoring for the instance.
         /// </summary>
-        /// <param name="monitoringState">State of monitoring for the instance. Valid
-        /// Values:
-        /// monitoring-enabled (enabled)
-        /// | monitoring-pending
-        /// (pending) | monitoring-disabled (disabled)</param>
+        /// <param name="monitoringState">State of monitoring for the instance.
+        /// Valid Values: monitoring-enabled (enabled) | monitoring-pending (pending) | monitoring-disabled (disabled)
+        /// </param>
         /// <returns>this instance</returns>
         public Monitoring WithMonitoringState(string monitoringState)
         {

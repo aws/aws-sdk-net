@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,17 +26,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes Reserved Instance offerings that are
-    /// available for purchase. With Amazon EC2
-    /// Reserved Instances, you
-    /// purchase the right to launch Amazon EC2 instances
-    /// for a period of time (without getting
-    /// insufficient capacity errors) and pay a
-    /// lower usage rate for the
-    /// actual time used. For more information
-    /// about Reserved Instances, go to the Amazon
-    /// Elastic Compute Cloud Developer Guide.
+    /// Describes Reserved Instance offerings that are available for purchase.
     /// </summary>
+    /// <remarks>
+    /// With Amazon EC2 Reserved Instances, you purchase the right to launch
+    /// Amazon EC2 instances for a period of time (without getting insufficient
+    /// capacity errors) and pay a lower usage rate for the actual time used.
+    /// For more information about Reserved Instances, go to the Amazon
+    /// Elastic Compute Cloud Developer Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeReservedInstancesOfferingsRequest
     {    
@@ -55,7 +53,6 @@ namespace Amazon.EC2.Model
         private int? maxResultsField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesId property.
         /// ID of the Reserved Instances to describe.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesId")]
@@ -73,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ReservedInstancesId property
+        /// Sets the ID of the Reserved Instances to describe.
         /// </summary>
         /// <param name="list">ID of the Reserved Instances to describe.</param>
         /// <returns>this instance</returns>
@@ -96,9 +93,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// The instance type on which the Reserved
-        /// Instance can be used.
+        /// The instance type on which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -108,7 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceType property
+        /// Sets the instance type on which the Reserved Instance can be used.
         /// </summary>
         /// <param name="instanceType">The instance type on which the Reserved
         /// Instance can be used.</param>
@@ -129,9 +124,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which the Reserved
-        /// Instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -141,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which the Reserved
         /// Instance can be used.</param>
@@ -162,9 +155,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ProductDescription property.
         /// The Reserved Instance description.
         /// </summary>
+        /// <remarks>
+        /// Instances that include (Amazon VPC) in the description
+        /// are for use with Amazon VPC.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
         {
@@ -173,7 +169,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ProductDescription property
+        /// Sets the Reserved Instance description.
         /// </summary>
         /// <param name="productDescription">The Reserved Instance description.</param>
         /// <returns>this instance</returns>
@@ -193,7 +189,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Filter property.
         /// A list of filters used to match system-defined properties and user-defined tags 
         /// associated with the specified ReservedInstances.
         /// For a complete reference to the available filter keys for this operation, see the
@@ -214,7 +209,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Filter property
+        /// Sets the filters used to match system-defined properties and user-defined tags 
+        /// associated with the specified ReservedInstances.
         /// </summary>
         /// <param name="list">A list of filters used to match system-defined properties and user-defined tags 
         /// associated with the specified ReservedInstances.
@@ -240,10 +236,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tenancy of the Reserved Instance offering. A Reserved Instance with tenancy of dedicated will run on 
+        /// The tenancy of the Reserved Instance offering.
+        /// </summary>
+        /// <remarks>
+        /// A Reserved Instance with tenancy of dedicated will run on 
         /// single-tenant hardware and can only be launched within a VPC.
         /// Valid Values: default | dedicated
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "InstanceTenancy")]
         public string InstanceTenancy
         {
@@ -273,7 +272,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Reserved Instance offering type.
+        /// The Reserved Instance offering type.
         /// Valid Values: Heavy Utilization | Medium Utilization | Light Utilization
         /// </summary>
         [XmlElementAttribute(ElementName = "OfferingType")]
@@ -304,7 +303,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets whether to include Marketplace offerings in the response.
+        /// Whether to include Marketplace offerings in the response.
         /// </summary>
         [XmlElementAttribute(ElementName = "IncludeMarketplace")]
         public bool IncludeMarketplace
@@ -334,7 +333,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the minimum duration (in seconds) to filter when searching for offerings.
+        /// The minimum duration (in seconds) to filter when searching for offerings.
         /// </summary>
         /// <remarks>Default: 2592000 (1 month)</remarks>
         [XmlElementAttribute(ElementName = "MinDuration")]
@@ -365,7 +364,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the maximum duration (in seconds) to filter when searching for offerings.
+        /// The maximum duration (in seconds) to filter when searching for offerings.
         /// </summary>
         /// <remarks>
         /// Default: 94608000 (3 years)
@@ -398,7 +397,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the maximum number of instances to filter when searching for offerings.
+        /// The maximum number of instances to filter when searching for offerings.
         /// </summary>
         /// <remarks>Default: 20</remarks>
         [XmlElementAttribute(ElementName = "MaxInstanceCount")]
@@ -429,7 +428,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the maximum number of offerings to return per call.
+        /// The maximum number of offerings to return per call.
         /// </summary>
         /// <remarks>Default: 1000, Maximum: 1000</remarks>
         [XmlElementAttribute(ElementName = "MaxResults")]
@@ -460,7 +459,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the token to get the next page of results.
+        /// The token to get the next page of results.
         /// </summary>
         /// <remarks>Default: First page of results if the string is empty</remarks>
         [XmlElementAttribute(ElementName = "NextToken")]

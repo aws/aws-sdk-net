@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,6 +27,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Imports the public key from an RSA key pair created with a third-party tool.
+    /// </summary>
+    /// <remarks>
     /// This operation differs from CreateKeyPair as the private key is never
     /// transferred between the caller and AWS servers.
     ///
@@ -38,9 +40,8 @@ namespace Amazon.EC2.Model
     /// The following formats are supported:
     /// - OpenSSH public key format,
     /// - Base64 encoded DER format.
-    /// - SSH public key file format as specified in 
-    /// RFC4716.
-    /// </summary>
+    /// - SSH public key file format as specified in RFC4716.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ImportKeyPairRequest
     {    
@@ -48,7 +49,6 @@ namespace Amazon.EC2.Model
         private string publicKeyMaterialField;
 
         /// <summary>
-        /// Gets and sets the KeyName property.
         /// The unique name for the key pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KeyName property
+        /// Sets the unique name for the key pair.
         /// </summary>
         /// <param name="keyName">The unique name for the key pair.</param>
         /// <returns>this instance</returns>
@@ -79,9 +79,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the PublicKeyMaterial property.
-        /// The public key. This key must be base64 encoded before calling
-        /// this operation.
+        /// The public key.
+        /// The key must be base64 encoded.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicKeyMaterial")]
         public string PublicKeyMaterial
@@ -91,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PublicKeyMaterial property
+        /// Sets the public key.
         /// </summary>
         /// <param name="publicKeyMaterial">The public key. This key must be base64 encoded before calling
         /// this operation.</param>

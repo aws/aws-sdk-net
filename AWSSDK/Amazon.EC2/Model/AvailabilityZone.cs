@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,6 @@ namespace Amazon.EC2.Model
         private List<string> messageField;
 
         /// <summary>
-        /// Gets and sets the ZoneName property.
         /// Name of the Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "ZoneName")]
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ZoneName property
+        /// Sets the name of the Availability Zone.
         /// </summary>
         /// <param name="zoneName">Name of the Availability Zone.</param>
         /// <returns>this instance</returns>
@@ -68,7 +67,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ZoneState property.
         /// State of the Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "ZoneState")]
@@ -79,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ZoneState property
+        /// Sets the state of the Availability Zone.
         /// </summary>
         /// <param name="zoneState">State of the Availability Zone.</param>
         /// <returns>this instance</returns>
@@ -99,8 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RegionName property.
-        /// Name of the region.
+        /// The Region the Availablity Zone is in
         /// </summary>
         [XmlElementAttribute(ElementName = "RegionName")]
         public string RegionName
@@ -110,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RegionName property
+        /// Sets the Region the Availablity Zone is in
         /// </summary>
         /// <param name="regionName">Name of the region.</param>
         /// <returns>this instance</returns>
@@ -130,8 +127,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
-        /// The Availability Zone messages.
+        /// Information about the Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
         public List<string> Message
@@ -148,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets information about the Availability Zone.
         /// </summary>
         /// <param name="list">The Availability Zone messages.</param>
         /// <returns>this instance</returns>

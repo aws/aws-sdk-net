@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
         private int? numCacheNodes;
         private List<string> cacheNodeIdsToRemove = new List<string>();
         private List<string> cacheSecurityGroupNames = new List<string>();
+        private List<string> securityGroupIds = new List<string>();
         private string preferredMaintenanceWindow;
         private string notificationTopicArn;
         private string cacheParameterGroupName;
@@ -68,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;       
+            return this.cacheClusterId != null;
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NumCacheNodes property is set
         internal bool IsSetNumCacheNodes()
         {
-            return this.numCacheNodes.HasValue;       
+            return this.numCacheNodes.HasValue;
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheNodeIdsToRemove collection
         /// </summary>
@@ -145,12 +146,13 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToRemove property is set
         internal bool IsSetCacheNodeIdsToRemove()
         {
-            return this.cacheNodeIdsToRemove.Count > 0;       
+            return this.cacheNodeIdsToRemove.Count > 0;
         }
 
         /// <summary>
-        /// A list of Cache Security Group Names to authorize on this Cache Cluster. This change is asynchronously applied as soon as possible.
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
+        /// A list of Cache Security Group Names to authorize on this Cache Cluster. This change is asynchronously applied as soon as possible. This
+        /// parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC). Constraints: Must contain no
+        /// more than 255 alphanumeric characters. Must not be "Default".
         ///  
         /// </summary>
         public List<string> CacheSecurityGroupNames
@@ -172,7 +174,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheSecurityGroupNames collection
         /// </summary>
@@ -191,7 +193,53 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupNames property is set
         internal bool IsSetCacheSecurityGroupNames()
         {
-            return this.cacheSecurityGroupNames.Count > 0;       
+            return this.cacheSecurityGroupNames.Count > 0;
+        }
+
+        /// <summary>
+        /// Specifies the VPC Security Groups associated with the Cache Cluster. This parameter can be used only with clusters that are created in an
+        /// Amazon Virtual Private Cloud (VPC).
+        ///  
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this.securityGroupIds; }
+            set { this.securityGroupIds = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SecurityGroupIds collection
+        /// </summary>
+        /// <param name="securityGroupIds">The values to add to the SecurityGroupIds collection </param>
+        /// <returns>this instance</returns>
+        public ModifyCacheClusterRequest WithSecurityGroupIds(params string[] securityGroupIds)
+        {
+            foreach (string element in securityGroupIds)
+            {
+                this.securityGroupIds.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the SecurityGroupIds collection
+        /// </summary>
+        /// <param name="securityGroupIds">The values to add to the SecurityGroupIds collection </param>
+        /// <returns>this instance</returns>
+        public ModifyCacheClusterRequest WithSecurityGroupIds(IEnumerable<string> securityGroupIds)
+        {
+            foreach (string element in securityGroupIds)
+            {
+                this.securityGroupIds.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this.securityGroupIds.Count > 0;
         }
 
         /// <summary>
@@ -221,7 +269,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredMaintenanceWindow property is set
         internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindow != null;       
+            return this.preferredMaintenanceWindow != null;
         }
 
         /// <summary>
@@ -250,7 +298,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NotificationTopicArn property is set
         internal bool IsSetNotificationTopicArn()
         {
-            return this.notificationTopicArn != null;       
+            return this.notificationTopicArn != null;
         }
 
         /// <summary>
@@ -279,7 +327,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;       
+            return this.cacheParameterGroupName != null;
         }
 
         /// <summary>
@@ -308,7 +356,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NotificationTopicStatus property is set
         internal bool IsSetNotificationTopicStatus()
         {
-            return this.notificationTopicStatus != null;       
+            return this.notificationTopicStatus != null;
         }
 
         /// <summary>
@@ -338,7 +386,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ApplyImmediately property is set
         internal bool IsSetApplyImmediately()
         {
-            return this.applyImmediately.HasValue;       
+            return this.applyImmediately.HasValue;
         }
 
         /// <summary>
@@ -366,7 +414,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -394,7 +442,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;       
+            return this.autoMinorVersionUpgrade.HasValue;
         }
     }
 }

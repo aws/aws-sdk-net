@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
         private List<DeleteTags> tagField;
 
         /// <summary>
-        /// Gets and sets the ResourceId property.
         /// A list of one or more resource IDs.
         /// </summary>
         [XmlElementAttribute(ElementName = "ResourceId")]
@@ -53,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResourceId property
+        /// Sets the list of one or more resource IDs.
         /// </summary>
         /// <param name="list">A list of one or more resource IDs.</param>
         /// <returns>this instance</returns>
@@ -76,9 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
-        /// The tags to delete from the specified resources. Each tag item consists of a 
-        /// key-value pair.
+        /// The tags to delete from the specified resources.
         /// If a tag doesn't have a value defined in the key-value pair, 
         /// the tag is deleted regardless of its value.
         /// </summary>
@@ -97,7 +94,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags to delete from the specified resources.
         /// </summary>
         /// <param name="list">The tags to delete from the specified resources. Each tag item consists of a 
         /// key-value pair.

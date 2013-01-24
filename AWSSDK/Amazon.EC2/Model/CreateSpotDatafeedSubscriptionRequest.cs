@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to create the data feed for Spot
-    /// Instances, enabling you to view Spot Instance
-    /// usage logs. You can create one data feed per account.
+    /// Creates the datafeed for Spot Instances, enabling you to view Spot Instance usage logs.
+    /// You can create one data feed per account.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateSpotDatafeedSubscriptionRequest
@@ -37,11 +36,8 @@ namespace Amazon.EC2.Model
         private string prefixField;
 
         /// <summary>
-        /// Gets and sets the Bucket property.
-        /// The Amazon S3 bucket in which to store the
-        /// Spot Instance datafeed.
-        /// Constraints: Must be a valid bucket
-        /// assocaited with your account.
+        /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
+        /// Constraints: Must be a valid bucket assocaited with your account.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -51,12 +47,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Bucket property
+        /// Sets the Amazon S3 bucket in which to store the Spot Instance datafeed.
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket in which to store the
-        /// Spot Instance datafeed.
-        /// Constraints: Must be a valid bucket
-        /// assocaited with your account.</param>
+        /// <param name="bucket">
+        /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
+        /// </param>
         /// <returns>this instance</returns>
         public CreateSpotDatafeedSubscriptionRequest WithBucket(string bucket)
         {
@@ -74,7 +69,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Prefix property.
         /// Prefix that is prepended to datafeed files.
         /// </summary>
         [XmlElementAttribute(ElementName = "Prefix")]
@@ -85,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property
+        /// Sets the prefix that is prepended to datafeed files.
         /// </summary>
         /// <param name="prefix">Prefix that is prepended to datafeed files.</param>
         /// <returns>this instance</returns>

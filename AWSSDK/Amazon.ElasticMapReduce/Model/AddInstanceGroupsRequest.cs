@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceGroups collection
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this.instanceGroups.Count > 0;       
+            return this.instanceGroups.Count > 0;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;       
+            return this.jobFlowId != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,8 +26,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// CreateVpnConnectionRoute Request
+    /// Creates a new static route associated with a VPN connection between an existing virtual private gateway
+    /// and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway
+    /// to the VPN customer gateway.
     /// </summary>
+    /// <remarks>
+    /// We strongly recommend you use HTTPS when calling this operation because the response
+    /// contains sensitive cryptographic information for configuring your customer gateway.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVpnConnectionRouteRequest
     {
@@ -35,7 +41,7 @@ namespace Amazon.EC2.Model
         private string destinationCidrBlockField;
 
         /// <summary>
-        /// Gets and sets the ID of the VPN connection.
+        /// The ID of the VPN connection.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
         public string VpnConnectionId
@@ -65,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the CIDR block associated with local subnet of the customer data center.
+        /// The CIDR block associated with local subnet of the customer data center.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
         public string DestinationCidrBlock

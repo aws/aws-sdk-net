@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -38,7 +38,6 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
 
         /// <summary>
-        /// Gets and sets the ResourceId property.
         /// One or more IDs of resources to tag.
         /// </summary>
         [XmlElementAttribute(ElementName = "ResourceId")]
@@ -56,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResourceId property
+        /// Sets the IDs of resources to tag.
         /// </summary>
         /// <param name="list">One or more IDs of resources to tag.</param>
         /// <returns>this instance</returns>
@@ -79,10 +78,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tag property.
         /// The tags to add or overwrite for the specified resources. 
-        /// Each tag item consists of a 
-        /// key-value pair.
+        /// Each tag item consists of a key-value pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "Tag")]
         public List<Tag> Tag
@@ -99,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tag property
+        /// Sets the tags to add or overwrite for the specified resources. 
         /// </summary>
         /// <param name="list">The tags to add or overwrite for the specified resources. 
         /// Each tag item consists of a 

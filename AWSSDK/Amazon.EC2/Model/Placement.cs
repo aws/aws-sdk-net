@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Specifies the placement constraints.
-    ///</summary>
+    /// <summary>
+    /// Placement constraints.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class Placement
     {    
@@ -36,8 +36,7 @@ namespace Amazon.EC2.Model
         private string tenancyField;
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// Availability Zones for launching the instances.
+        /// The Availability Zone of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -47,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the AvailabilityZone property
+        /// Sets the Availability Zone of the instance.
         /// </summary>
         /// <param name="availabilityZone">Availability Zones for launching the instances.</param>
         /// <returns>this instance</returns>
@@ -67,8 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
-        /// The name of a PlacementGroup.
+        /// The name of the placement group the instance is in.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -78,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the placement group the instance is in.
         /// </summary>
         /// <param name="groupName">The name of a PlacementGroup.</param>
         /// <returns>this instance</returns>
@@ -98,7 +96,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Tenancy property.
         /// The tenancy of the instance.
         /// 
         /// Valid Values: default | dedicated
@@ -120,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Tenancy property
+        /// Sets the tenancy of the instance.
         /// 
         /// Valid Values: default | dedicated
         /// </summary>

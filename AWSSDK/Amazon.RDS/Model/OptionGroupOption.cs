@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Available option. </para>
     /// </summary>
-    public class OptionGroupOption  
+    public class OptionGroupOption
     {
         
         private string name;
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineName property is set
         internal bool IsSetEngineName()
         {
-            return this.engineName != null;       
+            return this.engineName != null;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.RDS.Model
         // Check to see if MajorEngineVersion property is set
         internal bool IsSetMajorEngineVersion()
         {
-            return this.majorEngineVersion != null;       
+            return this.majorEngineVersion != null;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.RDS.Model
         // Check to see if MinimumRequiredMinorEngineVersion property is set
         internal bool IsSetMinimumRequiredMinorEngineVersion()
         {
-            return this.minimumRequiredMinorEngineVersion != null;       
+            return this.minimumRequiredMinorEngineVersion != null;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.RDS.Model
         // Check to see if PortRequired property is set
         internal bool IsSetPortRequired()
         {
-            return this.portRequired.HasValue;       
+            return this.portRequired.HasValue;
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.RDS.Model
         // Check to see if DefaultPort property is set
         internal bool IsSetDefaultPort()
         {
-            return this.defaultPort.HasValue;       
+            return this.defaultPort.HasValue;
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionsDependedOn collection
         /// </summary>
@@ -273,7 +273,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsDependedOn property is set
         internal bool IsSetOptionsDependedOn()
         {
-            return this.optionsDependedOn.Count > 0;       
+            return this.optionsDependedOn.Count > 0;
         }
     }
 }

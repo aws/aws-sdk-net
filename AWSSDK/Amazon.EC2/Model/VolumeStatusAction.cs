@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// VolumeStatusAction
+    /// Volume Status Action
     /// </summary>
     public class VolumeStatusAction
     {
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
             return this.codeField != null;
         }
         /// <summary>
-        /// Sets the Code property.
+        /// Sets the code identifying the action.
         /// </summary>
         /// <param name="code">The new code</param>
         /// <returns>this instance</returns>
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
             return this.eventIdField != null;
         }
         /// <summary>
-        /// Sets the EventId property.
+        /// Sets the ID of the event associated with this action.
         /// </summary>
         /// <param name="eventId">The new event id</param>
         /// <returns>this instance</returns>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
             return this.eventTypeField != null;
         }
         /// <summary>
-        /// Sets the EventType property.
+        /// Sets the event type associated with this action.
         /// </summary>
         /// <param name="eventType">The new event type</param>
         /// <returns>this instance</returns>
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
             return this.descriptionField != null;
         }
         /// <summary>
-        /// Sets the Description property.
+        /// Sets a description of the action.
         /// </summary>
         /// <param name="description">The new description</param>
         /// <returns>this instance</returns>

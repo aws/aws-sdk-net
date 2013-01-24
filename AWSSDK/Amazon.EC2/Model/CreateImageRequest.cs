@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -43,7 +43,6 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -54,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of the instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
@@ -74,12 +73,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// The name of the AMI that was provided during image
-        /// creation. Must be 3-128 alphanumeric characters,
-        /// parenthesis (()), commas (,), slashes (/), dashes (-), or
-        /// underscores(_).
+        /// The name for the new image.
         /// </summary>
+        /// <remarks>
+        /// Must be 3-128 alphanumeric characters, parenthesis (()),
+        /// commas (,), slashes (/), dashes (-), or underscores(_).
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
@@ -88,12 +87,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name for the new image.
         /// </summary>
         /// <param name="name">The name of the AMI that was provided during image
-        /// creation. Must be 3-128 alphanumeric characters,
-        /// parenthesis (()), commas (,), slashes (/), dashes (-), or
-        /// underscores(_).</param>
+        /// creation.</param>
         /// <returns>this instance</returns>
         public CreateImageRequest WithName(string name)
         {
@@ -111,11 +108,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// The description of the AMI that was provided
-        /// during
-        /// image creation. Can be up to 255 characters.
+        /// A description of the new image.
         /// </summary>
+        /// <remarks>Can be up to 255 characters.</remarks>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
@@ -124,11 +119,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the new image.
         /// </summary>
-        /// <param name="description">The description of the AMI that was provided
-        /// during
-        /// image creation. Can be up to 255 characters.</param>
+        /// <param name="description">
+        /// The description of the new image. Can be up to 255 characters.
+        /// </param>
         /// <returns>this instance</returns>
         public CreateImageRequest WithDescription(string description)
         {
@@ -146,7 +141,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NoReboot property.
+        /// Whether Amazon EC2 should not shut down an instance before
+        /// image creation.
+        /// </summary>
+        /// <remarks>
         /// By default this property is set to false, which means
         /// Amazon EC2 attempts to cleanly shut down the
         /// instance before image creation and reboots the instance
@@ -154,7 +152,7 @@ namespace Amazon.EC2.Model
         /// instance before creating the image. When this option is used,
         /// file system integrity on the created image cannot be guaranteed.
         /// Default is FALSE.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "NoReboot")]
         public bool NoReboot
         {
@@ -163,7 +161,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NoReboot property
+        /// Sets whether Amazon EC2 should not shut down an instance before
+        /// image creation.
         /// </summary>
         /// <param name="noReboot">By default this property is set to false, which means
         /// Amazon EC2 attempts to cleanly shut down the
@@ -189,7 +188,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
+        /// Block device mapping information for the image.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -206,7 +205,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the block device mapping information for the image.
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>

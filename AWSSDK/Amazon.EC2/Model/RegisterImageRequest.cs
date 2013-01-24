@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,28 +26,24 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Registers an AMI with Amazon EC2. Images must be
-    /// registered before they
-    /// can be launched. To launch instances, use
-    /// the RunInstances operation.
+    /// Registers an AMI with Amazon EC2.
+    /// </summary>
+    /// <remarks>
+    /// Images must be registered before they can be launched.
+    /// To launch instances, use the RunInstances operation.
     ///
-    /// Each AMI is associated with an unique
-    /// ID which is provided by the Amazon
-    /// EC2 service through the
-    /// RegisterImage operation. During registration,
-    /// Amazon EC2 retrieves
-    /// the specified image manifest from Amazon S3
-    /// and verifies that the
-    /// image is owned by the user registering the image.
+    /// Each AMI is associated with an unique ID which is provided by
+    /// the Amazon EC2 service through the RegisterImage operation.
+    /// During registration, Amazon EC2 retrieves the specified image
+    /// manifest from Amazon S3 and verifies that the image is owned
+    /// by the user registering the image.
     ///
     /// The image manifest is retrieved once and stored within the Amazon
     /// EC2. Any modifications to an image in Amazon S3 invalidates this
     /// registration. If you make changes to an image, deregister the
-    /// previous image and register
-    /// the new image. To deregister an image,
-    /// use the DeregisterImage
-    /// operation.
-    /// </summary>
+    /// previous image and register the new image. To deregister an image,
+    /// use the DeregisterImage operation.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RegisterImageRequest
     {    
@@ -61,9 +57,7 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> blockDeviceMappingField;
 
         /// <summary>
-        /// Gets and sets the ImageLocation property.
-        /// Full path to your AMI manifest in Amazon S3
-        /// storage.
+        /// Full path to your AMI manifest in Amazon S3 storage.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageLocation")]
         public string ImageLocation
@@ -73,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ImageLocation property
+        /// Sets the full path to your AMI manifest in Amazon S3 storage.
         /// </summary>
         /// <param name="imageLocation">Full path to your AMI manifest in Amazon S3
         /// storage.</param>
@@ -94,9 +88,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// The name of the AMI that was provided during
-        /// image creation.
+        /// The name of the AMI that was provided during image creation.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
@@ -106,7 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name of the AMI.
         /// </summary>
         /// <param name="name">The name of the AMI that was provided during
         /// image creation.</param>
@@ -127,13 +119,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// The description of the AMI. Must be 3-128
-        /// alphanumeric characters,
-        /// parenthesis (()), commas (,), slashes
-        /// (/), dashes (-), or
-        /// underscores(_).
+        /// The description of the AMI.
         /// </summary>
+        /// <remarks>
+        /// Must be 3-128 alphanumeric characters, parenthesis (()),
+        /// commas (,), slashes (/), dashes (-), or underscores(_).
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
@@ -142,13 +133,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Description property
+        /// Sets the description of the AMI.
         /// </summary>
         /// <param name="description">The description of the AMI. Must be 3-128
-        /// alphanumeric characters,
-        /// parenthesis (()), commas (,), slashes
-        /// (/), dashes (-), or
-        /// underscores(_).</param>
+        /// alphanumeric characters, parenthesis (()), commas (,), slashes
+        /// (/), dashes (-), or underscores(_).</param>
         /// <returns>this instance</returns>
         public RegisterImageRequest WithDescription(string description)
         {
@@ -166,7 +155,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Architecture property.
+        /// The architecture of the image.
+        /// Valid values: i386 | x86_64
         /// </summary>
         [XmlElementAttribute(ElementName = "Architecture")]
         public string Architecture
@@ -176,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Architecture property
+        /// Sets the architecture of the image.
         /// </summary>
         /// <param name="architecture">Architecture property</param>
         /// <returns>this instance</returns>
@@ -196,7 +186,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
         /// The ID of the kernel to select.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
@@ -207,7 +196,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the KernelId property
+        /// Sets the ID of the kernel to select.
         /// </summary>
         /// <param name="kernelId">The ID of the kernel to select.</param>
         /// <returns>this instance</returns>
@@ -227,13 +216,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
-        /// The ID of the RAM disk to select. Some kernels
-        /// require additional drivers at launch. Check the kernel
-        /// requirements for information on whether you need to
-        /// specify a
-        /// RAM disk.
+        /// The ID of the RAM disk to select.
         /// </summary>
+        /// <remarks>
+        /// Some kernels require additional drivers at launch.
+        /// Check the kernel requirements for information on
+        /// whether you need to specify a RAM disk.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
         {
@@ -242,13 +231,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RamdiskId property
+        /// Sets the ID of the RAM disk to select.
         /// </summary>
         /// <param name="ramdiskId">The ID of the RAM disk to select. Some kernels
         /// require additional drivers at launch. Check the kernel
         /// requirements for information on whether you need to
-        /// specify a
-        /// RAM disk.</param>
+        /// specify a RAM disk.</param>
         /// <returns>this instance</returns>
         public RegisterImageRequest WithRamdiskId(string ramdiskId)
         {
@@ -266,7 +254,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the RootDeviceName property.
         /// The root device name (e.g., /dev/sda1).
         /// </summary>
         [XmlElementAttribute(ElementName = "RootDeviceName")]
@@ -277,7 +264,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RootDeviceName property
+        /// Sets the root device name (e.g., /dev/sda1).
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
@@ -297,7 +284,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the BlockDeviceMapping property.
+        /// The device names exposed to the instance (for example, /dev/sdh or xvdh).
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -314,7 +301,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the BlockDeviceMapping property
+        /// Sets the device names exposed to the instance (for example, /dev/sdh or xvdh).
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -25,9 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    ///<summary>
-    ///Security group and user ID pair.
-    ///</summary>
+    /// <summary>
+    /// Security group and user ID pair.
+    /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class UserIdGroupPair
     {    
@@ -36,9 +36,8 @@ namespace Amazon.EC2.Model
         private string groupNameField;
 
         /// <summary>
-        /// Gets and sets the UserId property.
-        /// AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// AWS User ID of an account.
+        /// Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public string UserId
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the UserId property
+        /// Sets the AWS User ID of an account.
         /// </summary>
         /// <param name="userId">AWS User ID of an account. Cannot be used when
         /// specifying a CIDR IP address.</param>
@@ -69,9 +68,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupId property.
-        /// AWS Group ID of a Security Group. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// AWS Group ID of a Security Group.
+        /// Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupId")]
         public string GroupId
@@ -81,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupId property
+        /// Sets the AWS Group ID of a Security Group.
         /// </summary>
         /// <param name="userId">AWS Group ID of a Security Group. Cannot be used when
         /// specifying a CIDR IP address.</param>
@@ -102,9 +100,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GroupName property.
-        /// Name of the security group. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// Name of the security group.
+        /// Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -114,7 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GroupName property
+        /// Sets the name of the security group.
         /// </summary>
         /// <param name="groupName">Name of the security group. Cannot be used when
         /// specifying a CIDR IP address.</param>

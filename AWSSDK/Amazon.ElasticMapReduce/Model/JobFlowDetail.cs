@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// <para> A description of a job flow.</para>
     /// </summary>
-    public class JobFlowDetail  
+    public class JobFlowDetail
     {
         
         private string jobFlowId;
@@ -36,6 +36,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<BootstrapActionDetail> bootstrapActions = new List<BootstrapActionDetail>();
         private List<string> supportedProducts = new List<string>();
         private bool? visibleToAllUsers;
+        private string jobFlowRole;
 
         /// <summary>
         /// The job flow identifier.
@@ -75,7 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;       
+            return this.jobFlowId != null;
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -157,13 +158,13 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if LogUri property is set
         internal bool IsSetLogUri()
         {
-            return this.logUri != null;       
+            return this.logUri != null;
         }
 
         /// <summary>
         /// The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions currently supported by Amazon
         /// ElasticMapReduce, go to <a
-        /// href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
         /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
         ///  
         /// <para>
@@ -201,7 +202,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AmiVersion property is set
         internal bool IsSetAmiVersion()
         {
-            return this.amiVersion != null;       
+            return this.amiVersion != null;
         }
 
         /// <summary>
@@ -229,7 +230,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if ExecutionStatusDetail property is set
         internal bool IsSetExecutionStatusDetail()
         {
-            return this.executionStatusDetail != null;       
+            return this.executionStatusDetail != null;
         }
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances != null;       
+            return this.instances != null;
         }
 
         /// <summary>
@@ -283,7 +284,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Steps collection
         /// </summary>
@@ -302,7 +303,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this.steps.Count > 0;       
+            return this.steps.Count > 0;
         }
 
         /// <summary>
@@ -328,7 +329,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BootstrapActions collection
         /// </summary>
@@ -347,7 +348,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this.bootstrapActions.Count > 0;       
+            return this.bootstrapActions.Count > 0;
         }
 
         /// <summary>
@@ -374,7 +375,7 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SupportedProducts collection
         /// </summary>
@@ -393,7 +394,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SupportedProducts property is set
         internal bool IsSetSupportedProducts()
         {
-            return this.supportedProducts.Count > 0;       
+            return this.supportedProducts.Count > 0;
         }
 
         /// <summary>
@@ -424,7 +425,48 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if VisibleToAllUsers property is set
         internal bool IsSetVisibleToAllUsers()
         {
-            return this.visibleToAllUsers.HasValue;       
+            return this.visibleToAllUsers.HasValue;
+        }
+
+        /// <summary>
+        /// The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10280</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string JobFlowRole
+        {
+            get { return this.jobFlowRole; }
+            set { this.jobFlowRole = value; }
+        }
+
+        /// <summary>
+        /// Sets the JobFlowRole property
+        /// </summary>
+        /// <param name="jobFlowRole">The value to set for the JobFlowRole property </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithJobFlowRole(string jobFlowRole)
+        {
+            this.jobFlowRole = jobFlowRole;
+            return this;
+        }
+            
+
+        // Check to see if JobFlowRole property is set
+        internal bool IsSetJobFlowRole()
+        {
+            return this.jobFlowRole != null;
         }
     }
 }

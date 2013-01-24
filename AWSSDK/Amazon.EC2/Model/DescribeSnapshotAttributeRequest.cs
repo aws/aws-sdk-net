@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,10 +26,8 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about an attribute of a
-    /// snapshot. Only one attribute
-    /// can be specified
-    /// per call.
+    /// Returns information about an attribute of a snapshot.
+    /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeSnapshotAttributeRequest
@@ -38,7 +36,6 @@ namespace Amazon.EC2.Model
         private string attributeField;
 
         /// <summary>
-        /// Gets and sets the SnapshotId property.
         /// The ID of the Amazon EBS snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
@@ -49,7 +46,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the SnapshotId property
+        /// Sets the ID of the Amazon EBS snapshot.
         /// </summary>
         /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
@@ -69,9 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Describes the create volume permissions or the product codes of the
-        /// snapshot.
+        /// The snapshot attribute.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -81,10 +76,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the snapshot attribute.
         /// </summary>
-        /// <param name="attribute">Describes the create volume permissions or the product codes of the
-        /// snapshot.</param>
+        /// <param name="attribute">The snapshot attribute.</param>
         /// <returns>this instance</returns>
         public DescribeSnapshotAttributeRequest WithAttribute(string attribute)
         {

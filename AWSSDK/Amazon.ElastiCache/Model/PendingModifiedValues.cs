@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para> Contains values that will be applied to the Cache Cluster in the future. </para>
     /// </summary>
-    public class PendingModifiedValues  
+    public class PendingModifiedValues
     {
         
         private int? numCacheNodes;
@@ -55,7 +55,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NumCacheNodes property is set
         internal bool IsSetNumCacheNodes()
         {
-            return this.numCacheNodes.HasValue;       
+            return this.numCacheNodes.HasValue;
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.ElastiCache.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CacheNodeIdsToRemove collection
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToRemove property is set
         internal bool IsSetCacheNodeIdsToRemove()
         {
-            return this.cacheNodeIdsToRemove.Count > 0;       
+            return this.cacheNodeIdsToRemove.Count > 0;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
     }
 }

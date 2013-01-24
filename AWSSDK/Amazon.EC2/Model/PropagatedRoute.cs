@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         private string sourceIdField;
 
         /// <summary>
-        /// Gets and sets the CIDR block associated with local subnet of the customer data center.
+        /// The CIDR block associated with local subnet of the customer data center.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
         public string DestinationCidrBlock
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the ID of the Virtual Private Gateway.
+        /// The ID of the Virtual Private Gateway.
         /// </summary>
         [XmlElementAttribute(ElementName = "GatewayId")]
         public string GatewayId
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the status of the propagated route.
+        /// The status of the propagated route.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status

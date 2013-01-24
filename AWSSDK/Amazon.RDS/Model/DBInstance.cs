@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBInstances action.</para>
     /// </summary>
-    public class DBInstance  
+    public class DBInstance
     {
         
         private string dBInstanceIdentifier;
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string preferredBackupWindow;
         private int? backupRetentionPeriod;
         private List<DBSecurityGroupMembership> dBSecurityGroups = new List<DBSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
         private List<DBParameterGroupStatus> dBParameterGroups = new List<DBParameterGroupStatus>();
         private string availabilityZone;
         private DBSubnetGroup dBSubnetGroup;
@@ -60,6 +61,8 @@ namespace Amazon.RDS.Model
         private int? iops;
         private OptionGroupMembership optionGroupMembership;
         private string characterSetName;
+        private string secondaryAvailabilityZone;
+        private bool? publiclyAccessible;
 
         /// <summary>
         /// Contains a user-supplied database identifier. This is the unique key that identifies a DB Instance.
@@ -86,7 +89,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this.dBInstanceIdentifier != null;       
+            return this.dBInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -114,7 +117,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;       
+            return this.dBInstanceClass != null;
         }
 
         /// <summary>
@@ -142,7 +145,7 @@ namespace Amazon.RDS.Model
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;       
+            return this.engine != null;
         }
 
         /// <summary>
@@ -170,7 +173,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceStatus property is set
         internal bool IsSetDBInstanceStatus()
         {
-            return this.dBInstanceStatus != null;       
+            return this.dBInstanceStatus != null;
         }
 
         /// <summary>
@@ -198,7 +201,7 @@ namespace Amazon.RDS.Model
         // Check to see if MasterUsername property is set
         internal bool IsSetMasterUsername()
         {
-            return this.masterUsername != null;       
+            return this.masterUsername != null;
         }
 
         /// <summary>
@@ -228,7 +231,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this.dBName != null;       
+            return this.dBName != null;
         }
 
         /// <summary>
@@ -256,7 +259,7 @@ namespace Amazon.RDS.Model
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;       
+            return this.endpoint != null;
         }
 
         /// <summary>
@@ -284,7 +287,7 @@ namespace Amazon.RDS.Model
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;       
+            return this.allocatedStorage.HasValue;
         }
 
         /// <summary>
@@ -312,7 +315,7 @@ namespace Amazon.RDS.Model
         // Check to see if InstanceCreateTime property is set
         internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTime.HasValue;       
+            return this.instanceCreateTime.HasValue;
         }
 
         /// <summary>
@@ -341,7 +344,7 @@ namespace Amazon.RDS.Model
         // Check to see if PreferredBackupWindow property is set
         internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindow != null;       
+            return this.preferredBackupWindow != null;
         }
 
         /// <summary>
@@ -369,7 +372,7 @@ namespace Amazon.RDS.Model
         // Check to see if BackupRetentionPeriod property is set
         internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriod.HasValue;       
+            return this.backupRetentionPeriod.HasValue;
         }
 
         /// <summary>
@@ -395,7 +398,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DBSecurityGroups collection
         /// </summary>
@@ -414,7 +417,52 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this.dBSecurityGroups.Count > 0;       
+            return this.dBSecurityGroups.Count > 0;
+        }
+
+        /// <summary>
+        /// Provides List of VPC security group elements that the DB Instance belongs to.
+        ///  
+        /// </summary>
+        public List<VpcSecurityGroupMembership> VpcSecurityGroups
+        {
+            get { return this.vpcSecurityGroups; }
+            set { this.vpcSecurityGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the VpcSecurityGroups collection
+        /// </summary>
+        /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithVpcSecurityGroups(params VpcSecurityGroupMembership[] vpcSecurityGroups)
+        {
+            foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
+            {
+                this.vpcSecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the VpcSecurityGroups collection
+        /// </summary>
+        /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithVpcSecurityGroups(IEnumerable<VpcSecurityGroupMembership> vpcSecurityGroups)
+        {
+            foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
+            {
+                this.vpcSecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if VpcSecurityGroups property is set
+        internal bool IsSetVpcSecurityGroups()
+        {
+            return this.vpcSecurityGroups.Count > 0;
         }
 
         /// <summary>
@@ -440,7 +488,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DBParameterGroups collection
         /// </summary>
@@ -459,7 +507,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this.dBParameterGroups.Count > 0;       
+            return this.dBParameterGroups.Count > 0;
         }
 
         /// <summary>
@@ -487,7 +535,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
@@ -516,7 +564,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSubnetGroup property is set
         internal bool IsSetDBSubnetGroup()
         {
-            return this.dBSubnetGroup != null;       
+            return this.dBSubnetGroup != null;
         }
 
         /// <summary>
@@ -544,7 +592,7 @@ namespace Amazon.RDS.Model
         // Check to see if PreferredMaintenanceWindow property is set
         internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindow != null;       
+            return this.preferredMaintenanceWindow != null;
         }
 
         /// <summary>
@@ -573,7 +621,7 @@ namespace Amazon.RDS.Model
         // Check to see if PendingModifiedValues property is set
         internal bool IsSetPendingModifiedValues()
         {
-            return this.pendingModifiedValues != null;       
+            return this.pendingModifiedValues != null;
         }
 
         /// <summary>
@@ -601,7 +649,7 @@ namespace Amazon.RDS.Model
         // Check to see if LatestRestorableTime property is set
         internal bool IsSetLatestRestorableTime()
         {
-            return this.latestRestorableTime.HasValue;       
+            return this.latestRestorableTime.HasValue;
         }
 
         /// <summary>
@@ -629,7 +677,7 @@ namespace Amazon.RDS.Model
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
-            return this.multiAZ.HasValue;       
+            return this.multiAZ.HasValue;
         }
 
         /// <summary>
@@ -657,7 +705,7 @@ namespace Amazon.RDS.Model
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;       
+            return this.engineVersion != null;
         }
 
         /// <summary>
@@ -685,7 +733,7 @@ namespace Amazon.RDS.Model
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;       
+            return this.autoMinorVersionUpgrade.HasValue;
         }
 
         /// <summary>
@@ -713,7 +761,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaSourceDBInstanceIdentifier property is set
         internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
         {
-            return this.readReplicaSourceDBInstanceIdentifier != null;       
+            return this.readReplicaSourceDBInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -739,7 +787,7 @@ namespace Amazon.RDS.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ReadReplicaDBInstanceIdentifiers collection
         /// </summary>
@@ -758,7 +806,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaDBInstanceIdentifiers property is set
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
-            return this.readReplicaDBInstanceIdentifiers.Count > 0;       
+            return this.readReplicaDBInstanceIdentifiers.Count > 0;
         }
 
         /// <summary>
@@ -786,7 +834,7 @@ namespace Amazon.RDS.Model
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;       
+            return this.licenseModel != null;
         }
 
         /// <summary>
@@ -814,7 +862,7 @@ namespace Amazon.RDS.Model
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;       
+            return this.iops.HasValue;
         }
 
         /// <summary>
@@ -842,7 +890,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupMembership property is set
         internal bool IsSetOptionGroupMembership()
         {
-            return this.optionGroupMembership != null;       
+            return this.optionGroupMembership != null;
         }
 
         /// <summary>
@@ -870,7 +918,58 @@ namespace Amazon.RDS.Model
         // Check to see if CharacterSetName property is set
         internal bool IsSetCharacterSetName()
         {
-            return this.characterSetName != null;       
+            return this.characterSetName != null;
+        }
+
+        /// <summary>
+        /// If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
+        ///  
+        /// </summary>
+        public string SecondaryAvailabilityZone
+        {
+            get { return this.secondaryAvailabilityZone; }
+            set { this.secondaryAvailabilityZone = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecondaryAvailabilityZone property
+        /// </summary>
+        /// <param name="secondaryAvailabilityZone">The value to set for the SecondaryAvailabilityZone property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithSecondaryAvailabilityZone(string secondaryAvailabilityZone)
+        {
+            this.secondaryAvailabilityZone = secondaryAvailabilityZone;
+            return this;
+        }
+            
+
+        // Check to see if SecondaryAvailabilityZone property is set
+        internal bool IsSetSecondaryAvailabilityZone()
+        {
+            return this.secondaryAvailabilityZone != null;
+        }
+        public bool PubliclyAccessible
+        {
+            get { return this.publiclyAccessible ?? default(bool); }
+            set { this.publiclyAccessible = value; }
+        }
+
+        /// <summary>
+        /// Sets the PubliclyAccessible property
+        /// </summary>
+        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithPubliclyAccessible(bool publiclyAccessible)
+        {
+            this.publiclyAccessible = publiclyAccessible;
+            return this;
+        }
+            
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this.publiclyAccessible.HasValue;
         }
     }
 }

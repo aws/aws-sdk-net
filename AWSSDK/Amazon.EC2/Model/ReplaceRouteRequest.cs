@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -26,9 +26,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Replaces an existing route within a route table in a VPC. For more information about route tables, go to
-    /// Route Tables in the Amazon Virtual Private Cloud User Guide.
+    /// Replaces an existing route within a route table in a VPC.
     /// </summary>
+    /// <remarks>
+    /// For more information about route tables, go to Route Tables
+    /// in the Amazon Virtual Private Cloud User Guide.
+    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class ReplaceRouteRequest
     {    
@@ -39,9 +42,7 @@ namespace Amazon.EC2.Model
         private string networkInterfaceIdField;
 
         /// <summary>
-        /// Gets and sets the RouteTableId property.
-        /// The ID of the route table where the route will 
-        /// be replaced.
+        /// The ID of the route table where the route will be replaced.
         /// </summary>
         [XmlElementAttribute(ElementName = "RouteTableId")]
         public string RouteTableId
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RouteTableId property
+        /// Sets the ID of the route table where the route will be replaced.
         /// </summary>
         /// <param name="routeTableId">The ID of the route table where the route will 
         /// be replaced.</param>
@@ -72,10 +73,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the DestinationCidrBlock property.
-        /// The CIDR address block used for the 
-        /// destination match. For example: 0.0.0.0/0.The
-        /// value you provide must match the CIDR of an
+        /// The CIDR address block used for the destination match.
+        /// For example: 0.0.0.0/0.
+        /// The value you provide must match the CIDR of an
         /// existing route in the table.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationCidrBlock")]
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the DestinationCidrBlock property
+        /// Sets the CIDR address block used for the destination match.
         /// </summary>
         /// <param name="destinationCidrBlock">The CIDR address block used for the 
         /// destination match. For example: 0.0.0.0/0.The
@@ -109,7 +109,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the GatewayId property.
         /// The ID of a gateway attached to your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "GatewayId")]
@@ -120,7 +119,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the GatewayId property
+        /// Sets the ID of a gateway attached to your VPC.
         /// </summary>
         /// <param name="gatewayId">The ID of a gateway attached to your VPC.</param>
         /// <returns>this instance</returns>
@@ -140,7 +139,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
         /// The ID of a NAT instance in your VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
@@ -151,7 +149,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the InstanceId property
+        /// Sets the ID of a NAT instance in your VPC.
         /// </summary>
         /// <param name="instanceId">The ID of a NAT instance in your VPC.</param>
         /// <returns>this instance</returns>
@@ -171,7 +169,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the NetworkInterfaceId property
+        /// Network Interface ID to allow routing to network interface attachments.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -181,7 +179,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the NetworkInterfaceId property
+        /// Sets the Network Interface ID to allow routing to network interface attachments.
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
