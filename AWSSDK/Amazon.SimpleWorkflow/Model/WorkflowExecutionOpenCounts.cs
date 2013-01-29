@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains the counts of open tasks, child workflow executions and timers for a workflow execution. </para>
     /// </summary>
-    public class WorkflowExecutionOpenCounts  
+    public class WorkflowExecutionOpenCounts
     {
         
         private int? openActivityTasks;
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OpenActivityTasks property is set
         internal bool IsSetOpenActivityTasks()
         {
-            return this.openActivityTasks.HasValue;       
+            return this.openActivityTasks.HasValue;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OpenDecisionTasks property is set
         internal bool IsSetOpenDecisionTasks()
         {
-            return this.openDecisionTasks.HasValue;       
+            return this.openDecisionTasks.HasValue;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OpenTimers property is set
         internal bool IsSetOpenTimers()
         {
-            return this.openTimers.HasValue;       
+            return this.openTimers.HasValue;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OpenChildWorkflowExecutions property is set
         internal bool IsSetOpenChildWorkflowExecutions()
         {
-            return this.openChildWorkflowExecutions.HasValue;       
+            return this.openChildWorkflowExecutions.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Unit of work sent to an activity worker. </para>
     /// </summary>
-    public class ActivityTask  
+    public class ActivityTask
     {
         
         private string taskToken;
@@ -68,7 +68,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskToken property is set
         internal bool IsSetTaskToken()
         {
-            return this.taskToken != null;       
+            return this.taskToken != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartedEventId property is set
         internal bool IsSetStartedEventId()
         {
-            return this.startedEventId.HasValue;       
+            return this.startedEventId.HasValue;
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecution property is set
         internal bool IsSetWorkflowExecution()
         {
-            return this.workflowExecution != null;       
+            return this.workflowExecution != null;
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityType property is set
         internal bool IsSetActivityType()
         {
-            return this.activityType != null;       
+            return this.activityType != null;
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
     }
 }

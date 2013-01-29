@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>StartChildWorkflowExecutionInitiated</c> event. </para>
     /// </summary>
-    public class StartChildWorkflowExecutionInitiatedEventAttributes  
+    public class StartChildWorkflowExecutionInitiatedEventAttributes
     {
         
         private string workflowId;
@@ -71,7 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowId property is set
         internal bool IsSetWorkflowId()
         {
-            return this.workflowId != null;       
+            return this.workflowId != null;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowType property is set
         internal bool IsSetWorkflowType()
         {
-            return this.workflowType != null;       
+            return this.workflowType != null;
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;       
+            return this.control != null;
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionStartToCloseTimeout property is set
         internal bool IsSetExecutionStartToCloseTimeout()
         {
-            return this.executionStartToCloseTimeout != null;       
+            return this.executionStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildPolicy property is set
         internal bool IsSetChildPolicy()
         {
-            return this.childPolicy != null;       
+            return this.childPolicy != null;
         }
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskStartToCloseTimeout property is set
         internal bool IsSetTaskStartToCloseTimeout()
         {
-            return this.taskStartToCloseTimeout != null;       
+            return this.taskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TagList collection
         /// </summary>
@@ -404,7 +404,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this.tagList.Count > 0;       
+            return this.tagList.Count > 0;
         }
     }
 }

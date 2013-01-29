@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains a paginated collection of DomainInfo structures. </para>
     /// </summary>
-    public class DomainInfos  
+    public class DomainInfos
     {
         
         private List<DomainInfo> domainInfos = new List<DomainInfo>();
@@ -52,7 +52,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DomainInfos collection
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;       
+            return this.nextPageToken != null;
         }
     }
 }

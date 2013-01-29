@@ -235,7 +235,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception e)
             {
-                this._logger.Error(string.Format("Exception while uploading. ({0})", initResponse.UploadId), e);
+                this._logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
                 shutdown(initResponse.UploadId);
                 throw;
             }

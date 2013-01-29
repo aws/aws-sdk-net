@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>DecisionTaskStarted</c> event. </para>
     /// </summary>
-    public class DecisionTaskStartedEventAttributes  
+    public class DecisionTaskStartedEventAttributes
     {
         
         private string identity;
@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;       
+            return this.identity != null;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduledEventId property is set
         internal bool IsSetScheduledEventId()
         {
-            return this.scheduledEventId.HasValue;       
+            return this.scheduledEventId.HasValue;
         }
     }
 }

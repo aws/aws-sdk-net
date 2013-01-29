@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,8 +25,26 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the StartWorkflowExecution operation.
-    /// <para> Starts an execution of the workflow type in the specified domain using the provided <c>workflowId</c> and input data. </para> <para>
-    /// This action returns the newly started workflow execution. </para>
+    /// <para> Starts an execution of the workflow type in the specified domain using the provided <c>workflowId</c> and input data. </para>
+    /// <para>This action returns the newly started workflow execution.</para> <para> <b>Access Control</b> </para> <para>You can use IAM policies
+    /// to control this action's access to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <ul>
+    /// <li> <c>tagList.member.0</c> : TBD</li>
+    /// <li> <c>taskList</c> : String constraint. The key is <c>swf:taskList.name</c> .</li>
+    /// <li> <c>name</c> : String constraint. The key is <c>swf:workflowType.name</c> .</li>
+    /// <li> <c>version</c> : String constraint. The key is <c>swf:workflowType.version</c> .</li>
+    /// 
+    /// </ul>
+    /// </li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.StartWorkflowExecution"/>
     public class StartWorkflowExecutionRequest : AmazonWebServiceRequest
@@ -75,7 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -116,7 +134,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowId property is set
         internal bool IsSetWorkflowId()
         {
-            return this.workflowId != null;       
+            return this.workflowId != null;
         }
 
         /// <summary>
@@ -144,7 +162,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowType property is set
         internal bool IsSetWorkflowType()
         {
-            return this.workflowType != null;       
+            return this.workflowType != null;
         }
 
         /// <summary>
@@ -176,7 +194,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -214,7 +232,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -256,7 +274,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionStartToCloseTimeout property is set
         internal bool IsSetExecutionStartToCloseTimeout()
         {
-            return this.executionStartToCloseTimeout != null;       
+            return this.executionStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -292,7 +310,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TagList collection
         /// </summary>
@@ -311,7 +329,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this.tagList.Count > 0;       
+            return this.tagList.Count > 0;
         }
 
         /// <summary>
@@ -353,7 +371,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskStartToCloseTimeout property is set
         internal bool IsSetTaskStartToCloseTimeout()
         {
-            return this.taskStartToCloseTimeout != null;       
+            return this.taskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -397,7 +415,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildPolicy property is set
         internal bool IsSetChildPolicy()
         {
-            return this.childPolicy != null;       
+            return this.childPolicy != null;
         }
     }
 }

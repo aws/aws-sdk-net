@@ -29,7 +29,6 @@ namespace Amazon.Runtime.Internal
 
         private ManualResetEvent _waitHandle;
         private object _lockObj;
-        private object _finalResponse;
         private Stopwatch _stopWatch;
 
 
@@ -43,6 +42,7 @@ namespace Amazon.Runtime.Internal
             this.Signer = signer;
             this.Unmarshaller = unmarshaller;
             this.RequestName = request.OriginalRequest.GetType().Name;
+            this.Metrics = new RequestMetrics();
 
             this._lockObj = new object();
 
@@ -59,22 +59,11 @@ namespace Amazon.Runtime.Internal
 
         internal AsyncRequestState RequestState { get; set; }
 
-        internal object FinalResponse
-        {
-            get { return _finalResponse; }
-            set
-            {
-                this._finalResponse = value;
-            }
-        }
+        internal object FinalResponse { get; set; }
 
         internal byte[] RequestData { get; set; }
 
         internal Stream RequestStream { get; set; }
-
-        internal long RequestStartTicks { get; set; }
-
-        internal long ResponseReceivedTicks { get; set; }
 
 
         // Read-only properties
@@ -90,6 +79,8 @@ namespace Amazon.Runtime.Internal
         internal object State { get; private set; }
 
         internal string RequestName { get; private set; }
+
+        internal RequestMetrics Metrics { get; private set; }
 
         public bool CompletedSynchronously { get; private set; }
 
@@ -142,38 +133,7 @@ namespace Amazon.Runtime.Internal
         private Guid id = Guid.NewGuid();
         internal Guid Id { get { return this.id; } }
 
-        // helper fields (not used for metrics)
-        internal long ElapsedTicks { get { return _stopWatch.ElapsedTicks; } }
-        internal long StreamReadStartTime { get; set; }
-
-        // fields needed for metrics
-        internal long TotalRequestTime { get; set; }
-        internal long ResponseReadTime { get; set; }
-        internal long ResponseProcessingTime { get; set; }
-        internal long ResponseTime { get; set; }
-        internal long BytesProcessed { get; set; }
-        internal long PauseTime { get; set; }
-
         #endregion
-
-        #region Overrides
-
-        public override string ToString()
-        {
-            string contents = string.Format("AsyncResult: Request Type - {0}, ID - {1}, ResponseTime - {2}, ResponseReadTime - {3}, ResponseProcessingTime - {4}, PauseTime - {5}, TotalRequestTime - {6}, Bytes processed - {7}",
-                this.Request.OriginalRequest.GetType().FullName,
-                this.Id,
-                this.ResponseTime,
-                this.ResponseReadTime,
-                this.ResponseProcessingTime,
-                this.PauseTime,
-                this.TotalRequestTime,
-                this.BytesProcessed);
-            return contents;
-        }
-
-        #endregion
-
 
         public class AsyncRequestState
         {

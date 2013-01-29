@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Configuration settings registered with the activity type. </para>
     /// </summary>
-    public class ActivityTypeConfiguration  
+    public class ActivityTypeConfiguration
     {
         
         private string defaultTaskStartToCloseTimeout;
@@ -68,7 +68,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskStartToCloseTimeout property is set
         internal bool IsSetDefaultTaskStartToCloseTimeout()
         {
-            return this.defaultTaskStartToCloseTimeout != null;       
+            return this.defaultTaskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskHeartbeatTimeout property is set
         internal bool IsSetDefaultTaskHeartbeatTimeout()
         {
-            return this.defaultTaskHeartbeatTimeout != null;       
+            return this.defaultTaskHeartbeatTimeout != null;
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskList property is set
         internal bool IsSetDefaultTaskList()
         {
-            return this.defaultTaskList != null;       
+            return this.defaultTaskList != null;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskScheduleToStartTimeout property is set
         internal bool IsSetDefaultTaskScheduleToStartTimeout()
         {
-            return this.defaultTaskScheduleToStartTimeout != null;       
+            return this.defaultTaskScheduleToStartTimeout != null;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskScheduleToCloseTimeout property is set
         internal bool IsSetDefaultTaskScheduleToCloseTimeout()
         {
-            return this.defaultTaskScheduleToCloseTimeout != null;       
+            return this.defaultTaskScheduleToCloseTimeout != null;
         }
     }
 }

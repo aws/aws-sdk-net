@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,44 +31,44 @@
           RegisterWorkflowTypeResponse response = new RegisterWorkflowTypeResponse();
           
           return response;
+        }
+          
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+          
+          if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
+          {
+            return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
           }
-           
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
-        { 
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
-           
-          if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException")) 
-          { 
-            return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException")) 
-          { 
-            return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("TypeAlreadyExistsException")) 
-          { 
-            return new TypeAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException")) 
-          { 
-            return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-        } 
   
-        private static RegisterWorkflowTypeResponseUnmarshaller instance; 
-        public static RegisterWorkflowTypeResponseUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
-          { 
-            instance = new RegisterWorkflowTypeResponseUnmarshaller(); 
-          } 
+          if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
+          {
+            return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          }
+  
+          if (errorResponse.Code != null && errorResponse.Code.Equals("TypeAlreadyExistsException"))
+          {
+            return new TypeAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          }
+  
+          if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+          {
+            return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          }
+  
+          return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+
+        private static RegisterWorkflowTypeResponseUnmarshaller instance;
+        public static RegisterWorkflowTypeResponseUnmarshaller GetInstance()
+        {
+          if (instance == null)
+          {
+            instance = new RegisterWorkflowTypeResponseUnmarshaller();
+          }
           return instance;
-        } 
+        }
   
       }
     }

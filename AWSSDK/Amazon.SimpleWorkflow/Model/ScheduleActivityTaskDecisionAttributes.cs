@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,26 @@ using System.IO;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>ScheduleActivityTask</c> decision. </para>
+    /// <para>Provides details of the <c>ScheduleActivityTask</c> decision.</para> <para> <b>Access Control</b> </para> <para>You can use IAM
+    /// policies to control this decision's access to Amazon SWF in much the same way as for the regular API:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the decision to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to specify this decision.</li>
+    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <ul>
+    /// <li> <c>activityType.name</c> : String constraint. The key is “swf:activityType.name”.</li>
+    /// <li> <c>activityType.version</c> : String constraint. The key is “swf:activityType.version”.</li>
+    /// <li> <c>taskList</c> : String constraint. The key is “swf:taskList.name”.</li>
+    /// 
+    /// </ul>
+    /// </li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows.</para>
     /// </summary>
-    public class ScheduleActivityTaskDecisionAttributes  
+    public class ScheduleActivityTaskDecisionAttributes
     {
         
         private ActivityType activityType;
@@ -61,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityType property is set
         internal bool IsSetActivityType()
         {
-            return this.activityType != null;       
+            return this.activityType != null;
         }
 
         /// <summary>
@@ -100,7 +117,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
 
         /// <summary>
@@ -137,7 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;       
+            return this.control != null;
         }
 
         /// <summary>
@@ -174,7 +191,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -214,7 +231,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleToCloseTimeout property is set
         internal bool IsSetScheduleToCloseTimeout()
         {
-            return this.scheduleToCloseTimeout != null;       
+            return this.scheduleToCloseTimeout != null;
         }
 
         /// <summary>
@@ -246,7 +263,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -288,7 +305,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleToStartTimeout property is set
         internal bool IsSetScheduleToStartTimeout()
         {
-            return this.scheduleToStartTimeout != null;       
+            return this.scheduleToStartTimeout != null;
         }
 
         /// <summary>
@@ -329,7 +346,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartToCloseTimeout property is set
         internal bool IsSetStartToCloseTimeout()
         {
-            return this.startToCloseTimeout != null;       
+            return this.startToCloseTimeout != null;
         }
 
         /// <summary>
@@ -370,7 +387,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if HeartbeatTimeout property is set
         internal bool IsSetHeartbeatTimeout()
         {
-            return this.heartbeatTimeout != null;       
+            return this.heartbeatTimeout != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains information about a workflow execution. </para>
     /// </summary>
-    public class WorkflowExecutionInfo  
+    public class WorkflowExecutionInfo
     {
         
         private WorkflowExecution execution;
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Execution property is set
         internal bool IsSetExecution()
         {
-            return this.execution != null;       
+            return this.execution != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowType property is set
         internal bool IsSetWorkflowType()
         {
-            return this.workflowType != null;       
+            return this.workflowType != null;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartTimestamp property is set
         internal bool IsSetStartTimestamp()
         {
-            return this.startTimestamp.HasValue;       
+            return this.startTimestamp.HasValue;
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CloseTimestamp property is set
         internal bool IsSetCloseTimestamp()
         {
-            return this.closeTimestamp.HasValue;       
+            return this.closeTimestamp.HasValue;
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionStatus property is set
         internal bool IsSetExecutionStatus()
         {
-            return this.executionStatus != null;       
+            return this.executionStatus != null;
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CloseStatus property is set
         internal bool IsSetCloseStatus()
         {
-            return this.closeStatus != null;       
+            return this.closeStatus != null;
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Parent property is set
         internal bool IsSetParent()
         {
-            return this.parent != null;       
+            return this.parent != null;
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TagList collection
         /// </summary>
@@ -306,7 +306,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this.tagList.Count > 0;       
+            return this.tagList.Count > 0;
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelRequested property is set
         internal bool IsSetCancelRequested()
         {
-            return this.cancelRequested.HasValue;       
+            return this.cancelRequested.HasValue;
         }
     }
 }

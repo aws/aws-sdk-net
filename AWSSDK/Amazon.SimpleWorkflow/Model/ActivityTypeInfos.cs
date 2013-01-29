@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains a paginated list of activity type information structures. </para>
     /// </summary>
-    public class ActivityTypeInfos  
+    public class ActivityTypeInfos
     {
         
         private List<ActivityTypeInfo> typeInfos = new List<ActivityTypeInfo>();
@@ -52,7 +52,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TypeInfos collection
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TypeInfos property is set
         internal bool IsSetTypeInfos()
         {
-            return this.typeInfos.Count > 0;       
+            return this.typeInfos.Count > 0;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;       
+            return this.nextPageToken != null;
         }
     }
 }

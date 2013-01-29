@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// return an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an
     /// empty string. If a task is returned, the worker should use its type to identify and process it correctly. </para> <para><b>IMPORTANT:</b>
     /// Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold the
-    /// poll request). </para>
+    /// poll request). </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF
+    /// resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.PollForActivityTask"/>
     public class PollForActivityTaskRequest : AmazonWebServiceRequest
@@ -74,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -104,7 +114,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -142,7 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;       
+            return this.identity != null;
         }
     }
 }

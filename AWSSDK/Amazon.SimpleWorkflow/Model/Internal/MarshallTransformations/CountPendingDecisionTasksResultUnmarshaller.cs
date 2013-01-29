@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,33 +11,33 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System.Collections.Generic;
-    using Amazon.Runtime.Internal.Transform; 
-    
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// Result Unmarshaller for CountPendingDecisionTasks operation 
-      /// </summary> 
-      internal class CountPendingDecisionTasksResultUnmarshaller : IUnmarshaller<CountPendingDecisionTasksResult, JsonUnmarshallerContext> 
-      { 
-        public CountPendingDecisionTasksResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
+    using Amazon.Runtime.Internal.Transform;
+
+    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// Result Unmarshaller for CountPendingDecisionTasks operation
+      /// </summary>
+      internal class CountPendingDecisionTasksResultUnmarshaller : IUnmarshaller<CountPendingDecisionTasksResult, JsonUnmarshallerContext>
+      {
+        public CountPendingDecisionTasksResult Unmarshall(JsonUnmarshallerContext context)
+        {
           CountPendingDecisionTasksResult result = new CountPendingDecisionTasksResult();
-          result.PendingTaskCount = PendingTaskCountUnmarshaller.GetInstance().Unmarshall(context); 
-          return result; 
-        } 
-              
-        private static CountPendingDecisionTasksResultUnmarshaller instance; 
-        public static CountPendingDecisionTasksResultUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
+          result.PendingTaskCount = PendingTaskCountUnmarshaller.GetInstance().Unmarshall(context);
+          return result;
+        }
+
+        private static CountPendingDecisionTasksResultUnmarshaller instance;
+        public static CountPendingDecisionTasksResultUnmarshaller GetInstance()
+        {
+          if (instance == null)
           {
-            instance = new CountPendingDecisionTasksResultUnmarshaller(); 
-          } 
-          return instance; 
-        } 
-      } 
-    } 
+            instance = new CountPendingDecisionTasksResultUnmarshaller();
+          }
+          return instance;
+        }
+      }
+    }
   

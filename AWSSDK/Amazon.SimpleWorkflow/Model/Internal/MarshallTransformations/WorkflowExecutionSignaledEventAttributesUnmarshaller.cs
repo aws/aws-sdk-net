@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,77 +11,80 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
-    using System.Collections.Generic; 
-    using Amazon.SimpleWorkflow.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.SimpleWorkflow.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// WorkflowExecutionSignaledEventAttributesUnmarshaller 
-      /// </summary> 
-      internal class WorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// WorkflowExecutionSignaledEventAttributesUnmarshaller
+      /// </summary>
+      internal class WorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext>
+      {
         WorkflowExecutionSignaledEventAttributes IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public WorkflowExecutionSignaledEventAttributes Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes = new WorkflowExecutionSignaledEventAttributes();
+
+        public WorkflowExecutionSignaledEventAttributes Unmarshall(JsonUnmarshallerContext context)
+        {
+            WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes = new WorkflowExecutionSignaledEventAttributes();
           
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
-               
-              if (context.TestExpression("SignalName", targetDepth)) 
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("SignalName", targetDepth))
               {
                 workflowExecutionSignaledEventAttributes.SignalName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Input", targetDepth)) 
+  
+              if (context.TestExpression("Input", targetDepth))
               {
                 workflowExecutionSignaledEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("ExternalWorkflowExecution", targetDepth)) 
+  
+              if (context.TestExpression("ExternalWorkflowExecution", targetDepth))
               {
                 workflowExecutionSignaledEventAttributes.ExternalWorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("ExternalInitiatedEventId", targetDepth)) 
+  
+              if (context.TestExpression("ExternalInitiatedEventId", targetDepth))
               {
                 workflowExecutionSignaledEventAttributes.ExternalInitiatedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-            } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return workflowExecutionSignaledEventAttributes; 
-            } 
-          } 
-          return workflowExecutionSignaledEventAttributes; 
-        } 
-        
-        private static WorkflowExecutionSignaledEventAttributesUnmarshaller instance; 
-        public static WorkflowExecutionSignaledEventAttributesUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
-            instance = new WorkflowExecutionSignaledEventAttributesUnmarshaller(); 
-          return instance;
-        } 
-      } 
-    } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return workflowExecutionSignaledEventAttributes;
+                }
+            }
+          
+
+            return workflowExecutionSignaledEventAttributes;
+        }
+
+        private static WorkflowExecutionSignaledEventAttributesUnmarshaller instance;
+        public static WorkflowExecutionSignaledEventAttributesUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new WorkflowExecutionSignaledEventAttributesUnmarshaller();
+            return instance;
+        }
+    }
+}
   

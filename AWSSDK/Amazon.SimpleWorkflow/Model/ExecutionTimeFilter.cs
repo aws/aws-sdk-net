@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,9 +22,10 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule
-    /// that must be satisfied by each returned query result. </para>
+    /// that must be satisfied by each returned query result. The parameter values are in the Unix Time format. For example: "oldestDate":
+    /// 1325376070. </para>
     /// </summary>
-    public class ExecutionTimeFilter  
+    public class ExecutionTimeFilter
     {
         
         private DateTime? oldestDate;
@@ -55,7 +56,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OldestDate property is set
         internal bool IsSetOldestDate()
         {
-            return this.oldestDate.HasValue;       
+            return this.oldestDate.HasValue;
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if LatestDate property is set
         internal bool IsSetLatestDate()
         {
-            return this.latestDate.HasValue;       
+            return this.latestDate.HasValue;
         }
     }
 }

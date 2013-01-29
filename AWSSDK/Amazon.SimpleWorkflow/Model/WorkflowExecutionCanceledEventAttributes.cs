@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>WorkflowExecutionCanceled</c> event. </para>
     /// </summary>
-    public class WorkflowExecutionCanceledEventAttributes  
+    public class WorkflowExecutionCanceledEventAttributes
     {
         
         private string details;
@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;       
+            return this.details != null;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
     }
 }

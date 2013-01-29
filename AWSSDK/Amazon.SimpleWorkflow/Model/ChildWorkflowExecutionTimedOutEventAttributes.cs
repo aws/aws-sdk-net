@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>ChildWorkflowExecutionTimedOut</c> event. </para>
     /// </summary>
-    public class ChildWorkflowExecutionTimedOutEventAttributes  
+    public class ChildWorkflowExecutionTimedOutEventAttributes
     {
         
         private WorkflowExecution workflowExecution;
@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecution property is set
         internal bool IsSetWorkflowExecution()
         {
-            return this.workflowExecution != null;       
+            return this.workflowExecution != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowType property is set
         internal bool IsSetWorkflowType()
         {
-            return this.workflowType != null;       
+            return this.workflowType != null;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TimeoutType property is set
         internal bool IsSetTimeoutType()
         {
-            return this.timeoutType != null;       
+            return this.timeoutType != null;
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if InitiatedEventId property is set
         internal bool IsSetInitiatedEventId()
         {
-            return this.initiatedEventId.HasValue;       
+            return this.initiatedEventId.HasValue;
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartedEventId property is set
         internal bool IsSetStartedEventId()
         {
-            return this.startedEventId.HasValue;       
+            return this.startedEventId.HasValue;
         }
     }
 }

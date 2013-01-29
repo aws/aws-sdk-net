@@ -18,6 +18,8 @@ using System.Text;
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace Amazon.Runtime
 {
@@ -27,6 +29,7 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class ClientConfig
     {
+        private const string LOGMETRICS = "AWSLogMetrics";
 
         private RegionEndpoint regionEndpoint;
 
@@ -48,6 +51,24 @@ namespace Amazon.Runtime
         private bool useNagleAlgorithm = false;
         private int bufferSize = Amazon.S3.Util.S3Constants.DefaultBufferSize;
         private bool resignRetries = false;
+        private bool logMetrics = GetLogMetricsConfig();
+
+        private static bool? cachedLogMetrics = null;
+        // Gets the LogMetrics configuration
+        private static bool GetLogMetricsConfig()
+        {
+            if (cachedLogMetrics == null)
+            {
+                NameValueCollection appConfig = ConfigurationManager.AppSettings;
+                string logMetricsValue = appConfig[LOGMETRICS];
+                bool logMetrics;
+                if (string.IsNullOrEmpty(logMetricsValue) || !bool.TryParse(logMetricsValue, out logMetrics))
+                    logMetrics = false;
+
+                cachedLogMetrics = logMetrics;
+            }
+            return cachedLogMetrics.Value;
+        }
 
         /// <summary>
         /// Gets Service Version
@@ -303,6 +324,25 @@ namespace Amazon.Runtime
         {
             get { return this.resignRetries; }
             set { this.resignRetries = value; }
+        }
+
+        /// <summary>
+        /// Flag on whether to log metrics for service calls.
+        /// 
+        /// This can be set in the application's configs, as below:
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSLogMetrics" value"true"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        public bool LogMetrics
+        {
+            get { return this.logMetrics; }
+            set { this.logMetrics = value; }
         }
     }
 }

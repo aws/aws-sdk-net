@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains the count of workflow executions returned from CountOpenWorkflowExecutions or CountClosedWorkflowExecutions </para>
     /// </summary>
-    public class WorkflowExecutionCount  
+    public class WorkflowExecutionCount
     {
         
         private int? count;
@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Count property is set
         internal bool IsSetCount()
         {
-            return this.count.HasValue;       
+            return this.count.HasValue;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Truncated property is set
         internal bool IsSetTruncated()
         {
-            return this.truncated.HasValue;       
+            return this.truncated.HasValue;
         }
     }
 }

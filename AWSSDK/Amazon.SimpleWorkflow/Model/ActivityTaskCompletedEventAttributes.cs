@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>ActivityTaskCompleted</c> event. </para>
     /// </summary>
-    public class ActivityTaskCompletedEventAttributes  
+    public class ActivityTaskCompletedEventAttributes
     {
         
         private string result;
@@ -64,7 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this.result != null;       
+            return this.result != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduledEventId property is set
         internal bool IsSetScheduledEventId()
         {
-            return this.scheduledEventId.HasValue;       
+            return this.scheduledEventId.HasValue;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartedEventId property is set
         internal bool IsSetStartedEventId()
         {
-            return this.startedEventId.HasValue;       
+            return this.startedEventId.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,24 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the RegisterActivityType operation.
     /// <para> Registers a new <i>activity type</i> along with its configuration settings in the specified domain. </para> <para><b>IMPORTANT:</b> A
     /// TypeAlreadyExists fault is returned if the type already exists in the domain. You cannot change any configuration settings of the type after
-    /// its registration, and it must be registered as a new version. </para>
+    /// its registration, and it must be registered as a new version. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to
+    /// control this action's access to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <ul>
+    /// <li> <c>defaultTaskList</c> : String constraint. The key is <c>swf:defaultTaskList.name</c> .</li>
+    /// <li> <c>name</c> : String constraint. The key is <c>swf:name</c> .</li>
+    /// <li> <c>version</c> : String constraint. The key is <c>swf:version</c> .</li>
+    /// 
+    /// </ul>
+    /// </li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RegisterActivityType"/>
     public class RegisterActivityTypeRequest : AmazonWebServiceRequest
@@ -76,7 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -115,7 +132,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -154,7 +171,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Version property is set
         internal bool IsSetVersion()
         {
-            return this.version != null;       
+            return this.version != null;
         }
 
         /// <summary>
@@ -191,7 +208,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -230,7 +247,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskStartToCloseTimeout property is set
         internal bool IsSetDefaultTaskStartToCloseTimeout()
         {
-            return this.defaultTaskStartToCloseTimeout != null;       
+            return this.defaultTaskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -273,7 +290,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskHeartbeatTimeout property is set
         internal bool IsSetDefaultTaskHeartbeatTimeout()
         {
-            return this.defaultTaskHeartbeatTimeout != null;       
+            return this.defaultTaskHeartbeatTimeout != null;
         }
 
         /// <summary>
@@ -302,7 +319,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskList property is set
         internal bool IsSetDefaultTaskList()
         {
-            return this.defaultTaskList != null;       
+            return this.defaultTaskList != null;
         }
 
         /// <summary>
@@ -342,7 +359,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskScheduleToStartTimeout property is set
         internal bool IsSetDefaultTaskScheduleToStartTimeout()
         {
-            return this.defaultTaskScheduleToStartTimeout != null;       
+            return this.defaultTaskScheduleToStartTimeout != null;
         }
 
         /// <summary>
@@ -381,7 +398,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DefaultTaskScheduleToCloseTimeout property is set
         internal bool IsSetDefaultTaskScheduleToCloseTimeout()
         {
-            return this.defaultTaskScheduleToCloseTimeout != null;       
+            return this.defaultTaskScheduleToCloseTimeout != null;
         }
     }
 }

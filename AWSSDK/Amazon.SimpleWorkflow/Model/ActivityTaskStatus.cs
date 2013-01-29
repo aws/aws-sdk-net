@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Status information about an activity task. </para>
     /// </summary>
-    public class ActivityTaskStatus  
+    public class ActivityTaskStatus
     {
         
         private bool? cancelRequested;
@@ -53,7 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelRequested property is set
         internal bool IsSetCancelRequested()
         {
-            return this.cancelRequested.HasValue;       
+            return this.cancelRequested.HasValue;
         }
     }
 }

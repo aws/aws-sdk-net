@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains details about a workflow execution. </para>
     /// </summary>
-    public class WorkflowExecutionDetail  
+    public class WorkflowExecutionDetail
     {
         
         private WorkflowExecutionInfo executionInfo;
@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionInfo property is set
         internal bool IsSetExecutionInfo()
         {
-            return this.executionInfo != null;       
+            return this.executionInfo != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionConfiguration property is set
         internal bool IsSetExecutionConfiguration()
         {
-            return this.executionConfiguration != null;       
+            return this.executionConfiguration != null;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if OpenCounts property is set
         internal bool IsSetOpenCounts()
         {
-            return this.openCounts != null;       
+            return this.openCounts != null;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if LatestActivityTaskTimestamp property is set
         internal bool IsSetLatestActivityTaskTimestamp()
         {
-            return this.latestActivityTaskTimestamp.HasValue;       
+            return this.latestActivityTaskTimestamp.HasValue;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if LatestExecutionContext property is set
         internal bool IsSetLatestExecutionContext()
         {
-            return this.latestExecutionContext != null;       
+            return this.latestExecutionContext != null;
         }
     }
 }

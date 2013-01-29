@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>TimerStarted</c> event. </para>
     /// </summary>
-    public class TimerStartedEventAttributes  
+    public class TimerStartedEventAttributes
     {
         
         private string timerId;
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TimerId property is set
         internal bool IsSetTimerId()
         {
-            return this.timerId != null;       
+            return this.timerId != null;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;       
+            return this.control != null;
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartToFireTimeout property is set
         internal bool IsSetStartToFireTimeout()
         {
-            return this.startToFireTimeout != null;       
+            return this.startToFireTimeout != null;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
     }
 }

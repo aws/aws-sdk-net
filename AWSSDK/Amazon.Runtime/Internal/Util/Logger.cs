@@ -20,6 +20,9 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Util
 {
+    /// <summary>
+    /// A single logged message
+    /// </summary>
     public class LogMessage
     {
         public object[] Args { get; private set; }
@@ -150,7 +153,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Simple wrapper around the log4net IsErrorEnabled property.
         /// </summary>
-        public bool IsErrorEnabled
+        private bool IsErrorEnabled
         {
             get
             {
@@ -162,15 +165,15 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-
         /// <summary>
         /// Simple wrapper around the log4net Error method.
         /// </summary>
-        /// <param name="message"></param>
         /// <param name="exception"></param>
-        public void Error(string message, Exception exception)
+        /// <param name="messageFormat"></param>
+        /// <param name="args"></param>
+        public void Error(Exception exception, string messageFormat, params object[] args)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || errorLevelPropertyValue == null)
+            if (!IsErrorEnabled)
                 return;
 
             logMethod.Invoke(
@@ -178,7 +181,7 @@ namespace Amazon.Runtime.Internal.Util
                 new object[]
                 {
                     loggerType, errorLevelPropertyValue,
-                    new LogMessage(CultureInfo.InvariantCulture, message),
+                    new LogMessage(CultureInfo.InvariantCulture, messageFormat, args),
                     exception
                 });
         }
@@ -186,7 +189,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Simple wrapper around the log4net IsDebugEnabled property.
         /// </summary>
-        public bool IsDebugEnabled
+        private bool IsDebugEnabled
         {
             get
             {
@@ -201,11 +204,12 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Simple wrapper around the log4net Debug method.
         /// </summary>
-        /// <param name="message"></param>
         /// <param name="exception"></param>
-        public void Debug(string message, Exception exception)
+        /// <param name="messageFormat"></param>
+        /// <param name="args"></param>
+        public void Debug(Exception exception, string messageFormat, params object[] args)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || debugLevelPropertyValue == null)
+            if (!IsDebugEnabled)
                 return;
 
             logMethod.Invoke(
@@ -213,7 +217,7 @@ namespace Amazon.Runtime.Internal.Util
                 new object[]
                 {
                     loggerType, debugLevelPropertyValue,
-                    new LogMessage(CultureInfo.InvariantCulture, message),
+                    new LogMessage(CultureInfo.InvariantCulture, messageFormat, args),
                     exception
                 });
         }
@@ -225,7 +229,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void DebugFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || debugLevelPropertyValue == null)
+            if (!IsDebugEnabled)
                 return;
 
             logMethod.Invoke(
@@ -242,7 +246,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Simple wrapper around the log4net IsInfoEnabled property.
         /// </summary>
-        public bool IsInfoEnabled
+        private bool IsInfoEnabled
         {
             get
             {
@@ -261,7 +265,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void InfoFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || infoLevelPropertyValue == null)
+            if (!IsInfoEnabled)
                 return;
 
             logMethod.Invoke(

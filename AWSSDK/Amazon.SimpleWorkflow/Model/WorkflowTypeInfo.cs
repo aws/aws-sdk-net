@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Contains information about a workflow type. </para>
     /// </summary>
-    public class WorkflowTypeInfo  
+    public class WorkflowTypeInfo
     {
         
         private WorkflowType workflowType;
@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowType property is set
         internal bool IsSetWorkflowType()
         {
-            return this.workflowType != null;       
+            return this.workflowType != null;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DeprecationDate property is set
         internal bool IsSetDeprecationDate()
         {
-            return this.deprecationDate.HasValue;       
+            return this.deprecationDate.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>ActivityTaskScheduled</c> event. </para>
     /// </summary>
-    public class ActivityTaskScheduledEventAttributes  
+    public class ActivityTaskScheduledEventAttributes
     {
         
         private ActivityType activityType;
@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityType property is set
         internal bool IsSetActivityType()
         {
-            return this.activityType != null;       
+            return this.activityType != null;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;       
+            return this.control != null;
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleToStartTimeout property is set
         internal bool IsSetScheduleToStartTimeout()
         {
-            return this.scheduleToStartTimeout != null;       
+            return this.scheduleToStartTimeout != null;
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleToCloseTimeout property is set
         internal bool IsSetScheduleToCloseTimeout()
         {
-            return this.scheduleToCloseTimeout != null;       
+            return this.scheduleToCloseTimeout != null;
         }
 
         /// <summary>
@@ -284,7 +284,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartToCloseTimeout property is set
         internal bool IsSetStartToCloseTimeout()
         {
-            return this.startToCloseTimeout != null;       
+            return this.startToCloseTimeout != null;
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -341,7 +341,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
 
         /// <summary>
@@ -380,7 +380,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if HeartbeatTimeout property is set
         internal bool IsSetHeartbeatTimeout()
         {
-            return this.heartbeatTimeout != null;       
+            return this.heartbeatTimeout != null;
         }
     }
 }

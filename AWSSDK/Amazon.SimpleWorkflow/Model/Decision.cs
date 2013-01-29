@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,33 +23,44 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Specifies a decision made by the decider. A decision can be one of these types: </para>
     /// <ul>
-    /// <li> <b>ScheduleActivityTask</b> schedules an activity task.</li>
+    /// <li> <b>CancelTimer</b> cancels a previously started timer and records a <c>TimerCanceled</c> event in the history.</li>
+    /// <li> <b>CancelWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionCanceled</c> event in the history.</li>
+    /// <li> <b>CompleteWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionCompleted</c> event in the history
+    /// .</li>
+    /// <li> <b>ContinueAsNewWorkflowExecution</b> closes the workflow execution and starts a new workflow execution of the same type using the
+    /// same workflow id and a unique run Id. A <c>WorkflowExecutionContinuedAsNew</c> event is recorded in the history.</li>
+    /// <li> <b>FailWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionFailed</c> event in the history.</li>
+    /// <li> <b>RecordMarker</b> records a <c>MarkerRecorded</c> event in the history. Markers can be used for adding custom information in the
+    /// history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li>
     /// <li> <b>RequestCancelActivityTask</b> attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has
     /// not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be
     /// informed that cancellation has been requested in the response to RecordActivityTaskHeartbeat.</li>
-    /// <li> <b>RecordMarker</b> records a <c>MarkerRecorded</c> event in the history. Markers can be used for adding custom information in the
-    /// history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li>
-    /// <li> <b>CompleteWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionCompleted</c> event in the history
-    /// .</li>
-    /// <li> <b>FailWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionFailed</c> event in the history.</li>
-    /// <li> <b>CancelWorkflowExecution</b> closes the workflow execution and records a <c>WorkflowExecutionCanceled</c> event in the history.</li>
-    /// <li> <b>ContinueAsNewWorkflowExecution</b> closes the workflow execution and starts a new workflow execution of the same type using the
-    /// same workflow id and a unique run Id. A <c>WorkflowExecutionContinuedAsNew</c> event is recorded in the history.</li>
-    /// <li> <b>StartTimer</b> starts a timer for this workflow execution and records a <c>TimerStarted</c> event in the history. This timer will
-    /// fire after the specified delay and record a <c>TimerFired</c> event.</li>
-    /// <li> <b>CancelTimer</b> cancels a previously started timer and records a <c>TimerCanceled</c> event in the history.</li>
-    /// <li> <b>SignalExternalWorkflowExecution</b> requests a signal to be delivered to the specified external workflow execution and records a
-    /// <c>SignalExternalWorkflowExecutionInitiated</c> event in the history.</li>
     /// <li> <b>RequestCancelExternalWorkflowExecution</b> requests that a request be made to cancel the specified external workflow execution and
     /// records a <c>RequestCancelExternalWorkflowExecutionInitiated</c> event in the history.</li>
+    /// <li> <b>ScheduleActivityTask</b> schedules an activity task.</li>
+    /// <li> <b>SignalExternalWorkflowExecution</b> requests a signal to be delivered to the specified external workflow execution and records a
+    /// <c>SignalExternalWorkflowExecutionInitiated</c> event in the history.</li>
     /// <li> <b>StartChildWorkflowExecution</b> requests that a child workflow execution be started and records a
     /// <c>StartChildWorkflowExecutionInitiated</c> event in the history. The child workflow execution is a separate workflow execution with its own
     /// history.</li>
+    /// <li> <b>StartTimer</b> starts a timer for this workflow execution and records a <c>TimerStarted</c> event in the history. This timer will
+    /// fire after the specified delay and record a <c>TimerFired</c> event.</li>
     /// 
     /// </ul>
-    /// <para> The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow
-    /// execution and will therefore fail. A decision might also fail due to a limit being reached on your account. One of the following events
-    /// might be added to the history to indicate an error: </para>
+    /// <para> <b>Access Control</b> </para> <para>If you grant permission to use <c>RespondDecisionTaskCompleted</c> , you can use IAM policies to
+    /// express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API
+    /// maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see Using IAM to Manage Access
+    /// to Amazon SWF Workflows.</para> <para> <b>Decision Failure</b> </para> <para>Decisions can fail for several reasons</para>
+    /// <ul>
+    /// <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow
+    /// execution and will therefore fail.</li>
+    /// <li>A limit on your account was reached.</li>
+    /// <li>The decision lacks sufficient permissions.</li>
+    /// 
+    /// </ul>
+    /// <para>One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter
+    /// indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions.
+    /// </para>
     /// <ul>
     /// <li> <b>ScheduleActivityTaskFailed</b> a ScheduleActivityTask decision failed. This could happen if the activity type specified in the
     /// decision is not registered, is in a deprecated state, or the decision is not properly configured.</li>
@@ -81,8 +92,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race
     /// conditions in a distributed system. The right action here is to call RespondDecisionTaskCompleted without any decisions. This would result
     /// in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the
-    /// workflow execution. </para> <para> You must code a decision by first setting the decision type field to one of the above decision values,
-    /// and then set the corresponding attributes field shown below: </para>
+    /// workflow execution. </para> <para> <b>How to Code a Decision</b> </para> <para> You code a decision by first setting the decision type field
+    /// to one of the above decision values, and then set the corresponding attributes field shown below: </para>
     /// <ul>
     /// <li> ScheduleActivityTaskDecisionAttributes </li>
     /// <li> RequestCancelActivityTaskDecisionAttributes </li>
@@ -99,7 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Decision  
+    public class Decision
     {
         
         private string decisionType;
@@ -150,7 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionType property is set
         internal bool IsSetDecisionType()
         {
-            return this.decisionType != null;       
+            return this.decisionType != null;
         }
 
         /// <summary>
@@ -178,7 +189,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleActivityTaskDecisionAttributes property is set
         internal bool IsSetScheduleActivityTaskDecisionAttributes()
         {
-            return this.scheduleActivityTaskDecisionAttributes != null;       
+            return this.scheduleActivityTaskDecisionAttributes != null;
         }
 
         /// <summary>
@@ -206,7 +217,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RequestCancelActivityTaskDecisionAttributes property is set
         internal bool IsSetRequestCancelActivityTaskDecisionAttributes()
         {
-            return this.requestCancelActivityTaskDecisionAttributes != null;       
+            return this.requestCancelActivityTaskDecisionAttributes != null;
         }
 
         /// <summary>
@@ -234,7 +245,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CompleteWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetCompleteWorkflowExecutionDecisionAttributes()
         {
-            return this.completeWorkflowExecutionDecisionAttributes != null;       
+            return this.completeWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -262,7 +273,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if FailWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetFailWorkflowExecutionDecisionAttributes()
         {
-            return this.failWorkflowExecutionDecisionAttributes != null;       
+            return this.failWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -290,7 +301,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetCancelWorkflowExecutionDecisionAttributes()
         {
-            return this.cancelWorkflowExecutionDecisionAttributes != null;       
+            return this.cancelWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -318,7 +329,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ContinueAsNewWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetContinueAsNewWorkflowExecutionDecisionAttributes()
         {
-            return this.continueAsNewWorkflowExecutionDecisionAttributes != null;       
+            return this.continueAsNewWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -346,7 +357,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RecordMarkerDecisionAttributes property is set
         internal bool IsSetRecordMarkerDecisionAttributes()
         {
-            return this.recordMarkerDecisionAttributes != null;       
+            return this.recordMarkerDecisionAttributes != null;
         }
 
         /// <summary>
@@ -374,7 +385,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartTimerDecisionAttributes property is set
         internal bool IsSetStartTimerDecisionAttributes()
         {
-            return this.startTimerDecisionAttributes != null;       
+            return this.startTimerDecisionAttributes != null;
         }
 
         /// <summary>
@@ -402,7 +413,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelTimerDecisionAttributes property is set
         internal bool IsSetCancelTimerDecisionAttributes()
         {
-            return this.cancelTimerDecisionAttributes != null;       
+            return this.cancelTimerDecisionAttributes != null;
         }
 
         /// <summary>
@@ -430,7 +441,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if SignalExternalWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetSignalExternalWorkflowExecutionDecisionAttributes()
         {
-            return this.signalExternalWorkflowExecutionDecisionAttributes != null;       
+            return this.signalExternalWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -458,7 +469,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RequestCancelExternalWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetRequestCancelExternalWorkflowExecutionDecisionAttributes()
         {
-            return this.requestCancelExternalWorkflowExecutionDecisionAttributes != null;       
+            return this.requestCancelExternalWorkflowExecutionDecisionAttributes != null;
         }
 
         /// <summary>
@@ -486,7 +497,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartChildWorkflowExecutionDecisionAttributes property is set
         internal bool IsSetStartChildWorkflowExecutionDecisionAttributes()
         {
-            return this.startChildWorkflowExecutionDecisionAttributes != null;       
+            return this.startChildWorkflowExecutionDecisionAttributes != null;
         }
     }
 }

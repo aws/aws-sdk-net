@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// appropriate actions when it receives an execution history with this event. </para> <para><b>NOTE:</b> If the runId is not specified, the
     /// WorkflowExecutionCancelRequested event is recorded in the history of the current open workflow execution with the specified workflowId in
     /// the domain. </para> <para><b>NOTE:</b> Because this action allows the workflow to properly clean up and gracefully close, it should be used
-    /// instead of TerminateWorkflowExecution when possible. </para>
+    /// instead of TerminateWorkflowExecution when possible. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control
+    /// this action's access to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RequestCancelWorkflowExecution"/>
     public class RequestCancelWorkflowExecutionRequest : AmazonWebServiceRequest
@@ -73,7 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -110,7 +120,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowId property is set
         internal bool IsSetWorkflowId()
         {
-            return this.workflowId != null;       
+            return this.workflowId != null;
         }
 
         /// <summary>
@@ -147,7 +157,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RunId property is set
         internal bool IsSetRunId()
         {
-            return this.runId != null;       
+            return this.runId != null;
         }
     }
 }

@@ -1261,7 +1261,7 @@ namespace Amazon.SimpleDB
             catch (Exception e)
             {
                 sdbAsyncResult.RequestState.WebRequest.Abort();
-                LOGGER.Error("Error for GetRequestStream", e);
+                LOGGER.Error(e, "Error for GetRequestStream");
                 sdbAsyncResult.Exception = e;
 
                 sdbAsyncResult.SignalWaitHandle();
@@ -1310,7 +1310,7 @@ namespace Amazon.SimpleDB
             catch (Exception e)
             {
                 sdbAsyncResult.RequestState.WebRequest.Abort();
-                LOGGER.Error("Error for GetResponse", e);
+                LOGGER.Error(e, "Error for GetResponse");
                 sdbAsyncResult.Exception = e;
                 shouldRetry = false;
             }

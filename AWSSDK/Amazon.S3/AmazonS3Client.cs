@@ -2101,8 +2101,7 @@ namespace Amazon.S3
                 }
                 catch (Exception e)
                 {
-                    if (LOGGER.IsDebugEnabled) 
-                        LOGGER.Error("Error closing stream after PutObject.", e);
+                    LOGGER.Error(e, "Error closing stream after PutObject.");
                 }
             }
         }
@@ -5853,8 +5852,7 @@ namespace Amazon.S3
                 string actionName = parameters[S3QueryParameter.Action];
                 string verb = parameters[S3QueryParameter.Verb];
 
-                if (LOGGER.IsDebugEnabled)
-                    LOGGER.DebugFormat("Starting request (id {0}) for {0}", s3AsyncResult.S3Request.Id, actionName);
+                LOGGER.DebugFormat("Starting request (id {0}) for {0}", s3AsyncResult.S3Request.Id, actionName);
 
                 // Variables that pertain to PUT requests
                 byte[] requestData = Encoding.UTF8.GetBytes("");
@@ -5868,8 +5866,7 @@ namespace Amazon.S3
                     {
                         string reqBody = parameters[S3QueryParameter.ContentBody];
                         s3AsyncResult.S3Request.BytesProcessed = reqBody.Length;
-                        if (LOGGER.IsDebugEnabled) 
-                            LOGGER.DebugFormat("Request (id {0}) body's length [{1}]", s3AsyncResult.S3Request.Id, reqBody.Length);
+                        LOGGER.DebugFormat("Request (id {0}) body's length [{1}]", s3AsyncResult.S3Request.Id, reqBody.Length);
                         requestData = Encoding.UTF8.GetBytes(reqBody);
 
                         // Since there is a request body, determine the length of the
@@ -5939,7 +5936,7 @@ namespace Amazon.S3
                 }
                 catch (Exception e)
                 {
-                    LOGGER.Error("Error starting async http operation", e);
+                    LOGGER.Error(e, "Error starting async http operation");
                     throw;
                 }
             }
@@ -6028,7 +6025,7 @@ namespace Amazon.S3
             catch (Exception e)
             {
                 s3AsyncResult.RequestState.WebRequest.Abort();
-                LOGGER.Error("Error for GetRequestStream", e);
+                LOGGER.Error(e, "Error for GetRequestStream");
                 s3AsyncResult.Exception = e;
 
                 s3AsyncResult.SignalWaitHandle();
@@ -6105,7 +6102,7 @@ namespace Amazon.S3
             }
             catch (Exception e)
             {
-                LOGGER.Error("Error for GetResponse", e);
+                LOGGER.Error(e, "Error for GetResponse");
                 s3AsyncResult.Exception = e;
                 shouldRetry = false;
             }
@@ -6222,8 +6219,7 @@ namespace Amazon.S3
 
             if (retries <= this.config.MaxErrorRetry)
             {
-                if (LOGGER.IsInfoEnabled) 
-                    LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
+                LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
             }
             long pauseStart = userRequest.StopWatch.ElapsedTicks;
             pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode, requestAddr, respHdrs, cause);
@@ -6240,8 +6236,7 @@ namespace Amazon.S3
                 throw e;
 
             string actionName = userRequest.parameters[S3QueryParameter.Action];
-            if (LOGGER.IsErrorEnabled) 
-                LOGGER.Error(string.Format("Error making request {0}.", actionName), e);
+            LOGGER.Error(e, "Error making request {0}.", actionName);
             if (httpResponse != null)
             {
                 httpResponse.Close();
@@ -6268,9 +6263,7 @@ namespace Amazon.S3
             string actionName = userRequest.parameters[S3QueryParameter.Action];
             string requestAddr = request.Address.ToString();
 
-            if (LOGGER.IsDebugEnabled) 
-                LOGGER.Debug(string.Format("Error making request {0}.", actionName), we);
-
+            LOGGER.Debug(we, "Error making request {0}.", actionName);
 
             bool shouldRetry;
             using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
@@ -6320,8 +6313,7 @@ namespace Amazon.S3
 
             bool shouldRetry;
             respHdrs = httpResponse.Headers;
-            if (LOGGER.IsInfoEnabled) 
-                LOGGER.InfoFormat("Received response for {0} (id {1}) with status code {2} in {3}.", actionName, userRequest.Id, httpResponse.StatusCode, lengthOfRequest);
+            LOGGER.InfoFormat("Received response for {0} (id {1}) with status code {2} in {3}.", actionName, userRequest.Id, httpResponse.StatusCode, lengthOfRequest);
 
             statusCode = httpResponse.StatusCode;
             if (!isRedirect(httpResponse))
@@ -6342,8 +6334,7 @@ namespace Amazon.S3
                 shouldRetry = true;
 
                 processRedirect(userRequest, httpResponse);
-                if (LOGGER.IsInfoEnabled) 
-                    LOGGER.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
+                LOGGER.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
                 long pauseStart = userRequest.StopWatch.ElapsedTicks;
                 pauseOnRetry(retries + 1, this.config.MaxErrorRetry, statusCode, requestAddr, httpResponse.Headers, cause);
@@ -6539,12 +6530,11 @@ namespace Amazon.S3
                             long objectCreated = request.StopWatch.ElapsedTicks;
                             request.ResponseReadTime = streamParsed - streamRead;
                             request.ResponseProcessingTime = objectCreated - streamParsed;
-                            if (LOGGER.IsInfoEnabled) 
-                                LOGGER.InfoFormat("Done reading response stream for request (id {0}). Stream read: {1}. Object create: {2}. Length of body: {3}",
-                                    request.Id,
-                                    request.ResponseReadTime,
-                                    request.ResponseProcessingTime,
-                                    request.BytesProcessed);
+                            LOGGER.InfoFormat("Done reading response stream for request (id {0}). Stream read: {1}. Object create: {2}. Length of body: {3}",
+                                request.Id,
+                                request.ResponseReadTime,
+                                request.ResponseProcessingTime,
+                                request.BytesProcessed);
                         }
                         else
                         {
@@ -6603,8 +6593,7 @@ namespace Amazon.S3
 
             if (errorResponse == null)
             {
-                if (LOGGER.IsErrorEnabled) 
-                    LOGGER.Error(string.Format("Error making request {0}.", actionName), we);
+                LOGGER.Error(we, "Error making request {0}.", actionName);
                 throw we;
             }
 
@@ -6640,8 +6629,7 @@ namespace Amazon.S3
                     respHdrs
                     );
 
-                if (LOGGER.IsErrorEnabled) 
-                    LOGGER.Error(string.Format("Error making request {0}.", actionName), excep);
+                LOGGER.Error(excep, "Error making request {0}.", actionName);
                 throw excep;
             }
 
@@ -6671,8 +6659,7 @@ namespace Amazon.S3
                         respHdrs
                         );
 
-                    if (LOGGER.IsErrorEnabled) 
-                        LOGGER.Error(string.Format("Error making request {0}.", actionName), excep);
+                    LOGGER.Error(excep, "Error making request {0}.", actionName);
                     throw excep;
                 }
             }
@@ -6875,13 +6862,11 @@ namespace Amazon.S3
                         config.ProxyUsername,
                         config.ProxyPassword ?? String.Empty
                         );
-                    if (LOGGER.IsDebugEnabled)
-                        LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
+                    LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
                 }
                 else
                 {
-                    if (LOGGER.IsDebugEnabled)
-                        LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
+                    LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                 }
                 httpRequest.Proxy = proxy;
             }
@@ -7421,8 +7406,7 @@ namespace Amazon.S3
                     long endTime = this._s3Request.StopWatch.ElapsedTicks;
                     long timeToComplete = endTime - this._startTime;
                     this._s3Request.TotalRequestTime = timeToComplete;
-                    if (_logger.IsDebugEnabled) 
-                        _logger.InfoFormat("S3 request completed: {0}", this._s3Request);
+                    _logger.InfoFormat("S3 request completed: {0}", this._s3Request);
                 }
             }
 

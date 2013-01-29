@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,26 @@ using System.IO;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>ContinueAsNewWorkflowExecution</c> decision. </para>
+    /// <para>Provides details of the <c>ContinueAsNewWorkflowExecution</c> decision.</para> <para> <b>Access Control</b> </para> <para>You can use
+    /// IAM policies to control this decision's access to Amazon SWF in much the same way as for the regular API:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the decision to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to specify this decision.</li>
+    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <ul>
+    /// <li> <c>tag</c> : TBD.</li>
+    /// <li> <c>taskList</c> : String constraint. The key is "swf:taskList.name".</li>
+    /// <li> <c>workflowTypeVersion</c> : String constraint. The key is TBD.</li>
+    /// 
+    /// </ul>
+    /// </li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows.</para>
     /// </summary>
-    public class ContinueAsNewWorkflowExecutionDecisionAttributes  
+    public class ContinueAsNewWorkflowExecutionDecisionAttributes
     {
         
         private string input;
@@ -68,7 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -109,7 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionStartToCloseTimeout property is set
         internal bool IsSetExecutionStartToCloseTimeout()
         {
-            return this.executionStartToCloseTimeout != null;       
+            return this.executionStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -137,7 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -179,7 +196,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskStartToCloseTimeout property is set
         internal bool IsSetTaskStartToCloseTimeout()
         {
-            return this.taskStartToCloseTimeout != null;       
+            return this.taskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -223,7 +240,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildPolicy property is set
         internal bool IsSetChildPolicy()
         {
-            return this.childPolicy != null;       
+            return this.childPolicy != null;
         }
 
         /// <summary>
@@ -259,7 +276,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TagList collection
         /// </summary>
@@ -278,7 +295,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this.tagList.Count > 0;       
+            return this.tagList.Count > 0;
         }
         public string WorkflowTypeVersion
         {
@@ -301,7 +318,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowTypeVersion property is set
         internal bool IsSetWorkflowTypeVersion()
         {
-            return this.workflowTypeVersion != null;       
+            return this.workflowTypeVersion != null;
         }
     }
 }

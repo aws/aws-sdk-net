@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the ListActivityTypes operation.
     /// <para> Returns information about all activities registered in the specified domain that match the specified name and registration status.
     /// The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To
-    /// retrieve subsequent pages, make the call again using the <c>nextPageToken</c> returned by the initial call. </para>
+    /// retrieve subsequent pages, make the call again using the <c>nextPageToken</c> returned by the initial call. </para> <para> <b>Access
+    /// Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.ListActivityTypes"/>
     public class ListActivityTypesRequest : AmazonWebServiceRequest
@@ -73,7 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -110,7 +120,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -147,7 +157,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RegistrationStatus property is set
         internal bool IsSetRegistrationStatus()
         {
-            return this.registrationStatus != null;       
+            return this.registrationStatus != null;
         }
 
         /// <summary>
@@ -185,12 +195,13 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;       
+            return this.nextPageToken != null;
         }
 
         /// <summary>
         /// The maximum number of results returned in each page. The default is 100, but the caller can override this value to a page size
-        /// <i>smaller</i> than the default. You cannot specify a page size greater than 100.
+        /// <i>smaller</i> than the default. You cannot specify a page size greater than 100. Note that the number of types may be less than the
+        /// maxiumum page size, in which case, the returned page will have fewer results than the maximumPageSize specified.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -223,7 +234,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if MaximumPageSize property is set
         internal bool IsSetMaximumPageSize()
         {
-            return this.maximumPageSize.HasValue;       
+            return this.maximumPageSize.HasValue;
         }
 
         /// <summary>
@@ -252,7 +263,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ReverseOrder property is set
         internal bool IsSetReverseOrder()
         {
-            return this.reverseOrder.HasValue;       
+            return this.reverseOrder.HasValue;
         }
     }
 }

@@ -24,6 +24,7 @@ using Amazon.AutoScaling;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudWatch;
+using Amazon.DataPipeline;
 using Amazon.DirectConnect;
 using Amazon.DynamoDB;
 using Amazon.EC2;
@@ -31,6 +32,7 @@ using Amazon.ElastiCache;
 using Amazon.ElasticBeanstalk;
 using Amazon.ElasticLoadBalancing;
 using Amazon.ElasticMapReduce;
+using Amazon.ElasticTranscoder;
 using Amazon.IdentityManagement;
 using Amazon.ImportExport;
 using Amazon.RDS;
@@ -3184,6 +3186,320 @@ namespace Amazon
         public static AmazonDirectConnect CreateAmazonDirectConnectClient(AWSCredentials credentials, AmazonDirectConnectConfig config)
         {
             return new AmazonDirectConnectClient(credentials, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient()
+        {
+            return new AmazonElasticTranscoderClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(AmazonElasticTranscoderConfig config)
+        {
+            return new AmazonElasticTranscoderClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonElasticTranscoderClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonElasticTranscoderConfig config
+            )
+        {
+            return new AmazonElasticTranscoderClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(RegionEndpoint region)
+        {
+            return new AmazonElasticTranscoderClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonElasticTranscoderClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(AWSCredentials credentials)
+        {
+            return new AmazonElasticTranscoderClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonElasticTranscoderClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticTranscoder Service with AWSCredentials and an AmazonElasticTranscoder Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElasticTranscoder client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticTranscoder CreateAmazonElasticTranscoderClient(AWSCredentials credentials, AmazonElasticTranscoderConfig config)
+        {
+            return new AmazonElasticTranscoderClient(credentials, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient()
+        {
+            return new AmazonDataPipelineClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(AmazonDataPipelineConfig config)
+        {
+            return new AmazonDataPipelineClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonDataPipelineClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonDataPipelineConfig config
+            )
+        {
+            return new AmazonDataPipelineClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(RegionEndpoint region)
+        {
+            return new AmazonDataPipelineClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonDataPipelineClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(AWSCredentials credentials)
+        {
+            return new AmazonDataPipelineClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonDataPipelineClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DataPipeline Service with AWSCredentials and an AmazonDataPipeline Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DataPipeline client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDataPipeline CreateAmazonDataPipelineClient(AWSCredentials credentials, AmazonDataPipelineConfig config)
+        {
+            return new AmazonDataPipelineClient(credentials, config);
         }
 
 

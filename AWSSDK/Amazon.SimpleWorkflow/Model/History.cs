@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <para> Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of
     /// the events related to all tasks and events in the life of the workflow execution. </para>
     /// </summary>
-    public class History  
+    public class History
     {
         
         private List<HistoryEvent> events = new List<HistoryEvent>();
@@ -53,7 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Events collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;       
+            return this.events.Count > 0;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;       
+            return this.nextPageToken != null;
         }
     }
 }

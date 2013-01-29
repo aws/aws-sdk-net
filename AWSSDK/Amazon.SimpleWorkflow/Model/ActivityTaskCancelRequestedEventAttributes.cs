@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>ActivityTaskCancelRequested</c> event. </para>
     /// </summary>
-    public class ActivityTaskCancelRequestedEventAttributes  
+    public class ActivityTaskCancelRequestedEventAttributes
     {
         
         private long? decisionTaskCompletedEventId;
@@ -55,7 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
     }
 }

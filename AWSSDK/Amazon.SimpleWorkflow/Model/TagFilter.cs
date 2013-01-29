@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Used to filter the workflow executions in visibility APIs based on a tag. </para>
     /// </summary>
-    public class TagFilter  
+    public class TagFilter
     {
         
         private string tag;
@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Tag property is set
         internal bool IsSetTag()
         {
-            return this.tag != null;       
+            return this.tag != null;
         }
     }
 }

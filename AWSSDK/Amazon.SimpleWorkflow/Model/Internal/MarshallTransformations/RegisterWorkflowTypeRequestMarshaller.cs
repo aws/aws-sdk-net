@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>       
     internal class RegisterWorkflowTypeRequestMarshaller : IMarshaller<IRequest, RegisterWorkflowTypeRequest> 
     {
+        
+
         public IRequest Marshall(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) 
         {
 
@@ -40,6 +42,32 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
+                {
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    {
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
+                }
+            }
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
             using (StringWriter stringWriter = new StringWriter())
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -101,8 +129,10 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-                return request;
             }
+        
+
+            return request;
         }
     }
 }

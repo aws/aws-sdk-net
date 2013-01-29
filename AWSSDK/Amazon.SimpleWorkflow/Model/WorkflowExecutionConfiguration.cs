@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <para> The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are
     /// determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution. </para>
     /// </summary>
-    public class WorkflowExecutionConfiguration  
+    public class WorkflowExecutionConfiguration
     {
         
         private string taskStartToCloseTimeout;
@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskStartToCloseTimeout property is set
         internal bool IsSetTaskStartToCloseTimeout()
         {
-            return this.taskStartToCloseTimeout != null;       
+            return this.taskStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionStartToCloseTimeout property is set
         internal bool IsSetExecutionStartToCloseTimeout()
         {
-            return this.executionStartToCloseTimeout != null;       
+            return this.executionStartToCloseTimeout != null;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildPolicy property is set
         internal bool IsSetChildPolicy()
         {
-            return this.childPolicy != null;       
+            return this.childPolicy != null;
         }
     }
 }

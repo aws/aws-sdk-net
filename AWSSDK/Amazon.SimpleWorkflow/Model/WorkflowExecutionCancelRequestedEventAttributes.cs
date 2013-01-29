@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>WorkflowExecutionCancelRequested</c> event. </para>
     /// </summary>
-    public class WorkflowExecutionCancelRequestedEventAttributes  
+    public class WorkflowExecutionCancelRequestedEventAttributes
     {
         
         private WorkflowExecution externalWorkflowExecution;
@@ -55,7 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExternalWorkflowExecution property is set
         internal bool IsSetExternalWorkflowExecution()
         {
-            return this.externalWorkflowExecution != null;       
+            return this.externalWorkflowExecution != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExternalInitiatedEventId property is set
         internal bool IsSetExternalInitiatedEventId()
         {
-            return this.externalInitiatedEventId.HasValue;       
+            return this.externalInitiatedEventId.HasValue;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;       
+            return this.cause != null;
         }
     }
 }

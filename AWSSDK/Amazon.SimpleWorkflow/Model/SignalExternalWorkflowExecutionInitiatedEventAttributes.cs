@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>SignalExternalWorkflowExecutionInitiated</c> event. </para>
     /// </summary>
-    public class SignalExternalWorkflowExecutionInitiatedEventAttributes  
+    public class SignalExternalWorkflowExecutionInitiatedEventAttributes
     {
         
         private string workflowId;
@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowId property is set
         internal bool IsSetWorkflowId()
         {
-            return this.workflowId != null;       
+            return this.workflowId != null;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RunId property is set
         internal bool IsSetRunId()
         {
-            return this.runId != null;       
+            return this.runId != null;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if SignalName property is set
         internal bool IsSetSignalName()
         {
-            return this.signalName != null;       
+            return this.signalName != null;
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;       
+            return this.input != null;
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;       
+            return this.decisionTaskCompletedEventId.HasValue;
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;       
+            return this.control != null;
         }
     }
 }

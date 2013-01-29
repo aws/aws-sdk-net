@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,33 +11,33 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System.Collections.Generic;
-    using Amazon.Runtime.Internal.Transform; 
-    
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// Result Unmarshaller for RecordActivityTaskHeartbeat operation 
-      /// </summary> 
-      internal class RecordActivityTaskHeartbeatResultUnmarshaller : IUnmarshaller<RecordActivityTaskHeartbeatResult, JsonUnmarshallerContext> 
-      { 
-        public RecordActivityTaskHeartbeatResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
+    using Amazon.Runtime.Internal.Transform;
+
+    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// Result Unmarshaller for RecordActivityTaskHeartbeat operation
+      /// </summary>
+      internal class RecordActivityTaskHeartbeatResultUnmarshaller : IUnmarshaller<RecordActivityTaskHeartbeatResult, JsonUnmarshallerContext>
+      {
+        public RecordActivityTaskHeartbeatResult Unmarshall(JsonUnmarshallerContext context)
+        {
           RecordActivityTaskHeartbeatResult result = new RecordActivityTaskHeartbeatResult();
-          result.ActivityTaskStatus = ActivityTaskStatusUnmarshaller.GetInstance().Unmarshall(context); 
-          return result; 
-        } 
-              
-        private static RecordActivityTaskHeartbeatResultUnmarshaller instance; 
-        public static RecordActivityTaskHeartbeatResultUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
+          result.ActivityTaskStatus = ActivityTaskStatusUnmarshaller.GetInstance().Unmarshall(context);
+          return result;
+        }
+
+        private static RecordActivityTaskHeartbeatResultUnmarshaller instance;
+        public static RecordActivityTaskHeartbeatResultUnmarshaller GetInstance()
+        {
+          if (instance == null)
           {
-            instance = new RecordActivityTaskHeartbeatResultUnmarshaller(); 
-          } 
-          return instance; 
-        } 
-      } 
-    } 
+            instance = new RecordActivityTaskHeartbeatResultUnmarshaller();
+          }
+          return instance;
+        }
+      }
+    }
   

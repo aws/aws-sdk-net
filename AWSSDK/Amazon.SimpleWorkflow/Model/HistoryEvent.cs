@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     /// </ul>
     /// </summary>
-    public class HistoryEvent  
+    public class HistoryEvent
     {
         
         private DateTime? eventTimestamp;
@@ -113,6 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         private ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes;
         private WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes;
         private MarkerRecordedEventAttributes markerRecordedEventAttributes;
+        private RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes;
         private TimerStartedEventAttributes timerStartedEventAttributes;
         private TimerFiredEventAttributes timerFiredEventAttributes;
         private TimerCanceledEventAttributes timerCanceledEventAttributes;
@@ -160,7 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if EventTimestamp property is set
         internal bool IsSetEventTimestamp()
         {
-            return this.eventTimestamp.HasValue;       
+            return this.eventTimestamp.HasValue;
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested</description>
+        ///         <description>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -197,7 +198,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if EventType property is set
         internal bool IsSetEventType()
         {
-            return this.eventType != null;       
+            return this.eventType != null;
         }
 
         /// <summary>
@@ -225,7 +226,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId.HasValue;       
+            return this.eventId.HasValue;
         }
 
         /// <summary>
@@ -254,7 +255,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionStartedEventAttributes property is set
         internal bool IsSetWorkflowExecutionStartedEventAttributes()
         {
-            return this.workflowExecutionStartedEventAttributes != null;       
+            return this.workflowExecutionStartedEventAttributes != null;
         }
 
         /// <summary>
@@ -283,7 +284,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionCompletedEventAttributes property is set
         internal bool IsSetWorkflowExecutionCompletedEventAttributes()
         {
-            return this.workflowExecutionCompletedEventAttributes != null;       
+            return this.workflowExecutionCompletedEventAttributes != null;
         }
 
         /// <summary>
@@ -312,7 +313,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CompleteWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetCompleteWorkflowExecutionFailedEventAttributes()
         {
-            return this.completeWorkflowExecutionFailedEventAttributes != null;       
+            return this.completeWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -341,7 +342,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetWorkflowExecutionFailedEventAttributes()
         {
-            return this.workflowExecutionFailedEventAttributes != null;       
+            return this.workflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -370,7 +371,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if FailWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetFailWorkflowExecutionFailedEventAttributes()
         {
-            return this.failWorkflowExecutionFailedEventAttributes != null;       
+            return this.failWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -399,7 +400,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionTimedOutEventAttributes property is set
         internal bool IsSetWorkflowExecutionTimedOutEventAttributes()
         {
-            return this.workflowExecutionTimedOutEventAttributes != null;       
+            return this.workflowExecutionTimedOutEventAttributes != null;
         }
 
         /// <summary>
@@ -428,7 +429,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionCanceledEventAttributes property is set
         internal bool IsSetWorkflowExecutionCanceledEventAttributes()
         {
-            return this.workflowExecutionCanceledEventAttributes != null;       
+            return this.workflowExecutionCanceledEventAttributes != null;
         }
 
         /// <summary>
@@ -457,7 +458,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetCancelWorkflowExecutionFailedEventAttributes()
         {
-            return this.cancelWorkflowExecutionFailedEventAttributes != null;       
+            return this.cancelWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -486,7 +487,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionContinuedAsNewEventAttributes property is set
         internal bool IsSetWorkflowExecutionContinuedAsNewEventAttributes()
         {
-            return this.workflowExecutionContinuedAsNewEventAttributes != null;       
+            return this.workflowExecutionContinuedAsNewEventAttributes != null;
         }
 
         /// <summary>
@@ -515,7 +516,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ContinueAsNewWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetContinueAsNewWorkflowExecutionFailedEventAttributes()
         {
-            return this.continueAsNewWorkflowExecutionFailedEventAttributes != null;       
+            return this.continueAsNewWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -544,7 +545,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionTerminatedEventAttributes property is set
         internal bool IsSetWorkflowExecutionTerminatedEventAttributes()
         {
-            return this.workflowExecutionTerminatedEventAttributes != null;       
+            return this.workflowExecutionTerminatedEventAttributes != null;
         }
 
         /// <summary>
@@ -573,7 +574,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionCancelRequestedEventAttributes property is set
         internal bool IsSetWorkflowExecutionCancelRequestedEventAttributes()
         {
-            return this.workflowExecutionCancelRequestedEventAttributes != null;       
+            return this.workflowExecutionCancelRequestedEventAttributes != null;
         }
 
         /// <summary>
@@ -602,7 +603,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskScheduledEventAttributes property is set
         internal bool IsSetDecisionTaskScheduledEventAttributes()
         {
-            return this.decisionTaskScheduledEventAttributes != null;       
+            return this.decisionTaskScheduledEventAttributes != null;
         }
 
         /// <summary>
@@ -631,7 +632,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskStartedEventAttributes property is set
         internal bool IsSetDecisionTaskStartedEventAttributes()
         {
-            return this.decisionTaskStartedEventAttributes != null;       
+            return this.decisionTaskStartedEventAttributes != null;
         }
 
         /// <summary>
@@ -660,7 +661,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskCompletedEventAttributes property is set
         internal bool IsSetDecisionTaskCompletedEventAttributes()
         {
-            return this.decisionTaskCompletedEventAttributes != null;       
+            return this.decisionTaskCompletedEventAttributes != null;
         }
 
         /// <summary>
@@ -689,7 +690,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if DecisionTaskTimedOutEventAttributes property is set
         internal bool IsSetDecisionTaskTimedOutEventAttributes()
         {
-            return this.decisionTaskTimedOutEventAttributes != null;       
+            return this.decisionTaskTimedOutEventAttributes != null;
         }
 
         /// <summary>
@@ -718,7 +719,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskScheduledEventAttributes property is set
         internal bool IsSetActivityTaskScheduledEventAttributes()
         {
-            return this.activityTaskScheduledEventAttributes != null;       
+            return this.activityTaskScheduledEventAttributes != null;
         }
 
         /// <summary>
@@ -747,7 +748,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskStartedEventAttributes property is set
         internal bool IsSetActivityTaskStartedEventAttributes()
         {
-            return this.activityTaskStartedEventAttributes != null;       
+            return this.activityTaskStartedEventAttributes != null;
         }
 
         /// <summary>
@@ -776,7 +777,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskCompletedEventAttributes property is set
         internal bool IsSetActivityTaskCompletedEventAttributes()
         {
-            return this.activityTaskCompletedEventAttributes != null;       
+            return this.activityTaskCompletedEventAttributes != null;
         }
 
         /// <summary>
@@ -805,7 +806,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskFailedEventAttributes property is set
         internal bool IsSetActivityTaskFailedEventAttributes()
         {
-            return this.activityTaskFailedEventAttributes != null;       
+            return this.activityTaskFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -834,7 +835,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskTimedOutEventAttributes property is set
         internal bool IsSetActivityTaskTimedOutEventAttributes()
         {
-            return this.activityTaskTimedOutEventAttributes != null;       
+            return this.activityTaskTimedOutEventAttributes != null;
         }
 
         /// <summary>
@@ -863,7 +864,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskCanceledEventAttributes property is set
         internal bool IsSetActivityTaskCanceledEventAttributes()
         {
-            return this.activityTaskCanceledEventAttributes != null;       
+            return this.activityTaskCanceledEventAttributes != null;
         }
 
         /// <summary>
@@ -892,7 +893,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ActivityTaskCancelRequestedEventAttributes property is set
         internal bool IsSetActivityTaskCancelRequestedEventAttributes()
         {
-            return this.activityTaskCancelRequestedEventAttributes != null;       
+            return this.activityTaskCancelRequestedEventAttributes != null;
         }
 
         /// <summary>
@@ -921,7 +922,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionSignaledEventAttributes property is set
         internal bool IsSetWorkflowExecutionSignaledEventAttributes()
         {
-            return this.workflowExecutionSignaledEventAttributes != null;       
+            return this.workflowExecutionSignaledEventAttributes != null;
         }
 
         /// <summary>
@@ -950,7 +951,36 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if MarkerRecordedEventAttributes property is set
         internal bool IsSetMarkerRecordedEventAttributes()
         {
-            return this.markerRecordedEventAttributes != null;       
+            return this.markerRecordedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// If the event is of type <c>DecisionTaskFailed</c> then this member is set and provides detailed information about the event. It is not set
+        /// for other event types.
+        ///  
+        /// </summary>
+        public RecordMarkerFailedEventAttributes RecordMarkerFailedEventAttributes
+        {
+            get { return this.recordMarkerFailedEventAttributes; }
+            set { this.recordMarkerFailedEventAttributes = value; }
+        }
+
+        /// <summary>
+        /// Sets the RecordMarkerFailedEventAttributes property
+        /// </summary>
+        /// <param name="recordMarkerFailedEventAttributes">The value to set for the RecordMarkerFailedEventAttributes property </param>
+        /// <returns>this instance</returns>
+        public HistoryEvent WithRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes)
+        {
+            this.recordMarkerFailedEventAttributes = recordMarkerFailedEventAttributes;
+            return this;
+        }
+            
+
+        // Check to see if RecordMarkerFailedEventAttributes property is set
+        internal bool IsSetRecordMarkerFailedEventAttributes()
+        {
+            return this.recordMarkerFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -979,7 +1009,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TimerStartedEventAttributes property is set
         internal bool IsSetTimerStartedEventAttributes()
         {
-            return this.timerStartedEventAttributes != null;       
+            return this.timerStartedEventAttributes != null;
         }
 
         /// <summary>
@@ -1008,7 +1038,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TimerFiredEventAttributes property is set
         internal bool IsSetTimerFiredEventAttributes()
         {
-            return this.timerFiredEventAttributes != null;       
+            return this.timerFiredEventAttributes != null;
         }
 
         /// <summary>
@@ -1037,7 +1067,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TimerCanceledEventAttributes property is set
         internal bool IsSetTimerCanceledEventAttributes()
         {
-            return this.timerCanceledEventAttributes != null;       
+            return this.timerCanceledEventAttributes != null;
         }
 
         /// <summary>
@@ -1066,7 +1096,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartChildWorkflowExecutionInitiatedEventAttributes property is set
         internal bool IsSetStartChildWorkflowExecutionInitiatedEventAttributes()
         {
-            return this.startChildWorkflowExecutionInitiatedEventAttributes != null;       
+            return this.startChildWorkflowExecutionInitiatedEventAttributes != null;
         }
 
         /// <summary>
@@ -1095,7 +1125,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionStartedEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionStartedEventAttributes()
         {
-            return this.childWorkflowExecutionStartedEventAttributes != null;       
+            return this.childWorkflowExecutionStartedEventAttributes != null;
         }
 
         /// <summary>
@@ -1124,7 +1154,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionCompletedEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionCompletedEventAttributes()
         {
-            return this.childWorkflowExecutionCompletedEventAttributes != null;       
+            return this.childWorkflowExecutionCompletedEventAttributes != null;
         }
 
         /// <summary>
@@ -1153,7 +1183,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionFailedEventAttributes()
         {
-            return this.childWorkflowExecutionFailedEventAttributes != null;       
+            return this.childWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1182,7 +1212,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionTimedOutEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionTimedOutEventAttributes()
         {
-            return this.childWorkflowExecutionTimedOutEventAttributes != null;       
+            return this.childWorkflowExecutionTimedOutEventAttributes != null;
         }
 
         /// <summary>
@@ -1211,7 +1241,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionCanceledEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionCanceledEventAttributes()
         {
-            return this.childWorkflowExecutionCanceledEventAttributes != null;       
+            return this.childWorkflowExecutionCanceledEventAttributes != null;
         }
 
         /// <summary>
@@ -1240,7 +1270,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildWorkflowExecutionTerminatedEventAttributes property is set
         internal bool IsSetChildWorkflowExecutionTerminatedEventAttributes()
         {
-            return this.childWorkflowExecutionTerminatedEventAttributes != null;       
+            return this.childWorkflowExecutionTerminatedEventAttributes != null;
         }
 
         /// <summary>
@@ -1269,7 +1299,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if SignalExternalWorkflowExecutionInitiatedEventAttributes property is set
         internal bool IsSetSignalExternalWorkflowExecutionInitiatedEventAttributes()
         {
-            return this.signalExternalWorkflowExecutionInitiatedEventAttributes != null;       
+            return this.signalExternalWorkflowExecutionInitiatedEventAttributes != null;
         }
 
         /// <summary>
@@ -1298,7 +1328,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExternalWorkflowExecutionSignaledEventAttributes property is set
         internal bool IsSetExternalWorkflowExecutionSignaledEventAttributes()
         {
-            return this.externalWorkflowExecutionSignaledEventAttributes != null;       
+            return this.externalWorkflowExecutionSignaledEventAttributes != null;
         }
 
         /// <summary>
@@ -1327,7 +1357,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if SignalExternalWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetSignalExternalWorkflowExecutionFailedEventAttributes()
         {
-            return this.signalExternalWorkflowExecutionFailedEventAttributes != null;       
+            return this.signalExternalWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1356,7 +1386,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExternalWorkflowExecutionCancelRequestedEventAttributes property is set
         internal bool IsSetExternalWorkflowExecutionCancelRequestedEventAttributes()
         {
-            return this.externalWorkflowExecutionCancelRequestedEventAttributes != null;       
+            return this.externalWorkflowExecutionCancelRequestedEventAttributes != null;
         }
 
         /// <summary>
@@ -1385,7 +1415,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RequestCancelExternalWorkflowExecutionInitiatedEventAttributes property is set
         internal bool IsSetRequestCancelExternalWorkflowExecutionInitiatedEventAttributes()
         {
-            return this.requestCancelExternalWorkflowExecutionInitiatedEventAttributes != null;       
+            return this.requestCancelExternalWorkflowExecutionInitiatedEventAttributes != null;
         }
 
         /// <summary>
@@ -1414,7 +1444,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RequestCancelExternalWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetRequestCancelExternalWorkflowExecutionFailedEventAttributes()
         {
-            return this.requestCancelExternalWorkflowExecutionFailedEventAttributes != null;       
+            return this.requestCancelExternalWorkflowExecutionFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1443,7 +1473,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ScheduleActivityTaskFailedEventAttributes property is set
         internal bool IsSetScheduleActivityTaskFailedEventAttributes()
         {
-            return this.scheduleActivityTaskFailedEventAttributes != null;       
+            return this.scheduleActivityTaskFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1472,7 +1502,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if RequestCancelActivityTaskFailedEventAttributes property is set
         internal bool IsSetRequestCancelActivityTaskFailedEventAttributes()
         {
-            return this.requestCancelActivityTaskFailedEventAttributes != null;       
+            return this.requestCancelActivityTaskFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1501,7 +1531,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartTimerFailedEventAttributes property is set
         internal bool IsSetStartTimerFailedEventAttributes()
         {
-            return this.startTimerFailedEventAttributes != null;       
+            return this.startTimerFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1530,7 +1560,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if CancelTimerFailedEventAttributes property is set
         internal bool IsSetCancelTimerFailedEventAttributes()
         {
-            return this.cancelTimerFailedEventAttributes != null;       
+            return this.cancelTimerFailedEventAttributes != null;
         }
 
         /// <summary>
@@ -1559,7 +1589,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartChildWorkflowExecutionFailedEventAttributes property is set
         internal bool IsSetStartChildWorkflowExecutionFailedEventAttributes()
         {
-            return this.startChildWorkflowExecutionFailedEventAttributes != null;       
+            return this.startChildWorkflowExecutionFailedEventAttributes != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Represents an activity type. </para>
     /// </summary>
-    public class ActivityType  
+    public class ActivityType
     {
         
         private string name;
@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Version property is set
         internal bool IsSetVersion()
         {
-            return this.version != null;       
+            return this.version != null;
         }
     }
 }

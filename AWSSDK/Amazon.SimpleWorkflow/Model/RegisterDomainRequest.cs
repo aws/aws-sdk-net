@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,18 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterDomain operation.
-    /// <para> Registers a new domain. </para>
+    /// <para> Registers a new domain. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access
+    /// to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the
+    /// resource of this action.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RegisterDomain"/>
     public class RegisterDomainRequest : AmazonWebServiceRequest
@@ -70,7 +81,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -107,15 +118,13 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
         /// Specifies the duration--<b><i>in days</i></b>--for which the record (including the history) of workflow executions in this domain should be
         /// kept by the service. After the retention period, the workflow execution will not be available in the results of visibility calls. If a
-        /// duration of <c>NONE</c> is specified, the records for workflow executions in this domain are not retained at all. The valid values are
-        /// integers greater than or equal to <c>0</c>. An integer value can be used to specify the duration in seconds while <c>NONE</c> can be used to
-        /// specify unlimited duration.
+        /// duration of <c>NONE</c> is specified, the records for workflow executions in this domain are not retained at all.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -148,7 +157,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if WorkflowExecutionRetentionPeriodInDays property is set
         internal bool IsSetWorkflowExecutionRetentionPeriodInDays()
         {
-            return this.workflowExecutionRetentionPeriodInDays != null;       
+            return this.workflowExecutionRetentionPeriodInDays != null;
         }
     }
 }

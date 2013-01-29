@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,20 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Container for the parameters to the RespondActivityTaskFailed operation.
     /// <para> Used by workers to tell the service that the ActivityTask identified by the <c>taskToken</c> has failed with <c>reason</c> (if
-    /// specified). </para> <para> The <c>reason</c> and <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow history.
-    /// </para>
+    /// specified). The <c>reason</c> and <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow history. </para> <para>
+    /// A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is
+    /// processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
+    /// RespondActivityTaskFailed, or the task has timed out. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control
+    /// this action's access to Amazon SWF resources as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RespondActivityTaskFailed"/>
     public class RespondActivityTaskFailedRequest : AmazonWebServiceRequest
@@ -72,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskToken property is set
         internal bool IsSetTaskToken()
         {
-            return this.taskToken != null;       
+            return this.taskToken != null;
         }
 
         /// <summary>
@@ -109,7 +121,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Reason property is set
         internal bool IsSetReason()
         {
-            return this.reason != null;       
+            return this.reason != null;
         }
 
         /// <summary>
@@ -146,7 +158,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;       
+            return this.details != null;
         }
     }
 }

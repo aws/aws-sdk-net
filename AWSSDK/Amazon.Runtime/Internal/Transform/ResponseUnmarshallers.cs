@@ -75,12 +75,14 @@ namespace Amazon.Runtime.Internal.Transform
                     );
             }
 
-            asyncResult.StreamReadStartTime = asyncResult.ElapsedTicks;
             XmlUnmarshallerContext context;
             if (readEntireResponse)
             {
-                string responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                asyncResult.ResponseReadTime = asyncResult.StreamReadStartTime - asyncResult.ElapsedTicks;
+                string responseBody;
+                using (asyncResult.Metrics.StartEvent(RequestMetrics.Metric.ResponseReadTime))
+                {
+                    responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                }
                 context = new XmlUnmarshallerContext(responseBody, response.Headers);
             }
             else
@@ -142,12 +144,14 @@ namespace Amazon.Runtime.Internal.Transform
                     );
             }
 
-            asyncResult.StreamReadStartTime = asyncResult.ElapsedTicks;
             JsonUnmarshallerContext context;
             if (readEntireResponse && response.ContentType != "application/octet-stream")
             {
-                string responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                asyncResult.ResponseReadTime = asyncResult.ElapsedTicks - asyncResult.StreamReadStartTime;
+                string responseBody;
+                using (asyncResult.Metrics.StartEvent(RequestMetrics.Metric.ResponseReadTime))
+                {
+                    responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                }
                 context = new JsonUnmarshallerContext(responseBody, (int)response.StatusCode, response.Headers);
             }
             else

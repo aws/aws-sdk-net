@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,24 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the CountOpenWorkflowExecutions operation.
     /// <para> Returns the number of open workflow executions within the given domain that meet the specified filtering criteria. </para>
     /// <para><b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and
-    /// changes. </para>
+    /// changes. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources
+    /// as follows:</para>
+    /// <ul>
+    /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
+    /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
+    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <ul>
+    /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
+    /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+    /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+    /// 
+    /// </ul>
+    /// </li>
+    /// 
+    /// </ul>
+    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
+    /// Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.CountOpenWorkflowExecutions"/>
     public class CountOpenWorkflowExecutionsRequest : AmazonWebServiceRequest
@@ -72,7 +89,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -100,7 +117,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartTimeFilter property is set
         internal bool IsSetStartTimeFilter()
         {
-            return this.startTimeFilter != null;       
+            return this.startTimeFilter != null;
         }
 
         /// <summary>
@@ -129,7 +146,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TypeFilter property is set
         internal bool IsSetTypeFilter()
         {
-            return this.typeFilter != null;       
+            return this.typeFilter != null;
         }
 
         /// <summary>
@@ -158,7 +175,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagFilter property is set
         internal bool IsSetTagFilter()
         {
-            return this.tagFilter != null;       
+            return this.tagFilter != null;
         }
 
         /// <summary>
@@ -187,7 +204,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionFilter property is set
         internal bool IsSetExecutionFilter()
         {
-            return this.executionFilter != null;       
+            return this.executionFilter != null;
         }
     }
 }

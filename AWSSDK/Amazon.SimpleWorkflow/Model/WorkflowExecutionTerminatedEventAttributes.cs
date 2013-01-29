@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>WorkflowExecutionTerminated</c> event. </para>
     /// </summary>
-    public class WorkflowExecutionTerminatedEventAttributes  
+    public class WorkflowExecutionTerminatedEventAttributes
     {
         
         private string reason;
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Reason property is set
         internal bool IsSetReason()
         {
-            return this.reason != null;       
+            return this.reason != null;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;       
+            return this.details != null;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ChildPolicy property is set
         internal bool IsSetChildPolicy()
         {
-            return this.childPolicy != null;       
+            return this.childPolicy != null;
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;       
+            return this.cause != null;
         }
     }
 }

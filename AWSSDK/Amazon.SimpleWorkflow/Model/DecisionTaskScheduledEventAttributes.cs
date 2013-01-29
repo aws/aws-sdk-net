@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// <para> Provides details of the <c>DecisionTaskScheduled</c> event. </para>
     /// </summary>
-    public class DecisionTaskScheduledEventAttributes  
+    public class DecisionTaskScheduledEventAttributes
     {
         
         private TaskList taskList;
@@ -54,7 +54,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TaskList property is set
         internal bool IsSetTaskList()
         {
-            return this.taskList != null;       
+            return this.taskList != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if StartToCloseTimeout property is set
         internal bool IsSetStartToCloseTimeout()
         {
-            return this.startToCloseTimeout != null;       
+            return this.startToCloseTimeout != null;
         }
     }
 }
