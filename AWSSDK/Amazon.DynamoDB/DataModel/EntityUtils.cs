@@ -17,6 +17,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Amazon.CloudFront.Model;
 
 namespace Amazon.DynamoDB.DataModel
 {
@@ -79,13 +80,20 @@ namespace Amazon.DynamoDB.DataModel
         public static DynamoDBAttribute GetAttribute(Type targetType)
         {
             if (targetType == null) throw new ArgumentNullException("targetType");
-            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+
+            // Check if there is a metadata class
+            var checkedType = CheckMetaDataType(targetType);
+            object[] attributes = checkedType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+
             return GetSingleDDBAttribute(attributes);
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+
+            var checkedMemberInfo = CheckMetaDataType(targetMemberInfo);
+            object[] attributes = checkedMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+
             return GetSingleDDBAttribute(attributes);
         }
 
@@ -101,6 +109,48 @@ namespace Amazon.DynamoDB.DataModel
         #endregion
 
         #region Non-DynamoDB utilities
+
+        private static Type CheckMetaDataType(Type targetType)
+        {
+            if (targetType == null)
+                throw new ArgumentNullException("targetType");
+
+            object[] attributes = targetType.GetCustomAttributes(true);
+            var resultType = targetType;
+            foreach (var attribute in attributes)
+            {
+                if (attribute.GetType().FullName == "System.ComponentModel.DataAnnotations.MetadataTypeAttribute") // string comparison since we're using 3.5 Client Profile
+                {
+                    resultType = attribute.GetType().GetProperty("MetadataClassType").GetValue(attribute, null) as Type;
+                    break;
+                }
+            }
+            return resultType;
+        }
+
+        private static MemberInfo CheckMetaDataType(MemberInfo targetMemberInfo)
+        {
+            if (targetMemberInfo == null)
+                throw new ArgumentNullException("targetMemberInfo");
+
+            var metaDataType = CheckMetaDataType(targetMemberInfo.DeclaringType);
+            if (metaDataType == null)
+                return targetMemberInfo;
+
+            var matchedMembers = metaDataType.GetMember(targetMemberInfo.Name);
+            var memberCount = matchedMembers.Length;
+            switch (memberCount)
+            {
+                case 0:
+                    return targetMemberInfo;
+                case 1:
+                    return matchedMembers[0];
+                default:
+                    throw new InvalidOperationException(
+                        string.Format("More than one public member found with the same name of:  {0}",
+                                      targetMemberInfo.Name));
+            }
+        }
 
         public static string ToLowerCamelCase(string value)
         {
