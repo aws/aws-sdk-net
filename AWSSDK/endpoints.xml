@@ -288,6 +288,12 @@
         <Hostname>elasticloadbalancing.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.us-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>glacier</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -427,6 +433,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>elasticloadbalancing.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>glacier</ServiceName>
@@ -570,6 +582,12 @@
         <Hostname>elasticloadbalancing.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>glacier</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -709,6 +727,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>elasticloadbalancing.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>glacier</ServiceName>
@@ -852,6 +876,12 @@
         <Hostname>elasticloadbalancing.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>directconnect</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -973,6 +1003,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>elasticloadbalancing.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>directconnect</ServiceName>
@@ -1108,6 +1144,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>elasticloadbalancing.sa-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.sa-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>directconnect</ServiceName>
@@ -1449,6 +1491,13 @@
       <Name>swf</Name>
       <FullName>Amazon Simple Workflow Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>sa-east-1</RegionName>
     </Service>
     <Service>
       <Name>glacier</Name>
