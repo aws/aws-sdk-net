@@ -39,6 +39,8 @@ namespace Amazon.S3.Model
         private string etagToMatch;
         private string etagToNotMatch;
         private string versionId;
+        int timeout = 0;
+        int readWriteTimeout = 0;
 
         #endregion
 
@@ -297,6 +299,127 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        #endregion
+
+        #region Timeout
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public int Timeout
+        {
+            get { return this.timeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.timeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="timeout">Timeout property</param>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public GetObjectMetadataRequest WithTimeout(int timeout)
+        {
+            Timeout = timeout;
+            return this;
+        }
+
+        internal override bool SupportTimeout
+        {
+            get { return true; }
+        }
+
+        #endregion
+
+        #region ReadWriteTimeout
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public int ReadWriteTimeout
+        {
+            get { return this.readWriteTimeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.readWriteTimeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public GetObjectMetadataRequest WithReadWriteTimeout(int readWriteTimeout)
+        {
+            ReadWriteTimeout = readWriteTimeout;
+            return this;
+        }
+
+        internal override bool SupportReadWriteTimeout
+        {
+            get { return true; }
         }
 
         #endregion
