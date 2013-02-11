@@ -2218,9 +2218,8 @@ namespace Amazon.S3
 
                 if (!request.IsSetKey())
                 {
-                    string name = request.FilePath;
                     // Set the key to be the name of the file sans directories
-                    request.Key = name.Substring(name.LastIndexOf(@"\") + 1);
+                    request.Key = Path.GetFileName(request.FilePath);
                 }
             }
 
