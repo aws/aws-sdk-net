@@ -1,8 +1,0 @@
-c:\AWS\Merge-Dir\AWS.Extensions\bin\Release\AWS.Extensions.xml
-c:\AWS\Merge-Dir\AWS.Extensions\bin\Release\AWS.Extensions.dll
-c:\AWS\Merge-Dir\AWS.Extensions\bin\Release\AWS.Extensions.pdb
-c:\AWS\Merge-Dir\AWS.Extensions\bin\Release\AWSSDK.dll
-c:\AWS\Merge-Dir\AWS.Extensions\bin\Release\AWSSDK.xml
-c:\AWS\Merge-Dir\AWS.Extensions\obj\Release\AWS.Extensions.csprojResolveAssemblyReference.cache
-c:\AWS\Merge-Dir\AWS.Extensions\obj\Release\AWS.Extensions.dll
-c:\AWS\Merge-Dir\AWS.Extensions\obj\Release\AWS.Extensions.pdb

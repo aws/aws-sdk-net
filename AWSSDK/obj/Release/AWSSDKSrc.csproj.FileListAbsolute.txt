@@ -1,3 +1,0 @@
-c:\AWS\Merge-Dir\AWSSDK\bin\Release\AWSSDK.xml
-c:\AWS\Merge-Dir\AWSSDK\bin\Release\AWSSDK.dll
-c:\AWS\Merge-Dir\AWSSDK\obj\Release\AWSSDK.dll
