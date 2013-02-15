@@ -35,8 +35,8 @@
   </xsl:template>
 
   <xsl:template match="ec2:routeSet">
-    <xsl:element name="Routes">
       <xsl:for-each select="ec2:item">
+        <xsl:element name="Routes">
           <xsl:element name="DestinationCidrBlock">
             <xsl:value-of select="ec2:destinationCidrBlock" />
           </xsl:element>
@@ -55,8 +55,8 @@
           <xsl:element name="NetworkInterfaceId">
             <xsl:value-of select="ec2:networkInterfaceId" />
           </xsl:element>
+        </xsl:element>
       </xsl:for-each>
-    </xsl:element>
   </xsl:template>
 
   <xsl:template match="ec2:associationSet">
