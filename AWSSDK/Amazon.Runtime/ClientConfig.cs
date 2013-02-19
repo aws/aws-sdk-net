@@ -20,6 +20,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Configuration;
 using System.Collections.Specialized;
+using System.Net;
 
 namespace Amazon.Runtime
 {
@@ -51,6 +52,7 @@ namespace Amazon.Runtime
         private bool useNagleAlgorithm = false;
         private int bufferSize = Amazon.S3.Util.S3Constants.DefaultBufferSize;
         private bool resignRetries = false;
+        private ICredentials proxyCredentials;
         private bool logMetrics = GetLogMetricsConfig();
 
         private static bool? cachedLogMetrics = null;
@@ -238,6 +240,7 @@ namespace Amazon.Runtime
         /// property to authenticate requests with the
         /// specified Proxy server.
         /// </summary>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyUsername
         {
             get { return this.proxyUsername; }
@@ -255,12 +258,29 @@ namespace Amazon.Runtime
         /// the proxy password. This property isn't
         /// used if ProxyUsername is null or empty.
         /// </remarks>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyPassword
         {
             get { return this.proxyPassword; }
             set { this.proxyPassword = value; }
         }
 
+        /// <summary>
+        /// Credentials to use with a proxy.
+        /// </summary>
+        public ICredentials ProxyCredentials
+        {
+            get
+            {
+                ICredentials credentials = this.proxyCredentials;
+                if (credentials == null && !string.IsNullOrEmpty(this.proxyUsername))
+                {
+                    credentials = new NetworkCredential(this.proxyUsername, this.proxyPassword ?? String.Empty);
+                }
+                return credentials;
+            }
+            set { this.proxyCredentials = value; }
+        }
 
         /// <summary>
         /// Gets and sets the LogResponse.

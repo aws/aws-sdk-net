@@ -1703,14 +1703,11 @@ namespace Amazon.CloudFront_2012_03_15
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                    if (config.IsSetProxyUsername())
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                    }
                     httpRequest.Proxy = proxy;
+                }
+                if (httpRequest.Proxy != null && config.IsSetProxyCredentials())
+                {
+                    httpRequest.Proxy.Credentials = config.ProxyCredentials;
                 }
 
                 httpRequest.UserAgent = config.UserAgent;

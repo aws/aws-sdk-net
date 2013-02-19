@@ -43,7 +43,6 @@ namespace Amazon.S3.Transfer
         private string contentType;
         internal NameValueCollection metadata;
         private S3StorageClass storageClass;
-        private int timeout = 0;
         private long? partSize;
         private bool autoCloseStream = true;
         private ServerSideEncryptionMethod encryption;
@@ -437,29 +436,6 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// 	Gets or sets the timeout property in milliseconds.
-        /// 	The value of this property is assigned to the
-        /// 	<c>ReadWriteTimeout</c> and <c>Timeout</c> properties of the
-        /// 	<c>HTTPWebRequest</c> object used for Amazon S3 GET Object requests.
-        /// </summary>
-        /// <remarks>
-        /// 	A value less than or equal to 0 will be silently ignored.
-        /// </remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public int Timeout
-        {
-            get { return this.timeout; }
-            set
-            {
-                if (value > 0)
-                {
-                    this.timeout = value;
-                }
-            }
-        }
-
-        /// <summary>
         /// 	Sets the sets the timeout property in milliseconds
         /// 	and returns this object instance, 
         /// 	enabling additional method calls to be chained together.
@@ -478,7 +454,7 @@ namespace Amazon.S3.Transfer
         /// </returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public TransferUtilityUploadRequest WithTimeout(int timeout)
+        new public TransferUtilityUploadRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
             return this;

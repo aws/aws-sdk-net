@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Vpc Security Group Membership
+    /// <summary>
+    /// <para>This data type is used as a response element for queries on VPC security group membership.</para>
     /// </summary>
     public class VpcSecurityGroupMembership
     {
         
         private string vpcSecurityGroupId;
         private string status;
+
+        /// <summary>
+        /// The name of the VPC security group.
+        ///  
+        /// </summary>
         public string VpcSecurityGroupId
         {
             get { return this.vpcSecurityGroupId; }
@@ -50,6 +56,11 @@ namespace Amazon.RDS.Model
         {
             return this.vpcSecurityGroupId != null;
         }
+
+        /// <summary>
+        /// The status of the VPC Security Group.
+        ///  
+        /// </summary>
         public string Status
         {
             get { return this.status; }

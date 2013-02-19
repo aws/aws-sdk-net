@@ -43,6 +43,8 @@ namespace Amazon.S3.Model
 
         private WebHeaderCollection headers;
         private Stream inputStream;
+        int timeout = 0;
+        int readWriteTimeout = 0;
 
         // Most requests have less than 10 parameters, so 10 is a safe starting capacity
         // This way, the Map.Add operation will be an O(1) operation
@@ -136,6 +138,119 @@ namespace Amazon.S3.Model
 
         #endregion
 
+
+        #region Timeout
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public int Timeout
+        {
+            get { return this.timeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.timeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="timeout">Timeout property</param>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public S3Request WithTimeout(int timeout)
+        {
+            Timeout = timeout;
+            return this;
+        }
+
+        #endregion
+
+        #region ReadWriteTimeout
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public int ReadWriteTimeout
+        {
+            get { return this.readWriteTimeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.readWriteTimeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public S3Request WithReadWriteTimeout(int readWriteTimeout)
+        {
+            ReadWriteTimeout = readWriteTimeout;
+            return this;
+        }
+
+        #endregion
+
+
         #region Request events
 
         internal event RequestEventHandler BeforeRequestEvent;
@@ -208,16 +323,6 @@ namespace Amazon.S3.Model
         #endregion
 
         #region Virtual methods
-
-        internal virtual bool SupportReadWriteTimeout
-        {
-            get { return false; }
-        }
-
-        internal virtual bool SupportTimeout
-        {
-            get { return false; }
-        }
 
         internal virtual bool Expect100Continue
         {

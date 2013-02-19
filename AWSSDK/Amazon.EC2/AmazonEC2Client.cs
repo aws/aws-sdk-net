@@ -3155,14 +3155,11 @@ namespace Amazon.EC2
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                    if (config.IsSetProxyUsername())
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                    }
                     request.Proxy = proxy;
+                }
+                if (request.Proxy != null && config.IsSetProxyCredentials())
+                {
+                    request.Proxy.Credentials = config.ProxyCredentials;
                 }
 
                 request.UserAgent = config.UserAgent;

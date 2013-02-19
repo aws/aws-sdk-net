@@ -79,12 +79,16 @@ namespace Amazon.DynamoDB.DataModel
         public static DynamoDBAttribute GetAttribute(Type targetType)
         {
             if (targetType == null) throw new ArgumentNullException("targetType");
+            // Retrieve correct Type to get attributes from, in case this is a metadata class
+            targetType = GetMetadataType(targetType);
             object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
             return GetSingleDDBAttribute(attributes);
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
+            // Retrieve correct MemberInfo to get attributes from, in case the type is a metadata class
+            targetMemberInfo = GetMetadataMemberInfo(targetMemberInfo);
             object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
             return GetSingleDDBAttribute(attributes);
         }
@@ -96,6 +100,57 @@ namespace Amazon.DynamoDB.DataModel
             if (attributes.Length == 1)
                 return (attributes[0] as DynamoDBAttribute);
             throw new InvalidOperationException("Cannot have multiple DynamoDBAttributes on a single member");
+        }
+
+        // If the given type has defined MetadataTypeAttribute, return the target of that attribute.
+        // Otherwise, return the passed-in Type.
+        private static Type GetMetadataType(Type type)
+        {
+            if (type == null)
+                throw new ArgumentNullException("type");
+
+            Type targetType = null;
+            object[] attributes = type.GetCustomAttributes(true);
+            foreach (var attribute in attributes)
+            {
+                Type attributeType = attribute.GetType();
+                // reflection-only to still support 3.5 Client Profile
+                if (string.Equals(attributeType.FullName, "System.ComponentModel.DataAnnotations.MetadataTypeAttribute", StringComparison.Ordinal))
+                {
+                    PropertyInfo propertyMetadataClassType = attributeType.GetProperty("MetadataClassType");
+                    if (propertyMetadataClassType != null)
+                    {
+                        targetType = propertyMetadataClassType.GetValue(attribute, null) as Type;
+                        if (targetType != null)
+                            break;
+                    }
+                }
+            }
+
+            // if nothing is found, fall back to targetType
+            if (targetType == null)
+                targetType = type;
+            return targetType;
+        }
+
+        // If the MemberInfo's DeclaringType has defined MetadataTypeAttribute, return the matching
+        // MemberInfo on that type.
+        // Otherwise, return the passed-in MemberInfo.
+        private static MemberInfo GetMetadataMemberInfo(MemberInfo memberInfo)
+        {
+            if (memberInfo == null)
+                throw new ArgumentNullException("memberInfo");
+
+            MemberInfo targetMemberInfo = memberInfo;
+            Type metaDataType = GetMetadataType(memberInfo.DeclaringType);
+            MemberInfo[] matchedMembers = metaDataType.GetMember(memberInfo.Name);
+
+            if (matchedMembers.Length > 1)
+                throw new InvalidOperationException(string.Format("More than one public member found with the same name of:  {0}", memberInfo.Name));
+            if (matchedMembers.Length == 1)
+                targetMemberInfo = matchedMembers[0];
+
+            return targetMemberInfo;
         }
 
         #endregion

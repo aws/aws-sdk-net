@@ -141,6 +141,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("CharacterSetName", StringUtils.FromString(createDBInstanceRequest.CharacterSetName));
             }
+            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPubliclyAccessible())
+            {
+                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceRequest.PubliclyAccessible));
+            }
 
             return request;
         }

@@ -16,33 +16,33 @@ using System;
 using System.Net;
 using Amazon.Runtime;
 
-namespace Amazon.RDS.Model
+namespace Amazon.OpsWorks.Model
 {
     ///<summary>
-    /// AmazonRDS exception
+    /// AmazonOpsWorks exception
     /// </summary>
-    public class DBSubnetGroupListDoesNotCoverAllAzException : AmazonRDSException 
+    public class ValidationException : AmazonOpsWorksException 
     {
         /// <summary>
-        /// Constructs a new DBSubnetGroupListDoesNotCoverAllAzException with the specified error
+        /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal DBSubnetGroupListDoesNotCoverAllAzException(string message) 
+        internal ValidationException(string message) 
             : base(message) {}
           
-        internal DBSubnetGroupListDoesNotCoverAllAzException(string message, Exception innerException) 
+        internal ValidationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal DBSubnetGroupListDoesNotCoverAllAzException(Exception innerException) 
+        internal ValidationException(Exception innerException) 
             : base(innerException) {}
             
-        internal DBSubnetGroupListDoesNotCoverAllAzException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        internal ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal DBSubnetGroupListDoesNotCoverAllAzException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        internal ValidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

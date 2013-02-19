@@ -165,6 +165,12 @@
         <Hostname>redshift.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>opsworks</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>opsworks.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1534,6 +1540,11 @@
     <Service>
       <Name>redshift</Name>
       <FullName>Amazon Redshift</FullName>
+      <RegionName>us-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>opsworks</Name>
+      <FullName>AWS OpsWorks</FullName>
       <RegionName>us-east-1</RegionName>
     </Service>
     <Service>

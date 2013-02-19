@@ -46,8 +46,6 @@ namespace Amazon.S3.Model
         private List<string> etagsToNotMatch;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
-        private int timeout = System.Threading.Timeout.Infinite;
-        private int readWriteTimeout = 0;
         private int? partNumber;
         private long? firstByte;
         private long? lastByte;
@@ -503,33 +501,6 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// A value less than or equal to 0 will be silently ignored
-        /// </para>
-        /// <para>
-        /// You should only set a custom timeout if you are certain that
-        /// the file will not be transferred within the default intervals
-        /// for an HttpWebRequest.
-        /// </para>
-        /// </remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public int Timeout
-        {
-            get { return this.timeout; }
-            set
-            {
-                if ((value > 0) || (value == System.Threading.Timeout.Infinite))
-                {
-                    this.timeout = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
-        /// </summary>
         /// <param name="timeout">Timeout property</param>
         /// <remarks>
         /// <para>
@@ -544,15 +515,10 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public CopyPartRequest WithTimeout(int timeout)
+        new public CopyPartRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
             return this;
-        }
-
-        internal override bool SupportTimeout
-        {
-            get { return true; }
         }
 
         #endregion
@@ -562,36 +528,14 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        public int ReadWriteTimeout
-        {
-            get { return this.readWriteTimeout; }
-            set
-            {
-                if (value > 0 || value == System.Threading.Timeout.Infinite)
-                {
-                    this.readWriteTimeout = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
-        /// </summary>
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        public CopyPartRequest WithReadWriteTimeout(int readWriteTimeout)
+        new public CopyPartRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
             return this;
-        }
-
-        internal override bool SupportReadWriteTimeout
-        {
-            get { return true; }
         }
 
         #endregion
@@ -751,6 +695,15 @@ namespace Amazon.S3.Model
         {
             this.serverSideEncryption = serverSideEncryption;
             return this;
+        }
+
+        #endregion
+
+        #region Constructor
+
+        public CopyPartRequest()
+        {
+            Timeout = System.Threading.Timeout.Infinite;
         }
 
         #endregion

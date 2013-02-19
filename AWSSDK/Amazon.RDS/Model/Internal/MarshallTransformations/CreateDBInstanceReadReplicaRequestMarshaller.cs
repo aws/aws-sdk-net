@@ -67,6 +67,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(createDBInstanceReadReplicaRequest.OptionGroupName));
             }
+            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetPubliclyAccessible())
+            {
+                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceReadReplicaRequest.PubliclyAccessible));
+            }
 
             return request;
         }

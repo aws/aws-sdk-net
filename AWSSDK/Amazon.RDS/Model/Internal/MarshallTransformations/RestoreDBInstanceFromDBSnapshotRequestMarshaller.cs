@@ -63,6 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("MultiAZ", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.MultiAZ));
             }
+            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetPubliclyAccessible())
+            {
+                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.PubliclyAccessible));
+            }
             if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetAutoMinorVersionUpgrade())
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.AutoMinorVersionUpgrade));

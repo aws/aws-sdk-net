@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
         /// Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> Example: <copy>mydbinstance</copy>
+        /// with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -194,7 +194,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of Ec2 Vpc Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible. Constraints:
+        /// A list of EC2 VPC Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible. Constraints:
         /// <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens</li> </ul>
         ///  
@@ -618,7 +618,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The new DB Instance identifier for the DB Instance when renaming a DB Instance. This value is stored as a lowercase string. Constraints:
         /// <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-        /// hyphen or contain two consecutive hyphens</li> </ul> Example: <copy>mydbinstance</copy>
+        /// hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string NewDBInstanceIdentifier

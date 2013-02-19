@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private string availabilityZone;
         private string dBSubnetGroupName;
         private bool? multiAZ;
+        private bool? publiclyAccessible;
         private bool? autoMinorVersionUpgrade;
         private string licenseModel;
         private string dBName;
@@ -246,6 +247,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;
+        }
+        public bool PubliclyAccessible
+        {
+            get { return this.publiclyAccessible ?? default(bool); }
+            set { this.publiclyAccessible = value; }
+        }
+
+        /// <summary>
+        /// Sets the PubliclyAccessible property
+        /// </summary>
+        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithPubliclyAccessible(bool publiclyAccessible)
+        {
+            this.publiclyAccessible = publiclyAccessible;
+            return this;
+        }
+            
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this.publiclyAccessible.HasValue;
         }
 
         /// <summary>

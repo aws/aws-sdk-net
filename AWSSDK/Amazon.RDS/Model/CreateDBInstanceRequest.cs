@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string optionGroupName;
         private string characterSetName;
+        private bool? publiclyAccessible;
 
         /// <summary>
         /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> The name of the database to create when the DB
@@ -312,8 +313,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of Ec2 Vpc Security Groups to associate with this DB Instance. Default: The default Ec2 Vpc Security Group for the DB Subnet group's
-        /// Vpc.
+        /// A list of EC2 VPC Security Groups to associate with this DB Instance. Default: The default EC2 VPC Security Group for the DB Subnet group's
+        /// VPC.
         ///  
         /// </summary>
         public List<string> VpcSecurityGroupIds
@@ -770,6 +771,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetCharacterSetName()
         {
             return this.characterSetName != null;
+        }
+        public bool PubliclyAccessible
+        {
+            get { return this.publiclyAccessible ?? default(bool); }
+            set { this.publiclyAccessible = value; }
+        }
+
+        /// <summary>
+        /// Sets the PubliclyAccessible property
+        /// </summary>
+        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithPubliclyAccessible(bool publiclyAccessible)
+        {
+            this.publiclyAccessible = publiclyAccessible;
+            return this;
+        }
+            
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this.publiclyAccessible.HasValue;
         }
     }
 }

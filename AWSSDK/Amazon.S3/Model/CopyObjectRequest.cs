@@ -49,8 +49,6 @@ namespace Amazon.S3.Model
         private S3MetadataDirective directive;
         internal NameValueCollection metaData;
         private S3CannedACL cannedACL;
-        private int timeout = 0;
-        private int readWriteTimeout;
         private S3StorageClass storageClass;
         private ServerSideEncryptionMethod encryption;
         private string websiteRedirectLocation;
@@ -584,33 +582,6 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// A value less than or equal to 0 will be silently ignored
-        /// </para>
-        /// <para>
-        /// You should only set a custom timeout if you are certain that
-        /// the file will not be transferred within the default intervals
-        /// for an HttpWebRequest.
-        /// </para>
-        /// </remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public int Timeout
-        {
-            get { return this.timeout; }
-            set
-            {
-                if (value > 0 || value == System.Threading.Timeout.Infinite)
-                {
-                    this.timeout = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
-        /// </summary>
         /// <param name="timeout">Timeout property</param>
         /// <remarks>
         /// <para>
@@ -625,15 +596,10 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        public CopyObjectRequest WithTimeout(int timeout)
+        new public CopyObjectRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
             return this;
-        }
-
-        internal override bool SupportTimeout
-        {
-            get { return true; }
         }
 
         #endregion
@@ -643,36 +609,14 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        public int ReadWriteTimeout
-        {
-            get { return this.readWriteTimeout; }
-            set
-            {
-                if (value > 0 || value == System.Threading.Timeout.Infinite)
-                {
-                    this.readWriteTimeout = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
-        /// </summary>
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-        public CopyObjectRequest WithReadWriteTimeout(int readWriteTimeout)
+        new public CopyObjectRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
             return this;
-        }
-
-        internal override bool SupportReadWriteTimeout
-        {
-            get { return true; }
         }
 
         #endregion

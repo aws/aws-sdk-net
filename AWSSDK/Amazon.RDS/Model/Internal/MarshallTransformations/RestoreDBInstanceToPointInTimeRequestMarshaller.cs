@@ -71,6 +71,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("MultiAZ", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.MultiAZ));
             }
+            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetPubliclyAccessible())
+            {
+                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.PubliclyAccessible));
+            }
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetAutoMinorVersionUpgrade())
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.AutoMinorVersionUpgrade));

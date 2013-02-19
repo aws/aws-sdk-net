@@ -19,6 +19,8 @@
  *  API Version: 2010-03-31
  */
 
+using System;
+using System.Net;
 using Amazon.Util;
 
 namespace Amazon.SimpleNotificationService
@@ -41,6 +43,7 @@ namespace Amazon.SimpleNotificationService
         private string proxyUsername;
         private string proxyPassword;
         private int? connectionLimit;
+        private ICredentials proxyCredentials;
 
         /// <summary>
         /// Gets Service Version
@@ -335,6 +338,7 @@ namespace Amazon.SimpleNotificationService
         /// property to authenticate requests with the
         /// specified Proxy server.
         /// </summary>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyUsername
         {
             get { return this.proxyUsername; }
@@ -346,6 +350,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="userName">Value for the ProxyUsername property</param>
         /// <returns>this instance</returns>
+        [Obsolete("Use WithProxyCredentials instead")]
         public AmazonSimpleNotificationServiceConfig WithProxyUsername(string userName)
         {
             this.proxyUsername = userName;
@@ -372,6 +377,7 @@ namespace Amazon.SimpleNotificationService
         /// the proxy password. This property isn't
         /// used if ProxyUsername is null or empty.
         /// </remarks>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyPassword
         {
             get { return this.proxyPassword; }
@@ -391,6 +397,7 @@ namespace Amazon.SimpleNotificationService
         /// </remarks>
         /// <param name="password">ProxyPassword property</param>
         /// <returns>this instance</returns>
+        [Obsolete("Use WithProxyCredentials instead")]
         public AmazonSimpleNotificationServiceConfig WithProxyPassword(string password)
         {
             this.proxyPassword = password;
@@ -404,6 +411,43 @@ namespace Amazon.SimpleNotificationService
         internal bool IsSetProxyPassword()
         {
             return !System.String.IsNullOrEmpty(this.proxyPassword);
+        }
+
+        /// <summary>
+        /// Credentials to use with a proxy.
+        /// </summary>
+        public ICredentials ProxyCredentials
+        {
+            get
+            {
+                ICredentials credentials = this.proxyCredentials;
+                if (credentials == null && this.IsSetProxyUsername())
+                {
+                    credentials = new NetworkCredential(this.proxyUsername, this.proxyPassword ?? String.Empty);
+                }
+                return credentials;
+            }
+            set { this.proxyCredentials = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyCredentials property.
+        /// </summary>
+        /// <param name="proxyCredentials">ProxyCredentials property</param>
+        /// <returns>this instance</returns>
+        public AmazonSimpleNotificationServiceConfig WithProxyCredentials(ICredentials proxyCredentials)
+        {
+            this.proxyCredentials = proxyCredentials;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyCredentials property is set
+        /// </summary>
+        /// <returns>true if ProxyCredentials property is set</returns>
+        internal bool IsSetProxyCredentials()
+        {
+            return (this.ProxyCredentials != null);
         }
 
         /// <summary>

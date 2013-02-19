@@ -20,6 +20,9 @@
  *
  */
 
+using System;
+using System.Net;
+
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
@@ -46,6 +49,7 @@ namespace Amazon.S3
         private bool fUseSecureString = true;
         private int bufferSize = S3Constants.DefaultBufferSize;
         private int? connectionLimit;
+        private ICredentials proxyCredentials;
 
         #endregion
 
@@ -197,6 +201,7 @@ namespace Amazon.S3
         /// property to authenticate requests with the
         /// specified Proxy server.
         /// </summary>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyUsername
         {
             get { return this.proxyUsername; }
@@ -208,6 +213,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="userName">Value for the ProxyUsername property</param>
         /// <returns>this instance</returns>
+        [Obsolete("Use WithProxyCredentials instead")]
         public AmazonS3Config WithProxyUsername(string userName)
         {
             this.proxyUsername = userName;
@@ -234,6 +240,7 @@ namespace Amazon.S3
         /// the proxy password. This property isn't
         /// used if ProxyUsername is null or empty.
         /// </remarks>
+        [Obsolete("Use ProxyCredentials instead")]
         public string ProxyPassword
         {
             get { return this.proxyPassword; }
@@ -253,6 +260,7 @@ namespace Amazon.S3
         /// </remarks>
         /// <param name="password">ProxyPassword property</param>
         /// <returns>this instance</returns>
+        [Obsolete("Use WithProxyCredentials instead")]
         public AmazonS3Config WithProxyPassword(string password)
         {
             this.proxyPassword = password;
@@ -267,6 +275,44 @@ namespace Amazon.S3
         {
             return !System.String.IsNullOrEmpty(this.proxyPassword);
         }
+
+        /// <summary>
+        /// Credentials to use with a proxy.
+        /// </summary>
+        public ICredentials ProxyCredentials
+        {
+            get
+            {
+                ICredentials credentials = this.proxyCredentials;
+                if (credentials == null && this.IsSetProxyUsername())
+                {
+                    credentials = new NetworkCredential(this.proxyUsername, this.proxyPassword ?? String.Empty);
+                }
+                return credentials;
+            }
+            set { this.proxyCredentials = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyCredentials property.
+        /// </summary>
+        /// <param name="proxyCredentials">ProxyCredentials property</param>
+        /// <returns>this instance</returns>
+        public AmazonS3Config WithProxyCredentials(ICredentials proxyCredentials)
+        {
+            this.proxyCredentials = proxyCredentials;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyCredentials property is set
+        /// </summary>
+        /// <returns>true if ProxyCredentials property is set</returns>
+        internal bool IsSetProxyCredentials()
+        {
+            return (this.ProxyCredentials != null);
+        }
+
 
         /// <summary>
         /// Gets and sets the MaxErrorRetry property.

@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
         private int? iops;
         private string optionGroupName;
+        private bool? publiclyAccessible;
 
         /// <summary>
         /// The DB Instance identifier of the Read Replica. This is the unique key that identifies a DB Instance. This parameter is stored as a
@@ -269,6 +270,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+        public bool PubliclyAccessible
+        {
+            get { return this.publiclyAccessible ?? default(bool); }
+            set { this.publiclyAccessible = value; }
+        }
+
+        /// <summary>
+        /// Sets the PubliclyAccessible property
+        /// </summary>
+        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceReadReplicaRequest WithPubliclyAccessible(bool publiclyAccessible)
+        {
+            this.publiclyAccessible = publiclyAccessible;
+            return this;
+        }
+            
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this.publiclyAccessible.HasValue;
         }
     }
 }

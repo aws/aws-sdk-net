@@ -6145,6 +6145,258 @@
     <Compile Include="Amazon.ImportExport\Model\UpdateJobResponse.cs" />
     <Compile Include="Amazon.ImportExport\Model\UpdateJobResult.cs" />
     <Compile Include="Amazon.ImportExport\Util\JobTypeConstants.cs" />
+    <Compile Include="Amazon.OpsWorks\AmazonOpsWorks.cs" />
+    <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
+    <Compile Include="Amazon.OpsWorks\AmazonOpsWorksConfig.cs" />
+    <Compile Include="Amazon.OpsWorks\AmazonOpsWorksException.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\App.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AutoScalingThresholds.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CloneStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CloneStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CloneStackResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Command.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateAppRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateAppResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateAppResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateDeploymentRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateDeploymentResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateDeploymentResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateInstanceResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateLayerRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateLayerResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateLayerResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateStackResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateUserProfileRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateUserProfileResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\CreateUserProfileResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteAppRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteAppResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteLayerRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteLayerResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteUserProfileRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeleteUserProfileResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Deployment.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeploymentCommand.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeAppsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeAppsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeAppsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeCommandsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeCommandsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeCommandsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeDeploymentsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeDeploymentsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeDeploymentsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLayersRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLayersResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLayersResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLoadBasedAutoScalingRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLoadBasedAutoScalingResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeLoadBasedAutoScalingResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribePermissionsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribePermissionsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribePermissionsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeRaidArraysRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeRaidArraysResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeRaidArraysResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeServiceErrorsRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeServiceErrorsResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeServiceErrorsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStacksRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStacksResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStacksResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeTimeBasedAutoScalingRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeTimeBasedAutoScalingResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeTimeBasedAutoScalingResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeUserProfilesRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeUserProfilesResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeUserProfilesResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\ElasticIp.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Instance.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AppUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AutoScalingThresholdsUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CommandUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateAppRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateAppResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateAppResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateDeploymentRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateDeploymentResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateDeploymentResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateInstanceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateLayerRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateLayerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateLayerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateStackResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateUserProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateUserProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CreateUserProfileResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteAppRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteAppResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteLayerRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteLayerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteUserProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeleteUserProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeploymentCommandUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeploymentUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeAppsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeAppsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeAppsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeCommandsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeCommandsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeCommandsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeDeploymentsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeDeploymentsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeDeploymentsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLayersRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLayersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLayersResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLoadBasedAutoScalingRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLoadBasedAutoScalingResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLoadBasedAutoScalingResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribePermissionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribePermissionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribePermissionsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeRaidArraysRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeRaidArraysResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeRaidArraysResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeServiceErrorsRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeServiceErrorsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeServiceErrorsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStacksRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStacksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStacksResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeTimeBasedAutoScalingRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeTimeBasedAutoScalingResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeTimeBasedAutoScalingResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeUserProfilesRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeUserProfilesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeUserProfilesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ElasticIpUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\InstanceUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\LayerUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\LoadBasedAutoScalingConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\PermissionUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RaidArrayUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RebootInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RebootInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RecipesUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ServiceErrorUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetLoadBasedAutoScalingRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetLoadBasedAutoScalingResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetPermissionRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetPermissionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetTimeBasedAutoScalingRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetTimeBasedAutoScalingResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SourceUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SslConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StopInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StopInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StopStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StopStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\TimeBasedAutoScalingConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateAppRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateAppResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateInstanceRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateLayerRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateLayerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateUserProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateUserProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UserProfileUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\VolumeConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\VolumeUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\WeeklyAutoScalingScheduleUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Layer.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\LoadBasedAutoScalingConfiguration.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Permission.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RaidArray.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RebootInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RebootInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Recipes.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\ResourceNotFoundException.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\ServiceError.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetLoadBasedAutoScalingRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetLoadBasedAutoScalingResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetPermissionRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetPermissionResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetTimeBasedAutoScalingRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SetTimeBasedAutoScalingResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Source.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\SslConfiguration.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Stack.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StartInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StartInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StartStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StartStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StopInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StopInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StopStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StopStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\TimeBasedAutoScalingConfiguration.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateAppRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateAppResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateInstanceRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateInstanceResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateLayerRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateLayerResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateStackRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateStackResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateUserProfileRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateUserProfileResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UserProfile.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\ValidationException.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Volume.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\VolumeConfiguration.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\WeeklyAutoScalingSchedule.cs" />
     <Compile Include="Amazon.RDS\AmazonRDS.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6157,8 +6409,15 @@
     <Compile Include="Amazon.RDS\AmazonRDSException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\AddTagsToResourceRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\AddTagsToResourceResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\AddSourceIdentifierToSubscriptionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\AddSourceIdentifierToSubscriptionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\AddSourceIdentifierToSubscriptionResult.cs" />
+    <Compile Include="Amazon.RDS\Model\AddTagsToResourceRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\AddTagsToResourceResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\AuthorizationAlreadyExistsException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6180,6 +6439,9 @@
     <Compile Include="Amazon.RDS\Model\AvailabilityZone.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\CharacterSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\CopyDBSnapshotRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6189,7 +6451,6 @@
     <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\CharacterSet.cs" />
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6244,9 +6505,18 @@
     <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\CreateOptionGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResult.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateEventSubscriptionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateEventSubscriptionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateEventSubscriptionResult.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DBEngineVersion.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6286,7 +6556,9 @@
     <Compile Include="Amazon.RDS\Model\DBSecurityGroupNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DBSecurityGroupNotSupportedException.cs" />
+    <Compile Include="Amazon.RDS\Model\DBSecurityGroupNotSupportedException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DBSecurityGroupQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6305,8 +6577,7 @@
     <Compile Include="Amazon.RDS\Model\DBSubnetGroupAlreadyExistsException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupDoesNotCoverEnoughAZsException.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupListDoesNotCoverAllAzException.cs">
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupDoesNotCoverEnoughAZsException.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.RDS\Model\DBSubnetGroupNotFoundException.cs">
@@ -6354,8 +6625,15 @@
     <Compile Include="Amazon.RDS\Model\DeleteDBSubnetGroupResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteEventSubscriptionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteEventSubscriptionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteEventSubscriptionResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DescribeDBEngineVersionsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6428,6 +6706,9 @@
     <Compile Include="Amazon.RDS\Model\DescribeEngineDefaultParametersResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeEventCategoriesRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeEventCategoriesResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeEventCategoriesResult.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeEventsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6437,12 +6718,27 @@
     <Compile Include="Amazon.RDS\Model\DescribeEventsResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResult.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeEventSubscriptionsRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeEventSubscriptionsResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeEventSubscriptionsResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DescribeOrderableDBInstanceOptionsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6482,14 +6778,24 @@
     <Compile Include="Amazon.RDS\Model\Event.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\EventCategoriesMap.cs" />
+    <Compile Include="Amazon.RDS\Model\EventSubscription.cs" />
+    <Compile Include="Amazon.RDS\Model\EventSubscriptionQuotaExceededException.cs" />
     <Compile Include="Amazon.RDS\Model\InstanceQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.RDS\Model\InsufficientDBInstanceCapacityException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddSourceIdentifierToSubscriptionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddSourceIdentifierToSubscriptionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddSourceIdentifierToSubscriptionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AuthorizeDBSecurityGroupIngressRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6502,7 +6808,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AvailabilityZoneUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CharacterSetUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CharacterSetUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6566,9 +6874,18 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateEventSubscriptionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateEventSubscriptionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateEventSubscriptionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBEngineVersionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6629,8 +6946,15 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSubnetGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteEventSubscriptionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteEventSubscriptionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteEventSubscriptionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBEngineVersionsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6703,6 +7027,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEngineDefaultParametersResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventCategoriesRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventCategoriesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventCategoriesResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6712,12 +7039,27 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventSubscriptionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventSubscriptionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventSubscriptionsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOrderableDBInstanceOptionsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6754,15 +7096,23 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\EngineDefaultsUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\EventCategoriesMapUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\EventSubscriptionUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\EventUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\IPRangeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBInstanceRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6790,13 +7140,30 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupMembershipUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupOptionUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyEventSubscriptionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyEventSubscriptionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyEventSubscriptionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupMembershipUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupOptionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OrderableDBInstanceOptionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6806,9 +7173,15 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PurchaseReservedDBInstancesOfferingRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6830,8 +7203,15 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveSourceIdentifierFromSubscriptionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveSourceIdentifierFromSubscriptionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ReservedDBInstancesOfferingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6877,8 +7257,12 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\TagUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\VpcSecurityGroupMembershipUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\TagUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\VpcSecurityGroupMembershipUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\InvalidDBInstanceStateException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6897,7 +7281,10 @@
     <Compile Include="Amazon.RDS\Model\InvalidDBSubnetStateException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\InvalidOptionGroupStateException.cs" />
+    <Compile Include="Amazon.RDS\Model\InvalidEventSubscriptionStateException.cs" />
+    <Compile Include="Amazon.RDS\Model\InvalidOptionGroupStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\InvalidRestoreException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6910,9 +7297,15 @@
     <Compile Include="Amazon.RDS\Model\IPRange.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\ListTagsForResourceRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResult.cs" />
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\ModifyDBInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6940,17 +7333,42 @@
     <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResult.cs" />
-    <Compile Include="Amazon.RDS\Model\Option.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionConfiguration.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroup.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroupAlreadyExistsException.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroupMembership.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroupNotFoundException.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroupOption.cs" />
-    <Compile Include="Amazon.RDS\Model\OptionGroupQuotaExceededException.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyEventSubscriptionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyEventSubscriptionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyEventSubscriptionResult.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\OrderableDBInstanceOption.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6963,10 +7381,18 @@
     <Compile Include="Amazon.RDS\Model\PointInTimeRestoreNotEnabledException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResult.cs" />
-    <Compile Include="Amazon.RDS\Model\ProvisionedIopsNotAvailableInAZException.cs" />
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ProvisionedIopsNotAvailableInAZException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\PurchaseReservedDBInstancesOfferingRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6988,8 +7414,15 @@
     <Compile Include="Amazon.RDS\Model\RecurringCharge.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\RemoveSourceIdentifierFromSubscriptionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\RemoveSourceIdentifierFromSubscriptionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\RemoveSourceIdentifierFromSubscriptionResult.cs" />
+    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\ReservedDBInstance.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7047,6 +7480,10 @@
     <Compile Include="Amazon.RDS\Model\SnapshotQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\SNSInvalidTopicException.cs" />
+    <Compile Include="Amazon.RDS\Model\SNSNoAuthorizationException.cs" />
+    <Compile Include="Amazon.RDS\Model\SNSTopicArnNotFoundException.cs" />
+    <Compile Include="Amazon.RDS\Model\SourceNotFoundException.cs" />
     <Compile Include="Amazon.RDS\Model\StorageQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7056,8 +7493,15 @@
     <Compile Include="Amazon.RDS\Model\SubnetAlreadyInUseException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Tag.cs" />
-    <Compile Include="Amazon.RDS\Model\VpcSecurityGroupMembership.cs" />
+    <Compile Include="Amazon.RDS\Model\SubscriptionAlreadyExistException.cs" />
+    <Compile Include="Amazon.RDS\Model\SubscriptionCategoryNotFoundException.cs" />
+    <Compile Include="Amazon.RDS\Model\SubscriptionNotFoundException.cs" />
+    <Compile Include="Amazon.RDS\Model\Tag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\VpcSecurityGroupMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Redshift\AmazonRedshift.cs" />
     <Compile Include="Amazon.Redshift\AmazonRedshiftClient.cs" />
     <Compile Include="Amazon.Redshift\AmazonRedshiftConfig.cs" />

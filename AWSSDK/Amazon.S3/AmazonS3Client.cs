@@ -2218,9 +2218,9 @@ namespace Amazon.S3
 
                 if (!request.IsSetKey())
                 {
-                    string name = request.FilePath;
-                    // Set the key to be the name of the file sans directories
-                    request.Key = name.Substring(name.LastIndexOf(@"\") + 1);
+                    string path = request.FilePath;
+                    // Set the key to be the filename
+                    request.Key = Path.GetFileName(path);
                 }
             }
 
@@ -4714,10 +4714,6 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.QueryToSign] = parameters[S3QueryParameter.Query];
             }
 
-            // Add the Timeout parameter
-            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
-            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
-
             request.RequestDestinationBucket = request.BucketName;
         }
 
@@ -4896,10 +4892,6 @@ namespace Amazon.S3
                     parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
                 }
             }
-
-            // Add the Timeout parameter
-            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
-            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
 
             // Add the Put Object specific headers to the request
             // 1. The Canned ACL
@@ -5118,10 +5110,6 @@ namespace Amazon.S3
             {
                 parameters[S3QueryParameter.Key] = request.SourceKey;
             }
-
-            // Add the Timeout parameter
-            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
-            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
 
             // Add the Copy Object specific headers to the request
             if (request.IsSetETagToMatch())
@@ -5482,12 +5470,6 @@ namespace Amazon.S3
             // InputStream is a PartStreamWrapper that will take care of computing the length for the part.
             parameters[S3QueryParameter.ContentLength] = request.InputStream.Length.ToString();
 
-
-            // Add the Timeout parameter
-            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
-            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
-
-
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.BucketName;
         }
@@ -5531,10 +5513,6 @@ namespace Amazon.S3
             {
                 setIfUnmodifiedSinceCopyHeader(webHeaders, request.UnmodifiedSinceDate);
             }
-
-            // Add the Timeout parameter
-            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
-            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
 
             // Add server side encryption
             if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
@@ -6819,27 +6797,19 @@ namespace Amazon.S3
 
                 // While checking the Action, for Get, Put and Copy Object, set
                 // the timeout to the value specified in the request.
-                if (request.SupportTimeout)
+                int timeout = request.Timeout;
+                if (timeout > 0 || timeout == System.Threading.Timeout.Infinite)
                 {
-                    int timeout = 0;
-                    Int32.TryParse(parameters[S3QueryParameter.RequestTimeout], out timeout);
-                    if (timeout > 0 || timeout == System.Threading.Timeout.Infinite)
-                    {
-                        httpRequest.Timeout = timeout;
-                        httpRequest.ReadWriteTimeout = timeout; // set both for backwards compatibility
-                    }
+                    httpRequest.Timeout = timeout;
+                    httpRequest.ReadWriteTimeout = timeout; // set both for backwards compatibility
                 }
 
                 // While checking the Action, for Get, Put and Copy Object, set
                 // the read/write timeout to the value specified in the request.
-                if (request.SupportReadWriteTimeout)
+                int readWriteTimeout = request.ReadWriteTimeout;
+                if (readWriteTimeout > 0 || readWriteTimeout == System.Threading.Timeout.Infinite)
                 {
-                    int readWriteTimeout = 0;
-                    Int32.TryParse(parameters[S3QueryParameter.RequestReadWriteTimeout], out readWriteTimeout);
-                    if (readWriteTimeout > 0 || readWriteTimeout == System.Threading.Timeout.Infinite)
-                    {
-                        httpRequest.ReadWriteTimeout = readWriteTimeout;
-                    }
+                    httpRequest.ReadWriteTimeout = readWriteTimeout;
                 }
 
                 httpRequest.Headers.Add(headers);
@@ -6856,19 +6826,12 @@ namespace Amazon.S3
             if (config.IsSetProxyHost() && config.IsSetProxyPort())
             {
                 WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                if (config.IsSetProxyUsername())
-                {
-                    proxy.Credentials = new NetworkCredential(
-                        config.ProxyUsername,
-                        config.ProxyPassword ?? String.Empty
-                        );
-                    LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
-                }
-                else
-                {
-                    LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
-                }
+                LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                 httpRequest.Proxy = proxy;
+            }
+            if (httpRequest.Proxy != null && config.IsSetProxyCredentials())
+            {
+                httpRequest.Proxy.Credentials = config.ProxyCredentials;
             }
         }
 

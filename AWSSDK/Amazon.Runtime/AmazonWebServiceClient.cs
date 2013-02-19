@@ -20,11 +20,11 @@ using System.Security;
 using System.Text;
 using System.Threading;
 
-using Amazon.SecurityToken;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.SecurityToken;
 using Amazon.Util;
 
 
@@ -748,19 +748,12 @@ namespace Amazon.Runtime
                 if (this.config.ProxyHost != null && this.config.ProxyPort != 0)
                 {
                     WebProxy proxy = new WebProxy(this.config.ProxyHost, this.config.ProxyPort);
-                    if (config.ProxyUsername != null)
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
-                    }
-                    else
-                    {
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
-                    }
+                    this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                     request.Proxy = proxy;
+                }
+                if (request.Proxy != null && config.ProxyCredentials != null)
+                {
+                    request.Proxy.Credentials = config.ProxyCredentials;
                 }
 
                 // Setting of these properties is moved to before signing
