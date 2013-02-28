@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for a DescribeStackResources action. </para>
+    /// <para>The output for a DescribeStackResources action.</para>
     /// </summary>
-    public class DescribeStackResourcesResult  
+    public class DescribeStackResourcesResult
     {
         
         private List<StackResource> stackResources = new List<StackResource>();
@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the StackResources collection
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackResources property is set
         internal bool IsSetStackResources()
         {
-            return this.stackResources.Count > 0;       
+            return this.stackResources.Count > 0;
         }
     }
 }

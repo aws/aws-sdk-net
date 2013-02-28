@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the value of the <c>Value</c> element for the current resource record set.</para>
     /// </summary>
-    public class ResourceRecord  
+    public class ResourceRecord
     {
         
         private string value;
@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>0 - 8192</description>
+        ///         <description>0 - 4000</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -62,7 +62,7 @@ namespace Amazon.Route53.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
     }
 }

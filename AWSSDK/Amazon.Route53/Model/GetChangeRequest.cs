@@ -69,7 +69,7 @@ namespace Amazon.Route53.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
     }
 }

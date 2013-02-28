@@ -34,14 +34,14 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public ListStacksResult ListStacksResult
         {
-            get 
+            get
             {
                 if(this.listStacksResult == null)
                 {
                     this.listStacksResult = new ListStacksResult();
                 }
 
-                return this.listStacksResult; 
+                return this.listStacksResult;
             }
             set { this.listStacksResult = value; }
         }

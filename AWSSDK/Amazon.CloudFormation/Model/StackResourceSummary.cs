@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> Contains high-level information about the specified stack resource. </para>
+    /// <para>Contains high-level information about the specified stack resource.</para>
     /// </summary>
-    public class StackResourceSummary  
+    public class StackResourceSummary
     {
         
         private string logicalResourceId;
@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LogicalResourceId property is set
         internal bool IsSetLogicalResourceId()
         {
-            return this.logicalResourceId != null;       
+            return this.logicalResourceId != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if PhysicalResourceId property is set
         internal bool IsSetPhysicalResourceId()
         {
-            return this.physicalResourceId != null;       
+            return this.physicalResourceId != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this.resourceType != null;       
+            return this.resourceType != null;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LastUpdatedTimestamp property is set
         internal bool IsSetLastUpdatedTimestamp()
         {
-            return this.lastUpdatedTimestamp.HasValue;       
+            return this.lastUpdatedTimestamp.HasValue;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceStatus property is set
         internal bool IsSetResourceStatus()
         {
-            return this.resourceStatus != null;       
+            return this.resourceStatus != null;
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceStatusReason property is set
         internal bool IsSetResourceStatusReason()
         {
-            return this.resourceStatusReason != null;       
+            return this.resourceStatusReason != null;
         }
     }
 }

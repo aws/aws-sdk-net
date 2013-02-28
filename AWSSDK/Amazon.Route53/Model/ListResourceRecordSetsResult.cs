@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that contains information about the resource record sets that are returned by the request and information about the
     /// response.</para>
     /// </summary>
-    public class ListResourceRecordSetsResult  
+    public class ListResourceRecordSetsResult
     {
         
         private List<ResourceRecordSet> resourceRecordSets = new List<ResourceRecordSet>();
@@ -57,7 +57,7 @@ namespace Amazon.Route53.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ResourceRecordSets collection
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecordSets property is set
         internal bool IsSetResourceRecordSets()
         {
-            return this.resourceRecordSets.Count > 0;       
+            return this.resourceRecordSets.Count > 0;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Route53.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.Route53.Model
         // Check to see if NextRecordName property is set
         internal bool IsSetNextRecordName()
         {
-            return this.nextRecordName != null;       
+            return this.nextRecordName != null;
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.Route53.Model
         // Check to see if NextRecordType property is set
         internal bool IsSetNextRecordType()
         {
-            return this.nextRecordType != null;       
+            return this.nextRecordType != null;
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.Route53.Model
         // Check to see if NextRecordIdentifier property is set
         internal bool IsSetNextRecordIdentifier()
         {
-            return this.nextRecordIdentifier != null;       
+            return this.nextRecordIdentifier != null;
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.Route53.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;       
+            return this.maxItems != null;
         }
     }
 }

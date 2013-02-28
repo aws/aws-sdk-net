@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for ValidateTemplate action. </para>
+    /// <para>The output for ValidateTemplate action.</para>
     /// </summary>
-    public class ValidateTemplateResult  
+    public class ValidateTemplateResult
     {
         
         private List<TemplateParameter> parameters = new List<TemplateParameter>();
@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Capabilities collection
         /// </summary>
@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this.capabilities.Count > 0;       
+            return this.capabilities.Count > 0;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if CapabilitiesReason property is set
         internal bool IsSetCapabilitiesReason()
         {
-            return this.capabilitiesReason != null;       
+            return this.capabilitiesReason != null;
         }
     }
 }

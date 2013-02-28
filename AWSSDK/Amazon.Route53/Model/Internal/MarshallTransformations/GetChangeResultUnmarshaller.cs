@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetChangeResult Unmarshaller
      /// </summary>
-    internal class GetChangeResultUnmarshaller : IUnmarshaller<GetChangeResult, XmlUnmarshallerContext> 
+    internal class GetChangeResultUnmarshaller : IUnmarshaller<GetChangeResult, XmlUnmarshallerContext>, IUnmarshaller<GetChangeResult, JsonUnmarshallerContext> 
     {
         public GetChangeResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetChangeResult getChangeResult = new GetChangeResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return getChangeResult;
+        }
+
+        public GetChangeResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetChangeResultUnmarshaller instance;

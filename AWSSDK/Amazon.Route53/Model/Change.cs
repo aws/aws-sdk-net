@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the information for each change in a change batch request.</para>
     /// </summary>
-    public class Change  
+    public class Change
     {
         
         private string action;
@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model
         // Check to see if Action property is set
         internal bool IsSetAction()
         {
-            return this.action != null;       
+            return this.action != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecordSet property is set
         internal bool IsSetResourceRecordSet()
         {
-            return this.resourceRecordSet != null;       
+            return this.resourceRecordSet != null;
         }
     }
 }

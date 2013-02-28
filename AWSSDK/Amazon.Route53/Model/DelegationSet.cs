@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains name server information.</para>
     /// </summary>
-    public class DelegationSet  
+    public class DelegationSet
     {
         
         private List<string> nameServers = new List<string>();
@@ -61,7 +61,7 @@ namespace Amazon.Route53.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NameServers collection
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.Route53.Model
         // Check to see if NameServers property is set
         internal bool IsSetNameServers()
         {
-            return this.nameServers.Count > 0;       
+            return this.nameServers.Count > 0;
         }
     }
 }

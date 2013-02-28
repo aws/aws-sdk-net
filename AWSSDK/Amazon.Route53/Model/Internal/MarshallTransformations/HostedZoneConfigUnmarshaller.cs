@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HostedZoneConfig Unmarshaller
      /// </summary>
-    internal class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, XmlUnmarshallerContext> 
+    internal class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, XmlUnmarshallerContext>, IUnmarshaller<HostedZoneConfig, JsonUnmarshallerContext> 
     {
         public HostedZoneConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             HostedZoneConfig hostedZoneConfig = new HostedZoneConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return hostedZoneConfig;
+        }
+
+        public HostedZoneConfig Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static HostedZoneConfigUnmarshaller instance;

@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains an optional comment and the changes that you want to make with a change batch request.</para>
     /// </summary>
-    public class ChangeBatch  
+    public class ChangeBatch
     {
         
         private string comment;
@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.Route53.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Changes collection
         /// </summary>
@@ -117,7 +117,7 @@ namespace Amazon.Route53.Model
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this.changes.Count > 0;       
+            return this.changes.Count > 0;
         }
     }
 }

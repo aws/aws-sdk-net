@@ -25,8 +25,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackResource operation.
-    /// <para> Returns a description of the specified resource in the specified stack. </para> <para>For deleted stacks, DescribeStackResource
-    /// returns resource information for up to 90 days after the stack has been deleted. </para>
+    /// <para>Returns a description of the specified resource in the specified stack.</para> <para>For deleted stacks, DescribeStackResource returns
+    /// resource information for up to 90 days after the stack has been deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResource"/>
     public class DescribeStackResourceRequest : AmazonWebServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LogicalResourceId property is set
         internal bool IsSetLogicalResourceId()
         {
-            return this.logicalResourceId != null;       
+            return this.logicalResourceId != null;
         }
     }
 }

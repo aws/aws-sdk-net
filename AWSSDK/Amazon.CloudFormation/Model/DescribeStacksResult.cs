@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for a DescribeStacks action. </para>
+    /// <para>The output for a DescribeStacks action.</para>
     /// </summary>
-    public class DescribeStacksResult  
+    public class DescribeStacksResult
     {
         
         private List<Stack> stacks = new List<Stack>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Stacks collection
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Stacks property is set
         internal bool IsSetStacks()
         {
-            return this.stacks.Count > 0;       
+            return this.stacks.Count > 0;
         }
         public string NextToken
         {
@@ -94,7 +94,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

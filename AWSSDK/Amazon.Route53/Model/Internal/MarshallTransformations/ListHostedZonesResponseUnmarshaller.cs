@@ -31,7 +31,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ListHostedZonesResponse response = new ListHostedZonesResponse();
-            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -39,8 +38,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     response.ListHostedZonesResult = ListHostedZonesResultUnmarshaller.GetInstance().Unmarshall(context);
                     break;
                 }
-            }
-                 
+            } 
                         
             return response;
         }

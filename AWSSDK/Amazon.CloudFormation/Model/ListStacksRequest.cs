@@ -25,9 +25,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStacks operation.
-    /// <para> Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
+    /// <para>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
     /// have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks
-    /// is returned (including existing stacks and stacks that have been deleted). </para>
+    /// is returned (including existing stacks and stacks that have been deleted).</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.ListStacks"/>
     public class ListStacksRequest : AmazonWebServiceRequest
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the StackStatusFilter collection
         /// </summary>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatusFilter property is set
         internal bool IsSetStackStatusFilter()
         {
-            return this.stackStatusFilter.Count > 0;       
+            return this.stackStatusFilter.Count > 0;
         }
     }
 }

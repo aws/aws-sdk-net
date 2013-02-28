@@ -34,14 +34,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public GetChangeResult GetChangeResult
         {
-            get 
+            get
             {
                 if(this.getChangeResult == null)
                 {
                     this.getChangeResult = new GetChangeResult();
                 }
 
-                return this.getChangeResult; 
+                return this.getChangeResult;
             }
             set { this.getChangeResult = value; }
         }

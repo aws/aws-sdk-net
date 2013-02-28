@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostedZone operation.
-    /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2012-02-29/hostedzone/hosted zone ID </c>
+    /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2012-12-12/hostedzone/hosted zone ID </c>
     /// resource. The delegation set is the four Route 53 name servers that were assigned to the hosted zone when you created it.</para>
     /// </summary>
     /// <seealso cref="Amazon.Route53.AmazonRoute53.GetHostedZone"/>
@@ -67,7 +67,7 @@ namespace Amazon.Route53.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
     }
 }

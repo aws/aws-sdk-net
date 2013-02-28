@@ -37,21 +37,28 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateHostedZoneRequest createHostedZoneRequest)
         {
             IRequest request = new DefaultRequest(createHostedZoneRequest, "AmazonRoute53");
+
+
+
             request.HttpMethod = "POST";
               
-            string uriResourcePath = "/2012-02-29/hostedzone"; 
+            string uriResourcePath = "/2012-12-12/hostedzone"; 
             
             if (uriResourcePath.Contains("?")) 
             {
                 string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
                 uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&')) 
+                foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
                     if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
                         request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 }
             }
@@ -64,25 +71,25 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             xmlWriter.Namespaces = true;
                        
             
-            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2012-02-29/");
+            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2012-12-12/");
                     if (createHostedZoneRequest.IsSetName()) 
         {
-            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-02-29/", createHostedZoneRequest.Name.ToString());
-        }
+            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.Name.ToString());
+          }
         if (createHostedZoneRequest.IsSetCallerReference()) 
         {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-02-29/", createHostedZoneRequest.CallerReference.ToString());
-        }
+            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.CallerReference.ToString());
+          }
         if (createHostedZoneRequest != null) 
         {
             HostedZoneConfig hostedZoneConfigHostedZoneConfig = createHostedZoneRequest.HostedZoneConfig;
             if (hostedZoneConfigHostedZoneConfig != null) 
             {
-                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2012-02-29/");
+                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2012-12-12/");
                 if (hostedZoneConfigHostedZoneConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-02-29/", hostedZoneConfigHostedZoneConfig.Comment.ToString());
-                }
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-12-12/", hostedZoneConfigHostedZoneConfig.Comment.ToString());
+                  }
                 xmlWriter.WriteEndElement();
             }
         }
@@ -99,7 +106,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-                    
+        
             
             return request;
         }

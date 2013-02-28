@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing the response for the request.</para>
     /// </summary>
-    public class ChangeResourceRecordSetsResult  
+    public class ChangeResourceRecordSetsResult
     {
         
         private ChangeInfo changeInfo;
@@ -54,7 +54,7 @@ namespace Amazon.Route53.Model
         // Check to see if ChangeInfo property is set
         internal bool IsSetChangeInfo()
         {
-            return this.changeInfo != null;       
+            return this.changeInfo != null;
         }
     }
 }

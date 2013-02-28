@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeleteHostedZoneResult Unmarshaller
      /// </summary>
-    internal class DeleteHostedZoneResultUnmarshaller : IUnmarshaller<DeleteHostedZoneResult, XmlUnmarshallerContext> 
+    internal class DeleteHostedZoneResultUnmarshaller : IUnmarshaller<DeleteHostedZoneResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteHostedZoneResult, JsonUnmarshallerContext> 
     {
         public DeleteHostedZoneResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteHostedZoneResult deleteHostedZoneResult = new DeleteHostedZoneResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return deleteHostedZoneResult;
+        }
+
+        public DeleteHostedZoneResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DeleteHostedZoneResultUnmarshaller instance;

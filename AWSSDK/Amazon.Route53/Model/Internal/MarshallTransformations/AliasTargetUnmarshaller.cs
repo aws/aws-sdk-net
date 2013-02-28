@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AliasTarget Unmarshaller
      /// </summary>
-    internal class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext> 
+    internal class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext>, IUnmarshaller<AliasTarget, JsonUnmarshallerContext> 
     {
         public AliasTarget Unmarshall(XmlUnmarshallerContext context) 
         {
             AliasTarget aliasTarget = new AliasTarget();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -47,6 +48,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         aliasTarget.DNSName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("EvaluateTargetHealth", targetDepth))
+                    {
+                        aliasTarget.EvaluateTargetHealth = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -58,6 +65,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return aliasTarget;
+        }
+
+        public AliasTarget Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static AliasTargetUnmarshaller instance;

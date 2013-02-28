@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The Parameter data type. </para>
+    /// <para>The Parameter data type.</para>
     /// </summary>
-    public class Parameter  
+    public class Parameter
     {
         
         private string parameterKey;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ParameterKey property is set
         internal bool IsSetParameterKey()
         {
-            return this.parameterKey != null;       
+            return this.parameterKey != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;       
+            return this.parameterValue != null;
         }
     }
 }

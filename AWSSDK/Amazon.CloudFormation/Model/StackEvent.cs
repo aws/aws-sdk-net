@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The StackEvent data type. </para>
+    /// <para>The StackEvent data type.</para>
     /// </summary>
-    public class StackEvent  
+    public class StackEvent
     {
         
         private string stackId;
@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;       
+            return this.stackId != null;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId != null;       
+            return this.eventId != null;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LogicalResourceId property is set
         internal bool IsSetLogicalResourceId()
         {
-            return this.logicalResourceId != null;       
+            return this.logicalResourceId != null;
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if PhysicalResourceId property is set
         internal bool IsSetPhysicalResourceId()
         {
-            return this.physicalResourceId != null;       
+            return this.physicalResourceId != null;
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this.resourceType != null;       
+            return this.resourceType != null;
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Timestamp property is set
         internal bool IsSetTimestamp()
         {
-            return this.timestamp.HasValue;       
+            return this.timestamp.HasValue;
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceStatus property is set
         internal bool IsSetResourceStatus()
         {
-            return this.resourceStatus != null;       
+            return this.resourceStatus != null;
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceStatusReason property is set
         internal bool IsSetResourceStatusReason()
         {
-            return this.resourceStatusReason != null;       
+            return this.resourceStatusReason != null;
         }
 
         /// <summary>
@@ -324,7 +324,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceProperties property is set
         internal bool IsSetResourceProperties()
         {
-            return this.resourceProperties != null;       
+            return this.resourceProperties != null;
         }
     }
 }

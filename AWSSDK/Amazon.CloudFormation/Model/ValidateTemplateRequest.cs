@@ -25,7 +25,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateTemplate operation.
-    /// <para> Validates a specified template. </para>
+    /// <para>Validates a specified template.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.ValidateTemplate"/>
     public class ValidateTemplateRequest : AmazonWebServiceRequest
@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - </description>
+        ///         <description>1 - 51200</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -69,13 +69,14 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;       
+            return this.templateBody != null;
         }
 
         /// <summary>
-        /// Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For
-        /// more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User
-        /// Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
+        /// same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// CloudFormation User Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only
+        /// <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -108,7 +109,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateURL property is set
         internal bool IsSetTemplateURL()
         {
-            return this.templateURL != null;       
+            return this.templateURL != null;
         }
     }
 }

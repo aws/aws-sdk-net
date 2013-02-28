@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains information about the current resource record set.</para>
     /// </summary>
-    public class ResourceRecordSet  
+    public class ResourceRecordSet
     {
         
         private string name;
@@ -31,9 +31,11 @@ namespace Amazon.Route53.Model
         private string setIdentifier;
         private long? weight;
         private string region;
+        private string failover;
         private long? tTL;
         private List<ResourceRecord> resourceRecords = new List<ResourceRecord>();
         private AliasTarget aliasTarget;
+        private string healthCheckId;
 
         /// <summary>
         /// The domain name of the current resource record set.
@@ -69,7 +71,7 @@ namespace Amazon.Route53.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -106,12 +108,12 @@ namespace Amazon.Route53.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;       
+            return this.type != null;
         }
 
         /// <summary>
-        /// <i>Weighted resource record sets or Regional resource record sets only:</i> An identifier that differentiates among multiple resource record
-        /// sets that have the same combination of DNS name and type.
+        /// <i>Weighted, Regional, and Failover resource record sets only:</i> An identifier that differentiates among multiple resource record sets
+        /// that have the same combination of DNS name and type.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -144,7 +146,7 @@ namespace Amazon.Route53.Model
         // Check to see if SetIdentifier property is set
         internal bool IsSetSetIdentifier()
         {
-            return this.setIdentifier != null;       
+            return this.setIdentifier != null;
         }
 
         /// <summary>
@@ -182,7 +184,7 @@ namespace Amazon.Route53.Model
         // Check to see if Weight property is set
         internal bool IsSetWeight()
         {
-            return this.weight.HasValue;       
+            return this.weight.HasValue;
         }
 
         /// <summary>
@@ -198,7 +200,7 @@ namespace Amazon.Route53.Model
         ///     </item>
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1</description>
+        ///         <description>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -224,7 +226,51 @@ namespace Amazon.Route53.Model
         // Check to see if Region property is set
         internal bool IsSetRegion()
         {
-            return this.region != null;       
+            return this.region != null;
+        }
+
+        /// <summary>
+        /// <i>Failover resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that
+        /// indicates whether the current resource record set is a primary or secondary resource record set. A failover set may contain at most one
+        /// resource record set marked as primary and one resource record set marked as secondary. A resource record set marked as primary will be
+        /// returned if any of the following are true: (1) an associated health check is passing, (2) if the resource record set is an alias with the
+        /// evaluate target health and at least one target resource record set is healthy, (3) both the primary and secondary resource record set are
+        /// failing health checks or (4) there is no secondary resource record set. A secondary resource record set will be returned if: (1) the primary
+        /// is failing a health check and either the secondary is passing a health check or has no associated health check, or (2) there is no primary
+        /// resource record set. Valid values: <c>PRIMARY</c> | <c>SECONDARY</c>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>PRIMARY, SECONDARY</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Failover
+        {
+            get { return this.failover; }
+            set { this.failover = value; }
+        }
+
+        /// <summary>
+        /// Sets the Failover property
+        /// </summary>
+        /// <param name="failover">The value to set for the Failover property </param>
+        /// <returns>this instance</returns>
+        public ResourceRecordSet WithFailover(string failover)
+        {
+            this.failover = failover;
+            return this;
+        }
+            
+
+        // Check to see if Failover property is set
+        internal bool IsSetFailover()
+        {
+            return this.failover != null;
         }
 
         /// <summary>
@@ -261,7 +307,7 @@ namespace Amazon.Route53.Model
         // Check to see if TTL property is set
         internal bool IsSetTTL()
         {
-            return this.tTL.HasValue;       
+            return this.tTL.HasValue;
         }
 
         /// <summary>
@@ -296,7 +342,7 @@ namespace Amazon.Route53.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ResourceRecords collection
         /// </summary>
@@ -315,11 +361,11 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecords property is set
         internal bool IsSetResourceRecords()
         {
-            return this.resourceRecords.Count > 0;       
+            return this.resourceRecords.Count > 0;
         }
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> Information about the Elastic Load Balancing LoadBalancer to which you are redirecting traffic.
+        /// <i>Alias resource record sets only:</i> Information about the AWS resource to which you are redirecting traffic.
         ///  
         /// </summary>
         public AliasTarget AliasTarget
@@ -343,7 +389,45 @@ namespace Amazon.Route53.Model
         // Check to see if AliasTarget property is set
         internal bool IsSetAliasTarget()
         {
-            return this.aliasTarget != null;       
+            return this.aliasTarget != null;
+        }
+
+        /// <summary>
+        /// <i>Health Check resource record sets only, not required for alias resource record sets:</i> An identifier that is used to identify health
+        /// check associated with the resource record set.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 64</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string HealthCheckId
+        {
+            get { return this.healthCheckId; }
+            set { this.healthCheckId = value; }
+        }
+
+        /// <summary>
+        /// Sets the HealthCheckId property
+        /// </summary>
+        /// <param name="healthCheckId">The value to set for the HealthCheckId property </param>
+        /// <returns>this instance</returns>
+        public ResourceRecordSet WithHealthCheckId(string healthCheckId)
+        {
+            this.healthCheckId = healthCheckId;
+            return this;
+        }
+            
+
+        // Check to see if HealthCheckId property is set
+        internal bool IsSetHealthCheckId()
+        {
+            return this.healthCheckId != null;
         }
     }
 }

@@ -766,6 +766,8 @@
     <Compile Include="Amazon.CloudFormation\Model\AlreadyExistsException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\CancelUpdateStackRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\CancelUpdateStackResponse.cs" />
     <Compile Include="Amazon.CloudFormation\Model\CreateStackRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -838,6 +840,8 @@
     <Compile Include="Amazon.CloudFormation\Model\InsufficientCapabilitiesException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CancelUpdateStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CancelUpdateStackResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CreateStackRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7791,20 +7795,33 @@
     <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsRequest.cs" />
     <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsResponse.cs" />
     <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsResult.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHealthCheckRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHealthCheckResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHealthCheckResult.cs" />
     <Compile Include="Amazon.Route53\Model\CreateHostedZoneRequest.cs" />
     <Compile Include="Amazon.Route53\Model\CreateHostedZoneResponse.cs" />
     <Compile Include="Amazon.Route53\Model\CreateHostedZoneResult.cs" />
     <Compile Include="Amazon.Route53\Model\DelegationSet.cs" />
     <Compile Include="Amazon.Route53\Model\DelegationSetNotAvailableException.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHealthCheckRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHealthCheckResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHealthCheckResult.cs" />
     <Compile Include="Amazon.Route53\Model\DeleteHostedZoneRequest.cs" />
     <Compile Include="Amazon.Route53\Model\DeleteHostedZoneResponse.cs" />
     <Compile Include="Amazon.Route53\Model\DeleteHostedZoneResult.cs" />
     <Compile Include="Amazon.Route53\Model\GetChangeRequest.cs" />
     <Compile Include="Amazon.Route53\Model\GetChangeResponse.cs" />
     <Compile Include="Amazon.Route53\Model\GetChangeResult.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHealthCheckRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHealthCheckResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHealthCheckResult.cs" />
     <Compile Include="Amazon.Route53\Model\GetHostedZoneRequest.cs" />
     <Compile Include="Amazon.Route53\Model\GetHostedZoneResponse.cs" />
     <Compile Include="Amazon.Route53\Model\GetHostedZoneResult.cs" />
+    <Compile Include="Amazon.Route53\Model\HealthCheck.cs" />
+    <Compile Include="Amazon.Route53\Model\HealthCheckAlreadyExistsException.cs" />
+    <Compile Include="Amazon.Route53\Model\HealthCheckConfig.cs" />
+    <Compile Include="Amazon.Route53\Model\HealthCheckInUseException.cs" />
     <Compile Include="Amazon.Route53\Model\HostedZone.cs" />
     <Compile Include="Amazon.Route53\Model\HostedZoneAlreadyExistsException.cs" />
     <Compile Include="Amazon.Route53\Model\HostedZoneConfig.cs" />
@@ -7814,21 +7831,35 @@
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHealthCheckRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHealthCheckResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHealthCheckResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DelegationSetUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHealthCheckRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHealthCheckResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHealthCheckResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHealthCheckRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHealthCheckResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHealthCheckResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HealthCheckConfigUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HealthCheckUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HostedZoneConfigUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HostedZoneUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHealthChecksRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHealthChecksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHealthChecksResultUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesRequestMarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesResultUnmarshaller.cs" />
@@ -7840,6 +7871,9 @@
     <Compile Include="Amazon.Route53\Model\InvalidChangeBatchException.cs" />
     <Compile Include="Amazon.Route53\Model\InvalidDomainNameException.cs" />
     <Compile Include="Amazon.Route53\Model\InvalidInputException.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHealthChecksRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHealthChecksResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHealthChecksResult.cs" />
     <Compile Include="Amazon.Route53\Model\ListHostedZonesRequest.cs" />
     <Compile Include="Amazon.Route53\Model\ListHostedZonesResponse.cs" />
     <Compile Include="Amazon.Route53\Model\ListHostedZonesResult.cs" />
@@ -7847,9 +7881,12 @@
     <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResponse.cs" />
     <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResult.cs" />
     <Compile Include="Amazon.Route53\Model\NoSuchChangeException.cs" />
+    <Compile Include="Amazon.Route53\Model\NoSuchHealthCheckException.cs" />
     <Compile Include="Amazon.Route53\Model\NoSuchHostedZoneException.cs" />
+    <Compile Include="Amazon.Route53\Model\PriorRequestNotCompleteException.cs" />
     <Compile Include="Amazon.Route53\Model\ResourceRecord.cs" />
     <Compile Include="Amazon.Route53\Model\ResourceRecordSet.cs" />
+    <Compile Include="Amazon.Route53\Model\TooManyHealthChecksException.cs" />
     <Compile Include="Amazon.Route53\Model\TooManyHostedZonesException.cs" />
     <Compile Include="Amazon.Runtime\AmazonClientException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
@@ -7885,6 +7922,8 @@
     <Compile Include="Amazon.Runtime\Internal\Transform\ResponseUnmarshallers.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\SimpleTypeUnmarhaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\UnmarshallerContext.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\Dispatcher.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\Extensions.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Hashing.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Logger.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\StringUtils.cs" />

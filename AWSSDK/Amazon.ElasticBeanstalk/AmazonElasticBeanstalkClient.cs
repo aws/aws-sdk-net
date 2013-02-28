@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk
     public class AmazonElasticBeanstalkClient : AmazonWebServiceClient, AmazonElasticBeanstalk
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for a UpdateStack action. </para>
+    /// <para>The output for a UpdateStack action.</para>
     /// </summary>
-    public class UpdateStackResult  
+    public class UpdateStackResult
     {
         
         private string stackId;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;       
+            return this.stackId != null;
         }
     }
 }

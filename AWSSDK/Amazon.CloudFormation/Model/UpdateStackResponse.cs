@@ -34,14 +34,14 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public UpdateStackResult UpdateStackResult
         {
-            get 
+            get
             {
                 if(this.updateStackResult == null)
                 {
                     this.updateStackResult = new UpdateStackResult();
                 }
 
-                return this.updateStackResult; 
+                return this.updateStackResult;
             }
             set { this.updateStackResult = value; }
         }

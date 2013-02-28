@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ResourceRecordSet Unmarshaller
      /// </summary>
-    internal class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext> 
+    internal class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>, IUnmarshaller<ResourceRecordSet, JsonUnmarshallerContext> 
     {
         public ResourceRecordSet Unmarshall(XmlUnmarshallerContext context) 
         {
             ResourceRecordSet resourceRecordSet = new ResourceRecordSet();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -66,6 +67,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("Failover", targetDepth))
+                    {
+                        resourceRecordSet.Failover = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("TTL", targetDepth))
                     {
                         resourceRecordSet.TTL = LongUnmarshaller.GetInstance().Unmarshall(context);
@@ -83,6 +90,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         resourceRecordSet.AliasTarget = AliasTargetUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("HealthCheckId", targetDepth))
+                    {
+                        resourceRecordSet.HealthCheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -94,6 +107,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return resourceRecordSet;
+        }
+
+        public ResourceRecordSet Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ResourceRecordSetUnmarshaller instance;

@@ -34,17 +34,6 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2012-02-29";
-            }
-        }
-
-        /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
         internal override string RegionEndpointServiceName
@@ -52,6 +41,17 @@ namespace Amazon.Route53
             get
             {
                 return "route53";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2012-12-12";
             }
         }
     }

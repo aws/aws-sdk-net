@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing the response information for the new hosted zone.</para>
     /// </summary>
-    public class CreateHostedZoneResult  
+    public class CreateHostedZoneResult
     {
         
         private HostedZone hostedZone;
@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZone property is set
         internal bool IsSetHostedZone()
         {
-            return this.hostedZone != null;       
+            return this.hostedZone != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Route53.Model
         // Check to see if ChangeInfo property is set
         internal bool IsSetChangeInfo()
         {
-            return this.changeInfo != null;       
+            return this.changeInfo != null;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.Route53.Model
         // Check to see if DelegationSet property is set
         internal bool IsSetDelegationSet()
         {
-            return this.delegationSet != null;       
+            return this.delegationSet != null;
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.Route53.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
     }
 }

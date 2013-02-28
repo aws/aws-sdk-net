@@ -37,9 +37,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListResourceRecordSetsRequest listResourceRecordSetsRequest)
         {
             IRequest request = new DefaultRequest(listResourceRecordSetsRequest, "AmazonRoute53");
+
+
+
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", listResourceRecordSetsRequest.HostedZoneId ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Name}", listResourceRecordSetsRequest.StartRecordName ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Type}", listResourceRecordSetsRequest.StartRecordType ?? "" ); 
@@ -51,19 +54,25 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
                 uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&')) 
+                foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
                     if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
                         request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
                 }
             }
             
             request.ResourcePath = uriResourcePath;
             
-                    
+        
+            request.UseQueryString = true;
+        
             
             return request;
         }

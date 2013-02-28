@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that describes change information about changes made to your hosted zone.</para> <para>This element contains an ID that
     /// you use when performing a GetChange action to get detailed information about the change.</para>
     /// </summary>
-    public class ChangeInfo  
+    public class ChangeInfo
     {
         
         private string id;
@@ -66,7 +66,7 @@ namespace Amazon.Route53.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Route53.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>InProgress, Deployed</description>
+        ///         <description>PENDING, INSYNC</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -104,7 +104,7 @@ namespace Amazon.Route53.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.Route53.Model
         // Check to see if SubmittedAt property is set
         internal bool IsSetSubmittedAt()
         {
-            return this.submittedAt.HasValue;       
+            return this.submittedAt.HasValue;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.Route53.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
     }
 }

@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -103,7 +104,7 @@ namespace Amazon.Runtime.Internal
         private object metricsLock = new object();
         private Stopwatch stopWatch;
         private Dictionary<Metric, Timing> inFlightTimings;
-        private long CurrentTime { get { return stopWatch.ElapsedTicks; } }
+        private long CurrentTime { get { return stopWatch.GetElapsedDateTimeTicks(); } }
         private static void Log(StringWriter writer, Metric metric, object metricValue)
         {
             writer.Write("{0} = {1}; ", metric, metricValue);

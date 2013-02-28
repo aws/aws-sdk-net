@@ -21,22 +21,20 @@ using System.IO;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para> <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.</para>
-    /// <para><b>NOTE:</b>Currently, Route 53 supports aliases only for Elastic Load Balancing.</para> <para>For more information and an example,
-    /// see Creating Alias Resource Record Sets for Elastic Load Balancing in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
+    /// <para> <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.</para> <para>For more
+    /// information and an example, see Creating Alias Resource Record Sets in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
     /// </summary>
-    public class AliasTarget  
+    public class AliasTarget
     {
         
         private string hostedZoneId;
         private string dNSName;
+        private bool? evaluateTargetHealth;
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-        /// Route 53 supports alias resource record sets only for Elastic Load Balancing.</note> For more information, an example, and several ways to
-        /// get the hosted zone ID for the LoadBalancer, see <a
-        /// href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets for
-        /// Elastic Load Balancing</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information and an example, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -69,14 +67,13 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZoneId property is set
         internal bool IsSetHostedZoneId()
         {
-            return this.hostedZoneId != null;       
+            return this.hostedZoneId != null;
         }
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The external DNS name associated with the LoadBalancer. <note>Currently, Route 53 supports alias
-        /// resource record sets only for Elastic Load Balancing.</note> For more information, an example, and several ways to get the hosted zone ID
-        /// for the LoadBalancer, see <a href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias
-        /// Resource Record Sets for Elastic Load Balancing</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// <i>Alias resource record sets only:</i> The external DNS name associated with the AWS Resource. For more information and an example, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -109,7 +106,38 @@ namespace Amazon.Route53.Model
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;       
+            return this.dNSName != null;
+        }
+
+        /// <summary>
+        /// <i>Alias resource record sets only:</i> A boolean value that indicates whether this Resource Record Set should respect the health status of
+        /// any health checks associated with the ALIAS target record which it is linked to. For more information and an example, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.
+        ///  
+        /// </summary>
+        public bool EvaluateTargetHealth
+        {
+            get { return this.evaluateTargetHealth ?? default(bool); }
+            set { this.evaluateTargetHealth = value; }
+        }
+
+        /// <summary>
+        /// Sets the EvaluateTargetHealth property
+        /// </summary>
+        /// <param name="evaluateTargetHealth">The value to set for the EvaluateTargetHealth property </param>
+        /// <returns>this instance</returns>
+        public AliasTarget WithEvaluateTargetHealth(bool evaluateTargetHealth)
+        {
+            this.evaluateTargetHealth = evaluateTargetHealth;
+            return this;
+        }
+            
+
+        // Check to see if EvaluateTargetHealth property is set
+        internal bool IsSetEvaluateTargetHealth()
+        {
+            return this.evaluateTargetHealth.HasValue;
         }
     }
 }

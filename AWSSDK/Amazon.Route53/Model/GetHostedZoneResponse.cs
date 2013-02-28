@@ -34,14 +34,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public GetHostedZoneResult GetHostedZoneResult
         {
-            get 
+            get
             {
                 if(this.getHostedZoneResult == null)
                 {
                     this.getHostedZoneResult = new GetHostedZoneResult();
                 }
 
-                return this.getHostedZoneResult; 
+                return this.getHostedZoneResult;
             }
             set { this.getHostedZoneResult = value; }
         }

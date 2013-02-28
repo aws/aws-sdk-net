@@ -25,8 +25,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
-    /// <para> Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the
-    /// status of the stack via the DescribeStacks API. </para> <para><b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account per
+    /// <para>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the
+    /// status of the stack via the DescribeStacks API.</para> <para><b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account per
     /// region. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.CreateStack"/>
@@ -44,8 +44,8 @@ namespace Amazon.CloudFormation.Model
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The name associated with the stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
-        /// sensitive) and start with an alpha character. Maximum length of the name is 255 characters. </note>
+        /// The name associated with the stack. The name must be unique within your AWS account. <note>Must contain only alphanumeric characters (case
+        /// sensitive) and start with an alpha character. Maximum length of the name is 255 characters.</note>
         ///  
         /// </summary>
         public string StackName
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - </description>
+        ///         <description>1 - 51200</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -108,13 +108,14 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;       
+            return this.templateBody != null;
         }
 
         /// <summary>
-        /// Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For
-        /// more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User
-        /// Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
+        /// same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// CloudFormation User Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only
+        /// <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -147,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateURL property is set
         internal bool IsSetTemplateURL()
         {
-            return this.templateURL != null;       
+            return this.templateURL != null;
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -192,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
 
         /// <summary>
@@ -221,7 +222,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if DisableRollback property is set
         internal bool IsSetDisableRollback()
         {
-            return this.disableRollback.HasValue;       
+            return this.disableRollback.HasValue;
         }
 
         /// <summary>
@@ -259,7 +260,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TimeoutInMinutes property is set
         internal bool IsSetTimeoutInMinutes()
         {
-            return this.timeoutInMinutes.HasValue;       
+            return this.timeoutInMinutes.HasValue;
         }
 
         /// <summary>
@@ -295,7 +296,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NotificationARNs collection
         /// </summary>
@@ -314,7 +315,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this.notificationARNs.Count > 0;       
+            return this.notificationARNs.Count > 0;
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Capabilities collection
         /// </summary>
@@ -365,7 +366,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this.capabilities.Count > 0;       
+            return this.capabilities.Count > 0;
         }
 
         /// <summary>
@@ -403,12 +404,12 @@ namespace Amazon.CloudFormation.Model
         // Check to see if OnFailure property is set
         internal bool IsSetOnFailure()
         {
-            return this.onFailure != null;       
+            return this.onFailure != null;
         }
 
         /// <summary>
         /// A set of user-defined <c>Tags</c> to associate with this stack, represented by key/value pairs. Tags defined for the stack are propogated to
-        /// EC2 resources that are created as part of the stack.
+        /// EC2 resources that are created as part of the stack. A maximum number of 10 tags can be specified.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -430,7 +431,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -449,7 +450,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

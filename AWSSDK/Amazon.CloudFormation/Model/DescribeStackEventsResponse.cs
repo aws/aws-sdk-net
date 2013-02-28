@@ -34,14 +34,14 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public DescribeStackEventsResult DescribeStackEventsResult
         {
-            get 
+            get
             {
                 if(this.describeStackEventsResult == null)
                 {
                     this.describeStackEventsResult = new DescribeStackEventsResult();
                 }
 
-                return this.describeStackEventsResult; 
+                return this.describeStackEventsResult;
             }
             set { this.describeStackEventsResult = value; }
         }

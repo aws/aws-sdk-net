@@ -34,14 +34,14 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public EstimateTemplateCostResult EstimateTemplateCostResult
         {
-            get 
+            get
             {
                 if(this.estimateTemplateCostResult == null)
                 {
                     this.estimateTemplateCostResult = new EstimateTemplateCostResult();
                 }
 
-                return this.estimateTemplateCostResult; 
+                return this.estimateTemplateCostResult;
             }
             set { this.estimateTemplateCostResult = value; }
         }

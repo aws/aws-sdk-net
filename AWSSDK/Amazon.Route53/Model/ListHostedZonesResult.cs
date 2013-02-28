@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para> A complex type that contains the response for the request.</para>
     /// </summary>
-    public class ListHostedZonesResult  
+    public class ListHostedZonesResult
     {
         
         private List<HostedZone> hostedZones = new List<HostedZone>();
@@ -55,7 +55,7 @@ namespace Amazon.Route53.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the HostedZones collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZones property is set
         internal bool IsSetHostedZones()
         {
-            return this.hostedZones.Count > 0;       
+            return this.hostedZones.Count > 0;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.Route53.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>0 - 32</description>
+        ///         <description>0 - 64</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -112,7 +112,7 @@ namespace Amazon.Route53.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.Route53.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.Route53.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>0 - 32</description>
+        ///         <description>0 - 64</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -179,7 +179,7 @@ namespace Amazon.Route53.Model
         // Check to see if NextMarker property is set
         internal bool IsSetNextMarker()
         {
-            return this.nextMarker != null;       
+            return this.nextMarker != null;
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Amazon.Route53.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;       
+            return this.maxItems != null;
         }
     }
 }

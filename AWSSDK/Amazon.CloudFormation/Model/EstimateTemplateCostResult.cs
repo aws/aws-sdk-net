@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for a EstimateTemplateCost action. </para>
+    /// <para>The output for a EstimateTemplateCost action.</para>
     /// </summary>
-    public class EstimateTemplateCostResult  
+    public class EstimateTemplateCostResult
     {
         
         private string url;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Url property is set
         internal bool IsSetUrl()
         {
-            return this.url != null;       
+            return this.url != null;
         }
     }
 }

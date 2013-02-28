@@ -26,7 +26,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the EstimateTemplateCost operation.
     /// <para>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that
-    /// describes the resources required to run the template. </para>
+    /// describes the resources required to run the template.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.EstimateTemplateCost"/>
     public class EstimateTemplateCostRequest : AmazonWebServiceRequest
@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - </description>
+        ///         <description>1 - 51200</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;       
+            return this.templateBody != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateURL property is set
         internal bool IsSetTemplateURL()
         {
-            return this.templateURL != null;       
+            return this.templateURL != null;
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -155,7 +155,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
     }
 }

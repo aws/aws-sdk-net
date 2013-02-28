@@ -34,14 +34,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public ListResourceRecordSetsResult ListResourceRecordSetsResult
         {
-            get 
+            get
             {
                 if(this.listResourceRecordSetsResult == null)
                 {
                     this.listResourceRecordSetsResult = new ListResourceRecordSetsResult();
                 }
 
-                return this.listResourceRecordSetsResult; 
+                return this.listResourceRecordSetsResult;
             }
             set { this.listResourceRecordSetsResult = value; }
         }

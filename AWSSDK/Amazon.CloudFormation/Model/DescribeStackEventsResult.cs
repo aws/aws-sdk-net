@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for a DescribeStackEvents action. </para>
+    /// <para>The output for a DescribeStackEvents action.</para>
     /// </summary>
-    public class DescribeStackEventsResult  
+    public class DescribeStackEventsResult
     {
         
         private List<StackEvent> stackEvents = new List<StackEvent>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the StackEvents collection
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackEvents property is set
         internal bool IsSetStackEvents()
         {
-            return this.stackEvents.Count > 0;       
+            return this.stackEvents.Count > 0;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

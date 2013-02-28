@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListHostedZonesResult Unmarshaller
      /// </summary>
-    internal class ListHostedZonesResultUnmarshaller : IUnmarshaller<ListHostedZonesResult, XmlUnmarshallerContext> 
+    internal class ListHostedZonesResultUnmarshaller : IUnmarshaller<ListHostedZonesResult, XmlUnmarshallerContext>, IUnmarshaller<ListHostedZonesResult, JsonUnmarshallerContext> 
     {
         public ListHostedZonesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListHostedZonesResult listHostedZonesResult = new ListHostedZonesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return listHostedZonesResult;
+        }
+
+        public ListHostedZonesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListHostedZonesResultUnmarshaller instance;

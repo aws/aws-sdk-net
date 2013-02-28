@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The Stack data type. </para>
+    /// <para>The Stack data type.</para>
     /// </summary>
-    public class Stack  
+    public class Stack
     {
         
         private string stackId;
@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;       
+            return this.stackId != null;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -167,7 +167,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this.creationTime.HasValue;       
+            return this.creationTime.HasValue;
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LastUpdatedTime property is set
         internal bool IsSetLastUpdatedTime()
         {
-            return this.lastUpdatedTime.HasValue;       
+            return this.lastUpdatedTime.HasValue;
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatus property is set
         internal bool IsSetStackStatus()
         {
-            return this.stackStatus != null;       
+            return this.stackStatus != null;
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatusReason property is set
         internal bool IsSetStackStatusReason()
         {
-            return this.stackStatusReason != null;       
+            return this.stackStatusReason != null;
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if DisableRollback property is set
         internal bool IsSetDisableRollback()
         {
-            return this.disableRollback.HasValue;       
+            return this.disableRollback.HasValue;
         }
 
         /// <summary>
@@ -352,7 +352,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NotificationARNs collection
         /// </summary>
@@ -371,7 +371,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this.notificationARNs.Count > 0;       
+            return this.notificationARNs.Count > 0;
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TimeoutInMinutes property is set
         internal bool IsSetTimeoutInMinutes()
         {
-            return this.timeoutInMinutes.HasValue;       
+            return this.timeoutInMinutes.HasValue;
         }
 
         /// <summary>
@@ -434,7 +434,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Capabilities collection
         /// </summary>
@@ -453,7 +453,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this.capabilities.Count > 0;       
+            return this.capabilities.Count > 0;
         }
 
         /// <summary>
@@ -479,7 +479,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Outputs collection
         /// </summary>
@@ -498,8 +498,13 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this.outputs.Count > 0;       
+            return this.outputs.Count > 0;
         }
+
+        /// <summary>
+        /// A list of <c>Tag</c>s that specify cost allocation information for the stack.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }
@@ -519,7 +524,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -538,7 +543,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

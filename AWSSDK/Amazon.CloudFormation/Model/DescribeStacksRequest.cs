@@ -25,8 +25,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// <para> Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
-    /// created. </para>
+    /// <para>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
+    /// created.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStacks"/>
     public class DescribeStacksRequest : AmazonWebServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
         public string NextToken
         {
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

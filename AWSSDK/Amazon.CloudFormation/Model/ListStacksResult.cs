@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for ListStacks action. </para>
+    /// <para>The output for ListStacks action.</para>
     /// </summary>
-    public class ListStacksResult  
+    public class ListStacksResult
     {
         
         private List<StackSummary> stackSummaries = new List<StackSummary>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the StackSummaries collection
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackSummaries property is set
         internal bool IsSetStackSummaries()
         {
-            return this.stackSummaries.Count > 0;       
+            return this.stackSummaries.Count > 0;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The Output data type. </para>
+    /// <para>The Output data type.</para>
     /// </summary>
-    public class Output  
+    public class Output
     {
         
         private string outputKey;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if OutputKey property is set
         internal bool IsSetOutputKey()
         {
-            return this.outputKey != null;       
+            return this.outputKey != null;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if OutputValue property is set
         internal bool IsSetOutputValue()
         {
-            return this.outputValue != null;       
+            return this.outputValue != null;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

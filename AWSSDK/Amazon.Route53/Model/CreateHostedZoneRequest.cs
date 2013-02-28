@@ -26,7 +26,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateHostedZone operation.
     /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
-    /// <c>2012-02-29/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
+    /// <c>2012-12-12/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
     /// response returns the <c>CreateHostedZoneResponse</c> element that contains metadata about the hosted zone.</para> <para>Route 53
     /// automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give
     /// your registrar to delegate your domain to. For more information about SOA and NS records, see NS and SOA Records that Route 53 Creates for a
@@ -78,7 +78,7 @@ namespace Amazon.Route53.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.Route53.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZoneConfig property is set
         internal bool IsSetHostedZoneConfig()
         {
-            return this.hostedZoneConfig != null;       
+            return this.hostedZoneConfig != null;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, you can omit the
     /// <c>HostedZoneConfig</c> and <c>Comment</c> elements from the XML document.</para>
     /// </summary>
-    public class HostedZoneConfig  
+    public class HostedZoneConfig
     {
         
         private string comment;
@@ -64,7 +64,7 @@ namespace Amazon.Route53.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
     }
 }

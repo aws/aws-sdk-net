@@ -26,7 +26,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ChangeResourceRecordSets operation.
     /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
-    /// <c>2012-02-29/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
+    /// <c>2012-12-12/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
     /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
     /// information on transactional changes, also known as change batches, see Creating, Changing, and Deleting Resource Record Sets Using the
     /// Route 53 API in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of transactional changes, you
@@ -45,9 +45,8 @@ namespace Amazon.Route53.Model
         private ChangeBatch changeBatch;
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-        /// Route 53 supports alias resource record sets only for Elastic Load Balancing.</note> For more information, an example, and several ways to
-        /// get the hosted zone ID for the LoadBalancer, see <a
+        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information, an example, and several
+        /// ways to get the hosted zone ID for the LoadBalancer, see <a
         /// href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets for
         /// Elastic Load Balancing</a> in the <i>Amazon Route 53 Developer Guide</i>.
         ///  
@@ -82,7 +81,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZoneId property is set
         internal bool IsSetHostedZoneId()
         {
-            return this.hostedZoneId != null;       
+            return this.hostedZoneId != null;
         }
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace Amazon.Route53.Model
         // Check to see if ChangeBatch property is set
         internal bool IsSetChangeBatch()
         {
-            return this.changeBatch != null;       
+            return this.changeBatch != null;
         }
     }
 }

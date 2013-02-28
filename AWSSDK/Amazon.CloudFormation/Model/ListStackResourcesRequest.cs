@@ -25,8 +25,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackResources operation.
-    /// <para> Returns descriptions of all resources of the specified stack. </para> <para>For deleted stacks, ListStackResources returns resource
-    /// information for up to 90 days after the stack has been deleted. </para>
+    /// <para>Returns descriptions of all resources of the specified stack.</para> <para>For deleted stacks, ListStackResources returns resource
+    /// information for up to 90 days after the stack has been deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.ListStackResources"/>
     public class ListStackResourcesRequest : AmazonWebServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

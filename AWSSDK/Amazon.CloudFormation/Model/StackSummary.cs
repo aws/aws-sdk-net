@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The StackSummary Data Type</para>
     /// </summary>
-    public class StackSummary  
+    public class StackSummary
     {
         
         private string stackId;
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;       
+            return this.stackId != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateDescription property is set
         internal bool IsSetTemplateDescription()
         {
-            return this.templateDescription != null;       
+            return this.templateDescription != null;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this.creationTime.HasValue;       
+            return this.creationTime.HasValue;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LastUpdatedTime property is set
         internal bool IsSetLastUpdatedTime()
         {
-            return this.lastUpdatedTime.HasValue;       
+            return this.lastUpdatedTime.HasValue;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if DeletionTime property is set
         internal bool IsSetDeletionTime()
         {
-            return this.deletionTime.HasValue;       
+            return this.deletionTime.HasValue;
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatus property is set
         internal bool IsSetStackStatus()
         {
-            return this.stackStatus != null;       
+            return this.stackStatus != null;
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatusReason property is set
         internal bool IsSetStackStatusReason()
         {
-            return this.stackStatusReason != null;       
+            return this.stackStatusReason != null;
         }
     }
 }

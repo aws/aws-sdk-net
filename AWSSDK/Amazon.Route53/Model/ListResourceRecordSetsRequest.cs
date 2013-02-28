@@ -92,7 +92,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZoneId property is set
         internal bool IsSetHostedZoneId()
         {
-            return this.hostedZoneId != null;       
+            return this.hostedZoneId != null;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.Route53.Model
         // Check to see if StartRecordName property is set
         internal bool IsSetStartRecordName()
         {
-            return this.startRecordName != null;       
+            return this.startRecordName != null;
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.Route53.Model
         // Check to see if StartRecordType property is set
         internal bool IsSetStartRecordType()
         {
-            return this.startRecordType != null;       
+            return this.startRecordType != null;
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Amazon.Route53.Model
         // Check to see if StartRecordIdentifier property is set
         internal bool IsSetStartRecordIdentifier()
         {
-            return this.startRecordIdentifier != null;       
+            return this.startRecordIdentifier != null;
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.Route53.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;       
+            return this.maxItems != null;
         }
     }
 }

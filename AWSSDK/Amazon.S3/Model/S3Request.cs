@@ -28,6 +28,7 @@ using System.IO;
 using System.Net;
 using System.Xml.Serialization;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model
 {
@@ -292,7 +293,6 @@ namespace Amazon.S3.Model
         private Guid id = Guid.NewGuid();
         internal Guid Id { get { return this.id; } }
 
-
         internal long TotalRequestTime { get; set; }
         internal long ResponseReadTime { get; set; }
 
@@ -301,7 +301,8 @@ namespace Amazon.S3.Model
         internal long BytesProcessed { get; set; }
         internal long PauseTime { get; set; }
 
-        internal Stopwatch StopWatch { get; set; }
+        private Stopwatch stopwatch = Stopwatch.StartNew();
+        internal long ElapsedTicks { get { return stopwatch.GetElapsedDateTimeTicks(); } }
 
         #endregion
 

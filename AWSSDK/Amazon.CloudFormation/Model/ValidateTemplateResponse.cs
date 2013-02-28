@@ -34,14 +34,14 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public ValidateTemplateResult ValidateTemplateResult
         {
-            get 
+            get
             {
                 if(this.validateTemplateResult == null)
                 {
                     this.validateTemplateResult = new ValidateTemplateResult();
                 }
 
-                return this.validateTemplateResult; 
+                return this.validateTemplateResult;
             }
             set { this.validateTemplateResult = value; }
         }

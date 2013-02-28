@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The TemplateParameter data type. </para>
+    /// <para>The TemplateParameter data type.</para>
     /// </summary>
-    public class TemplateParameter  
+    public class TemplateParameter
     {
         
         private string parameterKey;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ParameterKey property is set
         internal bool IsSetParameterKey()
         {
-            return this.parameterKey != null;       
+            return this.parameterKey != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NoEcho property is set
         internal bool IsSetNoEcho()
         {
-            return this.noEcho.HasValue;       
+            return this.noEcho.HasValue;
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

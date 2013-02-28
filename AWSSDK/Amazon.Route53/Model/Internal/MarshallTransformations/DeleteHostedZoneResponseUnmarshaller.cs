@@ -31,7 +31,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteHostedZoneResponse response = new DeleteHostedZoneResponse();
-            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -39,8 +38,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     response.DeleteHostedZoneResult = DeleteHostedZoneResultUnmarshaller.GetInstance().Unmarshall(context);
                     break;
                 }
-            }
-                 
+            } 
                         
             return response;
         }
@@ -55,14 +53,19 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 return new HostedZoneNotEmptyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+            {
+                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
             {
                 return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PriorRequestNotComplete"))
             {
-                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new PriorRequestNotCompleteException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

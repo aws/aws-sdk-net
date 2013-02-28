@@ -31,7 +31,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             GetHostedZoneResponse response = new GetHostedZoneResponse();
-            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -39,8 +38,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     response.GetHostedZoneResult = GetHostedZoneResultUnmarshaller.GetInstance().Unmarshall(context);
                     break;
                 }
-            }
-                 
+            } 
                         
             return response;
         }
@@ -50,14 +48,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
-            {
-                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
+            {
+                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

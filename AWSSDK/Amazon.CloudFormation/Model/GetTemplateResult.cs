@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para> The output for GetTemplate action. </para>
+    /// <para>The output for GetTemplate action.</para>
     /// </summary>
-    public class GetTemplateResult  
+    public class GetTemplateResult
     {
         
         private string templateBody;
@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - </description>
+        ///         <description>1 - 51200</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;       
+            return this.templateBody != null;
         }
     }
 }

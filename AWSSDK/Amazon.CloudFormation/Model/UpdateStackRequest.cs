@@ -25,11 +25,11 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
-    /// <para> Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the
-    /// status of the stack via the DescribeStacks action. </para> <para>To get a copy of the template for an existing stack, you can use the
-    /// GetTemplate action. </para> <para>Tags that were associated with this stack during creation time will still be associated with the stack
-    /// after an <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring
-    /// the progress of the update, see Updating a Stack. </para>
+    /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
+    /// of the stack via the DescribeStacks action.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
+    /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
+    /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
+    /// progress of the update, see Updating a Stack.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
     public class UpdateStackRequest : AmazonWebServiceRequest
@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - </description>
+        ///         <description>1 - 51200</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;       
+            return this.templateBody != null;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TemplateURL property is set
         internal bool IsSetTemplateURL()
         {
-            return this.templateURL != null;       
+            return this.templateURL != null;
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parameters collection
         /// </summary>
@@ -189,7 +189,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;       
+            return this.parameters.Count > 0;
         }
 
         /// <summary>
@@ -199,7 +199,33 @@ namespace Amazon.CloudFormation.Model
         /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
         /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
         /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        /// href="http://docs.amazon
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// webservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
         ///  
         /// </summary>
         public List<string> Capabilities
@@ -221,7 +247,7 @@ namespace Amazon.CloudFormation.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Capabilities collection
         /// </summary>
@@ -240,7 +266,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this.capabilities.Count > 0;       
+            return this.capabilities.Count > 0;
         }
     }
 }

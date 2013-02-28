@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing information about the specified hosted zone.</para>
     /// </summary>
-    public class GetHostedZoneResult  
+    public class GetHostedZoneResult
     {
         
         private HostedZone hostedZone;
@@ -54,7 +54,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZone property is set
         internal bool IsSetHostedZone()
         {
-            return this.hostedZone != null;       
+            return this.hostedZone != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Route53.Model
         // Check to see if DelegationSet property is set
         internal bool IsSetDelegationSet()
         {
-            return this.delegationSet != null;       
+            return this.delegationSet != null;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the GetTemplate operation.
     /// <para>Returns the template body for a specified stack name. You can get the template for running or deleted stacks.</para> <para>For deleted
-    /// stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted. </para> <para><b>NOTE:</b> If the template does
+    /// stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</para> <para><b>NOTE:</b> If the template does
     /// not exist, a ValidationError is returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.GetTemplate"/>
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;       
+            return this.stackName != null;
         }
     }
 }

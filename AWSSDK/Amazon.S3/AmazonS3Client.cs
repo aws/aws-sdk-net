@@ -5872,7 +5872,7 @@ namespace Amazon.S3
 
                 try
                 {
-                    s3AsyncResult.RequestState = new RequestState(request, parameters, fStream, requestData, reqDataLen, s3AsyncResult.S3Request.StopWatch.ElapsedTicks);
+                    s3AsyncResult.RequestState = new RequestState(request, parameters, fStream, requestData, reqDataLen, s3AsyncResult.S3Request.ElapsedTicks);
                     if (reqDataLen > 0)
                     {
                         if (s3AsyncResult.CompletedSynchronously)
@@ -6036,7 +6036,7 @@ namespace Amazon.S3
                     else
                         httpResponse = state.WebRequest.EndGetResponse(result) as HttpWebResponse;
 
-                    long lengthOfRequest = s3AsyncResult.S3Request.StopWatch.ElapsedTicks - state.WebRequestStart;
+                    long lengthOfRequest = s3AsyncResult.S3Request.ElapsedTicks - state.WebRequestStart;
                     s3AsyncResult.S3Request.ResponseTime = lengthOfRequest;
                     shouldRetry = handleHttpResponse<T>(
                         s3AsyncResult.S3Request,
@@ -6199,9 +6199,9 @@ namespace Amazon.S3
             {
                 LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
             }
-            long pauseStart = userRequest.StopWatch.ElapsedTicks;
+            long pauseStart = userRequest.ElapsedTicks;
             pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode, requestAddr, respHdrs, cause);
-            userRequest.PauseTime += (userRequest.StopWatch.ElapsedTicks - pauseStart);
+            userRequest.PauseTime += (userRequest.ElapsedTicks - pauseStart);
 
             // Reset the request so that streams are recreated,
             // removed headers are added back, etc
@@ -6314,9 +6314,9 @@ namespace Amazon.S3
                 processRedirect(userRequest, httpResponse);
                 LOGGER.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
-                long pauseStart = userRequest.StopWatch.ElapsedTicks;
+                long pauseStart = userRequest.ElapsedTicks;
                 pauseOnRetry(retries + 1, this.config.MaxErrorRetry, statusCode, requestAddr, httpResponse.Headers, cause);
-                userRequest.PauseTime += (userRequest.StopWatch.ElapsedTicks - pauseStart);
+                userRequest.PauseTime += (userRequest.ElapsedTicks - pauseStart);
 
                 // The HTTPResponse object needs to be closed. Once this is done, the request
                 // is gracefully terminated. Mind you, if this response object is not closed,
@@ -6467,7 +6467,7 @@ namespace Amazon.S3
                 {
                     using (httpResponse)
                     {
-                        long streamRead = request.StopWatch.ElapsedTicks;
+                        long streamRead = request.ElapsedTicks;
 
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -6497,7 +6497,7 @@ namespace Amazon.S3
                         {
                             string transformed = transform(responseBody, actionName, t);
 
-                            long streamParsed = request.StopWatch.ElapsedTicks;
+                            long streamParsed = request.ElapsedTicks;
 
                             // Attempt to deserialize response into <Action> Response type
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -6505,7 +6505,7 @@ namespace Amazon.S3
                             {
                                 response = (T)serializer.Deserialize(sr);
                             }
-                            long objectCreated = request.StopWatch.ElapsedTicks;
+                            long objectCreated = request.ElapsedTicks;
                             request.ResponseReadTime = streamParsed - streamRead;
                             request.ResponseProcessingTime = objectCreated - streamParsed;
                             LOGGER.InfoFormat("Done reading response stream for request (id {0}). Stream read: {1}. Object create: {2}. Length of body: {3}",
@@ -6522,7 +6522,7 @@ namespace Amazon.S3
                             response = new T();
                             response.ProcessResponseBody(responseBody);
 
-                            long streamParsed = request.StopWatch.ElapsedTicks;
+                            long streamParsed = request.ElapsedTicks;
                             request.ResponseReadTime = streamParsed - streamRead;
                         }
                     }
@@ -7257,10 +7257,7 @@ namespace Amazon.S3
                 this._completedSynchronously = completeSynchronized;
 
                 this._lockObj = new object();
-
-                this.S3Request.StopWatch = Stopwatch.StartNew();
-                this.S3Request.StopWatch.Start();
-                this._startTime = this.S3Request.StopWatch.ElapsedTicks;
+                this._startTime = this.S3Request.ElapsedTicks;
             }
 
             internal S3Request S3Request
@@ -7366,7 +7363,7 @@ namespace Amazon.S3
                 set
                 {
                     this._finalResponse = value;
-                    long endTime = this._s3Request.StopWatch.ElapsedTicks;
+                    long endTime = this._s3Request.ElapsedTicks;
                     long timeToComplete = endTime - this._startTime;
                     this._s3Request.TotalRequestTime = timeToComplete;
                     _logger.InfoFormat("S3 request completed: {0}", this._s3Request);

@@ -30,6 +30,7 @@ using System.Xml;
 using System.Xml.Xsl;
 
 using Microsoft.Win32;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util
 {
@@ -44,7 +45,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.14.0";
+        internal const string SDKVersionNumber = "1.5.15.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -488,10 +489,12 @@ namespace Amazon.Util
                 var eventHandler = ((EventHandler<T>)call);
                 if (eventHandler != null)
                 {
-                    eventHandler.BeginInvoke(sender, args, null, null);
+                    dispatcher.Invoke(() => eventHandler(sender, args));
                 }
             }
         }
+
+        private static BackgroundDispatcher dispatcher = new BackgroundDispatcher();
 
         #endregion
 

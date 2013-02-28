@@ -34,14 +34,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public DeleteHostedZoneResult DeleteHostedZoneResult
         {
-            get 
+            get
             {
                 if(this.deleteHostedZoneResult == null)
                 {
                     this.deleteHostedZoneResult = new DeleteHostedZoneResult();
                 }
 
-                return this.deleteHostedZoneResult; 
+                return this.deleteHostedZoneResult;
             }
             set { this.deleteHostedZoneResult = value; }
         }

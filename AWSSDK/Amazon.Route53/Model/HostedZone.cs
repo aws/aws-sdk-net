@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contain information about the specified hosted zone.</para>
     /// </summary>
-    public class HostedZone  
+    public class HostedZone
     {
         
         private string id;
@@ -66,7 +66,7 @@ namespace Amazon.Route53.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Route53.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.Route53.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.Route53.Model
         // Check to see if Config property is set
         internal bool IsSetConfig()
         {
-            return this.config != null;       
+            return this.config != null;
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecordSetCount property is set
         internal bool IsSetResourceRecordSetCount()
         {
-            return this.resourceRecordSetCount.HasValue;       
+            return this.resourceRecordSetCount.HasValue;
         }
     }
 }

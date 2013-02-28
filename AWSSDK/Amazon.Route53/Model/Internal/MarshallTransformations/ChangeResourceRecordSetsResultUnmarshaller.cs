@@ -22,13 +22,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ChangeResourceRecordSetsResult Unmarshaller
      /// </summary>
-    internal class ChangeResourceRecordSetsResultUnmarshaller : IUnmarshaller<ChangeResourceRecordSetsResult, XmlUnmarshallerContext> 
+    internal class ChangeResourceRecordSetsResultUnmarshaller : IUnmarshaller<ChangeResourceRecordSetsResult, XmlUnmarshallerContext>, IUnmarshaller<ChangeResourceRecordSetsResult, JsonUnmarshallerContext> 
     {
         public ChangeResourceRecordSetsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ChangeResourceRecordSetsResult changeResourceRecordSetsResult = new ChangeResourceRecordSetsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             return changeResourceRecordSetsResult;
+        }
+
+        public ChangeResourceRecordSetsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ChangeResourceRecordSetsResultUnmarshaller instance;

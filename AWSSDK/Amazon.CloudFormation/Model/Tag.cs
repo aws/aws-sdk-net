@@ -20,13 +20,21 @@ using System.IO;
 
 namespace Amazon.CloudFormation.Model
 {
-    /// <summary>Tag
+    /// <summary>
+    /// <para>The Tag type is used by <c>CreateStack</c> in the <c>Tags</c> parameter. It allows you to specify a key/value pair that can be used to
+    /// store information related to cost allocation for an AWS CloudFormation stack.</para>
     /// </summary>
-    public class Tag  
+    public class Tag
     {
         
         private string key;
         private string value;
+
+        /// <summary>
+        /// <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web
+        /// Services (AWS) have the reserved prefix: <c>aws:</c>.
+        ///  
+        /// </summary>
         public string Key
         {
             get { return this.key; }
@@ -48,8 +56,13 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;       
+            return this.key != null;
         }
+
+        /// <summary>
+        /// <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.
+        ///  
+        /// </summary>
         public string Value
         {
             get { return this.value; }
@@ -71,7 +84,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
     }
 }
