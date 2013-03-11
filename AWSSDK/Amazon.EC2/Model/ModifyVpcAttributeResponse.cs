@@ -27,13 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describe Vpc Attributes Response
+    /// Modify Vpc Attributes Response
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpcAttributesResponse
+    public class ModifyVpcAttributeResponse
     {
         private ResponseMetadata responseMetadataField;
-        private DescribeVpcAttributesResult describeVpcAttributesResultField;
 
         /// <summary>
         /// Gets and sets the ResponseMetadata property.
@@ -55,25 +54,6 @@ namespace Amazon.EC2.Model
             return this.responseMetadataField != null;
         }
 
-        /// <summary>
-        /// Gets and sets the DescribeVpcAttributesResult property.
-        /// Describe Vpc Attributes Result
-        /// </summary>
-        [XmlElementAttribute(ElementName = "DescribeVpcAttributesResult")]
-        public DescribeVpcAttributesResult DescribeVpcAttributesResult
-        {
-            get { return this.describeVpcAttributesResultField; }
-            set { this.describeVpcAttributesResultField = value; }
-        }
-
-        /// <summary>
-        /// Checks if DescribeVpcAttributesResult property is set
-        /// </summary>
-        /// <returns>true if DescribeVpcAttributesResult property is set</returns>
-        public bool IsSetDescribeVpcAttributesResult()
-        {
-            return this.describeVpcAttributesResultField != null;
-        }
 
         /// <summary>
         /// XML Representation of this object

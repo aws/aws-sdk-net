@@ -69,6 +69,19 @@ namespace Amazon.S3.Util
             AmzGrantHeaderRestoreObject = "x-amz-grant-restore-object",
             AmzGrantHeaderFullControl = "x-amz-grant-full-control";
 
+        // Fields for POST uploads
+        internal static string
+            PostFormDataObjectKey = "key",
+            PostFormDataAcl = "acl",
+            PostFormDataRedirect = "success_action_redirect",
+            PostFormDataStatus = "success_action_status",
+            PostFormDataContentType = "Content-Type",
+            PostFormDataMetaPrefix = "x-amz-meta-",
+            PostFormDataXAmzPrefix = "x-amz-",
+            PostFormDataAccessKeyId = "AWSAccessKeyId",
+            PostFormDataPolicy = "Policy",
+            PostFormDataSignature = "Signature";
+
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };
         internal static readonly string GetVerb = Verbs[0];
@@ -123,5 +136,6 @@ namespace Amazon.S3.Util
         internal const string NoSuchWebsiteConfiguration = "NoSuchWebsiteConfiguration";
         internal const string NoSuchLifecycleConfiguration = "NoSuchLifecycleConfiguration";
         internal const string NoSuchCORSConfiguration = "NoSuchCORSConfiguration";
+        internal const string BucketNotEmpty = "BucketNotEmpty";
     }
 }

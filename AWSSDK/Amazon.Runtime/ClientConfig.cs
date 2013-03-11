@@ -30,8 +30,6 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class ClientConfig
     {
-        private const string LOGMETRICS = "AWSLogMetrics";
-
         private RegionEndpoint regionEndpoint;
 
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
@@ -53,24 +51,8 @@ namespace Amazon.Runtime
         private int bufferSize = Amazon.S3.Util.S3Constants.DefaultBufferSize;
         private bool resignRetries = false;
         private ICredentials proxyCredentials;
-        private bool logMetrics = GetLogMetricsConfig();
-
-        private static bool? cachedLogMetrics = null;
-        // Gets the LogMetrics configuration
-        private static bool GetLogMetricsConfig()
-        {
-            if (cachedLogMetrics == null)
-            {
-                NameValueCollection appConfig = ConfigurationManager.AppSettings;
-                string logMetricsValue = appConfig[LOGMETRICS];
-                bool logMetrics;
-                if (string.IsNullOrEmpty(logMetricsValue) || !bool.TryParse(logMetricsValue, out logMetrics))
-                    logMetrics = false;
-
-                cachedLogMetrics = logMetrics;
-            }
-            return cachedLogMetrics.Value;
-        }
+        private bool logMetrics = AWSConfigs.LogMetrics;
+        private bool disableLogging = false;
 
         /// <summary>
         /// Gets Service Version
@@ -363,6 +345,15 @@ namespace Amazon.Runtime
         {
             get { return this.logMetrics; }
             set { this.logMetrics = value; }
+        }
+
+        /// <summary>
+        /// Flag on whether to completely disable logging for this client or not.
+        /// </summary>
+        internal bool DisableLogging
+        {
+            get { return this.disableLogging; }
+            set { this.disableLogging = value; }
         }
     }
 }

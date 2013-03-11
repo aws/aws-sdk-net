@@ -16,53 +16,46 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
+ *  API Version: 2010-11-15
  */
-
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Gives you information about the attributes of a VPC.
-    /// </summary>
-    [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpcAttributesRequest
+    public class LaunchNATInstanceRequest
     {
-        private string vpcIdField;
+        string subnetId;
+        string instanceType = "m1.small";
+        string keyName;
 
         /// <summary>
-        /// VPC ID to describe.
+        /// Gets and sets the subnet that the NAT instance will be launched in.
         /// </summary>
-        [XmlElementAttribute(ElementName = "VpcId")]
-        public string VpcId
+        public string SubnetId
         {
-            get { return this.vpcIdField; }
-            set { this.vpcIdField = value; }
+            get { return this.subnetId; }
+            set { this.subnetId = value; }
         }
 
         /// <summary>
-        /// Sets the VPC ID to describe.
+        /// Gets and sets the instance type of the NAT instance.   The default value is "m1.small".
         /// </summary>
-        /// <param name="vpcId">VPC ID to describe.</param>
-        /// <returns>this instance</returns>
-        public DescribeVpcAttributesRequest WithVpcId(string vpcId)
+        public string InstanceType
         {
-            this.vpcIdField = vpcId;
-            return this;
+            get { return this.instanceType; }
+            set { this.instanceType = value; }
         }
 
         /// <summary>
-        /// Checks if VpcId property is set
+        /// Gets and sets the key name of the NAT instance.
         /// </summary>
-        /// <returns>true if VpcId property is set</returns>
-        public bool IsSetVpcId()
+        public string KeyName
         {
-            return this.vpcIdField != null;
+            get { return this.keyName; }
+            set { this.keyName = value; }
         }
-
     }
 }

@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public class DescribeAccountAttributesRequest
     {
         private List<AccountAttributeName> accountAttributeNamesField;
+                private List<Filter> filterField;
 
         /// <summary>
         /// One or more account attribute names.
@@ -72,6 +73,53 @@ namespace Amazon.EC2.Model
         public bool IsSetAccountAttributeNames()
         {
             return (AccountAttributeNames.Count > 0);
+        }
+
+        /// <summary>
+        /// A list of filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Attributes.
+        /// For a complete reference to the available filter keys for this operation, see the
+        /// Amazon EC2 API reference.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Filter")]
+        public List<Filter> Filter
+        {
+            get
+            {
+                if (this.filterField == null)
+                {
+                    this.filterField = new List<Filter>();
+                }
+                return this.filterField;
+            }
+            set { this.filterField = value; }
+        }
+
+        /// <summary>
+        /// Sets the filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Attributes.
+        /// </summary>
+        /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated with 
+        /// the specified Attributes.
+        /// For a complete reference to the available filter keys for this operation, see the
+        /// Amazon EC2 API reference.</param>
+        /// <returns>this instance</returns>
+        public DescribeAccountAttributesRequest WithFilter(params Filter[] list)
+        {
+            foreach (Filter item in list)
+            {
+                Filter.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Filter property is set
+        /// </summary>
+        /// <returns>true if Filter property is set</returns>
+        public bool IsSetFilter()
+        {
+            return (Filter.Count > 0);
         }
     }
 }

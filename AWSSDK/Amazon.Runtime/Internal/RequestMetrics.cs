@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal
@@ -55,27 +56,65 @@ namespace Amazon.Runtime.Internal
             ServiceName,
         }
 
+        /// <summary>
+        /// Timing information for a metric
+        /// </summary>
         public class Timing
         {
             private long startTime;
             private long endTime;
 
+            /// <summary>
+            /// Empty, stopped timing object
+            /// </summary>
+            public Timing()
+            {
+                startTime = endTime = 0;
+                IsFinished = true;
+            }
+
+            /// <summary>
+            /// Timing object in a started state
+            /// </summary>
+            /// <param name="currentTime"></param>
             public Timing(long currentTime)
             {
                 startTime = currentTime;
                 IsFinished = false;
             }
 
+
+            /// <summary>
+            /// Stops timing
+            /// </summary>
+            /// <param name="currentTime"></param>
             public void Stop(long currentTime)
             {
                 endTime = currentTime;
                 IsFinished = true;
             }
+
+            /// <summary>
+            /// Whether the timing has been stopped
+            /// </summary>
             public bool IsFinished { get; private set; }
-            public long ElapsedTicks { get { return endTime - startTime; } }
+
+            /// <summary>
+            /// Elapsed ticks from start to stop.
+            /// If timing hasn't been stopped yet, returns 0.
+            /// </summary>
+            public long ElapsedTicks { get { return !IsFinished ? 0 : endTime - startTime; } }
+
+            /// <summary>
+            /// Elapsed time from start to stop.
+            /// If timing hasn't been stopped yet, returns TimeSpan.Zero
+            /// </summary>
             public TimeSpan ElapsedTime { get { return TimeSpan.FromTicks(ElapsedTicks); } }
         }
 
+        /// <summary>
+        /// Timing event, stops timing of a metric when disposed
+        /// </summary>
         public class TimingEvent : IDisposable
         {
             private Metric metric;
@@ -97,6 +136,31 @@ namespace Amazon.Runtime.Internal
             #endregion
         }
 
+        // Error encountered in metrics logging
+        private class MetricError
+        {
+            public Metric Metric { get; private set; }
+            public string Message { get; private set; }
+            public Exception Exception { get; private set; }
+            public DateTime Time { get; private set; }
+
+            public MetricError(Metric metric, string messageFormat, params object[] args) : this(metric, null, messageFormat, args) { }
+            public MetricError(Metric metric, Exception exception, string messageFormat, params object[] args)
+            {
+                Time = DateTime.Now;
+                try
+                {
+                    Message = string.Format(messageFormat, args);
+                }
+                catch
+                {
+                    Message = string.Format("Error message: {0}", messageFormat);
+                }
+                Exception = exception;
+                Metric = metric;
+            }
+        }
+
         #endregion
 
         #region Private members
@@ -104,7 +168,16 @@ namespace Amazon.Runtime.Internal
         private object metricsLock = new object();
         private Stopwatch stopWatch;
         private Dictionary<Metric, Timing> inFlightTimings;
+        private List<MetricError> errors = new List<MetricError>();
         private long CurrentTime { get { return stopWatch.GetElapsedDateTimeTicks(); } }
+        private void LogError_Locked(Metric metric, string messageFormat, params object[] args)
+        {
+            errors.Add(new MetricError(metric, messageFormat, args));
+        }
+        private void LogError_Locked(Metric metric, Exception exception, string messageFormat, params object[] args)
+        {
+            errors.Add(new MetricError(metric, exception, messageFormat, args));
+        }
         private static void Log(StringWriter writer, Metric metric, object metricValue)
         {
             writer.Write("{0} = {1}; ", metric, metricValue);
@@ -155,7 +228,7 @@ namespace Amazon.Runtime.Internal
         #region Public methods
 
         /// <summary>
-        /// Starts timing an event. Throws an exception if an event
+        /// Starts timing an event. Logs an exception if an event
         /// of the same type was started but not stopped.
         /// </summary>
         /// <param name="metric"></param>
@@ -165,13 +238,13 @@ namespace Amazon.Runtime.Internal
             lock (metricsLock)
             {
                 if (inFlightTimings.ContainsKey(metric))
-                    throw new InvalidOperationException("Unable to start multiple events for the same metric. Metric = " + metric);
+                    LogError_Locked(metric, "Starting multiple events for the same metric");
                 inFlightTimings[metric] = new Timing(CurrentTime);
             }
             return new TimingEvent(this, metric);
         }
         /// <summary>
-        /// Stops timing an event. Throws an exception if the event wasn't started.
+        /// Stops timing an event. Logs an exception if the event wasn't started.
         /// </summary>
         /// <param name="metric"></param>
         /// <returns></returns>
@@ -181,7 +254,10 @@ namespace Amazon.Runtime.Internal
             lock (metricsLock)
             {
                 if (!inFlightTimings.TryGetValue(metric, out timing))
-                    throw new InvalidOperationException("Trying to stop event that has not been started.");
+                {
+                    LogError_Locked(metric, "Trying to stop event that has not been started");
+                    return new Timing();
+                }
                 inFlightTimings.Remove(metric);
                 timing.Stop(CurrentTime);
 
@@ -271,8 +347,34 @@ namespace Amazon.Runtime.Internal
                 lock (metricsLock)
                 {
                     if (inFlightTimings.Count > 0)
-                        writer.Write("Timings are still in flight: " +
-                            string.Join(", ", inFlightTimings.Keys.Select(k => k.ToString()).ToArray()));
+                    {
+                        string inFlightTimingsValue = string.Join(", ", inFlightTimings.Keys.Select(k => k.ToString()).ToArray());
+                        writer.Write("Timings are still in flight: {0}.", inFlightTimingsValue);
+                    }
+                    if (errors.Count > 0)
+                    {
+                        writer.Write("Logged {0} metrics errors: ", errors.Count);
+                        foreach (MetricError error in errors)
+                        {
+                            // skip empty errors
+                            if (error.Exception == null && string.IsNullOrEmpty(error.Message))
+                                continue;
+
+                            writer.Write("{0} - {1} - ",
+                                error.Time.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture),
+                                error.Metric);
+                            if (!string.IsNullOrEmpty(error.Message))
+                            {
+                                writer.Write(error.Message);
+                                writer.Write(";");
+                            }
+                            if (error.Exception != null)
+                            {
+                                writer.Write(error.Exception);
+                                writer.Write("; ");
+                            }
+                        }
+                    }
                 }
 
                 return writer.ToString();

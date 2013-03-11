@@ -27,75 +27,53 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describe Vpc Attributes Result
+    /// Describe Vpc Attributes Response
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpcAttributesResult
+    public class DescribeVpcAttributeResponse
     {
-        private string vpcIdField;
-        private bool? enableDnsSupportField;
-        private bool? enableDnsHostnamesField;
-
+        private ResponseMetadata responseMetadataField;
+        private DescribeVpcAttributeResult describeVpcAttributeResultField;
 
         /// <summary>
-        /// Id of the target VPC.
+        /// Gets and sets the ResponseMetadata property.
+        /// Response Metadata
         /// </summary>
-        [XmlElementAttribute(ElementName = "VpcId")]
-        public string VpcId
+        [XmlElementAttribute(ElementName = "ResponseMetadata")]
+        public ResponseMetadata ResponseMetadata
         {
-            get { return this.vpcIdField; }
-            set { this.vpcIdField = value; }
+            get { return this.responseMetadataField; }
+            set { this.responseMetadataField = value; }
         }
 
         /// <summary>
-        /// Checks if VpcId property is set
+        /// Checks if ResponseMetadata property is set
         /// </summary>
-        /// <returns>true if VpcId property is set</returns>
-        public bool IsSetVpcId()
+        /// <returns>true if ResponseMetadata property is set</returns>
+        public bool IsSetResponseMetadata()
         {
-            return this.vpcIdField != null;
-        }
-
-
-        /// <summary>
-        /// Flag that signals if the EnableDnsSupport attribute is true or false.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "EnableDnsSupport")]
-        public bool EnableDnsSupport
-        {
-            get { return this.enableDnsSupportField.GetValueOrDefault(); }
-            set { this.enableDnsSupportField = value; }
+            return this.responseMetadataField != null;
         }
 
         /// <summary>
-        /// Checks if EnableDnsSupport property is set
+        /// Gets and sets the DescribeVpcAttributesResult property.
+        /// Describe Vpc Attributes Result
         /// </summary>
-        /// <returns>true if EnableDnsSupport property is set</returns>
-        public bool IsSetEnableDnsSupport()
+        [XmlElementAttribute(ElementName = "DescribeVpcAttributeResult")]
+        public DescribeVpcAttributeResult DescribeVpcAttributeResult
         {
-            return enableDnsSupportField.HasValue;
-        }
-
-
-        /// <summary>
-        /// Flag that signals if the EnableDnsHostnames attribute is true or false.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "EnableDnsHostnames")]
-        public bool EnableDnsHostnames
-        {
-            get { return this.enableDnsHostnamesField.GetValueOrDefault(); }
-            set { this.enableDnsHostnamesField = value; }
+            get { return this.describeVpcAttributeResultField; }
+            set { this.describeVpcAttributeResultField = value; }
         }
 
         /// <summary>
-        /// Checks if EnableDnsHostnames property is set
+        /// Checks if DescribeVpcAttributesResult property is set
         /// </summary>
-        /// <returns>true if EnableDnsHostnames property is set</returns>
-        public bool IsSetEnableDnsHostnames()
+        /// <returns>true if DescribeVpcAttributesResult property is set</returns>
+        public bool IsSetDescribeVpcAttributeResult()
         {
-            return enableDnsHostnamesField.HasValue;
+            return this.describeVpcAttributeResultField != null;
         }
-
 
         /// <summary>
         /// XML Representation of this object

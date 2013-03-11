@@ -42,7 +42,6 @@ namespace Amazon.Runtime
         static IDictionary<string, RefreshingSessionAWSCredentials> cachedRefreshingCredentials = new Dictionary<string, RefreshingSessionAWSCredentials>();
         static object cachedRefreshingCredentialsLock = new object();
 
-
         [Flags]
         internal enum AuthenticationTypes
         {
@@ -107,6 +106,11 @@ namespace Amazon.Runtime
                     }
                     credentials = null;
                 }
+                if (disposing && logger != null)
+                {
+                    logger.Flush();
+                    logger = null;
+                }
                 this.disposed = true;
             }
         }
@@ -135,7 +139,11 @@ namespace Amazon.Runtime
 
         internal AmazonWebServiceClient(AWSCredentials credentials, ClientConfig config, bool ownCredentials, AuthenticationTypes authenticationType)
         {
-            this.logger = new Logger(this.GetType());
+            if (config.DisableLogging)
+                this.logger = Logger.EmptyLogger;
+            else
+                this.logger = Logger.GetLogger(this.GetType());
+
             this.config = config;
             this.ownCredentials = ownCredentials;
             this.authenticationType = authenticationType;
@@ -460,6 +468,7 @@ namespace Amazon.Runtime
             else
                 asyncResult = result.AsyncState as AsyncResult;
 
+            UnmarshallerContext context = null;
             asyncResult.RequestState.GetResponseCallbackCalled = true;
             bool shouldRetry = false;
             try
@@ -480,7 +489,7 @@ namespace Amazon.Runtime
                         LogResponse(asyncResult, httpResponse.StatusCode);
                         try
                         {
-                            var context = unmarshaller.CreateContext(httpResponse, config.LogResponse || config.ReadEntireResponse, asyncResult);
+                            context = unmarshaller.CreateContext(httpResponse, config.LogResponse || config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, asyncResult);
 
                             AmazonWebServiceResponse response;
                             using (asyncResult.Metrics.StartEvent(RequestMetrics.Metric.ResponseUnmarshallTime))
@@ -502,8 +511,6 @@ namespace Amazon.Runtime
                                 httpResponse.Close();
                         }
                     }
-
-                    LogFinalMetrics(asyncResult);
                 }
                 catch (WebException we)
                 {
@@ -511,6 +518,10 @@ namespace Amazon.Runtime
                     if (exceptionHttpResponse != null)
                     {
                         LogResponse(asyncResult, exceptionHttpResponse.StatusCode);
+                    }
+                    else
+                    {
+                        asyncResult.Metrics.StopEvent(RequestMetrics.Metric.HttpRequestTime);
                     }
                     shouldRetry = handleHttpWebErrorResponse(asyncResult, we);
                 }
@@ -520,16 +531,22 @@ namespace Amazon.Runtime
                     shouldRetry = handleIOException(asyncResult, httpResponse, ioe);
                 }
 
-
                 if (shouldRetry)
                 {
                     asyncResult.RequestState.WebRequest.Abort();
                     asyncResult.RetriesAttempt++;
                     InvokeHelper(asyncResult);
                 }
+                else
+                {
+                    LogFinalMetrics(asyncResult);
+                }
             }
             catch (Exception e)
             {
+                if (context != null && AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                    this.logger.Error(e, "Received response: [{0}]", context.ResponseBody);
+
                 asyncResult.RequestState.WebRequest.Abort();
                 asyncResult.Exception = e;
                 asyncResult.Metrics.AddProperty(RequestMetrics.Metric.Exception, e);
@@ -574,7 +591,7 @@ namespace Amazon.Runtime
         private void LogFinishedResponse(AsyncResult asyncResult, UnmarshallerContext context, long contentLength)
         {
             asyncResult.Metrics.AddProperty(RequestMetrics.Metric.BytesProcessed, contentLength);
-            if (config.LogResponse)
+            if (config.LogResponse || AWSConfigs.ResponseLogging == ResponseLoggingOption.Always)
             {
                 this.logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
             }
@@ -639,12 +656,12 @@ namespace Amazon.Runtime
                 using (httpErrorResponse)
                 {
                     var unmarshaller = asyncResult.Unmarshaller;
-                    UnmarshallerContext errorContext = unmarshaller.CreateContext(httpErrorResponse, config.LogResponse || config.ReadEntireResponse, asyncResult);
-                    if (config.LogResponse)
-                    {
-                        this.logger.DebugFormat("Received error response: [{0}]", errorContext.ResponseBody);
-                    }
+                    UnmarshallerContext errorContext = unmarshaller.CreateContext(httpErrorResponse, config.LogResponse || config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, asyncResult);
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
+                    if (config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
+                    {
+                        this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
+                    }
                     asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSRequestID, errorResponseException.RequestId);
                     asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSErrorCode, errorResponseException.ErrorCode);
                 }

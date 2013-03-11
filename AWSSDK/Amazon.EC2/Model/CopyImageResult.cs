@@ -26,34 +26,29 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Modify Vpc Attributes Response
-    /// </summary>
-    [XmlRootAttribute(IsNullable = false)]
-    public class ModifyVpcAttributesResponse
+    public class CopyImageResult
     {
-        private ResponseMetadata responseMetadataField;
+        private string imageIdField;
 
         /// <summary>
-        /// Gets and sets the ResponseMetadata property.
-        /// Response Metadata
+        /// Gets and sets the ImageId property.
+        /// Id of the snapshot
         /// </summary>
-        [XmlElementAttribute(ElementName = "ResponseMetadata")]
-        public ResponseMetadata ResponseMetadata
+        [XmlElementAttribute(ElementName = "ImageId")]
+        public string ImageId
         {
-            get { return this.responseMetadataField; }
-            set { this.responseMetadataField = value; }
+            get { return this.imageIdField; }
+            set { this.imageIdField = value; }
         }
 
         /// <summary>
-        /// Checks if ResponseMetadata property is set
+        /// Checks if ImageId property is set
         /// </summary>
-        /// <returns>true if ResponseMetadata property is set</returns>
-        public bool IsSetResponseMetadata()
+        /// <returns>true if ImageId property is set</returns>
+        public bool IsSetImage()
         {
-            return this.responseMetadataField != null;
+            return this.imageIdField != null;
         }
-
 
         /// <summary>
         /// XML Representation of this object

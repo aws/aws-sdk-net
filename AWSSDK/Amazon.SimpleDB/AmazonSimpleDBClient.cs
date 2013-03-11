@@ -45,7 +45,7 @@ namespace Amazon.SimpleDB
 {
     public class AmazonSimpleDBClient : AmazonSimpleDB
     {
-        static Logger LOGGER = new Logger(typeof(AmazonSimpleDBClient));
+        static Logger LOGGER = Logger.GetLogger(typeof(AmazonSimpleDBClient));
 
         private bool ownCredentials;
         private AWSCredentials credentials;
@@ -70,6 +70,10 @@ namespace Amazon.SimpleDB
                         credentials.Dispose();
                     }
                     credentials = null;
+                }
+                if (fDisposing && LOGGER != null)
+                {
+                    LOGGER.Flush();
                 }
                 this.disposed = true;
             }

@@ -27,34 +27,24 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Modifies attributes of a VPC.
+    /// Describe Vpc Attributes Result
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyVpcAttributesRequest
+    public class DescribeVpcAttributeResult
     {
         private string vpcIdField;
         private bool? enableDnsSupportField;
         private bool? enableDnsHostnamesField;
 
+
         /// <summary>
-        /// VPC ID to modify.
+        /// Id of the target VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
             get { return this.vpcIdField; }
             set { this.vpcIdField = value; }
-        }
-
-        /// <summary>
-        /// Sets the VPC ID to describe.
-        /// </summary>
-        /// <param name="vpcId">VPC ID to describe.</param>
-        /// <returns>this instance</returns>
-        public ModifyVpcAttributesRequest WithVpcId(string vpcId)
-        {
-            this.vpcIdField = vpcId;
-            return this;
         }
 
         /// <summary>
@@ -68,7 +58,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Whether Dns is supported.
+        /// Flag that signals if the EnableDnsSupport attribute is true or false.
         /// </summary>
         [XmlElementAttribute(ElementName = "EnableDnsSupport")]
         public bool EnableDnsSupport
@@ -78,28 +68,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets whether Dns is supported.
-        /// </summary>
-        /// <param name="enableDnsSupport">Whether Dns is supported.</param>
-        /// <returns>this instance</returns>
-        public ModifyVpcAttributesRequest WithEnableDnsSupport(bool enableDnsSupport)
-        {
-            this.enableDnsSupportField = enableDnsSupport;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if EnableDnsSupport property is set
         /// </summary>
         /// <returns>true if EnableDnsSupport property is set</returns>
         public bool IsSetEnableDnsSupport()
         {
-            return this.enableDnsSupportField.HasValue;
+            return enableDnsSupportField.HasValue;
         }
 
 
         /// <summary>
-        /// Whether Dns hostnames are enabled.
+        /// Flag that signals if the EnableDnsHostnames attribute is true or false.
         /// </summary>
         [XmlElementAttribute(ElementName = "EnableDnsHostnames")]
         public bool EnableDnsHostnames
@@ -109,24 +88,37 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets whether Dns hostnames are enabled.
+        /// Checks if EnableDnsHostnames property is set
         /// </summary>
-        /// <param name="enableDnsHostnames">Whether Dns hostnames are enabled.</param>
-        /// <returns>this instance</returns>
-        public ModifyVpcAttributesRequest WithEnableDnsHostnames(bool enableDnsHostnames)
+        /// <returns>true if EnableDnsHostnames property is set</returns>
+        public bool IsSetEnableDnsHostnames()
         {
-            this.enableDnsHostnamesField = enableDnsHostnames;
-            return this;
+            return enableDnsHostnamesField.HasValue;
+        }
+
+
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
         }
 
         /// <summary>
-        /// Checks if EnableDnsHostnames property is set
+        /// String Representation of this object. Overrides Object.ToString()
         /// </summary>
-        /// <returns>true if Egress property is set</returns>
-        public bool IsSetEnableDnsHostnames()
+        /// <returns>This object as a string</returns>
+        public override string ToString()
         {
-            return this.enableDnsHostnamesField.HasValue;
+            return this.ToXML();
         }
-
     }
 }

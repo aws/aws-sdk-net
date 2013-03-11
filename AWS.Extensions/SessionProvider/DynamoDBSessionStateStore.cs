@@ -33,9 +33,9 @@ using Amazon.Util;
 namespace Amazon.SessionProvider
 {
     /// <summary>
-    /// DynamoDBSessionStateStore is a custom session state provider that can be used inside of an ASP.NET application.  Session state is saved 
-    /// inside a DynamoDB table that can be configured in the web.config.  If the table does not exist the provider will create
-    /// it during initialization with default read and write units set to 10 and 5 unless configured otherwise.  If the table is created 
+    /// DynamoDBSessionStateStore is a custom session state provider that can be used inside of an ASP.NET application. Session state is saved 
+    /// inside a DynamoDB table that can be configured in the web.config. If the table does not exist the provider will create
+    /// it during initialization with default read and write units set to 10 and 5 unless configured otherwise. If the table is created 
     /// the application startup will block for about a minute while the table is being created.
     /// 
     /// Example web.config entry setting up the session state provider.
@@ -56,7 +56,7 @@ namespace Amazon.SessionProvider
     /// </code>
     /// 
     /// <para>
-    /// The schema for the table used to store session requires a string hash key with no range key.  The provider will look up the name of the hash key during 
+    /// The schema for the table used to store session requires a string hash key with no range key. The provider will look up the name of the hash key during 
     /// initialization so any name can be given for the hash key.
     /// </para>
     /// 
@@ -69,35 +69,35 @@ namespace Amazon.SessionProvider
     ///     </listheader>
     ///     <item>
     ///         <term>AWSAccessKey</term>
-    ///         <description>Access key used.  This can be set at either the provider or in the appSettings.</description>
+    ///         <description>Access key used. This can be set at either the provider or in the appSettings.</description>
     ///     </item>
     ///     <item>
     ///         <term>AWSSecretKey</term>
-    ///         <description>Secret key used.  This can be set at either the provider or in the appSettings.</description>
+    ///         <description>Secret key used. This can be set at either the provider or in the appSettings.</description>
     ///     </item>
     ///     <item>
     ///         <term>Region</term>
-    ///         <description>Required string attribute.  The region to use DynamoDB in.  The default is us-east-1.  Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
+    ///         <description>Required string attribute. The region to use DynamoDB in. The default is us-east-1. Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
     ///     </item>
     ///     <item>
     ///         <term>Application</term>
-    ///         <description>Optional string attribute.  Application is used to partition the session data in the table so it can be used for more then one application.</description>
+    ///         <description>Optional string attribute. Application is used to partition the session data in the table so it can be used for more than one application.</description>
     ///     </item>
     ///     <item>
     ///         <term>Table</term>
-    ///         <description>Optional string attribute.  The table used to store session data.  The default is ASP.NET_SessionState.</description>
+    ///         <description>Optional string attribute. The table used to store session data. The default is ASP.NET_SessionState.</description>
     ///     </item>
     ///     <item>
     ///         <term>ReadCapacityUnits</term>
-    ///         <description>Optional int attribute.  The read capacity units if the table is created.  The default is 10.</description>
+    ///         <description>Optional int attribute. The read capacity units if the table is created. The default is 10.</description>
     ///     </item>
     ///     <item>
     ///         <term>WriteCapacityUnits</term>
-    ///         <description>Optional int attribute.  The write capacity units if the table is created.  The default is 5.</description>
+    ///         <description>Optional int attribute. The write capacity units if the table is created. The default is 5.</description>
     ///     </item>
     ///     <item>
     ///         <term>CreateIfNotExist</term>
-    ///         <description>Optional boolean attribute.  CreateIfNotExist controls whether the table will be auto created if it doesn't exist.  Default is true.</description>
+    ///         <description>Optional boolean attribute. CreateIfNotExist controls whether the table will be auto created if it doesn't exist. Default is true.</description>
     ///     </item>
     /// </list>
     /// </para>
@@ -243,7 +243,7 @@ namespace Amazon.SessionProvider
 
             if (string.IsNullOrEmpty(this._regionName))
             {
-                throw new AmazonDynamoDBException("No region found.  Region is required to be specified in the web.config");
+                throw new AmazonDynamoDBException("No region found. Region is required to be specified in the web.config");
             }
 
             if (!string.IsNullOrEmpty(config[CONFIG_TABLE]))
@@ -476,7 +476,7 @@ namespace Amazon.SessionProvider
         /// <param name="context">The HttpContext for the current request.</param>
         /// <param name="sessionId">The session identifier for the current request.</param>
         /// <param name="item">The SessionStateStoreData object that contains the current session values to be stored.</param>
-        /// <param name="lockId">The lock identifier for the current request. </param>
+        /// <param name="lockId">The lock identifier for the current request.</param>
         /// <param name="newItem">true to identify the session item as a new item; false to identify the session item as an existing item.</param>
         public override void SetAndReleaseItemExclusive(HttpContext context,
                                                          string sessionId,
@@ -521,7 +521,7 @@ namespace Amazon.SessionProvider
         /// </summary>
         /// <param name="context">The HttpContext for the current request.</param>
         /// <param name="sessionId">The session identifier for the current request.</param>
-        /// <param name="lockId">The lock identifier for the current request. </param>
+        /// <param name="lockId">The lock identifier for the current request.</param>
         public override void ReleaseItemExclusive(HttpContext context, string sessionId, object lockId)
         {
             Document doc = this._table.GetItem(GetHashKey(sessionId));
@@ -612,8 +612,8 @@ namespace Amazon.SessionProvider
         }
 
         /// <summary>
-        /// A utility method for cleaning up expired sessions that IIS failed to delete.  The method performs a scan on the ASP.NET_SessionState table
-        /// with a condition that the expiration date is in the past and calls delete on all the keys returned.  Scans can be costly on performance
+        /// A utility method for cleaning up expired sessions that IIS failed to delete. The method performs a scan on the ASP.NET_SessionState table
+        /// with a condition that the expiration date is in the past and calls delete on all the keys returned. Scans can be costly on performance
         /// so use this method sparingly like a nightly or weekly clean job.
         /// </summary>
         /// <param name="dbClient">The AmazonDynamoDB client used to find a delete expired sessions.</param>
@@ -623,8 +623,8 @@ namespace Amazon.SessionProvider
         }
 
         /// <summary>
-        /// A utility method for cleaning up expired sessions that IIS failed to delete.  The method performs a scan on the table
-        /// with a condition that the expiration date is in the past and calls delete on all the keys returned.  Scans can be costly on performance
+        /// A utility method for cleaning up expired sessions that IIS failed to delete. The method performs a scan on the table
+        /// with a condition that the expiration date is in the past and calls delete on all the keys returned. Scans can be costly on performance
         /// so use this method sparingly like a nightly or weekly clean job.
         /// </summary>
         /// <param name="dbClient">The AmazonDynamoDB client used to find a delete expired sessions.</param>

@@ -3096,15 +3096,27 @@ namespace Amazon.EC2
         }
 
         /// <summary>
+        /// Copies a image from a source region to the current region.
+        /// </summary>
+        /// <param name="request">Copy Image request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Copy Snapshot response from the service</returns>
+        public CopyImageResponse CopyImage(CopyImageRequest request)
+        {
+            return Invoke<CopyImageResponse>(ConvertCopyImage(request));
+        }
+
+        /// <summary>
         /// Describes VPC attributes.
         /// </summary>
         /// <param name="request">Describe Vpc Attributes Request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Vpc Attributes response from the service</returns>
-        public DescribeVpcAttributesResponse DescribeVpcAttributes(DescribeVpcAttributesRequest request)
+        public DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
-            return Invoke<DescribeVpcAttributesResponse>(ConvertDescribeVpcAttributes(request));
+            return Invoke<DescribeVpcAttributeResponse>(ConvertDescribeVpcAttribute(request));
         }
 
         /// <summary>
@@ -3114,9 +3126,9 @@ namespace Amazon.EC2
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Vpc Attributes response from the service</returns>
-        public ModifyVpcAttributesResponse ModifyVpcAttributes(ModifyVpcAttributesRequest request)
+        public ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
-            return Invoke<ModifyVpcAttributesResponse>(ConvertModifyVpcAttributes(request));
+            return Invoke<ModifyVpcAttributeResponse>(ConvertModifyVpcAttribute(request));
         }
 
         /// <summary>
@@ -7992,38 +8004,72 @@ namespace Amazon.EC2
         }
 
         /**
-         * Convert DescribeVpcAttributesRequest to name value pairs
+         * Convert CopySnapshotRequest to name value pairs
          */
-        private static IDictionary<string, string> ConvertDescribeVpcAttributes(DescribeVpcAttributesRequest request)
+        private static IDictionary<string, string> ConvertCopyImage(CopyImageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeVpcAttributes";
-            if (request.IsSetVpcId())
+            parameters["Action"] = "CopyImage";
+            if (request.IsSetSourceRegion())
             {
-                parameters["VpcId"] = request.VpcId;
+                parameters["SourceRegion"] = request.SourceRegion;
+            }
+            if (request.IsSetSourceImageId())
+            {
+                parameters["SourceImageId"] = request.SourceImageId;
+            }
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetName())
+            {
+                parameters["Name"] = request.Name;
+            }
+            if (request.IsSetClientToken())
+            {
+                parameters["ClientToken"] = request.ClientToken;
             }
 
             return parameters;
         }
 
         /**
-         * Convert ModifyVpcAttributesRequest to name value pairs
+         * Convert DescribeVpcAttributesRequest to name value pairs
          */
-        private static IDictionary<string, string> ConvertModifyVpcAttributes(ModifyVpcAttributesRequest request)
+        private static IDictionary<string, string> ConvertDescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "ModifyVpcAttributes";
+            parameters["Action"] = "DescribeVpcAttribute";
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
+            }
+            if (request.IsSetAttribute())
+            {
+                parameters["Attribute"] = request.Attribute;
+            }
+            return parameters;
+        }
+
+        /**
+         * Convert ModifyVpcAttributesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertModifyVpcAttribute(ModifyVpcAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ModifyVpcAttribute";
             if (request.IsSetVpcId())
             {
                 parameters["VpcId"] = request.VpcId;
             }
             if (request.IsSetEnableDnsSupport())
             {
-                parameters["EnableDnsSupport"] = request.EnableDnsSupport.ToString().ToLower();
+                parameters["EnableDnsSupport.Value"] = request.EnableDnsSupport.ToString().ToLower();
             }
-            if (request.IsSetEnableDnsHostnames())
+            if (request.EnableDnsHostnames)
             {
-                parameters["EnableDnsHostnames"] = request.EnableDnsHostnames.ToString().ToLower();
+                parameters["EnableDnsHostnames.Value"] = request.EnableDnsHostnames.ToString().ToLower();
             }
 
             return parameters;
@@ -8048,6 +8094,25 @@ namespace Amazon.EC2
                         attributeNamesIndex++;
                     }
                 }
+            }
+
+            List<Filter> describeAccountAttributesRequestFilterList = request.Filter;
+            int describeAccountAttributesRequestFilterListIndex = 1;
+            foreach (Filter describeccountAttributesRequestFilter in describeAccountAttributesRequestFilterList)
+            {
+                if (describeccountAttributesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeAccountAttributesRequestFilterListIndex, ".", "Name")] = describeccountAttributesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeccountAttributesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeAccountAttributesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeAccountAttributesRequestFilterListIndex++;
             }
 
             return parameters;

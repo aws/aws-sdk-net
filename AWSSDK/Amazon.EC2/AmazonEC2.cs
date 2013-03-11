@@ -2413,13 +2413,22 @@ namespace Amazon.EC2
         CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
 
         /// <summary>
+        /// Copies a image from a source region to the current region.
+        /// </summary>
+        /// <param name="request">Copy Image request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Copy Image response from the service</returns>
+        CopyImageResponse CopyImage(CopyImageRequest request);
+
+        /// <summary>
         /// Describes VPC attributes.
         /// </summary>
         /// <param name="request">Describe Vpc Attributes Request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Vpc Attributes response from the service</returns>
-        DescribeVpcAttributesResponse DescribeVpcAttributes(DescribeVpcAttributesRequest request);
+        DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request);
 
         /// <summary>
         /// Modified attributes on a VPC.
@@ -2428,7 +2437,7 @@ namespace Amazon.EC2
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Vpc Attributes response from the service</returns>
-        ModifyVpcAttributesResponse ModifyVpcAttributes(ModifyVpcAttributesRequest request);
+        ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request);
 
         /// <summary>
         /// Describes account attributes of the caller

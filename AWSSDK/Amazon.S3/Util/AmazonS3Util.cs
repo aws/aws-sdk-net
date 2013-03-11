@@ -32,6 +32,7 @@ using System.Text.RegularExpressions;
 
 using Amazon.S3.Model;
 using Amazon.Util;
+using System.Threading;
 
 namespace Amazon.S3.Util
 {
@@ -46,7 +47,7 @@ namespace Amazon.S3.Util
 
         static AmazonS3Util()
         {
-            extensionToMime = extensionToMime = new Dictionary<string, string>(150, StringComparer.InvariantCultureIgnoreCase);
+            extensionToMime = new Dictionary<string, string>(150, StringComparer.InvariantCultureIgnoreCase);
 
             extensionToMime[".ai"] = "application/postscript";
             extensionToMime[".aif"] = "audio/x-aiff";
@@ -497,6 +498,204 @@ namespace Amazon.S3.Util
             }
         }
 
+         /// <summary>
+        /// Deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. This method deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        public static void DeleteS3BucketWithObjects(string bucketName, AmazonS3 s3Client)
+        {
+            var result=BeginDeleteS3BucketWithObjects(bucketName, s3Client, null, null);
+            EndDeleteS3BucketWithObjects(result);
+        }
+
+        /// <summary>
+        /// Deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. This method deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="deleteOptions">Options to control the behavior of the delete operation.</param>
+        public static void DeleteS3BucketWithObjects(string bucketName, AmazonS3 s3Client, S3DeleteBucketWithObjectsOptions deleteOptions)
+        {
+            var result = BeginDeleteS3BucketWithObjects(bucketName, s3Client,deleteOptions, null, null);
+            EndDeleteS3BucketWithObjects(result);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteS3BucketWithObjects operation. 
+        /// DeleteS3BucketWithObjects deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. This method deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
+        /// be used to cancel the operation while it's in progress.</returns>
+        public static IAsyncCancelableResult BeginDeleteS3BucketWithObjects(string bucketName, AmazonS3 s3Client,
+            AsyncCallback callback, object state)
+        {
+            return BeginDeleteS3BucketWithObjects(bucketName, s3Client,
+                new S3DeleteBucketWithObjectsOptions
+                {
+                    ContinueOnError = false,
+                    QuietMode = true,
+                },
+                callback,
+                state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteS3BucketWithObjects operation. 
+        /// DeleteS3BucketWithObjects deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. This method deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="deleteOptions">Options to control the behavior of the delete operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
+        /// be used to cancel the operation while it's in progress.</returns>
+        public static IAsyncCancelableResult BeginDeleteS3BucketWithObjects(string bucketName, AmazonS3 s3Client,
+             S3DeleteBucketWithObjectsOptions deleteOptions, AsyncCallback callback, object state)
+        {
+            return BeginDeleteS3BucketWithObjects(bucketName, s3Client, deleteOptions, null, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteS3BucketWithObjects operation. 
+        /// DeleteS3BucketWithObjects deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. This method deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="deleteOptions">>Options to control the behavior of the delete operation.</param>
+        /// <param name="updateCallback">An callback that is invoked to send updates while delete operation is in progress.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
+        /// be used to cancel the operation while it's in progress.</returns>
+        public static IAsyncCancelableResult BeginDeleteS3BucketWithObjects(string bucketName, AmazonS3 s3Client,
+             S3DeleteBucketWithObjectsOptions deleteOptions,Action<S3DeleteBucketWithObjectsUpdate> updateCallback, AsyncCallback callback, object state)
+        {
+            var asyncResult = new AsyncCancelableResult(callback, state);
+
+            var request = new S3DeleteBucketWithObjectsRequest
+            {
+                AsyncCancelableResult = asyncResult,
+                BucketName = bucketName,
+                DeleteOptions = deleteOptions,
+                UpdateCallback=updateCallback,
+                S3Client = s3Client
+            };
+
+            ThreadPool.QueueUserWorkItem(InvokeDeleteS3BucketWithObjects, request);
+            return asyncResult;
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteS3BucketWithObjects operation.
+        /// </summary>
+        /// <param name="asyncCancelableResult">The IAsyncCancelableResult returned by the call to BeginDeleteS3BucketWithObjects.</param>
+        public static void EndDeleteS3BucketWithObjects(IAsyncCancelableResult asyncCancelableResult)
+        {
+            var asyncResult = asyncCancelableResult as AsyncCancelableResult;
+            
+            try
+            {
+                if (!(asyncResult.IsCompleted || asyncResult.IsCanceled))
+                {
+                    asyncResult.AsyncWaitHandle.WaitOne();
+                }
+
+                if (asyncResult.LastException != null)
+                {
+                    AWSSDKUtils.PreserveStackTrace(asyncResult.LastException);
+                    throw asyncResult.LastException;
+                }
+            }
+            finally
+            {
+                asyncResult.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Upload data to Amazon S3 using HTTP POST.
+        /// </summary>
+        /// <remarks>
+        /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
+        /// </remarks>
+        /// <param name="request">Request object which describes the data to POST</param>
+        /// <exception cref="S3PostUploadException">Thrown if the service returns an error</exception>
+        public static S3PostUploadResponse PostUpload(S3PostUploadRequest request)
+        {
+            string url;
+            
+            if (request.Bucket.IndexOf('.') > -1)
+                url = String.Format("https://s3.amazonaws.com/{0}/", request.Bucket);
+            else
+                url = String.Format("https://{0}.s3.amazonaws.com", request.Bucket);
+
+            HttpWebRequest webRequest = WebRequest.Create(url) as HttpWebRequest;
+
+            var boundary = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Replace('=','z');
+
+            webRequest.ContentType = String.Format("multipart/form-data; boundary={0}", boundary);
+            webRequest.Method = "POST";
+
+            using (var reqStream = webRequest.GetRequestStream())
+            {
+                request.WriteFormData(boundary, reqStream);
+
+                byte[] boundaryBytes = Encoding.UTF8.GetBytes(String.Format("--{0}\r\nContent-Disposition: form-data; name=\"file\"\r\n\r\n", boundary));
+
+                reqStream.Write(boundaryBytes, 0, boundaryBytes.Length);
+
+                using (var inputStream = null == request.Path ? request.InputStream : File.OpenRead(request.Path))
+                {
+                    byte[] buf = new byte[1024];
+                    int bytesRead;
+                    while ((bytesRead = inputStream.Read(buf, 0, 1024)) > 0)
+                    {
+                        reqStream.Write(buf, 0, bytesRead);
+                    }
+                }
+
+                byte[] endBoundaryBytes = Encoding.UTF8.GetBytes(String.Format("\r\n--{0}--", boundary));
+
+                reqStream.Write(endBoundaryBytes, 0, endBoundaryBytes.Length);
+            }
+
+            HttpWebResponse response = null;
+            try
+            {
+                response = webRequest.GetResponse() as HttpWebResponse;
+            }
+            catch (WebException ex)
+            {
+                throw S3PostUploadException.FromResponse((HttpWebResponse)ex.Response);
+            }
+
+            return S3PostUploadResponse.FromWebResponse(response);
+        }
+        
         /// <summary>
         /// Determines MIME type from a file extension
         /// </summary>
@@ -674,6 +873,183 @@ namespace Amazon.S3.Util
                 setACLRequest.VersionId = copyResponse.VersionId;
 
             s3Client.SetACL(setACLRequest);
+        }
+
+        /// <summary>
+        /// Invokes the DeleteS3BucketWithObjectsInternal method.
+        /// </summary>
+        /// <param name="state">The Request object that has all the data to complete the operation. </param>
+        private static void InvokeDeleteS3BucketWithObjects(object state)
+        {
+            var request = (S3DeleteBucketWithObjectsRequest)state;
+
+            try
+            {
+                DeleteS3BucketWithObjectsInternal(
+                    request.BucketName,
+                    request.S3Client,
+                    request.DeleteOptions,
+                    request.UpdateCallback,
+                    request.AsyncCancelableResult
+                    );
+            }
+            catch (Exception exception)
+            {
+                // Catch unhandled exception and store it on the async result.
+                request.AsyncCancelableResult.LastException = exception;
+                request.AsyncCancelableResult.SignalWaitHandleOnCompleted();
+            }
+        }
+
+        /// <summary>
+        /// Deletes an S3 bucket which contains objects.
+        /// An S3 bucket which contains objects cannot be deleted until all the objects 
+        /// in it are deleted. The function deletes all the objects in the specified 
+        /// bucket and then deletes the bucket itself.
+        /// </summary>
+        /// <param name="bucketName">The bucket to be deleted.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="deleteOptions">Options to control the behavior of the delete operation.</param>
+        /// <param name="updateCallback">The callback which is used to send updates about the delete operation.</param>
+        /// <param name="asyncCancelableResult">An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
+        /// be used to cancel the operation while it's in progress.</param>
+        private static void DeleteS3BucketWithObjectsInternal(string bucketName, AmazonS3 s3Client,
+            S3DeleteBucketWithObjectsOptions deleteOptions,Action<S3DeleteBucketWithObjectsUpdate> updateCallback,
+            AsyncCancelableResult asyncCancelableResult)            
+        {    
+            // Validations.
+            if (s3Client == null)
+            {
+                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(bucketName))
+            {
+                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or empty string!");
+            }
+            
+            var listVersionsRequest = new ListVersionsRequest()
+                                        .WithBucketName(bucketName);
+            
+            ListVersionsResponse listVersionsResponse;
+
+            // Iterate through the objects in the bucket and delete them.
+            do
+            {
+                // Check if the operation has been canceled.
+                if (asyncCancelableResult.IsCancelRequested)
+                {
+                    // Signal that the operation is canceled.
+                    asyncCancelableResult.SignalWaitHandleOnCanceled();                    
+                    return;
+                }
+
+                // List all the versions of all the objects in the bucket.
+                listVersionsResponse = s3Client.ListVersions(listVersionsRequest);
+
+                if (listVersionsResponse.Versions.Count==0)
+                {
+                    // If the bucket has no objects break the loop.
+                    break;
+                }
+
+                var keyVersionList = new KeyVersion[listVersionsResponse.Versions.Count];
+                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
+                {
+                    keyVersionList[index] = new KeyVersion(
+                                                listVersionsResponse.Versions[index].Key,
+                                                listVersionsResponse.Versions[index].VersionId
+                                            );
+                }
+
+                try
+                {
+                    // Delete the current set of objects.
+                    var deleteObjectsResponse =
+                        s3Client.DeleteObjects(new DeleteObjectsRequest()
+                                            .WithBucketName(bucketName)
+                                            .WithQuiet(deleteOptions.QuietMode)
+                                            .WithKeys(keyVersionList));
+
+                    if (!deleteOptions.QuietMode)
+                    {
+                        // If quiet mode is not set, update the client with list of deleted objects.
+                        InvokeS3DeleteBucketWithObjectsUpdateCallback(
+                                        updateCallback,
+                                        new S3DeleteBucketWithObjectsUpdate
+                                        {
+                                            DeletedObjects = deleteObjectsResponse.DeletedObjects
+                                        }
+                                    );
+                    }
+                }
+                catch (DeleteObjectsException deleteObjectsException)
+                {
+                    if (deleteOptions.ContinueOnError)
+                    {
+                        // Continue the delete operation if an error was encountered.
+                        // Update the client with the list of objects that were deleted and the 
+                        // list of objects on which the delete failed.
+                        InvokeS3DeleteBucketWithObjectsUpdateCallback(
+                                updateCallback,
+                                new S3DeleteBucketWithObjectsUpdate
+                                {
+                                    DeletedObjects = deleteObjectsException.ErrorResponse.DeletedObjects,
+                                    DeleteErrors = deleteObjectsException.ErrorResponse.DeleteErrors
+                                }
+                            );
+                    }
+                    else
+                    {
+                        // Re-throw the exception if an error was encountered.
+                        throw;
+                    }
+                }
+
+                // Set the markers to get next set of objects from the bucket.
+                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+
+            } 
+            // Continue listing objects and deleting them until the bucket is empty.
+            while (listVersionsResponse.IsTruncated);
+
+            for (int attempts = 0; true; attempts++)
+            {
+                try
+                {
+                    // Bucket is empty, delete the bucket.
+                    s3Client.DeleteBucket(
+                        new DeleteBucketRequest().WithBucketName(bucketName)
+                        );
+                    
+                    break;
+                }
+                catch (AmazonS3Exception e)
+                {
+                    if (!string.Equals(e.ErrorCode, S3Constants.BucketNotEmpty) || attempts >= 3)
+                        throw;
+                    Thread.Sleep(5 * 1000);
+                }
+            }
+
+            // Signal that the operation is completed.
+            asyncCancelableResult.SignalWaitHandleOnCompleted();            
+        }
+
+        /// <summary>
+        /// Invokes the callback which provides updated about the delete operation.
+        /// </summary>
+        /// <param name="updateCallback">The callback to be invoked.</param>
+        /// <param name="update">The data being passed to the callback.</param>
+        private static void InvokeS3DeleteBucketWithObjectsUpdateCallback(
+            Action<S3DeleteBucketWithObjectsUpdate> updateCallback,S3DeleteBucketWithObjectsUpdate update)
+        {
+            if (updateCallback != null)
+            {
+                updateCallback(update);
+            }
         }
 
 

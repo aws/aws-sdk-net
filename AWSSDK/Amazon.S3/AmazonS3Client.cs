@@ -60,7 +60,7 @@ namespace Amazon.S3
 
         #endregion
 
-        static Logger LOGGER = new Logger(typeof(AmazonS3Client));
+        static Logger LOGGER = Logger.GetLogger(typeof(AmazonS3Client));
         static MethodInfo ADD_RANGE_METHODINFO;
 
         #region Events
@@ -87,6 +87,10 @@ namespace Amazon.S3
                         credentials.Dispose();
                     }
                     credentials = null;
+                }
+                if (fDisposing && LOGGER != null)
+                {
+                    LOGGER.Flush();
                 }
                 this.disposed = true;
             }
@@ -6401,6 +6405,7 @@ namespace Amazon.S3
             WebHeaderCollection headerCollection = httpResponse.Headers;
             HttpStatusCode statusCode = httpResponse.StatusCode;
             string responseBody = null;
+            bool hasError = false;
 
             try
             {
@@ -6531,6 +6536,13 @@ namespace Amazon.S3
                     httpResponse = null;
                 }
             }
+            catch (Exception e)
+            {
+                hasError = true;
+                if (AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                    LOGGER.Error(e, "Received response: [{0}]", responseBody);
+                throw;
+            }
             finally
             {
                 if (actionName.Equals("GetObject") &&
@@ -6553,6 +6565,12 @@ namespace Amazon.S3
                     // Add the header key/value pairs to our <Action> Response type
                     response.Headers = headerCollection;
                     response.ResponseXml = responseBody;
+                }
+
+                // log only if no error was encountered and ResponseLogging == Always
+                if (!hasError && AWSConfigs.ResponseLogging == ResponseLoggingOption.Always)
+                {
+                    LOGGER.DebugFormat("Received response: [{0}]", responseBody);
                 }
             }
 
@@ -6607,6 +6625,9 @@ namespace Amazon.S3
                     respHdrs
                     );
 
+                if (AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                    LOGGER.Error(excep, "Received response: [{0}]", responseBody);
+
                 LOGGER.Error(excep, "Error making request {0}.", actionName);
                 throw excep;
             }
@@ -6614,6 +6635,8 @@ namespace Amazon.S3
             if (statusCode == HttpStatusCode.InternalServerError ||
                 statusCode == HttpStatusCode.ServiceUnavailable)
             {
+                if (AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                    LOGGER.Error(we, "Received response: [{0}]", responseBody);
                 shouldRetry = true;
                 cause = we;
             }
@@ -6636,6 +6659,9 @@ namespace Amazon.S3
                         requestAddr,
                         respHdrs
                         );
+
+                    if (AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                        LOGGER.Error(excep, "Received response: [{0}]", responseBody);
 
                     LOGGER.Error(excep, "Error making request {0}.", actionName);
                     throw excep;
@@ -7231,7 +7257,7 @@ namespace Amazon.S3
         #region Async Classes
         class S3AsyncResult : IAsyncResult
         {
-            private static Logger _logger = new Logger(typeof(S3AsyncResult));
+            private static Logger _logger = Logger.GetLogger(typeof(S3AsyncResult));
 
             bool _isComplete;
             bool _completedSynchronously;
@@ -7367,6 +7393,7 @@ namespace Amazon.S3
                     long timeToComplete = endTime - this._startTime;
                     this._s3Request.TotalRequestTime = timeToComplete;
                     _logger.InfoFormat("S3 request completed: {0}", this._s3Request);
+                    _logger.Flush();
                 }
             }
 

@@ -2587,6 +2587,9 @@
     <Compile Include="Amazon.EC2\Model\ConversionTaskType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CopyImageRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CopyImageResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CopyImageResult.cs" />
     <Compile Include="Amazon.EC2\Model\CopySnapshotRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CopySnapshotResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CopySnapshotResult.cs" />
@@ -3061,11 +3064,12 @@
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributesRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributesResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributesResult.cs" />
-    <Compile Include="Amazon.EC2\Model\ModifyVpcAttributesRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ModifyVpcAttributesResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResult.cs" />
+    <Compile Include="Amazon.EC2\Model\LaunchNATInstanceRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyVpcAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyVpcAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstancesListing.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs">
       <SubType>Code</SubType>
@@ -8021,6 +8025,15 @@
     <Compile Include="Amazon.S3\Model\TagSet.cs" />
     <Compile Include="Amazon.S3\Model\PutCORSConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutCORSConfigurationResponse.cs" />
+    <Compile Include="Amazon.S3\Util\AsyncCancelableResult.cs" />
+    <Compile Include="Amazon.S3\Util\IAsyncCancelableResult.cs" />
+    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsOptions.cs" />
+    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsRequest.cs" />
+    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsUpdate.cs" />
+    <Compile Include="Amazon.S3\Util\S3PostUploadException.cs" />
+    <Compile Include="Amazon.S3\Util\S3PostUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Util\S3PostUploadResponse.cs" />
+    <Compile Include="Amazon.S3\Util\S3PostUploadSignedPolicy.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumedRoleUser.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleRequest.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleResponse.cs" />
@@ -9207,6 +9220,7 @@
     <Compile Include="Amazon.Util\PaginatedResource.cs" />
     <Compile Include="Amazon.Util\PaginatedResourceFactory.cs" />
     <Compile Include="AWSClientFactory.cs" />
+    <Compile Include="AWSConfigs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
     <Compile Include="RegionEndpoint.cs" />
@@ -9272,7 +9286,9 @@
     <EmbeddedResource Include="Amazon.S3\Model\ListBucketsResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\GetBucketLocationResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\GetACLResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\S3ErrorResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\S3ErrorResponse.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Amazon.S3\Model\GetBucketLoggingResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\CopyObjectResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\ListObjectsResponse.xslt" />
@@ -9505,16 +9521,17 @@
     <EmbeddedResource Include="Amazon.EC2\Model\CopySnapshotResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpcAttributesResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\ModifyVpcAttributesResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\DescribeAccountAttributesResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CopyImageResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="awssdk.dll.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyVpcAttributeResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

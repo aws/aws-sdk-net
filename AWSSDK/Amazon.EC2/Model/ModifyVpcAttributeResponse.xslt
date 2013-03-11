@@ -2,11 +2,11 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="default-ec2-namespace" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
 
-  <xsl:template match="ec2:ModifyVpcAttributesResponse">
+  <xsl:template match="ec2:ModifyVpcAttributeResponse">
     <xsl:apply-templates select="ec2:return"/>
   </xsl:template>
   <xsl:template match="ec2:return">
-    <xsl:element name="ModifyVpcAttributesResponse">
+    <xsl:element name="ModifyVpcAttributeResponse">
       <xsl:element name="ResponseMetadata">
         <xsl:element name="RequestId">
           <xsl:value-of select="../ec2:requestId"/>
