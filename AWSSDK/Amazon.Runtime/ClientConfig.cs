@@ -136,7 +136,7 @@ namespace Amazon.Runtime
             else
             {
                 var endpoint = this.RegionEndpoint.GetEndpointForService(this.RegionEndpointServiceName);
-                string protocol = endpoint.HTTPS ? "https://" : "http://";
+                string protocol = this.ServiceURL.ToLower().StartsWith("http:") ? "http://" : "https://";
                 url = new Uri(string.Format("{0}{1}", protocol, endpoint.Hostname)).AbsoluteUri;
             }
 
