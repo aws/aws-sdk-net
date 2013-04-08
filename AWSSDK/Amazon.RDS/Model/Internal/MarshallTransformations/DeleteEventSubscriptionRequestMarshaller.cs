@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteEventSubscriptionRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteEventSubscription");
-            request.Parameters.Add("Version", "2013-01-10");
+            request.Parameters.Add("Version", "2013-02-12");
             if (deleteEventSubscriptionRequest != null && deleteEventSubscriptionRequest.IsSetSubscriptionName())
             {
                 request.Parameters.Add("SubscriptionName", StringUtils.FromString(deleteEventSubscriptionRequest.SubscriptionName));

@@ -272,15 +272,16 @@ namespace Amazon.Runtime
             }
 
             if (request.ContentStream == null)
+            {
                 asyncResult.RequestData = GetRequestData(request);
+                asyncResult.Metrics.AddProperty(RequestMetrics.Metric.RequestSize, asyncResult.RequestData.Length);
+            }
             else
                 asyncResult.RequestStream = request.ContentStream;
         }
 
         private void InvokeConfiguredRequest(AsyncResult asyncResult)
         {
-            logger.DebugFormat("Starting request {0} at {1}", asyncResult.RequestName, this.config.ServiceURL);
-
             if (asyncResult.RetriesAttempt > 0 && asyncResult.RequestStream != null)
             {
                 asyncResult.RequestStream.Position = 0;
@@ -333,7 +334,6 @@ namespace Amazon.Runtime
                 requestData = request.Content;
             }
 
-            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
             return requestData;
         }
 
@@ -545,7 +545,7 @@ namespace Amazon.Runtime
             catch (Exception e)
             {
                 if (context != null && AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
-                    this.logger.Error(e, "Received response: [{0}]", context.ResponseBody);
+                    logger.Error(e, "Received response: [{0}]", context.ResponseBody);
 
                 asyncResult.RequestState.WebRequest.Abort();
                 asyncResult.Exception = e;
@@ -585,7 +585,7 @@ namespace Amazon.Runtime
         private void LogResponse(AsyncResult asyncResult, HttpStatusCode statusCode)
         {
             RequestMetrics.Timing timing = asyncResult.Metrics.StopEvent(RequestMetrics.Metric.HttpRequestTime);
-            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ticks.", asyncResult.RequestName, statusCode, timing.ElapsedTicks);
+            asyncResult.Metrics.AddProperty(RequestMetrics.Metric.StatusCode, statusCode);
         }
 
         private void LogFinishedResponse(AsyncResult asyncResult, UnmarshallerContext context, long contentLength)
@@ -593,7 +593,7 @@ namespace Amazon.Runtime
             asyncResult.Metrics.AddProperty(RequestMetrics.Metric.BytesProcessed, contentLength);
             if (config.LogResponse || AWSConfigs.ResponseLogging == ResponseLoggingOption.Always)
             {
-                this.logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
+                logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
             }
         }
 
@@ -604,7 +604,7 @@ namespace Amazon.Runtime
             if (isInnerExceptionThreadAbort(e))
                 throw e;
 
-            this.logger.Error(e, "IOException making request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString());
+            logger.Error(e, "IOException making request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString());
             if (httpResponse != null)
             {
                 httpResponse.Close();
@@ -615,7 +615,7 @@ namespace Amazon.Runtime
 
             if (asyncResult.RetriesAttempt < config.MaxErrorRetry)
             {
-                this.logger.Error(e, "IOException making request {0} to {1}. Attempting retry {2}.",
+                logger.Error(e, "IOException making request {0} to {1}. Attempting retry {2}.",
                         asyncResult.RequestName,
                         asyncResult.Request.Endpoint.ToString(),
                         asyncResult.RetriesAttempt);
@@ -660,7 +660,7 @@ namespace Amazon.Runtime
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
                     if (config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
                     {
-                        this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
+                        logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
                     }
                     asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSRequestID, errorResponseException.RequestId);
                     asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSErrorCode, errorResponseException.ErrorCode);
@@ -669,13 +669,11 @@ namespace Amazon.Runtime
 
                 if (isTemporaryRedirect(statusCode, redirectedLocation))
                 {
-                    this.logger.DebugFormat("Request {0} is being redirected to {1}.", asyncResult.RequestName, redirectedLocation);
                     asyncResult.Request.Endpoint = new Uri(redirectedLocation);
                     return true;
                 }
                 else if (ShouldRetry(statusCode, this.config, errorResponseException, asyncResult.RetriesAttempt))
                 {
-                    this.logger.DebugFormat("Retry number {0} for request {1}.", asyncResult.RetriesAttempt, asyncResult.RequestName);
                     pauseExponentially(asyncResult);
                     return true;
                 }
@@ -683,12 +681,12 @@ namespace Amazon.Runtime
 
             if (errorResponseException != null)
             {
-                this.logger.Error(errorResponseException, "Error making request {0}.", asyncResult.RequestName);
+                logger.Error(errorResponseException, "Error making request {0}.", asyncResult.RequestName);
                 throw errorResponseException;
             }
 
             AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
-            this.logger.Error(excep, "Error making request {0}.", asyncResult.RequestName);
+            logger.Error(excep, "Error making request {0}.", asyncResult.RequestName);
             asyncResult.Metrics.AddProperty(RequestMetrics.Metric.Exception, excep);
             throw excep;
         }
@@ -765,7 +763,7 @@ namespace Amazon.Runtime
                 if (this.config.ProxyHost != null && this.config.ProxyPort != 0)
                 {
                     WebProxy proxy = new WebProxy(this.config.ProxyHost, this.config.ProxyPort);
-                    this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
+                    asyncResult.Metrics.AddProperty(RequestMetrics.Metric.ProxyHost, this.config.ProxyHost);
                     request.Proxy = proxy;
                 }
                 if (request.Proxy != null && config.ProxyCredentials != null)

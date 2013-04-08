@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// List of available options.
+        /// List of available option group options.
         ///  
         /// </summary>
         public List<OptionGroupOption> OptionGroupOptions

@@ -45,6 +45,7 @@ namespace Amazon.Runtime.Internal
             AttemptCount,
             CredentialsRequestTime,
             HttpRequestTime,
+            ProxyHost,
             RequestSigningTime,
             RetryPauseTime,
 
@@ -54,6 +55,7 @@ namespace Amazon.Runtime.Internal
             MethodName,
             ServiceEndpoint,
             ServiceName,
+            RequestSize,
         }
 
         /// <summary>

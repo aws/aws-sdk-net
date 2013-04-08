@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSnapshot");
-            request.Parameters.Add("Version", "2013-01-10");
+            request.Parameters.Add("Version", "2013-02-12");
             if (createDBSnapshotRequest != null && createDBSnapshotRequest.IsSetDBSnapshotIdentifier())
             {
                 request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(createDBSnapshotRequest.DBSnapshotIdentifier));

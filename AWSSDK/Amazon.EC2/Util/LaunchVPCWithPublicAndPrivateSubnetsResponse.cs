@@ -16,46 +16,46 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-11-15
  */
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.EC2.Model
+using Amazon.EC2.Model;
+
+namespace Amazon.EC2.Util
 {
-    public class LaunchNATInstanceRequest
+    /// <summary>
+    /// This object contains the VPC objects that were created as part of the launch VPC with public and private subnets operation.
+    /// </summary>
+    public class LaunchVPCWithPublicAndPrivateSubnetsResponse : LaunchVPCWithPublicSubnetResponse
     {
-        string subnetId;
-        string instanceType = "m1.small";
-        string keyName;
-
         /// <summary>
-        /// Gets and sets the subnet that the NAT instance will be launched in.
+        /// The private subnet created.
         /// </summary>
-        public string SubnetId
+        public Subnet PrivateSubnet
         {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
+            get;
+            set;
         }
 
         /// <summary>
-        /// Gets and sets the instance type of the NAT instance.   The default value is "m1.small".
+        /// The NAT EC2 instance created.
         /// </summary>
-        public string InstanceType
+        public RunningInstance NATInstance
         {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
+            get;
+            set;
         }
 
         /// <summary>
-        /// Gets and sets the key name of the NAT instance.
+        /// The NAT security group created if the ConfigureDefaultVPCGroupForNAT property is set to true.
         /// </summary>
-        public string KeyName
+        public SecurityGroup NATSecurityGroup
         {
-            get { return this.keyName; }
-            set { this.keyName = value; }
+            get;
+            set;
         }
     }
 }

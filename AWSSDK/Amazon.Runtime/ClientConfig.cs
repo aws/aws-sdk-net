@@ -25,6 +25,15 @@ using System.Net;
 namespace Amazon.Runtime
 {
     /// <summary>
+    /// An enumeration of network protocols supported by the SDK.
+    /// </summary>
+    public enum NetworkProtocol
+    {
+        HTTPS,
+        HTTP
+    }
+
+    /// <summary>
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
     /// </summary>
@@ -32,6 +41,7 @@ namespace Amazon.Runtime
     {
         private RegionEndpoint regionEndpoint;
 
+        private NetworkProtocol protocol = NetworkProtocol.HTTPS;
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
         private string authRegion = null;
         private string authServiceName = null;
@@ -115,6 +125,20 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Network protocol to use with the request.
+        /// This value is ignored if the ServiceURL is specified or
+        /// if RegionEndpoint is set and the service/endpoint does not
+        /// support the specified protocol.
+        /// 
+        /// Default is HTTPS.
+        /// </summary>
+        public NetworkProtocol Protocol
+        {
+            get { return this.protocol; }
+            set { this.protocol = value; }
+        }
+
+        /// <summary>
         /// Gets and sets of the ServiceURL property.
         /// This is an optional property; change it
         /// only if you want to try a different service
@@ -136,8 +160,12 @@ namespace Amazon.Runtime
             else
             {
                 var endpoint = this.RegionEndpoint.GetEndpointForService(this.RegionEndpointServiceName);
-                string protocol = endpoint.HTTPS ? "https://" : "http://";
-                url = new Uri(string.Format("{0}{1}", protocol, endpoint.Hostname)).AbsoluteUri;
+                string protocol;
+                if (this.Protocol == NetworkProtocol.HTTP && endpoint.HTTP)
+                    protocol = "http://";
+                else
+                    protocol = "https://";
+                url = new Uri(string.Concat(protocol, endpoint.Hostname)).AbsoluteUri;
             }
 
             return url;

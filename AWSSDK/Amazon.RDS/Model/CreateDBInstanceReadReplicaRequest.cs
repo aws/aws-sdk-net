@@ -271,6 +271,16 @@ namespace Amazon.RDS.Model
         {
             return this.optionGroupName != null;
         }
+
+        /// <summary>
+        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
+        /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
+        /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
+        /// part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet
+        /// group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+        ///  
+        /// </summary>
         public bool PubliclyAccessible
         {
             get { return this.publiclyAccessible ?? default(bool); }

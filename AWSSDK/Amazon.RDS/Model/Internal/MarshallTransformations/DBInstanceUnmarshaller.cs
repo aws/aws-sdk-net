@@ -196,9 +196,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("OptionGroupMembership", targetDepth))
+                    if (context.TestExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth))
                     {
-                        dBInstance.OptionGroupMembership = OptionGroupMembershipUnmarshaller.GetInstance().Unmarshall(context);
+                        dBInstance.OptionGroupMemberships.Add(OptionGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
                     } 

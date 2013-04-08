@@ -26,7 +26,6 @@ namespace Amazon.RDS.Model
     public class EventSubscription
     {
         
-        private string id;
         private string customerAwsId;
         private string custSubscriptionId;
         private string snsTopicArn;
@@ -36,34 +35,6 @@ namespace Amazon.RDS.Model
         private List<string> sourceIdsList = new List<string>();
         private List<string> eventCategoriesList = new List<string>();
         private bool? enabled;
-
-        /// <summary>
-        /// Not used.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        /// <summary>
-        /// Sets the Id property
-        /// </summary>
-        /// <param name="id">The value to set for the Id property </param>
-        /// <returns>this instance</returns>
-        public EventSubscription WithId(string id)
-        {
-            this.id = id;
-            return this;
-        }
-            
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
 
         /// <summary>
         /// The AWS customer account associated with the RDS event notification subscription.

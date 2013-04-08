@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
         private string licenseModel;
         private int? iops;
-        private OptionGroupMembership optionGroupMembership;
+        private List<OptionGroupMembership> optionGroupMemberships = new List<OptionGroupMembership>();
         private string characterSetName;
         private string secondaryAvailabilityZone;
         private bool? publiclyAccessible;
@@ -866,31 +866,48 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name and status of the option group that this instance belongs to.
+        /// Provides the list of option group memberships for this DB Instance.
         ///  
         /// </summary>
-        public OptionGroupMembership OptionGroupMembership
+        public List<OptionGroupMembership> OptionGroupMemberships
         {
-            get { return this.optionGroupMembership; }
-            set { this.optionGroupMembership = value; }
+            get { return this.optionGroupMemberships; }
+            set { this.optionGroupMemberships = value; }
+        }
+        /// <summary>
+        /// Adds elements to the OptionGroupMemberships collection
+        /// </summary>
+        /// <param name="optionGroupMemberships">The values to add to the OptionGroupMemberships collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithOptionGroupMemberships(params OptionGroupMembership[] optionGroupMemberships)
+        {
+            foreach (OptionGroupMembership element in optionGroupMemberships)
+            {
+                this.optionGroupMemberships.Add(element);
+            }
+
+            return this;
         }
 
         /// <summary>
-        /// Sets the OptionGroupMembership property
+        /// Adds elements to the OptionGroupMemberships collection
         /// </summary>
-        /// <param name="optionGroupMembership">The value to set for the OptionGroupMembership property </param>
+        /// <param name="optionGroupMemberships">The values to add to the OptionGroupMemberships collection </param>
         /// <returns>this instance</returns>
-        public DBInstance WithOptionGroupMembership(OptionGroupMembership optionGroupMembership)
+        public DBInstance WithOptionGroupMemberships(IEnumerable<OptionGroupMembership> optionGroupMemberships)
         {
-            this.optionGroupMembership = optionGroupMembership;
+            foreach (OptionGroupMembership element in optionGroupMemberships)
+            {
+                this.optionGroupMemberships.Add(element);
+            }
+
             return this;
         }
-            
 
-        // Check to see if OptionGroupMembership property is set
-        internal bool IsSetOptionGroupMembership()
+        // Check to see if OptionGroupMemberships property is set
+        internal bool IsSetOptionGroupMemberships()
         {
-            return this.optionGroupMembership != null;
+            return this.optionGroupMemberships.Count > 0;
         }
 
         /// <summary>
@@ -948,6 +965,16 @@ namespace Amazon.RDS.Model
         {
             return this.secondaryAvailabilityZone != null;
         }
+
+        /// <summary>
+        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
+        /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
+        /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
+        /// part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet
+        /// group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+        ///  
+        /// </summary>
         public bool PubliclyAccessible
         {
             get { return this.publiclyAccessible ?? default(bool); }

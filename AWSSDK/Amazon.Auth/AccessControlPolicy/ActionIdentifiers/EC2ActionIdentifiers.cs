@@ -40,11 +40,14 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier BundleInstance = new ActionIdentifier("ec2:BundleInstance");
         public static readonly ActionIdentifier CancelBundleTask = new ActionIdentifier("ec2:CancelBundleTask");
         public static readonly ActionIdentifier CancelConversionTask = new ActionIdentifier("ec2:CancelConversionTask");
+        public static readonly ActionIdentifier CancelExportTask = new ActionIdentifier("ec2:CancelExportTask");
         public static readonly ActionIdentifier CancelSpotInstanceRequests = new ActionIdentifier("ec2:CancelSpotInstanceRequests");
         public static readonly ActionIdentifier ConfirmProductInstance = new ActionIdentifier("ec2:ConfirmProductInstance");
+        public static readonly ActionIdentifier CopySnapshot = new ActionIdentifier("ec2:CopySnapshot");
         public static readonly ActionIdentifier CreateCustomerGateway = new ActionIdentifier("ec2:CreateCustomerGateway");
         public static readonly ActionIdentifier CreateDhcpOptions = new ActionIdentifier("ec2:CreateDhcpOptions");
         public static readonly ActionIdentifier CreateImage = new ActionIdentifier("ec2:CreateImage");
+        public static readonly ActionIdentifier CreateInstanceExportTask = new ActionIdentifier("ec2:CreateInstanceExportTask");
         public static readonly ActionIdentifier CreateInternetGateway = new ActionIdentifier("ec2:CreateInternetGateway");
         public static readonly ActionIdentifier CreateKeyPair = new ActionIdentifier("ec2:CreateKeyPair");
         public static readonly ActionIdentifier CreateNetworkAcl = new ActionIdentifier("ec2:CreateNetworkAcl");
@@ -89,6 +92,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribeConversionTasks = new ActionIdentifier("ec2:DescribeConversionTasks");
         public static readonly ActionIdentifier DescribeCustomerGateways = new ActionIdentifier("ec2:DescribeCustomerGateways");
         public static readonly ActionIdentifier DescribeDhcpOptions = new ActionIdentifier("ec2:DescribeDhcpOptions");
+        public static readonly ActionIdentifier DescribeExportTasks = new ActionIdentifier("ec2:DescribeExportTasks");
         public static readonly ActionIdentifier DescribeImageAttribute = new ActionIdentifier("ec2:DescribeImageAttribute");
         public static readonly ActionIdentifier DescribeImages = new ActionIdentifier("ec2:DescribeImages");
         public static readonly ActionIdentifier DescribeInstanceAttribute = new ActionIdentifier("ec2:DescribeInstanceAttribute");
@@ -113,6 +117,8 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribeSpotPriceHistory = new ActionIdentifier("ec2:DescribeSpotPriceHistory");
         public static readonly ActionIdentifier DescribeSubnets = new ActionIdentifier("ec2:DescribeSubnets");
         public static readonly ActionIdentifier DescribeTags = new ActionIdentifier("ec2:DescribeTags");
+        public static readonly ActionIdentifier DescribeVolumeAttribute = new ActionIdentifier("ec2:DescribeVolumeAttribute");
+        public static readonly ActionIdentifier DescribeVolumeStatus = new ActionIdentifier("ec2:DescribeVolumeStatus");
         public static readonly ActionIdentifier DescribeVolumes = new ActionIdentifier("ec2:DescribeVolumes");
         public static readonly ActionIdentifier DescribeVpcs = new ActionIdentifier("ec2:DescribeVpcs");
         public static readonly ActionIdentifier DescribeVpnConnections = new ActionIdentifier("ec2:DescribeVpnConnections");
@@ -123,6 +129,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DetachVpnGateway = new ActionIdentifier("ec2:DetachVpnGateway");
         public static readonly ActionIdentifier DisassociateAddress = new ActionIdentifier("ec2:DisassociateAddress");
         public static readonly ActionIdentifier DisassociateRouteTable = new ActionIdentifier("ec2:DisassociateRouteTable");
+        public static readonly ActionIdentifier EnableVolumeIO = new ActionIdentifier("ec2:EnableVolumeIO");
         public static readonly ActionIdentifier GetConsoleOutput = new ActionIdentifier("ec2:GetConsoleOutput");
         public static readonly ActionIdentifier GetPasswordData = new ActionIdentifier("ec2:GetPasswordData");
         public static readonly ActionIdentifier ImportInstance = new ActionIdentifier("ec2:ImportInstance");
@@ -132,6 +139,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier ModifyInstanceAttribute = new ActionIdentifier("ec2:ModifyInstanceAttribute");
         public static readonly ActionIdentifier ModifyNetworkInterfaceAttribute = new ActionIdentifier("ec2:ModifyNetworkInterfaceAttribute");
         public static readonly ActionIdentifier ModifySnapshotAttribute = new ActionIdentifier("ec2:ModifySnapshotAttribute");
+        public static readonly ActionIdentifier ModifyVolumeAttribute = new ActionIdentifier("ec2:ModifyVolumeAttribute");
         public static readonly ActionIdentifier MonitorInstances = new ActionIdentifier("ec2:MonitorInstances");
         public static readonly ActionIdentifier PurchaseReservedInstancesOffering = new ActionIdentifier("ec2:PurchaseReservedInstancesOffering");
         public static readonly ActionIdentifier RebootInstances = new ActionIdentifier("ec2:RebootInstances");

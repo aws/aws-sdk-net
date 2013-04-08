@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private int? port;
         private List<string> dBSecurityGroupMemberships = new List<string>();
         private List<string> vpcSecurityGroupMemberships = new List<string>();
+        private List<OptionSetting> optionSettings = new List<OptionSetting>();
 
         /// <summary>
         /// The configuration of options to include in a group.
@@ -175,6 +176,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetVpcSecurityGroupMemberships()
         {
             return this.vpcSecurityGroupMemberships.Count > 0;
+        }
+
+        /// <summary>
+        /// The option settings to include in an option group.
+        ///  
+        /// </summary>
+        public List<OptionSetting> OptionSettings
+        {
+            get { return this.optionSettings; }
+            set { this.optionSettings = value; }
+        }
+        /// <summary>
+        /// Adds elements to the OptionSettings collection
+        /// </summary>
+        /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
+        /// <returns>this instance</returns>
+        public OptionConfiguration WithOptionSettings(params OptionSetting[] optionSettings)
+        {
+            foreach (OptionSetting element in optionSettings)
+            {
+                this.optionSettings.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the OptionSettings collection
+        /// </summary>
+        /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
+        /// <returns>this instance</returns>
+        public OptionConfiguration WithOptionSettings(IEnumerable<OptionSetting> optionSettings)
+        {
+            foreach (OptionSetting element in optionSettings)
+            {
+                this.optionSettings.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if OptionSettings property is set
+        internal bool IsSetOptionSettings()
+        {
+            return this.optionSettings.Count > 0;
         }
     }
 }

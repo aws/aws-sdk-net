@@ -46,6 +46,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribeEvents = new ActionIdentifier("rds:DescribeEvents");
         public static readonly ActionIdentifier DescribeReservedDBInstances = new ActionIdentifier("rds:DescribeReservedDBInstances");
         public static readonly ActionIdentifier DescribeReservedDBInstancesOfferings = new ActionIdentifier("rds:DescribeReservedDBInstancesOfferings");
+        public static readonly ActionIdentifier ListTagsForResource = new ActionIdentifier("rds:ListTagsForResource");
         public static readonly ActionIdentifier ModifyDBInstance = new ActionIdentifier("rds:ModifyDBInstance");
         public static readonly ActionIdentifier ModifyDBParameterGroup = new ActionIdentifier("rds:ModifyDBParameterGroup");
         public static readonly ActionIdentifier PurchaseReservedDBInstancesOffering = new ActionIdentifier("rds:PurchaseReservedDBInstancesOffering");

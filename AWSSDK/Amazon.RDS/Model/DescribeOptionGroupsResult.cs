@@ -73,6 +73,12 @@ namespace Amazon.RDS.Model
         {
             return this.optionGroupsList.Count > 0;
         }
+
+        /// <summary>
+        /// An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the
+        /// marker, up to the value specified by <c>MaxRecords</c>.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }

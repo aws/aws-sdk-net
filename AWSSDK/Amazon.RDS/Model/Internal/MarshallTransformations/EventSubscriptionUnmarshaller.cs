@@ -40,12 +40,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        eventSubscription.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
                     if (context.TestExpression("CustomerAwsId", targetDepth))
                     {
                         eventSubscription.CustomerAwsId = StringUnmarshaller.GetInstance().Unmarshall(context);

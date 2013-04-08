@@ -90,18 +90,23 @@
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFormationActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFrontActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudWatchActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\DirectConnectActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\DynamoDBActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\EC2ActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElastiCacheActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticBeanstalkActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticLoadBalancingActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticMapReduceActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\GlacierActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\IdentityandAccessManagementActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\MarketplaceActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\RDSActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\RedshiftActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\Route53ActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\SecurityTokenServiceActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\SESActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\SimpleDBActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\WebsiteActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\Internal\JsonDocumentFields.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\Internal\JsonPolicyReader.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\Internal\JsonPolicyWriter.cs" />
@@ -3066,9 +3071,14 @@
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResult.cs" />
-    <Compile Include="Amazon.EC2\Model\LaunchNATInstanceRequest.cs" />
+    <Compile Include="Amazon.EC2\Util\ImageUtilities.cs" />
+    <Compile Include="Amazon.EC2\Util\LaunchNATInstanceRequest.cs" />
+    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyVpcAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyVpcAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsResponse.cs" />
+    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicSubnetRequest.cs" />
+    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicSubnetResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstancesListing.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs">
       <SubType>Code</SubType>
@@ -3752,6 +3762,7 @@
     <Compile Include="Amazon.EC2\Util\S3UploadPolicy.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Util\VPCUtilities.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCache.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCacheClient.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCacheConfig.cs" />
@@ -6659,6 +6670,10 @@
     <Compile Include="Amazon.RDS\Model\DescribeDBInstancesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeDBLogFilesDetails.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeDBLogFilesRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeDBLogFilesResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeDBLogFilesResult.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeDBParameterGroupsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6773,6 +6788,9 @@
     <Compile Include="Amazon.RDS\Model\DescribeReservedDBInstancesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DownloadDBLogFilePortionRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DownloadDBLogFilePortionResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DownloadDBLogFilePortionResult.cs" />
     <Compile Include="Amazon.RDS\Model\EC2SecurityGroup.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6980,6 +6998,10 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBInstancesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBLogFilesDetailsUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBLogFilesRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBLogFilesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBLogFilesResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBParameterGroupsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7094,6 +7116,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeReservedDBInstancesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DownloadDBLogFilePortionRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DownloadDBLogFilePortionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DownloadDBLogFilePortionResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\EC2SecurityGroupUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7162,12 +7187,14 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupMembershipUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupOptionSettingUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupOptionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionSettingUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7373,9 +7400,11 @@
     <Compile Include="Amazon.RDS\Model\OptionGroupOption.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionGroupOptionSetting.cs" />
     <Compile Include="Amazon.RDS\Model\OptionGroupQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\OptionSetting.cs" />
     <Compile Include="Amazon.RDS\Model\OrderableDBInstanceOption.cs">
       <SubType>Code</SubType>
     </Compile>

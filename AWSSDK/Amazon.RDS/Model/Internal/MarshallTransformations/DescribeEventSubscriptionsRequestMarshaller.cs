@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeEventSubscriptionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEventSubscriptions");
-            request.Parameters.Add("Version", "2013-01-10");
+            request.Parameters.Add("Version", "2013-02-12");
             if (describeEventSubscriptionsRequest != null && describeEventSubscriptionsRequest.IsSetSubscriptionName())
             {
                 request.Parameters.Add("SubscriptionName", StringUtils.FromString(describeEventSubscriptionsRequest.SubscriptionName));

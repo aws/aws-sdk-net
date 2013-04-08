@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private string licenseModel;
         private string snapshotType;
         private int? iops;
+        private string optionGroupName;
 
         /// <summary>
         /// Specifies the identifier for the DB Snapshot.
@@ -329,7 +330,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the master username for the DB Instance.
+        /// Provides the master username for the DB Snapshot.
         ///  
         /// </summary>
         public string MasterUsername
@@ -466,6 +467,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this.iops.HasValue;
+        }
+
+        /// <summary>
+        /// Provides the option group name for the DB Snapshot.
+        ///  
+        /// </summary>
+        public string OptionGroupName
+        {
+            get { return this.optionGroupName; }
+            set { this.optionGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the OptionGroupName property
+        /// </summary>
+        /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithOptionGroupName(string optionGroupName)
+        {
+            this.optionGroupName = optionGroupName;
+            return this;
+        }
+            
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this.optionGroupName != null;
         }
     }
 }

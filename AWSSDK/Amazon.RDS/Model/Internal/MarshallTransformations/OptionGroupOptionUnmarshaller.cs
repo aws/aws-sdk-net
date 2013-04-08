@@ -84,6 +84,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         optionGroupOption.OptionsDependedOn.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Persistent", targetDepth))
+                    {
+                        optionGroupOption.Persistent = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth))
+                    {
+                        optionGroupOption.OptionGroupOptionSettings.Add(OptionGroupOptionSettingUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

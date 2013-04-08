@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public AmazonIdentityManagementServiceConfig()
         {
-            this.ServiceURL = "https://iam.amazonaws.com";
+            this.ServiceURL = "https://iam.amazonaws.com/";
             this.AuthenticationServiceName = "iam";
         }
 

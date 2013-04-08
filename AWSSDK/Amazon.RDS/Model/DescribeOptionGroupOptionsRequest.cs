@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// Options available for the given DB engine name to be described.
+        /// A required parameter. Options available for the given Engine name will be described.
         ///  
         /// </summary>
         public string EngineName

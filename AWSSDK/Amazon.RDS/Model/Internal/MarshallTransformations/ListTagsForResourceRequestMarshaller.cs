@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(listTagsForResourceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ListTagsForResource");
-            request.Parameters.Add("Version", "2013-01-10");
+            request.Parameters.Add("Version", "2013-02-12");
             if (listTagsForResourceRequest != null && listTagsForResourceRequest.IsSetResourceName())
             {
                 request.Parameters.Add("ResourceName", StringUtils.FromString(listTagsForResourceRequest.ResourceName));

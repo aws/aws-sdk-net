@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Option Group Membership
+    /// <summary>
+    /// <para> Provides information on the option groups the DB instance is a member of. </para>
     /// </summary>
     public class OptionGroupMembership
     {

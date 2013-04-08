@@ -51,7 +51,7 @@ namespace Amazon.RDS
         {
             get
             {
-                return "2013-01-10";
+                return "2013-02-12";
             }
         }
     }
