@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model
     {
         private string taskId;
         private string taskStatus;
-        private int? errorCode;
+        private string errorId;
         private string errorMessage;
         private string errorStackTrace;
 
@@ -81,7 +81,8 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If FINISHED, the task successfully completed. If FAILED the task ended unsuccessfully. The FALSE value is used by preconditions.
+        /// If <c>FINISHED</c>, the task successfully completed. If <c>FAILED</c> the task ended unsuccessfully. The <c>FALSE</c> value is used by
+        /// preconditions.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -118,37 +119,50 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If an error occurred during the task, specifies a numerical value that represents the error. This value is set on the physical attempt
-        /// object. It is used to display error information to the user. The web service does not parse this value.
+        /// If an error occurred during the task, this value specifies an id value that represents the error. This value is set on the physical attempt
+        /// object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 1024</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public int ErrorCode
+        public string ErrorId
         {
-            get { return this.errorCode ?? default(int); }
-            set { this.errorCode = value; }
+            get { return this.errorId; }
+            set { this.errorId = value; }
         }
 
         /// <summary>
-        /// Sets the ErrorCode property
+        /// Sets the ErrorId property
         /// </summary>
-        /// <param name="errorCode">The value to set for the ErrorCode property </param>
+        /// <param name="errorId">The value to set for the ErrorId property </param>
         /// <returns>this instance</returns>
-        public SetTaskStatusRequest WithErrorCode(int errorCode)
+        public SetTaskStatusRequest WithErrorId(string errorId)
         {
-            this.errorCode = errorCode;
+            this.errorId = errorId;
             return this;
         }
             
 
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
+        // Check to see if ErrorId property is set
+        internal bool IsSetErrorId()
         {
-            return this.errorCode.HasValue;
+            return this.errorId != null;
         }
 
         /// <summary>
-        /// If an error occurred during the task, specifies a text description of the error. This value is set on the physical attempt object. It is
-        /// used to display error information to the user. The web service does not parse this value.
+        /// If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt
+        /// object. It is used to display error information to the user. The web service does not parse this value.
         ///  
         /// </summary>
         public string ErrorMessage
@@ -176,8 +190,8 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If an error occurred during the task, specifies the stack trace associated with the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.
+        /// If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical
+        /// attempt object. It is used to display error information to the user. The web service does not parse this value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

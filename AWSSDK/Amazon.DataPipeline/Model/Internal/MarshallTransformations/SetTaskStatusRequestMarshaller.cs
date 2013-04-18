@@ -83,10 +83,10 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("taskStatus");
                     writer.Write(setTaskStatusRequest.TaskStatus);
                 }
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorCode()) 
+                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorId()) 
                 {
-                    writer.WritePropertyName("errorCode");
-                    writer.Write(setTaskStatusRequest.ErrorCode);
+                    writer.WritePropertyName("errorId");
+                    writer.Write(setTaskStatusRequest.ErrorId);
                 }
                 if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorMessage()) 
                 {

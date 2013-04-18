@@ -30,15 +30,16 @@ namespace Amazon.DataPipeline.Model
         private List<string> values = new List<string>();
 
         /// <summary>
-        /// The logical operation to be performed: equal (EQ), equal reference (REF_EQ), less than or equal (LE), greater than or equal (GE), or between
-        /// (BETWEEN). Equal reference (REF_EQ) can be used only with reference fields. The other comparison types can be used only with String fields.
-        /// The comparison types you can use apply only to certain object fields, as detailed below. The comparison operators EQ and REF_EQ act on the
-        /// following fields: <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
-        /// <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> The comparison operators GE,
-        /// LE, and BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-        /// <li>@actualEndTime</li> </ul> Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name
-        /// fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. A best practice for
-        /// user-defined fields that you add to a pipeline is to prefix their name with the string "my".
+        /// The logical operation to be performed: equal (<c>EQ</c>), equal reference (<c>REF_EQ</c>), less than or equal (<c>LE</c>), greater than or
+        /// equal (<c>GE</c>), or between (<c>BETWEEN</c>). Equal reference (<c>REF_EQ</c>) can be used only with reference fields. The other comparison
+        /// types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. The
+        /// comparison operators EQ and REF_EQ act on the following fields: <ul> <li>name</li> <li>@sphere</li> <li>parent</li>
+        /// <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+        /// <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> The comparison operators <c>GE</c>, <c>LE</c>, and <c>BETWEEN</c> act on the
+        /// following fields: <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> Note
+        /// that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names
+        /// containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should
+        /// prefix their name with the string "my".
         ///  
         /// <para>
         /// <b>Constraints:</b>

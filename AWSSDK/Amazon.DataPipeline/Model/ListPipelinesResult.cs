@@ -77,8 +77,8 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If not null, indicates the starting point for the set of pipeline identifiers that the next call to ListPipelines will retrieve. If null,
-        /// there are no more pipeline identifiers. .
+        /// If not null, indicates the starting point for the set of pipeline identifiers that the next call to <a>ListPipelines</a> will retrieve. If
+        /// null, there are no more pipeline identifiers.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,7 +119,7 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If <c>True</c>, there are more results that can be obtained by a subsequent call to ListPipelines.
+        /// If <c>True</c>, there are more results that can be obtained by a subsequent call to <a>ListPipelines</a>.
         ///  
         /// </summary>
         public bool HasMoreResults

@@ -34,6 +34,7 @@
         {
             ValidatePipelineDefinitionResult validatePipelineDefinitionResult = new ValidatePipelineDefinitionResult();
           validatePipelineDefinitionResult.ValidationErrors = null;
+                        validatePipelineDefinitionResult.ValidationWarnings = null;
                         
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -53,6 +54,24 @@
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
                   {
                      validatePipelineDefinitionResult.ValidationErrors.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("ValidationWarnings", targetDepth))
+              {
+                validatePipelineDefinitionResult.ValidationWarnings = new List<ValidationWarning>();
+                        ValidationWarningUnmarshaller unmarshaller = ValidationWarningUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     validatePipelineDefinitionResult.ValidationWarnings.Add(unmarshaller.Unmarshall(context));
                   }
                   else if (context.IsEndArray)
                   {

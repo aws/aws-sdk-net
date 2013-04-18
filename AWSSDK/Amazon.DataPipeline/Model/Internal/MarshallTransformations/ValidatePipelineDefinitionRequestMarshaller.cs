@@ -84,6 +84,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                     List<PipelineObject> pipelineObjectsList = validatePipelineDefinitionRequest.PipelineObjects;
                     writer.WritePropertyName("pipelineObjects");
                     writer.WriteArrayStart();
+
                     foreach (PipelineObject pipelineObjectsListValue in pipelineObjectsList) 
                     {
                         writer.WriteObjectStart();
@@ -103,6 +104,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                             List<Field> fieldsList = pipelineObjectsListValue.Fields;
                             writer.WritePropertyName("fields");
                             writer.WriteArrayStart();
+
                             foreach (Field fieldsListValue in fieldsList) 
                             {
                                 writer.WriteObjectStart();

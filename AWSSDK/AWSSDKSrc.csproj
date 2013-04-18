@@ -1597,6 +1597,18 @@
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateRequest.cs" />
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateResponse.cs" />
     <Compile Include="Amazon.CloudWatch\Model\StatisticSet.cs" />
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipeline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.DataPipeline\Model\ActivatePipelineRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1816,6 +1828,7 @@
     <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidationErrorUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidationWarningUnmarshaller.cs" />
     <Compile Include="Amazon.DataPipeline\Model\InvalidRequestException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1924,6 +1937,7 @@
     <Compile Include="Amazon.DataPipeline\Model\ValidationError.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ValidationWarning.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnect.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectConfig.cs" />
@@ -2014,414 +2028,295 @@
     <Compile Include="Amazon.DirectConnect\Model\RouteFilterPrefix.cs" />
     <Compile Include="Amazon.DirectConnect\Model\VirtualGateway.cs" />
     <Compile Include="Amazon.DirectConnect\Model\VirtualInterface.cs" />
-    <Compile Include="Amazon.DataPipeline\AmazonDataPipeline.cs">
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDB.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBConfig.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\Attributes.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs">
+    <Compile Include="Amazon.DynamoDBv2\DataModel\BatchGet.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\BatchWrite.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\Configs.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\Context.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineConfig.cs">
+    <Compile Include="Amazon.DynamoDBv2\DataModel\ContextInternal.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineException.cs">
+    <Compile Include="Amazon.DynamoDBv2\DataModel\IDynamoDBContext.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\Utils.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDB\AmazonDynamoDB.cs">
+    <Compile Include="Amazon.DynamoDBv2\DataModel\InternalModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBClient.cs">
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Document.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\DocumentBatchGet.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\DocumentBatchWrite.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\DynamoDBEntry.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Filter.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Primitive.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\PrimitiveList.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Search.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Table.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\TableOperationConfigs.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\Util.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DynamoDBAsync.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DataModel\Attributes.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DataModel\BatchGet.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\Model\AttributeDefinition.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\AttributeValue.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\AttributeValueUpdate.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchGetItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchGetItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchGetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Condition.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ConditionalCheckFailedException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ConsumedCapacity.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\CreateTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\CreateTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\CreateTableResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DeleteTableResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DescribeTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DescribeTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\DescribeTableResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ExpectedAttributeValue.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GetItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GetItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\InternalServerErrorException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeDefinitionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeValueUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchGetItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchGetItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchGetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ConsumedCapacityUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DeleteTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DescribeTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DescribeTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\DescribeTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ItemCollectionMetricsUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeysAndAttributesUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeySchemaElementUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ListTablesRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ListTablesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ListTablesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\LocalSecondaryIndexDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ProjectionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ProvisionedThroughputDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\PutItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\PutItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\PutItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\PutRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\QueryRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\QueryResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\QueryResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ScanRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ScanResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ScanResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\TableDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\UpdateTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\WriteRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ItemCollectionMetrics.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ItemCollectionSizeLimitExceededException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\KeysAndAttributes.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\KeySchemaElement.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\LimitExceededException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ListTablesRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ListTablesResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ListTablesResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\LocalSecondaryIndex.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\LocalSecondaryIndexDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Projection.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ProvisionedThroughput.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ProvisionedThroughputDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ProvisionedThroughputExceededException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\PutItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\PutItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\PutItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\PutRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\QueryRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\QueryResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\QueryResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ResourceInUseException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ResourceNotFoundException.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ScanRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ScanResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\ScanResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\TableDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateTableResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\WriteRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\AmazonDynamoDB.cs" />
+    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBClient.cs" />
+    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBConfig.cs" />
+    <Compile Include="Amazon.DynamoDB\AmazonDynamoDBException.cs" />
+    <Compile Include="Amazon.DynamoDB\DataModel\Attributes.cs" />
+    <Compile Include="Amazon.DynamoDB\DataModel\BatchGet.cs" />
     <Compile Include="Amazon.DynamoDB\DataModel\BatchWrite.cs" />
-    <Compile Include="Amazon.DynamoDB\DataModel\Context.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DataModel\ContextInternal.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DataModel\EntityUtils.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\DataModel\Context.cs" />
+    <Compile Include="Amazon.DynamoDB\DataModel\ContextInternal.cs" />
+    <Compile Include="Amazon.DynamoDB\DataModel\EntityUtils.cs" />
     <Compile Include="Amazon.DynamoDB\DataModel\IDynamoDBContext.cs" />
-    <Compile Include="Amazon.DynamoDB\DataModel\InternalModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Document.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatchGet.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\DataModel\InternalModel.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Document.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatchGet.cs" />
     <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatchWrite.cs" />
-    <Compile Include="Amazon.DynamoDB\DocumentModel\DynamoDBEntry.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Filter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Primitive.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\PrimitiveList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Search.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Table.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\TableOperationConfigs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\Util.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\DocumentModel\DynamoDBEntry.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Filter.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Primitive.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\PrimitiveList.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Search.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Table.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\TableOperationConfigs.cs" />
+    <Compile Include="Amazon.DynamoDB\DocumentModel\Util.cs" />
     <Compile Include="Amazon.DynamoDB\DynamoDBAsync.cs" />
-    <Compile Include="Amazon.DynamoDB\Model\AttributeValue.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\AttributeValueUpdate.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\AttributeValue.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\AttributeValueUpdate.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchGetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResult.cs" />
     <Compile Include="Amazon.DynamoDB\Model\BatchWriteResponse.cs" />
-    <Compile Include="Amazon.DynamoDB\Model\Condition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ConditionalCheckFailedException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\CreateTableRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\CreateTableResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\CreateTableResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteTableRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteTableResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DeleteTableResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DescribeTableRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DescribeTableResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\DescribeTableResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ExpectedAttributeValue.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\GetItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\GetItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\GetItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\InternalServerErrorException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\AttributeValueUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Condition.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ConditionalCheckFailedException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\CreateTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\CreateTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\CreateTableResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteItemResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DeleteTableResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DescribeTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DescribeTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\DescribeTableResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ExpectedAttributeValue.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\GetItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\GetItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\GetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\InternalServerErrorException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\AttributeValueUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchGetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteRequestUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeysAndAttributesUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeySchemaElementUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeySchemaUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeyUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ProvisionedThroughputDescriptionUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutRequestUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\TableDescriptionUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\WriteRequestUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\Key.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\KeysAndAttributes.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\KeySchema.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\KeySchemaElement.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\LimitExceededException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ListTablesRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ListTablesResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ListTablesResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughput.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughputDescription.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughputExceededException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\PutItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\PutItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\PutItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\PutRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\QueryRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\QueryResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\QueryResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ResourceInUseException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ResourceNotFoundException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ScanRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ScanResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\ScanResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\TableDescription.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateItemRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateItemResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateItemResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateTableRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateTableResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\UpdateTableResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDB\Model\WriteRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DescribeTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\GetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeysAndAttributesUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeySchemaElementUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeySchemaUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\KeyUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ListTablesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ProvisionedThroughputDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\ScanResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\TableDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableRequestMarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\WriteRequestUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\Key.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\KeysAndAttributes.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\KeySchema.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\KeySchemaElement.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\LimitExceededException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ListTablesRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ListTablesResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ListTablesResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughput.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughputDescription.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ProvisionedThroughputExceededException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\PutItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\PutItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\PutItemResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\PutRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\QueryRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\QueryResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\QueryResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ResourceInUseException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ResourceNotFoundException.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ScanRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ScanResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\ScanResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\TableDescription.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateItemRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateItemResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateItemResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateTableRequest.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateTableResponse.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\UpdateTableResult.cs" />
+    <Compile Include="Amazon.DynamoDB\Model\WriteRequest.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2.cs">
       <SubType>Code</SubType>
     </Compile>

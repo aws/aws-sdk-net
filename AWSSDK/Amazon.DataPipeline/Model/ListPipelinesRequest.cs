@@ -34,9 +34,9 @@ namespace Amazon.DataPipeline.Model
         private string marker;
 
         /// <summary>
-        /// The starting point for the results to be returned. The first time you call ListPipelines, this value should be empty. As long as the action
-        /// returns <c>HasMoreResults</c> as <c>True</c>, you can call ListPipelines again and pass the marker value from the response to retrieve the
-        /// next set of results.
+        /// The starting point for the results to be returned. The first time you call <a>ListPipelines</a>, this value should be empty. As long as the
+        /// action returns <c>HasMoreResults</c> as <c>True</c>, you can call <a>ListPipelines</a> again and pass the marker value from the response to
+        /// retrieve the next set of results.
         ///  
         /// <para>
         /// <b>Constraints:</b>

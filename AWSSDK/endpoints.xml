@@ -1233,6 +1233,12 @@
         <Hostname>ec2.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>elasticmapreduce</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticmapreduce.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>rds</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1360,6 +1366,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>elasticache</Name>

@@ -37,8 +37,8 @@ namespace Amazon.DataPipeline.Model
         private List<string> pipelineIds = new List<string>();
 
         /// <summary>
-        /// Identifiers of the pipelines to describe. You can pass as many as 25 identifiers in a single call to DescribePipelines. You can obtain
-        /// pipeline identifiers by calling ListPipelines.
+        /// Identifiers of the pipelines to describe. You can pass as many as 25 identifiers in a single call to <a>DescribePipelines</a>. You can
+        /// obtain pipeline identifiers by calling <a>ListPipelines</a>.
         ///  
         /// </summary>
         public List<string> PipelineIds

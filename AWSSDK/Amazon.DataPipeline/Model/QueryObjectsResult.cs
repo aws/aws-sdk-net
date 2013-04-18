@@ -77,7 +77,7 @@ namespace Amazon.DataPipeline.Model
 
         /// <summary>
         /// The starting point for the results to be returned. As long as the action returns <c>HasMoreResults</c> as <c>True</c>, you can call
-        /// QueryObjects again and pass the marker value from the response to retrieve the next set of results.
+        /// <a>QueryObjects</a> again and pass the marker value from the response to retrieve the next set of results.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -118,7 +118,7 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// If <c>True</c>, there are more results that can be obtained by a subsequent call to QueryObjects.
+        /// If <c>True</c>, there are more results that can be obtained by a subsequent call to <a>QueryObjects</a>.
         ///  
         /// </summary>
         public bool HasMoreResults

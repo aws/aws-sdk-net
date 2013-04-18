@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (StringValue) or a
-    /// reference to another object (RefValue) but not as both.</para>
+    /// <para>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value ( <c>StringValue</c>
+    /// ) or a reference to another object ( <c>RefValue</c> ) but not as both.</para>
     /// </summary>
     public class Field
     {

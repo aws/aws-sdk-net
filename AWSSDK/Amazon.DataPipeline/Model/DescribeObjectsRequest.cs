@@ -79,7 +79,7 @@ namespace Amazon.DataPipeline.Model
 
         /// <summary>
         /// Identifiers of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to
-        /// DescribeObjects
+        /// DescribeObjects.
         ///  
         /// </summary>
         public List<string> ObjectIds
@@ -122,6 +122,11 @@ namespace Amazon.DataPipeline.Model
         {
             return this.objectIds.Count > 0;
         }
+
+        /// <summary>
+        /// Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.
+        ///  
+        /// </summary>
         public bool EvaluateExpressions
         {
             get { return this.evaluateExpressions ?? default(bool); }
@@ -147,9 +152,9 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// The starting point for the results to be returned. The first time you call DescribeObjects, this value should be empty. As long as the
-        /// action returns <c>HasMoreResults</c> as <c>True</c>, you can call DescribeObjects again and pass the marker value from the response to
-        /// retrieve the next set of results.
+        /// The starting point for the results to be returned. The first time you call <a>DescribeObjects</a>, this value should be empty. As long as
+        /// the action returns <c>HasMoreResults</c> as <c>True</c>, you can call <a>DescribeObjects</a> again and pass the marker value from the
+        /// response to retrieve the next set of results.
         ///  
         /// <para>
         /// <b>Constraints:</b>

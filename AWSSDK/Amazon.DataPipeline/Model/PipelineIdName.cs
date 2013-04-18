@@ -30,7 +30,7 @@ namespace Amazon.DataPipeline.Model
         private string name;
 
         /// <summary>
-        /// Identifier of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form df-297EG78HU43EEXAMPLE.
+        /// Identifier of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <c>df-297EG78HU43EEXAMPLE</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

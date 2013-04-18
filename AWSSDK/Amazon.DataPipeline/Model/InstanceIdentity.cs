@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model
 
         /// <summary>
         /// A description of an Amazon EC2 instance that is generated when the instance is launched and exposed to the instance via the instance
-        /// meta-data service in the form of a JSON representation of an object.
+        /// metadata service in the form of a JSON representation of an object.
         ///  
         /// <para>
         /// <b>Constraints:</b>

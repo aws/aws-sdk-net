@@ -41,9 +41,8 @@ namespace Amazon.DataPipeline
     /// Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running
     /// data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write
     /// your own task runner to provide custom data management. </para> <para> The AWS Data Pipeline API uses the Signature Version 4 protocol for
-    /// signing requests. For information about how to sign a request with this protocol, go to Signature Version 4 Signing Process. In the code
-    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para> <para> <i>Note: This is
-    /// pre-release documentation and subject to change.</i> </para>
+    /// signing requests. For more information about how to sign a request with this protocol, see Signature Version 4 Signing Process. In the code
+    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
     public class AmazonDataPipelineClient : AmazonWebServiceClient, AmazonDataPipeline
     {
@@ -526,7 +525,7 @@ namespace Amazon.DataPipeline
         /// the task runner. </para> <para> If tasks are ready in the work queue, PollForTask returns a response immediately. If no tasks are available
         /// in the queue, PollForTask uses long-polling and holds on to a poll connection for up to a 90 seconds during which time the first newly
         /// scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner
-        /// should not call PollForTask again on the same workerGroup until it receives a response, and this may take up to 90 seconds. </para>
+        /// should not call PollForTask again on the same <c>workerGroup</c> until it receives a response, and this may take up to 90 seconds. </para>
         /// </summary>
         /// 
         /// <param name="pollForTaskRequest">Container for the necessary parameters to execute the PollForTask service method on
@@ -594,7 +593,7 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
-        /// QueryResults are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
+        /// QueryObjects are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
         /// value set for marker. If <c>HasMoreResults</c> is set to <c>True</c> , you should continue to call QueryObjects, passing in the returned
         /// value for marker, until <c>HasMoreResults</c> returns <c>False</c> .</para>
         /// </summary>
@@ -1214,9 +1213,9 @@ namespace Amazon.DataPipeline
         #region ReportTaskRunnerHeartbeat
 
         /// <summary>
-        /// <para>Task runners call ReportTaskRunnerHeartbeat to indicate that they are operational. In the case of AWS Data Pipeline Task Runner
-        /// launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed
-        /// and restart a new instance.</para>
+        /// <para>Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline
+        /// Task Runner launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner
+        /// application has failed and restart a new instance.</para>
         /// </summary>
         /// 
         /// <param name="reportTaskRunnerHeartbeatRequest">Container for the necessary parameters to execute the ReportTaskRunnerHeartbeat service

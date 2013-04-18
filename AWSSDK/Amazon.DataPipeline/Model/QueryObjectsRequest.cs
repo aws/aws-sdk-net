@@ -26,7 +26,7 @@ namespace Amazon.DataPipeline.Model
     /// <summary>
     /// Container for the parameters to the QueryObjects operation.
     /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
-    /// QueryResults are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
+    /// QueryObjects are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
     /// value set for marker. If <c>HasMoreResults</c> is set to <c>True</c> , you should continue to call QueryObjects, passing in the returned
     /// value for marker, until <c>HasMoreResults</c> returns <c>False</c> .</para>
     /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// Query that defines the objects to be returned. The Query object can contain a maximum of ten selectors. The conditions in the query are
-        /// limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.
+        /// Query that defines the objects to be returned. The <a>Query</a> object can contain a maximum of ten selectors. The conditions in the query
+        /// are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.
         ///  
         /// </summary>
         public Query Query
@@ -110,7 +110,7 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// Specifies whether the query applies to components or instances. Allowable values: COMPONENT, INSTANCE, ATTEMPT.
+        /// Specifies whether the query applies to components or instances. Allowable values: <c>COMPONENT</c>, <c>INSTANCE</c>, <c>ATTEMPT</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -151,9 +151,9 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// The starting point for the results to be returned. The first time you call QueryObjects, this value should be empty. As long as the action
-        /// returns <c>HasMoreResults</c> as <c>True</c>, you can call QueryObjects again and pass the marker value from the response to retrieve the
-        /// next set of results.
+        /// The starting point for the results to be returned. The first time you call <a>QueryObjects</a>, this value should be empty. As long as the
+        /// action returns <c>HasMoreResults</c> as <c>True</c>, you can call <a>QueryObjects</a> again and pass the marker value from the response to
+        /// retrieve the next set of results.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -194,7 +194,7 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// Specifies the maximum number of object names that QueryObjects will return in a single call. The default value is 100.
+        /// Specifies the maximum number of object names that <a>QueryObjects</a> will return in a single call. The default value is 100.
         ///  
         /// </summary>
         public int Limit

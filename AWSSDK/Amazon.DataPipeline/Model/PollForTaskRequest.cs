@@ -31,7 +31,7 @@ namespace Amazon.DataPipeline.Model
     /// the task runner. </para> <para> If tasks are ready in the work queue, PollForTask returns a response immediately. If no tasks are available
     /// in the queue, PollForTask uses long-polling and holds on to a poll connection for up to a 90 seconds during which time the first newly
     /// scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner
-    /// should not call PollForTask again on the same workerGroup until it receives a response, and this may take up to 90 seconds. </para>
+    /// should not call PollForTask again on the same <c>workerGroup</c> until it receives a response, and this may take up to 90 seconds. </para>
     /// </summary>
     /// <seealso cref="Amazon.DataPipeline.AmazonDataPipeline.PollForTask"/>
     public class PollForTaskRequest : AmazonWebServiceRequest
@@ -42,8 +42,8 @@ namespace Amazon.DataPipeline.Model
 
         /// <summary>
         /// Indicates the type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the
-        /// pipeline when they are created. You can only specify a single value for workerGroup in the call to PollForTask. There are no wildcard values
-        /// permitted in workerGroup, the string must be an exact, case-sensitive, match.
+        /// pipeline when they are created. You can only specify a single value for <c>workerGroup</c> in the call to <a>PollForTask</a>. There are no
+        /// wildcard values permitted in <c>workerGroup</c>, the string must be an exact, case-sensitive, match.
         ///  
         /// <para>
         /// <b>Constraints:</b>

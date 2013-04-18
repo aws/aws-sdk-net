@@ -25,9 +25,9 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ReportTaskRunnerHeartbeat operation.
-    /// <para>Task runners call ReportTaskRunnerHeartbeat to indicate that they are operational. In the case of AWS Data Pipeline Task Runner
-    /// launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed
-    /// and restart a new instance.</para>
+    /// <para>Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline
+    /// Task Runner launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner
+    /// application has failed and restart a new instance.</para>
     /// </summary>
     /// <seealso cref="Amazon.DataPipeline.AmazonDataPipeline.ReportTaskRunnerHeartbeat"/>
     public class ReportTaskRunnerHeartbeatRequest : AmazonWebServiceRequest
@@ -81,8 +81,8 @@ namespace Amazon.DataPipeline.Model
 
         /// <summary>
         /// Indicates the type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the
-        /// pipeline when they are created. You can only specify a single value for workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-        /// wildcard values permitted in workerGroup, the string must be an exact, case-sensitive, match.
+        /// pipeline when they are created. You can only specify a single value for <c>workerGroup</c> in the call to <a>ReportTaskRunnerHeartbeat</a>.
+        /// There are no wildcard values permitted in <c>workerGroup</c>, the string must be an exact, case-sensitive, match.
         ///  
         /// <para>
         /// <b>Constraints:</b>

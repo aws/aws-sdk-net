@@ -76,7 +76,9 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// The version of the pipeline definition to retrieve.
+        /// The version of the pipeline definition to retrieve. This parameter accepts the values <c>latest</c> (default) and <c>active</c>. Where
+        /// <c>latest</c> indicates the last definition saved to the pipeline and <c>active</c> indicates the last definition of the pipeline that was
+        /// activated.
         ///  
         /// <para>
         /// <b>Constraints:</b>

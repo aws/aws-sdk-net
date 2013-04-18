@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 
 namespace Amazon.DynamoDB
@@ -55,7 +56,10 @@ namespace Amazon.DynamoDB
         ///
         /// </summary>
         public AmazonDynamoDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+            AttachUserAgentHandler();
+        }
 
         /// <summary>
         /// Constructs AmazonDynamoDBClient with the credentials loaded from the application's
@@ -75,7 +79,10 @@ namespace Amazon.DynamoDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDynamoDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+            AttachUserAgentHandler();
+        }
 
         /// <summary>
         /// Constructs AmazonDynamoDBClient with the credentials loaded from the application's
@@ -95,7 +102,10 @@ namespace Amazon.DynamoDB
         /// </summary>
         /// <param name="config">The AmazonDynamoDB Configuration Object</param>
         public AmazonDynamoDBClient(AmazonDynamoDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+            AttachUserAgentHandler();
+        }
 
         /// <summary>
         /// Constructs AmazonDynamoDBClient with AWS Credentials
@@ -125,6 +135,7 @@ namespace Amazon.DynamoDB
         public AmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfig clientConfig)
             : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
+            AttachUserAgentHandler();
         }
 
         /// <summary>
@@ -161,6 +172,7 @@ namespace Amazon.DynamoDB
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonDynamoDBConfig clientConfig)
             : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
+            AttachUserAgentHandler();
         }
 
         /// <summary>
@@ -200,6 +212,7 @@ namespace Amazon.DynamoDB
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonDynamoDBConfig clientConfig)
             : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
+            AttachUserAgentHandler();
         }
 
         #endregion
@@ -1115,6 +1128,20 @@ namespace Amazon.DynamoDB
             Thread.Sleep(delay);
         }
 
+        // Attaches a before-request handler that appends "DDB1" to user-agent
+        private void AttachUserAgentHandler()
+        {
+            this.BeforeRequestEvent += (object sender, RequestEventArgs args) =>
+            {
+                WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
+                if (wsArgs != null)
+                {
+                    string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
+                    currentUserAgent = currentUserAgent + " DDB1";
+                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent;
+                }
+            };
+        }
     }
 }
     

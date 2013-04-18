@@ -92,6 +92,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                             List<Selector> selectorsList = query.Selectors;
                             writer.WritePropertyName("selectors");
                             writer.WriteArrayStart();
+
                             foreach (Selector selectorsListValue in selectorsList) 
                             {
                                 writer.WriteObjectStart();

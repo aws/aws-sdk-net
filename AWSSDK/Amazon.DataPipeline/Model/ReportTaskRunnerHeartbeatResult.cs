@@ -29,8 +29,8 @@ namespace Amazon.DataPipeline.Model
         private bool? terminate;
 
         /// <summary>
-        /// Indicates whether the calling task runner should terminate. If <c>True</c>, the task runner that called ReportTaskRunnerHeartbeat should
-        /// terminate.
+        /// Indicates whether the calling task runner should terminate. If <c>True</c>, the task runner that called <a>ReportTaskRunnerHeartbeat</a>
+        /// should terminate.
         ///  
         /// </summary>
         public bool Terminate

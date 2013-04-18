@@ -29,9 +29,9 @@ namespace Amazon.DataPipeline.Model
         private TaskObject taskObject;
 
         /// <summary>
-        /// An instance of PollForTaskResult, which contains an instance of TaskObject. The returned object contains all the information needed to
-        /// complete the task that is being assigned to the task runner. One of the fields returned in this object is taskId, which contains an
-        /// identifier for the task being assigned. The calling task runner uses taskId in subsequent calls to <a>ReportTaskProgress</a> and
+        /// An instance of <a>PollForTaskResult</a>, which contains an instance of <a>TaskObject</a>. The returned object contains all the information
+        /// needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is taskId, which contains
+        /// an identifier for the task being assigned. The calling task runner uses taskId in subsequent calls to <a>ReportTaskProgress</a> and
         /// <a>SetTaskStatus</a>.
         ///  
         /// </summary>

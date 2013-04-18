@@ -27,10 +27,11 @@ namespace Amazon.DataPipeline.Model
     {
         
         private List<ValidationError> validationErrors = new List<ValidationError>();
+        private List<ValidationWarning> validationWarnings = new List<ValidationWarning>();
         private bool? errored;
 
         /// <summary>
-        /// A list of the validation errors that are associated with the objects defined in pipelineObjects.
+        /// A list of the validation errors that are associated with the objects defined in <c>pipelineObjects</c>.
         ///  
         /// </summary>
         public List<ValidationError> ValidationErrors
@@ -75,8 +76,53 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
+        /// A list of the validation warnings that are associated with the objects defined in <c>pipelineObjects</c>.
+        ///  
+        /// </summary>
+        public List<ValidationWarning> ValidationWarnings
+        {
+            get { return this.validationWarnings; }
+            set { this.validationWarnings = value; }
+        }
+        /// <summary>
+        /// Adds elements to the ValidationWarnings collection
+        /// </summary>
+        /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
+        /// <returns>this instance</returns>
+        public PutPipelineDefinitionResult WithValidationWarnings(params ValidationWarning[] validationWarnings)
+        {
+            foreach (ValidationWarning element in validationWarnings)
+            {
+                this.validationWarnings.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the ValidationWarnings collection
+        /// </summary>
+        /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
+        /// <returns>this instance</returns>
+        public PutPipelineDefinitionResult WithValidationWarnings(IEnumerable<ValidationWarning> validationWarnings)
+        {
+            foreach (ValidationWarning element in validationWarnings)
+            {
+                this.validationWarnings.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if ValidationWarnings property is set
+        internal bool IsSetValidationWarnings()
+        {
+            return this.validationWarnings.Count > 0;
+        }
+
+        /// <summary>
         /// If <c>True</c>, there were validation errors. If errored is <c>True</c>, the pipeline definition is stored but cannot be activated until you
-        /// correct the pipeline and call PutPipelineDefinition to commit the corrected pipeline.
+        /// correct the pipeline and call <a>PutPipelineDefinition</a> to commit the corrected pipeline.
         ///  
         /// </summary>
         public bool Errored

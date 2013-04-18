@@ -31,7 +31,7 @@ namespace Amazon.DataPipeline.Model
         private bool? hasMoreResults;
 
         /// <summary>
-        /// An array of object definitions that are returned by the call to DescribeObjects.
+        /// An array of object definitions that are returned by the call to <a>DescribeObjects</a>.
         ///  
         /// </summary>
         public List<PipelineObject> PipelineObjects
@@ -76,7 +76,7 @@ namespace Amazon.DataPipeline.Model
         }
 
         /// <summary>
-        /// The starting point for the next page of results. To view the next page of results, call DescribeObjects again with this marker value.
+        /// The starting point for the next page of results. To view the next page of results, call <a>DescribeObjects</a> again with this marker value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

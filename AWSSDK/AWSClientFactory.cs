@@ -26,7 +26,6 @@ using Amazon.CloudFront;
 using Amazon.CloudWatch;
 using Amazon.DataPipeline;
 using Amazon.DirectConnect;
-using Amazon.DynamoDB;
 using Amazon.EC2;
 using Amazon.ElastiCache;
 using Amazon.ElasticBeanstalk;
@@ -47,6 +46,14 @@ using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleWorkflow;
 
+using DynamoDBV1 = Amazon.DynamoDB.AmazonDynamoDB;
+using DynamoDBClientV1 = Amazon.DynamoDB.AmazonDynamoDBClient;
+using AmazonDynamoDBConfigV1 = Amazon.DynamoDB.AmazonDynamoDBConfig;
+
+using DynamoDBV2 = Amazon.DynamoDBv2.AmazonDynamoDB;
+using DynamoDBClientV2 = Amazon.DynamoDBv2.AmazonDynamoDBClient;
+using AmazonDynamoDBConfigV2 = Amazon.DynamoDBv2.AmazonDynamoDBConfig;
+
 using Amazon.Runtime;
 
 namespace Amazon
@@ -63,6 +70,7 @@ namespace Amazon
 
     public static class AWSClientFactory
     {
+        #region EC2
 
         /// <summary>
         /// Create a client for the Amazon EC2 Service with the credentials loaded from the application's
@@ -220,7 +228,9 @@ namespace Amazon
             return new AmazonEC2Client(credentials, config);
         }
 
+        #endregion
 
+        #region SimpleDB
 
         /// <summary>
         /// Create a client for the Amazon SimpleDB Service with the credentials loaded from the application's
@@ -379,6 +389,10 @@ namespace Amazon
             return new AmazonSimpleDBClient(credentials, config);
         }
 
+        #endregion
+
+        #region Elastic Map Reduce
+
         /// <summary>
         /// Create a client for the Amazon ElasticMapReduce Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -535,6 +549,10 @@ namespace Amazon
         {
             return new AmazonElasticMapReduceClient(credentials, config);
         }
+
+        #endregion
+
+        #region SQS
 
         /// <summary>
         /// Create a client for the Amazon SQS Service with the credentials loaded from the application's
@@ -693,6 +711,10 @@ namespace Amazon
             return new AmazonSQSClient(credentials, config);
         }
 
+        #endregion
+
+        #region CloudWatch
+
         /// <summary>
         /// Create a client for the Amazon CloudWatch Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -849,6 +871,10 @@ namespace Amazon
         {
             return new AmazonCloudWatchClient(credentials, config);
         }
+
+        #endregion
+
+        #region ElasticLoadBalancing
 
         /// <summary>
         /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials loaded from the application's
@@ -1007,6 +1033,10 @@ namespace Amazon
             return new AmazonElasticLoadBalancingClient(credentials, config);
         }
 
+        #endregion
+
+        #region AutoScaling
+
         /// <summary>
         /// Create a client for the Amazon AutoScaling Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -1163,6 +1193,10 @@ namespace Amazon
         {
             return new AmazonAutoScalingClient(credentials, config);
         }
+
+        #endregion
+
+        #region S3
 
         /// <summary>
         /// Create a client for the Amazon S3 Service with the credentials loaded from the application's
@@ -1321,6 +1355,10 @@ namespace Amazon
             return new AmazonS3Client(credentials, config);
         }
 
+        #endregion
+
+        #region RDS
+
         /// <summary>
         /// Create a client for the Amazon RDS Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -1478,6 +1516,10 @@ namespace Amazon
             return new AmazonRDSClient(credentials, config);
         }
 
+        #endregion
+
+        #region CloudFront
+        
         /// <summary>
         /// Create a client for the Amazon CloudFront Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -1635,6 +1677,10 @@ namespace Amazon
             return new AmazonCloudFrontClient(credentials, config);
         }
 
+        #endregion
+
+        #region SNS
+        
         /// <summary>
         /// Create a client for the Amazon SNS Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -1792,6 +1838,10 @@ namespace Amazon
             return new AmazonSimpleNotificationServiceClient(credentials, config);
         }
 
+        #endregion
+
+        #region IAM
+        
         /// <summary>
         /// Create a client for the Amazon IdentityManagement Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -1943,6 +1993,10 @@ namespace Amazon
         {
             return new AmazonIdentityManagementServiceClient(credentials, config);
         }
+
+        #endregion
+
+        #region ElasticBeanstalk
 
         /// <summary>
         /// Create a client for the Amazon ElasticBeanstalk Service with the credentials loaded from the application's
@@ -2100,6 +2154,10 @@ namespace Amazon
             return new AmazonElasticBeanstalkClient(credentials, config);
         }
 
+        #endregion
+
+        #region SimpleEmail
+
         /// <summary>
         /// Create a client for the Amazon SimpleEmailService Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -2252,6 +2310,10 @@ namespace Amazon
             return new AmazonSimpleEmailServiceClient(credentials, config);
         }
 
+        #endregion
+
+        #region CloudFormation
+        
         /// <summary>
         /// Create a client for the Amazon CloudFormation Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -2408,6 +2470,10 @@ namespace Amazon
             return new AmazonCloudFormationClient(credentials, config);
         }
 
+        #endregion
+
+        #region ElastiCache
+        
         /// <summary>
         /// Create a client for the Amazon ElastiCache Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -2563,6 +2629,10 @@ namespace Amazon
         {
             return new AmazonElastiCacheClient(credentials, config);
         }
+
+        #endregion
+
+        #region ImportExport
 
         /// <summary>
         /// Create a client for the Amazon ImportExport Service with the credentials loaded from the application's
@@ -2720,6 +2790,10 @@ namespace Amazon
             return new AmazonImportExportClient(credentials, config);
         }
 
+        #endregion
+
+        #region STS
+
         /// <summary>
         /// Create a client for the Amazon SecurityToken Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -2875,6 +2949,10 @@ namespace Amazon
         {
             return new AmazonSecurityTokenServiceClient(credentials, config);
         }
+
+        #endregion
+
+        #region SimpleWorkflow
 
         /// <summary>
         /// Create a client for the Amazon SimpleWorkflow Service with the credentials loaded from the application's
@@ -3033,6 +3111,10 @@ namespace Amazon
             return new AmazonSimpleWorkflowClient(credentials, config);
         }
 
+        #endregion
+
+        #region DirectConnect
+        
         /// <summary>
         /// Create a client for the Amazon DirectConnect Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -3189,6 +3271,10 @@ namespace Amazon
         {
             return new AmazonDirectConnectClient(credentials, config);
         }
+
+        #endregion
+
+        #region ElasticTranscoder
 
         /// <summary>
         /// Create a client for the Amazon ElasticTranscoder Service with the credentials loaded from the application's
@@ -3347,6 +3433,10 @@ namespace Amazon
             return new AmazonElasticTranscoderClient(credentials, config);
         }
 
+        #endregion
+
+        #region Redshift
+
         /// <summary>
         /// Create a client for the Amazon Redshift Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -3503,6 +3593,10 @@ namespace Amazon
         {
             return new AmazonRedshiftClient(credentials, config);
         }
+
+        #endregion
+
+        #region OpsWorks
 
         /// <summary>
         /// Create a client for the Amazon OpsWorks Service with the credentials loaded from the application's
@@ -3661,6 +3755,10 @@ namespace Amazon
             return new AmazonOpsWorksClient(credentials, config);
         }
 
+        #endregion
+
+        #region DatePipeline
+
         /// <summary>
         /// Create a client for the Amazon DataPipeline Service with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -3818,6 +3916,9 @@ namespace Amazon
             return new AmazonDataPipelineClient(credentials, config);
         }
 
+        #endregion
+
+        #region DynamoDB
 
         /// <summary>
         /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's
@@ -3837,9 +3938,9 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient()
+        public static DynamoDBV1 CreateAmazonDynamoDBClient()
         {
-            return new AmazonDynamoDBClient();
+            return new DynamoDBClientV1();
         }
 
         /// <summary>
@@ -3859,9 +3960,9 @@ namespace Amazon
         /// </summary>
         /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
         /// <returns>An Amazon DynamoDB client</returns>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AmazonDynamoDBConfig config)
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(AmazonDynamoDBConfigV1 config)
         {
-            return new AmazonDynamoDBClient(config);
+            return new DynamoDBClientV1(config);
         }
 
         /// <summary>
@@ -3872,12 +3973,12 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(
             string awsAccessKey,
             string awsSecretAccessKey
             )
         {
-            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey);
+            return new DynamoDBClientV1(awsAccessKey, awsSecretAccessKey);
         }
 
         /// <summary>
@@ -3890,13 +3991,13 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(
             string awsAccessKey,
             string awsSecretAccessKey,
-            AmazonDynamoDBConfig config
+            AmazonDynamoDBConfigV1 config
             )
         {
-            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey, config);
+            return new DynamoDBClientV1(awsAccessKey, awsSecretAccessKey, config);
         }
 
         /// <summary>
@@ -3916,9 +4017,9 @@ namespace Amazon
         /// </summary>
         /// <param name="region">The region to connect to.</param>
         /// <returns>An Amazon DynamoDB client</returns>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(RegionEndpoint region)
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(RegionEndpoint region)
         {
-            return new AmazonDynamoDBClient(region);
+            return new DynamoDBClientV1(region);
         }
 
         /// <summary>
@@ -3930,12 +4031,12 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(
             string awsAccessKey,
             string awsSecretAccessKey, RegionEndpoint region
             )
         {
-            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey, region);
+            return new DynamoDBClientV1(awsAccessKey, awsSecretAccessKey, region);
         }
 
         /// <summary>
@@ -3945,9 +4046,9 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials)
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(AWSCredentials credentials)
         {
-            return new AmazonDynamoDBClient(credentials);
+            return new DynamoDBClientV1(credentials);
         }
 
         /// <summary>
@@ -3958,9 +4059,9 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials, RegionEndpoint region)
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(AWSCredentials credentials, RegionEndpoint region)
         {
-            return new AmazonDynamoDBClient(credentials, region);
+            return new DynamoDBClientV1(credentials, region);
         }
 
         /// <summary>
@@ -3971,10 +4072,175 @@ namespace Amazon
         /// <returns>An Amazon DynamoDB client</returns>
         /// <remarks>
         /// </remarks>
-        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfig config)
+        public static DynamoDBV1 CreateAmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfigV1 config)
         {
-            return new AmazonDynamoDBClient(credentials, config);
+            return new DynamoDBClientV1(credentials, config);
         }
+
+        #endregion
+
+        #region DynamoDBv2
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client()
+        {
+            return new DynamoDBClientV2();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(AmazonDynamoDBConfigV2 config)
+        {
+            return new DynamoDBClientV2(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new DynamoDBClientV2(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonDynamoDBConfigV2 config
+            )
+        {
+            return new DynamoDBClientV2(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(RegionEndpoint region)
+        {
+            return new DynamoDBClientV2(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new DynamoDBClientV2(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(AWSCredentials credentials)
+        {
+            return new DynamoDBClientV2(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new DynamoDBClientV2(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service v2 with AWSCredentials and an AmazonDynamoDB Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static DynamoDBV2 CreateAmazonDynamoDBv2Client(AWSCredentials credentials, AmazonDynamoDBConfigV2 config)
+        {
+            return new DynamoDBClientV2(credentials, config);
+        }
+
+        #endregion
+
+        #region Route53
 
         /// <summary>
         /// Create a client for the Amazon Route53 Service with the credentials loaded from the application's
@@ -4132,5 +4398,8 @@ namespace Amazon
         {
             return new AmazonRoute53Client(credentials, config);
         }
+
+        #endregion
+
     }
 }

@@ -27,10 +27,11 @@ namespace Amazon.DataPipeline.Model
     {
         
         private List<ValidationError> validationErrors = new List<ValidationError>();
+        private List<ValidationWarning> validationWarnings = new List<ValidationWarning>();
         private bool? errored;
 
         /// <summary>
-        /// Lists the validation errors that were found by ValidatePipelineDefinition.
+        /// Lists the validation errors that were found by <a>ValidatePipelineDefinition</a>.
         ///  
         /// </summary>
         public List<ValidationError> ValidationErrors
@@ -72,6 +73,51 @@ namespace Amazon.DataPipeline.Model
         internal bool IsSetValidationErrors()
         {
             return this.validationErrors.Count > 0;
+        }
+
+        /// <summary>
+        /// Lists the validation warnings that were found by <a>ValidatePipelineDefinition</a>.
+        ///  
+        /// </summary>
+        public List<ValidationWarning> ValidationWarnings
+        {
+            get { return this.validationWarnings; }
+            set { this.validationWarnings = value; }
+        }
+        /// <summary>
+        /// Adds elements to the ValidationWarnings collection
+        /// </summary>
+        /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
+        /// <returns>this instance</returns>
+        public ValidatePipelineDefinitionResult WithValidationWarnings(params ValidationWarning[] validationWarnings)
+        {
+            foreach (ValidationWarning element in validationWarnings)
+            {
+                this.validationWarnings.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the ValidationWarnings collection
+        /// </summary>
+        /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
+        /// <returns>this instance</returns>
+        public ValidatePipelineDefinitionResult WithValidationWarnings(IEnumerable<ValidationWarning> validationWarnings)
+        {
+            foreach (ValidationWarning element in validationWarnings)
+            {
+                this.validationWarnings.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if ValidationWarnings property is set
+        internal bool IsSetValidationWarnings()
+        {
+            return this.validationWarnings.Count > 0;
         }
 
         /// <summary>

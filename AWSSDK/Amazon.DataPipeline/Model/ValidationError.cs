@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Defines a validation error returned by PutPipelineDefinition or ValidatePipelineDefinition. The set of validation errors that can be
-    /// returned are defined by AWS Data Pipeline.</para>
+    /// <para>Defines a validation error returned by PutPipelineDefinition or ValidatePipelineDefinition. Validation errors prevent pipeline
+    /// activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</para>
     /// </summary>
     public class ValidationError
     {

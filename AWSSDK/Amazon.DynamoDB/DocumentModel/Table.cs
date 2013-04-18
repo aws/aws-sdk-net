@@ -170,7 +170,6 @@ namespace Amazon.DynamoDB.DocumentModel
                 RangeKeyIsDefined = this.RangeKeyIsDefined,
                 RangeKeyType = this.RangeKeyType,
                 RangeKeyName = this.RangeKeyName,
-                TableConsumer = this.TableConsumer
             };
         }
 
@@ -624,22 +623,13 @@ namespace Amazon.DynamoDB.DocumentModel
                 attributeUpdates.Remove(keyName);
             }
 
-            ReturnValues currentReturnValue = currentConfig.ReturnValues;
-            bool keysOnlyUpdate = attributeUpdates.Count == 0;
-            // If there are no non-key attributes, make an Update call with AllNewAttributes
-            // return value. If no attributes returned, the item doesn't exist yet, so
-            // make a Put call.
-            if (keysOnlyUpdate)
-            {
-                currentReturnValue = ReturnValues.AllNewAttributes;
-            }
-
             UpdateItemRequest req = new UpdateItemRequest
             {
                 TableName = TableName,
                 Key = key,
-                AttributeUpdates = attributeUpdates,
-                ReturnValues = EnumToStringMapper.Convert(currentReturnValue)
+                AttributeUpdates = attributeUpdates.Count == 0 ?
+                    new Dictionary<string,AttributeValueUpdate>() : attributeUpdates,
+                ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues)
             };
             req.BeforeRequestEvent += isAsync ?
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
@@ -650,30 +640,6 @@ namespace Amazon.DynamoDB.DocumentModel
             var resp = DDBClient.UpdateItem(req);
             var returnedAttributes = resp.UpdateItemResult.Attributes;
             doc.CommitChanges();
-
-            if (keysOnlyUpdate)
-            {
-                if (returnedAttributes == null || returnedAttributes.Count == 0)
-                {
-                    // if only keys were specified and no attributes are returned, we must issue a Put
-                    return CallKeysOnlyPut(key, currentConfig, isAsync);
-                }
-                else
-                {
-                    // update was called with AllNewAttributes, item exists
-                    // return correct set of attributes
-                    // [None] is handled at the end
-                    // [AllNewAttributes, AllOldAttributes] are equivalent in this case, no-op
-                    // [UpdatedNewAttributes, UpdatedOldAttributes] must return no attributes
-                    switch (currentConfig.ReturnValues)
-                    {
-                        case ReturnValues.UpdatedNewAttributes:
-                        case ReturnValues.UpdatedOldAttributes:
-                            returnedAttributes = new Dictionary<string,AttributeValue>();
-                            break;
-                    }
-                }
-            }
 
             Document ret = null;
             if (currentConfig.ReturnValues != ReturnValues.None)
@@ -692,84 +658,6 @@ namespace Amazon.DynamoDB.DocumentModel
                     return true;
             }
             return false;
-        }
-
-        // Calls Put, but returns like Update
-        private Document CallKeysOnlyPut(Key key, UpdateItemOperationConfig config, bool isAsync)
-        {
-            // configure the keys-only Document
-            Document doc = CreateKeysOnlyDocument(key);
-
-            // configure the put operation
-            PutItemOperationConfig putConfig = CreateKeysOnlyPutConfig(key, config);
-
-            // call put
-            PutItemHelper(doc, putConfig, isAsync);
-
-            /*
-            New item created, return Update-appropriate response.
-            For update, when no item exists:
-             [None] - returns null,
-             [AllOld, UpdatedNew, UpdatedOld] - return no attributes 
-             [AllNew] - returns all attributes
-            */
-            Document response;
-            switch (config.ReturnValues)
-            {
-                case ReturnValues.None:
-                    response = null;
-                    break;
-                case ReturnValues.AllNewAttributes:
-                    response = doc;
-                    break;
-                default:
-                    response = new Document();
-                    break;
-            }
-
-            return response;
-        }
-
-        // Creates a Document object that consists of the hash and potentially range keys
-        private Document CreateKeysOnlyDocument(Key key)
-        {
-            // create document to put
-            Document doc = new Document();
-            if (!doc.Contains(this.HashKeyName))
-            {
-                DynamoDBEntry hashKey = Document.AttributeValueToDynamoDBEntry(key.HashKeyElement);
-                if (hashKey == null) throw new InvalidOperationException("Cannot convert hash key attribute");
-                doc[this.HashKeyName] = hashKey;
-            }
-            if (this.RangeKeyIsDefined && !doc.Contains(this.RangeKeyName))
-            {
-                DynamoDBEntry rangeKey = Document.AttributeValueToDynamoDBEntry(key.RangeKeyElement);
-                if (rangeKey == null) throw new InvalidOperationException("Cannot convert range key attribute");
-                doc[this.RangeKeyName] = rangeKey;
-            }
-            return doc;
-        }
-
-        // Creates a PutItemOperationConfig for the keys-only Put operation
-        private PutItemOperationConfig CreateKeysOnlyPutConfig(Key key, UpdateItemOperationConfig config)
-        {
-            // configure the expected document
-            Document expected = new Document();
-
-            expected[this.HashKeyName] = null;
-            if (this.RangeKeyIsDefined)
-            {
-                expected[this.RangeKeyName] = null;
-            }
-
-            // create the PutItemOperationConfig
-            var putConfig = new PutItemOperationConfig
-            {
-                Expected = expected,
-                ReturnValues = ReturnValues.None
-            };
-
-            return putConfig;
         }
 
         #endregion
