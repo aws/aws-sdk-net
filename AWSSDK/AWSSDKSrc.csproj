@@ -755,6 +755,322 @@
     <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AWSSupport\AmazonAWSSupport.cs" />
+    <Compile Include="Amazon.AWSSupport\AmazonAWSSupportClient.cs" />
+    <Compile Include="Amazon.AWSSupport\AmazonAWSSupportConfig.cs" />
+    <Compile Include="Amazon.AWSSupport\AmazonAWSSupportException.cs" />
+    <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CaseCreationLimitExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CaseDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CaseIdNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Category.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Communication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CreateCaseRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CreateCaseResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\CreateCaseResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCasesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCasesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCasesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCommunicationsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCommunicationsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeCommunicationsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeServicesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeServicesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeServicesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeSeverityLevelsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeSeverityLevelsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeSeverityLevelsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckRefreshStatusesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckRefreshStatusesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckRefreshStatusesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckResultRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckResultResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckResultResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorChecksRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorChecksResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorChecksResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckSummariesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckSummariesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\DescribeTrustedAdvisorCheckSummariesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\InternalServerErrorException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\AddCommunicationToCaseRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\AddCommunicationToCaseResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\AddCommunicationToCaseResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CaseDetailsUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CategoryUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CommunicationUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CreateCaseRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CreateCaseResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\CreateCaseResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCasesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCasesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCasesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCommunicationsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCommunicationsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeCommunicationsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeServicesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeServicesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeServicesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeSeverityLevelsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeSeverityLevelsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeSeverityLevelsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckRefreshStatusesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckResultRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckResultResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckResultResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorChecksRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorChecksResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorChecksResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckSummariesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\DescribeTrustedAdvisorCheckSummariesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\RecentCaseCommunicationsUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\RefreshTrustedAdvisorCheckRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\RefreshTrustedAdvisorCheckResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\RefreshTrustedAdvisorCheckResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\ResolveCaseRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\ResolveCaseResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\ResolveCaseResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\ServiceUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\SeverityLevelUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCategorySpecificSummaryUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCheckDescriptionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCheckRefreshStatusUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCheckResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCheckSummaryUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorCostOptimizingSummaryUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorResourceDetailUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\TrustedAdvisorResourcesSummaryUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\RecentCaseCommunications.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\RefreshTrustedAdvisorCheckRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\RefreshTrustedAdvisorCheckResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\RefreshTrustedAdvisorCheckResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\ResolveCaseRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\ResolveCaseResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\ResolveCaseResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\Service.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\SeverityLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCategorySpecificSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckRefreshStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCostOptimizingSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorResourceDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorResourcesSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormation.cs">
       <SubType>Code</SubType>
     </Compile>

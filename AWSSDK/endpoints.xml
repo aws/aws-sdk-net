@@ -129,6 +129,12 @@
         <Hostname>storagegateway.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>support</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>support.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elasticloadbalancing</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1533,6 +1539,11 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>support</Name>
+      <FullName>AWS Support</FullName>
+      <RegionName>us-east-1</RegionName>
     </Service>
     <Service>
       <Name>elasticloadbalancing</Name>

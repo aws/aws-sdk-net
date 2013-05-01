@@ -45,6 +45,7 @@ using Amazon.SimpleDB;
 using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleWorkflow;
+using Amazon.AWSSupport;
 
 using DynamoDBV1 = Amazon.DynamoDB.AmazonDynamoDB;
 using DynamoDBClientV1 = Amazon.DynamoDB.AmazonDynamoDBClient;
@@ -3593,6 +3594,169 @@ namespace Amazon
         {
             return new AmazonRedshiftClient(credentials, config);
         }
+
+        #endregion
+
+        #region AWSSupport
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient()
+        {
+            return new AmazonAWSSupportClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(AmazonAWSSupportConfig config)
+        {
+            return new AmazonAWSSupportClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonAWSSupportClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonAWSSupportConfig config
+            )
+        {
+            return new AmazonAWSSupportClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(RegionEndpoint region)
+        {
+            return new AmazonAWSSupportClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonAWSSupportClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(AWSCredentials credentials)
+        {
+            return new AmazonAWSSupportClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonAWSSupportClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AWS Support API with AWSCredentials and an Amazon AWSSupportConfig object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon AWS Support API client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAWSSupport CreateAmazonAWSSupportClient(AWSCredentials credentials, AmazonAWSSupportConfig config)
+        {
+            return new AmazonAWSSupportClient(credentials, config);
+        }
+
+        
 
         #endregion
 

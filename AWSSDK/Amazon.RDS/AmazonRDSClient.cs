@@ -43,8 +43,8 @@ namespace Amazon.RDS
     /// </summary>
     public class AmazonRDSClient : AmazonWebServiceClient, AmazonRDS
     {
-    
-        AbstractAWSSigner signer = new QueryStringSigner();
+
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
