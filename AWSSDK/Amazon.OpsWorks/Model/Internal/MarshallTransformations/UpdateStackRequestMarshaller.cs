@@ -181,6 +181,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("DefaultSshKeyName");
                     writer.Write(updateStackRequest.DefaultSshKeyName);
                 }
+                if (updateStackRequest != null && updateStackRequest.IsSetDefaultRootDeviceType()) 
+                {
+                    writer.WritePropertyName("DefaultRootDeviceType");
+                    writer.Write(updateStackRequest.DefaultRootDeviceType);
+                }
 
                 writer.WriteObjectEnd();
                 

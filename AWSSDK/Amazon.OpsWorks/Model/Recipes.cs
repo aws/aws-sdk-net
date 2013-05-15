@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>OpsWorks supports five life-cycle events, <b>setup</b> ,
+    /// <para>OpsWorks supports five lifecycle events, <b>setup</b> ,
     /// <b>configuration</b> ,
     /// <b>deploy</b> ,
     /// <b>undeploy</b> , and <b>shutdown</b> .

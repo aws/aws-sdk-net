@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CloneStack operation.
-    /// <para>Creates a clone of a specified stack.</para>
+    /// <para>Creates a clone of a specified stack. For more information, see Clone a Stack.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CloneStack"/>
     public class CloneStackRequest : AmazonWebServiceRequest
@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private string defaultSshKeyName;
         private bool? clonePermissions;
         private List<string> cloneAppIds = new List<string>();
+        private string defaultRootDeviceType;
 
         /// <summary>
         /// The source stack ID.
@@ -104,7 +105,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// The cloned stack AWS region, such as "us-east-1". For more information about AWS regions, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
         ///  
         /// </summary>
         public string Region
@@ -166,7 +167,9 @@ namespace Amazon.OpsWorks.Model
         /// The stack AWS Identity and Access Management (IAM) role, which allows OpsWorks to work with AWS resources on your behalf. You must set this
         /// parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the OpsWorks console, it creates the
         /// role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about
-        /// IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+        /// IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note>You must set
+        /// this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service
+        /// role ARN, if you prefer, but you must do so explicitly.</note>
         ///  
         /// </summary>
         public string ServiceRoleArn
@@ -315,6 +318,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">. Use Custom
+        /// JSON to Modify the Stack Configuration JSON</a>
         ///  
         /// </summary>
         public string CustomJson
@@ -370,7 +375,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Contains the information required to retrieve an app or cookbook from a repository.
+        /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource
@@ -496,6 +503,45 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCloneAppIds()
         {
             return this.cloneAppIds.Count > 0;
+        }
+
+        /// <summary>
+        /// The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create
+        /// an instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ebs, instance-store</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string DefaultRootDeviceType
+        {
+            get { return this.defaultRootDeviceType; }
+            set { this.defaultRootDeviceType = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultRootDeviceType property
+        /// </summary>
+        /// <param name="defaultRootDeviceType">The value to set for the DefaultRootDeviceType property </param>
+        /// <returns>this instance</returns>
+        public CloneStackRequest WithDefaultRootDeviceType(string defaultRootDeviceType)
+        {
+            this.defaultRootDeviceType = defaultRootDeviceType;
+            return this;
+        }
+            
+
+        // Check to see if DefaultRootDeviceType property is set
+        internal bool IsSetDefaultRootDeviceType()
+        {
+            return this.defaultRootDeviceType != null;
         }
     }
 }

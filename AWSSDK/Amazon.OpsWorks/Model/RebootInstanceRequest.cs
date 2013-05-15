@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstance operation.
-    /// <para>Reboots a specified instance.</para>
+    /// <para>Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
     public class RebootInstanceRequest : AmazonWebServiceRequest

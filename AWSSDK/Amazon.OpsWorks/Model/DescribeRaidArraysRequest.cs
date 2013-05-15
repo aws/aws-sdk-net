@@ -34,7 +34,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> raidArrayIds = new List<string>();
 
         /// <summary>
-        /// The instance ID.
+        /// The instance ID. If you use this parameter, <c>DescribeRaidArrays</c> returns descriptions of the RAID arrays associated with the specified
+        /// instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -62,7 +63,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of RAID array IDs to be described.
+        /// An array of RAID array IDs. If you use this parameter, <c>DescribeRaidArrays</c> returns descriptions of the specified arrays. Otherwise, it
+        /// returns a description of every array.
         ///  
         /// </summary>
         public List<string> RaidArrayIds

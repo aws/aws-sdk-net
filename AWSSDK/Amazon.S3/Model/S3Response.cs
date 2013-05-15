@@ -240,6 +240,19 @@ namespace Amazon.S3.Model
 
         #endregion
 
+        #region StatusCode
+
+        /// <summary>
+        /// Gets the HTTP Status code from the service response.
+        /// </summary>
+        [XmlIgnore]
+        public HttpStatusCode StatusCode
+        {
+            get { return this.httpResponse.StatusCode; }
+        }
+
+        #endregion
+
         #region Public Methods
 
         /// <summary>

@@ -62,7 +62,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of layer IDs that specify the layers to be described.
+        /// An array of layer IDs that specify the layers to be described. If you omit this parameter, <c>DescribeLayers</c> returns a description of
+        /// every layer in the specified stack.
         ///  
         /// </summary>
         public List<string> LayerIds

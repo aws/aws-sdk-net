@@ -118,8 +118,8 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute/condition pairs. This is the conditional block for the <i>DeleteItem</i>operation. All the conditions must be met for the
         /// operation to succeed. <i>Expected</i> allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the
         /// attribute value already exists; or if the attribute value exists and has a particular value before changing it. Each item in <i>Expected</i>
-        /// represents an attribute name for Amazon DynamoDB to check, along with the following: <ul> <li> <i>Value</i>-the attribute value for Amazon
-        /// DynamoDB to check. </li> <li> <i>Exists</i>-causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul>
+        /// represents an attribute name for Amazon DynamoDB to check, along with the following: <ul> <li> <i>Value</i> - The attribute value for Amazon
+        /// DynamoDB to check. </li> <li> <i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul>
         /// <li> If <i>Exists</i> is <c>true</c>, Amazon DynamoDB will check to see if that attribute value already exists in the table. If it is found,
         /// then the operation succeeds. If it is not found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If
         /// <i>Exists</i> is <c>false</c>, Amazon DynamoDB assumes that the attribute value does <i>not</i> exist in the table. If in fact the value
@@ -162,8 +162,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were deleted. For <i>DeleteItem</i>, the valid
-        /// values are: <ul> <li> <c>NONE</c>-(default) If <i>ReturnValues</i> is not specified, or if its value is <c>NONE</c>, then nothing is
-        /// returned. </li> <li> <c>ALL_OLD</c>-The content of the old item is returned. </li> </ul>
+        /// values are: <ul> <li> <c>NONE</c> - If <i>ReturnValues</i> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This
+        /// is the default for <i>ReturnValues</i>.) </li> <li> <c>ALL_OLD</c> - The content of the old item is returned. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -200,8 +200,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Determines whether to include consumed capacity information in the output. If this is set to <c>TOTAL</c>, then this information is shown in
-        /// the output; otherwise, the consumed capacity information is not shown.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -238,9 +238,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Indicates whether to return statistics about item collections, if any, that were modified during the operation. The default for
-        /// <i>ReturnItemCollectionMetrics</i> is <c>NONE</c>, meaning that no statistics will be returned. To obtain the statistics, set
-        /// <i>ReturnItemCollectionMetrics</i> to <c>SIZE</c>.
+        /// If set to <c>SIZE</c>, statistics about item collections, if any, that were modified during the operation are returned in the response. If
+        /// set to <c>NONE</c> (the default), no statistics are returned..
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -37,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private string hostname;
         private string os;
         private string sshKeyName;
+        private string architecture;
 
         /// <summary>
         /// The instance ID.
@@ -112,8 +113,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance type, which can be one of the following: <ul> <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li> <li>m1.xlarge</li>
-        /// <li>c1.medium</li> <li>c1.xlarge</li> <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+        /// The instance type. OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values
+        /// that you use to specify the various types are in the API Name column of the Available Instance Types table.
         ///  
         /// </summary>
         public string InstanceType
@@ -141,7 +143,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's auto scaling type, which has three possible values: <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected by
+        /// The instance's auto scaling type, which has three possible values: <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
         /// auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started and stopped based on a specified
         /// schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
         /// </ul>
@@ -151,7 +153,7 @@ namespace Amazon.OpsWorks.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling</description>
+        ///         <description>load, timer</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -262,6 +264,45 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSshKeyName()
         {
             return this.sshKeyName != null;
+        }
+
+        /// <summary>
+        /// The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported
+        /// by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+        /// Types</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>x86_64, i386</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Architecture
+        {
+            get { return this.architecture; }
+            set { this.architecture = value; }
+        }
+
+        /// <summary>
+        /// Sets the Architecture property
+        /// </summary>
+        /// <param name="architecture">The value to set for the Architecture property </param>
+        /// <returns>this instance</returns>
+        public UpdateInstanceRequest WithArchitecture(string architecture)
+        {
+            this.architecture = architecture;
+            return this;
+        }
+            
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this.architecture != null;
         }
     }
 }

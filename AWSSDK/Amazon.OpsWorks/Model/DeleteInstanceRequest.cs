@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
-    /// <para>Deletes a specified instance.</para>
+    /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see Deleting Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteInstance"/>
     public class DeleteInstanceRequest : AmazonWebServiceRequest

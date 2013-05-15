@@ -122,6 +122,16 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AvailabilityZone");
                     writer.Write(createInstanceRequest.AvailabilityZone);
                 }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetArchitecture()) 
+                {
+                    writer.WritePropertyName("Architecture");
+                    writer.Write(createInstanceRequest.Architecture);
+                }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetRootDeviceType()) 
+                {
+                    writer.WritePropertyName("RootDeviceType");
+                    writer.Write(createInstanceRequest.RootDeviceType);
+                }
 
                 writer.WriteObjectEnd();
                 

@@ -290,9 +290,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The command type: <ul> <li>shutdown</li> <li>setup</li> <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li> <li>stop</li>
-        /// <li>restart</li> <li>undeploy</li> <li>update_dependencies</li> <li>install_dependencies</li> <li>update_custom_cookbooks</li>
-        /// <li>execute_recipes</li> </ul>
+        /// The command type: <ul> <li>deploy</li> <li>rollback</li> <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
+        /// <li>update_dependencies</li> <li>install_dependencies</li> <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
         ///  
         /// </summary>
         public string Type

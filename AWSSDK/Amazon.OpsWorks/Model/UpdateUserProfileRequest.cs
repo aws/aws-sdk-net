@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserProfile operation.
-    /// <para>Updates a specified user's SSH name and public key.</para>
+    /// <para>Updates a specified user profile.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
     public class UpdateUserProfileRequest : AmazonWebServiceRequest

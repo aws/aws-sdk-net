@@ -83,11 +83,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("LayerId");
                     writer.Write(describeInstancesRequest.LayerId);
                 }
-                if (describeInstancesRequest != null && describeInstancesRequest.IsSetAppId()) 
-                {
-                    writer.WritePropertyName("AppId");
-                    writer.Write(describeInstancesRequest.AppId);
-                }
 
                 if (describeInstancesRequest != null && describeInstancesRequest.InstanceIds != null && describeInstancesRequest.InstanceIds.Count > 0) 
                 {

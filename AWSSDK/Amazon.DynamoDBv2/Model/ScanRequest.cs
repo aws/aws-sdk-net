@@ -29,7 +29,9 @@ namespace Amazon.DynamoDBv2.Model
     /// return fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set
     /// size limit of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
     /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
-    /// </para> <para>The result set is eventually consistent. </para>
+    /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
+    /// faster performance on large tables, applications can perform a parallel <i>Scan</i> by specifying the <i>Segment</i> and
+    /// <i>TotalSegments</i> parameters. For more information, see Parallel Scan in the <i>Amazon DynamoDB Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.Scan"/>
     public class ScanRequest : AmazonWebServiceRequest
@@ -41,6 +43,8 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string,Condition> scanFilter = new Dictionary<string,Condition>();
         private Dictionary<string,AttributeValue> exclusiveStartKey = new Dictionary<string,AttributeValue>();
         private string returnConsumedCapacity;
+        private int? totalSegments;
+        private int? segment;
 
         /// <summary>
         /// The name of the table containing the requested items.
@@ -144,7 +148,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
         /// exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the operation. For more information see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> of the <i>Amazon DynamoDB
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>.
         ///  
         /// <para>
@@ -190,9 +194,9 @@ namespace Amazon.DynamoDBv2.Model
         /// all attributes which have been projected into the index. If the index is configured to project all attributes, this is equivalent to
         /// specifying <i>ALL_ATTRIBUTES</i>. </li> <li> <c>COUNT</c>: Returns the number of matching items, rather than the matching items themselves.
         /// </li> <li> <c>SPECIFIC_ATTRIBUTES</c> : Returns only the attributes listed in <i>AttributesToGet</i>. This is equivalent to specifying
-        /// <i>AttributesToGet</i> without specifying any value for <i>Select</i>. If you are querying an index and only request attributes that are
-        /// projected into that index, the operation will consult the index and bypass the table. If any of the requested attributes are not projected
-        /// in to the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost
+        /// <i>AttributesToGet</i> without specifying any value for <i>Select</i>. If you are querying an index and request only attributes that are
+        /// projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected
+        /// into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost
         /// and latency. </li> </ul> When neither <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
         /// <c>ALL_ATTRIBUTES</c> when accessing a table, and <c>ALL_PROJECTED_ATTRIBUTES</c> when accessing an index. You cannot use both <i>Select</i>
         /// and <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is <c>SPECIFIC_ATTRIBUTES</c>. (This
@@ -235,16 +239,16 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Evaluates the scan results and returns only the desired values. Multiple conditions are treated as "AND" operations: all conditions must be
         /// met to be included in the results. Each <i>ScanConditions</i> element consists of an attribute name to compare, along with the following:
-        /// <ul> <li><i>AttributeValueList</i>-One or more values to evaluate against the supplied attribute. This list contains exactly one value,
-        /// except for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> String value comparisons for greater
-        /// than, equals, or less than are based on ASCII character code values. For example, <c>a</c> is greater than <c>A</c>, and <c>aa</c> is
-        /// greater than <c>B</c>. For a list of code values, see <a
+        /// <ul> <li><i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. This list contains exactly one value,
+        /// except for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons
+        /// are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c>
+        /// is greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
         /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
-        /// expressions. </note> </li> <li><i>ComparisonOperator</i>-A comparator for evaluating attributes. For example, equals, greater than, less
+        /// expressions. </note> </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less
         /// than, etc. Valid comparison operators for Scan: <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH |
         /// IN | BETWEEN</c> For information on specifying data types in JSON, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> of the <i>Amazon DynamoDB
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal. <i>AttributeValueList</i> can
         /// contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a
         /// different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal
@@ -316,7 +320,13 @@ namespace Amazon.DynamoDBv2.Model
         /// The primary key of the item from which to continue an earlier operation. An earlier operation might provide this value as the
         /// <i>LastEvaluatedKey</i> if that operation was interrupted before completion; either because of the result set size or because of the setting
         /// for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed back in a new request to continue the operation from that point. The data type
-        /// for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set data types are allowed.
+        /// for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set data types are allowed. If you are performing a parallel scan, the
+        /// value of <i>ExclusiveStartKey</i> must fall into the key space of the <i>Segment</i> being scanned. For example, suppose that there are two
+        /// application threads scanning a table using the following <i>Scan</i> parameters <ul> <li> Thread 0: <i>Segment</i>=0; <i>TotalSegments</i>=2
+        /// </li> <li> Thread 1: <i>Segment</i>=1; <i>TotalSegments</i>=2 </li> </ul> Now suppose that the <i>Scan</i> request for Thread 0 completed
+        /// and returned a <i>LastEvaluatedKey</i> of "X". Because "X" is part of <i>Segment</i> 0's key space, it cannot be used anywhere else in the
+        /// table. If Thread 1 were to issue another <i>Scan</i> request with an <i>ExclusiveStartKey</i> of "X", Amazon DynamoDB would throw an
+        /// <i>InputValidationError</i> because hash key "X" cannot be in <i>Segment</i> 1.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> ExclusiveStartKey
@@ -347,8 +357,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Determines whether to include consumed capacity information in the output. If this is set to <c>TOTAL</c>, then this information is shown in
-        /// the output; otherwise, the consumed capacity information is not shown.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -382,6 +392,91 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReturnConsumedCapacity()
         {
             return this.returnConsumedCapacity != null;
+        }
+
+        /// <summary>
+        /// For parallel <i>Scan</i> requests, <i>TotalSegments</i>represents the total number of segments for a table that is being scanned. Segments
+        /// are a way to logically divide a table into equally sized portions, for the duration of the <i>Scan</i> request. The value of
+        /// <i>TotalSegments</i> corresponds to the number of application "workers" (such as threads or processes) that will perform the parallel
+        /// <i>Scan</i>. For example, if you want to scan a table using four application threads, you would specify a <i>TotalSegments</i> value of 4.
+        /// The value for <i>TotalSegments</i> must be greater than or equal to 1, and less than or equal to 4096. If you specify a <i>TotalSegments</i>
+        /// value of 1, the <i>Scan</i> will be sequential rather than parallel. If you specify <i>TotalSegments</i>, you must also specify
+        /// <i>Segment</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 4096</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int TotalSegments
+        {
+            get { return this.totalSegments ?? default(int); }
+            set { this.totalSegments = value; }
+        }
+
+        /// <summary>
+        /// Sets the TotalSegments property
+        /// </summary>
+        /// <param name="totalSegments">The value to set for the TotalSegments property </param>
+        /// <returns>this instance</returns>
+        public ScanRequest WithTotalSegments(int totalSegments)
+        {
+            this.totalSegments = totalSegments;
+            return this;
+        }
+            
+
+        // Check to see if TotalSegments property is set
+        internal bool IsSetTotalSegments()
+        {
+            return this.totalSegments.HasValue;
+        }
+
+        /// <summary>
+        /// For parallel <i>Scan</i> requests, <i>Segment</i> identifies an individual segment to be scanned by an application "worker" (such as a
+        /// thread or a process). Each worker issues a <i>Scan</i> request with a distinct value for the segment it will scan. Segment IDs are
+        /// zero-based, so the first segment is always 0. For example, if you want to scan a table using four application threads, the first thread
+        /// would specify a <i>Segment</i> value of 0, the second thread would specify 1, and so on. LastEvaluatedKey returned from a parallel scan
+        /// request must be used with same Segment id in a subsequent operation. The value for <i>Segment</i> must be less than or equal to 0, and less
+        /// than the value provided for <i>TotalSegments</i>. If you specify <i>Segment</i>, you must also specify <i>TotalSegments</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>0 - 4095</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int Segment
+        {
+            get { return this.segment ?? default(int); }
+            set { this.segment = value; }
+        }
+
+        /// <summary>
+        /// Sets the Segment property
+        /// </summary>
+        /// <param name="segment">The value to set for the Segment property </param>
+        /// <returns>this instance</returns>
+        public ScanRequest WithSegment(int segment)
+        {
+            this.segment = segment;
+            return this;
+        }
+            
+
+        // Check to see if Segment property is set
+        internal bool IsSetSegment()
+        {
+            return this.segment.HasValue;
         }
     }
 }

@@ -141,8 +141,8 @@ namespace Amazon.DynamoDBv2.Model
         /// attributes, this is equivalent to specifying <i>ALL_ATTRIBUTES</i>. </li> <li> <c>COUNT</c>: Returns the number of matching items, rather
         /// than the matching items themselves. </li> <li> <c>SPECIFIC_ATTRIBUTES</c> : Returns only the attributes listed in <i>AttributesToGet</i>.
         /// This is equivalent to specifying <i>AttributesToGet</i> without specifying any value for <i>Select</i>. If you are querying an index and
-        /// only request attributes that are projected into that index, the operation will consult the index and bypass the table. If any of the
-        /// requested attributes are not projected in to the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra
+        /// request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the
+        /// requested attributes are not projected into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra
         /// fetching incurs additional throughput cost and latency. </li> </ul> When neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
         /// Amazon DynamoDB defaults to <c>ALL_ATTRIBUTES</c> when accessing a table, and <c>ALL_PROJECTED_ATTRIBUTES</c> when accessing an index. You
         /// cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is
@@ -184,9 +184,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the
-        /// requested attributes are not found, they will not appear in the result. If you are querying an index and only request attributes that are
-        /// projected into that index, the operation will consult the index and bypass the table. If any of the requested attributes are not projected
-        /// in to the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost
+        /// requested attributes are not found, they will not appear in the result. If you are querying an index and request only attributes that are
+        /// projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected
+        /// into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost
         /// and latency. You cannot use both <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the value for
         /// <i>Select</i> is <c>SPECIFIC_ATTRIBUTES</c>. (This usage is equivalent to specifying <i>AttributesToGet</i> without any value for
         /// <i>Select</i>.)
@@ -248,7 +248,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
         /// exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the operation. For more information see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> of the <i>Amazon DynamoDB
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>.
         ///  
         /// <para>
@@ -320,15 +320,15 @@ namespace Amazon.DynamoDBv2.Model
         /// hash attribute name and value as an EQ condition. You can optionally specify a second condition, referring to the index key range attribute.
         /// Multiple conditions are evaluated using "AND"; in other words, all of the conditions must be met in order for an item to appear in the
         /// results results. Each <i>KeyConditions</i> element consists of an attribute name to compare, along with the following: <ul>
-        /// <li><i>AttributeValueList</i>-One or more values to evaluate against the supplied attribute. This list contains exactly one value, except
-        /// for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> String value comparisons for greater than,
-        /// equals, or less than are based on ASCII character code values. For example, <c>a</c> is greater than <c>A</c>, and <c>aa</c> is greater than
-        /// <c>B</c>. For a list of code values, see <a
+        /// <li><i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. This list contains exactly one value, except
+        /// for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons are
+        /// numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c> is
+        /// greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
         /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
-        /// expressions. </note> </li> <li><i>ComparisonOperator</i>-A comparator for evaluating attributes. For example, equals, greater than, less
+        /// expressions. </note> </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less
         /// than, etc. Valid comparison operators for Query: <c>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</c> For information on specifying data
-        /// types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> of the
+        /// types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the
         /// <i>Amazon DynamoDB Developer Guide</i>. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal.
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an
         /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
@@ -345,11 +345,11 @@ namespace Amazon.DynamoDBv2.Model
         /// "1"]}</c>. </li> <li> <c>GT</c> : Greater than. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number,
         /// or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value
         /// does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6",
-        /// "2", "1"]}</c>. </li> <c>BEGINS_WITH</c> : checks for a prefix. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
-        /// String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set). <li>
-        /// <c>BETWEEN</c> : Greater than or equal to the first value, and less than or equal to the second value. <i>AttributeValueList</i> must
-        /// contain two <i>AttributeValue</i> elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an
+        /// "2", "1"]}</c>. </li> <li> <c>BEGINS_WITH</c> : checks for a prefix. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of
+        /// type String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set).
+        /// </li> <li> <c>BETWEEN</c> : Greater than or equal to the first value, and less than or equal to the second value. <i>AttributeValueList</i>
+        /// must contain two <i>AttributeValue</i> elements of the same type, either String, Number, or Binary (not a set). A target attribute matches
+        /// if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an
         /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
         /// does not compare to <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c> </li> </ul></li> </ul>
         ///  
@@ -383,8 +383,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Specifies ascending (true) or descending (false) traversal of the index. Amazon DynamoDB returns results reflecting the requested order
-        /// determined by the range key: If the data type is Number, the results are returned in numeric order; otherwise, the results are returned in
-        /// order of ASCII character code values. If <i>ScanIndexForward</i> is not specified, the results are returned in ascending order.
+        /// determined by the range key. If the data type is Number, the results are returned in numeric order. For String, the results are returned in
+        /// order of ASCII character code values. For Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary
+        /// values. If <i>ScanIndexForward</i> is not specified, the results are returned in ascending order.
         ///  
         /// </summary>
         public bool ScanIndexForward
@@ -446,8 +447,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Determines whether to include consumed capacity information in the output. If this is set to <c>TOTAL</c>, then this information is shown in
-        /// the output; otherwise, the consumed capacity information is not shown.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>

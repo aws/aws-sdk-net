@@ -125,6 +125,124 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                 }
 
+                if (createPipelineRequest != null) 
+                {
+                    PipelineOutputConfig contentConfig = createPipelineRequest.ContentConfig;
+                    if (contentConfig != null)
+                    {
+                        writer.WritePropertyName("ContentConfig");
+                        writer.WriteObjectStart();
+                        if (contentConfig != null && contentConfig.IsSetBucket()) 
+                        {
+                            writer.WritePropertyName("Bucket");
+                            writer.Write(contentConfig.Bucket);
+                        }
+                        if (contentConfig != null && contentConfig.IsSetStorageClass()) 
+                        {
+                            writer.WritePropertyName("StorageClass");
+                            writer.Write(contentConfig.StorageClass);
+                        }
+
+                        if (contentConfig != null && contentConfig.Permissions != null && contentConfig.Permissions.Count > 0)
+                        {
+                            List<Permission> permissionsList = contentConfig.Permissions;
+                            writer.WritePropertyName("Permissions");
+                            writer.WriteArrayStart();
+
+                            foreach (Permission permissionsListValue in permissionsList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (permissionsListValue != null && permissionsListValue.IsSetGranteeType()) 
+                                {
+                                    writer.WritePropertyName("GranteeType");
+                                    writer.Write(permissionsListValue.GranteeType);
+                                }
+                                if (permissionsListValue != null && permissionsListValue.IsSetGrantee()) 
+                                {
+                                    writer.WritePropertyName("Grantee");
+                                    writer.Write(permissionsListValue.Grantee);
+                                }
+
+                                if (permissionsListValue != null && permissionsListValue.Access != null && permissionsListValue.Access.Count > 0) 
+                                {
+                                    List<string> accessList = permissionsListValue.Access;
+                                    writer.WritePropertyName("Access");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string accessListValue in accessList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(accessListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
+
+                if (createPipelineRequest != null) 
+                {
+                    PipelineOutputConfig thumbnailConfig = createPipelineRequest.ThumbnailConfig;
+                    if (thumbnailConfig != null)
+                    {
+                        writer.WritePropertyName("ThumbnailConfig");
+                        writer.WriteObjectStart();
+                        if (thumbnailConfig != null && thumbnailConfig.IsSetBucket()) 
+                        {
+                            writer.WritePropertyName("Bucket");
+                            writer.Write(thumbnailConfig.Bucket);
+                        }
+                        if (thumbnailConfig != null && thumbnailConfig.IsSetStorageClass()) 
+                        {
+                            writer.WritePropertyName("StorageClass");
+                            writer.Write(thumbnailConfig.StorageClass);
+                        }
+
+                        if (thumbnailConfig != null && thumbnailConfig.Permissions != null && thumbnailConfig.Permissions.Count > 0)
+                        {
+                            List<Permission> permissionsList = thumbnailConfig.Permissions;
+                            writer.WritePropertyName("Permissions");
+                            writer.WriteArrayStart();
+
+                            foreach (Permission permissionsListValue in permissionsList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (permissionsListValue != null && permissionsListValue.IsSetGranteeType()) 
+                                {
+                                    writer.WritePropertyName("GranteeType");
+                                    writer.Write(permissionsListValue.GranteeType);
+                                }
+                                if (permissionsListValue != null && permissionsListValue.IsSetGrantee()) 
+                                {
+                                    writer.WritePropertyName("Grantee");
+                                    writer.Write(permissionsListValue.Grantee);
+                                }
+
+                                if (permissionsListValue != null && permissionsListValue.Access != null && permissionsListValue.Access.Count > 0) 
+                                {
+                                    List<string> accessList = permissionsListValue.Access;
+                                    writer.WritePropertyName("Access");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string accessListValue in accessList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(accessListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
+
                 writer.WriteObjectEnd();
                 
                 string snippet = stringWriter.ToString();

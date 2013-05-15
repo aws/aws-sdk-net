@@ -39,7 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^AAC$)</description>
+        ///         <description>(^AAC$)|(^vorbis$)</description>
         ///     </item>
         /// </list>
         /// </para>

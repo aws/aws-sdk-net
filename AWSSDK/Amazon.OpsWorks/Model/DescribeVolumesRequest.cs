@@ -35,7 +35,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> volumeIds = new List<string>();
 
         /// <summary>
-        /// The instance ID.
+        /// The instance ID. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the volumes associated with the specified
+        /// instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -63,7 +64,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The RAID array ID.
+        /// The RAID array ID. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the volumes associated with the specified RAID
+        /// array.
         ///  
         /// </summary>
         public string RaidArrayId
@@ -91,7 +93,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Am array of volume IDs to be described.
+        /// Am array of volume IDs. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the specified volumes. Otherwise, it
+        /// returns a description of every volume.
         ///  
         /// </summary>
         public List<string> VolumeIds

@@ -38,9 +38,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Represents one or more values to evaluate against the supplied attribute. This list contains exactly one value, except for a <c>BETWEEN</c>
-        /// or <c>IN</c> comparison, in which case the list contains two values. <note> String value comparisons for greater than, equals, or less than
-        /// are based on ASCII character code values. For example, <c>a</c> is greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list
-        /// of code values, see <a
+        /// or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons are numeric. String value
+        /// comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c> is greater than <c>A</c>,
+        /// and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
         /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
         /// expressions. </note>
@@ -91,7 +91,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents a comparator for evaluating attributes. For example, equals, greater than, less than, etc. Valid comparison operators for Query:
         /// <c>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</c> Valid comparison operators for Scan: <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL
         /// | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</c> For information on specifying data types in JSON, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> of the <i>Amazon DynamoDB
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal. <i>AttributeValueList</i> can
         /// contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a
         /// different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal

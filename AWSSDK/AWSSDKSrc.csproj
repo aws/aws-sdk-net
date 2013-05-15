@@ -3282,6 +3282,7 @@
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResult.cs" />
+    <Compile Include="Amazon.EC2\Util\EC2Metadata.cs" />
     <Compile Include="Amazon.EC2\Util\ImageUtilities.cs" />
     <Compile Include="Amazon.EC2\Util\LaunchNATInstanceRequest.cs" />
     <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsRequest.cs" />
@@ -4944,6 +4945,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobOutput.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobPlaylist.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobResult.cs" />
@@ -4959,6 +4961,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\DeletePresetRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\DeletePresetResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\DeletePresetResult.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\IncompatibleVersionException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\InternalServiceException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\AudioParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobRequestMarshaller.cs" />
@@ -4995,7 +4998,10 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ListPresetsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ListPresetsResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\NotificationsUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PermissionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PipelineOutputConfigUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PipelineUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PlaylistUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PresetUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ReadJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ReadJobResponseUnmarshaller.cs" />
@@ -5013,6 +5019,9 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineStatusRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineStatusResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineStatusResultUnmarshaller.cs" />
@@ -5034,7 +5043,10 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\ListPresetsResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ListPresetsResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Notifications.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Permission.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Pipeline.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\PipelineOutputConfig.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Playlist.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Preset.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ReadJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ReadJobResponse.cs" />
@@ -5054,6 +5066,9 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsResult.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineRequest.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineResponse.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineStatusRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineStatusResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineStatusResult.cs" />
@@ -6379,6 +6394,8 @@
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksConfig.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksException.cs" />
     <Compile Include="Amazon.OpsWorks\Model\App.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AttachElasticLoadBalancerRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AttachElasticLoadBalancerResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\AutoScalingThresholds.cs" />
     <Compile Include="Amazon.OpsWorks\Model\CloneStackRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\CloneStackResponse.cs" />
@@ -6426,6 +6443,9 @@
     <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeElasticIpsResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticLoadBalancersRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticLoadBalancersResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeElasticLoadBalancersResult.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeInstancesResult.cs" />
@@ -6456,12 +6476,17 @@
     <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeVolumesResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DetachElasticLoadBalancerRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DetachElasticLoadBalancerResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\ElasticIp.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\ElasticLoadBalancer.cs" />
     <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\GetHostnameSuggestionResult.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Instance.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AppUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AttachElasticLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AttachElasticLoadBalancerResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AutoScalingThresholdsUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackResponseUnmarshaller.cs" />
@@ -6509,6 +6534,9 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticIpsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticLoadBalancersRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticLoadBalancersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeElasticLoadBalancersResultUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeInstancesResultUnmarshaller.cs" />
@@ -6539,7 +6567,10 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeVolumesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DetachElasticLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DetachElasticLoadBalancerResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ElasticIpUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ElasticLoadBalancerUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionResultUnmarshaller.cs" />

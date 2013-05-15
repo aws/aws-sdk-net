@@ -26,7 +26,8 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the StopInstance operation.
     /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
-    /// instance. You can stop an Amazon EBS-backed instance without losing data.</para>
+    /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see Starting, Stopping, and Rebooting
+    /// Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
     public class StopInstanceRequest : AmazonWebServiceRequest

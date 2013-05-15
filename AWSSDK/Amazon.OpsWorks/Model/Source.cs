@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the information required to retrieve an app or cookbook from a repository.</para>
+    /// <para>Contains the information required to retrieve an app or cookbook from a repository. For more information, see Creating Apps or Custom
+    /// Recipes and Cookbooks.</para>
     /// </summary>
     public class Source
     {
@@ -99,7 +100,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The user name.
+        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Username</c> to the appropriate AWS access key.</li>
+        /// <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Username</c> to the user name.</li> </ul>
         ///  
         /// </summary>
         public string Username
@@ -127,7 +129,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The repository's password.
+        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Password</c> to the appropriate AWS secret key.</li>
+        /// <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Password</c> to the password.</li> </ul>
         ///  
         /// </summary>
         public string Password

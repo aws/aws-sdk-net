@@ -201,6 +201,24 @@
                 continue;
               }
   
+              if (context.TestExpression("Architecture", targetDepth))
+              {
+                instance.Architecture = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("RootDeviceType", targetDepth))
+              {
+                instance.RootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("RootDeviceVolumeId", targetDepth))
+              {
+                instance.RootDeviceVolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {

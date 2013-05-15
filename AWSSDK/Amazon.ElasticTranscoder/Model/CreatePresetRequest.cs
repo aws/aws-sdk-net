@@ -126,7 +126,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^mp4$</description>
+        ///         <description>(^mp4$)|(^ts$)|(^webm$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -184,7 +184,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// A section of the request body that specifies the audio parameters
+        /// A section of the request body that specifies the audio parameters.
         ///  
         /// </summary>
         public AudioParameters Audio

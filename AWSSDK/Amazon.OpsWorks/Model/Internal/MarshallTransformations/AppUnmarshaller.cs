@@ -57,6 +57,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Shortname", targetDepth))
+              {
+                app.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Name", targetDepth))
               {
                 app.Name = StringUnmarshaller.GetInstance().Unmarshall(context);

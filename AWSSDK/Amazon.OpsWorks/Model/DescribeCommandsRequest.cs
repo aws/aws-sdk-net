@@ -35,7 +35,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> commandIds = new List<string>();
 
         /// <summary>
-        /// The deployment ID.
+        /// The deployment ID. If you include this parameter, <c>DescribeCommands</c> returns a description of the commands associated with the
+        /// specified deployment.
         ///  
         /// </summary>
         public string DeploymentId
@@ -63,7 +64,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance ID.
+        /// The instance ID. If you include this parameter, <c>DescribeCommands</c> returns a description of the commands associated with the specified
+        /// instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -91,7 +93,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of IDs for the commands to be described.
+        /// An array of command IDs. If you include this parameter, <c>DescribeCommands</c> returns a description of the specified commands. Otherwise,
+        /// it returns a description of every command.
         ///  
         /// </summary>
         public List<string> CommandIds

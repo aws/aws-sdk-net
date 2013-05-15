@@ -147,8 +147,95 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("PresetId");
                             writer.Write(output.PresetId);
                         }
+                        if (output != null && output.IsSetSegmentDuration()) 
+                        {
+                            writer.WritePropertyName("SegmentDuration");
+                            writer.Write(output.SegmentDuration);
+                        }
                         writer.WriteObjectEnd();
                     }
+                }
+
+                if (createJobRequest != null && createJobRequest.Outputs != null && createJobRequest.Outputs.Count > 0)
+                {
+                    List<CreateJobOutput> outputsList = createJobRequest.Outputs;
+                    writer.WritePropertyName("Outputs");
+                    writer.WriteArrayStart();
+
+                    foreach (CreateJobOutput outputsListValue in outputsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (outputsListValue != null && outputsListValue.IsSetKey()) 
+                        {
+                            writer.WritePropertyName("Key");
+                            writer.Write(outputsListValue.Key);
+                        }
+                        if (outputsListValue != null && outputsListValue.IsSetThumbnailPattern()) 
+                        {
+                            writer.WritePropertyName("ThumbnailPattern");
+                            writer.Write(outputsListValue.ThumbnailPattern);
+                        }
+                        if (outputsListValue != null && outputsListValue.IsSetRotate()) 
+                        {
+                            writer.WritePropertyName("Rotate");
+                            writer.Write(outputsListValue.Rotate);
+                        }
+                        if (outputsListValue != null && outputsListValue.IsSetPresetId()) 
+                        {
+                            writer.WritePropertyName("PresetId");
+                            writer.Write(outputsListValue.PresetId);
+                        }
+                        if (outputsListValue != null && outputsListValue.IsSetSegmentDuration()) 
+                        {
+                            writer.WritePropertyName("SegmentDuration");
+                            writer.Write(outputsListValue.SegmentDuration);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+                if (createJobRequest != null && createJobRequest.IsSetOutputKeyPrefix()) 
+                {
+                    writer.WritePropertyName("OutputKeyPrefix");
+                    writer.Write(createJobRequest.OutputKeyPrefix);
+                }
+
+                if (createJobRequest != null && createJobRequest.Playlists != null && createJobRequest.Playlists.Count > 0)
+                {
+                    List<CreateJobPlaylist> playlistsList = createJobRequest.Playlists;
+                    writer.WritePropertyName("Playlists");
+                    writer.WriteArrayStart();
+
+                    foreach (CreateJobPlaylist playlistsListValue in playlistsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (playlistsListValue != null && playlistsListValue.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(playlistsListValue.Name);
+                        }
+                        if (playlistsListValue != null && playlistsListValue.IsSetFormat()) 
+                        {
+                            writer.WritePropertyName("Format");
+                            writer.Write(playlistsListValue.Format);
+                        }
+
+                        if (playlistsListValue != null && playlistsListValue.OutputKeys != null && playlistsListValue.OutputKeys.Count > 0) 
+                        {
+                            List<string> outputKeysList = playlistsListValue.OutputKeys;
+                            writer.WritePropertyName("OutputKeys");
+                            writer.WriteArrayStart();
+
+                            foreach (string outputKeysListValue in outputKeysList) 
+                            { 
+                                writer.Write(StringUtils.FromString(outputKeysListValue));
+                            }
+
+                            writer.WriteArrayEnd();
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

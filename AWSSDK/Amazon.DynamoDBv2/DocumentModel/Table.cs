@@ -1197,6 +1197,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Select = currentConfig.Select
             };
 
+            if (currentConfig.TotalSegments != 0)
+            {
+                ret.TotalSegments = currentConfig.TotalSegments;
+                ret.Segment = currentConfig.Segment;
+            }
+
             return ret;
         }
 

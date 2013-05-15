@@ -117,6 +117,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("SshKeyName");
                     writer.Write(updateInstanceRequest.SshKeyName);
                 }
+                if (updateInstanceRequest != null && updateInstanceRequest.IsSetArchitecture()) 
+                {
+                    writer.WritePropertyName("Architecture");
+                    writer.Write(updateInstanceRequest.Architecture);
+                }
 
                 writer.WriteObjectEnd();
                 

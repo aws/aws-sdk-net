@@ -195,8 +195,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Determines whether to include consumed capacity information in the output. If this is set to <c>TOTAL</c>, then this information is shown in
-        /// the output; otherwise, the consumed capacity information is not shown.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>

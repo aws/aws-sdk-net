@@ -31,9 +31,10 @@ namespace Amazon.DynamoDBv2.Model
         private List<string> nonKeyAttributes = new List<string>();
 
         /// <summary>
-        /// Represents the set of attributes that are projected into the index: <ul> <li> <c>ALL</c>-All of the table attributes are projected into the
-        /// index. </li> <li> <c>KEYS_ONLY</c>-Only the index and primary keys are projected into the index. </li> <li> <c>INCLUDE</c>-Only the
-        /// specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>. </li> </ul>
+        /// Represents the set of attributes that are projected into the index: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are
+        /// projected into the index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of
+        /// projected attributes are in <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the index. </li>
+        /// </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,7 +71,9 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the non-key attribute names which will be projected into the index.
+        /// Represents the non-key attribute names which will be projected into the index. The total count of attributes specified in
+        /// <i>NonKeyAttributes</i>, summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two
+        /// different indexes, this counts as two distinct attributes when determining the total.
         ///  
         /// <para>
         /// <b>Constraints:</b>

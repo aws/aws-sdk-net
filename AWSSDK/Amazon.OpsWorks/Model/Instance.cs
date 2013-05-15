@@ -48,6 +48,9 @@ namespace Amazon.OpsWorks.Model
         private string sshHostDsaKeyFingerprint;
         private string createdAt;
         private string lastServiceErrorId;
+        private string architecture;
+        private string rootDeviceType;
+        private string rootDeviceVolumeId;
 
         /// <summary>
         /// The instance ID.
@@ -252,8 +255,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance type, which can be one of the following: <ul> <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li> <li>m1.xlarge</li>
-        /// <li>c1.medium</li> <li>c1.xlarge</li> <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+        /// The instance type. OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values
+        /// that specify the various types are in the API Name column of the Available Instance Types table.
         ///  
         /// </summary>
         public string InstanceType
@@ -508,7 +512,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic IP address.
+        /// The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.
         ///  
         /// </summary>
         public string ElasticIp
@@ -536,7 +540,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's auto scaling type, which has three possible values: <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected by
+        /// The instance's auto scaling type, which has three possible values: <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
         /// auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started and stopped based on a specified
         /// schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
         /// </ul>
@@ -546,7 +550,7 @@ namespace Amazon.OpsWorks.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling</description>
+        ///         <description>load, timer</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -688,7 +692,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The ID of the last service error. Call <a>DescribeServiceErrors</a> for details.
+        /// The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
         ///  
         /// </summary>
         public string LastServiceErrorId
@@ -713,6 +717,109 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetLastServiceErrorId()
         {
             return this.lastServiceErrorId != null;
+        }
+
+        /// <summary>
+        /// The instance architecture, "i386" or "x86_64".
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>x86_64, i386</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Architecture
+        {
+            get { return this.architecture; }
+            set { this.architecture = value; }
+        }
+
+        /// <summary>
+        /// Sets the Architecture property
+        /// </summary>
+        /// <param name="architecture">The value to set for the Architecture property </param>
+        /// <returns>this instance</returns>
+        public Instance WithArchitecture(string architecture)
+        {
+            this.architecture = architecture;
+            return this;
+        }
+            
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this.architecture != null;
+        }
+
+        /// <summary>
+        /// The instance root device type. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ebs, instance-store</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string RootDeviceType
+        {
+            get { return this.rootDeviceType; }
+            set { this.rootDeviceType = value; }
+        }
+
+        /// <summary>
+        /// Sets the RootDeviceType property
+        /// </summary>
+        /// <param name="rootDeviceType">The value to set for the RootDeviceType property </param>
+        /// <returns>this instance</returns>
+        public Instance WithRootDeviceType(string rootDeviceType)
+        {
+            this.rootDeviceType = rootDeviceType;
+            return this;
+        }
+            
+
+        // Check to see if RootDeviceType property is set
+        internal bool IsSetRootDeviceType()
+        {
+            return this.rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// The root device volume ID.
+        ///  
+        /// </summary>
+        public string RootDeviceVolumeId
+        {
+            get { return this.rootDeviceVolumeId; }
+            set { this.rootDeviceVolumeId = value; }
+        }
+
+        /// <summary>
+        /// Sets the RootDeviceVolumeId property
+        /// </summary>
+        /// <param name="rootDeviceVolumeId">The value to set for the RootDeviceVolumeId property </param>
+        /// <returns>this instance</returns>
+        public Instance WithRootDeviceVolumeId(string rootDeviceVolumeId)
+        {
+            this.rootDeviceVolumeId = rootDeviceVolumeId;
+            return this;
+        }
+            
+
+        // Check to see if RootDeviceVolumeId property is set
+        internal bool IsSetRootDeviceVolumeId()
+        {
+            return this.rootDeviceVolumeId != null;
         }
     }
 }

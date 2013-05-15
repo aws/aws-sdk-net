@@ -32,11 +32,10 @@ namespace Amazon.OpsWorks.Model
     {
         private string stackId;
         private string layerId;
-        private string appId;
         private List<string> instanceIds = new List<string>();
 
         /// <summary>
-        /// A stack ID.
+        /// A stack ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions of the instances associated with the specified stack.
         ///  
         /// </summary>
         public string StackId
@@ -64,7 +63,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A layer ID.
+        /// A layer ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions of the instances associated with the specified layer.
         ///  
         /// </summary>
         public string LayerId
@@ -92,35 +91,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An app ID.
-        ///  
-        /// </summary>
-        public string AppId
-        {
-            get { return this.appId; }
-            set { this.appId = value; }
-        }
-
-        /// <summary>
-        /// Sets the AppId property
-        /// </summary>
-        /// <param name="appId">The value to set for the AppId property </param>
-        /// <returns>this instance</returns>
-        public DescribeInstancesRequest WithAppId(string appId)
-        {
-            this.appId = appId;
-            return this;
-        }
-            
-
-        // Check to see if AppId property is set
-        internal bool IsSetAppId()
-        {
-            return this.appId != null;
-        }
-
-        /// <summary>
-        /// An array of instance IDs to be described.
+        /// An array of instance IDs to be described. If you use this parameter, <c>DescribeInstances</c> returns a description of the specified
+        /// instances. Otherwise, it returns a description of every instance.
         ///  
         /// </summary>
         public List<string> InstanceIds

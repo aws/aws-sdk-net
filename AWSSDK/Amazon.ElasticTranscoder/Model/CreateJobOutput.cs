@@ -30,6 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string thumbnailPattern;
         private string rotate;
         private string presetId;
+        private string segmentDuration;
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -121,7 +122,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following
-        /// values: <c>auto</c>, <c>0</c>, <c>90</c>, <c>180</c>, <c>270</c> The value <c>auto</c> generally works only if the file that you're
+        /// values: <c>auto</c>, <c>0</c>, <c>90</c>, <c>180</c>, <c>270</c>. The value <c>auto</c> generally works only if the file that you're
         /// transcoding contains rotation metadata.
         ///  
         /// <para>
@@ -194,6 +195,44 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPresetId()
         {
             return this.presetId != null;
+        }
+
+        /// <summary>
+        /// If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c> is ts (MPEG-TS), SegmentDuration is the duration of each
+        /// .ts file in seconds. The range of valid values is 1 to 60 seconds.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{1,5}([.]\d{0,5})?$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string SegmentDuration
+        {
+            get { return this.segmentDuration; }
+            set { this.segmentDuration = value; }
+        }
+
+        /// <summary>
+        /// Sets the SegmentDuration property
+        /// </summary>
+        /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
+        /// <returns>this instance</returns>
+        public CreateJobOutput WithSegmentDuration(string segmentDuration)
+        {
+            this.segmentDuration = segmentDuration;
+            return this;
+        }
+            
+
+        // Check to see if SegmentDuration property is set
+        internal bool IsSetSegmentDuration()
+        {
+            return this.segmentDuration != null;
         }
     }
 }

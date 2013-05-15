@@ -91,7 +91,7 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput
-        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> of the <i>Amazon DynamoDB
+        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>.
         ///  
         /// <para>

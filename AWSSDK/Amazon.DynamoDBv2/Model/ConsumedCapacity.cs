@@ -22,7 +22,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// <para>The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-    /// returned if it was asked for in the request. For more information, see Provisioned Throughput of the <i>Amazon DynamoDB Developer Guide</i>
+    /// returned if it was asked for in the request. For more information, see Provisioned Throughput in the <i>Amazon DynamoDB Developer Guide</i>
     /// .</para>
     /// </summary>
     public class ConsumedCapacity

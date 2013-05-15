@@ -25,7 +25,10 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLayer operation.
-    /// <para>Creates a layer.</para>
+    /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
+    /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
+    /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
+    /// so you can call CreateLayer as many times as you like for that layer type.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
     public class CreateLayerRequest : AmazonWebServiceRequest
@@ -72,8 +75,20 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer type. A stack cannot have more than one layer of the same type.
+        /// The layer type. A stack cannot have more than one layer of the same type. This parameter must be set to one of the following: <ul> <li>lb:
+        /// An HAProxy layer</li> <li>web: A Static Web Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App Server
+        /// layer</li> <li>nodejs-app: A Node.js App Server layer</li> <li>memcached: A Memcached layer</li> <li>db-master: A MySQL layer</li>
+        /// <li>monitoring-master: A Ganglia layer</li> <li>custom: A custom layer</li> </ul>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public string Type
         {

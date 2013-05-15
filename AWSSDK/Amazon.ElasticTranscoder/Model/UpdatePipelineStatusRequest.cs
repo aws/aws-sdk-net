@@ -74,15 +74,15 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The new status of the pipeline: <ul> <li> <c>active</c>: Enable the pipeline, so it starts processing jobs. </li> <li> <c>paused</c>:
-        /// Disable the pipeline, so it stops processing jobs. </li> </ul>
+        /// The desired status of the pipeline: <ul> <li> <c>Active</c>: The pipeline is processing jobs.</li> <li> <c>Paused</c>: The pipeline is not
+        /// currently processing jobs.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^Active$)|(^Paused$)|(^Hidden$)</description>
+        ///         <description>(^Active$)|(^Paused$)</description>
         ///     </item>
         /// </list>
         /// </para>

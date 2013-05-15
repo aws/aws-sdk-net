@@ -154,7 +154,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^mp4$</description>
+        ///         <description>(^mp4$)|(^ts$)|(^webm$)</description>
         ///     </item>
         /// </list>
         /// </para>

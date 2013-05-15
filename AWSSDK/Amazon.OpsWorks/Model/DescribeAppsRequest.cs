@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> appIds = new List<string>();
 
         /// <summary>
-        /// The app stack ID. <!-- Could this be more than one stack ID for more than one app? Or is it 'An array of app stack IDs.'? -->
+        /// The app stack ID. If you use this parameter, <c>DescribeApps</c> returns a description of the apps in the specified stack.
         ///  
         /// </summary>
         public string StackId
@@ -62,7 +62,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of app IDs for the apps to be described.
+        /// An array of app IDs for the apps to be described. If you use this parameter, <c>DescribeApps</c> returns a description of the specified
+        /// apps. Otherwise, it returns a description of every app.
         ///  
         /// </summary>
         public List<string> AppIds

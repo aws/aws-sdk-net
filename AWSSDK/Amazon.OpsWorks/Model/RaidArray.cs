@@ -262,7 +262,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The array's AWS Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// The array's Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         ///  
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePermissions operation.
-    /// <para>Describes the permissions for a specified stack. You must specify at least one of the two request values.</para>
+    /// <para>Describes the permissions for a specified stack.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribePermissions"/>
     public class DescribePermissionsRequest : AmazonWebServiceRequest

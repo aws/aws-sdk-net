@@ -33,7 +33,9 @@
         public Job Unmarshall(JsonUnmarshallerContext context)
         {
             Job job = new Job();
-          
+          job.Outputs = null;
+                        job.Playlists = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -64,6 +66,54 @@
               if (context.TestExpression("Output", targetDepth))
               {
                 job.Output = JobOutputUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Outputs", targetDepth))
+              {
+                job.Outputs = new List<JobOutput>();
+                        JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     job.Outputs.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("OutputKeyPrefix", targetDepth))
+              {
+                job.OutputKeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Playlists", targetDepth))
+              {
+                job.Playlists = new List<Playlist>();
+                        PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     job.Playlists.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("Status", targetDepth))
+              {
+                job.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

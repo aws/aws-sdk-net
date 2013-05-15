@@ -276,6 +276,16 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("ReturnConsumedCapacity");
                     writer.Write(scanRequest.ReturnConsumedCapacity);
                 }
+                if (scanRequest != null && scanRequest.IsSetTotalSegments()) 
+                {
+                    writer.WritePropertyName("TotalSegments");
+                    writer.Write(scanRequest.TotalSegments);
+                }
+                if (scanRequest != null && scanRequest.IsSetSegment()) 
+                {
+                    writer.WritePropertyName("Segment");
+                    writer.Write(scanRequest.Segment);
+                }
 
                 writer.WriteObjectEnd();
                 

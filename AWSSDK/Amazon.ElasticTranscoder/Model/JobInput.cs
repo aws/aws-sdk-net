@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>Information about the file that you're transcoding.</para>
     /// </summary>
     public class JobInput
     {
@@ -114,16 +114,14 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The resolution, in pixels, of the input file. If you want Elastic Transcoder to automatically detect the resolution of the input file,
-        /// specify <c>auto</c>. If you want to specify the resolution for the input file, enter values in the format <i>width in pixels</i> by
-        /// <i>height in pixels</i>. If you specify a value other than <c>auto</c>, Elastic Transcoder disables automatic detection of the resolution.
+        /// This value must be <c>auto</c>, which causes Elastic Transcoder to automatically detect the resolution of the input file.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^\d+x\d+$)</description>
+        ///         <description>(^auto$)|(^\d{1,5}x\d{1,5}$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -241,7 +239,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^vob$)|(^wav$)|(^webm$)</description>
+        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)</description>
         ///     </item>
         /// </list>
         /// </para>

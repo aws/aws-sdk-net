@@ -19,6 +19,7 @@ using System.IO;
 using System.Net;
 using Amazon.DynamoDB.Model;
 using Amazon.Runtime;
+using System.Linq;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -275,6 +276,13 @@ namespace Amazon.DynamoDB.DocumentModel
     /// </summary>
     internal class MultiBatchWrite
     {
+        private static KeyComparer keyComparer = new KeyComparer();
+
+        /// <summary>
+        /// Map which stores tables by its name.
+        /// </summary>
+        private Dictionary<string, Table> tableMap = new Dictionary<string, Table>(StringComparer.Ordinal);
+
         /// <summary>
         /// Maximum number of items that can be sent in a single BatchWrite request
         /// </summary>
@@ -301,11 +309,11 @@ namespace Amazon.DynamoDB.DocumentModel
             if (Batches == null || Batches.Count == 0)
                 return;
 
-            Dictionary<string, QuickList<WriteRequest>> writeRequestsMap = ConvertBatches(batches);
+            Dictionary<string, QuickList<WriteRequestDocument>> writeRequestsMap = ConvertBatches(batches);
             Table targetTable = this.Batches[0].TargetTable;
             while (true)
             {
-                Dictionary<string, QuickList<WriteRequest>> nextSet = GetNextWriteItems(ref writeRequestsMap, MaxItemsPerCall);
+                Dictionary<string, QuickList<WriteRequestDocument>> nextSet = GetNextWriteItems(ref writeRequestsMap, MaxItemsPerCall);
                 if (nextSet.Count == 0)
                     break;
 
@@ -313,16 +321,17 @@ namespace Amazon.DynamoDB.DocumentModel
             }
         }
 
-        private void SendSet(Dictionary<string, QuickList<WriteRequest>> set, Table targetTable, bool isAsync)
+        private void SendSet(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable, bool isAsync)
         {
-            BatchWriteItemRequest request = ConstructRequest(set, targetTable, isAsync);
+            Dictionary<Key, Document> documentMap = null;
+            BatchWriteItemRequest request = ConstructRequest(set, targetTable, out documentMap, isAsync);
             if (request.RequestItems.Count == 0)
                 return;
 
             bool shouldTrySmallerRequest = false;
             try
             {
-                CallUntilCompletion(request, targetTable.DDBClient);
+                CallUntilCompletion(request, documentMap, targetTable.DDBClient);
             }
             catch (AmazonDynamoDBException addbex)
             {
@@ -361,16 +370,31 @@ namespace Amazon.DynamoDB.DocumentModel
             return totalWrites;
         }
 
-        private BatchWriteItemRequest ConstructRequest(Dictionary<string, QuickList<WriteRequest>> writeItems, Table targetTable, bool isAsync)
+        private BatchWriteItemRequest ConstructRequest(Dictionary<string, QuickList<WriteRequestDocument>> writeItems, Table targetTable, out Dictionary<Key, Document> documentMap, bool isAsync)
         {
+            documentMap = new Dictionary<Key, Document>(keyComparer);
             BatchWriteItemRequest request = new BatchWriteItemRequest();
+
             foreach (var writeItem in writeItems)
             {
                 string tableName = writeItem.Key;
-                List<WriteRequest> requestItems = writeItem.Value.GetItems();
+                List<WriteRequestDocument> requestItems = writeItem.Value.GetItems();
                 if (requestItems != null && requestItems.Count > 0)
                 {
-                    request.RequestItems[tableName] = requestItems;
+                    var table = tableMap[tableName];
+                    var requestList = new List<WriteRequest>();
+
+                    foreach (var item in requestItems)
+                    {
+                        requestList.Add(item.WriteRequest);
+                        // Add document corresponding to the Put request to document map
+                        if (item.WriteRequest.PutRequest != null)
+                        {
+                            var key = table.MakeKey(item.Document);
+                            documentMap.Add(key, item.Document);
+                        }
+                    }
+                    request.RequestItems[tableName] = requestList;
                 }
             }
 
@@ -381,22 +405,22 @@ namespace Amazon.DynamoDB.DocumentModel
             return request;
         }
 
-        private Dictionary<string, QuickList<WriteRequest>> GetNextWriteItems(ref Dictionary<string, QuickList<WriteRequest>> writeRequestsMap, int maxNumberOfItems)
+        private Dictionary<string, QuickList<WriteRequestDocument>> GetNextWriteItems(ref Dictionary<string, QuickList<WriteRequestDocument>> writeRequestsMap, int maxNumberOfItems)
         {
             int numberOfItems = 0;
-            Dictionary<string, QuickList<WriteRequest>> nextItems = new Dictionary<string, QuickList<WriteRequest>>();
+            Dictionary<string, QuickList<WriteRequestDocument>> nextItems = new Dictionary<string, QuickList<WriteRequestDocument>>();
             List<string> keys = new List<string>(writeRequestsMap.Keys);
             foreach (string tableName in keys)
             {
                 if (numberOfItems >= maxNumberOfItems)
                     break;
 
-                QuickList<WriteRequest> writeRequests = writeRequestsMap[tableName];
+                QuickList<WriteRequestDocument> writeRequests = writeRequestsMap[tableName];
                 if (writeRequests.Count == 0)
                     continue;
 
-                IEnumerable<WriteRequest> partialRequests = writeRequests.RemoveFromHead(maxNumberOfItems - numberOfItems);
-                QuickList<WriteRequest> partialRequestsList = new QuickList<WriteRequest>(partialRequests);
+                IEnumerable<WriteRequestDocument> partialRequests = writeRequests.RemoveFromHead(maxNumberOfItems - numberOfItems);
+                QuickList<WriteRequestDocument> partialRequestsList = new QuickList<WriteRequestDocument>(partialRequests);
 
                 nextItems[tableName] = partialRequestsList;
                 numberOfItems += partialRequestsList.Count;
@@ -405,44 +429,92 @@ namespace Amazon.DynamoDB.DocumentModel
             return nextItems;
         }
 
-        private void CallUntilCompletion(BatchWriteItemRequest request, AmazonDynamoDB client)
+        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, AmazonDynamoDB client)
         {
             do
             {
                 var batchWriteItemResponse = client.BatchWriteItem(request);
                 var result = batchWriteItemResponse.BatchWriteItemResult;
                 request.RequestItems = result.UnprocessedItems;
+
+                Dictionary<Key, Document> unprocessedDocuments = new Dictionary<Key, Document>(keyComparer);
+                foreach (var unprocessedItems in result.UnprocessedItems)
+                {
+                    Table table = tableMap[unprocessedItems.Key];
+
+                    foreach (var writeRequest in unprocessedItems.Value)
+                    {
+                        if (writeRequest.PutRequest != null)
+                        {
+                            var key = table.MakeKey(Document.FromAttributeMap(writeRequest.PutRequest.Item));
+
+                            Document document = null;
+                            if (documentMap.TryGetValue(key, out document))
+                            {
+                                // Remove unprocessed requests from the document map 
+                                // and copy them to unprocessed documents.
+                                unprocessedDocuments.Add(key, document);
+                                documentMap.Remove(key);
+                            }
+                        }
+                    }
+                }
+
+                // Commit the remaining documents in the document map
+                foreach (var document in documentMap.Values)
+                {
+                    document.CommitChanges();
+                }
+                documentMap = unprocessedDocuments;
+
             } while (request.RequestItems.Count > 0);
+
+            // Commit any remaining documents in document map.
+            // This would only happen if we are not able to match the items sent in the request
+            // with the items returned back as unprocessed items.
+            foreach (var document in documentMap.Values)
+            {
+                document.CommitChanges();
+            }
         }
 
-        private Dictionary<string, QuickList<WriteRequest>> ConvertBatches(List<DocumentBatchWrite> batches)
+        private Dictionary<string, QuickList<WriteRequestDocument>> ConvertBatches(List<DocumentBatchWrite> batches)
         {
-            Dictionary<string, QuickList<WriteRequest>> result = new Dictionary<string, QuickList<WriteRequest>>();
+            Dictionary<string, QuickList<WriteRequestDocument>> result = new Dictionary<string, QuickList<WriteRequestDocument>>();
 
             foreach (var batch in batches)
             {
-                List<WriteRequest> writeRequests = new List<WriteRequest>();
+                List<WriteRequestDocument> writeRequests = new List<WriteRequestDocument>();
                 if (batch.ToDelete != null)
                 {
                     foreach (var toDelete in batch.ToDelete)
-                        writeRequests.Add(new WriteRequest
+                        writeRequests.Add(new WriteRequestDocument
                         {
-                            DeleteRequest = new DeleteRequest { Key = toDelete }
-                        });
+                            WriteRequest = new WriteRequest
+                            {
+                                DeleteRequest = new DeleteRequest { Key = toDelete }
+                            }
+                        }
+                        );
                 }
                 if (batch.ToPut != null)
                 {
                     foreach (var toPut in batch.ToPut)
-                        writeRequests.Add(new WriteRequest
+                        writeRequests.Add(new WriteRequestDocument
                         {
-                            PutRequest = new PutRequest { Item = toPut.ToAttributeMap() }
+                            WriteRequest = new WriteRequest
+                            {
+                                PutRequest = new PutRequest { Item = toPut.ToAttributeMap() }
+                            },
+                            Document = toPut
                         });
                 }
 
                 if (writeRequests.Count > 0)
                 {
-                    QuickList<WriteRequest> qlWriteRequests = new QuickList<WriteRequest>(writeRequests);
+                    QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
                     result.Add(batch.TargetTable.TableName, qlWriteRequests);
+                    tableMap.Add(batch.TargetTable.TableName, batch.TargetTable);
                 }
             }
 
@@ -484,6 +556,156 @@ namespace Amazon.DynamoDB.DocumentModel
         public List<T> GetItems()
         {
             return List.GetRange(StartIndex, Count);
+        }
+    }
+
+    internal class WriteRequestDocument
+    {
+        public WriteRequest WriteRequest { get; set; }
+
+        public Document Document { get; set; }
+    }
+
+    internal class KeyComparer : IEqualityComparer<Key>
+    {
+        public bool Equals(Key x, Key y)
+        {
+            if (AreBothNull(x, y))
+            {
+                return true;
+            }
+
+            if (IsEitherNull(x, y))
+            {
+                return false;
+            }
+
+            // Objects are equal if both reference the same object.
+            if (object.ReferenceEquals(x, y))
+            {
+                return true;
+            }
+
+            return CompareAttributeValue(x.HashKeyElement, y.HashKeyElement) &&
+                CompareAttributeValue(x.RangeKeyElement, y.RangeKeyElement);
+        }
+
+        public int GetHashCode(Key key)
+        {
+            return GetHashCode(key.HashKeyElement) ^ GetHashCode(key.RangeKeyElement);
+        }
+
+        private int GetHashCode(AttributeValue attributeValue)
+        {
+            if (attributeValue == null)
+            {
+                return 0;
+            }
+
+            if (attributeValue.S != null)
+            {
+                return attributeValue.S.GetHashCode();
+            }
+
+            if (attributeValue.N != null)
+            {
+                return attributeValue.N.GetHashCode();
+            }
+
+            if (attributeValue.B != null)
+            {
+                long xPos = attributeValue.B.Position;
+                attributeValue.B.Position = 0;
+
+                int hash = 0;
+                int valueX = 0;
+                do
+                {
+                    hash ^= valueX;
+                    valueX = attributeValue.B.ReadByte();
+                } while (valueX != -1);
+
+                attributeValue.B.Position = xPos;
+                return hash;
+            }
+
+            return 0;
+        }
+
+        private bool CompareAttributeValue(AttributeValue x, AttributeValue y)
+        {
+            if (AreBothNull(x, y))
+            {
+                return true;
+            }
+
+            if (IsEitherNull(x, y))
+            {
+                return false;
+            }
+
+            // Compare scalar properties of primary attributes. Primary attributes can only be scalar types.
+            // http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html 
+
+            if (IsEitherNull(x.S, y.S) || IsEitherNull(x.N, y.N) || IsEitherNull(x.B, y.B))
+            {
+                return false;
+            }
+
+            if (!AreBothNull(x.S, y.S))
+            {
+                if (!x.S.Equals(y.S, StringComparison.InvariantCulture))
+                {
+                    return false;
+                }
+            }
+
+            if (!AreBothNull(x.N, y.N))
+            {
+                if (!x.N.Equals(y.N, StringComparison.InvariantCulture))
+                {
+                    return false;
+                }
+            }
+
+            if (!AreBothNull(x.B, y.B))
+            {
+                if (x.B.Length != y.B.Length)
+                {
+                    return false;
+                }
+
+                long xPos = x.B.Position, yPos = y.B.Position;
+                x.B.Position = 0;
+                y.B.Position = 0;
+
+                int valueX = 0, valueY = 0;
+                do
+                {
+                    if (valueX != valueY)
+                    {
+                        return false;
+                    }
+                    valueX = x.B.ReadByte();
+                    valueY = y.B.ReadByte();
+
+                } while (valueX != -1 && valueY != -1);
+
+                x.B.Position = xPos;
+                y.B.Position = yPos;
+            }
+
+            return true;
+        }
+
+        private bool IsEitherNull<T>(T x, T y) where T : class
+        {
+            return ((x == null && y != null) || (x != null && y == null));
+        }
+
+        private bool AreBothNull<T>(T x, T y) where T : class
+        {
+            return (x == null && y == null);
         }
     }
 }

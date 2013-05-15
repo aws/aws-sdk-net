@@ -33,12 +33,11 @@ namespace Amazon.OpsWorks.Model
         /// Specifies the deployment operation. You can specify only one command. For stacks, the available commands are: <ul>
         /// <li><c></c>execute_recipes: Execute the recipes that are specified by the <c>Args</c> parameter.</li> <li><c></c>install_dependencies:
         /// Installs the stack's dependencies.</li> <li><c></c>update_custom_cookbooks: Update the stack's custom cookbooks.</li>
-        /// <li><c></c>update_dependencies: Update the stack's dependencies.</li> <li><c>shutdown</c>: Run the shutdown recipes.</li> <li><c>setup</c>:
-        /// Run the setup recipes.</li> <li><c>configure</c>: Run the configure recipes.</li> </ul> For apps, the available commands are: <ul>
-        /// <li><c>deploy</c>: Deploy the app.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, OpsWorks
-        /// stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li>
-        /// <li><c>start</c>: Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li>
-        /// <li><c>restart</c>: Restart the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
+        /// <li><c></c>update_dependencies: Update the stack's dependencies.</li> </ul> For apps, the available commands are: <ul> <li><c>deploy</c>:
+        /// Deploy the app.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, OpsWorks stores the previous
+        /// version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li> <li><c>start</c>:
+        /// Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li> <li><c>restart</c>: Restart
+        /// the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>

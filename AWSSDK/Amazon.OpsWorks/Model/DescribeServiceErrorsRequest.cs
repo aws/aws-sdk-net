@@ -35,7 +35,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> serviceErrorIds = new List<string>();
 
         /// <summary>
-        /// The stack ID.
+        /// The stack ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
+        /// stack.
         ///  
         /// </summary>
         public string StackId
@@ -63,7 +64,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance ID.
+        /// The instance ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
+        /// instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -91,7 +93,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of service error IDs to be described.
+        /// An array of service error IDs. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the specified errors.
+        /// Otherwise, it returns a description of every error.
         ///  
         /// </summary>
         public List<string> ServiceErrorIds

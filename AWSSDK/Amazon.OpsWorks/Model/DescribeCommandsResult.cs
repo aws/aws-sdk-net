@@ -29,7 +29,7 @@ namespace Amazon.OpsWorks.Model
         private List<Command> commands = new List<Command>();
 
         /// <summary>
-        /// An array of <c>InstanceCommand</c> objects that describe each of the specified commands.
+        /// An array of <c>Command</c> objects that describe each of the specified commands.
         ///  
         /// </summary>
         public List<Command> Commands

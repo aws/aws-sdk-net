@@ -43,6 +43,12 @@
                 context.Read();
                 context.Read();
               
+              if (context.TestExpression("Id", targetDepth))
+              {
+                jobOutput.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Key", targetDepth))
               {
                 jobOutput.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -67,6 +73,12 @@
                 continue;
               }
   
+              if (context.TestExpression("SegmentDuration", targetDepth))
+              {
+                jobOutput.SegmentDuration = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Status", targetDepth))
               {
                 jobOutput.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -76,6 +88,24 @@
               if (context.TestExpression("StatusDetail", targetDepth))
               {
                 jobOutput.StatusDetail = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Duration", targetDepth))
+              {
+                jobOutput.Duration = LongUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Width", targetDepth))
+              {
+                jobOutput.Width = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Height", targetDepth))
+              {
+                jobOutput.Height = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

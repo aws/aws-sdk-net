@@ -25,9 +25,10 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBasedAutoScaling operation.
-    /// <para>Specify the load-based auto scaling configuration for a specified layer.</para> <para><b>NOTE:</b>To use load-based auto scaling, you
-    /// must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must
-    /// ensure that you have created enough instances to handle the maximum anticipated load.</para>
+    /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and
+    /// Load-based Instances.</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+    /// Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle
+    /// the maximum anticipated load.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetLoadBasedAutoScaling"/>
     public class SetLoadBasedAutoScalingRequest : AmazonWebServiceRequest

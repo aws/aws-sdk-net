@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
-    /// <para>Creates a new stack.</para>
+    /// <para>Creates a new stack. For more information, see Create a New Stack.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateStack"/>
     public class CreateStackRequest : AmazonWebServiceRequest
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
+        private string defaultRootDeviceType;
 
         /// <summary>
         /// The stack name.
@@ -283,6 +284,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
         public string CustomJson
@@ -338,7 +341,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Contains the information required to retrieve an app or cookbook from a repository.
+        /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource
@@ -391,6 +396,45 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetDefaultSshKeyName()
         {
             return this.defaultSshKeyName != null;
+        }
+
+        /// <summary>
+        /// The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create
+        /// an instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ebs, instance-store</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string DefaultRootDeviceType
+        {
+            get { return this.defaultRootDeviceType; }
+            set { this.defaultRootDeviceType = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultRootDeviceType property
+        /// </summary>
+        /// <param name="defaultRootDeviceType">The value to set for the DefaultRootDeviceType property </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithDefaultRootDeviceType(string defaultRootDeviceType)
+        {
+            this.defaultRootDeviceType = defaultRootDeviceType;
+            return this;
+        }
+            
+
+        // Check to see if DefaultRootDeviceType property is set
+        internal bool IsSetDefaultRootDeviceType()
+        {
+            return this.defaultRootDeviceType != null;
         }
     }
 }

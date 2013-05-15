@@ -38,8 +38,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// An array of <i>AttributeDefinition</i> objects. Each of these objects describes one attribute in the table and index key schema. Each
-        /// <i>AttributeDefinition</i> object in this array is composed of: <ul> <li> <i>AttributeName</i>-The name of the attribute. </li> <li>
-        /// <i>AttributeType</i>-The data type for the attribute. </li> </ul>
+        /// <i>AttributeDefinition</i> object in this array is composed of: <ul> <li> <i>AttributeName</i> - The name of the attribute. </li> <li>
+        /// <i>AttributeType</i> - The data type for the attribute. </li> </ul>
         ///  
         /// </summary>
         public List<AttributeDefinition> AttributeDefinitions
@@ -125,10 +125,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The primary key structure for the table. Each <i>KeySchemaElement</i> consists of: <ul> <li> <i>AttributeName</i>-The name of the attribute.
-        /// </li> <li> <i>KeyType</i>-The key type for the attribute. Can be either <c>HASH</c> or <c>RANGE</c>. </li> </ul> For more information about
-        /// primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-        /// Key</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+        /// The primary key structure for the table. Each <i>KeySchemaElement</i> consists of: <ul> <li> <i>AttributeName</i> - The name of the
+        /// attribute. </li> <li> <i>KeyType</i> - The key type for the attribute. Can be either <c>HASH</c> or <c>RANGE</c>. </li> </ul> For more
+        /// information about primary keys, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon
+        /// DynamoDB Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -182,10 +183,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the current state of the table: <ul> <li> <i>CREATING</i>-The table is being created, as the result of a <i>CreateTable</i>
-        /// operation. </li> <li> <i>UPDATING</i>-The table is being updated, as the result of an <i>UpdateTable</i> operation. </li> <li>
-        /// <i>DELETING</i>-The table is being deleted, as the result of a <i>DeleteTable</i> operation. </li> <li> <i>ACTIVE</i>-The table is ready for
-        /// use. </li> </ul>
+        /// Represents the current state of the table: <ul> <li> <i>CREATING</i> - The table is being created, as the result of a <i>CreateTable</i>
+        /// operation. </li> <li> <i>UPDATING</i> - The table is being updated, as the result of an <i>UpdateTable</i> operation. </li> <li>
+        /// <i>DELETING</i> - The table is being deleted, as the result of a <i>DeleteTable</i> operation. </li> <li> <i>ACTIVE</i> - The table is ready
+        /// for use. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -339,18 +340,20 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Represents one or more secondary indexes on the table. Each index is scoped to a given hash key value. Tables with one or more local
         /// secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB.
-        /// Each element is composed of: <ul> <li> <i>IndexName</i>-The name of the secondary index. </li> <li> <i>KeySchema</i>-Specifies the complete
-        /// index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the
-        /// same hash key attribute as the table. </li> <li> <i>Projection</i>-Specifies attributes that are copied (projected) from the table into the
-        /// index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute
-        /// specification is composed of: <ul> <li> <i>ProjectionType</i>-One of the following: <ul> <li> <c>ALL</c>-All of the table attributes are
-        /// projected into the index. </li> <li> <c>KEYS_ONLY</c>-Only the index and primary keys are projected into the index. </li> <li>
-        /// <c>INCLUDE</c>-Only the specified table attributes are projected into the index. The list of projected attributes are in
-        /// <i>NonKeyAttributes</i>. </li> </ul> </li> <li> <i>NonKeyAttributes</i>-A list of one or more non-key attribute names that are projected
-        /// into the index. </li> </ul> </li> <li> <i>IndexSizeBytes</i>-Represents the total size of the index, in bytes. Amazon DynamoDB updates this
-        /// value approximately every six hours. Recent changes might not be reflected in this value.</li> <li> <i>ItemCount</i>-Represents the number
-        /// of items in the index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this
-        /// value. </li> </ul> If the table is in the <c>DELETING</c> state, no information about indexes will be returned.
+        /// Each element is composed of: <ul> <li> <i>IndexName</i> - The name of the secondary index. </li> <li> <i>KeySchema</i> - Specifies the
+        /// complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin
+        /// with the same hash key attribute as the table. </li> <li> <i>Projection</i> - Specifies attributes that are copied (projected) from the
+        /// table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each
+        /// attribute specification is composed of: <ul> <li> <i>ProjectionType</i> - One of the following: <ul> <li> <c>KEYS_ONLY</c> - Only the index
+        /// and primary keys are projected into the index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index.
+        /// The list of projected attributes are in <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the
+        /// index. </li> </ul> </li> <li> <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected into the index. The
+        /// total count of attributes specified in <i>NonKeyAttributes</i>, summed across all of the local secondary indexes, must not exceed 20. If you
+        /// project the same attribute into two different indexes, this counts as two distinct attributes when determining the total. </li> </ul> </li>
+        /// <li> <i>IndexSizeBytes</i> - Represents the total size of the index, in bytes. Amazon DynamoDB updates this value approximately every six
+        /// hours. Recent changes might not be reflected in this value.</li> <li> <i>ItemCount</i> - Represents the number of items in the index. Amazon
+        /// DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </li> </ul> If the table is
+        /// in the <c>DELETING</c> state, no information about indexes will be returned.
         ///  
         /// </summary>
         public List<LocalSecondaryIndexDescription> LocalSecondaryIndexes

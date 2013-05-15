@@ -27,7 +27,7 @@ namespace Amazon.Runtime.Internal
     {
         // Private members
 
-        private ManualResetEvent _waitHandle;
+        private ManualResetEvent _waitHandle = new ManualResetEvent(false);
         private object _lockObj;
         private Stopwatch _stopWatch;
 

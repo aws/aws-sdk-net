@@ -49,6 +49,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                pipeline.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Name", targetDepth))
               {
                 pipeline.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -82,6 +88,18 @@
               if (context.TestExpression("Notifications", targetDepth))
               {
                 pipeline.Notifications = NotificationsUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ContentConfig", targetDepth))
+              {
+                pipeline.ContentConfig = PipelineOutputConfigUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ThumbnailConfig", targetDepth))
+              {
+                pipeline.ThumbnailConfig = PipelineOutputConfigUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

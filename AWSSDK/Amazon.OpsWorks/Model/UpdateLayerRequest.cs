@@ -99,8 +99,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer short name, which is used internally by OpsWorks, by Chef. The shortname is also used as the name for the directory where your app
-        /// files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+        /// The layer short name, which is used internally by OpsWorksand by Chef. The shortname is also used as the name for the directory where your
+        /// app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
         ///  
         /// </summary>
         public string Shortname

@@ -30,6 +30,10 @@ namespace Amazon.ElasticTranscoder.Model
         private string pipelineId;
         private JobInput input;
         private JobOutput output;
+        private List<JobOutput> outputs = new List<JobOutput>();
+        private string outputKeyPrefix;
+        private List<Playlist> playlists = new List<Playlist>();
+        private string status;
 
         /// <summary>
         /// The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.
@@ -136,7 +140,10 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// A section of the request or response body that provides information about the transcoded (target) file.
+        /// If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists
+        /// information about the first output. This duplicates the information that is listed for the first output in the Outputs object.
+        /// <important>Outputs recommended instead.</important> A section of the request or response body that provides information about the transcoded
+        /// (target) file.
         ///  
         /// </summary>
         public JobOutput Output
@@ -161,6 +168,176 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetOutput()
         {
             return this.output != null;
+        }
+
+        /// <summary>
+        /// Information about the output files. We recommend that you use the <c>Outputs</c> syntax for all jobs, even when you want Elastic Transcoder
+        /// to transcode a file into only one format. Do not use both the <c>Outputs</c> and <c>Output</c> syntaxes in the same request. You can create
+        /// a maximum of 30 outputs per job. If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the
+        /// order in which you specify them in the job.
+        ///  
+        /// </summary>
+        public List<JobOutput> Outputs
+        {
+            get { return this.outputs; }
+            set { this.outputs = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Outputs collection
+        /// </summary>
+        /// <param name="outputs">The values to add to the Outputs collection </param>
+        /// <returns>this instance</returns>
+        public Job WithOutputs(params JobOutput[] outputs)
+        {
+            foreach (JobOutput element in outputs)
+            {
+                this.outputs.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Outputs collection
+        /// </summary>
+        /// <param name="outputs">The values to add to the Outputs collection </param>
+        /// <returns>this instance</returns>
+        public Job WithOutputs(IEnumerable<JobOutput> outputs)
+        {
+            foreach (JobOutput element in outputs)
+            {
+                this.outputs.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Outputs property is set
+        internal bool IsSetOutputs()
+        {
+            return this.outputs.Count > 0;
+        }
+
+        /// <summary>
+        /// The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files,
+        /// thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <c>OutputKeyPrefix</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string OutputKeyPrefix
+        {
+            get { return this.outputKeyPrefix; }
+            set { this.outputKeyPrefix = value; }
+        }
+
+        /// <summary>
+        /// Sets the OutputKeyPrefix property
+        /// </summary>
+        /// <param name="outputKeyPrefix">The value to set for the OutputKeyPrefix property </param>
+        /// <returns>this instance</returns>
+        public Job WithOutputKeyPrefix(string outputKeyPrefix)
+        {
+            this.outputKeyPrefix = outputKeyPrefix;
+            return this;
+        }
+            
+
+        // Check to see if OutputKeyPrefix property is set
+        internal bool IsSetOutputKeyPrefix()
+        {
+            return this.outputKeyPrefix != null;
+        }
+
+        /// <summary>
+        /// <important>Outputs in MPEG-TS format only.</important>If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c> is
+        /// ts (MPEG-TS), <c>Playlists</c> contains information about the master playlists that you want Elastic Transcoder to create. We recommend that
+        /// you create only one master playlist. The maximum number of master playlists in a job is 30.
+        ///  
+        /// </summary>
+        public List<Playlist> Playlists
+        {
+            get { return this.playlists; }
+            set { this.playlists = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Playlists collection
+        /// </summary>
+        /// <param name="playlists">The values to add to the Playlists collection </param>
+        /// <returns>this instance</returns>
+        public Job WithPlaylists(params Playlist[] playlists)
+        {
+            foreach (Playlist element in playlists)
+            {
+                this.playlists.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Playlists collection
+        /// </summary>
+        /// <param name="playlists">The values to add to the Playlists collection </param>
+        /// <returns>this instance</returns>
+        public Job WithPlaylists(IEnumerable<Playlist> playlists)
+        {
+            foreach (Playlist element in playlists)
+            {
+                this.playlists.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Playlists property is set
+        internal bool IsSetPlaylists()
+        {
+            return this.playlists.Count > 0;
+        }
+
+        /// <summary>
+        /// The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>l</c>, <c>Canceled</c>, or <c>Error</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
+
+        /// <summary>
+        /// Sets the Status property
+        /// </summary>
+        /// <param name="status">The value to set for the Status property </param>
+        /// <returns>this instance</returns>
+        public Job WithStatus(string status)
+        {
+            this.status = status;
+            return this;
+        }
+            
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this.status != null;
         }
     }
 }

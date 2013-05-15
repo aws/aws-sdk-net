@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTable operation.
-    /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema,and any
+    /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any
     /// indexes on the table.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.DescribeTable"/>

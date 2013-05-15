@@ -34,7 +34,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> ips = new List<string>();
 
         /// <summary>
-        /// The instance ID.
+        /// The instance ID. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the Elastic IP addresses associated with
+        /// the specified instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -62,7 +63,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of Elastic IP addresses to be described.
+        /// An array of Elastic IP addresses to be described. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the
+        /// specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.
         ///  
         /// </summary>
         public List<string> Ips

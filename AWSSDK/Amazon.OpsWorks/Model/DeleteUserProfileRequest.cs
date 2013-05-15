@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserProfile operation.
-    /// <para>Deletes a user.</para>
+    /// <para>Deletes a user profile.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteUserProfile"/>
     public class DeleteUserProfileRequest : AmazonWebServiceRequest

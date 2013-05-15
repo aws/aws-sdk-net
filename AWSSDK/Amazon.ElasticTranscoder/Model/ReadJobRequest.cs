@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ReadJob operation.
-    /// <para> To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource. </para>
+    /// <para>To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ReadJob"/>
     public class ReadJobRequest : AmazonWebServiceRequest

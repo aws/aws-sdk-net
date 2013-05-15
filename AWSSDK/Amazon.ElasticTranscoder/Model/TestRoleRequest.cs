@@ -83,8 +83,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
+        ///         <term>Pattern</term>
+        ///         <description>^(\w|\.|-){1,255}$</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -120,8 +120,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
+        ///         <term>Pattern</term>
+        ///         <description>^(\w|\.|-){1,255}$</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -153,6 +153,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 30</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public List<string> Topics
         {

@@ -32,6 +32,7 @@ namespace Amazon.OpsWorks.Model
     /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
     /// 
     /// </ul>
+    /// <para>For more information, see Deploying Apps and Run Stack Commands.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateDeployment"/>
     public class CreateDeploymentRequest : AmazonWebServiceRequest
@@ -72,7 +73,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The app ID, for app deployments.
+        /// The app ID. This parameter is required for app deployments, but not for other deployment commands.
         ///  
         /// </summary>
         public string AppId
@@ -145,7 +146,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A <c>DeploymentCommand</c> object that describes details of the operation.
+        /// A <c>DeploymentCommand</c> object that specifies the deployment command and any associated arguments.
         ///  
         /// </summary>
         public DeploymentCommand Command
@@ -203,6 +204,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
         public string CustomJson

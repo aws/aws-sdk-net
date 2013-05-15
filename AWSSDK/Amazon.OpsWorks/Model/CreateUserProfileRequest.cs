@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserProfile operation.
-    /// <para>Creates a new user.</para>
+    /// <para>Creates a new user profile.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateUserProfile"/>
     public class CreateUserProfileRequest : AmazonWebServiceRequest

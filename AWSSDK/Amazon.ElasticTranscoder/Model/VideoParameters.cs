@@ -34,16 +34,22 @@ namespace Amazon.ElasticTranscoder.Model
         private string frameRate;
         private string resolution;
         private string aspectRatio;
+        private string maxWidth;
+        private string maxHeight;
+        private string displayAspectRatio;
+        private string sizingPolicy;
+        private string paddingPolicy;
 
         /// <summary>
-        /// The video codec for the output file. This value must be <c>H.264</c>.
+        /// The video codec for the output file. Valid values include <c>H.264</c> and <c>vp8</c>. You can only specify <c>vp8</c> when the container
+        /// type is <c>webm</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^H\.264$)</description>
+        ///         <description>(^H\.264$)|(^vp8$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -88,6 +94,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// buffer</i>): <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 -
         /// 4752</li> <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 30</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public Dictionary<string,string> CodecOptions
         {
@@ -196,18 +211,19 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <c>Level</c> and
-        /// <c>Profile</c>. We recommend that you specify a value less than or equal to the maximum H.264-compliant value listed in the following list
-        /// for your level and profile: <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in
-        /// kilobits/second (high Profile)</i> <ul> <li>1 - 64 : 80</li> <li>1b - 128 : 160</li> <li>1.1 - 192 : 240</li> <li>1.2 - 384 : 480</li>
-        /// <li>1.3 - 768 : 960</li> <li>2 - 2000 : 2500</li> <li>3 - 10000 : 12500</li> <li>3.1 - 14000 : 17500</li> <li>3.2 - 20000 : 25000</li> <li>4
-        /// - 20000 : 25000</li> <li>4.1 - 50000 : 62500</li> </ul>
+        /// <c>Profile</c>. If you specify <c>auto</c>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other
+        /// than <c>auto</c>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and
+        /// profile: <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high
+        /// Profile)</i> <ul> <li>1 - 64 : 80</li> <li>1b - 128 : 160</li> <li>1.1 - 192 : 240</li> <li>1.2 - 384 : 480</li> <li>1.3 - 768 : 960</li>
+        /// <li>2 - 2000 : 2500</li> <li>3 - 10000 : 12500</li> <li>3.1 - 14000 : 17500</li> <li>3.2 - 20000 : 25000</li> <li>4 - 20000 : 25000</li>
+        /// <li>4.1 - 50000 : 62500</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^\d{2,5}$</description>
+        ///         <description>(^\d{2,5}$)|(^auto$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -283,24 +299,26 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The width and height of the video in the output file, in pixels. Valid values are <c>auto</c> and <i>width</i> x <i>height</i>: <ul>
-        /// <li><c>auto</c>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</li>
-        /// <li><c><i>width</i> x <i>height</i></c>: The width and height of the output video in pixels.</li> </ul> Note the following about specifying
-        /// the width and height: <ul> <li>The width must be an even integer between 128 and 4096, inclusive.</li> <li>The height must be an even
-        /// integer between 96 and 3072, inclusive.</li> <li>If you specify a resolution that is less than the resolution of the input file, Elastic
-        /// Transcoder rescales the output file to the lower resolution.</li> <li>If you specify a resolution that is greater than the resolution of the
-        /// input file, Elastic Transcoder rescales the output to the higher resolution.</li> <li>We recommend that you specify a resolution for which
-        /// the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height
-        /// value</i>):</li> <ul> <li>1 - 25344</li> <li>1b - 25344</li> <li>1.1 - 101376</li> <li>1.2 - 101376</li> <li>1.3 - 101376</li> <li>2 -
-        /// 101376</li> <li>2.1 - 202752</li> <li>2.2 - 404720</li> <li>3 - 404720</li> <li>3.1 - 921600</li> <li>3.2 - 1310720</li> <li>4 -
-        /// 2097152</li> <li>4.1 - 2097152</li> </ul> </ul>
+        /// <important> To better control resolution and aspect ratio of output videos, we recommend that you use the values <c>MaxWidth</c>,
+        /// <c>MaxHeight</c>, <c>SizingPolicy</c>, <c>PaddingPolicy</c>, and <c>DisplayAspectRatio</c> instead of <c>Resolution</c> and
+        /// <c>AspectRatio</c>. The two groups of settings are mutually exclusive. Do not use them together. </important> The width and height of the
+        /// video in the output file, in pixels. Valid values are <c>auto</c> and <i>width</i> x <i>height</i>: <ul> <li><c>auto</c>: Elastic Transcoder
+        /// attempts to preserve the width and height of the input file, subject to the following rules.</li> <li><c><i>width</i> x <i>height</i></c>:
+        /// The width and height of the output video in pixels.</li> </ul> Note the following about specifying the width and height: <ul> <li>The width
+        /// must be an even integer between 128 and 4096, inclusive.</li> <li>The height must be an even integer between 96 and 3072, inclusive.</li>
+        /// <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower
+        /// resolution.</li> <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the
+        /// output to the higher resolution.</li> <li>We recommend that you specify a resolution for which the product of width and height is less than
+        /// or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</li> <ul> <li>1 - 25344</li> <li>1b -
+        /// 25344</li> <li>1.1 - 101376</li> <li>1.2 - 101376</li> <li>1.3 - 101376</li> <li>2 - 101376</li> <li>2.1 - 202752</li> <li>2.2 - 404720</li>
+        /// <li>3 - 404720</li> <li>3.1 - 921600</li> <li>3.2 - 1310720</li> <li>4 - 2097152</li> <li>4.1 - 2097152</li> </ul> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^\d+x\d+$)</description>
+        ///         <description>(^auto$)|(^\d{1,5}x\d{1,5}$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -330,10 +348,13 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The display aspect ratio of the video in the output file. Valid values include: <c>auto</c>, <c>1:1</c>, <c>4:3</c>, <c>3:2</c>, <c>16:9</c>
-        /// If you specify <c>auto</c>, Elastic Transcoder tries to preserve the aspect ratio of the input file. If you specify an aspect ratio for the
-        /// output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing
-        /// (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.
+        /// <important> To better control resolution and aspect ratio of output videos, we recommend that you use the values <c>MaxWidth</c>,
+        /// <c>MaxHeight</c>, <c>SizingPolicy</c>, <c>PaddingPolicy</c>, and <c>DisplayAspectRatio</c> instead of <c>Resolution</c> and
+        /// <c>AspectRatio</c>. The two groups of settings are mutually exclusive. Do not use them together. </important> The display aspect ratio of
+        /// the video in the output file. Valid values include: <c>auto</c>, <c>1:1</c>, <c>4:3</c>, <c>3:2</c>, <c>16:9</c> If you specify <c>auto</c>,
+        /// Elastic Transcoder tries to preserve the aspect ratio of the input file. If you specify an aspect ratio for the output file that differs
+        /// from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top
+        /// and bottom) to maintain the aspect ratio of the active region of the video.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -367,6 +388,206 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetAspectRatio()
         {
             return this.aspectRatio != null;
+        }
+
+        /// <summary>
+        /// The maximum width of the output video in pixels. If you specify <c>auto</c>, Elastic Transcoder uses 1920 (Full HD) as the default value. If
+        /// you specify a numeric value, enter an even integer between 128 and 4096.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^auto$)|(^\d{2,4}$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string MaxWidth
+        {
+            get { return this.maxWidth; }
+            set { this.maxWidth = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxWidth property
+        /// </summary>
+        /// <param name="maxWidth">The value to set for the MaxWidth property </param>
+        /// <returns>this instance</returns>
+        public VideoParameters WithMaxWidth(string maxWidth)
+        {
+            this.maxWidth = maxWidth;
+            return this;
+        }
+            
+
+        // Check to see if MaxWidth property is set
+        internal bool IsSetMaxWidth()
+        {
+            return this.maxWidth != null;
+        }
+
+        /// <summary>
+        /// The maximum height of the output video in pixels. If you specify <c>auto</c>, Elastic Transcoder uses 1080 (Full HD) as the default value.
+        /// If you specify a numeric value, enter an even integer between 96 and 3072.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^auto$)|(^\d{2,4}$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string MaxHeight
+        {
+            get { return this.maxHeight; }
+            set { this.maxHeight = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxHeight property
+        /// </summary>
+        /// <param name="maxHeight">The value to set for the MaxHeight property </param>
+        /// <returns>this instance</returns>
+        public VideoParameters WithMaxHeight(string maxHeight)
+        {
+            this.maxHeight = maxHeight;
+            return this;
+        }
+            
+
+        // Check to see if MaxHeight property is set
+        internal bool IsSetMaxHeight()
+        {
+            return this.maxHeight != null;
+        }
+
+        /// <summary>
+        /// The value that Elastic Transcoder adds to the metadata in the output file.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string DisplayAspectRatio
+        {
+            get { return this.displayAspectRatio; }
+            set { this.displayAspectRatio = value; }
+        }
+
+        /// <summary>
+        /// Sets the DisplayAspectRatio property
+        /// </summary>
+        /// <param name="displayAspectRatio">The value to set for the DisplayAspectRatio property </param>
+        /// <returns>this instance</returns>
+        public VideoParameters WithDisplayAspectRatio(string displayAspectRatio)
+        {
+            this.displayAspectRatio = displayAspectRatio;
+            return this;
+        }
+            
+
+        // Check to see if DisplayAspectRatio property is set
+        internal bool IsSetDisplayAspectRatio()
+        {
+            return this.displayAspectRatio != null;
+        }
+
+        /// <summary>
+        /// Specify one of the following values to control scaling of the output video: <ul> <li><c>Fit</c>: Elastic Transcoder scales the output video
+        /// so it matches the value that you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> without exceeding the other value.</li>
+        /// <li><c>Fill</c>: Elastic Transcoder scales the output video so it matches the value that you specified in either <c>MaxWidth</c> or
+        /// <c>MaxHeight</c> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if
+        /// any) that exceeds the maximum value.</li> <li><c>Stretch</c>: Elastic Transcoder stretches the output video to match the values that you
+        /// specified for <c>MaxWidth</c> and <c>MaxHeight</c>. If the relative proportions of the input video and the output video are different, the
+        /// output video will be distorted.</li> <li><c>Keep</c>: Elastic Transcoder does not scale the output video. If either dimension of the input
+        /// video exceeds the values that you specified for <c>MaxWidth</c> and <c>MaxHeight</c>, Elastic Transcoder crops the output video.</li>
+        /// <li><c>ShrinkToFit</c>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at
+        /// least one of <c>MaxWidth</c> and <c>MaxHeight</c> without exceeding either value. If you specify this option, Elastic Transcoder does not
+        /// scale the video up.</li> <li><c>ShrinkToFill</c>: Elastic Transcoder scales the output video down so that its dimensions match the values
+        /// that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c> without dropping below either value. If you specify this option,
+        /// Elastic Transcoder does not scale the video up.</li> </ul>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string SizingPolicy
+        {
+            get { return this.sizingPolicy; }
+            set { this.sizingPolicy = value; }
+        }
+
+        /// <summary>
+        /// Sets the SizingPolicy property
+        /// </summary>
+        /// <param name="sizingPolicy">The value to set for the SizingPolicy property </param>
+        /// <returns>this instance</returns>
+        public VideoParameters WithSizingPolicy(string sizingPolicy)
+        {
+            this.sizingPolicy = sizingPolicy;
+            return this;
+        }
+            
+
+        // Check to see if SizingPolicy property is set
+        internal bool IsSetSizingPolicy()
+        {
+            return this.sizingPolicy != null;
+        }
+
+        /// <summary>
+        /// When you set <c>PaddingPolicy</c> to <c>Pad</c>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of
+        /// the output video to make the total size of the output video match the values that you specified for <c>MaxWidth</c> and <c>MaxHeight</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^Pad$)|(^NoPad$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PaddingPolicy
+        {
+            get { return this.paddingPolicy; }
+            set { this.paddingPolicy = value; }
+        }
+
+        /// <summary>
+        /// Sets the PaddingPolicy property
+        /// </summary>
+        /// <param name="paddingPolicy">The value to set for the PaddingPolicy property </param>
+        /// <returns>this instance</returns>
+        public VideoParameters WithPaddingPolicy(string paddingPolicy)
+        {
+            this.paddingPolicy = paddingPolicy;
+            return this;
+        }
+            
+
+        // Check to see if PaddingPolicy property is set
+        internal bool IsSetPaddingPolicy()
+        {
+            return this.paddingPolicy != null;
         }
     }
 }

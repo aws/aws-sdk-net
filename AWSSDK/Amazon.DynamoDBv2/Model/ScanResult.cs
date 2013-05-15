@@ -109,7 +109,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The number of items in the complete scan, before any filters are applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i>
         /// results indicates an inefficient <i>Scan</i> operation. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> of the <i>Amazon
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon
         /// DynamoDB Developer Guide</i>.
         ///  
         /// </summary>
@@ -140,7 +140,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation,
         /// excluding this value in the new request. <i>LastEvaluatedKey</i> is null when the entire result set is complete (in other words, when the
-        /// operation processed the "last page" of results).
+        /// operation processed the "last page" of results). If you are performing a parallel scan, <i>LastEvaluatedKey</i> is null if the requested
+        /// <i>Segment</i> has been completely scanned. It does not indicate that any other segments have been scanned.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> LastEvaluatedKey
@@ -173,7 +174,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
         /// returned if it was asked for in the request. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> of the
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
         /// <i>Amazon DynamoDB Developer Guide</i>.
         ///  
         /// </summary>

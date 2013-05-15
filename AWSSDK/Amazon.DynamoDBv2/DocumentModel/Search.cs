@@ -96,6 +96,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<Document> Matches { get; private set; }
 
         /// <summary>
+        /// TODO: Add docs 
+        /// </summary>
+        public int TotalSegments { get; set; }
+
+        /// <summary>
+        /// TODO: Add docs 
+        /// </summary>
+        public int Segment { get; set; }
+
+        /// <summary>
         /// Gets the total number of items that match the search parameters
         /// 
         /// If IsDone is true, returns Matches.Count
@@ -152,6 +162,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ScanFilter = Filter,
                             Select = EnumToStringMapper.Convert(Select)
                         };
+
+                        if (this.TotalSegments != 0)
+                        {
+                            scanReq.TotalSegments = this.TotalSegments;
+                            scanReq.Segment = this.Segment;
+                        }
+
                         scanReq.BeforeRequestEvent += isAsync ?
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);
@@ -319,6 +336,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 ExclusiveStartKey = NextKey,
                                 ScanFilter = Filter,
                             };
+
+                            if (this.TotalSegments != 0)
+                            {
+                                scanReq.TotalSegments = this.TotalSegments;
+                                scanReq.Segment = this.Segment;
+                            }
                             scanReq.BeforeRequestEvent += SourceTable.UserAgentRequestEventHandlerSync;
 
                             ScanResult scanResult = SourceTable.DDBClient.Scan(scanReq).ScanResult;

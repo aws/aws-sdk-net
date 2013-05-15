@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// <para>To delete a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
+    /// <para>To cancel a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
     /// a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the job identifier, use
     /// UpdatePipelineStatus to temporarily pause the pipeline.</para>
     /// </summary>

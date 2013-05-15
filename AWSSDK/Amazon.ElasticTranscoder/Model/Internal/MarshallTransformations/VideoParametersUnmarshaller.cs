@@ -106,6 +106,36 @@
                 continue;
               }
   
+              if (context.TestExpression("MaxWidth", targetDepth))
+              {
+                videoParameters.MaxWidth = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("MaxHeight", targetDepth))
+              {
+                videoParameters.MaxHeight = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("DisplayAspectRatio", targetDepth))
+              {
+                videoParameters.DisplayAspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("SizingPolicy", targetDepth))
+              {
+                videoParameters.SizingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("PaddingPolicy", targetDepth))
+              {
+                videoParameters.PaddingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {

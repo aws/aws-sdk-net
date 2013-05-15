@@ -33,7 +33,8 @@ namespace Amazon.OpsWorks.Model
         private List<string> stackIds = new List<string>();
 
         /// <summary>
-        /// An array of stack IDs that specify the stacks to be described.
+        /// An array of stack IDs that specify the stacks to be described. If you omit this parameter, <c>DescribeStacks</c> returns a description of
+        /// every stack.
         ///  
         /// </summary>
         public List<string> StackIds

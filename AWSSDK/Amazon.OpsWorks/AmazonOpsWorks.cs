@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks
         #region UpdateUserProfile
 
         /// <summary>
-        /// <para>Updates a specified user's SSH name and public key.</para>
+        /// <para>Updates a specified user profile.</para>
         /// </summary>
         /// 
         /// <param name="updateUserProfileRequest">Container for the necessary parameters to execute the UpdateUserProfile service method on
@@ -68,7 +68,7 @@ namespace Amazon.OpsWorks
         #region CreateStack
 
         /// <summary>
-        /// <para>Creates a new stack.</para>
+        /// <para>Creates a new stack. For more information, see Create a New Stack.</para>
         /// </summary>
         /// 
         /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack service method on AmazonOpsWorks.</param>
@@ -109,7 +109,7 @@ namespace Amazon.OpsWorks
         #region RebootInstance
 
         /// <summary>
-        /// <para>Reboots a specified instance.</para>
+        /// <para>Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
         /// </summary>
         /// 
         /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance service method on
@@ -146,12 +146,13 @@ namespace Amazon.OpsWorks
         #region SetPermission
 
         /// <summary>
-        /// <para>Specifies a stack's permissions.</para>
+        /// <para>Specifies a stack's permissions. For more information, see Security and Permissions.</para>
         /// </summary>
         /// 
         /// <param name="setPermissionRequest">Container for the necessary parameters to execute the SetPermission service method on
         ///          AmazonOpsWorks.</param>
         /// 
+        /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
         SetPermissionResponse SetPermission(SetPermissionRequest setPermissionRequest);
 
@@ -225,7 +226,7 @@ namespace Amazon.OpsWorks
         #region DescribePermissions
 
         /// <summary>
-        /// <para>Describes the permissions for a specified stack. You must specify at least one of the two request values.</para>
+        /// <para>Describes the permissions for a specified stack.</para>
         /// </summary>
         /// 
         /// <param name="describePermissionsRequest">Container for the necessary parameters to execute the DescribePermissions service method on
@@ -269,7 +270,7 @@ namespace Amazon.OpsWorks
         #region DeleteInstance
 
         /// <summary>
-        /// <para>Deletes a specified instance.</para>
+        /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see Deleting Instances.</para>
         /// </summary>
         /// 
         /// <param name="deleteInstanceRequest">Container for the necessary parameters to execute the DeleteInstance service method on
@@ -306,7 +307,7 @@ namespace Amazon.OpsWorks
         #region CloneStack
 
         /// <summary>
-        /// <para>Creates a clone of a specified stack.</para>
+        /// <para>Creates a clone of a specified stack. For more information, see Clone a Stack.</para>
         /// </summary>
         /// 
         /// <param name="cloneStackRequest">Container for the necessary parameters to execute the CloneStack service method on AmazonOpsWorks.</param>
@@ -348,7 +349,7 @@ namespace Amazon.OpsWorks
         #region CreateInstance
 
         /// <summary>
-        /// <para>Creates an instance in a specified stack.</para>
+        /// <para>Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.</para>
         /// </summary>
         /// 
         /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance service method on
@@ -356,6 +357,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the CreateInstance service method, as returned by AmazonOpsWorks.</returns>
         /// 
+        /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
         CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest);
 
@@ -392,7 +394,8 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
-        /// instance. You can stop an Amazon EBS-backed instance without losing data.</para>
+        /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see Starting, Stopping, and Rebooting
+        /// Instances.</para>
         /// </summary>
         /// 
         /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance service method on
@@ -420,6 +423,42 @@ namespace Amazon.OpsWorks
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstance.</param>
         StopInstanceResponse EndStopInstance(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DetachElasticLoadBalancer
+
+        /// <summary>
+        /// <para>Detaches a specified Elastic Load Balancing instance from it's layer.</para>
+        /// </summary>
+        /// 
+        /// <param name="detachElasticLoadBalancerRequest">Container for the necessary parameters to execute the DetachElasticLoadBalancer service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DetachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="detachElasticLoadBalancerRequest">Container for the necessary parameters to execute the DetachElasticLoadBalancer operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DetachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DetachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachElasticLoadBalancer.</param>
+        DetachElasticLoadBalancerResponse EndDetachElasticLoadBalancer(IAsyncResult asyncResult);
         
         #endregion
         
@@ -490,6 +529,45 @@ namespace Amazon.OpsWorks
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
         DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region AttachElasticLoadBalancer
+
+        /// <summary>
+        /// <para>Attaches an Elastic Load Balancing instance to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load Balancing
+        /// instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing Developer
+        /// Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AttachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachElasticLoadBalancer.</param>
+        AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult);
         
         #endregion
         
@@ -577,7 +655,7 @@ namespace Amazon.OpsWorks
         #region CreateUserProfile
 
         /// <summary>
-        /// <para>Creates a new user.</para>
+        /// <para>Creates a new user profile.</para>
         /// </summary>
         /// 
         /// <param name="createUserProfileRequest">Container for the necessary parameters to execute the CreateUserProfile service method on
@@ -795,9 +873,10 @@ namespace Amazon.OpsWorks
         #region SetLoadBasedAutoScaling
 
         /// <summary>
-        /// <para>Specify the load-based auto scaling configuration for a specified layer.</para> <para><b>NOTE:</b>To use load-based auto scaling, you
-        /// must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must
-        /// ensure that you have created enough instances to handle the maximum anticipated load.</para>
+        /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and
+        /// Load-based Instances.</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+        /// Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle
+        /// the maximum anticipated load.</para>
         /// </summary>
         /// 
         /// <param name="setLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the SetLoadBasedAutoScaling service method on
@@ -831,10 +910,65 @@ namespace Amazon.OpsWorks
         
     
 
+        #region DescribeElasticLoadBalancers
+
+        /// <summary>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
+        /// </summary>
+        /// 
+        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers
+        ///          operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeElasticLoadBalancers operation.</returns>
+        IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeElasticLoadBalancers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticLoadBalancers.</param>
+        /// 
+        /// <returns>Returns a DescribeElasticLoadBalancersResult from AmazonOpsWorks.</returns>
+        DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
+        
+        #endregion
+        
+    
+
         #region DeleteLayer
 
         /// <summary>
-        /// <para>Deletes a specified layer. You must first remove all associated instances.</para>
+        /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see How to Delete a
+        /// Layer.</para>
         /// </summary>
         /// 
         /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer service method on AmazonOpsWorks.</param>
@@ -861,6 +995,44 @@ namespace Amazon.OpsWorks
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLayer.</param>
         DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region SetTimeBasedAutoScaling
+
+        /// <summary>
+        /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see Managing Load with Time-based
+        /// and Load-based Instances.</para>
+        /// </summary>
+        /// 
+        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetTimeBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTimeBasedAutoScaling.</param>
+        SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult);
         
         #endregion
         
@@ -910,47 +1082,10 @@ namespace Amazon.OpsWorks
         
     
 
-        #region SetTimeBasedAutoScaling
-
-        /// <summary>
-        /// <para>Specify the time-based auto scaling configuration for a specified instance.</para>
-        /// </summary>
-        /// 
-        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
-        /// </summary>
-        /// 
-        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTimeBasedAutoScaling.</param>
-        SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region CreateApp
 
         /// <summary>
-        /// <para>Creates an app for a specified stack.</para>
+        /// <para>Creates an app for a specified stack. For more information, see Creating Apps.</para>
         /// </summary>
         /// 
         /// <param name="createAppRequest">Container for the necessary parameters to execute the CreateApp service method on AmazonOpsWorks.</param>
@@ -1036,7 +1171,7 @@ namespace Amazon.OpsWorks
         #region DeleteUserProfile
 
         /// <summary>
-        /// <para>Deletes a user.</para>
+        /// <para>Deletes a user profile.</para>
         /// </summary>
         /// 
         /// <param name="deleteUserProfileRequest">Container for the necessary parameters to execute the DeleteUserProfile service method on
@@ -1287,7 +1422,7 @@ namespace Amazon.OpsWorks
         #region StartInstance
 
         /// <summary>
-        /// <para>Starts a specified instance.</para>
+        /// <para>Starts a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
         /// </summary>
         /// 
         /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance service method on
@@ -1464,7 +1599,10 @@ namespace Amazon.OpsWorks
         #region CreateLayer
 
         /// <summary>
-        /// <para>Creates a layer.</para>
+        /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
+        /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
+        /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
+        /// so you can call CreateLayer as many times as you like for that layer type.</para>
         /// </summary>
         /// 
         /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer service method on AmazonOpsWorks.</param>
@@ -1506,7 +1644,7 @@ namespace Amazon.OpsWorks
         #region DeleteStack
 
         /// <summary>
-        /// <para>Deletes a specified stack. You must first delete all instances and layers.</para>
+        /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see Shut Down a Stack.</para>
         /// </summary>
         /// 
         /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on AmazonOpsWorks.</param>
@@ -1618,6 +1756,7 @@ namespace Amazon.OpsWorks
         /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
         /// 
         /// </ul>
+        /// <para>For more information, see Deploying Apps and Run Stack Commands.</para>
         /// </summary>
         /// 
         /// <param name="createDeploymentRequest">Container for the necessary parameters to execute the CreateDeployment service method on

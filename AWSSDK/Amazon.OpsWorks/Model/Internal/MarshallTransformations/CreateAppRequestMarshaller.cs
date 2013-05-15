@@ -78,6 +78,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("StackId");
                     writer.Write(createAppRequest.StackId);
                 }
+                if (createAppRequest != null && createAppRequest.IsSetShortname()) 
+                {
+                    writer.WritePropertyName("Shortname");
+                    writer.Write(createAppRequest.Shortname);
+                }
                 if (createAppRequest != null && createAppRequest.IsSetName()) 
                 {
                     writer.WritePropertyName("Name");

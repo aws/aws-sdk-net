@@ -148,6 +148,31 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("AspectRatio");
                             writer.Write(video.AspectRatio);
                         }
+                        if (video != null && video.IsSetMaxWidth()) 
+                        {
+                            writer.WritePropertyName("MaxWidth");
+                            writer.Write(video.MaxWidth);
+                        }
+                        if (video != null && video.IsSetMaxHeight()) 
+                        {
+                            writer.WritePropertyName("MaxHeight");
+                            writer.Write(video.MaxHeight);
+                        }
+                        if (video != null && video.IsSetDisplayAspectRatio()) 
+                        {
+                            writer.WritePropertyName("DisplayAspectRatio");
+                            writer.Write(video.DisplayAspectRatio);
+                        }
+                        if (video != null && video.IsSetSizingPolicy()) 
+                        {
+                            writer.WritePropertyName("SizingPolicy");
+                            writer.Write(video.SizingPolicy);
+                        }
+                        if (video != null && video.IsSetPaddingPolicy()) 
+                        {
+                            writer.WritePropertyName("PaddingPolicy");
+                            writer.Write(video.PaddingPolicy);
+                        }
                         writer.WriteObjectEnd();
                     }
                 }
@@ -209,6 +234,26 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                         {
                             writer.WritePropertyName("AspectRatio");
                             writer.Write(thumbnails.AspectRatio);
+                        }
+                        if (thumbnails != null && thumbnails.IsSetMaxWidth()) 
+                        {
+                            writer.WritePropertyName("MaxWidth");
+                            writer.Write(thumbnails.MaxWidth);
+                        }
+                        if (thumbnails != null && thumbnails.IsSetMaxHeight()) 
+                        {
+                            writer.WritePropertyName("MaxHeight");
+                            writer.Write(thumbnails.MaxHeight);
+                        }
+                        if (thumbnails != null && thumbnails.IsSetSizingPolicy()) 
+                        {
+                            writer.WritePropertyName("SizingPolicy");
+                            writer.Write(thumbnails.SizingPolicy);
+                        }
+                        if (thumbnails != null && thumbnails.IsSetPaddingPolicy()) 
+                        {
+                            writer.WritePropertyName("PaddingPolicy");
+                            writer.Write(thumbnails.PaddingPolicy);
                         }
                         writer.WriteObjectEnd();
                     }

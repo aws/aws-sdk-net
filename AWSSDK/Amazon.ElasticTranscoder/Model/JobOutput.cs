@@ -21,22 +21,57 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>A section of the request or response body that provides information about the transcoded (target) file.</para>
+    /// <para> <para><b>IMPORTANT:</b>Outputs recommended instead.</para> If you specified one output for a job, information about that output. If
+    /// you specified multiple outputs for a job, the <c>Output</c> object lists information about the first output. This duplicates the information
+    /// that is listed for the first output in the <c>Outputs</c> object.</para>
     /// </summary>
     public class JobOutput
     {
         
+        private string id;
         private string key;
         private string thumbnailPattern;
         private string rotate;
         private string presetId;
+        private string segmentDuration;
         private string status;
         private string statusDetail;
+        private long? duration;
+        private int? width;
+        private int? height;
+
+        /// <summary>
+        /// A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is
+        /// always 1.
+        ///  
+        /// </summary>
+        public string Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
+        /// <summary>
+        /// Sets the Id property
+        /// </summary>
+        /// <param name="id">The value to set for the Id property </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithId(string id)
+        {
+            this.id = id;
+            return this;
+        }
+            
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this.id != null;
+        }
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
-        /// object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job
-        /// fails.
+        /// object in the pipeline that is specified by the pipeline ID.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -161,8 +196,10 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The <c>Id</c> of the preset to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses
-        /// for transcoding.
+        /// The value of the <c>Id</c> object for the preset that you want to use for this job. The preset determines the audio, video, and thumbnail
+        /// settings that Elastic Transcoder uses for transcoding. To use a preset that you created, specify the preset ID that Elastic Transcoder
+        /// returned in the response when you created the preset. You can also use the Elastic Transcoder system presets, which you can get with
+        /// <c>ListPresets</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -199,8 +236,56 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// Status of the job. The value of <c>Status</c> is one of the following: <c>Submitted</c>, <c>Progressing</c>, <c>Completed</c>,
-        /// <c>Canceled</c>, or <c>Error</c>.
+        /// <important>(Outputs in MPEG-TS format only.</important>If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c>is
+        /// <c>ts</c> (MPEG-TS), <c>SegmentDuration</c> is the maximum duration of each .ts file in seconds. The range of valid values is 1 to 60
+        /// seconds. If the duration of the video is not evenly divisible by <c>SegmentDuration</c>, the duration of the last segment is the remainder
+        /// of total length/SegmentDuration. Elastic Transcoder creates an output-specific playlist for each output that you specify in OutputKeys. To
+        /// add an output to the master playlist for this job, include it in <c>OutputKeys</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{1,5}([.]\d{0,5})?$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string SegmentDuration
+        {
+            get { return this.segmentDuration; }
+            set { this.segmentDuration = value; }
+        }
+
+        /// <summary>
+        /// Sets the SegmentDuration property
+        /// </summary>
+        /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithSegmentDuration(string segmentDuration)
+        {
+            this.segmentDuration = segmentDuration;
+            return this;
+        }
+            
+
+        // Check to see if SegmentDuration property is set
+        internal bool IsSetSegmentDuration()
+        {
+            return this.segmentDuration != null;
+        }
+
+        /// <summary>
+        /// The status of one output in a job. If you specified only one output for the job, <c>Outputs:Status</c> is always the same as
+        /// <c>Job:Status</c>. If you specified more than one output: <ul> <li><c>Job:Status</c> and <c>Outputs:Status</c> for all of the outputs is
+        /// Submitted until Elastic Transcoder starts to process the first output.</li> <li>When Elastic Transcoder starts to process the first output,
+        /// <c>Outputs:Status</c> for that output and <c>Job:Status</c> both change to Progressing. For each output, the value of <c>Outputs:Status</c>
+        /// remains Submitted until Elastic Transcoder starts to process the output.</li> <li>Job:Status remains Progressing until all of the outputs
+        /// reach a terminal status, either Complete or Error.</li> <li>When all of the outputs reach a terminal status, <c>Job:Status</c> changes to
+        /// Complete only if <c>Outputs:Status</c> for all of the outputs is <c>Complete</c>. If <c>Outputs:Status</c> for one or more outputs is
+        /// <c>Error</c>, the terminal status for <c>Job:Status</c> is also <c>Error</c>.</li> </ul> The value of <c>Status</c> is one of the following:
+        /// <c>Submitted</c>, <c>Progressing</c>, <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -271,6 +356,90 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetStatusDetail()
         {
             return this.statusDetail != null;
+        }
+
+        /// <summary>
+        /// Duration of the output file, in seconds.
+        ///  
+        /// </summary>
+        public long Duration
+        {
+            get { return this.duration ?? default(long); }
+            set { this.duration = value; }
+        }
+
+        /// <summary>
+        /// Sets the Duration property
+        /// </summary>
+        /// <param name="duration">The value to set for the Duration property </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithDuration(long duration)
+        {
+            this.duration = duration;
+            return this;
+        }
+            
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this.duration.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the width of the output file in pixels.
+        ///  
+        /// </summary>
+        public int Width
+        {
+            get { return this.width ?? default(int); }
+            set { this.width = value; }
+        }
+
+        /// <summary>
+        /// Sets the Width property
+        /// </summary>
+        /// <param name="width">The value to set for the Width property </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithWidth(int width)
+        {
+            this.width = width;
+            return this;
+        }
+            
+
+        // Check to see if Width property is set
+        internal bool IsSetWidth()
+        {
+            return this.width.HasValue;
+        }
+
+        /// <summary>
+        /// Height of the output file, in pixels.
+        ///  
+        /// </summary>
+        public int Height
+        {
+            get { return this.height ?? default(int); }
+            set { this.height = value; }
+        }
+
+        /// <summary>
+        /// Sets the Height property
+        /// </summary>
+        /// <param name="height">The value to set for the Height property </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithHeight(int height)
+        {
+            this.height = height;
+            return this;
+        }
+            
+
+        // Check to see if Height property is set
+        internal bool IsSetHeight()
+        {
+            return this.height.HasValue;
         }
     }
 }

@@ -25,12 +25,13 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
-    /// <para>Creates an app for a specified stack.</para>
+    /// <para>Creates an app for a specified stack. For more information, see Creating Apps.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateApp"/>
     public class CreateAppRequest : AmazonWebServiceRequest
     {
         private string stackId;
+        private string shortname;
         private string name;
         private string description;
         private string type;
@@ -66,6 +67,34 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetStackId()
         {
             return this.stackId != null;
+        }
+
+        /// <summary>
+        /// The app's short name.
+        ///  
+        /// </summary>
+        public string Shortname
+        {
+            get { return this.shortname; }
+            set { this.shortname = value; }
+        }
+
+        /// <summary>
+        /// Sets the Shortname property
+        /// </summary>
+        /// <param name="shortname">The value to set for the Shortname property </param>
+        /// <returns>this instance</returns>
+        public CreateAppRequest WithShortname(string shortname)
+        {
+            this.shortname = shortname;
+            return this;
+        }
+            
+
+        // Check to see if Shortname property is set
+        internal bool IsSetShortname()
+        {
+            return this.shortname != null;
         }
 
         /// <summary>
@@ -191,7 +220,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The app virtual host settings, with multiple domains separated by commas. For example: <c>'www.mysite.com, mysite.com'</c>
+        /// The app virtual host settings, with multiple domains separated by commas. For example: <c>'www.example.com, example.com'</c>
         ///  
         /// </summary>
         public List<string> Domains

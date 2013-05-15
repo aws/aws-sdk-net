@@ -29,12 +29,12 @@ namespace Amazon.DynamoDBv2.Model
     /// key, the new item completely replaces the existing item. You can perform a conditional put (insert a new item if one with the specified
     /// primary key doesn't exist), or replace an existing item if it has certain attribute values. </para> <para>In addition to putting an item,
     /// you can also return the item's attribute values in the same operation, using the <i>ReturnValues</i> parameter.</para> <para>When you add an
-    /// item, the primary key attribute(s) are the only required attributes. Attribute values cannot be null; string and binary type attributes must
-    /// have lengths greater than zero; and set type attributes cannot be empty. Requests with empty values will be rejected with a
+    /// item, the primary key attribute(s) are the only required attributes. Attribute values cannot be null. String and binary type attributes must
+    /// have lengths greater than zero. Set type attributes cannot be empty. Requests with empty values will be rejected with a
     /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
     /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
     /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-    /// attributes. </para> <para>For more information about using this API, see Working with Items of the <i>Amazon DynamoDB Developer Guide</i>
+    /// attributes. </para> <para>For more information about using this API, see Working with Items in the <i>Amazon DynamoDB Developer Guide</i>
     /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.PutItem"/>
@@ -92,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other
         /// attribute name-value pairs for the item. If you specify any attributes that are part of an index key, then the data types for those
         /// attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> of the <i>Amazon
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon
         /// DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.
         ///  
         /// </summary>
@@ -127,8 +127,8 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute/condition pairs. This is the conditional block for the <i>PutItem</i> operation. All the conditions must be met for the
         /// operation to succeed. <i>Expected</i> allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the
         /// attribute value already exists; or if the attribute value exists and has a particular value before changing it. Each item in <i>Expected</i>
-        /// represents an attribute name for Amazon DynamoDB to check, along with the following: <ul> <li> <i>Value</i>-the attribute value for Amazon
-        /// DynamoDB to check. </li> <li> <i>Exists</i>-causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul>
+        /// represents an attribute name for Amazon DynamoDB to check, along with the following: <ul> <li> <i>Value</i> - The attribute value for Amazon
+        /// DynamoDB to check. </li> <li> <i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul>
         /// <li> If <i>Exists</i> is <c>true</c>, Amazon DynamoDB will check to see if that attribute value already exists in the table. If it is found,
         /// then the operation succeeds. If it is not found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If
         /// <i>Exists</i> is <c>false</c>, Amazon DynamoDB assumes that the attribute value does <i>not</i> exist in the table. If in fact the value
@@ -171,9 +171,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request.
-        /// For <i>PutItem</i>, the valid values are: <ul> <li> <c>NONE</c>-(default) If <i>ReturnValues</i> is not specified, or if its value is
-        /// <c>NONE</c>, then nothing is returned. </li> <li> <c>ALL_OLD</c>-If <i>PutItem</i> overwrote an attribute name-value pair, then the content
-        /// of the old item is returned. </li> </ul>
+        /// For <i>PutItem</i>, the valid values are: <ul> <li> <c>NONE</c> - If <i>ReturnValues</i> is not specified, or if its value is <c>NONE</c>,
+        /// then nothing is returned. (This is the default for <i>ReturnValues</i>.) </li> <li> <c>ALL_OLD</c> - If <i>PutItem</i> overwrote an
+        /// attribute name-value pair, then the content of the old item is returned. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -210,8 +210,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Determines whether to include consumed capacity information in the output. If this is set to <c>TOTAL</c>, then this information is shown in
-        /// the output; otherwise, the consumed capacity information is not shown.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -248,9 +248,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Indicates whether to return statistics about item collections, if any, that were modified during the operation. The default for
-        /// <i>ReturnItemCollectionMetrics</i> is <c>NONE</c>, meaning that no statistics will be returned. To obtain the statistics, set
-        /// <i>ReturnItemCollectionMetrics</i> to <c>SIZE</c>.
+        /// If set to <c>SIZE</c>, statistics about item collections, if any, that were modified during the operation are returned in the response. If
+        /// set to <c>NONE</c> (the default), no statistics are returned..
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -190,7 +190,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The app's virtual host settings, with multiple domains separated by commas. For example: <c>'www.mysite.com, mysite.com'</c>
+        /// The app's virtual host settings, with multiple domains separated by commas. For example: <c>'www.example.com, example.com'</c>
         ///  
         /// </summary>
         public List<string> Domains

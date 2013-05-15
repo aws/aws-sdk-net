@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInstance operation.
-    /// <para>Starts a specified instance.</para>
+    /// <para>Starts a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
     public class StartInstanceRequest : AmazonWebServiceRequest

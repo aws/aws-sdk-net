@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLayer operation.
-    /// <para>Deletes a specified layer. You must first remove all associated instances.</para>
+    /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see How to Delete a
+    /// Layer.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteLayer"/>
     public class DeleteLayerRequest : AmazonWebServiceRequest

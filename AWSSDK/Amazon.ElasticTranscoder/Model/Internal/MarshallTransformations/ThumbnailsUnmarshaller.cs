@@ -67,6 +67,30 @@
                 continue;
               }
   
+              if (context.TestExpression("MaxWidth", targetDepth))
+              {
+                thumbnails.MaxWidth = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("MaxHeight", targetDepth))
+              {
+                thumbnails.MaxHeight = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("SizingPolicy", targetDepth))
+              {
+                thumbnails.SizingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("PaddingPolicy", targetDepth))
+              {
+                thumbnails.PaddingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {

@@ -322,7 +322,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined custom JSON. It is used to override the corresponding default stack configuration JSON values for stack.
         /// The string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\":
-        /// \"value2\",...}"</c>
+        /// \"value2\",...}"</c> For more information on custom JSON, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom JSON to Modify the Stack Configuration
+        /// JSON</a>.
         ///  
         /// </summary>
         public string CustomJson

@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
-    /// <para>Deletes a specified stack. You must first delete all instances and layers.</para>
+    /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see Shut Down a Stack.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
     public class DeleteStackRequest : AmazonWebServiceRequest

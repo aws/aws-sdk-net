@@ -104,6 +104,15 @@ namespace Amazon.OpsWorks.Model
         /// <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li> <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li>
         /// </ul>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public string Type
         {
@@ -483,7 +492,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// OpsWorks supports five life-cycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each
+        /// OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each
         /// layer, OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events.
         /// OpsWorks runs custom event recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a particular layer
         /// to be run in response to each of the five events. To specify a recipe, use the cookbook's directory name in the repository followed by two

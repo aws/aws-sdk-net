@@ -205,6 +205,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
                     writer.WriteArrayEnd();
                 }
+                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultRootDeviceType()) 
+                {
+                    writer.WritePropertyName("DefaultRootDeviceType");
+                    writer.Write(cloneStackRequest.DefaultRootDeviceType);
+                }
 
                 writer.WriteObjectEnd();
                 
