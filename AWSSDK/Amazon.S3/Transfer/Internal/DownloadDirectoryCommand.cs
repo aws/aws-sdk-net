@@ -81,18 +81,22 @@ namespace Amazon.S3.Transfer.Internal
                     listRequest.Prefix = listRequest.Prefix.Substring(1);
             }
 
-            ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
             List<S3Object> objs = new List<S3Object>();
-            foreach (S3Object s3o in listResponse.S3Objects)
+            do
             {
-                DateTime lastModified = DateTime.Parse(s3o.LastModified);
-                if (this._request.IsSetModifiedSinceDate() && this._request.ModifiedSinceDate < lastModified)
-                    continue;
-                if (this._request.IsSetUnmodifiedSinceDate() && lastModified < this._request.UnmodifiedSinceDate)
-                    continue;
+                ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
+                foreach (S3Object s3o in listResponse.S3Objects)
+                {
+                    DateTime lastModified = DateTime.Parse(s3o.LastModified);
+                    if (this._request.IsSetModifiedSinceDate() && this._request.ModifiedSinceDate < lastModified)
+                        continue;
+                    if (this._request.IsSetUnmodifiedSinceDate() && lastModified < this._request.UnmodifiedSinceDate)
+                        continue;
 
-                objs.Add(s3o);
-            }
+                    objs.Add(s3o);
+                }
+                listRequest.Marker = listResponse.NextMarker;
+            } while (!string.IsNullOrEmpty(listRequest.Marker));
 
             this._totalNumberOfFilesToDownload = objs.Count;
 

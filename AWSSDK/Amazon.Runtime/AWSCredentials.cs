@@ -1036,6 +1036,25 @@ namespace Amazon.Runtime
         #endregion
     }
 
+    /// <summary>
+    /// Anonymous credentials.
+    /// Using these credentials, the client does not sign the request.
+    /// </summary>
+    public class AnonymousAWSCredentials : AWSCredentials
+    {
+        #region Abstract class overrides
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            throw new NotSupportedException("AnonymousAWSCredentials do not support this operation");
+        }
+
+        #endregion
+    }
 
     // Credentials fallback mechanism
     internal static class FallbackCredentialsFactory

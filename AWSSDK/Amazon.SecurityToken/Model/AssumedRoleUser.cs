@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Identifiers for the temporary security credentials that the <c>AssumeRole</c> action returns.</para>
     /// </summary>
-    public class AssumedRoleUser  
+    public class AssumedRoleUser
     {
         
         private string assumedRoleId;
@@ -68,13 +68,13 @@ namespace Amazon.SecurityToken.Model
         // Check to see if AssumedRoleId property is set
         internal bool IsSetAssumedRoleId()
         {
-            return this.assumedRoleId != null;       
+            return this.assumedRoleId != null;
         }
 
         /// <summary>
         /// The ARN of the temporary security credentials that are returned from the AssumeRole action. For more information about ARNs and how to use
-        /// them in policies, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank"> Identifiers
-        /// for IAM Entities</a> in <i>Using IAM</i>.
+        /// them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank"> Identifiers for IAM
+        /// Entities</a> in <i>Using IAM</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,7 +107,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
     }
 }

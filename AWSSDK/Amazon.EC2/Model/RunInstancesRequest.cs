@@ -110,7 +110,6 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> blockDeviceMappingField;
         private MonitoringSpecification monitoringField;
         private string subnetIdField;
-        private string additionalInfoField;
         private bool? disableApiTerminationField;
         private string instanceInitiatedShutdownBehaviorField;
         private InstanceLicenseSpecification licenseField;
@@ -620,37 +619,6 @@ namespace Amazon.EC2.Model
         public bool IsSetSubnetId()
         {
             return this.subnetIdField != null;
-        }
-
-        /// <summary>
-        /// Additional information to make available to the instance(s)
-        /// </summary>
-        [XmlElementAttribute(ElementName = "AdditionalInfo")]
-        public string AdditionalInfo
-        {
-            get { return this.additionalInfoField; }
-            set { this.additionalInfoField = value; }
-        }
-
-        /// <summary>
-        /// Sets the additional information to make available to the instance(s)
-        /// </summary>
-        /// <param name="additionalInfo">Specifies additional information to make
-        /// available to the instance(s)</param>
-        /// <returns>this instance</returns>
-        public RunInstancesRequest WithAdditionalInfo(string additionalInfo)
-        {
-            this.additionalInfoField = additionalInfo;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if AdditionalInfo property is set
-        /// </summary>
-        /// <returns>true if AdditionalInfo property is set</returns>
-        public bool IsSetAdditionalInfo()
-        {
-            return this.additionalInfoField != null;
         }
 
         /// <summary>

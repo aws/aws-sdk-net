@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>AWS credentials for API authentication.</para>
     /// </summary>
-    public class Credentials  
+    public class Credentials
     {
         
         private string accessKeyId;
@@ -69,11 +69,11 @@ namespace Amazon.SecurityToken.Model
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;       
+            return this.accessKeyId != null;
         }
 
         /// <summary>
-        /// The Secret Access Key to sign requests.
+        /// The secret access key to sign requests.
         ///  
         /// </summary>
         public string SecretAccessKey
@@ -97,7 +97,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if SecretAccessKey property is set
         internal bool IsSetSecretAccessKey()
         {
-            return this.secretAccessKey != null;       
+            return this.secretAccessKey != null;
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if SessionToken property is set
         internal bool IsSetSessionToken()
         {
-            return this.sessionToken != null;       
+            return this.sessionToken != null;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Expiration property is set
         internal bool IsSetExpiration()
         {
-            return this.expiration.HasValue;       
+            return this.expiration.HasValue;
         }
     }
 }

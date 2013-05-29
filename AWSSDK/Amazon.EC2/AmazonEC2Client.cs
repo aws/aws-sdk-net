@@ -5770,10 +5770,6 @@ namespace Amazon.EC2
             {
                 parameters["SubnetId"] = request.SubnetId;
             }
-            if (request.IsSetAdditionalInfo())
-            {
-                parameters["AdditionalInfo"] = request.AdditionalInfo;
-            }
             if (request.IsSetDisableApiTermination())
             {
                 parameters["DisableApiTermination"] = request.DisableApiTermination.ToString().ToLower();

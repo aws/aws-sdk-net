@@ -25,12 +25,15 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSessionToken operation.
-    /// <para>The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access
-    /// Key ID, a Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM
-    /// users can be between 15 minutes and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to a
-    /// maximum of one hour. Providing the AWS Multi-Factor Authentication (MFA) device serial number and the token code is optional.</para>
-    /// <para>For more information about using GetSessionToken to create temporary credentials, go to Creating Temporary Credentials to Enable
-    /// Access for IAM Users in <i>Using IAM</i> .</para>
+    /// <para>Returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an access key ID, a secret access
+    /// key, and a security token. Typically, you use <c>GetSessionToken</c> if you want use MFA to protect programmatic calls to specific AWS APIs
+    /// like Amazon EC2 <c>StopInstances</c> . MFA-enabled IAM users would need to call <c>GetSessionToken</c> and submit an MFA code that is
+    /// associated with their MFA device. Using the temporary security credentials that are returned from the call, IAM users can then make
+    /// programmatic calls to APIs that require MFA authentication. </para> <para> The <c>GetSessionToken</c> action must be called by using the
+    /// long-term AWS security credentials of the AWS account or an IAM user. Credentials that are created by IAM users are valid for the duration
+    /// that you specify, between 900 seconds (15 minutes) and 129600 secondes (36 hours); credentials that are created by using account credentials
+    /// have a maximum duration of 3600 seconds (1 hour).</para> <para>For more information about using <c>GetSessionToken</c> to create temporary
+    /// credentials, go to Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetSessionToken"/>
     public class GetSessionTokenRequest : AmazonWebServiceRequest
@@ -40,9 +43,9 @@ namespace Amazon.SecurityToken.Model
         private string tokenCode;
 
         /// <summary>
-        /// The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900s (15 minutes)
-        /// to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions for AWS account owners are restricted to a maximum of 3600s (one
-        /// hour). If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
+        /// The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900 seconds (15
+        /// minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default. Sessions for AWS account owners are restricted to a
+        /// maximum of 3600 seconds (one hour). If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -75,17 +78,15 @@ namespace Amazon.SecurityToken.Model
         // Check to see if DurationSeconds property is set
         internal bool IsSetDurationSeconds()
         {
-            return this.durationSeconds.HasValue;       
+            return this.durationSeconds.HasValue;
         }
 
         /// <summary>
-        /// The identification number of the MFA device for the user. If the IAM user has a policy requiring MFA authentication (or is in a group
-        /// requiring MFA authentication) to access resources, provide the device value here.The value is in the <b>Security Credentials</b> tab of the
-        /// user's details pane in the IAM console. If the IAM user has an active MFA device, the details pane displays a <b>Multi-Factor Authentication
-        /// Device</b> value. The value is either for a virtual device, such as <c>arn:aws:iam::123456789012:mfa/user</c>, or it is the device serial
-        /// number for a hardware device (usually the number from the back of the device), such as <c>GAHT12345678</c>. For more information, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html" target="_blank">Using Multi-Factor Authentication (MFA)
-        /// Devices with AWS</a> in <i>Using IAM</i>.
+        /// The identification number of the MFA device, if any, that is associated with the IAM user who is making the <c>GetSessionToken</c> call.
+        /// Specify this value if the IAM user has a policy that requires MFA authentication. The value is either the serial number for a hardware
+        /// device (such as <c>GAHT12345678</c>) or an Amazon Resource Name (ARN) for a virtual device (such as
+        /// <c>arn:aws:iam::123456789012:mfa/user</c>). You can find the device for an IAM user by going to the AWS Management Console and viewing the
+        /// user's security credentials.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -122,16 +123,13 @@ namespace Amazon.SecurityToken.Model
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;       
+            return this.serialNumber != null;
         }
 
         /// <summary>
-        /// The value provided by the MFA device. If the user has an access policy requiring an MFA code (or is in a group requiring an MFA code),
-        /// provide the value here to get permission to resources as specified in the access policy. If MFA authentication is required, and the user
-        /// does not provide a code when requesting a set of temporary security credentials, the user will receive an "access denied" response when
-        /// requesting resources that require MFA authentication. For more information, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html" target="_blank">Using Multi-Factor Authentication (MFA)
-        /// Devices with AWS</a> in <i>Using IAM</i>.
+        /// The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA code, specify this value. If
+        /// MFA authentication is required, and the user does not provide a code when requesting a set of temporary security credentials, the user will
+        /// receive an "access denied" response when requesting resources that require MFA authentication.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -168,7 +166,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if TokenCode property is set
         internal bool IsSetTokenCode()
         {
-            return this.tokenCode != null;       
+            return this.tokenCode != null;
         }
     }
 }

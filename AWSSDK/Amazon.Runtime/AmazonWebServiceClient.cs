@@ -882,6 +882,10 @@ namespace Amazon.Runtime
 
         private void SignRequest(IRequest request, AbstractAWSSigner signer, RequestMetrics metrics)
         {
+            // Check if request should be signed
+            if (credentials is AnonymousAWSCredentials)
+                return;
+
             metrics.StartEvent(RequestMetrics.Metric.CredentialsRequestTime);
             using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
             {

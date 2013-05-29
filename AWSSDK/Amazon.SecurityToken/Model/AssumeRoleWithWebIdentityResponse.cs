@@ -22,28 +22,29 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  GetSessionTokenResult response and response metadata.
+    /// Returns information about the  AssumeRoleWithWebIdentityResult response and response metadata.
     /// </summary>
-    public class GetSessionTokenResponse : AmazonWebServiceResponse
+    public class AssumeRoleWithWebIdentityResponse : AmazonWebServiceResponse
     {
-        private GetSessionTokenResult getSessionTokenResult;
+        private AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentityResult;
 
         /// <summary>
-        /// Gets and sets the GetSessionTokenResult property.
-        /// Contains the result of a successful invocation of the GetSessionToken action.
+        /// Gets and sets the AssumeRoleWithWebIdentityResult property.
+        /// Contains the result of a successful invocation of the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be used
+        /// to make AWS requests.
         /// </summary>
-        public GetSessionTokenResult GetSessionTokenResult
+        public AssumeRoleWithWebIdentityResult AssumeRoleWithWebIdentityResult
         {
             get
             {
-                if(this.getSessionTokenResult == null)
+                if(this.assumeRoleWithWebIdentityResult == null)
                 {
-                    this.getSessionTokenResult = new GetSessionTokenResult();
+                    this.assumeRoleWithWebIdentityResult = new AssumeRoleWithWebIdentityResult();
                 }
 
-                return this.getSessionTokenResult;
+                return this.assumeRoleWithWebIdentityResult;
             }
-            set { this.getSessionTokenResult = value; }
+            set { this.assumeRoleWithWebIdentityResult = value; }
         }
     }
 }

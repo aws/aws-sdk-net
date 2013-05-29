@@ -5801,8 +5801,8 @@ namespace Amazon.S3
             s3AsyncResult.S3Request.Headers[AWSSDKUtils.UserAgentHeader] = userAgent;
 
             ProcessRequestHandlers(s3AsyncResult.S3Request);
-
-            ImmutableCredentials immutableCredentials = credentials == null ? null : credentials.GetCredentials();
+                        
+            ImmutableCredentials immutableCredentials = credentials == null || credentials is AnonymousAWSCredentials ? null : credentials.GetCredentials();
             try
             {
                 if (!isRedirect)
@@ -6164,7 +6164,7 @@ namespace Amazon.S3
             }
 
             // Add token if available
-            if (credentials != null && immutableCredentials.UseToken)
+            if (immutableCredentials != null && immutableCredentials.UseToken ) 
             {
                 webHeaders[S3Constants.AmzSecurityTokenHeader] = immutableCredentials.Token;
             }

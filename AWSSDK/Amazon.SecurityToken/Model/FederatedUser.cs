@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Identifiers for the federated user associated with the credentials.</para>
     /// </summary>
-    public class FederatedUser  
+    public class FederatedUser
     {
         
         private string federatedUserId;
@@ -67,12 +67,12 @@ namespace Amazon.SecurityToken.Model
         // Check to see if FederatedUserId property is set
         internal bool IsSetFederatedUserId()
         {
-            return this.federatedUserId != null;       
+            return this.federatedUserId != null;
         }
 
         /// <summary>
         /// The ARN specifying the federated user associated with the credentials. For more information about ARNs and how to use them in policies, see
-        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
         /// <i>Using IAM</i>.
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
     }
 }

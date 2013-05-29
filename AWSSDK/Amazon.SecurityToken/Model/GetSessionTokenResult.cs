@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetSessionToken action.</para>
     /// </summary>
-    public class GetSessionTokenResult  
+    public class GetSessionTokenResult
     {
         
         private Credentials credentials;
@@ -53,7 +53,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this.credentials != null;       
+            return this.credentials != null;
         }
     }
 }
