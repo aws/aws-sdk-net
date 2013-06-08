@@ -397,8 +397,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance. Constraints: Must be an
-        /// integer greater than 1000.
+        /// Specifies the amount of provisioned IOPS for the DB Instance, expressed in I/O operations per second. If this parameter is not specified,
+        /// the IOPS value will be taken from the backup. If this parameter is set to 0, the new instance will be converted to a non-PIOPS instance,
+        /// which will take additional time, though your DB instance will be available for connections before the conversion starts. Constraints: Must
+        /// be an integer greater than 1000.
         ///  
         /// </summary>
         public int Iops
@@ -426,7 +428,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the option group to be used for the restored DB instance.
+        /// The name of the option group to be used for the restored DB instance. <!-- Note that persistent options, such as the TDE_SQLServer option
+        /// for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated with the option group. --> Permanent
+        /// options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be
+        /// removed from a DB instance once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName

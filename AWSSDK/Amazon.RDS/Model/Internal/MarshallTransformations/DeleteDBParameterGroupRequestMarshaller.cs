@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBParameterGroup");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-05-15");
             if (deleteDBParameterGroupRequest != null && deleteDBParameterGroupRequest.IsSetDBParameterGroupName())
             {
                 request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(deleteDBParameterGroupRequest.DBParameterGroupName));

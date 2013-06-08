@@ -22,7 +22,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// <para> Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or
-    /// describe option groups. </para>
+    /// describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have
+    /// several different values. </para>
     /// </summary>
     public class OptionSetting
     {
@@ -38,7 +39,7 @@ namespace Amazon.RDS.Model
         private bool? isCollection;
 
         /// <summary>
-        /// The name of the option.
+        /// The name of the option that has settings that you can set.
         ///  
         /// </summary>
         public string Name
@@ -66,7 +67,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The current value of the option.
+        /// The current value of the option setting.
         ///  
         /// </summary>
         public string Value
@@ -94,7 +95,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The default value of the option.
+        /// The default value of the option setting.
         ///  
         /// </summary>
         public string DefaultValue
@@ -122,7 +123,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description of the option.
+        /// The description of the option setting.
         ///  
         /// </summary>
         public string Description
@@ -178,7 +179,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The data type of the option.
+        /// The data type of the option setting.
         ///  
         /// </summary>
         public string DataType
@@ -206,7 +207,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The allowed values of the option.
+        /// The allowed values of the option setting.
         ///  
         /// </summary>
         public string AllowedValues
@@ -234,7 +235,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A Boolean value that, when true, indicates the option can be modified from the default.
+        /// A Boolean value that, when true, indicates the option setting can be modified from the default.
         ///  
         /// </summary>
         public bool IsModifiable

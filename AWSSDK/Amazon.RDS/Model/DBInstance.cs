@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
         private string characterSetName;
         private string secondaryAvailabilityZone;
         private bool? publiclyAccessible;
+        private List<DBInstanceStatusInfo> statusInfos = new List<DBInstanceStatusInfo>();
 
         /// <summary>
         /// Contains a user-supplied database identifier. This is the unique key that identifies a DB Instance.
@@ -997,6 +998,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// The status of a Read Replica. If the instance is not a for a read replica, this will be blank.
+        ///  
+        /// </summary>
+        public List<DBInstanceStatusInfo> StatusInfos
+        {
+            get { return this.statusInfos; }
+            set { this.statusInfos = value; }
+        }
+        /// <summary>
+        /// Adds elements to the StatusInfos collection
+        /// </summary>
+        /// <param name="statusInfos">The values to add to the StatusInfos collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithStatusInfos(params DBInstanceStatusInfo[] statusInfos)
+        {
+            foreach (DBInstanceStatusInfo element in statusInfos)
+            {
+                this.statusInfos.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the StatusInfos collection
+        /// </summary>
+        /// <param name="statusInfos">The values to add to the StatusInfos collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithStatusInfos(IEnumerable<DBInstanceStatusInfo> statusInfos)
+        {
+            foreach (DBInstanceStatusInfo element in statusInfos)
+            {
+                this.statusInfos.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if StatusInfos property is set
+        internal bool IsSetStatusInfos()
+        {
+            return this.statusInfos.Count > 0;
         }
     }
 }

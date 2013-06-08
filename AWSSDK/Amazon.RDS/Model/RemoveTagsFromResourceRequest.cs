@@ -34,7 +34,9 @@ namespace Amazon.RDS.Model
         private List<string> tagKeys = new List<string>();
 
         /// <summary>
-        /// The DB Instance the tags will be removed from.
+        /// The DB Instance the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName

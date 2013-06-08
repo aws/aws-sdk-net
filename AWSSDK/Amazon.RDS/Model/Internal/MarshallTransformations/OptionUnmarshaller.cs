@@ -55,6 +55,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("Permanent", targetDepth))
+                    {
+                        option.Permanent = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Port", targetDepth))
                     {
                         option.Port = IntUnmarshaller.GetInstance().Unmarshall(context);

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeEventCategoriesRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEventCategories");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-05-15");
             if (describeEventCategoriesRequest != null && describeEventCategoriesRequest.IsSetSourceType())
             {
                 request.Parameters.Add("SourceType", StringUtils.FromString(describeEventCategoriesRequest.SourceType));

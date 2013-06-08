@@ -43,7 +43,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-#region Private Members
+        #region Private Members
         private StreamReader jsonStream = null;
         private Stack<string> keyChain = new Stack<string>();
         private string keyChainString = "";
@@ -53,9 +53,9 @@ namespace Amazon.Runtime.Internal.Transform
         private Token current = new Token();
         private NameValueCollection headers;
         private int httpStatusCode;
-#endregion
+        #endregion
 
-#region Constructors
+        #region Constructors
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="httpStatusCode">Status code of the response</param>
         /// <param name="headers">Headers associated with the request.</param>
         public JsonUnmarshallerContext(Stream responseStream, int httpStatusCode, NameValueCollection headers)
-        {            
+        {
             this.headers = headers ?? new NameValueCollection();
             this.responseContents = null;
             this.httpStatusCode = httpStatusCode;
@@ -74,7 +74,7 @@ namespace Amazon.Runtime.Internal.Transform
                 base.SetupCRCStream(headers, responseStream, contentLength);
             }
 
-            if(this.crcStream != null)
+            if (this.crcStream != null)
                 this.jsonStream = new StreamReader(this.crcStream);
             else
                 this.jsonStream = new StreamReader(responseStream);
@@ -93,9 +93,9 @@ namespace Amazon.Runtime.Internal.Transform
             this.httpStatusCode = httpStatusCode;
         }
 
-#endregion
+        #endregion
 
-#region Public Properties
+        #region Public Properties
 
         /// <summary>
         /// The Http Status Code of the request being unmarshalled.
@@ -247,7 +247,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
-                while (!jsonStream.EndOfStream && Char.IsWhiteSpace((char)jsonStream.Peek()))
+                while (!jsonStream.EndOfStream && Char.IsWhiteSpace((char)StreamPeek()))
                 {
                     jsonStream.Read();
                 }
@@ -330,9 +330,9 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get { return this.keyChainString; }
         }
-#endregion
+        #endregion
 
-#region Private Properties
+        #region Private Properties
         /// <summary>
         /// Get the base stream of the jsonStream.
         /// </summary>
@@ -340,9 +340,9 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get { return jsonStream.BaseStream; }
         }
-#endregion
+        #endregion
 
-#region Public Methods
+        #region Public Methods
         /// <summary>
         ///     Reads to the next token in the json document, and updates the context
         ///     accordingly.
@@ -384,7 +384,7 @@ namespace Amazon.Runtime.Internal.Transform
                     if (addedKey)
                     {
                         keyChain.Pop();
-                        keyChainString = keyChainString.Substring(0,keyChainString.LastIndexOf('/'));
+                        keyChainString = keyChainString.Substring(0, keyChainString.LastIndexOf('/'));
                     }
                     break;
                 case TokenType.ElementSeperator:
@@ -396,14 +396,14 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         key = true;
                         keyChain.Pop();
-                        keyChainString = keyChainString.Substring(0,keyChainString.LastIndexOf('/'));
+                        keyChainString = keyChainString.Substring(0, keyChainString.LastIndexOf('/'));
                     }
                     break;
-                case TokenType.Text: 
+                case TokenType.Text:
                     if (key)
                     {
                         keyChain.Push(current.Text);
-                        keyChainString = String.Format("{0}/{1}",keyChainString,current.Text);
+                        keyChainString = String.Format("{0}/{1}", keyChainString, current.Text);
                     }
                     break;
                 case TokenType.KeyValueSeperator:
@@ -435,11 +435,11 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>
         ///     The text contents of the current token being parsed.
         /// </returns>
-        public string  ReadText()
+        public string ReadText()
         {
             return current.Text;
         }
-        
+
         /// <summary>
         ///     Tests the specified expression against the current position in the json
         ///     document </summary>
@@ -452,7 +452,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             if (expression.Equals("."))
                 return true;
-           
+
             return keyChainString.EndsWith("/" + expression);
         }
 
@@ -478,26 +478,44 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 startingStackDepth++;
             }
-            return (startingStackDepth == this.CurrentDepth 
+            return (startingStackDepth == this.CurrentDepth
                     && keyChainString.ToLower().EndsWith("/" + expression.ToLower()));
         }
-#endregion
+        #endregion
 
-#region Private Methods
+        #region Private Methods
+
         /// <summary>
         /// Peeks at the next (non-whitespace) character in the jsonStream.
         /// </summary>
         /// <returns>The next (non-whitespace) character in the jsonStream, or -1 if at the end.</returns>
         internal int Peek()
         {
-            while (Char.IsWhiteSpace((char)jsonStream.Peek()))
+            while (Char.IsWhiteSpace((char)StreamPeek()))
             {
                 jsonStream.Read();
             }
-            return jsonStream.Peek();
+            return StreamPeek();
 
         }
-        
+
+        /// <summary>
+        /// Peeks at the next character in the stream.
+        /// If the data isn't buffered into the StreamReader (Peek() returns -1),
+        /// we flush the buffered data and try one more time.
+        /// </summary>
+        /// <returns></returns>
+        private int StreamPeek()
+        {
+            int peek = jsonStream.Peek();
+            if (peek == -1)
+            {
+                jsonStream.DiscardBufferedData();
+                peek = jsonStream.Peek();
+            }
+            return peek;
+        }
+
         /// <summary>
         /// Reads the next token from the stream
         /// </summary>
@@ -661,33 +679,33 @@ namespace Amazon.Runtime.Internal.Transform
             StringBuilder sb = new StringBuilder(firstChar.ToString());
             char nextChar;
 
-            while (Char.IsNumber((char)jsonStream.Peek()))
+            while (Char.IsNumber((char)StreamPeek()))
             {
                 nextChar = (char)jsonStream.Read();
                 sb.Append(nextChar);
             }
 
-            if (((char)jsonStream.Peek()) == '.')
+            if (((char)StreamPeek()) == '.')
             {
                 nextChar = (char)jsonStream.Read();
                 sb.Append(nextChar);
-                while (Char.IsNumber((char)jsonStream.Peek()))
+                while (Char.IsNumber((char)StreamPeek()))
                 {
                     nextChar = (char)jsonStream.Read();
                     sb.Append(nextChar);
                 }
             }
 
-            if ((((char)jsonStream.Peek()) == 'e') || (((char)jsonStream.Peek()) == 'E'))
+            if ((((char)StreamPeek()) == 'e') || (((char)StreamPeek()) == 'E'))
             {
                 nextChar = (char)jsonStream.Read();
                 sb.Append(nextChar);
-                if ((((char)jsonStream.Peek()) == '+') || (((char)jsonStream.Peek()) == '-'))
+                if ((((char)StreamPeek()) == '+') || (((char)StreamPeek()) == '-'))
                 {
                     nextChar = (char)jsonStream.Read();
                     sb.Append(nextChar);
                 }
-                while (Char.IsNumber((char)jsonStream.Peek()))
+                while (Char.IsNumber((char)StreamPeek()))
                 {
                     nextChar = (char)jsonStream.Read();
                     sb.Append(nextChar);
@@ -716,9 +734,9 @@ namespace Amazon.Runtime.Internal.Transform
             }
             return ret;
         }
-#endregion
+        #endregion
 
-#region Data Structures
+        #region Data Structures
         /// <summary>
         /// Represents a token in the json document, with the TokenType and value if applicable.
         /// </summary>
@@ -745,6 +763,6 @@ namespace Amazon.Runtime.Internal.Transform
             Boolean,
             Null
         }
-#endregion
+        #endregion
     }
 }

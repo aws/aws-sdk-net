@@ -87,7 +87,14 @@ namespace Amazon.RDS.Model
         /// 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>Oracle</b> Default:
         /// Uses existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are
         /// not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. <b>SQL Server</b>
-        /// Cannot be modified.
+        /// Cannot be modified. If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
+        /// Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as
+        /// database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale
+        /// storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the
+        /// migration, the DB instance will be available for use, but may experience performance degradation. While the migration takes place, nightly
+        /// backups for the instance will be suspended. No other Amazon RDS operations can take place for the instance, including modifying the
+        /// instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the
+        /// instance.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -557,7 +564,14 @@ namespace Amazon.RDS.Model
         /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. Changing this parameter does not result in an outage and
         /// the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this
         /// request. Default: Uses existing setting Constraints: Value supplied must be at least 10% greater than the current value. Values that are not
-        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer
+        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer If you choose
+        /// to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage,
+        /// the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type
+        /// (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration
+        /// times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance will be available
+        /// for use, but may experience performance degradation. While the migration takes place, nightly backups for the instance will be suspended. No
+        /// other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the
+        /// instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
         ///  
         /// </summary>
         public int Iops
@@ -588,7 +602,10 @@ namespace Amazon.RDS.Model
         /// Indicates that the DB Instance should be associated with the specified option group. Changing this parameter does not result in an outage
         /// except in the following case and the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is
         /// set to <c>true</c> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-        /// (sub-second) period during which new connections are rejected but existing connections are not interrupted.
+        /// (sub-second) period during which new connections are rejected but existing connections are not interrupted. <!-- Note that persistent
+        /// options, such as the TDE_SQLServer option for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated
+        /// with the option group. --> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+        /// group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName

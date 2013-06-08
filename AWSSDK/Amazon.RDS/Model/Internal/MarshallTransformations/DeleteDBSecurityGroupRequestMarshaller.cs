@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteDBSecurityGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSecurityGroup");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-05-15");
             if (deleteDBSecurityGroupRequest != null && deleteDBSecurityGroupRequest.IsSetDBSecurityGroupName())
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(deleteDBSecurityGroupRequest.DBSecurityGroupName));

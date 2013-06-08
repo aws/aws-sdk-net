@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The date and time that the last log entry was written.
+        /// A POSIX timestamp when the last log entry was written.
         ///  
         /// </summary>
         public long LastWritten

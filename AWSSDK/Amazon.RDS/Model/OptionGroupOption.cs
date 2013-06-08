@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private int? defaultPort;
         private List<string> optionsDependedOn = new List<string>();
         private bool? persistent;
+        private bool? permanent;
         private List<OptionGroupOptionSetting> optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
 
         /// <summary>
@@ -279,7 +280,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether the option is persistent in an option group.
+        /// A persistent option cannot be removed from the option group once the option group is used, but this option can be removed from the db
+        /// instance while modifying the related data and assigning another option group without this option.
         ///  
         /// </summary>
         public bool Persistent
@@ -307,7 +309,36 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the option settings for the entire option group.
+        /// A permanent option cannot be removed from the option group once the option group is used, and it cannot be removed from the db instance
+        /// after assigning an option group with this permanent option.
+        ///  
+        /// </summary>
+        public bool Permanent
+        {
+            get { return this.permanent ?? default(bool); }
+            set { this.permanent = value; }
+        }
+
+        /// <summary>
+        /// Sets the Permanent property
+        /// </summary>
+        /// <param name="permanent">The value to set for the Permanent property </param>
+        /// <returns>this instance</returns>
+        public OptionGroupOption WithPermanent(bool permanent)
+        {
+            this.permanent = permanent;
+            return this;
+        }
+            
+
+        // Check to see if Permanent property is set
+        internal bool IsSetPermanent()
+        {
+            return this.permanent.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the option settings that are available (and the default value) for each option in an option group.
         ///  
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings

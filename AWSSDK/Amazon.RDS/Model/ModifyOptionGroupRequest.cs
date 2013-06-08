@@ -36,7 +36,10 @@ namespace Amazon.RDS.Model
         private bool? applyImmediately;
 
         /// <summary>
-        /// The name of the option group to be modified.
+        /// The name of the option group to be modified. <!-- Note that persistent options, such as the TDE_SQLServer option for Microsoft SQL Server,
+        /// cannot be removed from an option group while DB instances are associated with the option group. --> Permanent options, such as the TDE
+        /// option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance
+        /// once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName

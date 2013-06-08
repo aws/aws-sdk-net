@@ -5847,6 +5847,11 @@ namespace Amazon.EC2
                         }
                     }
 
+                    if (instanceNetworkInterface.IsSetSecondaryPrivateIpAddressCount())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SecondaryPrivateIpAddressCount")] = instanceNetworkInterface.SecondaryPrivateIpAddressCount.ToString();
+                    }
+
                     instanceNetworkInterfaceListIndex++;
                 }
             }

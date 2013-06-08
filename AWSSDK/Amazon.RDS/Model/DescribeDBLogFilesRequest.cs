@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Filters the available log files for files written since the specified date.
+        /// Filters the available log files for files written since the specified date, in POSIX timestamp format.
         ///  
         /// </summary>
         public long FileLastWritten

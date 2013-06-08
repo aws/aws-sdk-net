@@ -104,6 +104,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 return new InsufficientDBInstanceCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBUpgradeDependencyFailure"))
+            {
+                return new DBUpgradeDependencyFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("OptionGroupNotFoundFault"))
             {
                 return new OptionGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

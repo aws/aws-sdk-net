@@ -6789,6 +6789,7 @@
     <Compile Include="Amazon.RDS\Model\DBInstanceNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DBInstanceStatusInfo.cs" />
     <Compile Include="Amazon.RDS\Model\DBParameterGroup.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6849,6 +6850,7 @@
     <Compile Include="Amazon.RDS\Model\DBSubnetQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DBUpgradeDependencyFailureException.cs" />
     <Compile Include="Amazon.RDS\Model\DeleteDBInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7156,6 +7158,7 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBEngineVersionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBInstanceStatusInfoUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBInstanceUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
