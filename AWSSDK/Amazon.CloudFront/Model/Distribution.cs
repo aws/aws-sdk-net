@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution. </para>
     /// </summary>
-    public class Distribution  
+    public class Distribution
     {
         
         private string id;
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if LastModifiedTime property is set
         internal bool IsSetLastModifiedTime()
         {
-            return this.lastModifiedTime.HasValue;       
+            return this.lastModifiedTime.HasValue;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if InProgressInvalidationBatches property is set
         internal bool IsSetInProgressInvalidationBatches()
         {
-            return this.inProgressInvalidationBatches.HasValue;       
+            return this.inProgressInvalidationBatches.HasValue;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ActiveTrustedSigners property is set
         internal bool IsSetActiveTrustedSigners()
         {
-            return this.activeTrustedSigners != null;       
+            return this.activeTrustedSigners != null;
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;       
+            return this.distributionConfig != null;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;       
+            return this.distributionId != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
               
-            string uriResourcePath = "2012-07-01/distribution/{DistributionId}/invalidation"; 
+            string uriResourcePath = "2013-05-12/distribution/{DistributionId}/invalidation"; 
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", createInvalidationRequest.DistributionId ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -76,16 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.InvalidationBatch;
             if (invalidationBatchInvalidationBatch != null) 
             {
-                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
+                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
                 if (invalidationBatchInvalidationBatch != null) 
                 {
                     Paths pathsPaths = invalidationBatchInvalidationBatch.Paths;
                     if (pathsPaths != null) 
                     {
-                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
+                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
                         if (pathsPaths.IsSetQuantity()) 
                         {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2012-07-01/", pathsPaths.Quantity.ToString());
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2013-05-12/", pathsPaths.Quantity.ToString());
                           }
 
                         if (pathsPaths != null) 
@@ -94,10 +94,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (pathsPathsitemsList != null && pathsPathsitemsList.Count > 0) 
                             {
                                 int pathsPathsitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
+                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
                                 foreach (string pathsPathsitemsListValue in pathsPathsitemsList) 
                                 {
-                                    xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
+                                    xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
                                     xmlWriter.WriteValue(pathsPathsitemsListValue);
                                 xmlWriter.WriteEndElement();
 
@@ -112,7 +112,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 if (invalidationBatchInvalidationBatch.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2012-07-01/", invalidationBatchInvalidationBatch.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-05-12/", invalidationBatchInvalidationBatch.CallerReference.ToString());
                   }
                 xmlWriter.WriteEndElement();
             }

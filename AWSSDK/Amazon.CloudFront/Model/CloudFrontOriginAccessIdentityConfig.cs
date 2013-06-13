@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> Origin access identity configuration. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentityConfig  
+    public class CloudFrontOriginAccessIdentityConfig
     {
         
         private string callerReference;
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
     }
 }

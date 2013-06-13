@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;       
+            return this.distributionConfig != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;       
+            return this.ifMatch != null;
         }
     }
 }

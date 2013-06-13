@@ -1530,6 +1530,7 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ViewerCertificateUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidArgumentException.cs" />
     <Compile Include="Amazon.CloudFront\Model\Invalidation.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidationBatch.cs" />
@@ -1541,6 +1542,7 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidRequiredProtocolException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidViewerCertificateException.cs" />
     <Compile Include="Amazon.CloudFront\Model\KeyPairIds.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListCloudFrontOriginAccessIdentitiesRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListCloudFrontOriginAccessIdentitiesResponse.cs" />
@@ -1576,6 +1578,7 @@
     <Compile Include="Amazon.CloudFront\Model\StreamingDistributionSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\StreamingLoggingConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyCacheBehaviorsException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\TooManyCertificatesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyCloudFrontOriginAccessIdentitiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyCookieNamesInWhiteListException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyDistributionCNAMEsException.cs" />
@@ -1596,6 +1599,7 @@
     <Compile Include="Amazon.CloudFront\Model\UpdateStreamingDistributionRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\UpdateStreamingDistributionResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\UpdateStreamingDistributionResult.cs" />
+    <Compile Include="Amazon.CloudFront\Model\ViewerCertificate.cs" />
     <Compile Include="Amazon.CloudFront\Util\AmazonCloudFrontUtil.cs" />
     <Compile Include="Amazon.CloudFront\Util\CloudFrontConstants.cs" />
     <Compile Include="Amazon.CloudFront_2012_03_15\AmazonCloudFront.cs" />

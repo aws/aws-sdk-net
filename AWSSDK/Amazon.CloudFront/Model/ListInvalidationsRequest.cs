@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;       
+            return this.distributionId != null;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;       
+            return this.maxItems != null;
         }
     }
 }

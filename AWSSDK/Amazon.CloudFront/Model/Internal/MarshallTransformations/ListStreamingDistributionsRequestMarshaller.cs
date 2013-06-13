@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-07-01/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+            string uriResourcePath = "2013-05-12/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listStreamingDistributionsRequest.Marker ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listStreamingDistributionsRequest.MaxItems ?? "" ); 
             

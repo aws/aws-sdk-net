@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about the objects that you want to invalidate. </para>
     /// </summary>
-    public class Paths  
+    public class Paths
     {
         
         private int? quantity;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

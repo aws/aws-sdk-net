@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     /// behavior or for any of the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for
     /// private content. </para>
     /// </summary>
-    public class ActiveTrustedSigners  
+    public class ActiveTrustedSigners
     {
         
         private bool? enabled;
@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
@@ -132,7 +132,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;       
+            return this.cloudFrontOriginAccessIdentityConfig != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A customer origin. </para>
     /// </summary>
-    public class CustomOriginConfig  
+    public class CustomOriginConfig
     {
         
         private int? hTTPPort;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if HTTPPort property is set
         internal bool IsSetHTTPPort()
         {
-            return this.hTTPPort.HasValue;       
+            return this.hTTPPort.HasValue;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if HTTPSPort property is set
         internal bool IsSetHTTPSPort()
         {
-            return this.hTTPSPort.HasValue;       
+            return this.hTTPSPort.HasValue;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if OriginProtocolPolicy property is set
         internal bool IsSetOriginProtocolPolicy()
         {
-            return this.originProtocolPolicy != null;       
+            return this.originProtocolPolicy != null;
         }
     }
 }

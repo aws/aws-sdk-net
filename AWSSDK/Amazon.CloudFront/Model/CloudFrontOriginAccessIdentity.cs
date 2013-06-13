@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> CloudFront origin access identity. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentity  
+    public class CloudFrontOriginAccessIdentity
     {
         
         private string id;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if S3CanonicalUserId property is set
         internal bool IsSetS3CanonicalUserId()
         {
-            return this.s3CanonicalUserId != null;       
+            return this.s3CanonicalUserId != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;       
+            return this.cloudFrontOriginAccessIdentityConfig != null;
         }
     }
 }

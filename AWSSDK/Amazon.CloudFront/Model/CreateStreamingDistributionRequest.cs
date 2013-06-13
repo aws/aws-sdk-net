@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;       
+            return this.streamingDistributionConfig != null;
         }
     }
 }

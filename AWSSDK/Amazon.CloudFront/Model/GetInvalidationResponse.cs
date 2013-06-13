@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public GetInvalidationResult GetInvalidationResult
         {
-            get 
+            get
             {
                 if(this.getInvalidationResult == null)
                 {
                     this.getInvalidationResult = new GetInvalidationResult();
                 }
 
-                return this.getInvalidationResult; 
+                return this.getInvalidationResult;
             }
             set { this.getInvalidationResult = value; }
         }

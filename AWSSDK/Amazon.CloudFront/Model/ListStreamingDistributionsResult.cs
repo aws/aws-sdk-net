@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListStreamingDistributionsResult  
+    public class ListStreamingDistributionsResult
     {
         
         private StreamingDistributionList streamingDistributionList;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionList property is set
         internal bool IsSetStreamingDistributionList()
         {
-            return this.streamingDistributionList != null;       
+            return this.streamingDistributionList != null;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-07-01/streaming-distribution/{Id}/config"; 
+            string uriResourcePath = "2013-05-12/streaming-distribution/{Id}/config"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getStreamingDistributionConfigRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

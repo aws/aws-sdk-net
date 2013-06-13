@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
     /// currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated
     /// distribution. </para>
     /// </summary>
-    public class TrustedSigners  
+    public class TrustedSigners
     {
         
         private bool? enabled;
@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
@@ -134,7 +134,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

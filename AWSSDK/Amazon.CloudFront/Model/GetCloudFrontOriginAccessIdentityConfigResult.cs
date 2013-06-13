@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetCloudFrontOriginAccessIdentityConfigResult  
+    public class GetCloudFrontOriginAccessIdentityConfigResult
     {
         
         private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;       
+            return this.cloudFrontOriginAccessIdentityConfig != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

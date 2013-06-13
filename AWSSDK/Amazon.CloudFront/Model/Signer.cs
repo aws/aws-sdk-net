@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront
     /// key pair IDs, if any. </para>
     /// </summary>
-    public class Signer  
+    public class Signer
     {
         
         private string awsAccountNumber;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if AwsAccountNumber property is set
         internal bool IsSetAwsAccountNumber()
         {
-            return this.awsAccountNumber != null;       
+            return this.awsAccountNumber != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if KeyPairIds property is set
         internal bool IsSetKeyPairIds()
         {
-            return this.keyPairIds != null;       
+            return this.keyPairIds != null;
         }
     }
 }

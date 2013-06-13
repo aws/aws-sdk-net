@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetDistributionConfigResult  
+    public class GetDistributionConfigResult
     {
         
         private DistributionConfig distributionConfig;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;       
+            return this.distributionConfig != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

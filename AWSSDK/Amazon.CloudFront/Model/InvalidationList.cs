@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation list. </para>
     /// </summary>
-    public class InvalidationList  
+    public class InvalidationList
     {
         
         private string marker;
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if NextMarker property is set
         internal bool IsSetNextMarker()
         {
-            return this.nextMarker != null;       
+            return this.nextMarker != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
@@ -217,7 +217,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

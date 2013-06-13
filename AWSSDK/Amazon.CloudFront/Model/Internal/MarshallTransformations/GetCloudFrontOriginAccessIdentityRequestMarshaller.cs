@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-07-01/origin-access-identity/cloudfront/{Id}"; 
+            string uriResourcePath = "2013-05-12/origin-access-identity/cloudfront/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

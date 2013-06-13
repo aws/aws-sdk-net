@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListCloudFrontOriginAccessIdentitiesResult  
+    public class ListCloudFrontOriginAccessIdentitiesResult
     {
         
         private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityList property is set
         internal bool IsSetCloudFrontOriginAccessIdentityList()
         {
-            return this.cloudFrontOriginAccessIdentityList != null;       
+            return this.cloudFrontOriginAccessIdentityList != null;
         }
     }
 }

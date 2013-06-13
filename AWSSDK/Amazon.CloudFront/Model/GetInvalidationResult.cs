@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetInvalidationResult  
+    public class GetInvalidationResult
     {
         
         private Invalidation invalidation;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Invalidation property is set
         internal bool IsSetInvalidation()
         {
-            return this.invalidation != null;       
+            return this.invalidation != null;
         }
     }
 }

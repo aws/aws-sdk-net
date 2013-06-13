@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation batch. </para>
     /// </summary>
-    public class InvalidationBatch  
+    public class InvalidationBatch
     {
         
         private Paths paths;
@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this.paths != null;       
+            return this.paths != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
     }
 }

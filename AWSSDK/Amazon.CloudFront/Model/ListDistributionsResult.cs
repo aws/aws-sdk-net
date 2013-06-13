@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListDistributionsResult  
+    public class ListDistributionsResult
     {
         
         private DistributionList distributionList;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionList property is set
         internal bool IsSetDistributionList()
         {
-            return this.distributionList != null;       
+            return this.distributionList != null;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig
     /// element instead. </para>
     /// </summary>
-    public class S3OriginConfig  
+    public class S3OriginConfig
     {
         
         private string originAccessIdentity;
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if OriginAccessIdentity property is set
         internal bool IsSetOriginAccessIdentity()
         {
-            return this.originAccessIdentity != null;       
+            return this.originAccessIdentity != null;
         }
     }
 }

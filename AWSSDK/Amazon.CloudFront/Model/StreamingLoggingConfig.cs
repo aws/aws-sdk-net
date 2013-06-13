@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that controls whether access logs are written for this streaming distribution. </para>
     /// </summary>
-    public class StreamingLoggingConfig  
+    public class StreamingLoggingConfig
     {
         
         private bool? enabled;
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;       
+            return this.bucket != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Prefix property is set
         internal bool IsSetPrefix()
         {
-            return this.prefix != null;       
+            return this.prefix != null;
         }
     }
 }

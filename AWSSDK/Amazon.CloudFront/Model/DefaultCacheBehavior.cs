@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of
     /// the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior. </para>
     /// </summary>
-    public class DefaultCacheBehavior  
+    public class DefaultCacheBehavior
     {
         
         private string targetOriginId;
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TargetOriginId property is set
         internal bool IsSetTargetOriginId()
         {
-            return this.targetOriginId != null;       
+            return this.targetOriginId != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ForwardedValues property is set
         internal bool IsSetForwardedValues()
         {
-            return this.forwardedValues != null;       
+            return this.forwardedValues != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TrustedSigners property is set
         internal bool IsSetTrustedSigners()
         {
-            return this.trustedSigners != null;       
+            return this.trustedSigners != null;
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ViewerProtocolPolicy property is set
         internal bool IsSetViewerProtocolPolicy()
         {
-            return this.viewerProtocolPolicy != null;       
+            return this.viewerProtocolPolicy != null;
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MinTTL property is set
         internal bool IsSetMinTTL()
         {
-            return this.minTTL.HasValue;       
+            return this.minTTL.HasValue;
         }
     }
 }

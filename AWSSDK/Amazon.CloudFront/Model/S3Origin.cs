@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for
     /// distribution. </para>
     /// </summary>
-    public class S3Origin  
+    public class S3Origin
     {
         
         private string domainName;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if OriginAccessIdentity property is set
         internal bool IsSetOriginAccessIdentity()
         {
-            return this.originAccessIdentity != null;       
+            return this.originAccessIdentity != null;
         }
     }
 }

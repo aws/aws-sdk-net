@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;       
+            return this.distributionConfig != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> Summary of an invalidation request. </para>
     /// </summary>
-    public class InvalidationSummary  
+    public class InvalidationSummary
     {
         
         private string id;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
         public DateTime CreateTime
         {
@@ -78,7 +78,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CreateTime property is set
         internal bool IsSetCreateTime()
         {
-            return this.createTime.HasValue;       
+            return this.createTime.HasValue;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

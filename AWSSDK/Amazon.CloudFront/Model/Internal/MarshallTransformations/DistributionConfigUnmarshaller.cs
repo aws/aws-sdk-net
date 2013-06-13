@@ -96,6 +96,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         distributionConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("ViewerCertificate", targetDepth))
+                    {
+                        distributionConfig.ViewerCertificate = ViewerCertificateUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

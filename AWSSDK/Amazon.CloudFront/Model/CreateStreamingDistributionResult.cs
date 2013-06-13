@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class CreateStreamingDistributionResult  
+    public class CreateStreamingDistributionResult
     {
         
         private StreamingDistribution streamingDistribution;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistribution property is set
         internal bool IsSetStreamingDistribution()
         {
-            return this.streamingDistribution != null;       
+            return this.streamingDistribution != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

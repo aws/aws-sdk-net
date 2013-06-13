@@ -20,13 +20,20 @@ using System.IO;
 
 namespace Amazon.CloudFront.Model
 {
-    /// <summary>Cookie Names
+    /// <summary>
+    /// <para> A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated
+    /// with this cache behavior. </para>
     /// </summary>
-    public class CookieNames  
+    public class CookieNames
     {
         
         private int? quantity;
         private List<string> items = new List<string>();
+
+        /// <summary>
+        /// The number of whitelisted cookies for this cache behavior.
+        ///  
+        /// </summary>
         public int Quantity
         {
             get { return this.quantity ?? default(int); }
@@ -48,8 +55,13 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
+
+        /// <summary>
+        /// Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
+        ///  
+        /// </summary>
         public List<string> Items
         {
             get { return this.items; }
@@ -69,7 +81,7 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
@@ -88,7 +100,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

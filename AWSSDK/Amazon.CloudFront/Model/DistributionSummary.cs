@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A summary of the information for an Amazon CloudFront distribution. </para>
     /// </summary>
-    public class DistributionSummary  
+    public class DistributionSummary
     {
         
         private string id;
@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
         private string comment;
         private string priceClass;
         private bool? enabled;
+        private ViewerCertificate viewerCertificate;
 
         /// <summary>
         /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -63,7 +64,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if LastModifiedTime property is set
         internal bool IsSetLastModifiedTime()
         {
-            return this.lastModifiedTime.HasValue;       
+            return this.lastModifiedTime.HasValue;
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;       
+            return this.aliases != null;
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Origins property is set
         internal bool IsSetOrigins()
         {
-            return this.origins != null;       
+            return this.origins != null;
         }
 
         /// <summary>
@@ -233,7 +234,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DefaultCacheBehavior property is set
         internal bool IsSetDefaultCacheBehavior()
         {
-            return this.defaultCacheBehavior != null;       
+            return this.defaultCacheBehavior != null;
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this.cacheBehaviors != null;       
+            return this.cacheBehaviors != null;
         }
 
         /// <summary>
@@ -289,7 +290,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
         public string PriceClass
         {
@@ -312,7 +313,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if PriceClass property is set
         internal bool IsSetPriceClass()
         {
-            return this.priceClass != null;       
+            return this.priceClass != null;
         }
 
         /// <summary>
@@ -340,7 +341,35 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
+        }
+
+        /// <summary>
+        /// A complex type that contains information about viewer certificates for this distribution.
+        ///  
+        /// </summary>
+        public ViewerCertificate ViewerCertificate
+        {
+            get { return this.viewerCertificate; }
+            set { this.viewerCertificate = value; }
+        }
+
+        /// <summary>
+        /// Sets the ViewerCertificate property
+        /// </summary>
+        /// <param name="viewerCertificate">The value to set for the ViewerCertificate property </param>
+        /// <returns>this instance</returns>
+        public DistributionSummary WithViewerCertificate(ViewerCertificate viewerCertificate)
+        {
+            this.viewerCertificate = viewerCertificate;
+            return this;
+        }
+            
+
+        // Check to see if ViewerCertificate property is set
+        internal bool IsSetViewerCertificate()
+        {
+            return this.viewerCertificate != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class CreateInvalidationResult  
+    public class CreateInvalidationResult
     {
         
         private string location;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Invalidation property is set
         internal bool IsSetInvalidation()
         {
-            return this.invalidation != null;       
+            return this.invalidation != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The configuration for the streaming distribution. </para>
     /// </summary>
-    public class StreamingDistributionConfig  
+    public class StreamingDistributionConfig
     {
         
         private string callerReference;
@@ -32,7 +32,7 @@ namespace Amazon.CloudFront.Model
         private string comment;
         private StreamingLoggingConfig logging;
         private TrustedSigners trustedSigners;
-        private string priceClass = "PriceClass_All";
+        private string priceClass;
         private bool? enabled;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if S3Origin property is set
         internal bool IsSetS3Origin()
         {
-            return this.s3Origin != null;       
+            return this.s3Origin != null;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;       
+            return this.aliases != null;
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Logging property is set
         internal bool IsSetLogging()
         {
-            return this.logging != null;       
+            return this.logging != null;
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TrustedSigners property is set
         internal bool IsSetTrustedSigners()
         {
-            return this.trustedSigners != null;       
+            return this.trustedSigners != null;
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if PriceClass property is set
         internal bool IsSetPriceClass()
         {
-            return this.priceClass != null;       
+            return this.priceClass != null;
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
     }
 }
