@@ -43,12 +43,23 @@ namespace Amazon.SQS.Util
             return null;
         }
 
-        private static MD5 _md5 = MD5.Create();
+        [ThreadStatic]
+        private static MD5 _md5 = null;
+        private static MD5 MD5Hash
+        {
+            get
+            {
+                if (_md5 == null)
+                    _md5 = MD5.Create();
+                return _md5;
+            }
+        }
+
         public static string CalculateMD5(string message)
         {
             var decodedMessage = Uri.UnescapeDataString(message).Replace("+", " ");
             var messageBytes = System.Text.Encoding.UTF8.GetBytes(message);
-            var md5Hash = _md5.ComputeHash(messageBytes);
+            var md5Hash = MD5Hash.ComputeHash(messageBytes);
             var calculatedMd5 = BitConverter.ToString(md5Hash).Replace("-", string.Empty).ToLower();
             return calculatedMd5;
         }
