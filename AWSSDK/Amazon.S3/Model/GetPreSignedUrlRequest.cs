@@ -228,7 +228,7 @@ namespace Amazon.S3.Model
         /// The verb for the pre-signed url. 
         /// </summary>
         /// <remarks>
-        /// Accepted verbs are GET, PUT and HEAD.
+        /// Accepted verbs are GET, PUT, DELETE and HEAD.
         /// Default is GET.
         /// </remarks>
         [XmlElementAttribute(ElementName = "Verb")]
@@ -242,7 +242,7 @@ namespace Amazon.S3.Model
         /// Sets the verb for the pre-signed url. 
         /// </summary>
         /// <remarks>
-        /// Accepted verbs are GET, PUT and HEAD.
+        /// Accepted verbs are GET, PUT, DELETE and HEAD.
         /// Default is GET.
         /// </remarks>
         /// <param name="verb">Requested verb</param>

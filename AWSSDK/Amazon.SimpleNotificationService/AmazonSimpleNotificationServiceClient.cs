@@ -39,6 +39,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 using ErrorResponse = Amazon.SimpleNotificationService.Model.ErrorResponse;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.SimpleNotificationService
 {
@@ -454,14 +455,8 @@ namespace Amazon.SimpleNotificationService
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonSimpleNotificationServiceConfig instance
          */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleNotificationServiceConfig config, IDictionary<string, string> headers)
+        private static HttpWebRequest ConfigureWebRequest(int contentLength, string url, AmazonSimpleNotificationServiceConfig config, IDictionary<string, string> headers)
         {
-            string url;
-            if (config.RegionEndpoint != null)
-                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
-            else
-                url = config.ServiceURL;
-
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
@@ -476,7 +471,6 @@ namespace Amazon.SimpleNotificationService
                 {
                     request.Proxy.Credentials = config.ProxyCredentials;
                 }
-                request.UserAgent = headers[AWSSDKUtils.UserAgentHeader];
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
@@ -485,6 +479,8 @@ namespace Amazon.SimpleNotificationService
                 request.ServicePoint.Expect100Continue = false;
                 request.ServicePoint.UseNagleAlgorithm = false;
             }
+
+            Amazon.Runtime.AmazonWebServiceClient.AddHeaders(request, headers);
 
             return request;
         }
@@ -498,12 +494,21 @@ namespace Amazon.SimpleNotificationService
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
 
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
             /* Add required request parameters */
-            AddRequiredParameters(parameters);
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+            ProcessRequestHandlers(snsRequest, headers);
+            AddRequiredParameters(headers, parameters, url);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
-
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
+
             bool shouldRetry = true;
             int retries = 0;
             int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
@@ -511,10 +516,8 @@ namespace Amazon.SimpleNotificationService
             do
             {
                 string responseBody = null;
-                IDictionary<string, string> headers = new Dictionary<string, string>();
-                headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
-                ProcessRequestHandlers(snsRequest, headers);
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config, headers);
+
+                HttpWebRequest request = ConfigureWebRequest(requestData.Length, url, config, headers);
 
                 /* Submit the request and read response body */
                 try
@@ -711,7 +714,7 @@ namespace Amazon.SimpleNotificationService
         /**
          * Add authentication related and version parameters
          */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
+        private void AddRequiredParameters(IDictionary<string, string> headers, IDictionary<string, string> parameters, string url)
         {
             using (ImmutableCredentials immutableCredentials = this.credentials.GetCredentials())
             {
@@ -729,31 +732,19 @@ namespace Amazon.SimpleNotificationService
                 parameters["SignatureMethod"] = config.SignatureMethod;
                 parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
                 parameters["Version"] = config.ServiceVersion;
-                if (!config.SignatureVersion.Equals("2"))
+                if (!config.SignatureVersion.Equals("4"))
                 {
                     throw new AmazonSimpleNotificationServiceException("Invalid Signature Version specified");
                 }
-
-                string url;
-                if (config.RegionEndpoint != null)
-                    url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
-                else
-                    url = config.ServiceURL;
-
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, url);
-
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-                string auth;
-
-                if (immutableCredentials.UseSecureStringForSecretKey)
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
-                }
-                else
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
-                }
-                parameters["Signature"] = auth;
+                string region = this.config.AuthenticationRegion ?? AWSSDKUtils.DetermineRegion(url);
+                string authorizationHeader = AWS4Signer.CalculateSignature(headers,
+                                                                           parameters,
+                                                                           url,
+                                                                           "POST",
+                                                                           "sns",
+                                                                           region,
+                                                                           immutableCredentials);
+                headers.Add("Authorization", authorizationHeader);
             }
         }
 

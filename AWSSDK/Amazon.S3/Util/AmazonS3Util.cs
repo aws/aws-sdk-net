@@ -112,6 +112,7 @@ namespace Amazon.S3.Util
             extensionToMime[".lsp"] = "application/x-lisp";
             extensionToMime[".lzh"] = "application/octet-stream";
             extensionToMime[".m"] = "text/plain";
+            extensionToMime[".m3u8"] = "application/x-mpegURL";
             extensionToMime[".man"] = "application/x-troff-man";
             extensionToMime[".me"] = "application/x-troff-me";
             extensionToMime[".mesh"] = "model/mesh";
@@ -188,6 +189,7 @@ namespace Amazon.S3.Util
             extensionToMime[".tif"] = "image/tiff";
             extensionToMime[".tiff"] = "image/tiff";
             extensionToMime[".tr"] = "application/x-troff";
+            extensionToMime[".ts"] = "video/MP2T";
             extensionToMime[".tsi"] = "audio/TSP-audio";
             extensionToMime[".tsp"] = "application/dsptype";
             extensionToMime[".tsv"] = "text/tab-separated-values";

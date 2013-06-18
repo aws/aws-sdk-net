@@ -46,7 +46,7 @@ namespace Amazon.S3
         /// the request to a user or embed the request in a web page.
         /// </para>
         /// <para>
-        /// A PreSigned URL can be generated for GET, PUT and HEAD
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
         /// operations on your bucket, keys, and versions.
         /// </para>
         /// </remarks>

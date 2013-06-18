@@ -31,10 +31,11 @@ namespace Amazon.SimpleNotificationService
     public class AmazonSimpleNotificationServiceConfig
     {
         private string serviceVersion = "2010-03-31";
+        private string authRegion = null;
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://sns.us-east-1.amazonaws.com/";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
-        private string signatureVersion = "2";
+        private string signatureVersion = "4";
         private string signatureMethod = "HmacSHA256";
         private string proxyHost = null;
         private int proxyPort = -1;
@@ -161,6 +162,18 @@ namespace Amazon.SimpleNotificationService
         internal string RegionEndpointServiceName
         {
             get { return "sns"; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationRegion property.
+        /// Used in AWS4 request signing, this is an optional property; 
+        /// change it only if the region cannot be determined from the 
+        /// service endpoint.
+        /// </summary>
+        public string AuthenticationRegion
+        {
+            get { return this.authRegion; }
+            set { this.authRegion = value; }
         }
 
         /// <summary>

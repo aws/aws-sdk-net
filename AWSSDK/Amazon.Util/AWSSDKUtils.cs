@@ -45,7 +45,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.23.2";
+        internal const string SDKVersionNumber = "1.5.24.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -495,6 +495,38 @@ namespace Amazon.Util
         }
 
         private static BackgroundDispatcher dispatcher = new BackgroundDispatcher();
+
+        /// <summary>
+        /// Parses a query string of a URL and returns the parameters as a string-to-string dictionary.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        internal static Dictionary<string, string> ParseQueryParameters(string url)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                int queryIndex = url.IndexOf('?');
+                if (queryIndex >= 0)
+                {
+                    string queryString = url.Substring(queryIndex + 1);
+                    string[] kvps = queryString.Split(new char[] { '&' }, StringSplitOptions.None);
+                    foreach (string kvp in kvps)
+                    {
+                        if (string.IsNullOrEmpty(kvp))
+                            continue;
+
+                        string[] nameValuePair = kvp.Split(new char[] { '=' }, 2);
+                        string name = nameValuePair[0];
+                        string value = nameValuePair.Length == 1 ? null : nameValuePair[1];
+                        parameters[name] = value;
+                    }
+                }
+            }
+
+            return parameters;
+        }
 
         #endregion
 

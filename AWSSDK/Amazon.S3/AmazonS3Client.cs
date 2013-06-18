@@ -277,7 +277,7 @@ namespace Amazon.S3
         /// the request to a user or embed the request in a web page.
         /// </para>
         /// <para>
-        /// A PreSigned URL can be generated for GET, PUT and HEAD
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
         /// operations on your bucket, keys, and versions.
         /// </para>
         /// </remarks>
@@ -301,14 +301,6 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The Expires Specified is null!");
-            }
-
-            if (request.Verb > HttpVerb.PUT)
-            {
-                throw new ArgumentException(
-                    "An Invalid HttpVerb was specified for the GetPreSignedURL request. Valid - GET, HEAD, PUT",
-                    S3Constants.RequestParam
-                    );
             }
 
             ConvertGetPreSignedUrl(request);
