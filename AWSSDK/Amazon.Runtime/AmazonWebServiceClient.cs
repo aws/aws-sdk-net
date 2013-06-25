@@ -433,15 +433,17 @@ namespace Amazon.Runtime
             }
             catch (WebException e)
             {
-                asyncResult.RequestState.WebRequest.Abort();
-                if (handleHttpWebErrorResponse(asyncResult, e))
+                try
                 {
+                    asyncResult.RequestState.WebRequest.Abort();
+                    handleHttpWebErrorResponse(asyncResult, e);
+                    
                     asyncResult.RetriesAttempt++;
                     InvokeHelper(asyncResult);
                 }
-                else
+                catch(Exception ei)
                 {
-                    asyncResult.Exception = e;
+                    asyncResult.Exception = ei;
 
                     asyncResult.SignalWaitHandle();
                     if (asyncResult.Callback != null)
