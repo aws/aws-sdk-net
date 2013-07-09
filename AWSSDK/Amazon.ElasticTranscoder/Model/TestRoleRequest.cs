@@ -25,11 +25,10 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the TestRole operation.
-    /// <para> To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the
-    /// <c>/2012-09-25/roleTests</c> resource. </para> <para>The <c>TestRole</c> action lets you determine whether the IAM role you are using has
-    /// sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the
-    /// specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you
-    /// specify.</para>
+    /// <para>The TestRole operation tests the IAM role used to create the pipeline.</para> <para>The <c>TestRole</c> action lets you determine
+    /// whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
+    /// process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test
+    /// notification to Amazon SNS topics that you specify.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.TestRole"/>
     public class TestRoleRequest : AmazonWebServiceRequest

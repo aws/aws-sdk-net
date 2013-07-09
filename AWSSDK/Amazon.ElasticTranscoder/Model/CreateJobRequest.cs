@@ -25,10 +25,10 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
-    /// returns JSON data that includes the values that you specified plus information about the job that is created. </para> <para>If you have
-    /// specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you
-    /// currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</para>
+    /// <para> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the
+    /// job that is created. </para> <para>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and
+    /// another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS
+    /// Console).</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CreateJob"/>
     public class CreateJobRequest : AmazonWebServiceRequest

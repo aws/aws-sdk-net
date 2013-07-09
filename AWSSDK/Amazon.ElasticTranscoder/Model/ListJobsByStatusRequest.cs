@@ -25,9 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByStatus operation.
-    /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
-    /// resource.</para> <para>Elastic Transcoder returns all of the jobs that have the specified status. The response body contains one element for
-    /// each job that satisfies the search criteria.</para>
+    /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
+    /// that satisfies the search criteria.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListJobsByStatus"/>
     public class ListJobsByStatusRequest : AmazonWebServiceRequest

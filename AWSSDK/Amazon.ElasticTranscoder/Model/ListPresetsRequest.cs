@@ -25,8 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPresets operation.
-    /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
-    /// resource.</para>
+    /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
+    /// AWS region.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListPresets"/>
     public class ListPresetsRequest : AmazonWebServiceRequest

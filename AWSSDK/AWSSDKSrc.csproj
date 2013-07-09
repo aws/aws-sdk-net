@@ -4989,6 +4989,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobInputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobOutputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobWatermarkUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ListJobsByPipelineRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ListJobsByPipelineResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ListJobsByPipelineResultUnmarshaller.cs" />
@@ -5007,6 +5008,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PipelineUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PlaylistUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PresetUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\PresetWatermarkUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ReadJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ReadJobResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ReadJobResultUnmarshaller.cs" />
@@ -5033,6 +5035,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Job.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobInput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobOutput.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\JobWatermark.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\LimitExceededException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ListJobsByPipelineRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ListJobsByPipelineResponse.cs" />
@@ -5052,6 +5055,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\PipelineOutputConfig.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Playlist.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Preset.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\PresetWatermark.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ReadJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ReadJobResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\ReadJobResult.cs" />

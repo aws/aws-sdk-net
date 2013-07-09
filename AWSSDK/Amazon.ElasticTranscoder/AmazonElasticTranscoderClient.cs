@@ -206,10 +206,10 @@ namespace Amazon.ElasticTranscoder
         #region UpdatePipelineStatus
 
         /// <summary>
-        /// <para> To pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline. Send a POST
-        /// request to the <c>/2012-09-25/pipelines/[pipelineId]/status</c> resource. </para> <para> Changing the pipeline status is useful if you want
-        /// to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which
-        /// you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a CancelJob request. </para>
+        /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
+        /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic
+        /// Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for
+        /// the jobs that you want to cancel, and to send a CancelJob request. </para>
         /// </summary>
         /// 
         /// <param name="updatePipelineStatusRequest">Container for the necessary parameters to execute the UpdatePipelineStatus service method on
@@ -275,35 +275,14 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para> To pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline. Send a POST
-        /// request to the <c>/2012-09-25/pipelines/[pipelineId]/status</c> resource. </para> <para> Changing the pipeline status is useful if you want
-        /// to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which
-        /// you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a CancelJob request. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UpdatePipelineStatus service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public UpdatePipelineStatusResponse UpdatePipelineStatus()
-        {
-            return UpdatePipelineStatus(new UpdatePipelineStatusRequest());
-        }
-        
-
         #endregion
     
         #region UpdatePipelineNotifications
 
         /// <summary>
-        /// <para>To update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline, send a POST request to the
-        /// <c>/2012-09-25/pipelines/[pipelineId]/notifications</c> resource.</para> <para>When you update notifications for a pipeline, Elastic
-        /// Transcoder returns the values that you specified in the request.</para>
+        /// <para>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a
+        /// pipeline.</para> <para>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the
+        /// request.</para>
         /// </summary>
         /// 
         /// <param name="updatePipelineNotificationsRequest">Container for the necessary parameters to execute the UpdatePipelineNotifications service
@@ -369,32 +348,12 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline, send a POST request to the
-        /// <c>/2012-09-25/pipelines/[pipelineId]/notifications</c> resource.</para> <para>When you update notifications for a pipeline, Elastic
-        /// Transcoder returns the values that you specified in the request.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UpdatePipelineNotifications service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public UpdatePipelineNotificationsResponse UpdatePipelineNotifications()
-        {
-            return UpdatePipelineNotifications(new UpdatePipelineNotificationsRequest());
-        }
-        
-
         #endregion
     
         #region ReadJob
 
         /// <summary>
-        /// <para>To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para>
+        /// <para>The ReadJob operation returns detailed information about a job.</para>
         /// </summary>
         /// 
         /// <param name="readJobRequest">Container for the necessary parameters to execute the ReadJob service method on
@@ -458,31 +417,13 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ReadJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public ReadJobResponse ReadJob()
-        {
-            return ReadJob(new ReadJobRequest());
-        }
-        
-
         #endregion
     
         #region ListJobsByStatus
 
         /// <summary>
-        /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
-        /// resource.</para> <para>Elastic Transcoder returns all of the jobs that have the specified status. The response body contains one element for
-        /// each job that satisfies the search criteria.</para>
+        /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
+        /// that satisfies the search criteria.</para>
         /// </summary>
         /// 
         /// <param name="listJobsByStatusRequest">Container for the necessary parameters to execute the ListJobsByStatus service method on
@@ -547,31 +488,12 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
-        /// resource.</para> <para>Elastic Transcoder returns all of the jobs that have the specified status. The response body contains one element for
-        /// each job that satisfies the search criteria.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListJobsByStatus service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public ListJobsByStatusResponse ListJobsByStatus()
-        {
-            return ListJobsByStatus(new ListJobsByStatusRequest());
-        }
-        
-
         #endregion
     
         #region ReadPreset
 
         /// <summary>
-        /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
+        /// <para>The ReadPreset operation gets detailed information about a preset.</para>
         /// </summary>
         /// 
         /// <param name="readPresetRequest">Container for the necessary parameters to execute the ReadPreset service method on
@@ -637,7 +559,7 @@ namespace Amazon.ElasticTranscoder
         
 
         /// <summary>
-        /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
+        /// <para>The ReadPreset operation gets detailed information about a preset.</para>
         /// </summary>
         /// 
         /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
@@ -658,7 +580,7 @@ namespace Amazon.ElasticTranscoder
         #region CreatePipeline
 
         /// <summary>
-        /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
+        /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
         /// </summary>
         /// 
         /// <param name="createPipelineRequest">Container for the necessary parameters to execute the CreatePipeline service method on
@@ -724,32 +646,14 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the CreatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public CreatePipelineResponse CreatePipeline()
-        {
-            return CreatePipeline(new CreatePipelineRequest());
-        }
-        
-
         #endregion
     
         #region CancelJob
 
         /// <summary>
-        /// <para>To cancel a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
-        /// a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the job identifier, use
-        /// UpdatePipelineStatus to temporarily pause the pipeline.</para>
+        /// <para>The CancelJob operation cancels an unfinished job.</para> <para><b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+        /// To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause
+        /// the pipeline.</para>
         /// </summary>
         /// 
         /// <param name="cancelJobRequest">Container for the necessary parameters to execute the CancelJob service method on
@@ -812,26 +716,6 @@ namespace Amazon.ElasticTranscoder
             return result;
         }
         
-        
-
-        /// <summary>
-        /// <para>To cancel a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
-        /// a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the job identifier, use
-        /// UpdatePipelineStatus to temporarily pause the pipeline.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the CancelJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public CancelJobResponse CancelJob()
-        {
-            return CancelJob(new CancelJobRequest());
-        }
         
 
         #endregion
@@ -909,8 +793,8 @@ namespace Amazon.ElasticTranscoder
         #region ListPresets
 
         /// <summary>
-        /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
-        /// resource.</para>
+        /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
+        /// AWS region.</para>
         /// </summary>
         /// 
         /// <param name="listPresetsRequest">Container for the necessary parameters to execute the ListPresets service method on
@@ -975,8 +859,8 @@ namespace Amazon.ElasticTranscoder
         
 
         /// <summary>
-        /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
-        /// resource.</para>
+        /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
+        /// AWS region.</para>
         /// </summary>
         /// 
         /// <returns>The response from the ListPresets service method, as returned by AmazonElasticTranscoder.</returns>
@@ -996,9 +880,8 @@ namespace Amazon.ElasticTranscoder
         #region DeletePipeline
 
         /// <summary>
-        /// <para>To delete a pipeline, send a DELETE request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource. </para> <para> You can only
-        /// delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently
-        /// in use, <c>DeletePipeline</c> returns an error. </para>
+        /// <para>The DeletePipeline operation removes a pipeline.</para> <para> You can only delete a pipeline that has never been used or that is not
+        /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
         /// </summary>
         /// 
         /// <param name="deletePipelineRequest">Container for the necessary parameters to execute the DeletePipeline service method on
@@ -1064,36 +947,15 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To delete a pipeline, send a DELETE request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource. </para> <para> You can only
-        /// delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently
-        /// in use, <c>DeletePipeline</c> returns an error. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DeletePipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public DeletePipelineResponse DeletePipeline()
-        {
-            return DeletePipeline(new DeletePipelineRequest());
-        }
-        
-
         #endregion
     
         #region TestRole
 
         /// <summary>
-        /// <para> To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the
-        /// <c>/2012-09-25/roleTests</c> resource. </para> <para>The <c>TestRole</c> action lets you determine whether the IAM role you are using has
-        /// sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the
-        /// specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you
-        /// specify.</para>
+        /// <para>The TestRole operation tests the IAM role used to create the pipeline.</para> <para>The <c>TestRole</c> action lets you determine
+        /// whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
+        /// process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test
+        /// notification to Amazon SNS topics that you specify.</para>
         /// </summary>
         /// 
         /// <param name="testRoleRequest">Container for the necessary parameters to execute the TestRole service method on
@@ -1157,34 +1019,12 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para> To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the
-        /// <c>/2012-09-25/roleTests</c> resource. </para> <para>The <c>TestRole</c> action lets you determine whether the IAM role you are using has
-        /// sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the
-        /// specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you
-        /// specify.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the TestRole service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public TestRoleResponse TestRole()
-        {
-            return TestRole(new TestRoleRequest());
-        }
-        
-
         #endregion
     
         #region ListPipelines
 
         /// <summary>
-        /// <para>To get a list of the pipelines associated with the current AWS account, send a GET request to the <c>/2012-09-25/pipelines</c>
-        /// resource.</para>
+        /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
         /// </summary>
         /// 
         /// <param name="listPipelinesRequest">Container for the necessary parameters to execute the ListPipelines service method on
@@ -1249,8 +1089,7 @@ namespace Amazon.ElasticTranscoder
         
 
         /// <summary>
-        /// <para>To get a list of the pipelines associated with the current AWS account, send a GET request to the <c>/2012-09-25/pipelines</c>
-        /// resource.</para>
+        /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
         /// </summary>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by AmazonElasticTranscoder.</returns>
@@ -1270,7 +1109,7 @@ namespace Amazon.ElasticTranscoder
         #region ReadPipeline
 
         /// <summary>
-        /// <para>To get detailed information about a pipeline, send a GET request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource.</para>
+        /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
         /// </summary>
         /// 
         /// <param name="readPipelineRequest">Container for the necessary parameters to execute the ReadPipeline service method on
@@ -1336,7 +1175,7 @@ namespace Amazon.ElasticTranscoder
         
 
         /// <summary>
-        /// <para>To get detailed information about a pipeline, send a GET request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource.</para>
+        /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
         /// </summary>
         /// 
         /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -1357,14 +1196,14 @@ namespace Amazon.ElasticTranscoder
         #region CreatePreset
 
         /// <summary>
-        /// <para>To create a preset, send a POST request to the <c>/2012-09-25/presets</c> resource.</para> <para><b>IMPORTANT:</b>Elastic Transcoder
-        /// checks the settings that you specify to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with
-        /// H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
-        /// (ValidationException) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with
-        /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether
-        /// your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder
-        /// produces.</para> <para>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
-        /// Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
+        /// <para>The CreatePreset operation creates a preset with settings that you specify.</para> <para><b>IMPORTANT:</b>Elastic Transcoder checks
+        /// the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264
+        /// standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (ValidationException) and
+        /// does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic
+        /// Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the
+        /// H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</para> <para>Elastic
+        /// Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication
+        /// <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
         /// </summary>
         /// 
         /// <param name="createPresetRequest">Container for the necessary parameters to execute the CreatePreset service method on
@@ -1429,37 +1268,13 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To create a preset, send a POST request to the <c>/2012-09-25/presets</c> resource.</para> <para><b>IMPORTANT:</b>Elastic Transcoder
-        /// checks the settings that you specify to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with
-        /// H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
-        /// (ValidationException) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with
-        /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether
-        /// your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder
-        /// produces.</para> <para>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
-        /// Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the CreatePreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public CreatePresetResponse CreatePreset()
-        {
-            return CreatePreset(new CreatePresetRequest());
-        }
-        
-
         #endregion
     
         #region DeletePreset
 
         /// <summary>
-        /// <para>To delete a preset, send a DELETE request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para> <para><b>NOTE:</b> If the
-        /// preset has been used, you cannot delete it. </para>
+        /// <para>The DeletePreset operation removes a preset that you've added in an AWS region.</para> <para><b>NOTE:</b> You can't delete the default
+        /// presets that are included with Elastic Transcoder. </para>
         /// </summary>
         /// 
         /// <param name="deletePresetRequest">Container for the necessary parameters to execute the DeletePreset service method on
@@ -1524,33 +1339,15 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To delete a preset, send a DELETE request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para> <para><b>NOTE:</b> If the
-        /// preset has been used, you cannot delete it. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DeletePreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public DeletePresetResponse DeletePreset()
-        {
-            return DeletePreset(new DeletePresetRequest());
-        }
-        
-
         #endregion
     
         #region CreateJob
 
         /// <summary>
-        /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
-        /// returns JSON data that includes the values that you specified plus information about the job that is created. </para> <para>If you have
-        /// specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you
-        /// currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</para>
+        /// <para> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the
+        /// job that is created. </para> <para>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and
+        /// another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS
+        /// Console).</para>
         /// </summary>
         /// 
         /// <param name="createJobRequest">Container for the necessary parameters to execute the CreateJob service method on
@@ -1615,35 +1412,13 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
-        /// returns JSON data that includes the values that you specified plus information about the job that is created. </para> <para>If you have
-        /// specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you
-        /// currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the CreateJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public CreateJobResponse CreateJob()
-        {
-            return CreateJob(new CreateJobRequest());
-        }
-        
-
         #endregion
     
         #region ListJobsByPipeline
 
         /// <summary>
-        /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
-        /// resource.</para> <para>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one
-        /// element for each job that satisfies the search criteria.</para>
+        /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
+        /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
         /// </summary>
         /// 
         /// <param name="listJobsByPipelineRequest">Container for the necessary parameters to execute the ListJobsByPipeline service method on
@@ -1706,25 +1481,6 @@ namespace Amazon.ElasticTranscoder
             return result;
         }
         
-        
-
-        /// <summary>
-        /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
-        /// resource.</para> <para>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one
-        /// element for each job that satisfies the search criteria.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListJobsByPipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public ListJobsByPipelineResponse ListJobsByPipeline()
-        {
-            return ListJobsByPipeline(new ListJobsByPipelineRequest());
-        }
         
 
         #endregion

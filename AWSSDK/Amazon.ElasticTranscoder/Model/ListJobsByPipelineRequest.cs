@@ -25,9 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByPipeline operation.
-    /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
-    /// resource.</para> <para>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one
-    /// element for each job that satisfies the search criteria.</para>
+    /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
+    /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListJobsByPipeline"/>
     public class ListJobsByPipelineRequest : AmazonWebServiceRequest

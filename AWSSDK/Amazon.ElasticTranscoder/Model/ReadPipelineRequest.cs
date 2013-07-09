@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ReadPipeline operation.
-    /// <para>To get detailed information about a pipeline, send a GET request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource.</para>
+    /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ReadPipeline"/>
     public class ReadPipelineRequest : AmazonWebServiceRequest

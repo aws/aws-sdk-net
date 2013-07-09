@@ -25,8 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPipelines operation.
-    /// <para>To get a list of the pipelines associated with the current AWS account, send a GET request to the <c>/2012-09-25/pipelines</c>
-    /// resource.</para>
+    /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListPipelines"/>
     public class ListPipelinesRequest : AmazonWebServiceRequest

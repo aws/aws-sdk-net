@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ReadPreset operation.
-    /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
+    /// <para>The ReadPreset operation gets detailed information about a preset.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ReadPreset"/>
     public class ReadPresetRequest : AmazonWebServiceRequest

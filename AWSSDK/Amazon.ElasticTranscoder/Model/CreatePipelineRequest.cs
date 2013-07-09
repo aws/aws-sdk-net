@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePipeline operation.
-    /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
+    /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CreatePipeline"/>
     public class CreatePipelineRequest : AmazonWebServiceRequest

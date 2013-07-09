@@ -39,6 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         private long? duration;
         private int? width;
         private int? height;
+        private List<JobWatermark> watermarks = new List<JobWatermark>();
 
         /// <summary>
         /// A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is
@@ -440,6 +441,56 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetHeight()
         {
             return this.height.HasValue;
+        }
+
+        /// <summary>
+        /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
+        /// watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <c>Preset</c> for the current
+        /// output. Watermarks are added to the output video in the sequence in which you list them in the job outputâ€�?the first watermark in the list
+        /// is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset
+        /// cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add will cover the first one, the third
+        /// one will cover the second, and the fourth one will cover the third.
+        ///  
+        /// </summary>
+        public List<JobWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithWatermarks(params JobWatermark[] watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        public JobOutput WithWatermarks(IEnumerable<JobWatermark> watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
         }
     }
 }

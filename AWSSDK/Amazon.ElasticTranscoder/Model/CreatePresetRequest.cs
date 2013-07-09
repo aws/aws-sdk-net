@@ -25,14 +25,14 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePreset operation.
-    /// <para>To create a preset, send a POST request to the <c>/2012-09-25/presets</c> resource.</para> <para><b>IMPORTANT:</b>Elastic Transcoder
-    /// checks the settings that you specify to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with
-    /// H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
-    /// (ValidationException) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with
-    /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether
-    /// your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder
-    /// produces.</para> <para>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
-    /// Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
+    /// <para>The CreatePreset operation creates a preset with settings that you specify.</para> <para><b>IMPORTANT:</b>Elastic Transcoder checks
+    /// the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264
+    /// standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (ValidationException) and
+    /// does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic
+    /// Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the
+    /// H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</para> <para>Elastic
+    /// Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication
+    /// <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CreatePreset"/>
     public class CreatePresetRequest : AmazonWebServiceRequest

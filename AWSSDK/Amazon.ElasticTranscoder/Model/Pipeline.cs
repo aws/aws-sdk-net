@@ -74,6 +74,11 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this.id != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string Arn
         {
             get { return this.arn; }
@@ -175,7 +180,8 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding.
+        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for
+        /// watermarks.
         ///  
         /// <para>
         /// <b>Constraints:</b>
