@@ -178,6 +178,16 @@ namespace Amazon.SessionProvider
         }
 
         /// <summary>
+        /// Constructor for testing.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="config"></param>
+        public DynamoDBSessionStateStore(string name, NameValueCollection config)
+        {
+            Initialize(name, config);
+        }
+
+        /// <summary>
         /// Gets the name of the table used to store session data.
         /// </summary>
         public string TableName
@@ -638,10 +648,11 @@ namespace Amazon.SessionProvider
             filter.AddCondition(ATTRIBUTE_EXPIRES, ScanOperator.LessThan, DateTime.Now);
 
             ScanOperationConfig config = new ScanOperationConfig();
-            config.AttributesToGet = new List<string>();
-            config.AttributesToGet.Add(ATTRIBUTE_SESSION_ID);
+            config.AttributesToGet = new List<string> { ATTRIBUTE_SESSION_ID };
+            config.Select = SelectValues.SpecificAttributes;
             config.Filter = filter;
 
+            DocumentBatchWrite batchWrite = table.CreateBatchWrite();
             Search search = table.Scan(config);
 
             do
@@ -649,9 +660,11 @@ namespace Amazon.SessionProvider
                 List<Document> page = search.GetNextSet();
                 foreach (var document in page)
                 {
-                    table.DeleteItem(document);
+                    batchWrite.AddItemToDelete(document);
                 }
             } while (!search.IsDone);
+
+            batchWrite.Execute();
         }
 
         /// <summary>

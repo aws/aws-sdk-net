@@ -72,8 +72,7 @@ namespace Amazon.EC2.Model
         /// Attribute name to be described.
         /// </summary>
         /// <remarks>
-        /// Valid values: launchPermission | productCodes | kernel
-        /// | ramdisk | blockDeviceMapping | platform
+        /// Valid values: description | kernel | ramdisk | launchPermission | productCodes | blockDeviceMapping
         /// </remarks>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -85,9 +84,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the attribute name to be described.
         /// </summary>
-        /// <param name="attribute">Attribute name to be described.Valid values:
-        /// launchPermission | productCodes | kernel
-        /// | ramdisk | blockDeviceMapping | platform</param>
+        /// <param name="attribute">
+        /// <para>
+        /// Attribute name to be described.
+        /// </para>
+        /// <para>
+        /// Valid values: description | kernel | ramdisk | launchPermission | productCodes | blockDeviceMapping
+        /// </para>
+        /// </param>
         /// <returns>this instance</returns>
         public DescribeImageAttributeRequest WithAttribute(string attribute)
         {

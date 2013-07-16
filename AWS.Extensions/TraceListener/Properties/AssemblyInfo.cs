@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AWS.Extensions")]
-[assembly: AssemblyDescription("Amazon Web Services Extensions")]
+[assembly: AssemblyTitle("AWS.TraceListener")]
+[assembly: AssemblyDescription("Amazon Web Services TraceListener Extensions")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("Amazon Web Services Extensions")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
+[assembly: AssemblyProduct("Amazon Web Services TraceListener Extensions")]
 [assembly: AssemblyCopyright("Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f19dc928-e6c8-4ad0-84a7-895c5a81257b")]
+[assembly: Guid("d276daa2-9fef-4ca4-ac07-8a310c51fafa")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.26.0")]
-[assembly: AssemblyFileVersion("1.5.26.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
