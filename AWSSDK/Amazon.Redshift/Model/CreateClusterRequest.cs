@@ -214,7 +214,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// The password associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be between 8 and 64
         /// characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li>
-        /// <li>Must contain one number.</li> </ul>
+        /// <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote),
+        /// \, /, @, or space.</li> </ul>
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -396,9 +397,8 @@ namespace Amazon.Redshift.Model
         /// The weekly time range (in UTC) during which automated cluster maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A
         /// 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows
         /// the time blocks for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-        /// 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-        /// UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-        /// </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun Constraints: Minimum 30-minute window.
+        /// 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li> </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+        /// Constraints: Minimum 30-minute window.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow

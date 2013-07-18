@@ -271,7 +271,8 @@ namespace Amazon.Redshift.Model
         /// response. <note> Operations never return the password, so this operation provides a way to regain access to the master user account for a
         /// cluster if the password is lost. </note> Default: Uses existing setting. Constraints: <ul> <li>Must be between 8 and 64 characters in
         /// length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li> <li>Must contain one
-        /// number.</li> </ul>
+        /// number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+        /// space.</li> </ul>
         ///  
         /// </summary>
         public string MasterUserPassword

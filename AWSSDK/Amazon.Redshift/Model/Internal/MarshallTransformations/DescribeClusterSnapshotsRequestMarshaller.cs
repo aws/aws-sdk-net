@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(describeClusterSnapshotsRequest.Marker));
             }
+            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetOwnerAccount())
+            {
+                request.Parameters.Add("OwnerAccount", StringUtils.FromString(describeClusterSnapshotsRequest.OwnerAccount));
+            }
 
             return request;
         }

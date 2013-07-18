@@ -373,8 +373,9 @@ namespace Amazon.TraceListener
                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = Configuration.ReadUnits, WriteCapacityUnits = Configuration.WriteUnits }
                 });
             }
-            catch
+            catch (Exception e)
             {
+                WriteEventLogMessage(string.Format("Error while creating table {0}: {1}", Configuration.TableName, e.ToString()), EventLogEntryType.Error);
                 return null;
             }
 

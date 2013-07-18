@@ -32,22 +32,23 @@ namespace Amazon.SecurityToken.Model
     /// which one can access which account can be time consuming. Instead, you can create one set of long-term credentials in one account and then
     /// use temporary security credentials to access all the other accounts by assuming roles in those accounts. For more information about roles,
     /// see Roles in <i>Using IAM</i> .
-    /// </para> <para> For federation, you might, for example, grant single sign-on access to the AWS Management Console. If you already have an
+    /// </para> <para> For federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an
     /// identity and authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user
     /// identities access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the
     /// appropriate permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a
     /// sign-in URL that users can use to access the console. For more information, see Scenarios for Granting Temporary Access in <i>AWS Security
     /// Token Service</i> .
-    /// </para> <para> The temporary security credentials that are returned from the <c>AssumeRoleWithWebIdentity</c> response have the permissions
-    /// that are associated with the access policy of the role being assumed and any policies that are associated with the AWS resource being
-    /// accessed. You can further restrict the permissions of the temporary security credentials by passing a policy in the request. The resulting
-    /// permissions are an intersection of both policies. The role's access policy and the policy that you passed are evaluated when calls to AWS
-    /// service APIs are made using the temporary security credentials. The credentials are valid for the duration that you specified when calling
-    /// <c>AssumeRole</c> , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para> To assume a
-    /// role, you must be trusted by the role in the role's trust policy. A trust relationship is defined when the IAM role is created. You must
-    /// also have a policy that allows you to call <c>sts:AssumeRole</c> .
+    /// </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c> , which
+    /// can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para> The temporary security credentials that
+    /// are returned from the <c>AssumeRoleWithWebIdentity</c> response have the permissions that are associated with the access policy of the role
+    /// being assumed and any policies that are associated with the AWS resource being accessed. You can further restrict the permissions of the
+    /// temporary security credentials by passing a policy in the request. The resulting permissions are an intersection of the role's access policy
+    /// and the policy that you passed. These policies and any applicable resource-based policies are evaluated when calls to AWS service APIs are
+    /// made using the temporary security credentials. </para> <para> To assume a role, your AWS account must be trusted by the role. The trust
+    /// relationship is defined in the role's trust policy when the IAM role is created. You must also have a policy that allows you to call
+    /// <c>sts:AssumeRole</c> .
     /// </para> <para> <b>Important:</b> You cannot call <c>Assumerole</c> by using AWS account credentials; access will be denied. You must use
-    /// IAM user credentials to call <c>AssumeRole</c> .
+    /// IAM user credentials or temporary security credentials to call <c>AssumeRole</c> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.AssumeRole"/>
@@ -219,7 +220,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// A unique identifier that is used by third parties to assume a role in their customers accounts. For each role that the third party can
+        /// A unique identifier that is used by third parties to assume a role in their customers' accounts. For each role that the third party can
         /// assume, they should instruct their customers to create a role with the external ID that the third party generated. Each time the third party
         /// assumes the role, they must pass the customer's external ID. The external ID is useful in order to help third parties bind a role to the
         /// customer who created it. For more information about the external ID, see <a

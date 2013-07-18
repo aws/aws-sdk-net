@@ -23,23 +23,23 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ModifyClusterSubnetGroup operation
+    ///    Response Unmarshaller for AuthorizeSnapshotAccess operation
     /// </summary>
-    internal class ModifyClusterSubnetGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    internal class AuthorizeSnapshotAccessResponseUnmarshaller : XmlResponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
-            ModifyClusterSubnetGroupResponse response = new ModifyClusterSubnetGroupResponse();
+            AuthorizeSnapshotAccessResponse response = new AuthorizeSnapshotAccessResponse();
             
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
                     
-                    if(context.TestExpression("ModifyClusterSubnetGroupResult", 2))
+                    if(context.TestExpression("AuthorizeSnapshotAccessResult", 2))
                     {
-                        response.ModifyClusterSubnetGroupResult = ModifyClusterSubnetGroupResultUnmarshaller.GetInstance().Unmarshall(context);
+                        response.AuthorizeSnapshotAccessResult = AuthorizeSnapshotAccessResultUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     
@@ -59,41 +59,31 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetAlreadyInUse"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationAlreadyExists"))
             {
-                return new SubnetAlreadyInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new AuthorizationAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
             {
-                return new InvalidSubnetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationQuotaExceeded"))
             {
-                return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSubnetQuotaExceededFault"))
-            {
-                return new ClusterSubnetQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSubnetGroupNotFoundFault"))
-            {
-                return new ClusterSubnetGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new AuthorizationQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         
-        private static ModifyClusterSubnetGroupResponseUnmarshaller instance;
+        private static AuthorizeSnapshotAccessResponseUnmarshaller instance;
 
-        public static ModifyClusterSubnetGroupResponseUnmarshaller GetInstance()
+        public static AuthorizeSnapshotAccessResponseUnmarshaller GetInstance()
         {
             if (instance == null) 
             {
-               instance = new ModifyClusterSubnetGroupResponseUnmarshaller();
+               instance = new AuthorizeSnapshotAccessResponseUnmarshaller();
             }
             return instance;
         }

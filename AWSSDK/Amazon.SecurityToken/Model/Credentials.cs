@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken.Model
         private DateTime? expiration;
 
         /// <summary>
-        /// AccessKeyId ID that identifies the temporary credentials.
+        /// The access key ID that identifies the temporary security credentials.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The secret access key to sign requests.
+        /// The secret access key that can be used to sign requests.
         ///  
         /// </summary>
         public string SecretAccessKey
@@ -101,7 +101,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The security token that users must pass to the service API to use the temporary credentials.
+        /// The token that users must pass to the service API to use the temporary credentials.
         ///  
         /// </summary>
         public string SessionToken
@@ -129,7 +129,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The date on which these credentials expire.
+        /// The date on which the current credentials expire.
         ///  
         /// </summary>
         public DateTime Expiration

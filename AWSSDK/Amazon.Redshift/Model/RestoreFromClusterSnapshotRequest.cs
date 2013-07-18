@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         private bool? allowVersionUpgrade;
         private string clusterSubnetGroupName;
         private bool? publiclyAccessible;
+        private string ownerAccount;
 
         /// <summary>
         /// The identifier of the cluster that will be created from restoring the snapshot. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
@@ -245,6 +246,35 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own
+        /// the snapshot.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerAccount property
+        /// </summary>
+        /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
+        /// <returns>this instance</returns>
+        public RestoreFromClusterSnapshotRequest WithOwnerAccount(string ownerAccount)
+        {
+            this.ownerAccount = ownerAccount;
+            return this;
+        }
+            
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
         }
     }
 }

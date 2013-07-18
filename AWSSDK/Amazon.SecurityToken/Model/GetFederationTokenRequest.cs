@@ -25,21 +25,21 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
-    /// <para>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a
+    /// <para> Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a
     /// federated user. A typical use is in a proxy application that is getting temporary security credentials on behalf of distributed applications
     /// inside a corporate network. Because you must call the <c>GetFederationToken</c> action using the long-term security credentials of an IAM
     /// user, this call is appropriate in contexts where those credentials can be safely stored, usually in a server-based application. </para>
     /// <para> <b>Note:</b> Do not use this call in mobile applications or client-based web applications that directly get temporary security
     /// credentials. For those types of applications, use <c>AssumeRoleWithWebIdentity</c> .
-    /// </para> <para> The <c>GetFederationToken</c> action must be called by using the long-term AWS security credentials of the AWS account or an
-    /// IAM user. Credentials that are created by IAM users are valid for the specified duration, between 900 seconds (15 minutes) and 129600
-    /// secondes (36 hours); credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).</para>
+    /// </para> <para> The <c>GetFederationToken</c> action must be called by using the long-term AWS security credentials of the AWS account or
+    /// an IAM user. Credentials that are created by IAM users are valid for the specified duration, between 900 seconds (15 minutes) and 129600
+    /// seconds (36 hours); credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour). </para>
     /// <para> The permissions that are granted to the federated user are the intersection of the policy that is passed with the
-    /// <c>GetFederationToken</c> request, policies that are associated with of the entity making the <c>GetFederationToken</c> call, and any
-    /// policies that are associated with the AWS resource being accessed. </para> <para> For more information about how permissions work, see
-    /// Controlling Permissions in Temporary Credentials in <i>Using Temporary Security Credentials</i> . For information about using
-    /// <c>GetFederationToken</c> to create temporary security credentials, see Creating Temporary Credentials to Enable Access for Federated Users
-    /// in <i>Using Temporary Security Credentials</i> .</para>
+    /// <c>GetFederationToken</c> request and policies that are associated with of the entity making the <c>GetFederationToken</c> call. </para>
+    /// <para> For more information about how permissions work, see Controlling Permissions in Temporary Credentials in <i>Using Temporary Security
+    /// Credentials</i> . For information about using <c>GetFederationToken</c> to create temporary security credentials, see Creating Temporary
+    /// Credentials to Enable Access for Federated Users in <i>Using Temporary Security Credentials</i> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetFederationToken"/>
     public class GetFederationTokenRequest : AmazonWebServiceRequest

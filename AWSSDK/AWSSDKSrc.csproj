@@ -7795,280 +7795,844 @@
     <Compile Include="Amazon.Redshift\AmazonRedshiftClient.cs" />
     <Compile Include="Amazon.Redshift\AmazonRedshiftConfig.cs" />
     <Compile Include="Amazon.Redshift\AmazonRedshiftException.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizationAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizationNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizationQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\AvailabilityZone.cs" />
-    <Compile Include="Amazon.Redshift\Model\Cluster.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroup.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupStatus.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroup.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupMembership.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroup.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterSubnetQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ClusterVersion.cs" />
-    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DefaultClusterParameters.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterParameterGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterParameterGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSecurityGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSecurityGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DeleteClusterSubnetGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClustersRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClustersResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClustersResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeEventsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeEventsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeEventsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeResizeRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeResizeResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\DescribeResizeResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\EC2SecurityGroup.cs" />
-    <Compile Include="Amazon.Redshift\Model\Endpoint.cs" />
-    <Compile Include="Amazon.Redshift\Model\Event.cs" />
-    <Compile Include="Amazon.Redshift\Model\InsufficientClusterCapacityException.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AvailabilityZoneUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupStatusUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSecurityGroupMembershipUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSecurityGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSubnetGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterVersionUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DefaultClusterParametersUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterParameterGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterParameterGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSecurityGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSecurityGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSubnetGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EC2SecurityGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EndpointUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EventUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\IPRangeUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\OrderableClusterOptionUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ReservedNodeOfferingUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ReservedNodeUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressRequestMarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressResultUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SnapshotUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\VpcSecurityGroupMembershipUnmarshaller.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterParameterGroupStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterSecurityGroupStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterSnapshotStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterSubnetGroupStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidClusterSubnetStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidRestoreException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidSubnetException.cs" />
-    <Compile Include="Amazon.Redshift\Model\InvalidVPCNetworkStateException.cs" />
-    <Compile Include="Amazon.Redshift\Model\IPRange.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\NumberOfNodesPerClusterLimitExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\NumberOfNodesQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\OrderableClusterOption.cs" />
-    <Compile Include="Amazon.Redshift\Model\Parameter.cs" />
-    <Compile Include="Amazon.Redshift\Model\PendingModifiedValues.cs" />
-    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\RebootClusterRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\RebootClusterResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\RebootClusterResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\RecurringCharge.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNode.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNodeAlreadyExistsException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNodeNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNodeOffering.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNodeOfferingNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ReservedNodeQuotaExceededException.cs" />
-    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\ResizeNotFoundException.cs" />
-    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressRequest.cs" />
-    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResponse.cs" />
-    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResult.cs" />
-    <Compile Include="Amazon.Redshift\Model\Snapshot.cs" />
-    <Compile Include="Amazon.Redshift\Model\Subnet.cs" />
-    <Compile Include="Amazon.Redshift\Model\SubnetAlreadyInUseException.cs" />
-    <Compile Include="Amazon.Redshift\Model\UnsupportedOptionException.cs" />
-    <Compile Include="Amazon.Redshift\Model\VpcSecurityGroupMembership.cs" />
+    <Compile Include="Amazon.Redshift\Model\AccessToSnapshotDeniedException.cs" />
+    <Compile Include="Amazon.Redshift\Model\AccountWithRestoreAccess.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizationAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizationNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizationQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessRequest.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessResponse.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessResult.cs" />
+    <Compile Include="Amazon.Redshift\Model\AvailabilityZone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Cluster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterParameterGroupStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSecurityGroupQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSnapshotQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSubnetGroupQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterSubnetQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ClusterVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CopyClusterSnapshotResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterParameterGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSecurityGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSnapshotResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\CreateClusterSubnetGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DefaultClusterParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterParameterGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterParameterGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSecurityGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSecurityGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSnapshotResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DeleteClusterSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParameterGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterParametersResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSecurityGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSnapshotsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClustersRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClustersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClustersResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterSubnetGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeClusterVersionsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeDefaultClusterParametersResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeEventsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeEventsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeEventsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeOrderableClusterOptionsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodeOfferingsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeReservedNodesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeResizeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeResizeResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\DescribeResizeResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\EC2SecurityGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Endpoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Event.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InsufficientClusterCapacityException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AccountWithRestoreAccessUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeSnapshotAccessRequestMarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeSnapshotAccessResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeSnapshotAccessResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AvailabilityZoneUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupStatusUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSecurityGroupMembershipUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSecurityGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterSubnetGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterVersionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CopyClusterSnapshotResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterParameterGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSecurityGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSnapshotResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\CreateClusterSubnetGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DefaultClusterParametersUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterParameterGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterParameterGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSecurityGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSecurityGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSnapshotResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DeleteClusterSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParameterGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterParametersResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSecurityGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSnapshotsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClustersResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterSubnetGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeClusterVersionsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeDefaultClusterParametersResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeEventsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeOrderableClusterOptionsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodeOfferingsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeReservedNodesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\DescribeResizeResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EC2SecurityGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EndpointUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\EventUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\IPRangeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterParameterGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ModifyClusterSubnetGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\OrderableClusterOptionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\PurchaseReservedNodeOfferingResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RebootClusterResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ReservedNodeOfferingUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ReservedNodeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeSnapshotAccessRequestMarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeSnapshotAccessResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeSnapshotAccessResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SnapshotUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\VpcSecurityGroupMembershipUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterParameterGroupStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterSecurityGroupStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterSnapshotStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterSubnetGroupStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidClusterSubnetStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidRestoreException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidSubnetException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\InvalidVPCNetworkStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\IPRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterParameterGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ModifyClusterSubnetGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\NumberOfNodesPerClusterLimitExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\NumberOfNodesQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\OrderableClusterOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Parameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\PendingModifiedValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\PurchaseReservedNodeOfferingResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RebootClusterRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RebootClusterResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RebootClusterResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RecurringCharge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNodeAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNodeNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNodeOffering.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNodeOfferingNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ReservedNodeQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ResetClusterParameterGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\ResizeNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessRequest.cs" />
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessResponse.cs" />
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessResult.cs" />
+    <Compile Include="Amazon.Redshift\Model\Snapshot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\Subnet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\SubnetAlreadyInUseException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\UnauthorizedOperationException.cs" />
+    <Compile Include="Amazon.Redshift\Model\UnsupportedOptionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Redshift\Model\VpcSecurityGroupMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Route53\AmazonRoute53.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Config.cs" />
@@ -8322,6 +8886,9 @@
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithWebIdentityRequest.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithWebIdentityResponse.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithWebIdentityResult.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageRequest.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageResult.cs" />
     <Compile Include="Amazon.SecurityToken\Model\ExpiredTokenException.cs" />
     <Compile Include="Amazon.SecurityToken\Model\IDPCommunicationErrorException.cs" />
     <Compile Include="Amazon.SecurityToken\Model\IDPRejectedClaimException.cs" />
@@ -8332,6 +8899,10 @@
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityResultUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\DecodeAuthorizationMessageRequestMarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\DecodeAuthorizationMessageResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\DecodeAuthorizationMessageResultUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\InvalidAuthorizationMessageException.cs" />
     <Compile Include="Amazon.SecurityToken\Model\InvalidIdentityTokenException.cs" />
     <Compile Include="Amazon.SimpleDB\Model\SDBRequest.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\SNSRequest.cs" />

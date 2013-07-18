@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can
-    /// be used to make AWS requests.</para>
+    /// <para> Contains the result of a successful invocation of the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can
+    /// be used to make AWS requests. </para>
     /// </summary>
     public class AssumeRoleWithWebIdentityResult
     {
@@ -63,7 +63,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// The unique user identifier that is returned by the identity provider. This identifier is associated with the <c>WebIdentityToken</c> that
         /// was submitted with the <c>AssumeRoleWithWebIdentity</c> call. The identifier is typically unique to the user and the application that
-        /// acquired the <c>WebIdentityToken</c> (pairwise identifier). If an OpenID Connect id token was submitted in the <c>WebIdentityToken</c>, this
+        /// acquired the <c>WebIdentityToken</c> (pairwise identifier). If an OpenID Connect ID token was submitted in the <c>WebIdentityToken</c>, this
         /// value is returned by the identity provider as the token's <c>sub</c> (Subject) claim.
         ///  
         /// <para>
