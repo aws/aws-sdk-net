@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
         private Recipes customRecipes;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The layer stack ID.
@@ -143,9 +144,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer short name, which is used internally by OpsWorks and by Chef recipes. The shortname is also used as the name for the directory
-        /// where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and
-        /// '.'.
+        /// The layer short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name is also used as the name for the
+        /// directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+        /// '-', '_', and '.'.
         ///  
         /// </summary>
         public string Shortname
@@ -450,6 +451,29 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomRecipes()
         {
             return this.customRecipes != null;
+        }
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstallUpdatesOnBoot property
+        /// </summary>
+        /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
+        /// <returns>this instance</returns>
+        public CreateLayerRequest WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
+        {
+            this.installUpdatesOnBoot = installUpdatesOnBoot;
+            return this;
+        }
+            
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
     }
 }

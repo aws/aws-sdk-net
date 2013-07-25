@@ -135,6 +135,27 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("CustomJson");
                     writer.Write(cloneStackRequest.CustomJson);
                 }
+
+                if (cloneStackRequest != null) 
+                {
+                    StackConfigurationManager configurationManager = cloneStackRequest.ConfigurationManager;
+                    if (configurationManager != null)
+                    {
+                        writer.WritePropertyName("ConfigurationManager");
+                        writer.WriteObjectStart();
+                        if (configurationManager != null && configurationManager.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(configurationManager.Name);
+                        }
+                        if (configurationManager != null && configurationManager.IsSetVersion()) 
+                        {
+                            writer.WritePropertyName("Version");
+                            writer.Write(configurationManager.Version);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
                 if (cloneStackRequest != null && cloneStackRequest.IsSetUseCustomCookbooks()) 
                 {
                     writer.WritePropertyName("UseCustomCookbooks");

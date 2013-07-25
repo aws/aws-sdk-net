@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when OpsWorks starts or stops
-    /// load-based instances.</para>
+    /// <para>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or
+    /// stops load-based instances.</para>
     /// </summary>
     public class AutoScalingThresholds
     {
@@ -100,10 +100,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The amount of time (in minutes) after a scaling event occurs that OpsWorks should ignore metrics and not raise any additional scaling
-        /// events. For example, OpsWorks adds new instances following an upscaling event but the instances won't start reducing the load until they
+        /// The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and not raise any additional scaling
+        /// events. For example, AWS OpsWorks adds new instances following an upscaling event but the instances won't start reducing the load until they
         /// have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several
-        /// minutes. <c>IgnoreMetricsTime</c> allows you to direct OpsWorks to not raise any scaling events long enough to get the new instances online.
+        /// minutes. <c>IgnoreMetricsTime</c> allows you to direct AWS OpsWorks to not raise any scaling events long enough to get the new instances
+        /// online.
         ///  
         /// <para>
         /// <b>Constraints:</b>

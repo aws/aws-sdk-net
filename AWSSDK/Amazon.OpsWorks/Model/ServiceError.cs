@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an OpsWorks service error.</para>
+    /// <para>Describes an AWS OpsWorks service error.</para>
     /// </summary>
     public class ServiceError
     {

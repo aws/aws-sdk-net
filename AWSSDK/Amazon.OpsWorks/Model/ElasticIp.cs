@@ -28,10 +28,11 @@ namespace Amazon.OpsWorks.Model
         
         private string ip;
         private string name;
+        private string domain;
         private string region;
 
         /// <summary>
-        /// The Elastic IP address
+        /// The IP address
         ///  
         /// </summary>
         public string Ip
@@ -59,7 +60,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The Elastic IP address name.
+        /// The name.
         ///  
         /// </summary>
         public string Name
@@ -84,6 +85,34 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetName()
         {
             return this.name != null;
+        }
+
+        /// <summary>
+        /// The domain.
+        ///  
+        /// </summary>
+        public string Domain
+        {
+            get { return this.domain; }
+            set { this.domain = value; }
+        }
+
+        /// <summary>
+        /// Sets the Domain property
+        /// </summary>
+        /// <param name="domain">The value to set for the Domain property </param>
+        /// <returns>this instance</returns>
+        public ElasticIp WithDomain(string domain)
+        {
+            this.domain = domain;
+            return this;
+        }
+            
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this.domain != null;
         }
 
         /// <summary>

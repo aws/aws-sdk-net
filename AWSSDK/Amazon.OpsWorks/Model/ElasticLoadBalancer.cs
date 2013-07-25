@@ -31,6 +31,7 @@ namespace Amazon.OpsWorks.Model
         private string dnsName;
         private string stackId;
         private string layerId;
+        private string vpcId;
         private List<string> availabilityZones = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
@@ -172,6 +173,34 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetLayerId()
         {
             return this.layerId != null;
+        }
+
+        /// <summary>
+        /// The VPC ID.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        public ElasticLoadBalancer WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
         }
 
         /// <summary>

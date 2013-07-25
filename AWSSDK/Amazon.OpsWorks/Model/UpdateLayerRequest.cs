@@ -41,6 +41,7 @@ namespace Amazon.OpsWorks.Model
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
         private Recipes customRecipes;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The layer ID.
@@ -99,8 +100,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer short name, which is used internally by OpsWorksand by Chef. The shortname is also used as the name for the directory where your
-        /// app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+        /// The layer short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where
+        /// your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
         ///  
         /// </summary>
         public string Shortname
@@ -405,6 +406,29 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomRecipes()
         {
             return this.customRecipes != null;
+        }
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstallUpdatesOnBoot property
+        /// </summary>
+        /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
+        /// <returns>this instance</returns>
+        public UpdateLayerRequest WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
+        {
+            this.installUpdatesOnBoot = installUpdatesOnBoot;
+            return this;
+        }
+            
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
     }
 }

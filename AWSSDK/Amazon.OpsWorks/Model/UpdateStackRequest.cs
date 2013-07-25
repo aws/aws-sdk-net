@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private string hostnameTheme;
         private string defaultAvailabilityZone;
         private string customJson;
+        private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
@@ -132,8 +133,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack AWS Identity and Access Management (IAM) role, which allows OpsWorks to work with AWS resources on your behalf. You must set this
-        /// parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
+        /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set
+        /// this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note>You must set this parameter to a
         /// valid service role ARN or the action will fail; there is no default value. You can specify the stack's current service role ARN, if you
         /// prefer, but you must do so explicitly.</note>
@@ -221,11 +222,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate hostnames for the stack's instances.
-        /// By default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates hostnames by appending integers to the layer's shortname. The
-        /// other themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
+        /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's
+        /// instances. By default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates host names by appending integers to the layer's short
+        /// name. The other themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
         /// <li>Legendary_Creatures_from_Japan</li> <li>Planets_and_Moons</li> <li>Roman_Deities</li> <li>Scottish_Islands</li> <li>US_Cities</li>
-        /// <li>Wild_Cats</li> </ul> To obtain a generated hostname, call <c>GetHostNameSuggestion</c>, which returns a hostname based on the current
+        /// <li>Wild_Cats</li> </ul> To obtain a generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current
         /// theme.
         ///  
         /// </summary>
@@ -314,6 +315,35 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The configuration manager. When you clone a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or 11.4.
+        /// The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August.
+        ///  
+        /// </summary>
+        public StackConfigurationManager ConfigurationManager
+        {
+            get { return this.configurationManager; }
+            set { this.configurationManager = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConfigurationManager property
+        /// </summary>
+        /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
+        /// <returns>this instance</returns>
+        public UpdateStackRequest WithConfigurationManager(StackConfigurationManager configurationManager)
+        {
+            this.configurationManager = configurationManager;
+            return this;
+        }
+            
+
+        // Check to see if ConfigurationManager property is set
+        internal bool IsSetConfigurationManager()
+        {
+            return this.configurationManager != null;
+        }
+
+        /// <summary>
         /// Whether the stack uses custom cookbooks.
         ///  
         /// </summary>
@@ -344,7 +374,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource

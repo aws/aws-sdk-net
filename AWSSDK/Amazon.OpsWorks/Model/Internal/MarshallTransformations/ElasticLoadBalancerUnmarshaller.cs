@@ -75,6 +75,12 @@
                 continue;
               }
   
+              if (context.TestExpression("VpcId", targetDepth))
+              {
+                elasticLoadBalancer.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("AvailabilityZones", targetDepth))
               {
                 elasticLoadBalancer.AvailabilityZones = new List<String>();

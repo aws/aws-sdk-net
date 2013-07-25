@@ -36,6 +36,7 @@ namespace Amazon.OpsWorks.Model
         private string hostnameTheme;
         private string defaultAvailabilityZone;
         private string customJson;
+        private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
@@ -332,6 +333,34 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The configuration manager.
+        ///  
+        /// </summary>
+        public StackConfigurationManager ConfigurationManager
+        {
+            get { return this.configurationManager; }
+            set { this.configurationManager = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConfigurationManager property
+        /// </summary>
+        /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
+        /// <returns>this instance</returns>
+        public Stack WithConfigurationManager(StackConfigurationManager configurationManager)
+        {
+            this.configurationManager = configurationManager;
+            return this;
+        }
+            
+
+        // Check to see if ConfigurationManager property is set
+        internal bool IsSetConfigurationManager()
+        {
+            return this.configurationManager != null;
+        }
+
+        /// <summary>
         /// Whether the stack uses custom cookbooks.
         ///  
         /// </summary>
@@ -362,7 +391,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource

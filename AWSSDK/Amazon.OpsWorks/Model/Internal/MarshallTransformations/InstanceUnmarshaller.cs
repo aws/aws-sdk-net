@@ -129,6 +129,12 @@
                 continue;
               }
   
+              if (context.TestExpression("AmiId", targetDepth))
+              {
+                instance.AmiId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("AvailabilityZone", targetDepth))
               {
                 instance.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -216,6 +222,12 @@
               if (context.TestExpression("RootDeviceVolumeId", targetDepth))
               {
                 instance.RootDeviceVolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
+              {
+                instance.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

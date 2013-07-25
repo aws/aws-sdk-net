@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         private Recipes defaultRecipes;
         private Recipes customRecipes;
         private string createdAt;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The layer stack ID.
@@ -492,12 +493,12 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each
-        /// layer, OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events.
-        /// OpsWorks runs custom event recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a particular layer
-        /// to be run in response to each of the five events. To specify a recipe, use the cookbook's directory name in the repository followed by two
-        /// colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the
-        /// dbsetup.rb recipe in the repository's phpapp2 folder.
+        /// AWS OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+        /// each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers
+        /// and events. AWS OpsWorks runs custom event recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a
+        /// particular layer to be run in response to each of the five events. To specify a recipe, use the cookbook's directory name in the repository
+        /// followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup
+        /// specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
         ///  
         /// </summary>
         public Recipes DefaultRecipes
@@ -578,6 +579,29 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCreatedAt()
         {
             return this.createdAt != null;
+        }
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstallUpdatesOnBoot property
+        /// </summary>
+        /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
+        /// <returns>this instance</returns>
+        public Layer WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
+        {
+            this.installUpdatesOnBoot = installUpdatesOnBoot;
+            return this;
+        }
+            
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
     }
 }

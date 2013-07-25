@@ -21,18 +21,18 @@
     namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     {
       /// <summary>
-      /// ElasticIpUnmarshaller
+      /// StackConfigurationManagerUnmarshaller
       /// </summary>
-      internal class ElasticIpUnmarshaller : IUnmarshaller<ElasticIp, XmlUnmarshallerContext>, IUnmarshaller<ElasticIp, JsonUnmarshallerContext>
+      internal class StackConfigurationManagerUnmarshaller : IUnmarshaller<StackConfigurationManager, XmlUnmarshallerContext>, IUnmarshaller<StackConfigurationManager, JsonUnmarshallerContext>
       {
-        ElasticIp IUnmarshaller<ElasticIp, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StackConfigurationManager IUnmarshaller<StackConfigurationManager, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
 
-        public ElasticIp Unmarshall(JsonUnmarshallerContext context)
+        public StackConfigurationManager Unmarshall(JsonUnmarshallerContext context)
         {
-            ElasticIp elasticIp = new ElasticIp();
+            StackConfigurationManager stackConfigurationManager = new StackConfigurationManager();
           
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -43,46 +43,34 @@
                 context.Read();
                 context.Read();
               
-              if (context.TestExpression("Ip", targetDepth))
-              {
-                elasticIp.Ip = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
               if (context.TestExpression("Name", targetDepth))
               {
-                elasticIp.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                stackConfigurationManager.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-              if (context.TestExpression("Domain", targetDepth))
+              if (context.TestExpression("Version", targetDepth))
               {
-                elasticIp.Domain = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Region", targetDepth))
-              {
-                elasticIp.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
+                stackConfigurationManager.Version = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return elasticIp;
+                    return stackConfigurationManager;
                 }
             }
           
 
-            return elasticIp;
+            return stackConfigurationManager;
         }
 
-        private static ElasticIpUnmarshaller instance;
-        public static ElasticIpUnmarshaller GetInstance()
+        private static StackConfigurationManagerUnmarshaller instance;
+        public static StackConfigurationManagerUnmarshaller GetInstance()
         {
             if (instance == null)
-                instance = new ElasticIpUnmarshaller();
+                instance = new StackConfigurationManagerUnmarshaller();
             return instance;
         }
     }

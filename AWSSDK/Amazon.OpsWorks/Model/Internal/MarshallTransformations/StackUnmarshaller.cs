@@ -118,6 +118,12 @@
                 continue;
               }
   
+              if (context.TestExpression("ConfigurationManager", targetDepth))
+              {
+                stack.ConfigurationManager = StackConfigurationManagerUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("UseCustomCookbooks", targetDepth))
               {
                 stack.UseCustomCookbooks = BoolUnmarshaller.GetInstance().Unmarshall(context);

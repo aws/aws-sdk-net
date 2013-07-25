@@ -96,7 +96,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// An <c>AutoScalingThresholds</c> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified
-        /// amount of time, OpsWorks starts a specified number of instances.
+        /// amount of time, AWS OpsWorks starts a specified number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds UpScaling
@@ -125,7 +125,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// An <c>AutoScalingThresholds</c> object with the downscaling threshold configuration. If the load falls below these thresholds for a
-        /// specified amount of time, OpsWorks stops a specified number of instances.
+        /// specified amount of time, AWS OpsWorks stops a specified number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds DownScaling

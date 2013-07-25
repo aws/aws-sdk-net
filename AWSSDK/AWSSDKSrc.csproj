@@ -6599,6 +6599,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SetTimeBasedAutoScalingResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SourceUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SslConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackConfigurationManagerUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartInstanceRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StartInstanceResponseUnmarshaller.cs" />
@@ -6641,6 +6642,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Source.cs" />
     <Compile Include="Amazon.OpsWorks\Model\SslConfiguration.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Stack.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\StackConfigurationManager.cs" />
     <Compile Include="Amazon.OpsWorks\Model\StartInstanceRequest.cs" />
     <Compile Include="Amazon.OpsWorks\Model\StartInstanceResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\StartStackRequest.cs" />

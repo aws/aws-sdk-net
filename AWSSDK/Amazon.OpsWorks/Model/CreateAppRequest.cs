@@ -154,7 +154,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer.
+        /// The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS
         /// OpsWorks deploys an application to those instances that are members of the corresponding layer.
         ///  
         /// <para>

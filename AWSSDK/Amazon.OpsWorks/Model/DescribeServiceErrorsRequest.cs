@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// <para>Describes OpsWorks service errors.</para>
+    /// <para>Describes AWS OpsWorks service errors.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
     public class DescribeServiceErrorsRequest : AmazonWebServiceRequest

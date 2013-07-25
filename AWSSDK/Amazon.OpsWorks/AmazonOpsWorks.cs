@@ -22,7 +22,14 @@ namespace Amazon.OpsWorks
     /// <summary>
     /// Interface for accessing AmazonOpsWorks.
     ///  
-    ///  AWS OpsWorks
+    ///  AWS OpsWorks <para>Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides descriptions, syntax, and usage examples about AWS
+    /// OpsWorks actions and data types, including common parameters and error codes. </para> <para>AWS OpsWorks is an application management
+    /// service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to
+    /// the AWS OpsWorks details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks supports only one endpoint,
+    /// opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks to create
+    /// stacks in any AWS Region.</para> <para>When you call CreateStack CloneStack or UpdateStack you can optionally use the
+    /// <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to
+    /// change the default value to 11.4 in late August.</para>
     /// </summary>
     public interface AmazonOpsWorks : IDisposable
     {
@@ -698,7 +705,7 @@ namespace Amazon.OpsWorks
         #region GetHostnameSuggestion
 
         /// <summary>
-        /// <para>Gets a generated hostname for the specified layer, based on the current hostname theme.</para>
+        /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
         /// </summary>
         /// 
         /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion service method on
@@ -1289,7 +1296,7 @@ namespace Amazon.OpsWorks
         #region DescribeServiceErrors
 
         /// <summary>
-        /// <para>Describes OpsWorks service errors.</para>
+        /// <para>Describes AWS OpsWorks service errors.</para>
         /// </summary>
         /// 
         /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors service method on
@@ -1327,7 +1334,7 @@ namespace Amazon.OpsWorks
         DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Describes OpsWorks service errors.</para>
+        /// <para>Describes AWS OpsWorks service errors.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeServiceErrors service method, as returned by AmazonOpsWorks.</returns>
