@@ -4,4 +4,4 @@ install:
   - sudo apt-get install mono-devel mono-gmcs nunit-console
  
 script:
-  - xbuild "AWS Source.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v3.5" /p:TreatWarningsAsErrors="false"
+  - MONO_IOMAP=case xbuild "AWSSDK_DotNet35/AWSSDK_DotNet35.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v3.5" /p:TreatWarningsAsErrors="false"
