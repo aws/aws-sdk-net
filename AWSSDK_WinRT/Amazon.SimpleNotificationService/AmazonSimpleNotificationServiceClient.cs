@@ -37,9 +37,9 @@ namespace Amazon.SimpleNotificationService
     /// For a list of available SDKs, go to Tools for Amazon Web Services. </para>
     /// </summary>
 	public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, Amazon.SimpleNotificationService.IAmazonSimpleNotificationService
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -166,12 +166,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest addPermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddPermissionRequestMarshaller();
-			var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(addPermissionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(addPermissionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ConfirmSubscription</c> action verifies an endpoint owner's intent to receive messages by validating the token sent to the
@@ -193,12 +194,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest confirmSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfirmSubscriptionRequestMarshaller();
-			var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(confirmSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfirmSubscriptionRequestMarshaller();
+            var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(confirmSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
@@ -219,12 +221,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest createTopicRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateTopicRequestMarshaller();
-			var unmarshaller = CreateTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(createTopicRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateTopicRequestMarshaller();
+            var unmarshaller = CreateTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(createTopicRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>DeleteTopic</c> action deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent
@@ -243,12 +246,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest deleteTopicRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTopicRequestMarshaller();
-			var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(deleteTopicRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTopicRequestMarshaller();
+            var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(deleteTopicRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetSubscriptionAttribtues</c> action returns all of the properties of a subscription.</para>
@@ -267,12 +271,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSubscriptionAttributesRequestMarshaller();
-			var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(getSubscriptionAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
+            var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(getSubscriptionAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetTopicAttributes</c> action returns all of the properties of a topic. Topic properties returned might differ based on the
@@ -292,12 +297,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest getTopicAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetTopicAttributesRequestMarshaller();
-			var unmarshaller = GetTopicAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(getTopicAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetTopicAttributesRequestMarshaller();
+            var unmarshaller = GetTopicAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(getTopicAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListSubscriptions</c> action returns a list of the requester's subscriptions. Each call returns a limited list of
@@ -317,12 +323,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest listSubscriptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListSubscriptionsRequestMarshaller();
-			var unmarshaller = ListSubscriptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(listSubscriptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListSubscriptionsRequestMarshaller();
+            var unmarshaller = ListSubscriptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(listSubscriptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListSubscriptionsByTopic</c> action returns a list of the subscriptions to a specific topic. Each call returns a limited list
@@ -343,12 +350,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
-			var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(listSubscriptionsByTopicRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
+            var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(listSubscriptionsByTopicRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListTopics</c> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there
@@ -368,12 +376,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest listTopicsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListTopicsRequestMarshaller();
-			var unmarshaller = ListTopicsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(listTopicsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListTopicsRequestMarshaller();
+            var unmarshaller = ListTopicsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(listTopicsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
@@ -394,12 +403,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PublishResponse> PublishAsync(PublishRequest publishRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PublishRequestMarshaller();
-			var unmarshaller = PublishResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PublishRequest, PublishResponse>(publishRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PublishRequestMarshaller();
+            var unmarshaller = PublishResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PublishRequest, PublishResponse>(publishRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>RemovePermission</c> action removes a statement from a topic's access control policy.</para>
@@ -416,12 +426,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest removePermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemovePermissionRequestMarshaller();
-			var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(removePermissionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(removePermissionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SetSubscriptionAttributes</c> action allows a subscription owner to set an attribute of the topic to a new value.</para>
@@ -438,12 +449,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetSubscriptionAttributesRequestMarshaller();
-			var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(setSubscriptionAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
+            var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(setSubscriptionAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SetTopicAttributes</c> action allows a topic owner to set an attribute of the topic to a new value.</para>
@@ -460,12 +472,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest setTopicAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTopicAttributesRequestMarshaller();
-			var unmarshaller = SetTopicAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(setTopicAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTopicAttributesRequestMarshaller();
+            var unmarshaller = SetTopicAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(setTopicAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>Subscribe</c> action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
@@ -487,12 +500,13 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SubscribeResponse> SubscribeAsync(SubscribeRequest subscribeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SubscribeRequestMarshaller();
-			var unmarshaller = SubscribeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SubscribeRequest, SubscribeResponse>(subscribeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SubscribeRequestMarshaller();
+            var unmarshaller = SubscribeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SubscribeRequest, SubscribeResponse>(subscribeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>Unsubscribe</c> action deletes a subscription. If the subscription requires authentication for deletion, only the owner of the
@@ -512,11 +526,12 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest unsubscribeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnsubscribeRequestMarshaller();
-			var unmarshaller = UnsubscribeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(unsubscribeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UnsubscribeRequestMarshaller();
+            var unmarshaller = UnsubscribeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(unsubscribeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

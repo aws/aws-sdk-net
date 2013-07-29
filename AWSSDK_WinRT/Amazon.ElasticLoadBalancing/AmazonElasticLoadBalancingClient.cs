@@ -56,9 +56,9 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     /// </summary>
 	public partial class AmazonElasticLoadBalancingClient : AmazonWebServiceClient, Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -186,12 +186,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ApplySecurityGroupsToLoadBalancerResponse> ApplySecurityGroupsToLoadBalancerAsync(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
-			var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResponse>(applySecurityGroupsToLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
+            var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResponse>(applySecurityGroupsToLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer. </para> <para> The Loadbalancers evenly
@@ -211,12 +212,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AttachLoadBalancerToSubnetsResponse> AttachLoadBalancerToSubnetsAsync(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
-			var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResponse>(attachLoadBalancerToSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResponse>(attachLoadBalancerToSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables the client to define an application healthcheck for the instances. </para>
@@ -232,12 +234,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ConfigureHealthCheckResponse> ConfigureHealthCheckAsync(ConfigureHealthCheckRequest configureHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfigureHealthCheckRequestMarshaller();
-			var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfigureHealthCheckRequest, ConfigureHealthCheckResponse>(configureHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfigureHealthCheckRequestMarshaller();
+            var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfigureHealthCheckRequest, ConfigureHealthCheckResponse>(configureHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
@@ -264,12 +267,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateAppCookieStickinessPolicyResponse> CreateAppCookieStickinessPolicyAsync(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
-			var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResponse>(createAppCookieStickinessPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResponse>(createAppCookieStickinessPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified
@@ -296,12 +300,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateLBCookieStickinessPolicyResponse> CreateLBCookieStickinessPolicyAsync(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
-			var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResponse>(createLBCookieStickinessPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResponse>(createLBCookieStickinessPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new LoadBalancer. </para> <para> After the call has completed successfully, a new LoadBalancer is created; however, it will
@@ -335,12 +340,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest createLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerRequest, CreateLoadBalancerResponse>(createLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerRequest, CreateLoadBalancerResponse>(createLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
@@ -360,12 +366,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateLoadBalancerListenersResponse> CreateLoadBalancerListenersAsync(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResponse>(createLoadBalancerListenersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResponse>(createLoadBalancerListenersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for
@@ -387,12 +394,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateLoadBalancerPolicyResponse> CreateLoadBalancerPolicyAsync(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResponse>(createLoadBalancerPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResponse>(createLoadBalancerPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified LoadBalancer. </para> <para> If attempting to recreate the LoadBalancer, the client must reconfigure all the
@@ -411,12 +419,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest deleteLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(deleteLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(deleteLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes listeners from the LoadBalancer for the specified port. </para>
@@ -432,12 +441,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersAsync(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResponse>(deleteLoadBalancerListenersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResponse>(deleteLoadBalancerListenersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a policy from the LoadBalancer. The specified policy must not be enabled for any listeners. </para>
@@ -454,12 +464,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteLoadBalancerPolicyResponse> DeleteLoadBalancerPolicyAsync(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResponse>(deleteLoadBalancerPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResponse>(deleteLoadBalancerPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic from the LoadBalancer.
@@ -478,12 +489,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeregisterInstancesFromLoadBalancerResponse> DeregisterInstancesFromLoadBalancerAsync(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
-			var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResponse>(deregisterInstancesFromLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
+            var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResponse>(deregisterInstancesFromLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of all the
@@ -503,12 +515,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeInstanceHealthResponse> DescribeInstanceHealthAsync(DescribeInstanceHealthRequest describeInstanceHealthRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceHealthRequestMarshaller();
-			var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceHealthRequest, DescribeInstanceHealthResponse>(describeInstanceHealthRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceHealthRequestMarshaller();
+            var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceHealthRequest, DescribeInstanceHealthResponse>(describeInstanceHealthRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
@@ -528,12 +541,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest describeLoadBalancerPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResponse>(describeLoadBalancerPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResponse>(describeLoadBalancerPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
@@ -551,12 +565,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResponse>(describeLoadBalancerPolicyTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResponse>(describeLoadBalancerPolicyTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
@@ -575,12 +590,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest describeLoadBalancersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancersRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancersRequest, DescribeLoadBalancersResponse>(describeLoadBalancersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancersRequest, DescribeLoadBalancersResponse>(describeLoadBalancersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Removes subnets from the set of configured subnets in the VPC for the LoadBalancer. </para> <para> After a subnet is removed all of
@@ -599,12 +615,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DetachLoadBalancerFromSubnetsResponse> DetachLoadBalancerFromSubnetsAsync(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
-			var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResponse>(detachLoadBalancerFromSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResponse>(detachLoadBalancerFromSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the LoadBalancer. </para> <para> There
@@ -627,12 +644,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DisableAvailabilityZonesForLoadBalancerResponse> DisableAvailabilityZonesForLoadBalancerAsync(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
-			var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResponse>(disableAvailabilityZonesForLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResponse>(disableAvailabilityZonesForLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer. </para> <para> The LoadBalancer evenly distributes requests across all
@@ -651,12 +669,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<EnableAvailabilityZonesForLoadBalancerResponse> EnableAvailabilityZonesForLoadBalancerAsync(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
-			var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResponse>(enableAvailabilityZonesForLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResponse>(enableAvailabilityZonesForLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
@@ -678,12 +697,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
-			var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse>(registerInstancesWithLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
+            var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse>(registerInstancesWithLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
@@ -705,12 +725,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetLoadBalancerListenerSSLCertificateResponse> SetLoadBalancerListenerSSLCertificateAsync(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
-			var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResponse>(setLoadBalancerListenerSSLCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
+            var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResponse>(setLoadBalancerListenerSSLCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies.
@@ -731,12 +752,13 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetLoadBalancerPoliciesForBackendServerResponse> SetLoadBalancerPoliciesForBackendServerAsync(SetLoadBalancerPoliciesForBackendServerRequest setLoadBalancerPoliciesForBackendServerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
-			var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResponse>(setLoadBalancerPoliciesForBackendServerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResponse>(setLoadBalancerPoliciesForBackendServerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates, updates, or disables a policy with a listener on the LoadBalancer. You can associate multiple policies with a listener.
@@ -756,11 +778,12 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
-			var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResponse>(setLoadBalancerPoliciesOfListenerRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResponse>(setLoadBalancerPoliciesOfListenerRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

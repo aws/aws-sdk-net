@@ -34,9 +34,9 @@ namespace Amazon.SimpleEmail
     /// https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial class AmazonSimpleEmailServiceClient : AmazonWebServiceClient, Amazon.SimpleEmail.IAmazonSimpleEmailService
-	{
+    {
 
-		AWS3Signer signer = new AWS3Signer();
+        AWS3Signer signer = new AWS3Signer();
         #region Constructors
 
         /// <summary>
@@ -216,17 +216,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the DeleteIdentity service method, as returned by AmazonSimpleEmailService.</returns>
 		public DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
-		{
-			var task = DeleteIdentityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
@@ -239,12 +239,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteIdentityResponse> DeleteIdentityAsync(DeleteIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteIdentityRequestMarshaller();
-			var unmarshaller = DeleteIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteIdentityRequest, DeleteIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteIdentityRequestMarshaller();
+            var unmarshaller = DeleteIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteIdentityRequest, DeleteIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
@@ -255,17 +256,17 @@ namespace Amazon.SimpleEmail
         /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
         /// method on AmazonSimpleEmailService.</param>
 		public DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
-		{
-			var task = DeleteVerifiedEmailAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVerifiedEmailAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
@@ -278,12 +279,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
-			var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
+            var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens
@@ -306,17 +308,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
-		{
-			var task = GetIdentityDkimAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetIdentityDkimAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
@@ -329,12 +331,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetIdentityDkimAttributesResponse> GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
@@ -347,17 +350,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
-		{
-			var task = GetIdentityNotificationAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetIdentityNotificationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
@@ -370,12 +373,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetIdentityNotificationAttributesResponse> GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
@@ -387,17 +391,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
-		{
-			var task = GetIdentityVerificationAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetIdentityVerificationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
@@ -410,12 +414,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetIdentityVerificationAttributesResponse> GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
@@ -426,17 +431,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
-		{
-			var task = GetSendQuotaAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetSendQuotaAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
@@ -449,12 +454,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetSendQuotaResponse> GetSendQuotaAsync(GetSendQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSendQuotaRequestMarshaller();
-			var unmarshaller = GetSendQuotaResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSendQuotaRequest, GetSendQuotaResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSendQuotaRequestMarshaller();
+            var unmarshaller = GetSendQuotaResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSendQuotaRequest, GetSendQuotaResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
@@ -465,9 +471,9 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendQuotaResponse GetSendQuota()
-		{
-			return this.GetSendQuota(new GetSendQuotaRequest());
-		}
+        {
+            return this.GetSendQuota(new GetSendQuotaRequest());
+        }
  
         /// <summary>
         /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
@@ -480,17 +486,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
-		{
-			var task = GetSendStatisticsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetSendStatisticsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
@@ -503,12 +509,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetSendStatisticsResponse> GetSendStatisticsAsync(GetSendStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSendStatisticsRequestMarshaller();
-			var unmarshaller = GetSendStatisticsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSendStatisticsRequest, GetSendStatisticsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSendStatisticsRequestMarshaller();
+            var unmarshaller = GetSendStatisticsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSendStatisticsRequest, GetSendStatisticsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
@@ -521,9 +528,9 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendStatisticsResponse GetSendStatistics()
-		{
-			return this.GetSendStatistics(new GetSendStatisticsRequest());
-		}
+        {
+            return this.GetSendStatistics(new GetSendStatisticsRequest());
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
@@ -535,17 +542,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
-		{
-			var task = ListIdentitiesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListIdentitiesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
@@ -558,12 +565,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListIdentitiesRequestMarshaller();
-			var unmarshaller = ListIdentitiesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListIdentitiesRequestMarshaller();
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
@@ -575,9 +583,9 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListIdentitiesResponse ListIdentities()
-		{
-			return this.ListIdentities(new ListIdentitiesRequest());
-		}
+        {
+            return this.ListIdentities(new ListIdentitiesRequest());
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
@@ -590,17 +598,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
-		{
-			var task = ListVerifiedEmailAddressesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListVerifiedEmailAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
@@ -613,12 +621,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
-			var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
+            var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
@@ -631,9 +640,9 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses()
-		{
-			return this.ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest());
-		}
+        {
+            return this.ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest());
+        }
  
         /// <summary>
         /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>
@@ -654,17 +663,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <exception cref="T:Amazon.SimpleEmail.Model.MessageRejectedException" />
 		public SendEmailResponse SendEmail(SendEmailRequest request)
-		{
-			var task = SendEmailAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SendEmailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
@@ -677,12 +686,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendEmailRequestMarshaller();
-			var unmarshaller = SendEmailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendEmailRequest, SendEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendEmailRequestMarshaller();
+            var unmarshaller = SendEmailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendEmailRequest, SendEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sends an email message, with header and content specified by the client. The <c>SendRawEmail</c> action is useful for sending
@@ -704,17 +714,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <exception cref="T:Amazon.SimpleEmail.Model.MessageRejectedException" />
 		public SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
-		{
-			var task = SendRawEmailAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SendRawEmailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
@@ -727,12 +737,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendRawEmailRequestMarshaller();
-			var unmarshaller = SendRawEmailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendRawEmailRequest, SendRawEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendRawEmailRequestMarshaller();
+            var unmarshaller = SendRawEmailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendRawEmailRequest, SendRawEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
@@ -752,17 +763,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by AmazonSimpleEmailService.</returns>
 		public SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
-		{
-			var task = SetIdentityDkimEnabledAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetIdentityDkimEnabledAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
@@ -775,12 +786,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetIdentityDkimEnabledResponse> SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
-			var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
@@ -793,17 +805,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by AmazonSimpleEmailService.</returns>
 		public SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
-		{
-			var task = SetIdentityFeedbackForwardingEnabledAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetIdentityFeedbackForwardingEnabledAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
@@ -816,12 +828,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetIdentityFeedbackForwardingEnabledResponse> SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
-			var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
@@ -835,17 +848,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by AmazonSimpleEmailService.</returns>
 		public SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
-		{
-			var task = SetIdentityNotificationTopicAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetIdentityNotificationTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
@@ -858,12 +871,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
-			var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
+            var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these
@@ -879,17 +893,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the VerifyDomainDkim service method, as returned by AmazonSimpleEmailService.</returns>
 		public VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
-		{
-			var task = VerifyDomainDkimAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = VerifyDomainDkimAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
@@ -902,12 +916,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<VerifyDomainDkimResponse> VerifyDomainDkimAsync(VerifyDomainDkimRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyDomainDkimRequestMarshaller();
-			var unmarshaller = VerifyDomainDkimResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyDomainDkimRequest, VerifyDomainDkimResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyDomainDkimRequestMarshaller();
+            var unmarshaller = VerifyDomainDkimResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyDomainDkimRequest, VerifyDomainDkimResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
@@ -918,17 +933,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the VerifyDomainIdentity service method, as returned by AmazonSimpleEmailService.</returns>
 		public VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
-		{
-			var task = VerifyDomainIdentityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = VerifyDomainIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
@@ -941,12 +956,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<VerifyDomainIdentityResponse> VerifyDomainIdentityAsync(VerifyDomainIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyDomainIdentityRequestMarshaller();
-			var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyDomainIdentityRequest, VerifyDomainIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyDomainIdentityRequestMarshaller();
+            var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyDomainIdentityRequest, VerifyDomainIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
@@ -957,17 +973,17 @@ namespace Amazon.SimpleEmail
         /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress service method on
         /// AmazonSimpleEmailService.</param>
 		public VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
-		{
-			var task = VerifyEmailAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = VerifyEmailAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
@@ -980,12 +996,13 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<VerifyEmailAddressResponse> VerifyEmailAddressAsync(VerifyEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyEmailAddressRequestMarshaller();
-			var unmarshaller = VerifyEmailAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyEmailAddressRequest, VerifyEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyEmailAddressRequestMarshaller();
+            var unmarshaller = VerifyEmailAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyEmailAddressRequest, VerifyEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
@@ -997,17 +1014,17 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the VerifyEmailIdentity service method, as returned by AmazonSimpleEmailService.</returns>
 		public VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
-		{
-			var task = VerifyEmailIdentityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = VerifyEmailIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.
@@ -1020,11 +1037,12 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyEmailIdentityRequestMarshaller();
-			var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyEmailIdentityRequest, VerifyEmailIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new VerifyEmailIdentityRequestMarshaller();
+            var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyEmailIdentityRequest, VerifyEmailIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

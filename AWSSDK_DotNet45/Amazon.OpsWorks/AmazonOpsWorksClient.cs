@@ -31,9 +31,9 @@ namespace Amazon.OpsWorks
     /// AWS OpsWorks
     /// </summary>
 	public partial class AmazonOpsWorksClient : AmazonWebServiceClient, Amazon.OpsWorks.IAmazonOpsWorks
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -215,17 +215,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
-		{
-			var task = AttachElasticLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachElasticLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
@@ -238,12 +238,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
-			var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a clone of a specified stack. For more information, see Clone a Stack.</para>
@@ -256,17 +257,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CloneStackResponse CloneStack(CloneStackRequest request)
-		{
-			var task = CloneStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CloneStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CloneStack operation.
@@ -279,12 +280,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CloneStackResponse> CloneStackAsync(CloneStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CloneStackRequestMarshaller();
-			var unmarshaller = CloneStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CloneStackRequest, CloneStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CloneStackRequestMarshaller();
+            var unmarshaller = CloneStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CloneStackRequest, CloneStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates an app for a specified stack. For more information, see Creating Apps.</para>
@@ -297,17 +299,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateAppResponse CreateApp(CreateAppRequest request)
-		{
-			var task = CreateAppAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateAppAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApp operation.
@@ -320,12 +322,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAppRequestMarshaller();
-			var unmarshaller = CreateAppResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAppRequest, CreateAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAppRequestMarshaller();
+            var unmarshaller = CreateAppResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAppRequest, CreateAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deploys a stack or app.</para>
@@ -346,17 +349,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
-		{
-			var task = CreateDeploymentAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDeploymentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
@@ -369,12 +372,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDeploymentRequestMarshaller();
-			var unmarshaller = CreateDeploymentResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDeploymentRequest, CreateDeploymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDeploymentRequestMarshaller();
+            var unmarshaller = CreateDeploymentResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDeploymentRequest, CreateDeploymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.</para>
@@ -388,17 +392,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
-		{
-			var task = CreateInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstance operation.
@@ -411,12 +415,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInstanceRequestMarshaller();
-			var unmarshaller = CreateInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInstanceRequest, CreateInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInstanceRequestMarshaller();
+            var unmarshaller = CreateInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInstanceRequest, CreateInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
@@ -432,17 +437,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateLayerResponse CreateLayer(CreateLayerRequest request)
-		{
-			var task = CreateLayerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLayerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLayer operation.
@@ -455,12 +460,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLayerRequestMarshaller();
-			var unmarshaller = CreateLayerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLayerRequest, CreateLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLayerRequestMarshaller();
+            var unmarshaller = CreateLayerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLayerRequest, CreateLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new stack. For more information, see Create a New Stack.</para>
@@ -472,17 +478,17 @@ namespace Amazon.OpsWorks
         /// 
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateStackResponse CreateStack(CreateStackRequest request)
-		{
-			var task = CreateStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
@@ -495,12 +501,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateStackRequestMarshaller();
-			var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new user profile.</para>
@@ -513,17 +520,17 @@ namespace Amazon.OpsWorks
         /// 
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
-		{
-			var task = CreateUserProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateUserProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUserProfile operation.
@@ -536,12 +543,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateUserProfileRequestMarshaller();
-			var unmarshaller = CreateUserProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateUserProfileRequest, CreateUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateUserProfileRequestMarshaller();
+            var unmarshaller = CreateUserProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateUserProfileRequest, CreateUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a specified app.</para>
@@ -552,17 +560,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DeleteAppResponse DeleteApp(DeleteAppRequest request)
-		{
-			var task = DeleteAppAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAppAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApp operation.
@@ -575,12 +583,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAppRequestMarshaller();
-			var unmarshaller = DeleteAppResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAppRequest, DeleteAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAppRequestMarshaller();
+            var unmarshaller = DeleteAppResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAppRequest, DeleteAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see Deleting Instances.</para>
@@ -592,17 +601,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
-		{
-			var task = DeleteInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstance operation.
@@ -615,12 +624,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteInstanceRequestMarshaller();
-			var unmarshaller = DeleteInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteInstanceRequest, DeleteInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteInstanceRequestMarshaller();
+            var unmarshaller = DeleteInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteInstanceRequest, DeleteInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see How to Delete a
@@ -632,17 +642,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
-		{
-			var task = DeleteLayerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLayerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLayer operation.
@@ -655,12 +665,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLayerRequestMarshaller();
-			var unmarshaller = DeleteLayerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLayerRequest, DeleteLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLayerRequestMarshaller();
+            var unmarshaller = DeleteLayerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLayerRequest, DeleteLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see Shut Down a Stack.</para>
@@ -671,17 +682,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DeleteStackResponse DeleteStack(DeleteStackRequest request)
-		{
-			var task = DeleteStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -694,12 +705,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteStackRequestMarshaller();
-			var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a user profile.</para>
@@ -711,17 +723,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
-		{
-			var task = DeleteUserProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteUserProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserProfile operation.
@@ -734,12 +746,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteUserProfileRequestMarshaller();
-			var unmarshaller = DeleteUserProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteUserProfileRequest, DeleteUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var unmarshaller = DeleteUserProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteUserProfileRequest, DeleteUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests a description of a specified set of apps.</para>
@@ -753,17 +766,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
-		{
-			var task = DescribeAppsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAppsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApps operation.
@@ -776,12 +789,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAppsRequestMarshaller();
-			var unmarshaller = DescribeAppsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAppsRequest, DescribeAppsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAppsRequestMarshaller();
+            var unmarshaller = DescribeAppsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAppsRequest, DescribeAppsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes the results of specified commands.</para>
@@ -795,17 +809,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
-		{
-			var task = DescribeCommandsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCommandsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommands operation.
@@ -818,12 +832,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCommandsRequestMarshaller();
-			var unmarshaller = DescribeCommandsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCommandsRequest, DescribeCommandsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCommandsRequestMarshaller();
+            var unmarshaller = DescribeCommandsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCommandsRequest, DescribeCommandsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests a description of a specified set of deployments.</para>
@@ -837,17 +852,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
-		{
-			var task = DescribeDeploymentsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDeploymentsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeployments operation.
@@ -860,12 +875,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDeploymentsRequestMarshaller();
-			var unmarshaller = DescribeDeploymentsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDeploymentsRequest, DescribeDeploymentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDeploymentsRequestMarshaller();
+            var unmarshaller = DescribeDeploymentsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDeploymentsRequest, DescribeDeploymentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes an instance's Elastic IP addresses.</para>
@@ -879,17 +895,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
-		{
-			var task = DescribeElasticIpsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeElasticIpsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticIps operation.
@@ -902,12 +918,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeElasticIpsRequestMarshaller();
-			var unmarshaller = DescribeElasticIpsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeElasticIpsRequest, DescribeElasticIpsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeElasticIpsRequestMarshaller();
+            var unmarshaller = DescribeElasticIpsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeElasticIpsRequest, DescribeElasticIpsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes a stack's Elastic Load Balancing load balancers.</para>
@@ -921,17 +938,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
-		{
-			var task = DescribeElasticLoadBalancersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeElasticLoadBalancersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
@@ -944,12 +961,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
-			var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes a stack's Elastic Load Balancing load balancers.</para>
@@ -963,9 +981,9 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers()
-		{
-			return this.DescribeElasticLoadBalancers(new DescribeElasticLoadBalancersRequest());
-		}
+        {
+            return this.DescribeElasticLoadBalancers(new DescribeElasticLoadBalancersRequest());
+        }
  
         /// <summary>
         /// <para>Requests a description of a set of instances associated with a specified ID or IDs.</para>
@@ -979,17 +997,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
-		{
-			var task = DescribeInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
@@ -1002,12 +1020,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstancesRequestMarshaller();
-			var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstancesRequestMarshaller();
+            var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests a description of one or more layers in a specified stack.</para>
@@ -1021,17 +1040,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
-		{
-			var task = DescribeLayersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLayersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLayers operation.
@@ -1044,12 +1063,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLayersRequestMarshaller();
-			var unmarshaller = DescribeLayersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLayersRequest, DescribeLayersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLayersRequestMarshaller();
+            var unmarshaller = DescribeLayersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLayersRequest, DescribeLayersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes load-based auto scaling configurations for specified layers.</para>
@@ -1063,17 +1083,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
-		{
-			var task = DescribeLoadBasedAutoScalingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLoadBasedAutoScalingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
@@ -1086,12 +1106,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
-			var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBasedAutoScalingRequest, DescribeLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBasedAutoScalingRequest, DescribeLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes the permissions for a specified stack.</para>
@@ -1105,17 +1126,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
-		{
-			var task = DescribePermissionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribePermissionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePermissions operation.
@@ -1128,12 +1149,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePermissionsRequestMarshaller();
-			var unmarshaller = DescribePermissionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePermissionsRequest, DescribePermissionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePermissionsRequestMarshaller();
+            var unmarshaller = DescribePermissionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePermissionsRequest, DescribePermissionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describe an instance's RAID arrays.</para>
@@ -1147,17 +1169,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
-		{
-			var task = DescribeRaidArraysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeRaidArraysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRaidArrays operation.
@@ -1170,12 +1192,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRaidArraysRequestMarshaller();
-			var unmarshaller = DescribeRaidArraysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRaidArraysRequest, DescribeRaidArraysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRaidArraysRequestMarshaller();
+            var unmarshaller = DescribeRaidArraysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRaidArraysRequest, DescribeRaidArraysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes OpsWorks service errors.</para>
@@ -1189,17 +1212,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
-		{
-			var task = DescribeServiceErrorsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeServiceErrorsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
@@ -1212,12 +1235,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeServiceErrorsRequestMarshaller();
-			var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeServiceErrorsRequest, DescribeServiceErrorsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeServiceErrorsRequestMarshaller();
+            var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeServiceErrorsRequest, DescribeServiceErrorsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes OpsWorks service errors.</para>
@@ -1231,9 +1255,9 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeServiceErrorsResponse DescribeServiceErrors()
-		{
-			return this.DescribeServiceErrors(new DescribeServiceErrorsRequest());
-		}
+        {
+            return this.DescribeServiceErrors(new DescribeServiceErrorsRequest());
+        }
  
         /// <summary>
         /// <para>Requests a description of one or more stacks.</para>
@@ -1247,17 +1271,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
-		{
-			var task = DescribeStacksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStacksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
@@ -1270,12 +1294,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStacksRequestMarshaller();
-			var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests a description of one or more stacks.</para>
@@ -1289,9 +1314,9 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeStacksResponse DescribeStacks()
-		{
-			return this.DescribeStacks(new DescribeStacksRequest());
-		}
+        {
+            return this.DescribeStacks(new DescribeStacksRequest());
+        }
  
         /// <summary>
         /// <para>Describes time-based auto scaling configurations for specified instances.</para>
@@ -1305,17 +1330,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
-		{
-			var task = DescribeTimeBasedAutoScalingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTimeBasedAutoScalingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeBasedAutoScaling operation.
@@ -1328,12 +1353,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
-			var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTimeBasedAutoScalingRequest, DescribeTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTimeBasedAutoScalingRequest, DescribeTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describe specified users.</para>
@@ -1347,17 +1373,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
-		{
-			var task = DescribeUserProfilesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeUserProfilesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUserProfiles operation.
@@ -1370,12 +1396,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeUserProfilesRequestMarshaller();
-			var unmarshaller = DescribeUserProfilesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeUserProfilesRequest, DescribeUserProfilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeUserProfilesRequestMarshaller();
+            var unmarshaller = DescribeUserProfilesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeUserProfilesRequest, DescribeUserProfilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes an instance's Amazon EBS volumes.</para>
@@ -1389,17 +1416,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
-		{
-			var task = DescribeVolumesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
@@ -1412,12 +1439,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumesRequestMarshaller();
-			var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumesRequestMarshaller();
+            var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Detaches a specified Elastic Load Balancing load balancer from it's layer.</para>
@@ -1428,17 +1456,17 @@ namespace Amazon.OpsWorks
         /// 
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
 		public DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
-		{
-			var task = DetachElasticLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachElasticLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
@@ -1451,12 +1479,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
-			var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets a generated hostname for the specified layer, based on the current hostname theme.</para>
@@ -1469,17 +1498,17 @@ namespace Amazon.OpsWorks
         /// 
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
-		{
-			var task = GetHostnameSuggestionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetHostnameSuggestionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
@@ -1492,12 +1521,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetHostnameSuggestionRequestMarshaller();
-			var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetHostnameSuggestionRequest, GetHostnameSuggestionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetHostnameSuggestionRequestMarshaller();
+            var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetHostnameSuggestionRequest, GetHostnameSuggestionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
@@ -1509,17 +1539,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
-		{
-			var task = RebootInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebootInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstance operation.
@@ -1532,12 +1562,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootInstanceRequestMarshaller();
-			var unmarshaller = RebootInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootInstanceRequest, RebootInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootInstanceRequestMarshaller();
+            var unmarshaller = RebootInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootInstanceRequest, RebootInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and
@@ -1552,17 +1583,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
-		{
-			var task = SetLoadBasedAutoScalingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetLoadBasedAutoScalingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBasedAutoScaling operation.
@@ -1575,12 +1606,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
-			var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Specifies a stack's permissions. For more information, see Security and Permissions.</para>
@@ -1592,17 +1624,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public SetPermissionResponse SetPermission(SetPermissionRequest request)
-		{
-			var task = SetPermissionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetPermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetPermission operation.
@@ -1615,12 +1647,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetPermissionRequestMarshaller();
-			var unmarshaller = SetPermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetPermissionRequest, SetPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetPermissionRequestMarshaller();
+            var unmarshaller = SetPermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetPermissionRequest, SetPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see Managing Load with Time-based
@@ -1633,17 +1666,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
-		{
-			var task = SetTimeBasedAutoScalingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetTimeBasedAutoScalingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
@@ -1656,12 +1689,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
-			var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Starts a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
@@ -1673,17 +1707,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public StartInstanceResponse StartInstance(StartInstanceRequest request)
-		{
-			var task = StartInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StartInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstance operation.
@@ -1696,12 +1730,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartInstanceRequestMarshaller();
-			var unmarshaller = StartInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartInstanceRequest, StartInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartInstanceRequestMarshaller();
+            var unmarshaller = StartInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartInstanceRequest, StartInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Starts stack's instances. </para>
@@ -1712,17 +1747,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public StartStackResponse StartStack(StartStackRequest request)
-		{
-			var task = StartStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StartStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StartStack operation.
@@ -1735,12 +1770,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StartStackResponse> StartStackAsync(StartStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartStackRequestMarshaller();
-			var unmarshaller = StartStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartStackRequest, StartStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartStackRequestMarshaller();
+            var unmarshaller = StartStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartStackRequest, StartStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
@@ -1754,17 +1790,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public StopInstanceResponse StopInstance(StopInstanceRequest request)
-		{
-			var task = StopInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StopInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstance operation.
@@ -1777,12 +1813,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StopInstanceRequestMarshaller();
-			var unmarshaller = StopInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StopInstanceRequest, StopInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StopInstanceRequestMarshaller();
+            var unmarshaller = StopInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StopInstanceRequest, StopInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Stops a specified stack.</para>
@@ -1793,17 +1830,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public StopStackResponse StopStack(StopStackRequest request)
-		{
-			var task = StopStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StopStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StopStack operation.
@@ -1816,12 +1853,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StopStackResponse> StopStackAsync(StopStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StopStackRequestMarshaller();
-			var unmarshaller = StopStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StopStackRequest, StopStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StopStackRequestMarshaller();
+            var unmarshaller = StopStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StopStackRequest, StopStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates a specified app.</para>
@@ -1832,17 +1870,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public UpdateAppResponse UpdateApp(UpdateAppRequest request)
-		{
-			var task = UpdateAppAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateAppAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApp operation.
@@ -1855,12 +1893,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAppRequestMarshaller();
-			var unmarshaller = UpdateAppResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAppRequest, UpdateAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateAppRequestMarshaller();
+            var unmarshaller = UpdateAppResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAppRequest, UpdateAppResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates a specified instance.</para>
@@ -1872,17 +1911,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
-		{
-			var task = UpdateInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateInstance operation.
@@ -1895,12 +1934,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateInstanceRequestMarshaller();
-			var unmarshaller = UpdateInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateInstanceRequest, UpdateInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateInstanceRequestMarshaller();
+            var unmarshaller = UpdateInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateInstanceRequest, UpdateInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates a specified layer.</para>
@@ -1911,17 +1951,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
-		{
-			var task = UpdateLayerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateLayerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLayer operation.
@@ -1934,12 +1974,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateLayerRequestMarshaller();
-			var unmarshaller = UpdateLayerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateLayerRequest, UpdateLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateLayerRequestMarshaller();
+            var unmarshaller = UpdateLayerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateLayerRequest, UpdateLayerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates a specified stack.</para>
@@ -1950,17 +1991,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public UpdateStackResponse UpdateStack(UpdateStackRequest request)
-		{
-			var task = UpdateStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
@@ -1973,12 +2014,13 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateStackRequestMarshaller();
-			var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates a specified user profile.</para>
@@ -1990,17 +2032,17 @@ namespace Amazon.OpsWorks
         /// <exception cref="T:Amazon.OpsWorks.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.OpsWorks.Model.ValidationException" />
 		public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
-		{
-			var task = UpdateUserProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateUserProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUserProfile operation.
@@ -2013,11 +2055,12 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateUserProfileRequestMarshaller();
-			var unmarshaller = UpdateUserProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateUserProfileRequest, UpdateUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var unmarshaller = UpdateUserProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateUserProfileRequest, UpdateUserProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

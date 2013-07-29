@@ -40,9 +40,9 @@ namespace Amazon.SecurityToken
     /// the abbreviated form IAM. All copyrights and legal protections still apply. </para>
     /// </summary>
 	public partial class AmazonSecurityTokenServiceClient : AmazonWebServiceClient, Amazon.SecurityToken.IAmazonSecurityTokenService
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -248,17 +248,17 @@ namespace Amazon.SecurityToken
         /// <exception cref="T:Amazon.SecurityToken.Model.PackedPolicyTooLargeException" />
         /// <exception cref="T:Amazon.SecurityToken.Model.MalformedPolicyDocumentException" />
 		public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
-		{
-			var task = AssumeRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssumeRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRole operation.
@@ -271,12 +271,13 @@ namespace Amazon.SecurityToken
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssumeRoleRequestMarshaller();
-			var unmarshaller = AssumeRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssumeRoleRequestMarshaller();
+            var unmarshaller = AssumeRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web
@@ -311,17 +312,17 @@ namespace Amazon.SecurityToken
         /// <exception cref="T:Amazon.SecurityToken.Model.ExpiredTokenException" />
         /// <exception cref="T:Amazon.SecurityToken.Model.IDPCommunicationErrorException" />
 		public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
-		{
-			var task = AssumeRoleWithWebIdentityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssumeRoleWithWebIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
@@ -334,12 +335,13 @@ namespace Amazon.SecurityToken
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
-			var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a
@@ -366,17 +368,17 @@ namespace Amazon.SecurityToken
         /// <exception cref="T:Amazon.SecurityToken.Model.PackedPolicyTooLargeException" />
         /// <exception cref="T:Amazon.SecurityToken.Model.MalformedPolicyDocumentException" />
 		public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
-		{
-			var task = GetFederationTokenAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetFederationTokenAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetFederationToken operation.
@@ -389,12 +391,13 @@ namespace Amazon.SecurityToken
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetFederationTokenRequestMarshaller();
-			var unmarshaller = GetFederationTokenResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetFederationTokenRequestMarshaller();
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an access key ID, a secret access
@@ -415,17 +418,17 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by AmazonSecurityTokenService.</returns>
 		public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
-		{
-			var task = GetSessionTokenAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetSessionTokenAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetSessionToken operation.
@@ -438,12 +441,13 @@ namespace Amazon.SecurityToken
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSessionTokenRequestMarshaller();
-			var unmarshaller = GetSessionTokenResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSessionTokenRequestMarshaller();
+            var unmarshaller = GetSessionTokenResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an access key ID, a secret access
@@ -464,8 +468,8 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by AmazonSecurityTokenService.</returns>
 		public GetSessionTokenResponse GetSessionToken()
-		{
-			return this.GetSessionToken(new GetSessionTokenRequest());
-		}
-	}
+        {
+            return this.GetSessionToken(new GetSessionTokenRequest());
+        }
+    }
 }

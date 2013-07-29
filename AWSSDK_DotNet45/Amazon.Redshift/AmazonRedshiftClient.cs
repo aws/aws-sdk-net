@@ -61,9 +61,9 @@ namespace Amazon.Redshift
     /// Services Glossary</i> . </para>
     /// </summary>
 	public partial class AmazonRedshiftClient : AmazonWebServiceClient, Amazon.Redshift.IAmazonRedshift
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -253,17 +253,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.AuthorizationQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
 		public AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request)
-		{
-			var task = AuthorizeClusterSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AuthorizeClusterSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeClusterSecurityGroupIngress operation.
@@ -276,12 +276,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AuthorizeClusterSecurityGroupIngressResponse> AuthorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeClusterSecurityGroupIngressRequest, AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeClusterSecurityGroupIngressRequest, AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it
@@ -302,17 +303,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSnapshotStateException" />
 		public CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
-		{
-			var task = CopyClusterSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CopyClusterSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CopyClusterSnapshot operation.
@@ -325,12 +326,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopyClusterSnapshotRequestMarshaller();
-			var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopyClusterSnapshotRequest, CopyClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopyClusterSnapshotRequest, CopyClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new cluster. To create the cluster in virtual private cloud (VPC), you must provide cluster subnet group name. If you don't
@@ -356,17 +358,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidVPCNetworkStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public CreateClusterResponse CreateCluster(CreateClusterRequest request)
-		{
-			var task = CreateClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
@@ -379,12 +381,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateClusterRequestMarshaller();
-			var unmarshaller = CreateClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateClusterRequest, CreateClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateClusterRequest, CreateClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an Amazon Redshift parameter group. </para> <para>Creating parameter groups is independent of creating clusters. You can
@@ -403,17 +406,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupAlreadyExistsException" />
 		public CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request)
-		{
-			var task = CreateClusterParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateClusterParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterParameterGroup operation.
@@ -426,12 +429,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateClusterParameterGroupResponse> CreateClusterParameterGroupAsync(CreateClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateClusterParameterGroupRequestMarshaller();
-			var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateClusterParameterGroupRequest, CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateClusterParameterGroupRequest, CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters. </para> <para> For
@@ -447,17 +451,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupAlreadyExistsException" />
 		public CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request)
-		{
-			var task = CreateClusterSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateClusterSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSecurityGroup operation.
@@ -470,12 +474,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateClusterSecurityGroupResponse> CreateClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateClusterSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateClusterSecurityGroupRequest, CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateClusterSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateClusterSecurityGroupRequest, CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state. </para> <para> For more information
@@ -493,17 +498,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException" />
 		public CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request)
-		{
-			var task = CreateClusterSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateClusterSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
@@ -516,12 +521,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateClusterSnapshotResponse> CreateClusterSnapshotAsync(CreateClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateClusterSnapshotRequestMarshaller();
-			var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateClusterSnapshotRequest, CreateClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateClusterSnapshotRequestMarshaller();
+            var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateClusterSnapshotRequest, CreateClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private
@@ -540,17 +546,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupAlreadyExistsException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupQuotaExceededException" />
 		public CreateClusterSubnetGroupResponse CreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request)
-		{
-			var task = CreateClusterSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateClusterSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSubnetGroup operation.
@@ -563,12 +569,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateClusterSubnetGroupRequestMarshaller();
-			var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateClusterSubnetGroupRequest, CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateClusterSubnetGroupRequest, CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a previously provisioned cluster. A successful response from the web service indicates that the request was received
@@ -589,17 +596,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException" />
 		public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
-		{
-			var task = DeleteClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
@@ -612,12 +619,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteClusterRequestMarshaller();
-			var unmarshaller = DeleteClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteClusterRequest, DeleteClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteClusterRequestMarshaller();
+            var unmarshaller = DeleteClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteClusterRequest, DeleteClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a specified Amazon Redshift parameter group. <para><b>NOTE:</b>You cannot delete a parameter group if it is associated with a
@@ -630,17 +638,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterParameterGroupStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public DeleteClusterParameterGroupResponse DeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request)
-		{
-			var task = DeleteClusterParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteClusterParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterParameterGroup operation.
@@ -653,12 +661,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteClusterParameterGroupResponse> DeleteClusterParameterGroupAsync(DeleteClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteClusterParameterGroupRequestMarshaller();
-			var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteClusterParameterGroupRequest, DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteClusterParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteClusterParameterGroupRequest, DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an Amazon Redshift security group. </para> <para><b>NOTE:</b>You cannot delete a security group that is associated with any
@@ -673,17 +682,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
 		public DeleteClusterSecurityGroupResponse DeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request)
-		{
-			var task = DeleteClusterSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteClusterSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSecurityGroup operation.
@@ -696,12 +705,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteClusterSecurityGroupResponse> DeleteClusterSecurityGroupAsync(DeleteClusterSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteClusterSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteClusterSecurityGroupRequest, DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteClusterSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteClusterSecurityGroupRequest, DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state. </para> <para> Unlike automated snapshots,
@@ -717,17 +727,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSnapshotStateException" />
 		public DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request)
-		{
-			var task = DeleteClusterSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteClusterSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSnapshot operation.
@@ -740,12 +750,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteClusterSnapshotResponse> DeleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteClusterSnapshotRequestMarshaller();
-			var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteClusterSnapshotRequest, DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteClusterSnapshotRequestMarshaller();
+            var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteClusterSnapshotRequest, DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified cluster subnet group. </para>
@@ -758,17 +769,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException" />
 		public DeleteClusterSubnetGroupResponse DeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request)
-		{
-			var task = DeleteClusterSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteClusterSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSubnetGroup operation.
@@ -781,12 +792,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteClusterSubnetGroupRequestMarshaller();
-			var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each
@@ -803,17 +815,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request)
-		{
-			var task = DescribeClusterParameterGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterParameterGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameterGroups operation.
@@ -826,12 +838,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
-			var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each
@@ -848,9 +861,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups()
-		{
-			return this.DescribeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
-		}
+        {
+            return this.DescribeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response
@@ -868,17 +881,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public DescribeClusterParametersResponse DescribeClusterParameters(DescribeClusterParametersRequest request)
-		{
-			var task = DescribeClusterParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameters operation.
@@ -891,12 +904,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterParametersResponse> DescribeClusterParametersAsync(DescribeClusterParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterParametersRequestMarshaller();
-			var unmarshaller = DescribeClusterParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterParametersRequest, DescribeClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeClusterParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterParametersRequest, DescribeClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup
@@ -912,17 +926,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
 		public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
-		{
-			var task = DescribeClustersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClustersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
@@ -935,12 +949,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClustersRequestMarshaller();
-			var unmarshaller = DescribeClustersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClustersRequest, DescribeClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClustersRequestMarshaller();
+            var unmarshaller = DescribeClustersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClustersRequest, DescribeClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup
@@ -956,9 +971,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
 		public DescribeClustersResponse DescribeClusters()
-		{
-			return this.DescribeClusters(new DescribeClustersRequest());
-		}
+        {
+            return this.DescribeClusters(new DescribeClustersRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain
@@ -974,17 +989,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
 		public DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request)
-		{
-			var task = DescribeClusterSecurityGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterSecurityGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSecurityGroups operation.
@@ -997,12 +1012,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterSecurityGroupsRequest, DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterSecurityGroupsRequest, DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain
@@ -1018,9 +1034,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
 		public DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups()
-		{
-			return this.DescribeClusterSecurityGroups(new DescribeClusterSecurityGroupsRequest());
-		}
+        {
+            return this.DescribeClusterSecurityGroups(new DescribeClusterSecurityGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
@@ -1034,17 +1050,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotNotFoundException" />
 		public DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request)
-		{
-			var task = DescribeClusterSnapshotsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterSnapshotsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSnapshots operation.
@@ -1057,12 +1073,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterSnapshotsRequestMarshaller();
-			var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
@@ -1076,9 +1093,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotNotFoundException" />
 		public DescribeClusterSnapshotsResponse DescribeClusterSnapshots()
-		{
-			return this.DescribeClusterSnapshots(new DescribeClusterSnapshotsRequest());
-		}
+        {
+            return this.DescribeClusterSnapshots(new DescribeClusterSnapshotsRequest());
+        }
  
         /// <summary>
         /// <para> Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this
@@ -1092,17 +1109,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
 		public DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request)
-		{
-			var task = DescribeClusterSubnetGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterSubnetGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSubnetGroups operation.
@@ -1115,12 +1132,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterSubnetGroupsRequestMarshaller();
-			var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterSubnetGroupsRequest, DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterSubnetGroupsRequest, DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this
@@ -1134,9 +1152,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
 		public DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups()
-		{
-			return this.DescribeClusterSubnetGroups(new DescribeClusterSubnetGroupsRequest());
-		}
+        {
+            return this.DescribeClusterSubnetGroups(new DescribeClusterSubnetGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any
@@ -1149,17 +1167,17 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusterVersions service method, as returned by AmazonRedshift.</returns>
 		public DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request)
-		{
-			var task = DescribeClusterVersionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeClusterVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterVersions operation.
@@ -1172,12 +1190,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeClusterVersionsRequestMarshaller();
-			var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeClusterVersionsRequest, DescribeClusterVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeClusterVersionsRequestMarshaller();
+            var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterVersionsRequest, DescribeClusterVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any
@@ -1190,9 +1209,9 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusterVersions service method, as returned by AmazonRedshift.</returns>
 		public DescribeClusterVersionsResponse DescribeClusterVersions()
-		{
-			return this.DescribeClusterVersions(new DescribeClusterVersionsRequest());
-		}
+        {
+            return this.DescribeClusterVersions(new DescribeClusterVersionsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of parameter settings for the specified parameter group family. </para> <para> For more information about managing
@@ -1205,17 +1224,17 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeDefaultClusterParameters service method, as returned by AmazonRedshift.</returns>
 		public DescribeDefaultClusterParametersResponse DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request)
-		{
-			var task = DescribeDefaultClusterParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDefaultClusterParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultClusterParameters operation.
@@ -1228,12 +1247,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDefaultClusterParametersRequestMarshaller();
-			var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDefaultClusterParametersRequest, DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDefaultClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDefaultClusterParametersRequest, DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a
@@ -1246,17 +1266,17 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRedshift.</returns>
 		public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
-		{
-			var task = DescribeEventsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -1269,12 +1289,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventsRequestMarshaller();
-			var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a
@@ -1287,9 +1308,9 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRedshift.</returns>
 		public DescribeEventsResponse DescribeEvents()
-		{
-			return this.DescribeEvents(new DescribeEventsRequest());
-		}
+        {
+            return this.DescribeEvents(new DescribeEventsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are
@@ -1304,17 +1325,17 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by AmazonRedshift.</returns>
 		public DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request)
-		{
-			var task = DescribeOrderableClusterOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOrderableClusterOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableClusterOptions operation.
@@ -1327,12 +1348,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOrderableClusterOptionsResponse> DescribeOrderableClusterOptionsAsync(DescribeOrderableClusterOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOrderableClusterOptionsRequestMarshaller();
-			var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOrderableClusterOptionsRequestMarshaller();
+            var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are
@@ -1347,9 +1369,9 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by AmazonRedshift.</returns>
 		public DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions()
-		{
-			return this.DescribeOrderableClusterOptions(new DescribeOrderableClusterOptionsRequest());
-		}
+        {
+            return this.DescribeOrderableClusterOptions(new DescribeOrderableClusterOptionsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed
@@ -1368,17 +1390,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException" />
 		public DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request)
-		{
-			var task = DescribeReservedNodeOfferingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedNodeOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodeOfferings operation.
@@ -1391,12 +1413,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedNodeOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedNodeOfferingsRequest, DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedNodeOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedNodeOfferingsRequest, DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed
@@ -1415,9 +1438,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException" />
 		public DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings()
-		{
-			return this.DescribeReservedNodeOfferings(new DescribeReservedNodeOfferingsRequest());
-		}
+        {
+            return this.DescribeReservedNodeOfferings(new DescribeReservedNodeOfferingsRequest());
+        }
  
         /// <summary>
         /// <para> Returns the descriptions of the reserved nodes. </para>
@@ -1430,17 +1453,17 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeNotFoundException" />
 		public DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
-		{
-			var task = DescribeReservedNodesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedNodesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodes operation.
@@ -1453,12 +1476,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(DescribeReservedNodesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedNodesRequestMarshaller();
-			var unmarshaller = DescribeReservedNodesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedNodesRequest, DescribeReservedNodesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedNodesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedNodesRequest, DescribeReservedNodesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the descriptions of the reserved nodes. </para>
@@ -1471,9 +1495,9 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeNotFoundException" />
 		public DescribeReservedNodesResponse DescribeReservedNodes()
-		{
-			return this.DescribeReservedNodes(new DescribeReservedNodesRequest());
-		}
+        {
+            return this.DescribeReservedNodes(new DescribeReservedNodesRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the
@@ -1490,17 +1514,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ResizeNotFoundException" />
 		public DescribeResizeResponse DescribeResize(DescribeResizeRequest request)
-		{
-			var task = DescribeResizeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeResizeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeResize operation.
@@ -1513,12 +1537,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeResizeRequestMarshaller();
-			var unmarshaller = DescribeResizeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeResizeRequest, DescribeResizeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeResizeRequestMarshaller();
+            var unmarshaller = DescribeResizeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeResizeRequest, DescribeResizeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the settings for a cluster. For example, you can add another security or parameter group, update the preferred maintenance
@@ -1544,17 +1569,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
-		{
-			var task = ModifyClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCluster operation.
@@ -1567,12 +1592,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyClusterRequestMarshaller();
-			var unmarshaller = ModifyClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyClusterRequest, ModifyClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyClusterRequestMarshaller();
+            var unmarshaller = ModifyClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyClusterRequest, ModifyClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a parameter group. </para> <para> For more information about managing parameter groups, go to Amazon
@@ -1588,17 +1614,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterParameterGroupStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public ModifyClusterParameterGroupResponse ModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request)
-		{
-			var task = ModifyClusterParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyClusterParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterParameterGroup operation.
@@ -1611,12 +1637,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyClusterParameterGroupResponse> ModifyClusterParameterGroupAsync(ModifyClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyClusterParameterGroupRequestMarshaller();
-			var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyClusterParameterGroupRequest, ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyClusterParameterGroupRequest, ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets
@@ -1633,17 +1660,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
 		public ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request)
-		{
-			var task = ModifyClusterSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyClusterSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterSubnetGroup operation.
@@ -1656,12 +1683,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyClusterSubnetGroupResponse> ModifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyClusterSubnetGroupRequestMarshaller();
-			var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyClusterSubnetGroupRequest, ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyClusterSubnetGroupRequest, ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one of
@@ -1681,17 +1709,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ReservedNodeQuotaExceededException" />
 		public PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request)
-		{
-			var task = PurchaseReservedNodeOfferingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PurchaseReservedNodeOfferingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedNodeOffering operation.
@@ -1704,12 +1732,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PurchaseReservedNodeOfferingResponse> PurchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedNodeOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedNodeOfferingRequest, PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedNodeOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedNodeOfferingRequest, PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the
@@ -1726,17 +1755,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
 		public RebootClusterResponse RebootCluster(RebootClusterRequest request)
-		{
-			var task = RebootClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebootClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCluster operation.
@@ -1749,12 +1778,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebootClusterResponse> RebootClusterAsync(RebootClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootClusterRequestMarshaller();
-			var unmarshaller = RebootClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootClusterRequest, RebootClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootClusterRequestMarshaller();
+            var unmarshaller = RebootClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootClusterRequest, RebootClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to
@@ -1770,17 +1800,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterParameterGroupStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
 		public ResetClusterParameterGroupResponse ResetClusterParameterGroup(ResetClusterParameterGroupRequest request)
-		{
-			var task = ResetClusterParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetClusterParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetClusterParameterGroup operation.
@@ -1793,12 +1823,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetClusterParameterGroupResponse> ResetClusterParameterGroupAsync(ResetClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetClusterParameterGroupRequestMarshaller();
-			var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetClusterParameterGroupRequest, ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetClusterParameterGroupRequest, ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new cluster from a snapshot. Amazon Redshift creates the resulting cluster with the same configuration as the original
@@ -1827,17 +1858,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.InvalidVPCNetworkStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSnapshotStateException" />
 		public RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request)
-		{
-			var task = RestoreFromClusterSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RestoreFromClusterSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromClusterSnapshot operation.
@@ -1850,12 +1881,13 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RestoreFromClusterSnapshotResponse> RestoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
-			var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RestoreFromClusterSnapshotRequest, RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RestoreFromClusterSnapshotRequest, RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To
@@ -1873,17 +1905,17 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.AuthorizationNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
 		public RevokeClusterSecurityGroupIngressResponse RevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request)
-		{
-			var task = RevokeClusterSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RevokeClusterSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeClusterSecurityGroupIngress operation.
@@ -1896,11 +1928,12 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeClusterSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeClusterSecurityGroupIngressRequest, RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new RevokeClusterSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeClusterSecurityGroupIngressRequest, RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

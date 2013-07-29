@@ -34,9 +34,9 @@ namespace Amazon.ImportExport
     /// effective than upgrading your connectivity. </para>
     /// </summary>
 	public partial class AmazonImportExportClient : AmazonWebServiceClient, Amazon.ImportExport.IAmazonImportExport
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -165,12 +165,13 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelJobResponse> CancelJobAsync(CancelJobRequest cancelJobRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelJobRequestMarshaller();
-			var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelJobRequest, CancelJobResponse>(cancelJobRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelJobRequest, CancelJobResponse>(cancelJobRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that
@@ -199,12 +200,13 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateJobResponse> CreateJobAsync(CreateJobRequest createJobRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateJobRequestMarshaller();
-			var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateJobRequest, CreateJobResponse>(createJobRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateJobRequest, CreateJobResponse>(createJobRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and
@@ -223,12 +225,13 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetStatusResponse> GetStatusAsync(GetStatusRequest getStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetStatusRequestMarshaller();
-			var unmarshaller = GetStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetStatusRequest, GetStatusResponse>(getStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetStatusRequestMarshaller();
+            var unmarshaller = GetStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetStatusRequest, GetStatusResponse>(getStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
@@ -246,12 +249,13 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListJobsResponse> ListJobsAsync(ListJobsRequest listJobsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListJobsRequestMarshaller();
-			var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListJobsRequest, ListJobsResponse>(listJobsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListJobsRequestMarshaller();
+            var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListJobsRequest, ListJobsResponse>(listJobsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The
@@ -283,11 +287,12 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest updateJobRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateJobRequestMarshaller();
-			var unmarshaller = UpdateJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateJobRequest, UpdateJobResponse>(updateJobRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateJobRequestMarshaller();
+            var unmarshaller = UpdateJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateJobRequest, UpdateJobResponse>(updateJobRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

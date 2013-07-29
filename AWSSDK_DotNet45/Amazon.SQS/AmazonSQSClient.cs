@@ -38,9 +38,9 @@ namespace Amazon.SQS
     /// running at the same time.</para> <para>Visit http://aws.amazon.com/sqs/ for more information.</para>
     /// </summary>
 	public partial class AmazonSQSClient : AmazonWebServiceClient, Amazon.SQS.IAmazonSQS
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -222,17 +222,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.OverLimitException" />
 		public AddPermissionResponse AddPermission(AddPermissionRequest request)
-		{
-			var task = AddPermissionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddPermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
@@ -245,12 +245,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddPermissionRequestMarshaller();
-			var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ChangeMessageVisibility</c> action changes the visibility timeout of a specified message in a queue to a new value. The maximum
@@ -273,17 +274,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.ReceiptHandleIsInvalidException" />
         /// <exception cref="T:Amazon.SQS.Model.MessageNotInflightException" />
 		public ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
-		{
-			var task = ChangeMessageVisibilityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ChangeMessageVisibilityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibility operation.
@@ -296,12 +297,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeMessageVisibilityRequestMarshaller();
-			var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of ChangeMessageVisibility. It takes multiple receipt handles and performs the operation on each of the them.
@@ -318,17 +320,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.InvalidBatchEntryIdException" />
         /// <exception cref="T:Amazon.SQS.Model.EmptyBatchRequestException" />
 		public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
-		{
-			var task = ChangeMessageVisibilityBatchAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ChangeMessageVisibilityBatchAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibilityBatch operation.
@@ -341,12 +343,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
-			var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>CreateQueue</c> action creates a new queue, or returns the URL of an existing one. When you request <c>CreateQueue</c> , you
@@ -364,17 +367,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.QueueNameExistsException" />
         /// <exception cref="T:Amazon.SQS.Model.QueueDeletedRecentlyException" />
 		public CreateQueueResponse CreateQueue(CreateQueueRequest request)
-		{
-			var task = CreateQueueAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateQueueAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateQueue operation.
@@ -387,12 +390,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateQueueRequestMarshaller();
-			var unmarshaller = CreateQueueResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateQueueRequest, CreateQueueResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateQueueRequestMarshaller();
+            var unmarshaller = CreateQueueResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateQueueRequest, CreateQueueResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>DeleteMessage</c> action unconditionally removes the specified message from the specified queue. Even if the message is locked
@@ -404,17 +408,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.ReceiptHandleIsInvalidException" />
         /// <exception cref="T:Amazon.SQS.Model.InvalidIdFormatException" />
 		public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
-		{
-			var task = DeleteMessageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteMessageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessage operation.
@@ -427,12 +431,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteMessageRequestMarshaller();
-			var unmarshaller = DeleteMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteMessageRequest, DeleteMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var unmarshaller = DeleteMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteMessageRequest, DeleteMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of DeleteMessage. It takes multiple receipt handles and deletes each one of the messages. The result of the
@@ -449,17 +454,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.InvalidBatchEntryIdException" />
         /// <exception cref="T:Amazon.SQS.Model.EmptyBatchRequestException" />
 		public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
-		{
-			var task = DeleteMessageBatchAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteMessageBatchAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessageBatch operation.
@@ -472,12 +477,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteMessageBatchRequestMarshaller();
-			var unmarshaller = DeleteMessageBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteMessageBatchRequest, DeleteMessageBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteMessageBatchRequest, DeleteMessageBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if
@@ -486,17 +492,17 @@ namespace Amazon.SQS
         /// 
         /// <param name="deleteQueueRequest">Container for the necessary parameters to execute the DeleteQueue service method on AmazonSQS.</param>
 		public DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
-		{
-			var task = DeleteQueueAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteQueueAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteQueue operation.
@@ -509,12 +515,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteQueueRequestMarshaller();
-			var unmarshaller = DeleteQueueResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteQueueRequest, DeleteQueueResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var unmarshaller = DeleteQueueResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteQueueRequest, DeleteQueueResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets attributes for the specified queue. The following attributes are supported:
@@ -547,17 +554,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.InvalidAttributeNameException" />
 		public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
-		{
-			var task = GetQueueAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetQueueAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueAttributes operation.
@@ -570,12 +577,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetQueueAttributesRequestMarshaller();
-			var unmarshaller = GetQueueAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetQueueAttributesRequest, GetQueueAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var unmarshaller = GetQueueAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetQueueAttributesRequest, GetQueueAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetQueueUrl</c> action returns the URL of an existing queue.</para>
@@ -587,17 +595,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.QueueDoesNotExistException" />
 		public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
-		{
-			var task = GetQueueUrlAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetQueueUrlAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueUrl operation.
@@ -610,12 +618,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetQueueUrlRequestMarshaller();
-			var unmarshaller = GetQueueUrlResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetQueueUrlRequest, GetQueueUrlResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetQueueUrlRequestMarshaller();
+            var unmarshaller = GetQueueUrlResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetQueueUrlRequest, GetQueueUrlResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of your queues.</para>
@@ -625,17 +634,17 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by AmazonSQS.</returns>
 		public ListQueuesResponse ListQueues(ListQueuesRequest request)
-		{
-			var task = ListQueuesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListQueuesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListQueues operation.
@@ -648,12 +657,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListQueuesRequestMarshaller();
-			var unmarshaller = ListQueuesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListQueuesRequest, ListQueuesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListQueuesRequestMarshaller();
+            var unmarshaller = ListQueuesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListQueuesRequest, ListQueuesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of your queues.</para>
@@ -663,9 +673,9 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by AmazonSQS.</returns>
 		public ListQueuesResponse ListQueues()
-		{
-			return this.ListQueues(new ListQueuesRequest());
-		}
+        {
+            return this.ListQueues(new ListQueuesRequest());
+        }
  
         /// <summary>
         /// <para>Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned
@@ -685,17 +695,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.OverLimitException" />
 		public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
-		{
-			var task = ReceiveMessageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReceiveMessageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReceiveMessage operation.
@@ -708,12 +718,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReceiveMessageRequestMarshaller();
-			var unmarshaller = ReceiveMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReceiveMessageRequest, ReceiveMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var unmarshaller = ReceiveMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReceiveMessageRequest, ReceiveMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>RemovePermission</c> action revokes any permissions in the queue policy that matches the specified <c>Label</c> parameter. Only
@@ -723,17 +734,17 @@ namespace Amazon.SQS
         /// <param name="removePermissionRequest">Container for the necessary parameters to execute the RemovePermission service method on
         /// AmazonSQS.</param>
 		public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
-		{
-			var task = RemovePermissionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemovePermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
@@ -746,12 +757,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemovePermissionRequestMarshaller();
-			var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SendMessage</c> action delivers a message to the specified queue.</para>
@@ -763,17 +775,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.InvalidMessageContentsException" />
 		public SendMessageResponse SendMessage(SendMessageRequest request)
-		{
-			var task = SendMessageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SendMessageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessage operation.
@@ -786,12 +798,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendMessageRequestMarshaller();
-			var unmarshaller = SendMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendMessageRequest, SendMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendMessageRequestMarshaller();
+            var unmarshaller = SendMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendMessageRequest, SendMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of SendMessage. It takes multiple messages and adds each of them to the queue. The result of each add
@@ -809,17 +822,17 @@ namespace Amazon.SQS
         /// <exception cref="T:Amazon.SQS.Model.InvalidBatchEntryIdException" />
         /// <exception cref="T:Amazon.SQS.Model.EmptyBatchRequestException" />
 		public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
-		{
-			var task = SendMessageBatchAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SendMessageBatchAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessageBatch operation.
@@ -832,12 +845,13 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SendMessageBatchResponse> SendMessageBatchAsync(SendMessageBatchRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendMessageBatchRequestMarshaller();
-			var unmarshaller = SendMessageBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendMessageBatchRequest, SendMessageBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var unmarshaller = SendMessageBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendMessageBatchRequest, SendMessageBatchResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sets the value of one or more queue attributes. Valid attributes that can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
@@ -849,17 +863,17 @@ namespace Amazon.SQS
         /// 
         /// <exception cref="T:Amazon.SQS.Model.InvalidAttributeNameException" />
 		public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
-		{
-			var task = SetQueueAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetQueueAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetQueueAttributes operation.
@@ -872,11 +886,12 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetQueueAttributesRequestMarshaller();
-			var unmarshaller = SetQueueAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetQueueAttributesRequest, SetQueueAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var unmarshaller = SetQueueAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetQueueAttributesRequest, SetQueueAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

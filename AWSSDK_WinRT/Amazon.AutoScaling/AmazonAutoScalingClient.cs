@@ -37,9 +37,9 @@ namespace Amazon.AutoScaling
     /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
 	public partial class AmazonAutoScalingClient : AmazonWebServiceClient, Amazon.AutoScaling.IAmazonAutoScaling
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -165,12 +165,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest createAutoScalingGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAutoScalingGroupRequestMarshaller();
-			var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse>(createAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse>(createAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
@@ -190,12 +191,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest createLaunchConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLaunchConfigurationRequestMarshaller();
-			var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse>(createLaunchConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLaunchConfigurationRequestMarshaller();
+            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse>(createLaunchConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
@@ -212,12 +214,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest createOrUpdateTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateOrUpdateTagsRequestMarshaller();
-			var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(createOrUpdateTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateOrUpdateTagsRequestMarshaller();
+            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(createOrUpdateTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
@@ -234,12 +237,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
-			var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse>(deleteAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
+            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse>(deleteAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
@@ -254,12 +258,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
-			var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse>(deleteLaunchConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
+            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse>(deleteLaunchConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
@@ -271,12 +276,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
-			var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResponse>(deleteNotificationConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
+            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResponse>(deleteNotificationConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a policy created by PutScalingPolicy.</para>
@@ -288,12 +294,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest deletePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePolicyRequestMarshaller();
-			var unmarshaller = DeletePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePolicyRequest, DeletePolicyResponse>(deletePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePolicyRequest, DeletePolicyResponse>(deletePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
@@ -305,12 +312,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteScheduledActionRequestMarshaller();
-			var unmarshaller = DeleteScheduledActionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteScheduledActionRequest, DeleteScheduledActionResponse>(deleteScheduledActionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteScheduledActionRequest, DeleteScheduledActionResponse>(deleteScheduledActionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
@@ -322,12 +330,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest deleteTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTagsRequestMarshaller();
-			var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(deleteTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(deleteTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
@@ -341,12 +350,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
-			var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse>(describeAdjustmentTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
+            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse>(describeAdjustmentTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
@@ -365,12 +375,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse>(describeAutoScalingGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse>(describeAutoScalingGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
@@ -389,12 +400,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse>(describeAutoScalingInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse>(describeAutoScalingInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
@@ -408,12 +420,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResponse>(describeAutoScalingNotificationTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResponse>(describeAutoScalingNotificationTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
@@ -430,12 +443,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
-			var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse>(describeLaunchConfigurationsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse>(describeLaunchConfigurationsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
@@ -449,12 +463,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
-			var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse>(describeMetricCollectionTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
+            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse>(describeMetricCollectionTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
@@ -470,12 +485,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
-			var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResponse>(describeNotificationConfigurationsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResponse>(describeNotificationConfigurationsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
@@ -492,12 +508,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest describePoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePoliciesRequestMarshaller();
-			var unmarshaller = DescribePoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePoliciesRequest, DescribePoliciesResponse>(describePoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePoliciesRequestMarshaller();
+            var unmarshaller = DescribePoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePoliciesRequest, DescribePoliciesResponse>(describePoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
@@ -516,12 +533,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest describeScalingActivitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScalingActivitiesRequestMarshaller();
-			var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse>(describeScalingActivitiesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScalingActivitiesRequestMarshaller();
+            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse>(describeScalingActivitiesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
@@ -535,12 +553,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
-			var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse>(describeScalingProcessTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
+            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse>(describeScalingProcessTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
@@ -557,12 +576,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScheduledActionsRequestMarshaller();
-			var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScheduledActionsRequest, DescribeScheduledActionsResponse>(describeScheduledActionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScheduledActionsRequest, DescribeScheduledActionsResponse>(describeScheduledActionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
@@ -581,12 +601,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest describeTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTagsRequestMarshaller();
-			var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(describeTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(describeTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
@@ -600,12 +621,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
-			var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResponse>(describeTerminationPolicyTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResponse>(describeTerminationPolicyTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
@@ -618,12 +640,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest disableMetricsCollectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableMetricsCollectionRequestMarshaller();
-			var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableMetricsCollectionRequest, DisableMetricsCollectionResponse>(disableMetricsCollectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableMetricsCollectionRequestMarshaller();
+            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableMetricsCollectionRequest, DisableMetricsCollectionResponse>(disableMetricsCollectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
@@ -638,12 +661,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest enableMetricsCollectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableMetricsCollectionRequestMarshaller();
-			var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableMetricsCollectionRequest, EnableMetricsCollectionResponse>(enableMetricsCollectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableMetricsCollectionRequestMarshaller();
+            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableMetricsCollectionRequest, EnableMetricsCollectionResponse>(enableMetricsCollectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
@@ -657,12 +681,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest executePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ExecutePolicyRequestMarshaller();
-			var unmarshaller = ExecutePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ExecutePolicyRequest, ExecutePolicyResponse>(executePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ExecutePolicyRequestMarshaller();
+            var unmarshaller = ExecutePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ExecutePolicyRequest, ExecutePolicyResponse>(executePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
@@ -678,12 +703,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest putNotificationConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutNotificationConfigurationRequestMarshaller();
-			var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutNotificationConfigurationRequest, PutNotificationConfigurationResponse>(putNotificationConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutNotificationConfigurationRequestMarshaller();
+            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutNotificationConfigurationRequest, PutNotificationConfigurationResponse>(putNotificationConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the
@@ -701,12 +727,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutScalingPolicyRequestMarshaller();
-			var unmarshaller = PutScalingPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutScalingPolicyRequest, PutScalingPolicyResponse>(putScalingPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var unmarshaller = PutScalingPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutScalingPolicyRequest, PutScalingPolicyResponse>(putScalingPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
@@ -722,12 +749,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
-			var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse>(putScheduledUpdateGroupActionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse>(putScheduledUpdateGroupActionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
@@ -739,12 +767,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest resumeProcessesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResumeProcessesRequestMarshaller();
-			var unmarshaller = ResumeProcessesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResumeProcessesRequest, ResumeProcessesResponse>(resumeProcessesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResumeProcessesRequestMarshaller();
+            var unmarshaller = ResumeProcessesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResumeProcessesRequest, ResumeProcessesResponse>(resumeProcessesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
@@ -770,12 +799,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest setDesiredCapacityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetDesiredCapacityRequestMarshaller();
-			var unmarshaller = SetDesiredCapacityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetDesiredCapacityRequest, SetDesiredCapacityResponse>(setDesiredCapacityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetDesiredCapacityRequestMarshaller();
+            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetDesiredCapacityRequest, SetDesiredCapacityResponse>(setDesiredCapacityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Sets the health status of an instance. </para>
@@ -787,12 +817,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest setInstanceHealthRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetInstanceHealthRequestMarshaller();
-			var unmarshaller = SetInstanceHealthResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetInstanceHealthRequest, SetInstanceHealthResponse>(setInstanceHealthRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetInstanceHealthRequestMarshaller();
+            var unmarshaller = SetInstanceHealthResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetInstanceHealthRequest, SetInstanceHealthResponse>(setInstanceHealthRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
@@ -808,12 +839,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest suspendProcessesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SuspendProcessesRequestMarshaller();
-			var unmarshaller = SuspendProcessesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SuspendProcessesRequest, SuspendProcessesResponse>(suspendProcessesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SuspendProcessesRequestMarshaller();
+            var unmarshaller = SuspendProcessesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SuspendProcessesRequest, SuspendProcessesResponse>(suspendProcessesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
@@ -830,12 +862,13 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
-			var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse>(terminateInstanceInAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
+            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse>(terminateInstanceInAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
@@ -858,11 +891,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
-			var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse>(updateAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse>(updateAutoScalingGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

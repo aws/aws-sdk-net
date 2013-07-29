@@ -42,9 +42,9 @@ namespace Amazon.RDS
     /// Amazon RDS User Guide. </para>
     /// </summary>
 	public partial class AmazonRDSClient : AmazonWebServiceClient, Amazon.RDS.IAmazonRDS
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -226,17 +226,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SourceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionNotFoundException" />
 		public AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
-		{
-			var task = AddSourceIdentifierToSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddSourceIdentifierToSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddSourceIdentifierToSubscription operation.
@@ -249,12 +249,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
-			var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddSourceIdentifierToSubscriptionRequest, AddSourceIdentifierToSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddSourceIdentifierToSubscriptionRequest, AddSourceIdentifierToSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB
@@ -267,17 +268,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
-		{
-			var task = AddTagsToResourceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddTagsToResourceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToResource operation.
@@ -290,12 +291,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddTagsToResourceRequestMarshaller();
-			var unmarshaller = AddTagsToResourceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddTagsToResourceRequest, AddTagsToResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddTagsToResourceRequest, AddTagsToResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the
@@ -317,17 +319,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.AuthorizationAlreadyExistsException" />
         /// <exception cref="T:Amazon.RDS.Model.AuthorizationQuotaExceededException" />
 		public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
-		{
-			var task = AuthorizeDBSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AuthorizeDBSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
@@ -340,12 +342,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AuthorizeDBSecurityGroupIngressResponse> AuthorizeDBSecurityGroupIngressAsync(AuthorizeDBSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </para>
@@ -361,17 +364,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotAlreadyExistsException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
-		{
-			var task = CopyDBSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CopyDBSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBSnapshot operation.
@@ -384,12 +387,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CopyDBSnapshotResponse> CopyDBSnapshotAsync(CopyDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopyDBSnapshotRequestMarshaller();
-			var unmarshaller = CopyDBSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopyDBSnapshotRequest, CopyDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopyDBSnapshotRequestMarshaller();
+            var unmarshaller = CopyDBSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopyDBSnapshotRequest, CopyDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new DB instance. </para>
@@ -413,17 +417,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException" />
 		public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
-		{
-			var task = CreateDBInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstance operation.
@@ -436,12 +440,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBInstanceRequestMarshaller();
-			var unmarshaller = CreateDBInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBInstanceRequest, CreateDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var unmarshaller = CreateDBInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBInstanceRequest, CreateDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </para> <para> All Read Replica DB Instances are created
@@ -470,17 +475,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException" />
 		public CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
-		{
-			var task = CreateDBInstanceReadReplicaAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBInstanceReadReplicaAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstanceReadReplica operation.
@@ -493,12 +498,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
-			var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBInstanceReadReplicaRequest, CreateDBInstanceReadReplicaResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBInstanceReadReplicaRequest, CreateDBInstanceReadReplicaResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new DB Parameter Group. </para> <para> A DB Parameter Group is initially created with the default parameters for the
@@ -516,17 +522,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupQuotaExceededException" />
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupAlreadyExistsException" />
 		public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
-		{
-			var task = CreateDBParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBParameterGroup operation.
@@ -539,12 +545,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBParameterGroupRequestMarshaller();
-			var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBParameterGroupRequest, CreateDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBParameterGroupRequestMarshaller();
+            var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBParameterGroupRequest, CreateDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </para>
@@ -559,17 +566,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSecurityGroupNotSupportedException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSecurityGroupAlreadyExistsException" />
 		public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
-		{
-			var task = CreateDBSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSecurityGroup operation.
@@ -582,12 +589,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBSecurityGroupResponse> CreateDBSecurityGroupAsync(CreateDBSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
@@ -603,17 +611,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SnapshotQuotaExceededException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotAlreadyExistsException" />
 		public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
-		{
-			var task = CreateDBSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSnapshot operation.
@@ -626,12 +634,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBSnapshotResponse> CreateDBSnapshotAsync(CreateDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBSnapshotRequestMarshaller();
-			var unmarshaller = CreateDBSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBSnapshotRequest, CreateDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBSnapshotRequestMarshaller();
+            var unmarshaller = CreateDBSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBSnapshotRequest, CreateDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
@@ -648,17 +657,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidSubnetException" />
 		public CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
-		{
-			var task = CreateDBSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDBSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSubnetGroup operation.
@@ -671,12 +680,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDBSubnetGroupRequestMarshaller();
-			var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDBSubnetGroupRequest, CreateDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDBSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDBSubnetGroupRequest, CreateDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS
@@ -704,17 +714,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.EventSubscriptionQuotaExceededException" />
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionAlreadyExistException" />
 		public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
-		{
-			var task = CreateEventSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateEventSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
@@ -727,12 +737,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateEventSubscriptionRequestMarshaller();
-			var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateEventSubscriptionRequest, CreateEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateEventSubscriptionRequest, CreateEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Option Group. You can create up to 20 option groups. </para>
@@ -746,17 +757,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupAlreadyExistsException" />
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupQuotaExceededException" />
 		public CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
-		{
-			var task = CreateOptionGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateOptionGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOptionGroup operation.
@@ -769,12 +780,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateOptionGroupRequestMarshaller();
-			var unmarshaller = CreateOptionGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateOptionGroupRequest, CreateOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateOptionGroupRequestMarshaller();
+            var unmarshaller = CreateOptionGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateOptionGroupRequest, CreateOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the
@@ -794,17 +806,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SnapshotQuotaExceededException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotAlreadyExistsException" />
 		public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
-		{
-			var task = DeleteDBInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDBInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBInstance operation.
@@ -817,12 +829,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDBInstanceRequestMarshaller();
-			var unmarshaller = DeleteDBInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDBInstanceRequest, DeleteDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDBInstanceRequestMarshaller();
+            var unmarshaller = DeleteDBInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDBInstanceRequest, DeleteDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </para>
@@ -835,17 +848,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBParameterGroupStateException" />
 		public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
-		{
-			var task = DeleteDBParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDBParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBParameterGroup operation.
@@ -858,12 +871,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDBParameterGroupRequestMarshaller();
-			var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDBParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a DB Security Group. </para> <para><b>NOTE:</b>The specified DB Security Group must not be associated with any DB
@@ -876,17 +890,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSecurityGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBSecurityGroupStateException" />
 		public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
-		{
-			var task = DeleteDBSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDBSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSecurityGroup operation.
@@ -899,12 +913,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
@@ -918,17 +933,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBSnapshotStateException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
-		{
-			var task = DeleteDBSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDBSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSnapshot operation.
@@ -941,12 +956,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDBSnapshotResponse> DeleteDBSnapshotAsync(DeleteDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDBSnapshotRequestMarshaller();
-			var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDBSnapshotRequest, DeleteDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDBSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDBSnapshotRequest, DeleteDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a DB subnet group. </para> <para><b>NOTE:</b>The specified database subnet group must not be associated with any DB
@@ -960,17 +976,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBSubnetGroupStateException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBSubnetStateException" />
 		public DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
-		{
-			var task = DeleteDBSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDBSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSubnetGroup operation.
@@ -983,12 +999,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
-			var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes an RDS event notification subscription.</para>
@@ -1002,17 +1019,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidEventSubscriptionStateException" />
 		public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
-		{
-			var task = DeleteEventSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteEventSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
@@ -1025,12 +1042,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteEventSubscriptionRequestMarshaller();
-			var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteEventSubscriptionRequest, DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteEventSubscriptionRequest, DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an existing Option Group. </para>
@@ -1042,17 +1060,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.InvalidOptionGroupStateException" />
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
 		public DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
-		{
-			var task = DeleteOptionGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteOptionGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOptionGroup operation.
@@ -1065,12 +1083,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteOptionGroupRequestMarshaller();
-			var unmarshaller = DeleteOptionGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteOptionGroupRequest, DeleteOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteOptionGroupRequestMarshaller();
+            var unmarshaller = DeleteOptionGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteOptionGroupRequest, DeleteOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available DB engines. </para>
@@ -1081,17 +1100,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
 		public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
-		{
-			var task = DescribeDBEngineVersionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBEngineVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
@@ -1104,12 +1123,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
-			var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available DB engines. </para>
@@ -1120,9 +1140,9 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
 		public DescribeDBEngineVersionsResponse DescribeDBEngineVersions()
-		{
-			return this.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
-		}
+        {
+            return this.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
@@ -1135,17 +1155,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
-		{
-			var task = DescribeDBInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBInstances operation.
@@ -1158,12 +1178,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBInstancesRequestMarshaller();
-			var unmarshaller = DescribeDBInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBInstancesRequest, DescribeDBInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeDBInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBInstancesRequest, DescribeDBInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
@@ -1176,9 +1197,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DescribeDBInstancesResponse DescribeDBInstances()
-		{
-			return this.DescribeDBInstances(new DescribeDBInstancesRequest());
-		}
+        {
+            return this.DescribeDBInstances(new DescribeDBInstancesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of DB log files for the DB instance. </para>
@@ -1191,17 +1212,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
-		{
-			var task = DescribeDBLogFilesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBLogFilesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBLogFiles operation.
@@ -1214,12 +1235,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBLogFilesRequestMarshaller();
-			var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBLogFilesRequest, DescribeDBLogFilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBLogFilesRequestMarshaller();
+            var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBLogFilesRequest, DescribeDBLogFilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of DB log files for the DB instance. </para>
@@ -1232,9 +1254,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DescribeDBLogFilesResponse DescribeDBLogFiles()
-		{
-			return this.DescribeDBLogFiles(new DescribeDBLogFilesRequest());
-		}
+        {
+            return this.DescribeDBLogFiles(new DescribeDBLogFilesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
@@ -1248,17 +1270,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
 		public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
-		{
-			var task = DescribeDBParameterGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBParameterGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
@@ -1271,12 +1293,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
-			var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
@@ -1290,9 +1313,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
 		public DescribeDBParameterGroupsResponse DescribeDBParameterGroups()
-		{
-			return this.DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
-		}
+        {
+            return this.DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns the detailed parameter list for a particular DBParameterGroup. </para>
@@ -1305,17 +1328,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
 		public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
-		{
-			var task = DescribeDBParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameters operation.
@@ -1328,12 +1351,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBParametersRequestMarshaller();
-			var unmarshaller = DescribeDBParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBParametersRequest, DescribeDBParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBParametersRequestMarshaller();
+            var unmarshaller = DescribeDBParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBParametersRequest, DescribeDBParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
@@ -1347,17 +1371,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSecurityGroupNotFoundException" />
 		public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
-		{
-			var task = DescribeDBSecurityGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBSecurityGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
@@ -1370,12 +1394,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
@@ -1389,9 +1414,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSecurityGroupNotFoundException" />
 		public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups()
-		{
-			return this.DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
-		}
+        {
+            return this.DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
@@ -1404,17 +1429,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
-		{
-			var task = DescribeDBSnapshotsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBSnapshotsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
@@ -1427,12 +1452,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBSnapshotsRequestMarshaller();
-			var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBSnapshotsRequest, DescribeDBSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBSnapshotsRequest, DescribeDBSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
@@ -1445,9 +1471,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public DescribeDBSnapshotsResponse DescribeDBSnapshots()
-		{
-			return this.DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
-		}
+        {
+            return this.DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
@@ -1461,17 +1487,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupNotFoundException" />
 		public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
-		{
-			var task = DescribeDBSubnetGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDBSubnetGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
@@ -1484,12 +1510,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
-			var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
@@ -1503,9 +1530,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupNotFoundException" />
 		public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups()
-		{
-			return this.DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
-		}
+        {
+            return this.DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
@@ -1516,17 +1543,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by AmazonRDS.</returns>
 		public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
-		{
-			var task = DescribeEngineDefaultParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEngineDefaultParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
@@ -1539,12 +1566,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
-			var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the
@@ -1556,17 +1584,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRDS.</returns>
 		public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
-		{
-			var task = DescribeEventCategoriesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventCategoriesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
@@ -1579,12 +1607,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventCategoriesRequestMarshaller();
-			var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventCategoriesRequest, DescribeEventCategoriesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventCategoriesRequest, DescribeEventCategoriesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the
@@ -1596,9 +1625,9 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRDS.</returns>
 		public DescribeEventCategoriesResponse DescribeEventCategories()
-		{
-			return this.DescribeEventCategories(new DescribeEventCategoriesRequest());
-		}
+        {
+            return this.DescribeEventCategories(new DescribeEventCategoriesRequest());
+        }
  
         /// <summary>
         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
@@ -1611,17 +1640,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
 		public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
-		{
-			var task = DescribeEventsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -1634,12 +1663,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventsRequestMarshaller();
-			var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
@@ -1652,9 +1682,9 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
 		public DescribeEventsResponse DescribeEvents()
-		{
-			return this.DescribeEvents(new DescribeEventsRequest());
-		}
+        {
+            return this.DescribeEvents(new DescribeEventsRequest());
+        }
  
         /// <summary>
         /// <para>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName,
@@ -1669,17 +1699,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionNotFoundException" />
 		public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
-		{
-			var task = DescribeEventSubscriptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventSubscriptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
@@ -1692,12 +1722,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
-			var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName,
@@ -1712,9 +1743,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionNotFoundException" />
 		public DescribeEventSubscriptionsResponse DescribeEventSubscriptions()
-		{
-			return this.DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
-		}
+        {
+            return this.DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
+        }
  
         /// <summary>
         /// <para> Describes all available options. </para>
@@ -1725,17 +1756,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeOptionGroupOptions service method, as returned by AmazonRDS.</returns>
 		public DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
-		{
-			var task = DescribeOptionGroupOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOptionGroupOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
@@ -1748,12 +1779,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOptionGroupOptionsResponse> DescribeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
-			var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the available option groups. </para>
@@ -1766,17 +1798,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
 		public DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
-		{
-			var task = DescribeOptionGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOptionGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
@@ -1789,12 +1821,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(DescribeOptionGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOptionGroupsRequestMarshaller();
-			var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOptionGroupsRequest, DescribeOptionGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOptionGroupsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOptionGroupsRequest, DescribeOptionGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the available option groups. </para>
@@ -1807,9 +1840,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
 		public DescribeOptionGroupsResponse DescribeOptionGroups()
-		{
-			return this.DescribeOptionGroups(new DescribeOptionGroupsRequest());
-		}
+        {
+            return this.DescribeOptionGroups(new DescribeOptionGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of orderable DB Instance options for the specified engine. </para>
@@ -1820,17 +1853,17 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by AmazonRDS.</returns>
 		public DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
-		{
-			var task = DescribeOrderableDBInstanceOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOrderableDBInstanceOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
@@ -1843,12 +1876,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
-			var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
+            var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
@@ -1861,17 +1895,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstanceNotFoundException" />
 		public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
-		{
-			var task = DescribeReservedDBInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedDBInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
@@ -1884,12 +1918,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(DescribeReservedDBInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
-			var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
@@ -1902,9 +1937,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstanceNotFoundException" />
 		public DescribeReservedDBInstancesResponse DescribeReservedDBInstances()
-		{
-			return this.DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
-		}
+        {
+            return this.DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
+        }
  
         /// <summary>
         /// <para> Lists available reserved DB Instance offerings. </para>
@@ -1917,17 +1952,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException" />
 		public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
-		{
-			var task = DescribeReservedDBInstancesOfferingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedDBInstancesOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
@@ -1940,12 +1975,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(DescribeReservedDBInstancesOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedDBInstancesOfferingsRequest, DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedDBInstancesOfferingsRequest, DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists available reserved DB Instance offerings. </para>
@@ -1958,9 +1994,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException" />
 		public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings()
-		{
-			return this.DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
-		}
+        {
+            return this.DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
+        }
  
         /// <summary>
         /// <para> Downloads the last line of the specified log file. </para>
@@ -1973,17 +2009,17 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
-		{
-			var task = DownloadDBLogFilePortionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DownloadDBLogFilePortionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DownloadDBLogFilePortion operation.
@@ -1996,12 +2032,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
-			var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DownloadDBLogFilePortionRequest, DownloadDBLogFilePortionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
+            var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DownloadDBLogFilePortionRequest, DownloadDBLogFilePortionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Downloads the last line of the specified log file. </para>
@@ -2014,9 +2051,9 @@ namespace Amazon.RDS
         /// 
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
 		public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion()
-		{
-			return this.DownloadDBLogFilePortion(new DownloadDBLogFilePortionRequest());
-		}
+        {
+            return this.DownloadDBLogFilePortion(new DownloadDBLogFilePortionRequest());
+        }
  
         /// <summary>
         /// <para> Lists all tags on a DB Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
@@ -2030,17 +2067,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
-		{
-			var task = ListTagsForResourceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListTagsForResourceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
@@ -2053,12 +2090,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListTagsForResourceRequestMarshaller();
-			var unmarshaller = ListTagsForResourceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListTagsForResourceRequest, ListTagsForResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListTagsForResourceRequest, ListTagsForResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and
@@ -2083,17 +2121,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException" />
 		public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
-		{
-			var task = ModifyDBInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyDBInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBInstance operation.
@@ -2106,12 +2144,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyDBInstanceRequestMarshaller();
-			var unmarshaller = ModifyDBInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyDBInstanceRequest, ModifyDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var unmarshaller = ModifyDBInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyDBInstanceRequest, ModifyDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
@@ -2129,17 +2168,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBParameterGroupStateException" />
 		public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
-		{
-			var task = ModifyDBParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyDBParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBParameterGroup operation.
@@ -2152,12 +2191,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyDBParameterGroupRequestMarshaller();
-			var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyDBParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
@@ -2174,17 +2214,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidSubnetException" />
 		public ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
-		{
-			var task = ModifyDBSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyDBSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBSubnetGroup operation.
@@ -2197,12 +2237,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
-			var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyDBSubnetGroupRequest, ModifyDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyDBSubnetGroupRequest, ModifyDBSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to
@@ -2223,17 +2264,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SNSNoAuthorizationException" />
         /// <exception cref="T:Amazon.RDS.Model.EventSubscriptionQuotaExceededException" />
 		public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
-		{
-			var task = ModifyEventSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyEventSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
@@ -2246,12 +2287,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyEventSubscriptionRequestMarshaller();
-			var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyEventSubscriptionRequest, ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyEventSubscriptionRequest, ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an existing Option Group. </para>
@@ -2265,17 +2307,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.InvalidOptionGroupStateException" />
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
 		public ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
-		{
-			var task = ModifyOptionGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyOptionGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyOptionGroup operation.
@@ -2288,12 +2330,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyOptionGroupRequestMarshaller();
-			var unmarshaller = ModifyOptionGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyOptionGroupRequest, ModifyOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyOptionGroupRequestMarshaller();
+            var unmarshaller = ModifyOptionGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyOptionGroupRequest, ModifyOptionGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Promotes a Read Replica DB Instance to a standalone DB Instance. </para>
@@ -2307,17 +2350,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBInstanceStateException" />
 		public PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
-		{
-			var task = PromoteReadReplicaAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PromoteReadReplicaAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PromoteReadReplica operation.
@@ -2330,12 +2373,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PromoteReadReplicaResponse> PromoteReadReplicaAsync(PromoteReadReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PromoteReadReplicaRequestMarshaller();
-			var unmarshaller = PromoteReadReplicaResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PromoteReadReplicaRequest, PromoteReadReplicaResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PromoteReadReplicaRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PromoteReadReplicaRequest, PromoteReadReplicaResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Purchases a reserved DB Instance offering. </para>
@@ -2350,17 +2394,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstanceQuotaExceededException" />
         /// <exception cref="T:Amazon.RDS.Model.ReservedDBInstanceAlreadyExistsException" />
 		public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
-		{
-			var task = PurchaseReservedDBInstancesOfferingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PurchaseReservedDBInstancesOfferingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
@@ -2373,12 +2417,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PurchaseReservedDBInstancesOfferingResponse> PurchaseReservedDBInstancesOfferingAsync(PurchaseReservedDBInstancesOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
@@ -2395,17 +2440,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBInstanceStateException" />
 		public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
-		{
-			var task = RebootDBInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebootDBInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebootDBInstance operation.
@@ -2418,12 +2463,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootDBInstanceRequestMarshaller();
-			var unmarshaller = RebootDBInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootDBInstanceRequest, RebootDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootDBInstanceRequestMarshaller();
+            var unmarshaller = RebootDBInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootDBInstanceRequest, RebootDBInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes a source identifier from an existing RDS event notification subscription.</para>
@@ -2437,17 +2483,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.SourceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.SubscriptionNotFoundException" />
 		public RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
-		{
-			var task = RemoveSourceIdentifierFromSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemoveSourceIdentifierFromSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
@@ -2460,12 +2506,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
-			var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemoveSourceIdentifierFromSubscriptionRequest, RemoveSourceIdentifierFromSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveSourceIdentifierFromSubscriptionRequest, RemoveSourceIdentifierFromSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Removes metadata tags from a DB Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
@@ -2477,17 +2524,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBInstanceNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
-		{
-			var task = RemoveTagsFromResourceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemoveTagsFromResourceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
@@ -2500,12 +2547,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemoveTagsFromResourceRequestMarshaller();
-			var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemoveTagsFromResourceRequest, RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveTagsFromResourceRequest, RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the
@@ -2522,17 +2570,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBParameterGroupStateException" />
 		public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
-		{
-			var task = ResetDBParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetDBParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetDBParameterGroup operation.
@@ -2545,12 +2593,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetDBParameterGroupRequestMarshaller();
-			var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetDBParameterGroupRequest, ResetDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetDBParameterGroupRequestMarshaller();
+            var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetDBParameterGroupRequest, ResetDBParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same
@@ -2576,17 +2625,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException" />
 		public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
-		{
-			var task = RestoreDBInstanceFromDBSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RestoreDBInstanceFromDBSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
@@ -2599,12 +2648,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
-			var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
@@ -2632,17 +2682,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.OptionGroupNotFoundException" />
         /// <exception cref="T:Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException" />
 		public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
-		{
-			var task = RestoreDBInstanceToPointInTimeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RestoreDBInstanceToPointInTimeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
@@ -2655,12 +2705,13 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
-			var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for
@@ -2677,17 +2728,17 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.InvalidDBSecurityGroupStateException" />
         /// <exception cref="T:Amazon.RDS.Model.AuthorizationNotFoundException" />
 		public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
-		{
-			var task = RevokeDBSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RevokeDBSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
@@ -2700,11 +2751,12 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

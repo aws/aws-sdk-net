@@ -46,9 +46,9 @@ namespace Amazon.StorageGateway
     /// </ul>
     /// </summary>
 	public partial class AmazonStorageGatewayClient : AmazonWebServiceClient, Amazon.StorageGateway.IAmazonStorageGateway
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -234,17 +234,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request)
-		{
-			var task = ActivateGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ActivateGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
@@ -257,12 +257,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ActivateGatewayRequestMarshaller();
-			var unmarshaller = ActivateGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ActivateGatewayRequestMarshaller();
+            var unmarshaller = ActivateGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only for
@@ -277,17 +278,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public AddCacheResponse AddCache(AddCacheRequest request)
-		{
-			var task = AddCacheAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddCacheAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
@@ -300,12 +301,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddCacheResponse> AddCacheAsync(AddCacheRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddCacheRequestMarshaller();
-			var unmarshaller = AddCacheResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddCacheRequest, AddCacheResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddCacheRequestMarshaller();
+            var unmarshaller = AddCacheResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddCacheRequest, AddCacheResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for
@@ -321,17 +323,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request)
-		{
-			var task = AddUploadBufferAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddUploadBufferAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
@@ -344,12 +346,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddUploadBufferRequestMarshaller();
-			var unmarshaller = AddUploadBufferResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddUploadBufferRequestMarshaller();
+            var unmarshaller = AddUploadBufferResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the
@@ -366,17 +369,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request)
-		{
-			var task = AddWorkingStorageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddWorkingStorageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
@@ -389,12 +392,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddWorkingStorageRequestMarshaller();
-			var unmarshaller = AddWorkingStorageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddWorkingStorageRequestMarshaller();
+            var unmarshaller = AddWorkingStorageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume
@@ -413,17 +417,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request)
-		{
-			var task = CreateCachediSCSIVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCachediSCSIVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
@@ -436,12 +440,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
-			var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
+            var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a snapshot of a volume.</para> <para>AWS Storage Gateway provides the ability to back up point-in-time
@@ -463,17 +468,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
-		{
-			var task = CreateSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -486,12 +491,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotRequestMarshaller();
-			var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached
@@ -513,17 +519,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request)
-		{
-			var task = CreateSnapshotFromVolumeRecoveryPointAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSnapshotFromVolumeRecoveryPointAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
@@ -536,12 +542,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
-			var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
+            var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation creates a volume on a specified gateway. This operation is supported only for the gateway-cached volume architecture.
@@ -560,17 +567,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request)
-		{
-			var task = CreateStorediSCSIVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateStorediSCSIVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
@@ -583,12 +590,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
-			var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
+            var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or
@@ -604,17 +612,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request)
-		{
-			var task = DeleteBandwidthRateLimitAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteBandwidthRateLimitAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
@@ -627,12 +635,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator
@@ -647,17 +656,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request)
-		{
-			var task = DeleteChapCredentialsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteChapCredentialsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
@@ -670,12 +679,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteChapCredentialsRequestMarshaller();
-			var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteChapCredentialsRequestMarshaller();
+            var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your
@@ -696,17 +706,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
-		{
-			var task = DeleteGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
@@ -719,12 +729,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteGatewayRequestMarshaller();
-			var unmarshaller = DeleteGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteGatewayRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This operation deletes a snapshot of a volume. </para> <para> You can take snapshots of your gateway volumes on a scheduled or ad-hoc
@@ -742,17 +753,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
-		{
-			var task = DeleteSnapshotScheduleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSnapshotScheduleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
@@ -765,12 +776,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
-			var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
+            var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation delete the specified gateway volume that you previously created using the CreateStorediSCSIVolume API. For
@@ -790,17 +802,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
-		{
-			var task = DeleteVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
@@ -813,12 +825,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVolumeRequestMarshaller();
-			var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVolumeRequestMarshaller();
+            var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate
@@ -835,17 +848,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request)
-		{
-			var task = DescribeBandwidthRateLimitAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeBandwidthRateLimitAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
@@ -858,12 +871,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
@@ -879,17 +893,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeCacheResponse DescribeCache(DescribeCacheRequest request)
-		{
-			var task = DescribeCacheAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
@@ -902,12 +916,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheRequestMarshaller();
-			var unmarshaller = DescribeCacheResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheRequestMarshaller();
+            var unmarshaller = DescribeCacheResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the
@@ -923,17 +938,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request)
-		{
-			var task = DescribeCachediSCSIVolumesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCachediSCSIVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
@@ -946,12 +961,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
-			var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
+            var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI
@@ -966,17 +982,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request)
-		{
-			var task = DescribeChapCredentialsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeChapCredentialsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
@@ -989,12 +1005,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeChapCredentialsRequestMarshaller();
-			var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeChapCredentialsRequestMarshaller();
+            var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the
@@ -1009,17 +1026,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request)
-		{
-			var task = DescribeGatewayInformationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeGatewayInformationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
@@ -1032,12 +1049,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeGatewayInformationRequestMarshaller();
-			var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeGatewayInformationRequestMarshaller();
+            var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in
@@ -1052,17 +1070,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request)
-		{
-			var task = DescribeMaintenanceStartTimeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeMaintenanceStartTimeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
@@ -1075,12 +1093,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
-			var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals
@@ -1095,17 +1114,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
-		{
-			var task = DescribeSnapshotScheduleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSnapshotScheduleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
@@ -1118,12 +1137,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
-			var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
+            var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns description of the gateway volumes specified in the request. The list of gateway volumes in the request must be
@@ -1138,17 +1158,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request)
-		{
-			var task = DescribeStorediSCSIVolumesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStorediSCSIVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
@@ -1161,12 +1181,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
-			var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
+            var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored and
@@ -1182,17 +1203,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request)
-		{
-			var task = DescribeUploadBufferAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeUploadBufferAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
@@ -1205,12 +1226,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeUploadBufferRequestMarshaller();
-			var unmarshaller = DescribeUploadBufferResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeUploadBufferRequestMarshaller();
+            var unmarshaller = DescribeUploadBufferResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored
@@ -1227,17 +1249,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request)
-		{
-			var task = DescribeWorkingStorageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeWorkingStorageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
@@ -1250,12 +1272,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeWorkingStorageRequestMarshaller();
-			var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeWorkingStorageRequestMarshaller();
+            var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway
@@ -1273,17 +1296,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ListGatewaysResponse ListGateways(ListGatewaysRequest request)
-		{
-			var task = ListGatewaysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
@@ -1296,12 +1319,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListGatewaysRequestMarshaller();
-			var unmarshaller = ListGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListGatewaysRequestMarshaller();
+            var unmarshaller = ListGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway
@@ -1319,9 +1343,9 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ListGatewaysResponse ListGateways()
-		{
-			return this.ListGateways(new ListGatewaysRequest());
-		}
+        {
+            return this.ListGateways(new ListGatewaysRequest());
+        }
  
         /// <summary>
         /// <para>This operation returns a list of the local disks of a gateway. To specify which gateway to describe you use the Amazon Resource Name
@@ -1337,17 +1361,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request)
-		{
-			var task = ListLocalDisksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListLocalDisksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
@@ -1360,12 +1384,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListLocalDisksRequestMarshaller();
-			var unmarshaller = ListLocalDisksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListLocalDisksRequestMarshaller();
+            var unmarshaller = ListLocalDisksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
@@ -1382,17 +1407,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)
-		{
-			var task = ListVolumeRecoveryPointsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListVolumeRecoveryPointsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
@@ -1405,12 +1430,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
-			var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
+            var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume
@@ -1428,17 +1454,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ListVolumesResponse ListVolumes(ListVolumesRequest request)
-		{
-			var task = ListVolumesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
@@ -1451,12 +1477,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVolumesRequestMarshaller();
-			var unmarshaller = ListVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVolumesRequestMarshaller();
+            var unmarshaller = ListVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the
@@ -1478,17 +1505,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
-		{
-			var task = ShutdownGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ShutdownGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
@@ -1501,12 +1528,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ShutdownGatewayRequestMarshaller();
-			var unmarshaller = ShutdownGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ShutdownGatewayRequestMarshaller();
+            var unmarshaller = ShutdownGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation starts a gateway that you previously shut down (see ShutdownGateway). After the gateway starts, you can then make other
@@ -1525,17 +1553,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public StartGatewayResponse StartGateway(StartGatewayRequest request)
-		{
-			var task = StartGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StartGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
@@ -1548,12 +1576,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartGatewayRequestMarshaller();
-			var unmarshaller = StartGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartGatewayRequestMarshaller();
+            var unmarshaller = StartGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or
@@ -1571,17 +1600,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request)
-		{
-			var task = UpdateBandwidthRateLimitAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateBandwidthRateLimitAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
@@ -1594,12 +1623,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a
@@ -1615,17 +1645,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
-		{
-			var task = UpdateChapCredentialsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateChapCredentialsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
@@ -1638,12 +1668,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateChapCredentialsRequestMarshaller();
-			var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateChapCredentialsRequestMarshaller();
+            var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use
@@ -1658,17 +1689,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
-		{
-			var task = UpdateGatewayInformationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateGatewayInformationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
@@ -1681,12 +1712,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateGatewayInformationRequestMarshaller();
-			var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateGatewayInformationRequestMarshaller();
+            var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. </para>
@@ -1705,17 +1737,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
-		{
-			var task = UpdateGatewaySoftwareNowAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateGatewaySoftwareNowAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
@@ -1728,12 +1760,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
-			var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
+            var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time
@@ -1748,17 +1781,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request)
-		{
-			var task = UpdateMaintenanceStartTimeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateMaintenanceStartTimeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
@@ -1771,12 +1804,13 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
-			var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
@@ -1793,17 +1827,17 @@ namespace Amazon.StorageGateway
         /// <exception cref="T:Amazon.StorageGateway.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.StorageGateway.Model.InvalidGatewayRequestException" />
 		public UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)
-		{
-			var task = UpdateSnapshotScheduleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateSnapshotScheduleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.
@@ -1816,11 +1850,12 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
-			var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
+            var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

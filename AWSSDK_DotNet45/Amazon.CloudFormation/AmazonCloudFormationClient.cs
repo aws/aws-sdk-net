@@ -38,9 +38,9 @@ namespace Amazon.CloudFormation
     /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para>
     /// </summary>
 	public partial class AmazonCloudFormationClient : AmazonWebServiceClient, Amazon.CloudFormation.IAmazonCloudFormation
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -218,17 +218,17 @@ namespace Amazon.CloudFormation
         /// <param name="cancelUpdateStackRequest">Container for the necessary parameters to execute the CancelUpdateStack service method on
         /// AmazonCloudFormation.</param>
 		public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
-		{
-			var task = CancelUpdateStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelUpdateStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
@@ -241,12 +241,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelUpdateStackRequestMarshaller();
-			var unmarshaller = CancelUpdateStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelUpdateStackRequest, CancelUpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelUpdateStackRequestMarshaller();
+            var unmarshaller = CancelUpdateStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelUpdateStackRequest, CancelUpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the
@@ -263,17 +264,17 @@ namespace Amazon.CloudFormation
         /// <exception cref="T:Amazon.CloudFormation.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudFormation.Model.InsufficientCapabilitiesException" />
 		public CreateStackResponse CreateStack(CreateStackRequest request)
-		{
-			var task = CreateStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
@@ -286,12 +287,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateStackRequestMarshaller();
-			var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the
@@ -301,17 +303,17 @@ namespace Amazon.CloudFormation
         /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on
         /// AmazonCloudFormation.</param>
 		public DeleteStackResponse DeleteStack(DeleteStackRequest request)
-		{
-			var task = DeleteStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -324,12 +326,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteStackRequestMarshaller();
-			var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
@@ -343,17 +346,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
-		{
-			var task = DescribeStackEventsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStackEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
@@ -366,12 +369,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStackEventsRequestMarshaller();
-			var unmarshaller = DescribeStackEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStackEventsRequest, DescribeStackEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStackEventsRequestMarshaller();
+            var unmarshaller = DescribeStackEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStackEventsRequest, DescribeStackEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
@@ -385,9 +389,9 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStackEventsResponse DescribeStackEvents()
-		{
-			return this.DescribeStackEvents(new DescribeStackEventsRequest());
-		}
+        {
+            return this.DescribeStackEvents(new DescribeStackEventsRequest());
+        }
  
         /// <summary>
         /// <para>Returns a description of the specified resource in the specified stack.</para> <para>For deleted stacks, DescribeStackResource returns
@@ -399,17 +403,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResource service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
-		{
-			var task = DescribeStackResourceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStackResourceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
@@ -422,12 +426,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStackResourceRequestMarshaller();
-			var unmarshaller = DescribeStackResourceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStackResourceRequest, DescribeStackResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStackResourceRequestMarshaller();
+            var unmarshaller = DescribeStackResourceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStackResourceRequest, DescribeStackResourceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
@@ -445,17 +450,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
-		{
-			var task = DescribeStackResourcesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStackResourcesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
@@ -468,12 +473,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStackResourcesRequestMarshaller();
-			var unmarshaller = DescribeStackResourcesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStackResourcesRequest, DescribeStackResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStackResourcesRequestMarshaller();
+            var unmarshaller = DescribeStackResourcesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStackResourcesRequest, DescribeStackResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
@@ -491,9 +497,9 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStackResourcesResponse DescribeStackResources()
-		{
-			return this.DescribeStackResources(new DescribeStackResourcesRequest());
-		}
+        {
+            return this.DescribeStackResources(new DescribeStackResourcesRequest());
+        }
  
         /// <summary>
         /// <para>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
@@ -505,17 +511,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
-		{
-			var task = DescribeStacksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStacksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
@@ -528,12 +534,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStacksRequestMarshaller();
-			var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
@@ -545,9 +552,9 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by AmazonCloudFormation.</returns>
 		public DescribeStacksResponse DescribeStacks()
-		{
-			return this.DescribeStacks(new DescribeStacksRequest());
-		}
+        {
+            return this.DescribeStacks(new DescribeStacksRequest());
+        }
  
         /// <summary>
         /// <para>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that
@@ -559,17 +566,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the EstimateTemplateCost service method, as returned by AmazonCloudFormation.</returns>
 		public EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
-		{
-			var task = EstimateTemplateCostAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EstimateTemplateCostAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
@@ -582,12 +589,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EstimateTemplateCostRequestMarshaller();
-			var unmarshaller = EstimateTemplateCostResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EstimateTemplateCostRequest, EstimateTemplateCostResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EstimateTemplateCostRequestMarshaller();
+            var unmarshaller = EstimateTemplateCostResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EstimateTemplateCostRequest, EstimateTemplateCostResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the template body for a specified stack name. You can get the template for running or deleted stacks.</para> <para>For deleted
@@ -600,17 +608,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the GetTemplate service method, as returned by AmazonCloudFormation.</returns>
 		public GetTemplateResponse GetTemplate(GetTemplateRequest request)
-		{
-			var task = GetTemplateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
@@ -623,12 +631,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetTemplateRequestMarshaller();
-			var unmarshaller = GetTemplateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetTemplateRequest, GetTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetTemplateRequestMarshaller();
+            var unmarshaller = GetTemplateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetTemplateRequest, GetTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns descriptions of all resources of the specified stack.</para> <para>For deleted stacks, ListStackResources returns resource
@@ -640,17 +649,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by AmazonCloudFormation.</returns>
 		public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
-		{
-			var task = ListStackResourcesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListStackResourcesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
@@ -663,12 +672,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListStackResourcesRequestMarshaller();
-			var unmarshaller = ListStackResourcesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListStackResourcesRequest, ListStackResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListStackResourcesRequestMarshaller();
+            var unmarshaller = ListStackResourcesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListStackResourcesRequest, ListStackResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
@@ -681,17 +691,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by AmazonCloudFormation.</returns>
 		public ListStacksResponse ListStacks(ListStacksRequest request)
-		{
-			var task = ListStacksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListStacksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
@@ -704,12 +714,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListStacksRequestMarshaller();
-			var unmarshaller = ListStacksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListStacksRequest, ListStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListStacksRequestMarshaller();
+            var unmarshaller = ListStacksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListStacksRequest, ListStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
@@ -722,9 +733,9 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by AmazonCloudFormation.</returns>
 		public ListStacksResponse ListStacks()
-		{
-			return this.ListStacks(new ListStacksRequest());
-		}
+        {
+            return this.ListStacks(new ListStacksRequest());
+        }
  
         /// <summary>
         /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
@@ -741,17 +752,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <exception cref="T:Amazon.CloudFormation.Model.InsufficientCapabilitiesException" />
 		public UpdateStackResponse UpdateStack(UpdateStackRequest request)
-		{
-			var task = UpdateStackAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateStackAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
@@ -764,12 +775,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateStackRequestMarshaller();
-			var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Validates a specified template.</para>
@@ -780,17 +792,17 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by AmazonCloudFormation.</returns>
 		public ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
-		{
-			var task = ValidateTemplateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ValidateTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
@@ -803,12 +815,13 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ValidateTemplateRequestMarshaller();
-			var unmarshaller = ValidateTemplateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ValidateTemplateRequest, ValidateTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ValidateTemplateRequestMarshaller();
+            var unmarshaller = ValidateTemplateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ValidateTemplateRequest, ValidateTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Validates a specified template.</para>
@@ -819,8 +832,8 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by AmazonCloudFormation.</returns>
 		public ValidateTemplateResponse ValidateTemplate()
-		{
-			return this.ValidateTemplate(new ValidateTemplateRequest());
-		}
-	}
+        {
+            return this.ValidateTemplate(new ValidateTemplateRequest());
+        }
+    }
 }

@@ -34,9 +34,9 @@ namespace Amazon.ElasticMapReduce
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, Amazon.ElasticMapReduce.IAmazonElasticMapReduce
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -217,17 +217,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
-		{
-			var task = AddInstanceGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddInstanceGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddInstanceGroups operation.
@@ -240,12 +240,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddInstanceGroupsRequestMarshaller();
-			var unmarshaller = AddInstanceGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddInstanceGroupsRequest, AddInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddInstanceGroupsRequest, AddInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </para> <para>If your job
@@ -265,17 +266,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
-		{
-			var task = AddJobFlowStepsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddJobFlowStepsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddJobFlowSteps operation.
@@ -288,12 +289,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddJobFlowStepsRequestMarshaller();
-			var unmarshaller = AddJobFlowStepsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
@@ -319,17 +321,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
-		{
-			var task = DescribeJobFlowsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeJobFlowsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJobFlows operation.
@@ -342,12 +344,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeJobFlowsRequestMarshaller();
-			var unmarshaller = DescribeJobFlowsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeJobFlowsRequest, DescribeJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeJobFlowsRequest, DescribeJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
@@ -373,9 +376,9 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public DescribeJobFlowsResponse DescribeJobFlows()
-		{
-			return this.DescribeJobFlows(new DescribeJobFlowsRequest());
-		}
+        {
+            return this.DescribeJobFlows(new DescribeJobFlowsRequest());
+        }
  
         /// <summary>
         /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
@@ -387,17 +390,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
-		{
-			var task = ModifyInstanceGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyInstanceGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceGroups operation.
@@ -410,12 +413,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyInstanceGroupsRequestMarshaller();
-			var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the
@@ -438,17 +442,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
-		{
-			var task = RunJobFlowAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RunJobFlowAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RunJobFlow operation.
@@ -461,12 +465,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RunJobFlowRequestMarshaller();
-			var unmarshaller = RunJobFlowResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RunJobFlowRequest, RunJobFlowResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RunJobFlowRequestMarshaller();
+            var unmarshaller = RunJobFlowResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RunJobFlowRequest, RunJobFlowResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an
@@ -485,17 +490,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
-		{
-			var task = SetTerminationProtectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetTerminationProtectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetTerminationProtection operation.
@@ -508,12 +513,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTerminationProtectionRequestMarshaller();
-			var unmarshaller = SetTerminationProtectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTerminationProtectionRequest, SetTerminationProtectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTerminationProtectionRequest, SetTerminationProtectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
@@ -527,17 +533,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
-		{
-			var task = SetVisibleToAllUsersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetVisibleToAllUsersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
@@ -550,12 +556,13 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetVisibleToAllUsersRequestMarshaller();
-			var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetVisibleToAllUsersRequest, SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetVisibleToAllUsersRequest, SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
@@ -570,17 +577,17 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
-		{
-			var task = TerminateJobFlowsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TerminateJobFlowsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateJobFlows operation.
@@ -593,11 +600,12 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateJobFlowsRequestMarshaller();
-			var unmarshaller = TerminateJobFlowsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateJobFlowsRequest, TerminateJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateJobFlowsRequest, TerminateJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

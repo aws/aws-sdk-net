@@ -38,9 +38,9 @@ namespace Amazon.SQS
     /// running at the same time.</para> <para>Visit http://aws.amazon.com/sqs/ for more information.</para>
     /// </summary>
 	public partial class AmazonSQSClient : AmazonWebServiceClient, Amazon.SQS.IAmazonSQS
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -166,12 +166,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest addPermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddPermissionRequestMarshaller();
-			var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(addPermissionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(addPermissionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ChangeMessageVisibility</c> action changes the visibility timeout of a specified message in a queue to a new value. The maximum
@@ -197,12 +198,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest changeMessageVisibilityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeMessageVisibilityRequestMarshaller();
-			var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse>(changeMessageVisibilityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse>(changeMessageVisibilityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of ChangeMessageVisibility. It takes multiple receipt handles and performs the operation on each of the them.
@@ -222,12 +224,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
-			var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse>(changeMessageVisibilityBatchRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse>(changeMessageVisibilityBatchRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>CreateQueue</c> action creates a new queue, or returns the URL of an existing one. When you request <c>CreateQueue</c> , you
@@ -248,12 +251,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest createQueueRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateQueueRequestMarshaller();
-			var unmarshaller = CreateQueueResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateQueueRequest, CreateQueueResponse>(createQueueRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateQueueRequestMarshaller();
+            var unmarshaller = CreateQueueResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateQueueRequest, CreateQueueResponse>(createQueueRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>DeleteMessage</c> action unconditionally removes the specified message from the specified queue. Even if the message is locked
@@ -268,12 +272,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest deleteMessageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteMessageRequestMarshaller();
-			var unmarshaller = DeleteMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteMessageRequest, DeleteMessageResponse>(deleteMessageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var unmarshaller = DeleteMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteMessageRequest, DeleteMessageResponse>(deleteMessageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of DeleteMessage. It takes multiple receipt handles and deletes each one of the messages. The result of the
@@ -293,12 +298,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest deleteMessageBatchRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteMessageBatchRequestMarshaller();
-			var unmarshaller = DeleteMessageBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteMessageBatchRequest, DeleteMessageBatchResponse>(deleteMessageBatchRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteMessageBatchRequest, DeleteMessageBatchResponse>(deleteMessageBatchRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if
@@ -310,12 +316,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest deleteQueueRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteQueueRequestMarshaller();
-			var unmarshaller = DeleteQueueResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteQueueRequest, DeleteQueueResponse>(deleteQueueRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var unmarshaller = DeleteQueueResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteQueueRequest, DeleteQueueResponse>(deleteQueueRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets attributes for the specified queue. The following attributes are supported:
@@ -351,12 +358,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest getQueueAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetQueueAttributesRequestMarshaller();
-			var unmarshaller = GetQueueAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetQueueAttributesRequest, GetQueueAttributesResponse>(getQueueAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var unmarshaller = GetQueueAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetQueueAttributesRequest, GetQueueAttributesResponse>(getQueueAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetQueueUrl</c> action returns the URL of an existing queue.</para>
@@ -371,12 +379,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest getQueueUrlRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetQueueUrlRequestMarshaller();
-			var unmarshaller = GetQueueUrlResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetQueueUrlRequest, GetQueueUrlResponse>(getQueueUrlRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetQueueUrlRequestMarshaller();
+            var unmarshaller = GetQueueUrlResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetQueueUrlRequest, GetQueueUrlResponse>(getQueueUrlRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of your queues.</para>
@@ -389,12 +398,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest listQueuesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListQueuesRequestMarshaller();
-			var unmarshaller = ListQueuesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListQueuesRequest, ListQueuesResponse>(listQueuesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListQueuesRequestMarshaller();
+            var unmarshaller = ListQueuesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListQueuesRequest, ListQueuesResponse>(listQueuesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned
@@ -417,12 +427,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest receiveMessageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReceiveMessageRequestMarshaller();
-			var unmarshaller = ReceiveMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReceiveMessageRequest, ReceiveMessageResponse>(receiveMessageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var unmarshaller = ReceiveMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReceiveMessageRequest, ReceiveMessageResponse>(receiveMessageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>RemovePermission</c> action revokes any permissions in the queue policy that matches the specified <c>Label</c> parameter. Only
@@ -435,12 +446,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest removePermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemovePermissionRequestMarshaller();
-			var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(removePermissionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(removePermissionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SendMessage</c> action delivers a message to the specified queue.</para>
@@ -455,12 +467,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SendMessageResponse> SendMessageAsync(SendMessageRequest sendMessageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendMessageRequestMarshaller();
-			var unmarshaller = SendMessageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendMessageRequest, SendMessageResponse>(sendMessageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendMessageRequestMarshaller();
+            var unmarshaller = SendMessageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendMessageRequest, SendMessageResponse>(sendMessageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This is a batch version of SendMessage. It takes multiple messages and adds each of them to the queue. The result of each add
@@ -481,12 +494,13 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SendMessageBatchResponse> SendMessageBatchAsync(SendMessageBatchRequest sendMessageBatchRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendMessageBatchRequestMarshaller();
-			var unmarshaller = SendMessageBatchResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendMessageBatchRequest, SendMessageBatchResponse>(sendMessageBatchRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var unmarshaller = SendMessageBatchResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendMessageBatchRequest, SendMessageBatchResponse>(sendMessageBatchRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sets the value of one or more queue attributes. Valid attributes that can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
@@ -501,11 +515,12 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest setQueueAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetQueueAttributesRequestMarshaller();
-			var unmarshaller = SetQueueAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetQueueAttributesRequest, SetQueueAttributesResponse>(setQueueAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var unmarshaller = SetQueueAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetQueueAttributesRequest, SetQueueAttributesResponse>(setQueueAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

@@ -34,9 +34,9 @@ namespace Amazon.Route53
     /// Interface for accessing AmazonRoute53.
     /// </summary>
 	public partial class AmazonRoute53Client : AmazonWebServiceClient, Amazon.Route53.IAmazonRoute53
-	{
+    {
 
-		AWS3Signer signer = new AWS3Signer();
+        AWS3Signer signer = new AWS3Signer();
         #region Constructors
 
         /// <summary>
@@ -176,12 +176,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
-			var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResponse>(changeResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResponse>(changeResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
@@ -201,12 +202,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest createHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateHealthCheckRequestMarshaller();
-			var unmarshaller = CreateHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateHealthCheckRequest, CreateHealthCheckResponse>(createHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateHealthCheckRequestMarshaller();
+            var unmarshaller = CreateHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateHealthCheckRequest, CreateHealthCheckResponse>(createHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
@@ -233,12 +235,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateHostedZoneRequestMarshaller();
-			var unmarshaller = CreateHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateHostedZoneRequest, CreateHostedZoneResponse>(createHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateHostedZoneRequestMarshaller();
+            var unmarshaller = CreateHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateHostedZoneRequest, CreateHostedZoneResponse>(createHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2012-12-12/healthcheck/health
@@ -260,12 +263,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest deleteHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteHealthCheckRequestMarshaller();
-			var unmarshaller = DeleteHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteHealthCheckRequest, DeleteHealthCheckResponse>(deleteHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteHealthCheckRequestMarshaller();
+            var unmarshaller = DeleteHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteHealthCheckRequest, DeleteHealthCheckResponse>(deleteHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-12-12/hostedzone/hosted zone
@@ -289,12 +293,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest deleteHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteHostedZoneRequestMarshaller();
-			var unmarshaller = DeleteHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteHostedZoneRequest, DeleteHostedZoneResponse>(deleteHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteHostedZoneRequestMarshaller();
+            var unmarshaller = DeleteHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteHostedZoneRequest, DeleteHostedZoneResponse>(deleteHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action returns the current status of a change batch request. The status is one of the following values:</para> <para>-
@@ -312,12 +317,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetChangeResponse> GetChangeAsync(GetChangeRequest getChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetChangeRequestMarshaller();
-			var unmarshaller = GetChangeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetChangeRequest, GetChangeResponse>(getChangeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetChangeRequestMarshaller();
+            var unmarshaller = GetChangeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetChangeRequest, GetChangeResponse>(getChangeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2012-12-12/healthcheck/health check ID </c> resource. </para>
@@ -334,12 +340,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest getHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetHealthCheckRequestMarshaller();
-			var unmarshaller = GetHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetHealthCheckRequest, GetHealthCheckResponse>(getHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetHealthCheckRequestMarshaller();
+            var unmarshaller = GetHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetHealthCheckRequest, GetHealthCheckResponse>(getHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2012-12-12/hostedzone/hosted zone ID </c>
@@ -357,12 +364,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest getHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetHostedZoneRequestMarshaller();
-			var unmarshaller = GetHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetHostedZoneRequest, GetHostedZoneResponse>(getHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetHostedZoneRequestMarshaller();
+            var unmarshaller = GetHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetHostedZoneRequest, GetHostedZoneResponse>(getHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
@@ -382,12 +390,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest listHealthChecksRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListHealthChecksRequestMarshaller();
-			var unmarshaller = ListHealthChecksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListHealthChecksRequest, ListHealthChecksResponse>(listHealthChecksRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListHealthChecksRequestMarshaller();
+            var unmarshaller = ListHealthChecksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListHealthChecksRequest, ListHealthChecksResponse>(listHealthChecksRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
@@ -407,12 +416,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest listHostedZonesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListHostedZonesRequestMarshaller();
-			var unmarshaller = ListHostedZonesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListHostedZonesRequest, ListHostedZonesResponse>(listHostedZonesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListHostedZonesRequestMarshaller();
+            var unmarshaller = ListHostedZonesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListHostedZonesRequest, ListHostedZonesResponse>(listHostedZonesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name
@@ -451,11 +461,12 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest listResourceRecordSetsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListResourceRecordSetsRequestMarshaller();
-			var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListResourceRecordSetsRequest, ListResourceRecordSetsResponse>(listResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new ListResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListResourceRecordSetsRequest, ListResourceRecordSetsResponse>(listResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

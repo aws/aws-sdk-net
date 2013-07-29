@@ -38,9 +38,9 @@ namespace Amazon.DynamoDBv2
     /// DynamoDB API. </para>
     /// </summary>
 	public partial class AmazonDynamoDBClient : AmazonWebServiceClient, Amazon.DynamoDBv2.IAmazonDynamoDB
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -237,17 +237,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
-		{
-			var task = BatchGetItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = BatchGetItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetItem operation.
@@ -260,12 +260,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchGetItemRequestMarshaller();
-			var unmarshaller = BatchGetItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchGetItemRequest, BatchGetItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchGetItemRequestMarshaller();
+            var unmarshaller = BatchGetItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchGetItemRequest, BatchGetItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more tables. A single call to <i>BatchWriteItem</i> can
@@ -310,17 +311,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
-		{
-			var task = BatchWriteItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = BatchWriteItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the BatchWriteItem operation.
@@ -333,12 +334,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchWriteItemRequestMarshaller();
-			var unmarshaller = BatchWriteItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchWriteItemRequest, BatchWriteItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchWriteItemRequestMarshaller();
+            var unmarshaller = BatchWriteItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchWriteItemRequest, BatchWriteItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <i>CreateTable</i> operation adds a new table to your account. In an AWS account, table names must be unique within each region.
@@ -359,17 +361,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public CreateTableResponse CreateTable(CreateTableRequest request)
-		{
-			var task = CreateTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTable operation.
@@ -382,12 +384,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateTableRequestMarshaller();
-			var unmarshaller = CreateTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateTableRequest, CreateTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateTableRequestMarshaller();
+            var unmarshaller = CreateTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateTableRequest, CreateTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or
@@ -408,17 +411,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public DeleteItemResponse DeleteItem(DeleteItemRequest request)
-		{
-			var task = DeleteItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
@@ -431,12 +434,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteItemRequestMarshaller();
-			var unmarshaller = DeleteItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteItemRequest, DeleteItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteItemRequestMarshaller();
+            var unmarshaller = DeleteItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteItemRequest, DeleteItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in
@@ -459,17 +463,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public DeleteTableResponse DeleteTable(DeleteTableRequest request)
-		{
-			var task = DeleteTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTable operation.
@@ -482,12 +486,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTableRequestMarshaller();
-			var unmarshaller = DeleteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTableRequest, DeleteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTableRequestMarshaller();
+            var unmarshaller = DeleteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTableRequest, DeleteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any
@@ -502,17 +507,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public DescribeTableResponse DescribeTable(DescribeTableRequest request)
-		{
-			var task = DescribeTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTable operation.
@@ -525,12 +530,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTableRequestMarshaller();
-			var unmarshaller = DescribeTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTableRequest, DescribeTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTableRequestMarshaller();
+            var unmarshaller = DescribeTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTableRequest, DescribeTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <i>GetItem</i> operation returns a set of attributes for the item with the given primary key. If there is no matching item,
@@ -547,17 +553,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public GetItemResponse GetItem(GetItemRequest request)
-		{
-			var task = GetItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -570,12 +576,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetItemResponse> GetItemAsync(GetItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetItemRequestMarshaller();
-			var unmarshaller = GetItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetItemRequest, GetItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetItemRequestMarshaller();
+            var unmarshaller = GetItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetItemRequest, GetItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
@@ -587,17 +594,17 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public ListTablesResponse ListTables(ListTablesRequest request)
-		{
-			var task = ListTablesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListTablesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListTables operation.
@@ -610,12 +617,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListTablesRequestMarshaller();
-			var unmarshaller = ListTablesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListTablesRequest, ListTablesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListTablesRequestMarshaller();
+            var unmarshaller = ListTablesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListTablesRequest, ListTablesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
@@ -627,9 +635,9 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public ListTablesResponse ListTables()
-		{
-			return this.ListTables(new ListTablesRequest());
-		}
+        {
+            return this.ListTables(new ListTablesRequest());
+        }
  
         /// <summary>
         /// <para>Creates a new item, or replaces an old item with a new item. If an item already exists in the specified table with the same primary
@@ -654,17 +662,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public PutItemResponse PutItem(PutItemRequest request)
-		{
-			var task = PutItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
@@ -677,12 +685,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutItemResponse> PutItemAsync(PutItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutItemRequestMarshaller();
-			var unmarshaller = PutItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutItemRequest, PutItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutItemRequestMarshaller();
+            var unmarshaller = PutItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutItemRequest, PutItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>A <i>Query</i> operation directly accesses items from a table using the table primary key, or from an index using the index key. You
@@ -704,17 +713,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public QueryResponse Query(QueryRequest request)
-		{
-			var task = QueryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = QueryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Query operation.
@@ -727,12 +736,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<QueryResponse> QueryAsync(QueryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new QueryRequestMarshaller();
-			var unmarshaller = QueryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, QueryRequest, QueryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new QueryRequestMarshaller();
+            var unmarshaller = QueryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, QueryRequest, QueryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB
@@ -752,17 +762,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public ScanResponse Scan(ScanRequest request)
-		{
-			var task = ScanAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ScanAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Scan operation.
@@ -775,12 +785,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ScanResponse> ScanAsync(ScanRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ScanRequestMarshaller();
-			var unmarshaller = ScanResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ScanRequest, ScanResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ScanRequestMarshaller();
+            var unmarshaller = ScanResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ScanRequest, ScanResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute
@@ -799,17 +810,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public UpdateItemResponse UpdateItem(UpdateItemRequest request)
-		{
-			var task = UpdateItemAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -822,12 +833,13 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateItemRequestMarshaller();
-			var unmarshaller = UpdateItemResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateItemRequest, UpdateItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateItemRequestMarshaller();
+            var unmarshaller = UpdateItemResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateItemRequest, UpdateItemResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of
@@ -850,17 +862,17 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="T:Amazon.DynamoDBv2.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.DynamoDBv2.Model.InternalServerErrorException" />
 		public UpdateTableResponse UpdateTable(UpdateTableRequest request)
-		{
-			var task = UpdateTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTable operation.
@@ -873,11 +885,12 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateTableRequestMarshaller();
-			var unmarshaller = UpdateTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateTableRequest, UpdateTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateTableRequestMarshaller();
+            var unmarshaller = UpdateTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateTableRequest, UpdateTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

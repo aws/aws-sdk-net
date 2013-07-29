@@ -40,9 +40,9 @@ namespace Amazon.SecurityToken
     /// the abbreviated form IAM. All copyrights and legal protections still apply. </para>
     /// </summary>
 	public partial class AmazonSecurityTokenServiceClient : AmazonWebServiceClient, Amazon.SecurityToken.IAmazonSecurityTokenService
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -192,12 +192,13 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest assumeRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssumeRoleRequestMarshaller();
-			var unmarshaller = AssumeRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(assumeRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssumeRoleRequestMarshaller();
+            var unmarshaller = AssumeRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(assumeRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web
@@ -235,12 +236,13 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
-			var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(assumeRoleWithWebIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(assumeRoleWithWebIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a
@@ -270,12 +272,13 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest getFederationTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetFederationTokenRequestMarshaller();
-			var unmarshaller = GetFederationTokenResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(getFederationTokenRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetFederationTokenRequestMarshaller();
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(getFederationTokenRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an access key ID, a secret access
@@ -299,11 +302,12 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest getSessionTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSessionTokenRequestMarshaller();
-			var unmarshaller = GetSessionTokenResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(getSessionTokenRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new GetSessionTokenRequestMarshaller();
+            var unmarshaller = GetSessionTokenResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(getSessionTokenRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

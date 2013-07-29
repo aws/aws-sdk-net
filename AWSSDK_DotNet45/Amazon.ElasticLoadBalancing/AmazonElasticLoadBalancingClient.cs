@@ -56,9 +56,9 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     /// </summary>
 	public partial class AmazonElasticLoadBalancingClient : AmazonWebServiceClient, Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -242,17 +242,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request)
-		{
-			var task = ApplySecurityGroupsToLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ApplySecurityGroupsToLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
@@ -265,12 +265,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ApplySecurityGroupsToLoadBalancerResponse> ApplySecurityGroupsToLoadBalancerAsync(ApplySecurityGroupsToLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
-			var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
+            var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer. </para> <para> The Loadbalancers evenly
@@ -287,17 +288,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException" />
 		public AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request)
-		{
-			var task = AttachLoadBalancerToSubnetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachLoadBalancerToSubnetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
@@ -310,12 +311,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachLoadBalancerToSubnetsResponse> AttachLoadBalancerToSubnetsAsync(AttachLoadBalancerToSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
-			var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables the client to define an application healthcheck for the instances. </para>
@@ -328,17 +330,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
-		{
-			var task = ConfigureHealthCheckAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ConfigureHealthCheckAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
@@ -351,12 +353,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ConfigureHealthCheckResponse> ConfigureHealthCheckAsync(ConfigureHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfigureHealthCheckRequestMarshaller();
-			var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfigureHealthCheckRequest, ConfigureHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfigureHealthCheckRequestMarshaller();
+            var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfigureHealthCheckRequest, ConfigureHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
@@ -380,17 +383,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
-		{
-			var task = CreateAppCookieStickinessPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateAppCookieStickinessPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
@@ -403,12 +406,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateAppCookieStickinessPolicyResponse> CreateAppCookieStickinessPolicyAsync(CreateAppCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
-			var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified
@@ -432,17 +436,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
-		{
-			var task = CreateLBCookieStickinessPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLBCookieStickinessPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
@@ -455,12 +459,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLBCookieStickinessPolicyResponse> CreateLBCookieStickinessPolicyAsync(CreateLBCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
-			var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new LoadBalancer. </para> <para> After the call has completed successfully, a new LoadBalancer is created; however, it will
@@ -491,17 +496,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyLoadBalancersException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException" />
 		public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
-		{
-			var task = CreateLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
@@ -514,12 +519,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerRequest, CreateLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerRequest, CreateLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
@@ -536,17 +542,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request)
-		{
-			var task = CreateLoadBalancerListenersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLoadBalancerListenersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
@@ -559,12 +565,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLoadBalancerListenersResponse> CreateLoadBalancerListenersAsync(CreateLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for
@@ -583,17 +590,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request)
-		{
-			var task = CreateLoadBalancerPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLoadBalancerPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
@@ -606,12 +613,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLoadBalancerPolicyResponse> CreateLoadBalancerPolicyAsync(CreateLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
-			var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified LoadBalancer. </para> <para> If attempting to recreate the LoadBalancer, the client must reconfigure all the
@@ -627,17 +635,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by AmazonElasticLoadBalancing.</returns>
 		public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
-		{
-			var task = DeleteLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
@@ -650,12 +658,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes listeners from the LoadBalancer for the specified port. </para>
@@ -668,17 +677,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request)
-		{
-			var task = DeleteLoadBalancerListenersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLoadBalancerListenersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
@@ -691,12 +700,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersAsync(DeleteLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a policy from the LoadBalancer. The specified policy must not be enabled for any listeners. </para>
@@ -710,17 +720,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
-		{
-			var task = DeleteLoadBalancerPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLoadBalancerPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
@@ -733,12 +743,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLoadBalancerPolicyResponse> DeleteLoadBalancerPolicyAsync(DeleteLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
-			var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic from the LoadBalancer.
@@ -754,17 +765,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidInstanceException" />
 		public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
-		{
-			var task = DeregisterInstancesFromLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeregisterInstancesFromLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
@@ -777,12 +788,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeregisterInstancesFromLoadBalancerResponse> DeregisterInstancesFromLoadBalancerAsync(DeregisterInstancesFromLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
-			var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
+            var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of all the
@@ -799,17 +811,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidInstanceException" />
 		public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
-		{
-			var task = DescribeInstanceHealthAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInstanceHealthAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
@@ -822,12 +834,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInstanceHealthResponse> DescribeInstanceHealthAsync(DescribeInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceHealthRequestMarshaller();
-			var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceHealthRequest, DescribeInstanceHealthResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceHealthRequestMarshaller();
+            var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceHealthRequest, DescribeInstanceHealthResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
@@ -844,17 +857,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request)
-		{
-			var task = DescribeLoadBalancerPoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLoadBalancerPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
@@ -867,12 +880,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
@@ -889,9 +903,9 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies()
-		{
-			return this.DescribeLoadBalancerPolicies(new DescribeLoadBalancerPoliciesRequest());
-		}
+        {
+            return this.DescribeLoadBalancerPolicies(new DescribeLoadBalancerPoliciesRequest());
+        }
  
         /// <summary>
         /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
@@ -906,17 +920,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException" />
 		public DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request)
-		{
-			var task = DescribeLoadBalancerPolicyTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLoadBalancerPolicyTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
@@ -929,12 +943,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
@@ -949,9 +964,9 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException" />
 		public DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes()
-		{
-			return this.DescribeLoadBalancerPolicyTypes(new DescribeLoadBalancerPolicyTypesRequest());
-		}
+        {
+            return this.DescribeLoadBalancerPolicyTypes(new DescribeLoadBalancerPolicyTypesRequest());
+        }
  
         /// <summary>
         /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
@@ -967,17 +982,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
-		{
-			var task = DescribeLoadBalancersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLoadBalancersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
@@ -990,12 +1005,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLoadBalancersRequestMarshaller();
-			var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLoadBalancersRequest, DescribeLoadBalancersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLoadBalancersRequest, DescribeLoadBalancersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
@@ -1011,9 +1027,9 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DescribeLoadBalancersResponse DescribeLoadBalancers()
-		{
-			return this.DescribeLoadBalancers(new DescribeLoadBalancersRequest());
-		}
+        {
+            return this.DescribeLoadBalancers(new DescribeLoadBalancersRequest());
+        }
  
         /// <summary>
         /// <para> Removes subnets from the set of configured subnets in the VPC for the LoadBalancer. </para> <para> After a subnet is removed all of
@@ -1029,17 +1045,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
-		{
-			var task = DetachLoadBalancerFromSubnetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachLoadBalancerFromSubnetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
@@ -1052,12 +1068,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachLoadBalancerFromSubnetsResponse> DetachLoadBalancerFromSubnetsAsync(DetachLoadBalancerFromSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
-			var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the LoadBalancer. </para> <para> There
@@ -1077,17 +1094,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
-		{
-			var task = DisableAvailabilityZonesForLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DisableAvailabilityZonesForLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
@@ -1100,12 +1117,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DisableAvailabilityZonesForLoadBalancerResponse> DisableAvailabilityZonesForLoadBalancerAsync(DisableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
-			var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer. </para> <para> The LoadBalancer evenly distributes requests across all
@@ -1121,17 +1139,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
-		{
-			var task = EnableAvailabilityZonesForLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EnableAvailabilityZonesForLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
@@ -1144,12 +1162,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EnableAvailabilityZonesForLoadBalancerResponse> EnableAvailabilityZonesForLoadBalancerAsync(EnableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
-			var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
@@ -1168,17 +1187,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidInstanceException" />
 		public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
-		{
-			var task = RegisterInstancesWithLoadBalancerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RegisterInstancesWithLoadBalancerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
@@ -1191,12 +1210,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
-			var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
+            var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
@@ -1215,17 +1235,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException" />
 		public SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request)
-		{
-			var task = SetLoadBalancerListenerSSLCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetLoadBalancerListenerSSLCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
@@ -1238,12 +1258,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetLoadBalancerListenerSSLCertificateResponse> SetLoadBalancerListenerSSLCertificateAsync(SetLoadBalancerListenerSSLCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
-			var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
+            var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies.
@@ -1261,17 +1282,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
 		public SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request)
-		{
-			var task = SetLoadBalancerPoliciesForBackendServerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetLoadBalancerPoliciesForBackendServerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
@@ -1284,12 +1305,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetLoadBalancerPoliciesForBackendServerResponse> SetLoadBalancerPoliciesForBackendServerAsync(SetLoadBalancerPoliciesForBackendServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
-			var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates, updates, or disables a policy with a listener on the LoadBalancer. You can associate multiple policies with a listener.
@@ -1306,17 +1328,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerNotFoundException" />
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException" />
 		public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
-		{
-			var task = SetLoadBalancerPoliciesOfListenerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetLoadBalancerPoliciesOfListenerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.
@@ -1329,11 +1351,12 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
-			var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

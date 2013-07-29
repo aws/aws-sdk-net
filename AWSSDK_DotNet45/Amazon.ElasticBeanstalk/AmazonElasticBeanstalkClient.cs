@@ -37,9 +37,9 @@ namespace Amazon.ElasticBeanstalk
     /// .</para>
     /// </summary>
 	public partial class AmazonElasticBeanstalkClient : AmazonWebServiceClient, Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -218,17 +218,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CheckDNSAvailability service method, as returned by AmazonElasticBeanstalk.</returns>
 		public CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
-		{
-			var task = CheckDNSAvailabilityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CheckDNSAvailabilityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CheckDNSAvailability operation.
@@ -241,12 +241,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CheckDNSAvailabilityRequestMarshaller();
-			var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CheckDNSAvailabilityRequest, CheckDNSAvailabilityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CheckDNSAvailabilityRequest, CheckDNSAvailabilityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
@@ -261,17 +262,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyApplicationsException" />
 		public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
-		{
-			var task = CreateApplicationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
@@ -284,12 +285,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateApplicationRequestMarshaller();
-			var unmarshaller = CreateApplicationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateApplicationRequest, CreateApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateApplicationRequestMarshaller();
+            var unmarshaller = CreateApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateApplicationRequest, CreateApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates an application version for the specified application.</para> <para><b>NOTE:</b>Once you create an application version with a
@@ -307,17 +309,17 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyApplicationVersionsException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException" />
 		public CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
-		{
-			var task = CreateApplicationVersionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplicationVersion operation.
@@ -330,12 +332,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateApplicationVersionRequestMarshaller();
-			var unmarshaller = CreateApplicationVersionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateApplicationVersionRequest, CreateApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var unmarshaller = CreateApplicationVersionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateApplicationVersionRequest, CreateApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of
@@ -356,17 +359,17 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException" />
 		public CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
-		{
-			var task = CreateConfigurationTemplateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConfigurationTemplate operation.
@@ -379,12 +382,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateConfigurationTemplateRequestMarshaller();
-			var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Launches an environment for the specified application using the specified configuration. </para>
@@ -398,17 +402,17 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
-		{
-			var task = CreateEnvironmentAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEnvironment operation.
@@ -421,12 +425,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateEnvironmentRequestMarshaller();
-			var unmarshaller = CreateEnvironmentResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateEnvironmentRequest, CreateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var unmarshaller = CreateEnvironmentResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateEnvironmentRequest, CreateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
@@ -441,17 +446,17 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyBucketsException" />
 		public CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
-		{
-			var task = CreateStorageLocationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateStorageLocationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorageLocation operation.
@@ -464,12 +469,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateStorageLocationRequestMarshaller();
-			var unmarshaller = CreateStorageLocationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateStorageLocationRequest, CreateStorageLocationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var unmarshaller = CreateStorageLocationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateStorageLocationRequest, CreateStorageLocationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
@@ -484,9 +490,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.TooManyBucketsException" />
 		public CreateStorageLocationResponse CreateStorageLocation()
-		{
-			return this.CreateStorageLocation(new CreateStorageLocationRequest());
-		}
+        {
+            return this.CreateStorageLocation(new CreateStorageLocationRequest());
+        }
  
         /// <summary>
         /// <para> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted
@@ -498,17 +504,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.OperationInProgressException" />
 		public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
-		{
-			var task = DeleteApplicationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
@@ -521,12 +527,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteApplicationRequestMarshaller();
-			var unmarshaller = DeleteApplicationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteApplicationRequest, DeleteApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var unmarshaller = DeleteApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteApplicationRequest, DeleteApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified version from the specified application. </para> <para><b>NOTE:</b>You cannot delete an application version that
@@ -541,17 +548,17 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException" />
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException" />
 		public DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
-		{
-			var task = DeleteApplicationVersionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplicationVersion operation.
@@ -564,12 +571,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteApplicationVersionRequestMarshaller();
-			var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteApplicationVersionRequest, DeleteApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteApplicationVersionRequest, DeleteApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified configuration template.</para> <para><b>NOTE:</b>When you launch an environment using a configuration template,
@@ -582,17 +590,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.OperationInProgressException" />
 		public DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
-		{
-			var task = DeleteConfigurationTemplateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConfigurationTemplate operation.
@@ -605,12 +613,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
-			var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the draft configuration associated with the running environment. </para> <para> Updating a running environment with any
@@ -622,17 +631,17 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="deleteEnvironmentConfigurationRequest">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration
         /// service method on AmazonElasticBeanstalk.</param>
 		public DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
-		{
-			var task = DeleteEnvironmentConfigurationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteEnvironmentConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEnvironmentConfiguration operation.
@@ -645,12 +654,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
-			var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
+            var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the descriptions of existing applications.</para>
@@ -661,17 +671,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
-		{
-			var task = DescribeApplicationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeApplicationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplications operation.
@@ -684,12 +694,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeApplicationsRequestMarshaller();
-			var unmarshaller = DescribeApplicationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeApplicationsRequest, DescribeApplicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeApplicationsRequestMarshaller();
+            var unmarshaller = DescribeApplicationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeApplicationsRequest, DescribeApplicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the descriptions of existing applications.</para>
@@ -700,9 +711,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeApplicationsResponse DescribeApplications()
-		{
-			return this.DescribeApplications(new DescribeApplicationsRequest());
-		}
+        {
+            return this.DescribeApplications(new DescribeApplicationsRequest());
+        }
  
         /// <summary>
         /// <para>Returns descriptions for existing application versions.</para>
@@ -713,17 +724,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
-		{
-			var task = DescribeApplicationVersionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeApplicationVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplicationVersions operation.
@@ -736,12 +747,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeApplicationVersionsRequestMarshaller();
-			var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeApplicationVersionsRequest, DescribeApplicationVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
+            var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeApplicationVersionsRequest, DescribeApplicationVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns descriptions for existing application versions.</para>
@@ -752,9 +764,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeApplicationVersionsResponse DescribeApplicationVersions()
-		{
-			return this.DescribeApplicationVersions(new DescribeApplicationVersionsRequest());
-		}
+        {
+            return this.DescribeApplicationVersions(new DescribeApplicationVersionsRequest());
+        }
  
         /// <summary>
         /// <para> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution
@@ -767,17 +779,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
-		{
-			var task = DescribeConfigurationOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeConfigurationOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationOptions operation.
@@ -790,12 +802,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
-			var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution
@@ -808,9 +821,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeConfigurationOptionsResponse DescribeConfigurationOptions()
-		{
-			return this.DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest());
-		}
+        {
+            return this.DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the
@@ -829,17 +842,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
-		{
-			var task = DescribeConfigurationSettingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeConfigurationSettingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationSettings operation.
@@ -852,12 +865,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
-			var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns AWS resources for this environment.</para>
@@ -870,17 +884,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
-		{
-			var task = DescribeEnvironmentResourcesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEnvironmentResourcesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironmentResources operation.
@@ -893,12 +907,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
-			var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns descriptions for existing environments.</para>
@@ -909,17 +924,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
-		{
-			var task = DescribeEnvironmentsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEnvironmentsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironments operation.
@@ -932,12 +947,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEnvironmentsRequestMarshaller();
-			var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEnvironmentsRequest, DescribeEnvironmentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEnvironmentsRequest, DescribeEnvironmentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns descriptions for existing environments.</para>
@@ -948,9 +964,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeEnvironmentsResponse DescribeEnvironments()
-		{
-			return this.DescribeEnvironments(new DescribeEnvironmentsRequest());
-		}
+        {
+            return this.DescribeEnvironments(new DescribeEnvironmentsRequest());
+        }
  
         /// <summary>
         /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
@@ -962,17 +978,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
-		{
-			var task = DescribeEventsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -985,12 +1001,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventsRequestMarshaller();
-			var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
@@ -1002,9 +1019,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
 		public DescribeEventsResponse DescribeEvents()
-		{
-			return this.DescribeEvents(new DescribeEventsRequest());
-		}
+        {
+            return this.DescribeEvents(new DescribeEventsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of the available solution stack names. </para>
@@ -1015,17 +1032,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
 		public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
-		{
-			var task = ListAvailableSolutionStacksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListAvailableSolutionStacksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListAvailableSolutionStacks operation.
@@ -1038,12 +1055,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
-			var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
+            var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available solution stack names. </para>
@@ -1054,9 +1072,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
 		public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks()
-		{
-			return this.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
-		}
+        {
+            return this.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
+        }
  
         /// <summary>
         /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
@@ -1068,17 +1086,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
-		{
-			var task = RebuildEnvironmentAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebuildEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebuildEnvironment operation.
@@ -1091,12 +1109,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebuildEnvironmentRequestMarshaller();
-			var unmarshaller = RebuildEnvironmentResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebuildEnvironmentRequest, RebuildEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var unmarshaller = RebuildEnvironmentResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebuildEnvironmentRequest, RebuildEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Initiates a request to compile the specified type of information of the deployed environment. </para> <para> Setting the
@@ -1111,17 +1130,17 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="requestEnvironmentInfoRequest">Container for the necessary parameters to execute the RequestEnvironmentInfo service method on
         /// AmazonElasticBeanstalk.</param>
 		public RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
-		{
-			var task = RequestEnvironmentInfoAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RequestEnvironmentInfoAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RequestEnvironmentInfo operation.
@@ -1134,12 +1153,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RequestEnvironmentInfoRequestMarshaller();
-			var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RequestEnvironmentInfoRequest, RequestEnvironmentInfoResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RequestEnvironmentInfoRequest, RequestEnvironmentInfoResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Causes the environment to restart the application container server running on each Amazon EC2 instance. </para>
@@ -1148,17 +1168,17 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="restartAppServerRequest">Container for the necessary parameters to execute the RestartAppServer service method on
         /// AmazonElasticBeanstalk.</param>
 		public RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
-		{
-			var task = RestartAppServerAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RestartAppServerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RestartAppServer operation.
@@ -1171,12 +1191,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RestartAppServerRequestMarshaller();
-			var unmarshaller = RestartAppServerResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RestartAppServerRequest, RestartAppServerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RestartAppServerRequestMarshaller();
+            var unmarshaller = RestartAppServerResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RestartAppServerRequest, RestartAppServerResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Retrieves the compiled information from a RequestEnvironmentInfo request. </para> <para>Related Topics</para>
@@ -1191,17 +1212,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by AmazonElasticBeanstalk.</returns>
 		public RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
-		{
-			var task = RetrieveEnvironmentInfoAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RetrieveEnvironmentInfoAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveEnvironmentInfo operation.
@@ -1214,12 +1235,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
-			var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Swaps the CNAMEs of two environments. </para>
@@ -1228,17 +1250,17 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
         /// AmazonElasticBeanstalk.</param>
 		public SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
-		{
-			var task = SwapEnvironmentCNAMEsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SwapEnvironmentCNAMEsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
@@ -1251,12 +1273,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
-			var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
+            var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Terminates the specified environment. </para>
@@ -1269,17 +1292,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
-		{
-			var task = TerminateEnvironmentAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TerminateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateEnvironment operation.
@@ -1292,12 +1315,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateEnvironmentRequestMarshaller();
-			var unmarshaller = TerminateEnvironmentResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateEnvironmentRequest, TerminateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var unmarshaller = TerminateEnvironmentResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateEnvironmentRequest, TerminateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the specified application to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
@@ -1309,17 +1333,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by AmazonElasticBeanstalk.</returns>
 		public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
-		{
-			var task = UpdateApplicationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
@@ -1332,12 +1356,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateApplicationRequestMarshaller();
-			var unmarshaller = UpdateApplicationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateApplicationRequest, UpdateApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateApplicationRequestMarshaller();
+            var unmarshaller = UpdateApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateApplicationRequest, UpdateApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the specified application version to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
@@ -1349,17 +1374,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplicationVersion service method, as returned by AmazonElasticBeanstalk.</returns>
 		public UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
-		{
-			var task = UpdateApplicationVersionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplicationVersion operation.
@@ -1372,12 +1397,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateApplicationVersionRequestMarshaller();
-			var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateApplicationVersionRequest, UpdateApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateApplicationVersionRequestMarshaller();
+            var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateApplicationVersionRequest, UpdateApplicationVersionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the specified configuration template to have the specified properties or configuration option values. </para>
@@ -1396,17 +1422,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
-		{
-			var task = UpdateConfigurationTemplateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateConfigurationTemplate operation.
@@ -1419,12 +1445,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
-			var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new
@@ -1441,17 +1468,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
-		{
-			var task = UpdateEnvironmentAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateEnvironment operation.
@@ -1464,12 +1491,13 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateEnvironmentRequestMarshaller();
-			var unmarshaller = UpdateEnvironmentResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateEnvironmentRequest, UpdateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var unmarshaller = UpdateEnvironmentResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateEnvironmentRequest, UpdateEnvironmentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are
@@ -1484,17 +1512,17 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
 		public ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
-		{
-			var task = ValidateConfigurationSettingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ValidateConfigurationSettingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateConfigurationSettings operation.
@@ -1507,11 +1535,12 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
-			var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

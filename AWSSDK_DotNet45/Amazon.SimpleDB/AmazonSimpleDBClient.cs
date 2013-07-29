@@ -38,9 +38,9 @@ namespace Amazon.SimpleDB
     /// more information. </para>
     /// </summary>
 	public partial class AmazonSimpleDBClient : AmazonWebServiceClient, Amazon.SimpleDB.IAmazonSimpleDB
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -230,17 +230,17 @@ namespace Amazon.SimpleDB
         /// <param name="batchDeleteAttributesRequest">Container for the necessary parameters to execute the BatchDeleteAttributes service method on
         /// AmazonSimpleDB.</param>
 		public BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
-		{
-			var task = BatchDeleteAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = BatchDeleteAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
@@ -253,12 +253,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchDeleteAttributesRequestMarshaller();
-			var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchDeleteAttributesRequestMarshaller();
+            var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>BatchPutAttributes</c> operation creates or replaces attributes within one or more items. By using this operation, the client
@@ -306,17 +307,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.NumberItemAttributesExceededException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
-		{
-			var task = BatchPutAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = BatchPutAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
@@ -329,12 +330,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchPutAttributesRequestMarshaller();
-			var unmarshaller = BatchPutAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchPutAttributesRequestMarshaller();
+            var unmarshaller = BatchPutAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
@@ -351,17 +353,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainsExceededException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public CreateDomainResponse CreateDomain(CreateDomainRequest request)
-		{
-			var task = CreateDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
@@ -374,12 +376,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDomainRequestMarshaller();
-			var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDomainRequestMarshaller();
+            var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </para>
@@ -398,17 +401,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.AttributeDoesNotExistException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
-		{
-			var task = DeleteAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
@@ -421,12 +424,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAttributesRequestMarshaller();
-			var unmarshaller = DeleteAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAttributesRequestMarshaller();
+            var unmarshaller = DeleteAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>DeleteDomain</c> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The
@@ -439,17 +443,17 @@ namespace Amazon.SimpleDB
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
-		{
-			var task = DeleteDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
@@ -462,12 +466,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDomainRequestMarshaller();
-			var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDomainRequestMarshaller();
+            var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and
@@ -482,17 +487,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
-		{
-			var task = DomainMetadataAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DomainMetadataAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
@@ -505,12 +510,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DomainMetadataRequestMarshaller();
-			var unmarshaller = DomainMetadataResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DomainMetadataRequestMarshaller();
+            var unmarshaller = DomainMetadataResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more
@@ -529,17 +535,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public GetAttributesResponse GetAttributes(GetAttributesRequest request)
-		{
-			var task = GetAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
@@ -552,12 +558,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetAttributesRequestMarshaller();
-			var unmarshaller = GetAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetAttributesRequestMarshaller();
+            var unmarshaller = GetAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
@@ -573,17 +580,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNextTokenException" />
 		public ListDomainsResponse ListDomains(ListDomainsRequest request)
-		{
-			var task = ListDomainsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListDomainsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -596,12 +603,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListDomainsRequestMarshaller();
-			var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
@@ -617,9 +625,9 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNextTokenException" />
 		public ListDomainsResponse ListDomains()
-		{
-			return this.ListDomains(new ListDomainsRequest());
-		}
+        {
+            return this.ListDomains(new ListDomainsRequest());
+        }
  
         /// <summary>
         /// <para> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of
@@ -659,17 +667,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.AttributeDoesNotExistException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
 		public PutAttributesResponse PutAttributes(PutAttributesRequest request)
-		{
-			var task = PutAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
@@ -682,12 +690,13 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutAttributesRequestMarshaller();
-			var unmarshaller = PutAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutAttributesRequestMarshaller();
+            var unmarshaller = PutAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that match the select expression. <c>Select</c> is
@@ -712,17 +721,17 @@ namespace Amazon.SimpleDB
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNumberValueTestsException" />
 		public SelectResponse Select(SelectRequest request)
-		{
-			var task = SelectAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SelectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.
@@ -735,11 +744,12 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SelectResponse> SelectAsync(SelectRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SelectRequestMarshaller();
-			var unmarshaller = SelectResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SelectRequest, SelectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SelectRequestMarshaller();
+            var unmarshaller = SelectResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SelectRequest, SelectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

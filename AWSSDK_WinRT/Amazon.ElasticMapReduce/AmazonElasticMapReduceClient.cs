@@ -34,9 +34,9 @@ namespace Amazon.ElasticMapReduce
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, Amazon.ElasticMapReduce.IAmazonElasticMapReduce
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -161,12 +161,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest addInstanceGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddInstanceGroupsRequestMarshaller();
-			var unmarshaller = AddInstanceGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddInstanceGroupsRequest, AddInstanceGroupsResponse>(addInstanceGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddInstanceGroupsRequest, AddInstanceGroupsResponse>(addInstanceGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </para> <para>If your job
@@ -189,12 +190,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest addJobFlowStepsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddJobFlowStepsRequestMarshaller();
-			var unmarshaller = AddJobFlowStepsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(addJobFlowStepsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(addJobFlowStepsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
@@ -223,12 +225,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest describeJobFlowsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeJobFlowsRequestMarshaller();
-			var unmarshaller = DescribeJobFlowsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeJobFlowsRequest, DescribeJobFlowsResponse>(describeJobFlowsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeJobFlowsRequest, DescribeJobFlowsResponse>(describeJobFlowsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
@@ -243,12 +246,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyInstanceGroupsRequestMarshaller();
-			var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(modifyInstanceGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(modifyInstanceGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the
@@ -274,12 +278,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest runJobFlowRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RunJobFlowRequestMarshaller();
-			var unmarshaller = RunJobFlowResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RunJobFlowRequest, RunJobFlowResponse>(runJobFlowRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RunJobFlowRequestMarshaller();
+            var unmarshaller = RunJobFlowResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RunJobFlowRequest, RunJobFlowResponse>(runJobFlowRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an
@@ -301,12 +306,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTerminationProtectionRequestMarshaller();
-			var unmarshaller = SetTerminationProtectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTerminationProtectionRequest, SetTerminationProtectionResponse>(setTerminationProtectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTerminationProtectionRequest, SetTerminationProtectionResponse>(setTerminationProtectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
@@ -323,12 +329,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetVisibleToAllUsersRequestMarshaller();
-			var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetVisibleToAllUsersRequest, SetVisibleToAllUsersResponse>(setVisibleToAllUsersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetVisibleToAllUsersRequest, SetVisibleToAllUsersResponse>(setVisibleToAllUsersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
@@ -346,11 +353,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest terminateJobFlowsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateJobFlowsRequestMarshaller();
-			var unmarshaller = TerminateJobFlowsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateJobFlowsRequest, TerminateJobFlowsResponse>(terminateJobFlowsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateJobFlowsRequest, TerminateJobFlowsResponse>(terminateJobFlowsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

@@ -36,9 +36,9 @@ namespace Amazon.ElastiCache
     /// hot. </para>
     /// </summary>
 	public partial class AmazonElastiCacheClient : AmazonWebServiceClient, Amazon.ElastiCache.IAmazonElastiCache
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -169,12 +169,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AuthorizeCacheSecurityGroupIngressResponse> AuthorizeCacheSecurityGroupIngressAsync(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeCacheSecurityGroupIngressRequest, AuthorizeCacheSecurityGroupIngressResponse>(authorizeCacheSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeCacheSecurityGroupIngressRequest, AuthorizeCacheSecurityGroupIngressResponse>(authorizeCacheSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Cluster. </para>
@@ -200,12 +201,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCacheClusterResponse> CreateCacheClusterAsync(CreateCacheClusterRequest createCacheClusterRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheClusterRequestMarshaller();
-			var unmarshaller = CreateCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheClusterRequest, CreateCacheClusterResponse>(createCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheClusterRequestMarshaller();
+            var unmarshaller = CreateCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheClusterRequest, CreateCacheClusterResponse>(createCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache Cluster.</para>
@@ -225,12 +227,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCacheParameterGroupResponse> CreateCacheParameterGroupAsync(CreateCacheParameterGroupRequest createCacheParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheParameterGroupRequestMarshaller();
-			var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheParameterGroupRequest, CreateCacheParameterGroupResponse>(createCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheParameterGroupRequestMarshaller();
+            var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheParameterGroupRequest, CreateCacheParameterGroupResponse>(createCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para> <para> Only use cache
@@ -251,12 +254,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCacheSecurityGroupResponse> CreateCacheSecurityGroupAsync(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheSecurityGroupRequest, CreateCacheSecurityGroupResponse>(createCacheSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheSecurityGroupRequest, CreateCacheSecurityGroupResponse>(createCacheSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Subnet Group. </para>
@@ -275,12 +279,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheSubnetGroupRequest, CreateCacheSubnetGroupResponse>(createCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheSubnetGroupRequest, CreateCacheSubnetGroupResponse>(createCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received
@@ -301,12 +306,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteCacheClusterResponse> DeleteCacheClusterAsync(DeleteCacheClusterRequest deleteCacheClusterRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheClusterRequestMarshaller();
-			var unmarshaller = DeleteCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheClusterRequest, DeleteCacheClusterResponse>(deleteCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheClusterRequestMarshaller();
+            var unmarshaller = DeleteCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheClusterRequest, DeleteCacheClusterResponse>(deleteCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified CacheParameterGroup. The CacheParameterGroup cannot be deleted if it is associated with any cache clusters.
@@ -324,12 +330,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteCacheParameterGroupResponse> DeleteCacheParameterGroupAsync(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResponse>(deleteCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResponse>(deleteCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a Cache Security Group. </para> <para><b>NOTE:</b>The specified Cache Security Group must not be associated with any Cache
@@ -347,12 +354,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteCacheSecurityGroupResponse> DeleteCacheSecurityGroupAsync(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResponse>(deleteCacheSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResponse>(deleteCacheSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a Cache Subnet Group. </para> <para><b>NOTE:</b>The specified Cache Subnet Group must not be associated with any Cache
@@ -368,12 +376,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteCacheSubnetGroupResponse> DeleteCacheSubnetGroupAsync(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResponse>(deleteCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResponse>(deleteCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
@@ -399,12 +408,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(DescribeCacheClustersRequest describeCacheClustersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheClustersRequestMarshaller();
-			var unmarshaller = DescribeCacheClustersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheClustersRequest, DescribeCacheClustersResponse>(describeCacheClustersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheClustersRequestMarshaller();
+            var unmarshaller = DescribeCacheClustersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheClustersRequest, DescribeCacheClustersResponse>(describeCacheClustersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available cache engines and their versions. </para>
@@ -418,12 +428,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
-			var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResponse>(describeCacheEngineVersionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResponse>(describeCacheEngineVersionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified, the list will contain only the
@@ -442,12 +453,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResponse>(describeCacheParameterGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResponse>(describeCacheParameterGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the detailed parameter list for a particular CacheParameterGroup. </para>
@@ -465,12 +477,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheParametersResponse> DescribeCacheParametersAsync(DescribeCacheParametersRequest describeCacheParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheParametersRequestMarshaller();
-			var unmarshaller = DescribeCacheParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheParametersRequest, DescribeCacheParametersResponse>(describeCacheParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheParametersRequestMarshaller();
+            var unmarshaller = DescribeCacheParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheParametersRequest, DescribeCacheParametersResponse>(describeCacheParametersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
@@ -489,12 +502,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResponse>(describeCacheSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResponse>(describeCacheSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
@@ -511,12 +525,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResponse>(describeCacheSubnetGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResponse>(describeCacheSubnetGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the default engine and system parameter information for the specified cache engine. </para>
@@ -533,12 +548,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
-			var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(describeEngineDefaultParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(describeEngineDefaultParametersRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
@@ -557,12 +573,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventsRequestMarshaller();
-			var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
@@ -580,12 +597,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
-			var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResponse>(describeReservedCacheNodesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResponse>(describeReservedCacheNodesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists available reserved Cache Node offerings. </para>
@@ -603,12 +621,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResponse>(describeReservedCacheNodesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResponse>(describeReservedCacheNodesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters
@@ -634,12 +653,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyCacheClusterResponse> ModifyCacheClusterAsync(ModifyCacheClusterRequest modifyCacheClusterRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheClusterRequestMarshaller();
-			var unmarshaller = ModifyCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheClusterRequest, ModifyCacheClusterResponse>(modifyCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheClusterRequestMarshaller();
+            var unmarshaller = ModifyCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheClusterRequest, ModifyCacheClusterResponse>(modifyCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a list of ParameterName and
@@ -659,12 +679,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyCacheParameterGroupResponse> ModifyCacheParameterGroupAsync(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
-			var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResponse>(modifyCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResponse>(modifyCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an existing Cache Subnet Group. </para>
@@ -683,12 +704,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyCacheSubnetGroupResponse> ModifyCacheSubnetGroupAsync(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheSubnetGroupRequest, ModifyCacheSubnetGroupResponse>(modifyCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheSubnetGroupRequest, ModifyCacheSubnetGroupResponse>(modifyCacheSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Purchases a reserved Cache Node offering. </para>
@@ -708,12 +730,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PurchaseReservedCacheNodesOfferingResponse> PurchaseReservedCacheNodesOfferingAsync(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedCacheNodesOfferingRequest, PurchaseReservedCacheNodesOfferingResponse>(purchaseReservedCacheNodesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedCacheNodesOfferingRequest, PurchaseReservedCacheNodesOfferingResponse>(purchaseReservedCacheNodesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the
@@ -733,12 +756,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RebootCacheClusterResponse> RebootCacheClusterAsync(RebootCacheClusterRequest rebootCacheClusterRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootCacheClusterRequestMarshaller();
-			var unmarshaller = RebootCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootCacheClusterRequest, RebootCacheClusterResponse>(rebootCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootCacheClusterRequestMarshaller();
+            var unmarshaller = RebootCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootCacheClusterRequest, RebootCacheClusterResponse>(rebootCacheClusterRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a CacheParameterGroup to the engine or system default value. To reset specific parameters submit a list of
@@ -759,12 +783,13 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResetCacheParameterGroupResponse> ResetCacheParameterGroupAsync(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetCacheParameterGroupRequestMarshaller();
-			var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetCacheParameterGroupRequest, ResetCacheParameterGroupResponse>(resetCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetCacheParameterGroupRequest, ResetCacheParameterGroupResponse>(resetCacheParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups. </para>
@@ -784,11 +809,12 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeCacheSecurityGroupIngressRequest, RevokeCacheSecurityGroupIngressResponse>(revokeCacheSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeCacheSecurityGroupIngressRequest, RevokeCacheSecurityGroupIngressResponse>(revokeCacheSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

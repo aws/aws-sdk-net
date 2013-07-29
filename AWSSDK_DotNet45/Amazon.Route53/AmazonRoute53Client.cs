@@ -34,9 +34,9 @@ namespace Amazon.Route53
     /// Interface for accessing AmazonRoute53.
     /// </summary>
 	public partial class AmazonRoute53Client : AmazonWebServiceClient, Amazon.Route53.IAmazonRoute53
-	{
+    {
 
-		AWS3Signer signer = new AWS3Signer();
+        AWS3Signer signer = new AWS3Signer();
         #region Constructors
 
         /// <summary>
@@ -232,17 +232,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
         /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
 		public ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
-		{
-			var task = ChangeResourceRecordSetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ChangeResourceRecordSetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeResourceRecordSets operation.
@@ -255,12 +255,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
-			var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
@@ -277,17 +278,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.HealthCheckAlreadyExistsException" />
         /// <exception cref="T:Amazon.Route53.Model.TooManyHealthChecksException" />
 		public CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
-		{
-			var task = CreateHealthCheckAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateHealthCheckAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHealthCheck operation.
@@ -300,12 +301,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateHealthCheckRequestMarshaller();
-			var unmarshaller = CreateHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateHealthCheckRequest, CreateHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateHealthCheckRequestMarshaller();
+            var unmarshaller = CreateHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateHealthCheckRequest, CreateHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
@@ -329,17 +331,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.TooManyHostedZonesException" />
         /// <exception cref="T:Amazon.Route53.Model.DelegationSetNotAvailableException" />
 		public CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
-		{
-			var task = CreateHostedZoneAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateHostedZoneAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHostedZone operation.
@@ -352,12 +354,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateHostedZoneRequestMarshaller();
-			var unmarshaller = CreateHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateHostedZoneRequest, CreateHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateHostedZoneRequestMarshaller();
+            var unmarshaller = CreateHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateHostedZoneRequest, CreateHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2012-12-12/healthcheck/health
@@ -376,17 +379,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.HealthCheckInUseException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
 		public DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
-		{
-			var task = DeleteHealthCheckAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteHealthCheckAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHealthCheck operation.
@@ -399,12 +402,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteHealthCheckRequestMarshaller();
-			var unmarshaller = DeleteHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteHealthCheckRequest, DeleteHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteHealthCheckRequestMarshaller();
+            var unmarshaller = DeleteHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteHealthCheckRequest, DeleteHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-12-12/hostedzone/hosted zone
@@ -425,17 +429,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
         /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
 		public DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
-		{
-			var task = DeleteHostedZoneAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteHostedZoneAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHostedZone operation.
@@ -448,12 +452,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteHostedZoneRequestMarshaller();
-			var unmarshaller = DeleteHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteHostedZoneRequest, DeleteHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteHostedZoneRequestMarshaller();
+            var unmarshaller = DeleteHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteHostedZoneRequest, DeleteHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action returns the current status of a change batch request. The status is one of the following values:</para> <para>-
@@ -468,17 +473,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.NoSuchChangeException" />
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public GetChangeResponse GetChange(GetChangeRequest request)
-		{
-			var task = GetChangeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetChangeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetChange operation.
@@ -491,12 +496,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetChangeRequestMarshaller();
-			var unmarshaller = GetChangeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetChangeRequest, GetChangeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetChangeRequestMarshaller();
+            var unmarshaller = GetChangeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetChangeRequest, GetChangeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2012-12-12/healthcheck/health check ID </c> resource. </para>
@@ -510,17 +516,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
 		public GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
-		{
-			var task = GetHealthCheckAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetHealthCheckAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheck operation.
@@ -533,12 +539,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetHealthCheckRequestMarshaller();
-			var unmarshaller = GetHealthCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetHealthCheckRequest, GetHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetHealthCheckRequestMarshaller();
+            var unmarshaller = GetHealthCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetHealthCheckRequest, GetHealthCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2012-12-12/hostedzone/hosted zone ID </c>
@@ -553,17 +560,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
 		public GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
-		{
-			var task = GetHostedZoneAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetHostedZoneAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostedZone operation.
@@ -576,12 +583,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetHostedZoneRequestMarshaller();
-			var unmarshaller = GetHostedZoneResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetHostedZoneRequest, GetHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetHostedZoneRequestMarshaller();
+            var unmarshaller = GetHostedZoneResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetHostedZoneRequest, GetHostedZoneResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
@@ -598,17 +606,17 @@ namespace Amazon.Route53
         /// 
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
-		{
-			var task = ListHealthChecksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListHealthChecksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListHealthChecks operation.
@@ -621,12 +629,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListHealthChecksRequestMarshaller();
-			var unmarshaller = ListHealthChecksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListHealthChecksRequest, ListHealthChecksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListHealthChecksRequestMarshaller();
+            var unmarshaller = ListHealthChecksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListHealthChecksRequest, ListHealthChecksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
@@ -643,9 +652,9 @@ namespace Amazon.Route53
         /// 
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHealthChecksResponse ListHealthChecks()
-		{
-			return this.ListHealthChecks(new ListHealthChecksRequest());
-		}
+        {
+            return this.ListHealthChecks(new ListHealthChecksRequest());
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
@@ -662,17 +671,17 @@ namespace Amazon.Route53
         /// 
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
-		{
-			var task = ListHostedZonesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListHostedZonesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListHostedZones operation.
@@ -685,12 +694,13 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListHostedZonesRequestMarshaller();
-			var unmarshaller = ListHostedZonesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListHostedZonesRequest, ListHostedZonesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListHostedZonesRequestMarshaller();
+            var unmarshaller = ListHostedZonesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListHostedZonesRequest, ListHostedZonesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
@@ -707,9 +717,9 @@ namespace Amazon.Route53
         /// 
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHostedZonesResponse ListHostedZones()
-		{
-			return this.ListHostedZones(new ListHostedZonesRequest());
-		}
+        {
+            return this.ListHostedZones(new ListHostedZonesRequest());
+        }
  
         /// <summary>
         /// <para>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name
@@ -745,17 +755,17 @@ namespace Amazon.Route53
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
 		public ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
-		{
-			var task = ListResourceRecordSetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListResourceRecordSetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListResourceRecordSets operation.
@@ -768,11 +778,12 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListResourceRecordSetsRequestMarshaller();
-			var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListResourceRecordSetsRequest, ListResourceRecordSetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new ListResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListResourceRecordSetsRequest, ListResourceRecordSetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

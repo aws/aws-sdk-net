@@ -43,9 +43,9 @@ namespace Amazon.DirectConnect
     /// </ul>
     /// </summary>
 	public partial class AmazonDirectConnectClient : AmazonWebServiceClient, Amazon.DirectConnect.IAmazonDirectConnect
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -231,17 +231,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
-		{
-			var task = CreateConnectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConnection operation.
@@ -254,12 +254,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateConnectionRequestMarshaller();
-			var unmarshaller = CreateConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateConnectionRequest, CreateConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateConnectionRequestMarshaller();
+            var unmarshaller = CreateConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateConnectionRequest, CreateConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
@@ -274,17 +275,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
-		{
-			var task = CreatePrivateVirtualInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePrivateVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePrivateVirtualInterface operation.
@@ -297,12 +298,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePrivateVirtualInterfaceResponse> CreatePrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
-			var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
+            var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
@@ -317,9 +319,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface()
-		{
-			return this.CreatePrivateVirtualInterface(new CreatePrivateVirtualInterfaceRequest());
-		}
+        {
+            return this.CreatePrivateVirtualInterface(new CreatePrivateVirtualInterfaceRequest());
+        }
  
         /// <summary>
         /// <para> Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual
@@ -334,17 +336,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
-		{
-			var task = CreatePublicVirtualInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePublicVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePublicVirtualInterface operation.
@@ -357,12 +359,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
-			var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
+            var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual
@@ -377,9 +380,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface()
-		{
-			return this.CreatePublicVirtualInterface(new CreatePublicVirtualInterfaceRequest());
-		}
+        {
+            return this.CreatePublicVirtualInterface(new CreatePublicVirtualInterfaceRequest());
+        }
  
         /// <summary>
         /// <para>Deletes the connection.</para> <para>Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You
@@ -395,17 +398,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
-		{
-			var task = DeleteConnectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConnection operation.
@@ -418,12 +421,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteConnectionRequestMarshaller();
-			var unmarshaller = DeleteConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteConnectionRequest, DeleteConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteConnectionRequestMarshaller();
+            var unmarshaller = DeleteConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteConnectionRequest, DeleteConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a virtual interface. </para>
@@ -437,17 +441,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
-		{
-			var task = DeleteVirtualInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualInterface operation.
@@ -460,12 +464,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVirtualInterfaceResponse> DeleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
-			var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
+            var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a virtual interface. </para>
@@ -479,9 +484,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DeleteVirtualInterfaceResponse DeleteVirtualInterface()
-		{
-			return this.DeleteVirtualInterface(new DeleteVirtualInterfaceRequest());
-		}
+        {
+            return this.DeleteVirtualInterface(new DeleteVirtualInterfaceRequest());
+        }
  
         /// <summary>
         /// <para>Displays details about a specific connection including the order steps for the connection and the current state of the connection
@@ -496,17 +501,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeConnectionDetailResponse DescribeConnectionDetail(DescribeConnectionDetailRequest request)
-		{
-			var task = DescribeConnectionDetailAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeConnectionDetailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnectionDetail operation.
@@ -519,12 +524,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeConnectionDetailResponse> DescribeConnectionDetailAsync(DescribeConnectionDetailRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConnectionDetailRequestMarshaller();
-			var unmarshaller = DescribeConnectionDetailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConnectionDetailRequest, DescribeConnectionDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConnectionDetailRequestMarshaller();
+            var unmarshaller = DescribeConnectionDetailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConnectionDetailRequest, DescribeConnectionDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays all connections in this region.</para> <para>If a connection ID is provided, it will only return this particular
@@ -539,17 +545,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
-		{
-			var task = DescribeConnectionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeConnectionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnections operation.
@@ -562,12 +568,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeConnectionsResponse> DescribeConnectionsAsync(DescribeConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConnectionsRequestMarshaller();
-			var unmarshaller = DescribeConnectionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConnectionsRequest, DescribeConnectionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConnectionsRequestMarshaller();
+            var unmarshaller = DescribeConnectionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConnectionsRequest, DescribeConnectionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays all connections in this region.</para> <para>If a connection ID is provided, it will only return this particular
@@ -582,9 +589,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeConnectionsResponse DescribeConnections()
-		{
-			return this.DescribeConnections(new DescribeConnectionsRequest());
-		}
+        {
+            return this.DescribeConnections(new DescribeConnectionsRequest());
+        }
  
         /// <summary>
         /// <para>Displays additional ordering step details for a specified offering.</para>
@@ -598,17 +605,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeOfferingDetailResponse DescribeOfferingDetail(DescribeOfferingDetailRequest request)
-		{
-			var task = DescribeOfferingDetailAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOfferingDetailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOfferingDetail operation.
@@ -621,12 +628,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOfferingDetailResponse> DescribeOfferingDetailAsync(DescribeOfferingDetailRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOfferingDetailRequestMarshaller();
-			var unmarshaller = DescribeOfferingDetailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOfferingDetailRequest, DescribeOfferingDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOfferingDetailRequestMarshaller();
+            var unmarshaller = DescribeOfferingDetailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOfferingDetailRequest, DescribeOfferingDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes one or more of the offerings that are currently available for creating new connections. The results include offerings for
@@ -641,17 +649,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeOfferingsResponse DescribeOfferings(DescribeOfferingsRequest request)
-		{
-			var task = DescribeOfferingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOfferings operation.
@@ -664,12 +672,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeOfferingsResponse> DescribeOfferingsAsync(DescribeOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOfferingsRequestMarshaller();
-			var unmarshaller = DescribeOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOfferingsRequest, DescribeOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOfferingsRequestMarshaller();
+            var unmarshaller = DescribeOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOfferingsRequest, DescribeOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes one or more of the offerings that are currently available for creating new connections. The results include offerings for
@@ -684,9 +693,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeOfferingsResponse DescribeOfferings()
-		{
-			return this.DescribeOfferings(new DescribeOfferingsRequest());
-		}
+        {
+            return this.DescribeOfferings(new DescribeOfferingsRequest());
+        }
  
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
@@ -702,17 +711,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
-		{
-			var task = DescribeVirtualGatewaysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVirtualGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualGateways operation.
@@ -725,12 +734,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVirtualGatewaysResponse> DescribeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
-			var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
+            var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
@@ -746,9 +756,9 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeVirtualGatewaysResponse DescribeVirtualGateways()
-		{
-			return this.DescribeVirtualGateways(new DescribeVirtualGatewaysRequest());
-		}
+        {
+            return this.DescribeVirtualGateways(new DescribeVirtualGatewaysRequest());
+        }
  
         /// <summary>
         /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces
@@ -765,17 +775,17 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
-		{
-			var task = DescribeVirtualInterfacesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVirtualInterfacesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualInterfaces operation.
@@ -788,12 +798,13 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
-			var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
+            var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces
@@ -810,8 +821,8 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		public DescribeVirtualInterfacesResponse DescribeVirtualInterfaces()
-		{
-			return this.DescribeVirtualInterfaces(new DescribeVirtualInterfacesRequest());
-		}
-	}
+        {
+            return this.DescribeVirtualInterfaces(new DescribeVirtualInterfacesRequest());
+        }
+    }
 }

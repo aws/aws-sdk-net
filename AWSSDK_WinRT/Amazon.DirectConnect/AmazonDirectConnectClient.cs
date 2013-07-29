@@ -43,9 +43,9 @@ namespace Amazon.DirectConnect
     /// </ul>
     /// </summary>
 	public partial class AmazonDirectConnectClient : AmazonWebServiceClient, Amazon.DirectConnect.IAmazonDirectConnect
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -175,12 +175,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest createConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateConnectionRequestMarshaller();
-			var unmarshaller = CreateConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateConnectionRequest, CreateConnectionResponse>(createConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateConnectionRequestMarshaller();
+            var unmarshaller = CreateConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateConnectionRequest, CreateConnectionResponse>(createConnectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
@@ -198,12 +199,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreatePrivateVirtualInterfaceResponse> CreatePrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
-			var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResponse>(createPrivateVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
+            var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResponse>(createPrivateVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual
@@ -221,12 +223,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
-			var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResponse>(createPublicVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
+            var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResponse>(createPublicVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the connection.</para> <para>Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You
@@ -245,12 +248,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteConnectionRequestMarshaller();
-			var unmarshaller = DeleteConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteConnectionRequest, DeleteConnectionResponse>(deleteConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteConnectionRequestMarshaller();
+            var unmarshaller = DeleteConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteConnectionRequest, DeleteConnectionResponse>(deleteConnectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a virtual interface. </para>
@@ -267,12 +271,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVirtualInterfaceResponse> DeleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
-			var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(deleteVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
+            var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(deleteVirtualInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays details about a specific connection including the order steps for the connection and the current state of the connection
@@ -290,12 +295,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeConnectionDetailResponse> DescribeConnectionDetailAsync(DescribeConnectionDetailRequest describeConnectionDetailRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConnectionDetailRequestMarshaller();
-			var unmarshaller = DescribeConnectionDetailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConnectionDetailRequest, DescribeConnectionDetailResponse>(describeConnectionDetailRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConnectionDetailRequestMarshaller();
+            var unmarshaller = DescribeConnectionDetailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConnectionDetailRequest, DescribeConnectionDetailResponse>(describeConnectionDetailRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays all connections in this region.</para> <para>If a connection ID is provided, it will only return this particular
@@ -313,12 +319,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeConnectionsResponse> DescribeConnectionsAsync(DescribeConnectionsRequest describeConnectionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConnectionsRequestMarshaller();
-			var unmarshaller = DescribeConnectionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConnectionsRequest, DescribeConnectionsResponse>(describeConnectionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConnectionsRequestMarshaller();
+            var unmarshaller = DescribeConnectionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConnectionsRequest, DescribeConnectionsResponse>(describeConnectionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays additional ordering step details for a specified offering.</para>
@@ -335,12 +342,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeOfferingDetailResponse> DescribeOfferingDetailAsync(DescribeOfferingDetailRequest describeOfferingDetailRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOfferingDetailRequestMarshaller();
-			var unmarshaller = DescribeOfferingDetailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOfferingDetailRequest, DescribeOfferingDetailResponse>(describeOfferingDetailRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOfferingDetailRequestMarshaller();
+            var unmarshaller = DescribeOfferingDetailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOfferingDetailRequest, DescribeOfferingDetailResponse>(describeOfferingDetailRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Describes one or more of the offerings that are currently available for creating new connections. The results include offerings for
@@ -358,12 +366,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeOfferingsResponse> DescribeOfferingsAsync(DescribeOfferingsRequest describeOfferingsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeOfferingsRequestMarshaller();
-			var unmarshaller = DescribeOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeOfferingsRequest, DescribeOfferingsResponse>(describeOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeOfferingsRequestMarshaller();
+            var unmarshaller = DescribeOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeOfferingsRequest, DescribeOfferingsResponse>(describeOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
@@ -382,12 +391,13 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVirtualGatewaysResponse> DescribeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
-			var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResponse>(describeVirtualGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
+            var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResponse>(describeVirtualGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces
@@ -407,11 +417,12 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
-			var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResponse>(describeVirtualInterfacesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
+            var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResponse>(describeVirtualInterfacesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

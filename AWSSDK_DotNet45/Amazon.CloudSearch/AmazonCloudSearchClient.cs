@@ -32,9 +32,9 @@ namespace Amazon.CloudSearch
     /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
     /// </summary>
 	public partial class AmazonCloudSearchClient : AmazonWebServiceClient, Amazon.CloudSearch.IAmazonCloudSearch
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -217,17 +217,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public CreateDomainResponse CreateDomain(CreateDomainRequest request)
-		{
-			var task = CreateDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
@@ -240,12 +240,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDomainRequestMarshaller();
-			var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDomainRequestMarshaller();
+            var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
@@ -263,17 +264,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
-		{
-			var task = DefineIndexFieldAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DefineIndexFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
@@ -286,12 +287,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DefineIndexFieldRequestMarshaller();
-			var unmarshaller = DefineIndexFieldResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DefineIndexFieldRequest, DefineIndexFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var unmarshaller = DefineIndexFieldResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DefineIndexFieldRequest, DefineIndexFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures a <c>RankExpression</c> for the search domain. Used to create new rank expressions and modify existing ones. If the
@@ -309,17 +311,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest request)
-		{
-			var task = DefineRankExpressionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DefineRankExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DefineRankExpression operation.
@@ -332,12 +334,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DefineRankExpressionResponse> DefineRankExpressionAsync(DefineRankExpressionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DefineRankExpressionRequestMarshaller();
-			var unmarshaller = DefineRankExpressionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DefineRankExpressionRequest, DefineRankExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DefineRankExpressionRequestMarshaller();
+            var unmarshaller = DefineRankExpressionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DefineRankExpressionRequest, DefineRankExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Permanently deletes a search domain and all of its data.</para>
@@ -351,17 +354,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
-		{
-			var task = DeleteDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
@@ -374,12 +377,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDomainRequestMarshaller();
-			var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDomainRequestMarshaller();
+            var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes an <c>IndexField</c> from the search domain.</para>
@@ -395,17 +399,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
-		{
-			var task = DeleteIndexFieldAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteIndexFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
@@ -418,12 +422,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteIndexFieldRequestMarshaller();
-			var unmarshaller = DeleteIndexFieldResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteIndexFieldRequest, DeleteIndexFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var unmarshaller = DeleteIndexFieldResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteIndexFieldRequest, DeleteIndexFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
@@ -439,17 +444,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest request)
-		{
-			var task = DeleteRankExpressionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteRankExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRankExpression operation.
@@ -462,12 +467,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteRankExpressionResponse> DeleteRankExpressionAsync(DeleteRankExpressionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRankExpressionRequestMarshaller();
-			var unmarshaller = DeleteRankExpressionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRankExpressionRequest, DeleteRankExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRankExpressionRequestMarshaller();
+            var unmarshaller = DeleteRankExpressionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRankExpressionRequest, DeleteRankExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets the default search field configured for the search domain.</para>
@@ -482,17 +488,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request)
-		{
-			var task = DescribeDefaultSearchFieldAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDefaultSearchFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultSearchField operation.
@@ -505,12 +511,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDefaultSearchFieldResponse> DescribeDefaultSearchFieldAsync(DescribeDefaultSearchFieldRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
-			var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDefaultSearchFieldRequest, DescribeDefaultSearchFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDefaultSearchFieldRequest, DescribeDefaultSearchFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
@@ -525,17 +532,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
-		{
-			var task = DescribeDomainsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDomainsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
@@ -548,12 +555,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDomainsRequestMarshaller();
-			var unmarshaller = DescribeDomainsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDomainsRequest, DescribeDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDomainsRequestMarshaller();
+            var unmarshaller = DescribeDomainsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDomainsRequest, DescribeDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
@@ -568,9 +576,9 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeDomainsResponse DescribeDomains()
-		{
-			return this.DescribeDomains(new DescribeDomainsRequest());
-		}
+        {
+            return this.DescribeDomains(new DescribeDomainsRequest());
+        }
  
         /// <summary>
         /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
@@ -586,17 +594,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
-		{
-			var task = DescribeIndexFieldsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeIndexFieldsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
@@ -609,12 +617,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeIndexFieldsRequestMarshaller();
-			var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeIndexFieldsRequest, DescribeIndexFieldsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeIndexFieldsRequest, DescribeIndexFieldsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank
@@ -630,17 +639,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest request)
-		{
-			var task = DescribeRankExpressionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeRankExpressionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRankExpressions operation.
@@ -653,12 +662,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeRankExpressionsResponse> DescribeRankExpressionsAsync(DescribeRankExpressionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRankExpressionsRequestMarshaller();
-			var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRankExpressionsRequest, DescribeRankExpressionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRankExpressionsRequestMarshaller();
+            var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRankExpressionsRequest, DescribeRankExpressionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
@@ -673,17 +683,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
-		{
-			var task = DescribeServiceAccessPoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeServiceAccessPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
@@ -696,12 +706,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
-			var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets the stemming dictionary configured for the search domain.</para>
@@ -716,17 +727,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest request)
-		{
-			var task = DescribeStemmingOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStemmingOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStemmingOptions operation.
@@ -739,12 +750,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStemmingOptionsResponse> DescribeStemmingOptionsAsync(DescribeStemmingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStemmingOptionsRequestMarshaller();
-			var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStemmingOptionsRequest, DescribeStemmingOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStemmingOptionsRequestMarshaller();
+            var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStemmingOptionsRequest, DescribeStemmingOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets the stopwords configured for the search domain.</para>
@@ -759,17 +771,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest request)
-		{
-			var task = DescribeStopwordOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeStopwordOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStopwordOptions operation.
@@ -782,12 +794,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeStopwordOptionsResponse> DescribeStopwordOptionsAsync(DescribeStopwordOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStopwordOptionsRequestMarshaller();
-			var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStopwordOptionsRequest, DescribeStopwordOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStopwordOptionsRequestMarshaller();
+            var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStopwordOptionsRequest, DescribeStopwordOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Gets the synonym dictionary configured for the search domain.</para>
@@ -802,17 +815,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest request)
-		{
-			var task = DescribeSynonymOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSynonymOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSynonymOptions operation.
@@ -825,12 +838,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSynonymOptionsResponse> DescribeSynonymOptionsAsync(DescribeSynonymOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSynonymOptionsRequestMarshaller();
-			var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSynonymOptionsRequest, DescribeSynonymOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSynonymOptionsRequestMarshaller();
+            var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSynonymOptionsRequest, DescribeSynonymOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Tells the search domain to start indexing its documents using the latest text processing options and <c>IndexFields</c> . This
@@ -847,17 +861,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
 		public IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
-		{
-			var task = IndexDocumentsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = IndexDocumentsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
@@ -870,12 +884,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new IndexDocumentsRequestMarshaller();
-			var unmarshaller = IndexDocumentsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, IndexDocumentsRequest, IndexDocumentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new IndexDocumentsRequestMarshaller();
+            var unmarshaller = IndexDocumentsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, IndexDocumentsRequest, IndexDocumentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
@@ -892,17 +907,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request)
-		{
-			var task = UpdateDefaultSearchFieldAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateDefaultSearchFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDefaultSearchField operation.
@@ -915,12 +930,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateDefaultSearchFieldResponse> UpdateDefaultSearchFieldAsync(UpdateDefaultSearchFieldRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
-			var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateDefaultSearchFieldRequest, UpdateDefaultSearchFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateDefaultSearchFieldRequest, UpdateDefaultSearchFieldResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
@@ -938,17 +954,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
-		{
-			var task = UpdateServiceAccessPoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateServiceAccessPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.
@@ -961,12 +977,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
-			var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
@@ -984,17 +1001,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest request)
-		{
-			var task = UpdateStemmingOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateStemmingOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStemmingOptions operation.
@@ -1007,12 +1024,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateStemmingOptionsResponse> UpdateStemmingOptionsAsync(UpdateStemmingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateStemmingOptionsRequestMarshaller();
-			var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateStemmingOptionsRequest, UpdateStemmingOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateStemmingOptionsRequestMarshaller();
+            var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateStemmingOptionsRequest, UpdateStemmingOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
@@ -1030,17 +1048,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest request)
-		{
-			var task = UpdateStopwordOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateStopwordOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStopwordOptions operation.
@@ -1053,12 +1071,13 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateStopwordOptionsResponse> UpdateStopwordOptionsAsync(UpdateStopwordOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateStopwordOptionsRequestMarshaller();
-			var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateStopwordOptionsRequest, UpdateStopwordOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateStopwordOptionsRequestMarshaller();
+            var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateStopwordOptionsRequest, UpdateStopwordOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
@@ -1076,17 +1095,17 @@ namespace Amazon.CloudSearch
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
 		public UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest request)
-		{
-			var task = UpdateSynonymOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateSynonymOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSynonymOptions operation.
@@ -1099,11 +1118,12 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateSynonymOptionsResponse> UpdateSynonymOptionsAsync(UpdateSynonymOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateSynonymOptionsRequestMarshaller();
-			var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateSynonymOptionsRequest, UpdateSynonymOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateSynonymOptionsRequestMarshaller();
+            var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateSynonymOptionsRequest, UpdateSynonymOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

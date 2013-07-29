@@ -37,9 +37,9 @@ namespace Amazon.AutoScaling
     /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
 	public partial class AmazonAutoScalingClient : AmazonWebServiceClient, Amazon.AutoScaling.IAmazonAutoScaling
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -221,17 +221,17 @@ namespace Amazon.AutoScaling
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException" />
 		public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
-		{
-			var task = CreateAutoScalingGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAutoScalingGroup operation.
@@ -244,12 +244,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAutoScalingGroupRequestMarshaller();
-			var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
@@ -266,17 +267,17 @@ namespace Amazon.AutoScaling
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException" />
 		public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
-		{
-			var task = CreateLaunchConfigurationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLaunchConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
@@ -289,12 +290,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLaunchConfigurationRequestMarshaller();
-			var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLaunchConfigurationRequestMarshaller();
+            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
@@ -308,17 +310,17 @@ namespace Amazon.AutoScaling
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException" />
 		public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
-		{
-			var task = CreateOrUpdateTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateOrUpdateTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOrUpdateTags operation.
@@ -331,12 +333,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateOrUpdateTagsRequestMarshaller();
-			var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateOrUpdateTagsRequestMarshaller();
+            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
@@ -350,17 +353,17 @@ namespace Amazon.AutoScaling
         /// <exception cref="T:Amazon.AutoScaling.Model.ResourceInUseException" />
         /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException" />
 		public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
-		{
-			var task = DeleteAutoScalingGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAutoScalingGroup operation.
@@ -373,12 +376,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
-			var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
+            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
@@ -390,17 +394,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.ResourceInUseException" />
 		public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
-		{
-			var task = DeleteLaunchConfigurationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLaunchConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLaunchConfiguration operation.
@@ -413,12 +417,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
-			var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
+            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
@@ -427,17 +432,17 @@ namespace Amazon.AutoScaling
         /// <param name="deleteNotificationConfigurationRequest">Container for the necessary parameters to execute the DeleteNotificationConfiguration
         /// service method on AmazonAutoScaling.</param>
 		public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
-		{
-			var task = DeleteNotificationConfigurationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteNotificationConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNotificationConfiguration operation.
@@ -450,12 +455,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
-			var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
+            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a policy created by PutScalingPolicy.</para>
@@ -464,17 +470,17 @@ namespace Amazon.AutoScaling
         /// <param name="deletePolicyRequest">Container for the necessary parameters to execute the DeletePolicy service method on
         /// AmazonAutoScaling.</param>
 		public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
-		{
-			var task = DeletePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeletePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
@@ -487,12 +493,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePolicyRequestMarshaller();
-			var unmarshaller = DeletePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePolicyRequest, DeletePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePolicyRequest, DeletePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
@@ -501,17 +508,17 @@ namespace Amazon.AutoScaling
         /// <param name="deleteScheduledActionRequest">Container for the necessary parameters to execute the DeleteScheduledAction service method on
         /// AmazonAutoScaling.</param>
 		public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
-		{
-			var task = DeleteScheduledActionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteScheduledActionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
@@ -524,12 +531,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteScheduledActionRequestMarshaller();
-			var unmarshaller = DeleteScheduledActionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteScheduledActionRequest, DeleteScheduledActionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteScheduledActionRequest, DeleteScheduledActionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
@@ -538,17 +546,17 @@ namespace Amazon.AutoScaling
         /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
         /// AmazonAutoScaling.</param>
 		public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
-		{
-			var task = DeleteTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -561,12 +569,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTagsRequestMarshaller();
-			var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
@@ -577,17 +586,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
-		{
-			var task = DescribeAdjustmentTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAdjustmentTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAdjustmentTypes operation.
@@ -600,12 +609,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
-			var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
+            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
@@ -616,9 +626,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes()
-		{
-			return this.DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
-		}
+        {
+            return this.DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
@@ -634,17 +644,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
-		{
-			var task = DescribeAutoScalingGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAutoScalingGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingGroups operation.
@@ -657,12 +667,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
@@ -678,9 +689,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups()
-		{
-			return this.DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
-		}
+        {
+            return this.DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
@@ -696,17 +707,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
-		{
-			var task = DescribeAutoScalingInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAutoScalingInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingInstances operation.
@@ -719,12 +730,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
@@ -740,9 +752,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances()
-		{
-			return this.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
-		}
+        {
+            return this.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
@@ -753,17 +765,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
-		{
-			var task = DescribeAutoScalingNotificationTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAutoScalingNotificationTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingNotificationTypes operation.
@@ -776,12 +788,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
-			var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
@@ -792,9 +805,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes()
-		{
-			return this.DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
-		}
+        {
+            return this.DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
@@ -808,17 +821,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
-		{
-			var task = DescribeLaunchConfigurationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeLaunchConfigurationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLaunchConfigurations operation.
@@ -831,12 +844,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
-			var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
@@ -850,9 +864,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations()
-		{
-			return this.DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
-		}
+        {
+            return this.DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
@@ -863,17 +877,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
-		{
-			var task = DescribeMetricCollectionTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeMetricCollectionTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricCollectionTypes operation.
@@ -886,12 +900,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
-			var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
+            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
@@ -902,9 +917,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
-		{
-			return this.DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
-		}
+        {
+            return this.DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
@@ -917,17 +932,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
-		{
-			var task = DescribeNotificationConfigurationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeNotificationConfigurationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNotificationConfigurations operation.
@@ -940,12 +955,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
-			var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
@@ -958,9 +974,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
-		{
-			return this.DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
-		}
+        {
+            return this.DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
+        }
  
         /// <summary>
         /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
@@ -974,17 +990,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
-		{
-			var task = DescribePoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribePoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePolicies operation.
@@ -997,12 +1013,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePoliciesRequestMarshaller();
-			var unmarshaller = DescribePoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePoliciesRequest, DescribePoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePoliciesRequestMarshaller();
+            var unmarshaller = DescribePoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePoliciesRequest, DescribePoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
@@ -1016,9 +1033,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribePoliciesResponse DescribePolicies()
-		{
-			return this.DescribePolicies(new DescribePoliciesRequest());
-		}
+        {
+            return this.DescribePolicies(new DescribePoliciesRequest());
+        }
  
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
@@ -1034,17 +1051,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
-		{
-			var task = DescribeScalingActivitiesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeScalingActivitiesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingActivities operation.
@@ -1057,12 +1074,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScalingActivitiesRequestMarshaller();
-			var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScalingActivitiesRequestMarshaller();
+            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
@@ -1078,9 +1096,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeScalingActivitiesResponse DescribeScalingActivities()
-		{
-			return this.DescribeScalingActivities(new DescribeScalingActivitiesRequest());
-		}
+        {
+            return this.DescribeScalingActivities(new DescribeScalingActivitiesRequest());
+        }
  
         /// <summary>
         /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
@@ -1091,17 +1109,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
-		{
-			var task = DescribeScalingProcessTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeScalingProcessTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingProcessTypes operation.
@@ -1114,12 +1132,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
-			var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
+            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
@@ -1130,9 +1149,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes()
-		{
-			return this.DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
-		}
+        {
+            return this.DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
+        }
  
         /// <summary>
         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
@@ -1146,17 +1165,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
-		{
-			var task = DescribeScheduledActionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeScheduledActionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
@@ -1169,12 +1188,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeScheduledActionsRequestMarshaller();
-			var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeScheduledActionsRequest, DescribeScheduledActionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeScheduledActionsRequest, DescribeScheduledActionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
@@ -1188,9 +1208,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeScheduledActionsResponse DescribeScheduledActions()
-		{
-			return this.DescribeScheduledActions(new DescribeScheduledActionsRequest());
-		}
+        {
+            return this.DescribeScheduledActions(new DescribeScheduledActionsRequest());
+        }
  
         /// <summary>
         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
@@ -1206,17 +1226,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
-		{
-			var task = DescribeTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -1229,12 +1249,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTagsRequestMarshaller();
-			var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
@@ -1250,9 +1271,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException" />
 		public DescribeTagsResponse DescribeTags()
-		{
-			return this.DescribeTags(new DescribeTagsRequest());
-		}
+        {
+            return this.DescribeTags(new DescribeTagsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
@@ -1263,17 +1284,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
-		{
-			var task = DescribeTerminationPolicyTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTerminationPolicyTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
@@ -1286,12 +1307,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
-			var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
@@ -1302,9 +1324,9 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
 		public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes()
-		{
-			return this.DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
-		}
+        {
+            return this.DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
+        }
  
         /// <summary>
         /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
@@ -1314,17 +1336,17 @@ namespace Amazon.AutoScaling
         /// <param name="disableMetricsCollectionRequest">Container for the necessary parameters to execute the DisableMetricsCollection service method
         /// on AmazonAutoScaling.</param>
 		public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
-		{
-			var task = DisableMetricsCollectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DisableMetricsCollectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DisableMetricsCollection operation.
@@ -1337,12 +1359,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableMetricsCollectionRequestMarshaller();
-			var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableMetricsCollectionRequest, DisableMetricsCollectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableMetricsCollectionRequestMarshaller();
+            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableMetricsCollectionRequest, DisableMetricsCollectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
@@ -1354,17 +1377,17 @@ namespace Amazon.AutoScaling
         /// <param name="enableMetricsCollectionRequest">Container for the necessary parameters to execute the EnableMetricsCollection service method on
         /// AmazonAutoScaling.</param>
 		public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
-		{
-			var task = EnableMetricsCollectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EnableMetricsCollectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMetricsCollection operation.
@@ -1377,12 +1400,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableMetricsCollectionRequestMarshaller();
-			var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableMetricsCollectionRequest, EnableMetricsCollectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableMetricsCollectionRequestMarshaller();
+            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableMetricsCollectionRequest, EnableMetricsCollectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
@@ -1393,17 +1417,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException" />
 		public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
-		{
-			var task = ExecutePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ExecutePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ExecutePolicy operation.
@@ -1416,12 +1440,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ExecutePolicyRequestMarshaller();
-			var unmarshaller = ExecutePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ExecutePolicyRequest, ExecutePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ExecutePolicyRequestMarshaller();
+            var unmarshaller = ExecutePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ExecutePolicyRequest, ExecutePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
@@ -1434,17 +1459,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
 		public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
-		{
-			var task = PutNotificationConfigurationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutNotificationConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutNotificationConfiguration operation.
@@ -1457,12 +1482,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutNotificationConfigurationRequestMarshaller();
-			var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutNotificationConfigurationRequest, PutNotificationConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutNotificationConfigurationRequestMarshaller();
+            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutNotificationConfigurationRequest, PutNotificationConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the
@@ -1477,17 +1503,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
 		public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
-		{
-			var task = PutScalingPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutScalingPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutScalingPolicy operation.
@@ -1500,12 +1526,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutScalingPolicyRequestMarshaller();
-			var unmarshaller = PutScalingPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutScalingPolicyRequest, PutScalingPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var unmarshaller = PutScalingPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutScalingPolicyRequest, PutScalingPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
@@ -1518,17 +1545,17 @@ namespace Amazon.AutoScaling
         /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException" />
 		public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
-		{
-			var task = PutScheduledUpdateGroupActionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutScheduledUpdateGroupActionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutScheduledUpdateGroupAction operation.
@@ -1541,12 +1568,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
-			var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
@@ -1555,17 +1583,17 @@ namespace Amazon.AutoScaling
         /// <param name="resumeProcessesRequest">Container for the necessary parameters to execute the ResumeProcesses service method on
         /// AmazonAutoScaling.</param>
 		public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
-		{
-			var task = ResumeProcessesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResumeProcessesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResumeProcesses operation.
@@ -1578,12 +1606,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResumeProcessesRequestMarshaller();
-			var unmarshaller = ResumeProcessesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResumeProcessesRequest, ResumeProcessesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResumeProcessesRequestMarshaller();
+            var unmarshaller = ResumeProcessesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResumeProcessesRequest, ResumeProcessesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
@@ -1606,17 +1635,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException" />
 		public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
-		{
-			var task = SetDesiredCapacityAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetDesiredCapacityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetDesiredCapacity operation.
@@ -1629,12 +1658,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetDesiredCapacityRequestMarshaller();
-			var unmarshaller = SetDesiredCapacityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetDesiredCapacityRequest, SetDesiredCapacityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetDesiredCapacityRequestMarshaller();
+            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetDesiredCapacityRequest, SetDesiredCapacityResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Sets the health status of an instance. </para>
@@ -1643,17 +1673,17 @@ namespace Amazon.AutoScaling
         /// <param name="setInstanceHealthRequest">Container for the necessary parameters to execute the SetInstanceHealth service method on
         /// AmazonAutoScaling.</param>
 		public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
-		{
-			var task = SetInstanceHealthAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetInstanceHealthAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetInstanceHealth operation.
@@ -1666,12 +1696,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetInstanceHealthRequestMarshaller();
-			var unmarshaller = SetInstanceHealthResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetInstanceHealthRequest, SetInstanceHealthResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetInstanceHealthRequestMarshaller();
+            var unmarshaller = SetInstanceHealthResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetInstanceHealthRequest, SetInstanceHealthResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
@@ -1684,17 +1715,17 @@ namespace Amazon.AutoScaling
         /// <param name="suspendProcessesRequest">Container for the necessary parameters to execute the SuspendProcesses service method on
         /// AmazonAutoScaling.</param>
 		public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
-		{
-			var task = SuspendProcessesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SuspendProcessesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SuspendProcesses operation.
@@ -1707,12 +1738,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SuspendProcessesRequestMarshaller();
-			var unmarshaller = SuspendProcessesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SuspendProcessesRequest, SuspendProcessesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SuspendProcessesRequestMarshaller();
+            var unmarshaller = SuspendProcessesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SuspendProcessesRequest, SuspendProcessesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
@@ -1726,17 +1758,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException" />
 		public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
-		{
-			var task = TerminateInstanceInAutoScalingGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TerminateInstanceInAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstanceInAutoScalingGroup operation.
@@ -1749,12 +1781,13 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
-			var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
+            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
@@ -1774,17 +1807,17 @@ namespace Amazon.AutoScaling
         /// 
         /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException" />
 		public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
-		{
-			var task = UpdateAutoScalingGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAutoScalingGroup operation.
@@ -1797,11 +1830,12 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
-			var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

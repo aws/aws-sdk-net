@@ -135,9 +135,9 @@ namespace Amazon.SimpleWorkflow
     /// </ul>
     /// </summary>
 	public partial class AmazonSimpleWorkflowClient : AmazonWebServiceClient, Amazon.SimpleWorkflow.IAmazonSimpleWorkflow
-	{
+    {
 
-		AWS3Signer signer = new AWS3Signer();
+        AWS3Signer signer = new AWS3Signer();
         #region Constructors
 
         /// <summary>
@@ -338,17 +338,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request)
-		{
-			var task = CountClosedWorkflowExecutionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CountClosedWorkflowExecutionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CountClosedWorkflowExecutions operation.
@@ -361,12 +361,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CountClosedWorkflowExecutionsResponse> CountClosedWorkflowExecutionsAsync(CountClosedWorkflowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CountClosedWorkflowExecutionsRequestMarshaller();
-			var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CountClosedWorkflowExecutionsRequest, CountClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CountClosedWorkflowExecutionsRequestMarshaller();
+            var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CountClosedWorkflowExecutionsRequest, CountClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the number of open workflow executions within the given domain that meet the specified filtering criteria. </para>
@@ -399,17 +400,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
-		{
-			var task = CountOpenWorkflowExecutionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CountOpenWorkflowExecutionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CountOpenWorkflowExecutions operation.
@@ -422,12 +423,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CountOpenWorkflowExecutionsResponse> CountOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CountOpenWorkflowExecutionsRequestMarshaller();
-			var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CountOpenWorkflowExecutionsRequest, CountOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CountOpenWorkflowExecutionsRequestMarshaller();
+            var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CountOpenWorkflowExecutionsRequest, CountOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and is not
@@ -453,17 +455,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
-		{
-			var task = CountPendingActivityTasksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CountPendingActivityTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingActivityTasks operation.
@@ -476,12 +478,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CountPendingActivityTasksResponse> CountPendingActivityTasksAsync(CountPendingActivityTasksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CountPendingActivityTasksRequestMarshaller();
-			var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CountPendingActivityTasksRequest, CountPendingActivityTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CountPendingActivityTasksRequestMarshaller();
+            var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CountPendingActivityTasksRequest, CountPendingActivityTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and is not
@@ -507,17 +510,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
-		{
-			var task = CountPendingDecisionTasksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CountPendingDecisionTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingDecisionTasks operation.
@@ -530,12 +533,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CountPendingDecisionTasksResponse> CountPendingDecisionTasksAsync(CountPendingDecisionTasksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CountPendingDecisionTasksRequestMarshaller();
-			var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CountPendingDecisionTasksRequest, CountPendingDecisionTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CountPendingDecisionTasksRequestMarshaller();
+            var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CountPendingDecisionTasksRequest, CountPendingDecisionTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deprecates the specified <i>activity type</i> .
@@ -567,17 +571,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
-		{
-			var task = DeprecateActivityTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeprecateActivityTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateActivityType operation.
@@ -590,12 +594,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeprecateActivityTypeResponse> DeprecateActivityTypeAsync(DeprecateActivityTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeprecateActivityTypeRequestMarshaller();
-			var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeprecateActivityTypeRequest, DeprecateActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeprecateActivityTypeRequestMarshaller();
+            var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeprecateActivityTypeRequest, DeprecateActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register
@@ -622,17 +627,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
-		{
-			var task = DeprecateDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeprecateDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateDomain operation.
@@ -645,12 +650,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeprecateDomainResponse> DeprecateDomainAsync(DeprecateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeprecateDomainRequestMarshaller();
-			var unmarshaller = DeprecateDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeprecateDomainRequest, DeprecateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeprecateDomainRequestMarshaller();
+            var unmarshaller = DeprecateDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeprecateDomainRequest, DeprecateDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deprecates the specified <i>workflow type</i> . After a workflow type has been deprecated, you cannot create new executions of that
@@ -682,17 +688,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
-		{
-			var task = DeprecateWorkflowTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeprecateWorkflowTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateWorkflowType operation.
@@ -705,12 +711,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeprecateWorkflowTypeResponse> DeprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeprecateWorkflowTypeRequestMarshaller();
-			var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeprecateWorkflowTypeRequest, DeprecateWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeprecateWorkflowTypeRequestMarshaller();
+            var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeprecateWorkflowTypeRequest, DeprecateWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the specified activity type. This includes configuration settings provided at registration time as well as
@@ -741,17 +748,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
-		{
-			var task = DescribeActivityTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeActivityTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeActivityType operation.
@@ -764,12 +771,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeActivityTypeResponse> DescribeActivityTypeAsync(DescribeActivityTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeActivityTypeRequestMarshaller();
-			var unmarshaller = DescribeActivityTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeActivityTypeRequest, DescribeActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeActivityTypeRequestMarshaller();
+            var unmarshaller = DescribeActivityTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeActivityTypeRequest, DescribeActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the specified domain including description and status. </para> <para> <b>Access Control</b> </para>
@@ -793,17 +801,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
-		{
-			var task = DescribeDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomain operation.
@@ -816,12 +824,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDomainRequestMarshaller();
-			var unmarshaller = DescribeDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDomainRequest, DescribeDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDomainRequestMarshaller();
+            var unmarshaller = DescribeDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDomainRequest, DescribeDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the specified workflow execution including its type and some statistics. </para> <para><b>NOTE:</b> This
@@ -846,17 +855,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
-		{
-			var task = DescribeWorkflowExecutionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeWorkflowExecutionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowExecution operation.
@@ -869,12 +878,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeWorkflowExecutionResponse> DescribeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeWorkflowExecutionRequestMarshaller();
-			var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeWorkflowExecutionRequest, DescribeWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeWorkflowExecutionRequestMarshaller();
+            var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeWorkflowExecutionRequest, DescribeWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the specified <i>workflow type</i> . This includes configuration settings specified when the type was
@@ -905,17 +915,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
-		{
-			var task = DescribeWorkflowTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeWorkflowTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowType operation.
@@ -928,12 +938,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeWorkflowTypeResponse> DescribeWorkflowTypeAsync(DescribeWorkflowTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeWorkflowTypeRequestMarshaller();
-			var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeWorkflowTypeRequest, DescribeWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeWorkflowTypeRequestMarshaller();
+            var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeWorkflowTypeRequest, DescribeWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages,
@@ -959,17 +970,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
-		{
-			var task = GetWorkflowExecutionHistoryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetWorkflowExecutionHistoryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetWorkflowExecutionHistory operation.
@@ -982,12 +993,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetWorkflowExecutionHistoryResponse> GetWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetWorkflowExecutionHistoryRequestMarshaller();
-			var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetWorkflowExecutionHistoryRequest, GetWorkflowExecutionHistoryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetWorkflowExecutionHistoryRequestMarshaller();
+            var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetWorkflowExecutionHistoryRequest, GetWorkflowExecutionHistoryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about all activities registered in the specified domain that match the specified name and registration status.
@@ -1013,17 +1025,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
-		{
-			var task = ListActivityTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListActivityTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListActivityTypes operation.
@@ -1036,12 +1048,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListActivityTypesResponse> ListActivityTypesAsync(ListActivityTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListActivityTypesRequestMarshaller();
-			var unmarshaller = ListActivityTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListActivityTypesRequest, ListActivityTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListActivityTypesRequestMarshaller();
+            var unmarshaller = ListActivityTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListActivityTypesRequest, ListActivityTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into
@@ -1075,17 +1088,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
-		{
-			var task = ListClosedWorkflowExecutionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListClosedWorkflowExecutionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListClosedWorkflowExecutions operation.
@@ -1098,12 +1111,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListClosedWorkflowExecutionsResponse> ListClosedWorkflowExecutionsAsync(ListClosedWorkflowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListClosedWorkflowExecutionsRequestMarshaller();
-			var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListClosedWorkflowExecutionsRequest, ListClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListClosedWorkflowExecutionsRequestMarshaller();
+            var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListClosedWorkflowExecutionsRequest, ListClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages,
@@ -1129,17 +1143,17 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
 		public ListDomainsResponse ListDomains(ListDomainsRequest request)
-		{
-			var task = ListDomainsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListDomainsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -1152,12 +1166,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListDomainsRequestMarshaller();
-			var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into
@@ -1191,17 +1206,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
-		{
-			var task = ListOpenWorkflowExecutionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListOpenWorkflowExecutionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenWorkflowExecutions operation.
@@ -1214,12 +1229,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListOpenWorkflowExecutionsResponse> ListOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListOpenWorkflowExecutionsRequestMarshaller();
-			var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListOpenWorkflowExecutionsRequest, ListOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListOpenWorkflowExecutionsRequestMarshaller();
+            var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListOpenWorkflowExecutionsRequest, ListOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved
@@ -1244,17 +1260,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
-		{
-			var task = ListWorkflowTypesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListWorkflowTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListWorkflowTypes operation.
@@ -1267,12 +1283,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListWorkflowTypesResponse> ListWorkflowTypesAsync(ListWorkflowTypesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListWorkflowTypesRequestMarshaller();
-			var unmarshaller = ListWorkflowTypesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListWorkflowTypesRequest, ListWorkflowTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListWorkflowTypesRequestMarshaller();
+            var unmarshaller = ListWorkflowTypesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListWorkflowTypesRequest, ListWorkflowTypesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by workers to get an ActivityTask from the specified activity <c>taskList</c> .
@@ -1304,17 +1321,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
-		{
-			var task = PollForActivityTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PollForActivityTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PollForActivityTask operation.
@@ -1327,12 +1344,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PollForActivityTaskResponse> PollForActivityTaskAsync(PollForActivityTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PollForActivityTaskRequestMarshaller();
-			var unmarshaller = PollForActivityTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PollForActivityTaskRequest, PollForActivityTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PollForActivityTaskRequestMarshaller();
+            var unmarshaller = PollForActivityTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PollForActivityTaskRequest, PollForActivityTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by deciders to get a DecisionTask from the specified decision <c>taskList</c> .
@@ -1368,17 +1386,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
-		{
-			var task = PollForDecisionTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PollForDecisionTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PollForDecisionTask operation.
@@ -1391,12 +1409,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PollForDecisionTaskResponse> PollForDecisionTaskAsync(PollForDecisionTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PollForDecisionTaskRequestMarshaller();
-			var unmarshaller = PollForDecisionTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PollForDecisionTaskRequest, PollForDecisionTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PollForDecisionTaskRequestMarshaller();
+            var unmarshaller = PollForDecisionTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PollForDecisionTaskRequest, PollForDecisionTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by activity workers to report to the service that the ActivityTask represented by the specified <c>taskToken</c> is still making
@@ -1433,17 +1452,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
-		{
-			var task = RecordActivityTaskHeartbeatAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RecordActivityTaskHeartbeatAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RecordActivityTaskHeartbeat operation.
@@ -1456,12 +1475,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RecordActivityTaskHeartbeatResponse> RecordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RecordActivityTaskHeartbeatRequestMarshaller();
-			var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RecordActivityTaskHeartbeatRequest, RecordActivityTaskHeartbeatResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RecordActivityTaskHeartbeatRequestMarshaller();
+            var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RecordActivityTaskHeartbeatRequest, RecordActivityTaskHeartbeatResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Registers a new <i>activity type</i> along with its configuration settings in the specified domain. </para> <para><b>IMPORTANT:</b> A
@@ -1494,17 +1514,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
-		{
-			var task = RegisterActivityTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RegisterActivityTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterActivityType operation.
@@ -1517,12 +1537,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RegisterActivityTypeResponse> RegisterActivityTypeAsync(RegisterActivityTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterActivityTypeRequestMarshaller();
-			var unmarshaller = RegisterActivityTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterActivityTypeRequest, RegisterActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterActivityTypeRequestMarshaller();
+            var unmarshaller = RegisterActivityTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterActivityTypeRequest, RegisterActivityTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Registers a new domain. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access
@@ -1546,17 +1567,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
-		{
-			var task = RegisterDomainAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RegisterDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
@@ -1569,12 +1590,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterDomainRequestMarshaller();
-			var unmarshaller = RegisterDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterDomainRequest, RegisterDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterDomainRequestMarshaller();
+            var unmarshaller = RegisterDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterDomainRequest, RegisterDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Registers a new <i>workflow type</i> and its configuration settings in the specified domain. </para> <para> The retention period for
@@ -1608,17 +1630,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
-		{
-			var task = RegisterWorkflowTypeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RegisterWorkflowTypeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterWorkflowType operation.
@@ -1631,12 +1653,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RegisterWorkflowTypeResponse> RegisterWorkflowTypeAsync(RegisterWorkflowTypeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterWorkflowTypeRequestMarshaller();
-			var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterWorkflowTypeRequest, RegisterWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterWorkflowTypeRequestMarshaller();
+            var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterWorkflowTypeRequest, RegisterWorkflowTypeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Records a <c>WorkflowExecutionCancelRequested</c> event in the currently running workflow execution identified by the given domain,
@@ -1663,17 +1686,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
-		{
-			var task = RequestCancelWorkflowExecutionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RequestCancelWorkflowExecutionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RequestCancelWorkflowExecution operation.
@@ -1686,12 +1709,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RequestCancelWorkflowExecutionResponse> RequestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RequestCancelWorkflowExecutionRequestMarshaller();
-			var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RequestCancelWorkflowExecutionRequest, RequestCancelWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RequestCancelWorkflowExecutionRequestMarshaller();
+            var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RequestCancelWorkflowExecutionRequest, RequestCancelWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by workers to tell the service that the ActivityTask identified by the <c>taskToken</c> was successfully canceled. Additional
@@ -1719,17 +1743,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
-		{
-			var task = RespondActivityTaskCanceledAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RespondActivityTaskCanceledAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCanceled operation.
@@ -1742,12 +1766,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RespondActivityTaskCanceledResponse> RespondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RespondActivityTaskCanceledRequestMarshaller();
-			var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RespondActivityTaskCanceledRequest, RespondActivityTaskCanceledResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RespondActivityTaskCanceledRequestMarshaller();
+            var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RespondActivityTaskCanceledRequest, RespondActivityTaskCanceledResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by workers to tell the service that the ActivityTask identified by the <c>taskToken</c> completed successfully with a
@@ -1775,17 +1800,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
-		{
-			var task = RespondActivityTaskCompletedAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RespondActivityTaskCompletedAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCompleted operation.
@@ -1798,12 +1823,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RespondActivityTaskCompletedResponse> RespondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RespondActivityTaskCompletedRequestMarshaller();
-			var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RespondActivityTaskCompletedRequest, RespondActivityTaskCompletedResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RespondActivityTaskCompletedRequestMarshaller();
+            var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RespondActivityTaskCompletedRequest, RespondActivityTaskCompletedResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by workers to tell the service that the ActivityTask identified by the <c>taskToken</c> has failed with <c>reason</c> (if
@@ -1829,17 +1855,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
-		{
-			var task = RespondActivityTaskFailedAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RespondActivityTaskFailedAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskFailed operation.
@@ -1852,12 +1878,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RespondActivityTaskFailedResponse> RespondActivityTaskFailedAsync(RespondActivityTaskFailedRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RespondActivityTaskFailedRequestMarshaller();
-			var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RespondActivityTaskFailedRequest, RespondActivityTaskFailedResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RespondActivityTaskFailedRequestMarshaller();
+            var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RespondActivityTaskFailedRequest, RespondActivityTaskFailedResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Used by deciders to tell the service that the DecisionTask identified by the <c>taskToken</c> has successfully completed. The
@@ -1876,17 +1903,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
-		{
-			var task = RespondDecisionTaskCompletedAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RespondDecisionTaskCompletedAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RespondDecisionTaskCompleted operation.
@@ -1899,12 +1926,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RespondDecisionTaskCompletedResponse> RespondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RespondDecisionTaskCompletedRequestMarshaller();
-			var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RespondDecisionTaskCompletedRequest, RespondDecisionTaskCompletedResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RespondDecisionTaskCompletedRequestMarshaller();
+            var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RespondDecisionTaskCompletedRequest, RespondDecisionTaskCompletedResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Records a <c>WorkflowExecutionSignaled</c> event in the workflow execution history and creates a decision task for the workflow
@@ -1930,17 +1958,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
-		{
-			var task = SignalWorkflowExecutionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SignalWorkflowExecutionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SignalWorkflowExecution operation.
@@ -1953,12 +1981,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SignalWorkflowExecutionResponse> SignalWorkflowExecutionAsync(SignalWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SignalWorkflowExecutionRequestMarshaller();
-			var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SignalWorkflowExecutionRequest, SignalWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SignalWorkflowExecutionRequestMarshaller();
+            var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SignalWorkflowExecutionRequest, SignalWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Starts an execution of the workflow type in the specified domain using the provided <c>workflowId</c> and input data. </para>
@@ -1999,17 +2028,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.WorkflowExecutionAlreadyStartedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.LimitExceededException" />
 		public StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
-		{
-			var task = StartWorkflowExecutionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StartWorkflowExecutionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StartWorkflowExecution operation.
@@ -2022,12 +2051,13 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StartWorkflowExecutionResponse> StartWorkflowExecutionAsync(StartWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartWorkflowExecutionRequestMarshaller();
-			var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartWorkflowExecutionRequestMarshaller();
+            var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Records a <c>WorkflowExecutionTerminated</c> event and forces closure of the workflow execution identified by the given domain,
@@ -2055,17 +2085,17 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.UnknownResourceException" />
 		public TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
-		{
-			var task = TerminateWorkflowExecutionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TerminateWorkflowExecutionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkflowExecution operation.
@@ -2078,11 +2108,12 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateWorkflowExecutionRequestMarshaller();
-			var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateWorkflowExecutionRequest, TerminateWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new TerminateWorkflowExecutionRequestMarshaller();
+            var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateWorkflowExecutionRequest, TerminateWorkflowExecutionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

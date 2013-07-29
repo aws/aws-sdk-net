@@ -45,9 +45,9 @@ namespace Amazon.DataPipeline
     /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
 	public partial class AmazonDataPipelineClient : AmazonWebServiceClient, Amazon.DataPipeline.IAmazonDataPipeline
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -177,12 +177,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ActivatePipelineResponse> ActivatePipelineAsync(ActivatePipelineRequest activatePipelineRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ActivatePipelineRequestMarshaller();
-			var unmarshaller = ActivatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ActivatePipelineRequest, ActivatePipelineResponse>(activatePipelineRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ActivatePipelineRequestMarshaller();
+            var unmarshaller = ActivatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ActivatePipelineRequest, ActivatePipelineResponse>(activatePipelineRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new empty pipeline. When this action succeeds, you can then use the PutPipelineDefinition action to populate the
@@ -200,12 +201,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest createPipelineRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePipelineRequestMarshaller();
-			var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(createPipelineRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePipelineRequestMarshaller();
+            var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(createPipelineRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Permanently deletes a pipeline, its pipeline definition and its run history. You cannot query or restore a deleted pipeline. AWS Data
@@ -224,12 +226,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest deletePipelineRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePipelineRequestMarshaller();
-			var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(deletePipelineRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePipelineRequestMarshaller();
+            var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(deletePipelineRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields
@@ -249,12 +252,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeObjectsResponse> DescribeObjectsAsync(DescribeObjectsRequest describeObjectsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeObjectsRequestMarshaller();
-			var unmarshaller = DescribeObjectsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeObjectsRequest, DescribeObjectsResponse>(describeObjectsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeObjectsRequestMarshaller();
+            var unmarshaller = DescribeObjectsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeObjectsRequest, DescribeObjectsResponse>(describeObjectsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Retrieve metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier,
@@ -277,12 +281,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribePipelinesResponse> DescribePipelinesAsync(DescribePipelinesRequest describePipelinesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePipelinesRequestMarshaller();
-			var unmarshaller = DescribePipelinesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePipelinesRequest, DescribePipelinesResponse>(describePipelinesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePipelinesRequestMarshaller();
+            var unmarshaller = DescribePipelinesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePipelinesRequest, DescribePipelinesResponse>(describePipelinesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Evaluates a string in the context of a specified object. A task runner can use this action to evaluate SQL queries stored in Amazon
@@ -303,12 +308,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<EvaluateExpressionResponse> EvaluateExpressionAsync(EvaluateExpressionRequest evaluateExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EvaluateExpressionRequestMarshaller();
-			var unmarshaller = EvaluateExpressionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EvaluateExpressionRequest, EvaluateExpressionResponse>(evaluateExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EvaluateExpressionRequestMarshaller();
+            var unmarshaller = EvaluateExpressionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EvaluateExpressionRequest, EvaluateExpressionResponse>(evaluateExpressionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the definition of the specified pipeline. You can call GetPipelineDefinition to retrieve the pipeline definition you provided
@@ -328,12 +334,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetPipelineDefinitionResponse> GetPipelineDefinitionAsync(GetPipelineDefinitionRequest getPipelineDefinitionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetPipelineDefinitionRequestMarshaller();
-			var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetPipelineDefinitionRequest, GetPipelineDefinitionResponse>(getPipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetPipelineDefinitionRequestMarshaller();
+            var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetPipelineDefinitionRequest, GetPipelineDefinitionResponse>(getPipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned only for pipelines you have permission to
@@ -351,12 +358,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest listPipelinesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListPipelinesRequestMarshaller();
-			var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(listPipelinesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListPipelinesRequestMarshaller();
+            var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(listPipelinesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Task runners call this action to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can
@@ -380,12 +388,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PollForTaskResponse> PollForTaskAsync(PollForTaskRequest pollForTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PollForTaskRequestMarshaller();
-			var unmarshaller = PollForTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PollForTaskRequest, PollForTaskResponse>(pollForTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PollForTaskRequestMarshaller();
+            var unmarshaller = PollForTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PollForTaskRequest, PollForTaskResponse>(pollForTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Adds tasks, schedules, and preconditions that control the behavior of the pipeline. You can use PutPipelineDefinition to populate a
@@ -411,12 +420,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PutPipelineDefinitionResponse> PutPipelineDefinitionAsync(PutPipelineDefinitionRequest putPipelineDefinitionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutPipelineDefinitionRequestMarshaller();
-			var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutPipelineDefinitionRequest, PutPipelineDefinitionResponse>(putPipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutPipelineDefinitionRequestMarshaller();
+            var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutPipelineDefinitionRequest, PutPipelineDefinitionResponse>(putPipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
@@ -438,12 +448,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<QueryObjectsResponse> QueryObjectsAsync(QueryObjectsRequest queryObjectsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new QueryObjectsRequestMarshaller();
-			var unmarshaller = QueryObjectsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, QueryObjectsRequest, QueryObjectsResponse>(queryObjectsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new QueryObjectsRequestMarshaller();
+            var unmarshaller = QueryObjectsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, QueryObjectsRequest, QueryObjectsResponse>(queryObjectsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the AWS Data Pipeline service on the progress of the calling task runner. When the task runner is assigned a task, it should
@@ -469,12 +480,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReportTaskProgressResponse> ReportTaskProgressAsync(ReportTaskProgressRequest reportTaskProgressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportTaskProgressRequestMarshaller();
-			var unmarshaller = ReportTaskProgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportTaskProgressRequest, ReportTaskProgressResponse>(reportTaskProgressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportTaskProgressRequestMarshaller();
+            var unmarshaller = ReportTaskProgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportTaskProgressRequest, ReportTaskProgressResponse>(reportTaskProgressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline
@@ -493,12 +505,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReportTaskRunnerHeartbeatResponse> ReportTaskRunnerHeartbeatAsync(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
-			var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResponse>(reportTaskRunnerHeartbeatRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
+            var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResponse>(reportTaskRunnerHeartbeatRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests that the status of an array of physical or logical pipeline objects be updated in the pipeline. This update may not occur
@@ -515,12 +528,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetStatusResponse> SetStatusAsync(SetStatusRequest setStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetStatusRequestMarshaller();
-			var unmarshaller = SetStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetStatusRequest, SetStatusResponse>(setStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetStatusRequestMarshaller();
+            var unmarshaller = SetStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetStatusRequest, SetStatusResponse>(setStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Notifies AWS Data Pipeline that a task is completed and provides information about the final status. The task runner calls this
@@ -542,12 +556,13 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetTaskStatusResponse> SetTaskStatusAsync(SetTaskStatusRequest setTaskStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTaskStatusRequestMarshaller();
-			var unmarshaller = SetTaskStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTaskStatusRequest, SetTaskStatusResponse>(setTaskStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTaskStatusRequestMarshaller();
+            var unmarshaller = SetTaskStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTaskStatusRequest, SetTaskStatusResponse>(setTaskStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Tests the pipeline definition with a set of validation checks to ensure that it is well formed and can run without error. </para>
@@ -566,11 +581,12 @@ namespace Amazon.DataPipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ValidatePipelineDefinitionResponse> ValidatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
-			var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResponse>(validatePipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
+            var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResponse>(validatePipelineDefinitionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

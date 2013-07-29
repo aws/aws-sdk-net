@@ -38,9 +38,9 @@ namespace Amazon.SimpleDB
     /// more information. </para>
     /// </summary>
 	public partial class AmazonSimpleDBClient : AmazonWebServiceClient, Amazon.SimpleDB.IAmazonSimpleDB
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -174,12 +174,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest batchDeleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchDeleteAttributesRequestMarshaller();
-			var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(batchDeleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchDeleteAttributesRequestMarshaller();
+            var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(batchDeleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>BatchPutAttributes</c> operation creates or replaces attributes within one or more items. By using this operation, the client
@@ -230,12 +231,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest batchPutAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BatchPutAttributesRequestMarshaller();
-			var unmarshaller = BatchPutAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(batchPutAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BatchPutAttributesRequestMarshaller();
+            var unmarshaller = BatchPutAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(batchPutAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
@@ -255,12 +257,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDomainRequestMarshaller();
-			var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDomainRequestMarshaller();
+            var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </para>
@@ -282,12 +285,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAttributesRequestMarshaller();
-			var unmarshaller = DeleteAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(deleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAttributesRequestMarshaller();
+            var unmarshaller = DeleteAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(deleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>DeleteDomain</c> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The
@@ -303,12 +307,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDomainRequestMarshaller();
-			var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDomainRequestMarshaller();
+            var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and
@@ -326,12 +331,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest domainMetadataRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DomainMetadataRequestMarshaller();
-			var unmarshaller = DomainMetadataResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(domainMetadataRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DomainMetadataRequestMarshaller();
+            var unmarshaller = DomainMetadataResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(domainMetadataRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more
@@ -353,12 +359,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest getAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetAttributesRequestMarshaller();
-			var unmarshaller = GetAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(getAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetAttributesRequestMarshaller();
+            var unmarshaller = GetAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(getAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
@@ -377,12 +384,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListDomainsRequestMarshaller();
-			var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of
@@ -425,12 +433,13 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest putAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutAttributesRequestMarshaller();
-			var unmarshaller = PutAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(putAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutAttributesRequestMarshaller();
+            var unmarshaller = PutAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(putAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that match the select expression. <c>Select</c> is
@@ -458,11 +467,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SelectResponse> SelectAsync(SelectRequest selectRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SelectRequestMarshaller();
-			var unmarshaller = SelectResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SelectRequest, SelectResponse>(selectRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new SelectRequestMarshaller();
+            var unmarshaller = SelectResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SelectRequest, SelectResponse>(selectRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

@@ -37,9 +37,9 @@ namespace Amazon.SimpleNotificationService
     /// For a list of available SDKs, go to Tools for Amazon Web Services. </para>
     /// </summary>
 	public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, Amazon.SimpleNotificationService.IAmazonSimpleNotificationService
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -222,17 +222,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public AddPermissionResponse AddPermission(AddPermissionRequest request)
-		{
-			var task = AddPermissionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddPermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
@@ -245,12 +245,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddPermissionRequestMarshaller();
-			var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ConfirmSubscription</c> action verifies an endpoint owner's intent to receive messages by validating the token sent to the
@@ -269,17 +270,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
-		{
-			var task = ConfirmSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ConfirmSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmSubscription operation.
@@ -292,12 +293,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfirmSubscriptionRequestMarshaller();
-			var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfirmSubscriptionRequestMarshaller();
+            var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
@@ -315,17 +317,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.TopicLimitExceededException" />
 		public CreateTopicResponse CreateTopic(CreateTopicRequest request)
-		{
-			var task = CreateTopicAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTopic operation.
@@ -338,12 +340,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateTopicRequestMarshaller();
-			var unmarshaller = CreateTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateTopicRequestMarshaller();
+            var unmarshaller = CreateTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>DeleteTopic</c> action deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent
@@ -359,17 +362,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
-		{
-			var task = DeleteTopicAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTopic operation.
@@ -382,12 +385,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTopicRequestMarshaller();
-			var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTopicRequestMarshaller();
+            var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetSubscriptionAttribtues</c> action returns all of the properties of a subscription.</para>
@@ -403,17 +407,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
-		{
-			var task = GetSubscriptionAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetSubscriptionAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetSubscriptionAttributes operation.
@@ -426,12 +430,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSubscriptionAttributesRequestMarshaller();
-			var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
+            var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>GetTopicAttributes</c> action returns all of the properties of a topic. Topic properties returned might differ based on the
@@ -448,17 +453,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
-		{
-			var task = GetTopicAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetTopicAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetTopicAttributes operation.
@@ -471,12 +476,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetTopicAttributesRequestMarshaller();
-			var unmarshaller = GetTopicAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetTopicAttributesRequestMarshaller();
+            var unmarshaller = GetTopicAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListSubscriptions</c> action returns a list of the requester's subscriptions. Each call returns a limited list of
@@ -493,17 +499,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
-		{
-			var task = ListSubscriptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListSubscriptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListSubscriptions operation.
@@ -516,12 +522,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListSubscriptionsRequestMarshaller();
-			var unmarshaller = ListSubscriptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListSubscriptionsRequestMarshaller();
+            var unmarshaller = ListSubscriptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListSubscriptions</c> action returns a list of the requester's subscriptions. Each call returns a limited list of
@@ -538,9 +545,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ListSubscriptionsResponse ListSubscriptions()
-		{
-			return this.ListSubscriptions(new ListSubscriptionsRequest());
-		}
+        {
+            return this.ListSubscriptions(new ListSubscriptionsRequest());
+        }
  
         /// <summary>
         /// <para>The <c>ListSubscriptionsByTopic</c> action returns a list of the subscriptions to a specific topic. Each call returns a limited list
@@ -558,17 +565,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
-		{
-			var task = ListSubscriptionsByTopicAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListSubscriptionsByTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListSubscriptionsByTopic operation.
@@ -581,12 +588,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
-			var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
+            var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListTopics</c> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there
@@ -603,17 +611,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ListTopicsResponse ListTopics(ListTopicsRequest request)
-		{
-			var task = ListTopicsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListTopicsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListTopics operation.
@@ -626,12 +634,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListTopicsRequestMarshaller();
-			var unmarshaller = ListTopicsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListTopicsRequestMarshaller();
+            var unmarshaller = ListTopicsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>ListTopics</c> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there
@@ -648,9 +657,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public ListTopicsResponse ListTopics()
-		{
-			return this.ListTopics(new ListTopicsRequest());
-		}
+        {
+            return this.ListTopics(new ListTopicsRequest());
+        }
  
         /// <summary>
         /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
@@ -668,17 +677,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public PublishResponse Publish(PublishRequest request)
-		{
-			var task = PublishAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PublishAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Publish operation.
@@ -691,12 +700,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PublishResponse> PublishAsync(PublishRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PublishRequestMarshaller();
-			var unmarshaller = PublishResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PublishRequest, PublishResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PublishRequestMarshaller();
+            var unmarshaller = PublishResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PublishRequest, PublishResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>RemovePermission</c> action removes a statement from a topic's access control policy.</para>
@@ -710,17 +720,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
-		{
-			var task = RemovePermissionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemovePermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
@@ -733,12 +743,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemovePermissionRequestMarshaller();
-			var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SetSubscriptionAttributes</c> action allows a subscription owner to set an attribute of the topic to a new value.</para>
@@ -752,17 +763,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
-		{
-			var task = SetSubscriptionAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetSubscriptionAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetSubscriptionAttributes operation.
@@ -775,12 +786,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetSubscriptionAttributesRequestMarshaller();
-			var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
+            var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>SetTopicAttributes</c> action allows a topic owner to set an attribute of the topic to a new value.</para>
@@ -794,17 +806,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
-		{
-			var task = SetTopicAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetTopicAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetTopicAttributes operation.
@@ -817,12 +829,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTopicAttributesRequestMarshaller();
-			var unmarshaller = SetTopicAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTopicAttributesRequestMarshaller();
+            var unmarshaller = SetTopicAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>Subscribe</c> action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
@@ -841,17 +854,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public SubscribeResponse Subscribe(SubscribeRequest request)
-		{
-			var task = SubscribeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SubscribeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Subscribe operation.
@@ -864,12 +877,13 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SubscribeRequestMarshaller();
-			var unmarshaller = SubscribeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SubscribeRequest, SubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SubscribeRequestMarshaller();
+            var unmarshaller = SubscribeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SubscribeRequest, SubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>The <c>Unsubscribe</c> action deletes a subscription. If the subscription requires authentication for deletion, only the owner of the
@@ -886,17 +900,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
 		public UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
-		{
-			var task = UnsubscribeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UnsubscribeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the Unsubscribe operation.
@@ -909,11 +923,12 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnsubscribeRequestMarshaller();
-			var unmarshaller = UnsubscribeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UnsubscribeRequestMarshaller();
+            var unmarshaller = UnsubscribeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

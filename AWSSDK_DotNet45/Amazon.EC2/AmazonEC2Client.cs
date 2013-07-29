@@ -48,9 +48,9 @@ namespace Amazon.EC2
     /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
     /// </summary>
 	public partial class AmazonEC2Client : AmazonWebServiceClient, Amazon.EC2.IAmazonEC2
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -229,17 +229,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by AmazonEC2.</returns>
 		public AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
-		{
-			var task = AllocateAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AllocateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateAddress operation.
@@ -252,12 +252,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AllocateAddressResponse> AllocateAddressAsync(AllocateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AllocateAddressRequestMarshaller();
-			var unmarshaller = AllocateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AllocateAddressRequest, AllocateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AllocateAddressRequestMarshaller();
+            var unmarshaller = AllocateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AllocateAddressRequest, AllocateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
@@ -268,9 +269,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by AmazonEC2.</returns>
 		public AllocateAddressResponse AllocateAddress()
-		{
-			return this.AllocateAddress(new AllocateAddressRequest());
-		}
+        {
+            return this.AllocateAddress(new AllocateAddressRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -278,17 +279,17 @@ namespace Amazon.EC2
         /// <param name="assignPrivateIpAddressesRequest">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method
         /// on AmazonEC2.</param>
 		public AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
-		{
-			var task = AssignPrivateIpAddressesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssignPrivateIpAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssignPrivateIpAddresses operation.
@@ -301,12 +302,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
-			var unmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
+            var unmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AssociateAddress operation associates an elastic IP address with an instance. </para> <para> If the IP address is currently
@@ -319,17 +321,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AssociateAddress service method, as returned by AmazonEC2.</returns>
 		public AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
-		{
-			var task = AssociateAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssociateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateAddress operation.
@@ -342,12 +344,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssociateAddressResponse> AssociateAddressAsync(AssociateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateAddressRequestMarshaller();
-			var unmarshaller = AssociateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateAddressRequest, AssociateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateAddressRequestMarshaller();
+            var unmarshaller = AssociateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateAddressRequest, AssociateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options
@@ -360,17 +363,17 @@ namespace Amazon.EC2
         /// <param name="associateDhcpOptionsRequest">Container for the necessary parameters to execute the AssociateDhcpOptions service method on
         /// AmazonEC2.</param>
 		public AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
-		{
-			var task = AssociateDhcpOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssociateDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateDhcpOptions operation.
@@ -383,12 +386,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssociateDhcpOptionsResponse> AssociateDhcpOptionsAsync(AssociateDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateDhcpOptionsRequestMarshaller();
-			var unmarshaller = AssociateDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateDhcpOptionsRequest, AssociateDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateDhcpOptionsRequestMarshaller();
+            var unmarshaller = AssociateDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateDhcpOptionsRequest, AssociateDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
@@ -402,17 +406,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AssociateRouteTable service method, as returned by AmazonEC2.</returns>
 		public AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
-		{
-			var task = AssociateRouteTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AssociateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateRouteTable operation.
@@ -425,12 +429,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AssociateRouteTableResponse> AssociateRouteTableAsync(AssociateRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateRouteTableRequestMarshaller();
-			var unmarshaller = AssociateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateRouteTableRequest, AssociateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateRouteTableRequestMarshaller();
+            var unmarshaller = AssociateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateRouteTableRequest, AssociateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For more information about your VPC
@@ -440,17 +445,17 @@ namespace Amazon.EC2
         /// <param name="attachInternetGatewayRequest">Container for the necessary parameters to execute the AttachInternetGateway service method on
         /// AmazonEC2.</param>
 		public AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
-		{
-			var task = AttachInternetGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInternetGateway operation.
@@ -463,12 +468,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachInternetGatewayResponse> AttachInternetGatewayAsync(AttachInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachInternetGatewayRequestMarshaller();
-			var unmarshaller = AttachInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachInternetGatewayRequest, AttachInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachInternetGatewayRequestMarshaller();
+            var unmarshaller = AttachInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachInternetGatewayRequest, AttachInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -478,17 +484,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachNetworkInterface service method, as returned by AmazonEC2.</returns>
 		public AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
-		{
-			var task = AttachNetworkInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachNetworkInterface operation.
@@ -501,12 +507,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachNetworkInterfaceResponse> AttachNetworkInterfaceAsync(AttachNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachNetworkInterfaceRequestMarshaller();
-			var unmarshaller = AttachNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachNetworkInterfaceRequest, AttachNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachNetworkInterfaceRequestMarshaller();
+            var unmarshaller = AttachNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachNetworkInterfaceRequest, AttachNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attach a previously created volume to a running instance. </para>
@@ -516,17 +523,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachVolume service method, as returned by AmazonEC2.</returns>
 		public AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
-		{
-			var task = AttachVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVolume operation.
@@ -539,12 +546,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachVolumeRequestMarshaller();
-			var unmarshaller = AttachVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachVolumeRequest, AttachVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachVolumeRequestMarshaller();
+            var unmarshaller = AttachVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachVolumeRequest, AttachVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching
@@ -556,17 +564,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachVpnGateway service method, as returned by AmazonEC2.</returns>
 		public AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
-		{
-			var task = AttachVpnGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AttachVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVpnGateway operation.
@@ -579,12 +587,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AttachVpnGatewayResponse> AttachVpnGatewayAsync(AttachVpnGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachVpnGatewayRequestMarshaller();
-			var unmarshaller = AttachVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachVpnGatewayRequest, AttachVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachVpnGatewayRequestMarshaller();
+            var unmarshaller = AttachVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachVpnGatewayRequest, AttachVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon
@@ -601,17 +610,17 @@ namespace Amazon.EC2
         /// <param name="authorizeSecurityGroupEgressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service
         /// method on AmazonEC2.</param>
 		public AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
-		{
-			var task = AuthorizeSecurityGroupEgressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AuthorizeSecurityGroupEgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupEgress operation.
@@ -624,12 +633,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AuthorizeSecurityGroupEgressResponse> AuthorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
-			var unmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
+            var unmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AuthorizeSecurityGroupIngress operation adds permissions to a security group. </para> <para> Permissions are specified by the IP
@@ -642,17 +652,17 @@ namespace Amazon.EC2
         /// <param name="authorizeSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress
         /// service method on AmazonEC2.</param>
 		public AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
-		{
-			var task = AuthorizeSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AuthorizeSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupIngress operation.
@@ -665,12 +675,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AuthorizeSecurityGroupIngressResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AuthorizeSecurityGroupIngress operation adds permissions to a security group. </para> <para> Permissions are specified by the IP
@@ -683,9 +694,9 @@ namespace Amazon.EC2
         /// <param name="authorizeSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress
         /// service method on AmazonEC2.</param>
 		public AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress()
-		{
-			return this.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest());
-		}
+        {
+            return this.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest());
+        }
  
         /// <summary>
         /// <para> The BundleInstance operation request that an instance is bundled the next time it boots. The bundling process creates a new image
@@ -698,17 +709,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the BundleInstance service method, as returned by AmazonEC2.</returns>
 		public BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
-		{
-			var task = BundleInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = BundleInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the BundleInstance operation.
@@ -721,12 +732,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<BundleInstanceResponse> BundleInstanceAsync(BundleInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BundleInstanceRequestMarshaller();
-			var unmarshaller = BundleInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BundleInstanceRequest, BundleInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BundleInstanceRequestMarshaller();
+            var unmarshaller = BundleInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BundleInstanceRequest, BundleInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for
@@ -739,17 +751,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelBundleTask service method, as returned by AmazonEC2.</returns>
 		public CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
-		{
-			var task = CancelBundleTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelBundleTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelBundleTask operation.
@@ -762,12 +774,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelBundleTaskResponse> CancelBundleTaskAsync(CancelBundleTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelBundleTaskRequestMarshaller();
-			var unmarshaller = CancelBundleTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelBundleTaskRequest, CancelBundleTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelBundleTaskRequestMarshaller();
+            var unmarshaller = CancelBundleTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelBundleTaskRequest, CancelBundleTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -775,17 +788,17 @@ namespace Amazon.EC2
         /// <param name="cancelConversionTaskRequest">Container for the necessary parameters to execute the CancelConversionTask service method on
         /// AmazonEC2.</param>
 		public CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
-		{
-			var task = CancelConversionTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelConversionTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelConversionTask operation.
@@ -798,12 +811,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelConversionTaskResponse> CancelConversionTaskAsync(CancelConversionTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelConversionTaskRequestMarshaller();
-			var unmarshaller = CancelConversionTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelConversionTaskRequest, CancelConversionTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelConversionTaskRequestMarshaller();
+            var unmarshaller = CancelConversionTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelConversionTaskRequest, CancelConversionTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -811,17 +825,17 @@ namespace Amazon.EC2
         /// <param name="cancelExportTaskRequest">Container for the necessary parameters to execute the CancelExportTask service method on
         /// AmazonEC2.</param>
 		public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
-		{
-			var task = CancelExportTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelExportTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelExportTask operation.
@@ -834,12 +848,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelExportTaskRequestMarshaller();
-			var unmarshaller = CancelExportTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelExportTaskRequest, CancelExportTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelExportTaskRequestMarshaller();
+            var unmarshaller = CancelExportTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelExportTaskRequest, CancelExportTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -849,17 +864,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelReservedInstancesListing service method, as returned by AmazonEC2.</returns>
 		public CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
-		{
-			var task = CancelReservedInstancesListingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelReservedInstancesListingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelReservedInstancesListing operation.
@@ -872,12 +887,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelReservedInstancesListingResponse> CancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelReservedInstancesListingRequestMarshaller();
-			var unmarshaller = CancelReservedInstancesListingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelReservedInstancesListingRequest, CancelReservedInstancesListingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelReservedInstancesListingRequestMarshaller();
+            var unmarshaller = CancelReservedInstancesListingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelReservedInstancesListingRequest, CancelReservedInstancesListingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Cancels one or more Spot Instance requests. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when
@@ -892,17 +908,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
 		public CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
-		{
-			var task = CancelSpotInstanceRequestsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelSpotInstanceRequestsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelSpotInstanceRequests operation.
@@ -915,12 +931,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelSpotInstanceRequestsResponse> CancelSpotInstanceRequestsAsync(CancelSpotInstanceRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
-			var unmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelSpotInstanceRequestsRequest, CancelSpotInstanceRequestsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
+            var unmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelSpotInstanceRequestsRequest, CancelSpotInstanceRequestsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation
@@ -934,17 +951,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ConfirmProductInstance service method, as returned by AmazonEC2.</returns>
 		public ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
-		{
-			var task = ConfirmProductInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ConfirmProductInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmProductInstance operation.
@@ -957,12 +974,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ConfirmProductInstanceResponse> ConfirmProductInstanceAsync(ConfirmProductInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfirmProductInstanceRequestMarshaller();
-			var unmarshaller = ConfirmProductInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfirmProductInstanceRequest, ConfirmProductInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfirmProductInstanceRequestMarshaller();
+            var unmarshaller = ConfirmProductInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfirmProductInstanceRequest, ConfirmProductInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -971,17 +989,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CopyImage service method, as returned by AmazonEC2.</returns>
 		public CopyImageResponse CopyImage(CopyImageRequest request)
-		{
-			var task = CopyImageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CopyImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CopyImage operation.
@@ -994,12 +1012,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CopyImageResponse> CopyImageAsync(CopyImageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopyImageRequestMarshaller();
-			var unmarshaller = CopyImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopyImageRequest, CopyImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopyImageRequestMarshaller();
+            var unmarshaller = CopyImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopyImageRequest, CopyImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1008,17 +1027,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by AmazonEC2.</returns>
 		public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
-		{
-			var task = CopySnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CopySnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
@@ -1031,12 +1050,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopySnapshotRequestMarshaller();
-			var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopySnapshotRequest, CopySnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopySnapshotRequestMarshaller();
+            var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopySnapshotRequest, CopySnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Provides information to AWS about your customer gateway device. The customer gateway is the appliance at your end of the VPN
@@ -1054,17 +1074,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateCustomerGateway service method, as returned by AmazonEC2.</returns>
 		public CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
-		{
-			var task = CreateCustomerGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCustomerGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCustomerGateway operation.
@@ -1077,12 +1097,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCustomerGatewayResponse> CreateCustomerGatewayAsync(CreateCustomerGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCustomerGatewayRequestMarshaller();
-			var unmarshaller = CreateCustomerGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCustomerGatewayRequest, CreateCustomerGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCustomerGatewayRequestMarshaller();
+            var unmarshaller = CreateCustomerGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCustomerGatewayRequest, CreateCustomerGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
@@ -1095,17 +1116,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateDhcpOptions service method, as returned by AmazonEC2.</returns>
 		public CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
-		{
-			var task = CreateDhcpOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDhcpOptions operation.
@@ -1118,12 +1139,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateDhcpOptionsResponse> CreateDhcpOptionsAsync(CreateDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDhcpOptionsRequestMarshaller();
-			var unmarshaller = CreateDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDhcpOptionsRequestMarshaller();
+            var unmarshaller = CreateDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than
@@ -1135,17 +1157,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateImage service method, as returned by AmazonEC2.</returns>
 		public CreateImageResponse CreateImage(CreateImageRequest request)
-		{
-			var task = CreateImageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateImage operation.
@@ -1158,12 +1180,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateImageRequestMarshaller();
-			var unmarshaller = CreateImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateImageRequest, CreateImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateImageRequestMarshaller();
+            var unmarshaller = CreateImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateImageRequest, CreateImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1173,17 +1196,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateInstanceExportTask service method, as returned by AmazonEC2.</returns>
 		public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
-		{
-			var task = CreateInstanceExportTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateInstanceExportTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceExportTask operation.
@@ -1196,12 +1219,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateInstanceExportTaskResponse> CreateInstanceExportTaskAsync(CreateInstanceExportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInstanceExportTaskRequestMarshaller();
-			var unmarshaller = CreateInstanceExportTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInstanceExportTaskRequest, CreateInstanceExportTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInstanceExportTaskRequestMarshaller();
+            var unmarshaller = CreateInstanceExportTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInstanceExportTaskRequest, CreateInstanceExportTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to a VPC using
@@ -1214,17 +1238,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by AmazonEC2.</returns>
 		public CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
-		{
-			var task = CreateInternetGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInternetGateway operation.
@@ -1237,12 +1261,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(CreateInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInternetGatewayRequestMarshaller();
-			var unmarshaller = CreateInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInternetGatewayRequest, CreateInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInternetGatewayRequestMarshaller();
+            var unmarshaller = CreateInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInternetGatewayRequest, CreateInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to a VPC using
@@ -1255,9 +1280,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by AmazonEC2.</returns>
 		public CreateInternetGatewayResponse CreateInternetGateway()
-		{
-			return this.CreateInternetGateway(new CreateInternetGatewayRequest());
-		}
+        {
+            return this.CreateInternetGateway(new CreateInternetGatewayRequest());
+        }
  
         /// <summary>
         /// <para> The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair
@@ -1268,17 +1293,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateKeyPair service method, as returned by AmazonEC2.</returns>
 		public CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
-		{
-			var task = CreateKeyPairAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKeyPair operation.
@@ -1291,12 +1316,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateKeyPairRequestMarshaller();
-			var unmarshaller = CreateKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateKeyPairRequest, CreateKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateKeyPairRequestMarshaller();
+            var unmarshaller = CreateKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateKeyPairRequest, CreateKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances
@@ -1308,17 +1334,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateNetworkAcl service method, as returned by AmazonEC2.</returns>
 		public CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
-		{
-			var task = CreateNetworkAclAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateNetworkAclAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAcl operation.
@@ -1331,12 +1357,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateNetworkAclResponse> CreateNetworkAclAsync(CreateNetworkAclRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkAclRequestMarshaller();
-			var unmarshaller = CreateNetworkAclResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkAclRequest, CreateNetworkAclResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkAclRequestMarshaller();
+            var unmarshaller = CreateNetworkAclResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkAclRequest, CreateNetworkAclResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules
@@ -1351,17 +1378,17 @@ namespace Amazon.EC2
         /// <param name="createNetworkAclEntryRequest">Container for the necessary parameters to execute the CreateNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		public CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
-		{
-			var task = CreateNetworkAclEntryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAclEntry operation.
@@ -1374,12 +1401,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateNetworkAclEntryResponse> CreateNetworkAclEntryAsync(CreateNetworkAclEntryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkAclEntryRequestMarshaller();
-			var unmarshaller = CreateNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkAclEntryRequest, CreateNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkAclEntryRequestMarshaller();
+            var unmarshaller = CreateNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkAclEntryRequest, CreateNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1389,17 +1417,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateNetworkInterface service method, as returned by AmazonEC2.</returns>
 		public CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
-		{
-			var task = CreateNetworkInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkInterface operation.
@@ -1412,12 +1440,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateNetworkInterfaceResponse> CreateNetworkInterfaceAsync(CreateNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkInterfaceRequestMarshaller();
-			var unmarshaller = CreateNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkInterfaceRequest, CreateNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkInterfaceRequestMarshaller();
+            var unmarshaller = CreateNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkInterfaceRequest, CreateNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a PlacementGroup into which multiple Amazon EC2 instances can be launched. Users must give the group a name unique within the
@@ -1427,17 +1456,17 @@ namespace Amazon.EC2
         /// <param name="createPlacementGroupRequest">Container for the necessary parameters to execute the CreatePlacementGroup service method on
         /// AmazonEC2.</param>
 		public CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
-		{
-			var task = CreatePlacementGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePlacementGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlacementGroup operation.
@@ -1450,12 +1479,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePlacementGroupResponse> CreatePlacementGroupAsync(CreatePlacementGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePlacementGroupRequestMarshaller();
-			var unmarshaller = CreatePlacementGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePlacementGroupRequest, CreatePlacementGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePlacementGroupRequestMarshaller();
+            var unmarshaller = CreatePlacementGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePlacementGroupRequest, CreatePlacementGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1465,17 +1495,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateReservedInstancesListing service method, as returned by AmazonEC2.</returns>
 		public CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
-		{
-			var task = CreateReservedInstancesListingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateReservedInstancesListingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReservedInstancesListing operation.
@@ -1488,12 +1518,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateReservedInstancesListingResponse> CreateReservedInstancesListingAsync(CreateReservedInstancesListingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateReservedInstancesListingRequestMarshaller();
-			var unmarshaller = CreateReservedInstancesListingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateReservedInstancesListingRequest, CreateReservedInstancesListingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateReservedInstancesListingRequestMarshaller();
+            var unmarshaller = CreateReservedInstancesListingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateReservedInstancesListingRequest, CreateReservedInstancesListingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance
@@ -1511,17 +1542,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="createRouteRequest">Container for the necessary parameters to execute the CreateRoute service method on AmazonEC2.</param>
 		public CreateRouteResponse CreateRoute(CreateRouteRequest request)
-		{
-			var task = CreateRouteAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRoute operation.
@@ -1534,12 +1565,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateRouteRequestMarshaller();
-			var unmarshaller = CreateRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateRouteRequest, CreateRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateRouteRequestMarshaller();
+            var unmarshaller = CreateRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateRouteRequest, CreateRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
@@ -1551,17 +1583,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateRouteTable service method, as returned by AmazonEC2.</returns>
 		public CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
-		{
-			var task = CreateRouteTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRouteTable operation.
@@ -1574,12 +1606,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateRouteTableResponse> CreateRouteTableAsync(CreateRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateRouteTableRequestMarshaller();
-			var unmarshaller = CreateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateRouteTableRequest, CreateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateRouteTableRequestMarshaller();
+            var unmarshaller = CreateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateRouteTableRequest, CreateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The CreateSecurityGroup operation creates a new security group. </para> <para> Every instance is launched in a security group. If no
@@ -1594,17 +1627,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateSecurityGroup service method, as returned by AmazonEC2.</returns>
 		public CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
-		{
-			var task = CreateSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSecurityGroup operation.
@@ -1617,12 +1650,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSecurityGroupRequest, CreateSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSecurityGroupRequest, CreateSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.
@@ -1637,17 +1671,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by AmazonEC2.</returns>
 		public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
-		{
-			var task = CreateSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -1660,12 +1694,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotRequestMarshaller();
-			var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates the data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per account.
@@ -1679,17 +1714,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
 		public CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
-		{
-			var task = CreateSpotDatafeedSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSpotDatafeedSubscription operation.
@@ -1702,12 +1737,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSpotDatafeedSubscriptionResponse> CreateSpotDatafeedSubscriptionAsync(CreateSpotDatafeedSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more than one subnet to a VPC, they're set
@@ -1723,17 +1759,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateSubnet service method, as returned by AmazonEC2.</returns>
 		public CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
-		{
-			var task = CreateSubnetAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateSubnetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSubnet operation.
@@ -1746,12 +1782,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateSubnetResponse> CreateSubnetAsync(CreateSubnetRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSubnetRequestMarshaller();
-			var unmarshaller = CreateSubnetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSubnetRequest, CreateSubnetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSubnetRequestMarshaller();
+            var unmarshaller = CreateSubnetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSubnetRequest, CreateSubnetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value
@@ -1760,17 +1797,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="createTagsRequest">Container for the necessary parameters to execute the CreateTags service method on AmazonEC2.</param>
 		public CreateTagsResponse CreateTags(CreateTagsRequest request)
-		{
-			var task = CreateTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
@@ -1783,12 +1820,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateTagsRequestMarshaller();
-			var unmarshaller = CreateTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateTagsRequest, CreateTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateTagsRequestMarshaller();
+            var unmarshaller = CreateTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateTagsRequest, CreateTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Initializes an empty volume of a given size. </para>
@@ -1798,17 +1836,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateVolume service method, as returned by AmazonEC2.</returns>
 		public CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
-		{
-			var task = CreateVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVolume operation.
@@ -1821,12 +1859,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVolumeRequestMarshaller();
-			var unmarshaller = CreateVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVolumeRequest, CreateVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVolumeRequestMarshaller();
+            var unmarshaller = CreateVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVolumeRequest, CreateVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a <c>/28</c> netmask (16 IP addresses), and the
@@ -1839,17 +1878,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateVpc service method, as returned by AmazonEC2.</returns>
 		public CreateVpcResponse CreateVpc(CreateVpcRequest request)
-		{
-			var task = CreateVpcAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVpcAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpc operation.
@@ -1862,12 +1901,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpcRequestMarshaller();
-			var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpcRequest, CreateVpcResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpcRequestMarshaller();
+            var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpcRequest, CreateVpcResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.
@@ -1885,17 +1925,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateVpnConnection service method, as returned by AmazonEC2.</returns>
 		public CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
-		{
-			var task = CreateVpnConnectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVpnConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnection operation.
@@ -1908,12 +1948,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVpnConnectionResponse> CreateVpnConnectionAsync(CreateVpnConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnConnectionRequestMarshaller();
-			var unmarshaller = CreateVpnConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnConnectionRequest, CreateVpnConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnConnectionRequestMarshaller();
+            var unmarshaller = CreateVpnConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnConnectionRequest, CreateVpnConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1921,17 +1962,17 @@ namespace Amazon.EC2
         /// <param name="createVpnConnectionRouteRequest">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method
         /// on AmazonEC2.</param>
 		public CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
-		{
-			var task = CreateVpnConnectionRouteAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVpnConnectionRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnectionRoute operation.
@@ -1944,12 +1985,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVpnConnectionRouteResponse> CreateVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
-			var unmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
+            var unmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before
@@ -1961,17 +2003,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateVpnGateway service method, as returned by AmazonEC2.</returns>
 		public CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
-		{
-			var task = CreateVpnGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnGateway operation.
@@ -1984,12 +2026,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVpnGatewayResponse> CreateVpnGatewayAsync(CreateVpnGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnGatewayRequestMarshaller();
-			var unmarshaller = CreateVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnGatewayRequest, CreateVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnGatewayRequestMarshaller();
+            var unmarshaller = CreateVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnGatewayRequest, CreateVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway. </para> <para> You can have a
@@ -2000,17 +2043,17 @@ namespace Amazon.EC2
         /// <param name="deleteCustomerGatewayRequest">Container for the necessary parameters to execute the DeleteCustomerGateway service method on
         /// AmazonEC2.</param>
 		public DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
-		{
-			var task = DeleteCustomerGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteCustomerGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCustomerGateway operation.
@@ -2023,12 +2066,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteCustomerGatewayResponse> DeleteCustomerGatewayAsync(DeleteCustomerGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCustomerGatewayRequestMarshaller();
-			var unmarshaller = DeleteCustomerGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCustomerGatewayRequest, DeleteCustomerGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCustomerGatewayRequestMarshaller();
+            var unmarshaller = DeleteCustomerGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCustomerGatewayRequest, DeleteCustomerGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated
@@ -2038,17 +2082,17 @@ namespace Amazon.EC2
         /// <param name="deleteDhcpOptionsRequest">Container for the necessary parameters to execute the DeleteDhcpOptions service method on
         /// AmazonEC2.</param>
 		public DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
-		{
-			var task = DeleteDhcpOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDhcpOptions operation.
@@ -2061,12 +2105,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDhcpOptionsRequestMarshaller();
-			var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDhcpOptionsRequestMarshaller();
+            var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and
@@ -2076,17 +2121,17 @@ namespace Amazon.EC2
         /// <param name="deleteInternetGatewayRequest">Container for the necessary parameters to execute the DeleteInternetGateway service method on
         /// AmazonEC2.</param>
 		public DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
-		{
-			var task = DeleteInternetGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInternetGateway operation.
@@ -2099,12 +2144,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteInternetGatewayResponse> DeleteInternetGatewayAsync(DeleteInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteInternetGatewayRequestMarshaller();
-			var unmarshaller = DeleteInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteInternetGatewayRequestMarshaller();
+            var unmarshaller = DeleteInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteKeyPair operation deletes a key pair. </para>
@@ -2112,17 +2158,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteKeyPairRequest">Container for the necessary parameters to execute the DeleteKeyPair service method on AmazonEC2.</param>
 		public DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
-		{
-			var task = DeleteKeyPairAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteKeyPair operation.
@@ -2135,12 +2181,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteKeyPairRequestMarshaller();
-			var unmarshaller = DeleteKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteKeyPairRequest, DeleteKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var unmarshaller = DeleteKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteKeyPairRequest, DeleteKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For
@@ -2150,17 +2197,17 @@ namespace Amazon.EC2
         /// <param name="deleteNetworkAclRequest">Container for the necessary parameters to execute the DeleteNetworkAcl service method on
         /// AmazonEC2.</param>
 		public DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
-		{
-			var task = DeleteNetworkAclAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteNetworkAclAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAcl operation.
@@ -2173,12 +2220,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteNetworkAclResponse> DeleteNetworkAclAsync(DeleteNetworkAclRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkAclRequestMarshaller();
-			var unmarshaller = DeleteNetworkAclResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkAclRequest, DeleteNetworkAclResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkAclRequestMarshaller();
+            var unmarshaller = DeleteNetworkAclResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkAclRequest, DeleteNetworkAclResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in
@@ -2188,17 +2236,17 @@ namespace Amazon.EC2
         /// <param name="deleteNetworkAclEntryRequest">Container for the necessary parameters to execute the DeleteNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		public DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
-		{
-			var task = DeleteNetworkAclEntryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAclEntry operation.
@@ -2211,12 +2259,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteNetworkAclEntryResponse> DeleteNetworkAclEntryAsync(DeleteNetworkAclEntryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
-			var unmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
+            var unmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2224,17 +2273,17 @@ namespace Amazon.EC2
         /// <param name="deleteNetworkInterfaceRequest">Container for the necessary parameters to execute the DeleteNetworkInterface service method on
         /// AmazonEC2.</param>
 		public DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
-		{
-			var task = DeleteNetworkInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkInterface operation.
@@ -2247,12 +2296,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
-			var unmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
+            var unmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion. </para>
@@ -2261,17 +2311,17 @@ namespace Amazon.EC2
         /// <param name="deletePlacementGroupRequest">Container for the necessary parameters to execute the DeletePlacementGroup service method on
         /// AmazonEC2.</param>
 		public DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
-		{
-			var task = DeletePlacementGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeletePlacementGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePlacementGroup operation.
@@ -2284,12 +2334,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeletePlacementGroupResponse> DeletePlacementGroupAsync(DeletePlacementGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePlacementGroupRequestMarshaller();
-			var unmarshaller = DeletePlacementGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePlacementGroupRequest, DeletePlacementGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePlacementGroupRequestMarshaller();
+            var unmarshaller = DeletePlacementGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePlacementGroupRequest, DeletePlacementGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon Virtual
@@ -2298,17 +2349,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteRouteRequest">Container for the necessary parameters to execute the DeleteRoute service method on AmazonEC2.</param>
 		public DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
-		{
-			var task = DeleteRouteAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRoute operation.
@@ -2321,12 +2372,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRouteRequestMarshaller();
-			var unmarshaller = DeleteRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRouteRequest, DeleteRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRouteRequestMarshaller();
+            var unmarshaller = DeleteRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRouteRequest, DeleteRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a route table from a VPC. The route table must not be associated with a subnet. You can't delete the main route table. For
@@ -2336,17 +2388,17 @@ namespace Amazon.EC2
         /// <param name="deleteRouteTableRequest">Container for the necessary parameters to execute the DeleteRouteTable service method on
         /// AmazonEC2.</param>
 		public DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
-		{
-			var task = DeleteRouteTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRouteTable operation.
@@ -2359,12 +2411,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteRouteTableResponse> DeleteRouteTableAsync(DeleteRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRouteTableRequestMarshaller();
-			var unmarshaller = DeleteRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRouteTableRequest, DeleteRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRouteTableRequestMarshaller();
+            var unmarshaller = DeleteRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRouteTableRequest, DeleteRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteSecurityGroup operation deletes a security group. </para> <para><b>NOTE:</b> If you attempt to delete a security group that
@@ -2376,17 +2429,17 @@ namespace Amazon.EC2
         /// <param name="deleteSecurityGroupRequest">Container for the necessary parameters to execute the DeleteSecurityGroup service method on
         /// AmazonEC2.</param>
 		public DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
-		{
-			var task = DeleteSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSecurityGroup operation.
@@ -2399,12 +2452,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteSecurityGroup operation deletes a security group. </para> <para><b>NOTE:</b> If you attempt to delete a security group that
@@ -2416,9 +2470,9 @@ namespace Amazon.EC2
         /// <param name="deleteSecurityGroupRequest">Container for the necessary parameters to execute the DeleteSecurityGroup service method on
         /// AmazonEC2.</param>
 		public DeleteSecurityGroupResponse DeleteSecurityGroup()
-		{
-			return this.DeleteSecurityGroup(new DeleteSecurityGroupRequest());
-		}
+        {
+            return this.DeleteSecurityGroup(new DeleteSecurityGroupRequest());
+        }
  
         /// <summary>
         /// <para> Deletes the snapshot identified by <c>snapshotId</c> .
@@ -2428,17 +2482,17 @@ namespace Amazon.EC2
         /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot service method on
         /// AmazonEC2.</param>
 		public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
-		{
-			var task = DeleteSnapshotAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
@@ -2451,12 +2505,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSnapshotRequestMarshaller();
-			var unmarshaller = DeleteSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSnapshotRequest, DeleteSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var unmarshaller = DeleteSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSnapshotRequest, DeleteSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
@@ -2467,17 +2522,17 @@ namespace Amazon.EC2
         /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
         /// service method on AmazonEC2.</param>
 		public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
-		{
-			var task = DeleteSpotDatafeedSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSpotDatafeedSubscription operation.
@@ -2490,12 +2545,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
@@ -2506,9 +2562,9 @@ namespace Amazon.EC2
         /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
         /// service method on AmazonEC2.</param>
 		public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription()
-		{
-			return this.DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
-		}
+        {
+            return this.DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
+        }
  
         /// <summary>
         /// <para> Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns
@@ -2517,17 +2573,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteSubnetRequest">Container for the necessary parameters to execute the DeleteSubnet service method on AmazonEC2.</param>
 		public DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
-		{
-			var task = DeleteSubnetAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSubnetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubnet operation.
@@ -2540,12 +2596,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSubnetResponse> DeleteSubnetAsync(DeleteSubnetRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSubnetRequestMarshaller();
-			var unmarshaller = DeleteSubnetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSubnetRequest, DeleteSubnetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSubnetRequestMarshaller();
+            var unmarshaller = DeleteSubnetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSubnetRequest, DeleteSubnetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
@@ -2553,17 +2610,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on AmazonEC2.</param>
 		public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
-		{
-			var task = DeleteTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -2576,12 +2633,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTagsRequestMarshaller();
-			var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name. </para>
@@ -2589,17 +2647,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteVolumeRequest">Container for the necessary parameters to execute the DeleteVolume service method on AmazonEC2.</param>
 		public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
-		{
-			var task = DeleteVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
@@ -2612,12 +2670,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVolumeRequestMarshaller();
-			var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVolumeRequestMarshaller();
+            var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on the VPC first. For example, you must
@@ -2627,17 +2686,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteVpcRequest">Container for the necessary parameters to execute the DeleteVpc service method on AmazonEC2.</param>
 		public DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
-		{
-			var task = DeleteVpcAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVpcAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpc operation.
@@ -2650,12 +2709,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpcRequestMarshaller();
-			var unmarshaller = DeleteVpcResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpcRequest, DeleteVpcResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpcRequestMarshaller();
+            var unmarshaller = DeleteVpcResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpcRequest, DeleteVpcResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPN connection. Use this if you want to delete a VPC and all its associated components. Another reason to use this
@@ -2669,17 +2729,17 @@ namespace Amazon.EC2
         /// <param name="deleteVpnConnectionRequest">Container for the necessary parameters to execute the DeleteVpnConnection service method on
         /// AmazonEC2.</param>
 		public DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
-		{
-			var task = DeleteVpnConnectionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVpnConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnection operation.
@@ -2692,12 +2752,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVpnConnectionResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnConnectionRequestMarshaller();
-			var unmarshaller = DeleteVpnConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnConnectionRequestMarshaller();
+            var unmarshaller = DeleteVpnConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2705,17 +2766,17 @@ namespace Amazon.EC2
         /// <param name="deleteVpnConnectionRouteRequest">Container for the necessary parameters to execute the DeleteVpnConnectionRoute service method
         /// on AmazonEC2.</param>
 		public DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
-		{
-			var task = DeleteVpnConnectionRouteAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVpnConnectionRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnectionRoute operation.
@@ -2728,12 +2789,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVpnConnectionRouteResponse> DeleteVpnConnectionRouteAsync(DeleteVpnConnectionRouteRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
-			var unmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
+            var unmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components because you no longer need them. We
@@ -2744,17 +2806,17 @@ namespace Amazon.EC2
         /// <param name="deleteVpnGatewayRequest">Container for the necessary parameters to execute the DeleteVpnGateway service method on
         /// AmazonEC2.</param>
 		public DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
-		{
-			var task = DeleteVpnGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnGateway operation.
@@ -2767,12 +2829,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVpnGatewayResponse> DeleteVpnGatewayAsync(DeleteVpnGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnGatewayRequestMarshaller();
-			var unmarshaller = DeleteVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnGatewayRequest, DeleteVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnGatewayRequestMarshaller();
+            var unmarshaller = DeleteVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnGatewayRequest, DeleteVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
@@ -2781,17 +2844,17 @@ namespace Amazon.EC2
         /// <param name="deregisterImageRequest">Container for the necessary parameters to execute the DeregisterImage service method on
         /// AmazonEC2.</param>
 		public DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
-		{
-			var task = DeregisterImageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeregisterImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterImage operation.
@@ -2804,12 +2867,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeregisterImageResponse> DeregisterImageAsync(DeregisterImageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeregisterImageRequestMarshaller();
-			var unmarshaller = DeregisterImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeregisterImageRequest, DeregisterImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeregisterImageRequestMarshaller();
+            var unmarshaller = DeregisterImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeregisterImageRequest, DeregisterImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2819,17 +2883,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by AmazonEC2.</returns>
 		public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
-		{
-			var task = DescribeAccountAttributesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAccountAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
@@ -2842,12 +2906,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAccountAttributesRequestMarshaller();
-			var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAccountAttributesRequest, DescribeAccountAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAccountAttributesRequest, DescribeAccountAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2857,9 +2922,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by AmazonEC2.</returns>
 		public DescribeAccountAttributesResponse DescribeAccountAttributes()
-		{
-			return this.DescribeAccountAttributes(new DescribeAccountAttributesRequest());
-		}
+        {
+            return this.DescribeAccountAttributes(new DescribeAccountAttributesRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
@@ -2870,17 +2935,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by AmazonEC2.</returns>
 		public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
-		{
-			var task = DescribeAddressesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAddresses operation.
@@ -2893,12 +2958,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAddressesRequestMarshaller();
-			var unmarshaller = DescribeAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAddressesRequest, DescribeAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAddressesRequestMarshaller();
+            var unmarshaller = DescribeAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAddressesRequest, DescribeAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
@@ -2909,9 +2975,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by AmazonEC2.</returns>
 		public DescribeAddressesResponse DescribeAddresses()
-		{
-			return this.DescribeAddresses(new DescribeAddressesRequest());
-		}
+        {
+            return this.DescribeAddresses(new DescribeAddressesRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
@@ -2924,17 +2990,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by AmazonEC2.</returns>
 		public DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
-		{
-			var task = DescribeAvailabilityZonesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeAvailabilityZonesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityZones operation.
@@ -2947,12 +3013,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
-			var unmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
+            var unmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
@@ -2965,9 +3032,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by AmazonEC2.</returns>
 		public DescribeAvailabilityZonesResponse DescribeAvailabilityZones()
-		{
-			return this.DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest());
-		}
+        {
+            return this.DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
@@ -2979,17 +3046,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
-		{
-			var task = DescribeBundleTasksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeBundleTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBundleTasks operation.
@@ -3002,12 +3069,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(DescribeBundleTasksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeBundleTasksRequestMarshaller();
-			var unmarshaller = DescribeBundleTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeBundleTasksRequest, DescribeBundleTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeBundleTasksRequestMarshaller();
+            var unmarshaller = DescribeBundleTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeBundleTasksRequest, DescribeBundleTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
@@ -3019,9 +3087,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeBundleTasksResponse DescribeBundleTasks()
-		{
-			return this.DescribeBundleTasks(new DescribeBundleTasksRequest());
-		}
+        {
+            return this.DescribeBundleTasks(new DescribeBundleTasksRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -3031,17 +3099,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
-		{
-			var task = DescribeConversionTasksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeConversionTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConversionTasks operation.
@@ -3054,12 +3122,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(DescribeConversionTasksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConversionTasksRequestMarshaller();
-			var unmarshaller = DescribeConversionTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConversionTasksRequest, DescribeConversionTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConversionTasksRequestMarshaller();
+            var unmarshaller = DescribeConversionTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConversionTasksRequest, DescribeConversionTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3069,9 +3138,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeConversionTasksResponse DescribeConversionTasks()
-		{
-			return this.DescribeConversionTasks(new DescribeConversionTasksRequest());
-		}
+        {
+            return this.DescribeConversionTasks(new DescribeConversionTasksRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your customer gateways. You can filter the results to return information only about customer gateways
@@ -3087,17 +3156,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
-		{
-			var task = DescribeCustomerGatewaysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCustomerGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCustomerGateways operation.
@@ -3110,12 +3179,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
-			var unmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
+            var unmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your customer gateways. You can filter the results to return information only about customer gateways
@@ -3131,9 +3201,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeCustomerGatewaysResponse DescribeCustomerGateways()
-		{
-			return this.DescribeCustomerGateways(new DescribeCustomerGatewaysRequest());
-		}
+        {
+            return this.DescribeCustomerGateways(new DescribeCustomerGatewaysRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to
@@ -3150,17 +3220,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by AmazonEC2.</returns>
 		public DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
-		{
-			var task = DescribeDhcpOptionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDhcpOptions operation.
@@ -3173,12 +3243,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(DescribeDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDhcpOptionsRequestMarshaller();
-			var unmarshaller = DescribeDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDhcpOptionsRequest, DescribeDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDhcpOptionsRequestMarshaller();
+            var unmarshaller = DescribeDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDhcpOptionsRequest, DescribeDhcpOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to
@@ -3195,9 +3266,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by AmazonEC2.</returns>
 		public DescribeDhcpOptionsResponse DescribeDhcpOptions()
-		{
-			return this.DescribeDhcpOptions(new DescribeDhcpOptionsRequest());
-		}
+        {
+            return this.DescribeDhcpOptions(new DescribeDhcpOptionsRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -3207,17 +3278,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
-		{
-			var task = DescribeExportTasksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeExportTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExportTasks operation.
@@ -3230,12 +3301,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeExportTasksRequestMarshaller();
-			var unmarshaller = DescribeExportTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeExportTasksRequest, DescribeExportTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeExportTasksRequest, DescribeExportTasksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3245,9 +3317,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by AmazonEC2.</returns>
 		public DescribeExportTasksResponse DescribeExportTasks()
-		{
-			return this.DescribeExportTasks(new DescribeExportTasksRequest());
-		}
+        {
+            return this.DescribeExportTasks(new DescribeExportTasksRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
@@ -3259,17 +3331,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImageAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
-		{
-			var task = DescribeImageAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImageAttribute operation.
@@ -3282,12 +3354,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeImageAttributeResponse> DescribeImageAttributeAsync(DescribeImageAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeImageAttributeRequestMarshaller();
-			var unmarshaller = DescribeImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeImageAttributeRequest, DescribeImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeImageAttributeRequest, DescribeImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the user. Information returned includes
@@ -3317,17 +3390,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by AmazonEC2.</returns>
 		public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
-		{
-			var task = DescribeImagesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeImagesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImages operation.
@@ -3340,12 +3413,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeImagesRequestMarshaller();
-			var unmarshaller = DescribeImagesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeImagesRequest, DescribeImagesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeImagesRequestMarshaller();
+            var unmarshaller = DescribeImagesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeImagesRequest, DescribeImagesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the user. Information returned includes
@@ -3375,9 +3449,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by AmazonEC2.</returns>
 		public DescribeImagesResponse DescribeImages()
-		{
-			return this.DescribeImages(new DescribeImagesRequest());
-		}
+        {
+            return this.DescribeImages(new DescribeImagesRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
@@ -3388,17 +3462,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
-		{
-			var task = DescribeInstanceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceAttribute operation.
@@ -3411,12 +3485,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceAttributeRequestMarshaller();
-			var unmarshaller = DescribeInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceAttributeRequest, DescribeInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceAttributeRequestMarshaller();
+            var unmarshaller = DescribeInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceAttributeRequest, DescribeInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeInstances operation returns information about instances that you own. </para> <para> If you specify one or more instance
@@ -3431,17 +3506,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
 		public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
-		{
-			var task = DescribeInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
@@ -3454,12 +3529,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstancesRequestMarshaller();
-			var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstancesRequestMarshaller();
+            var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeInstances operation returns information about instances that you own. </para> <para> If you specify one or more instance
@@ -3474,9 +3550,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
 		public DescribeInstancesResponse DescribeInstances()
-		{
-			return this.DescribeInstances(new DescribeInstancesRequest());
-		}
+        {
+            return this.DescribeInstances(new DescribeInstancesRequest());
+        }
  
         /// <summary>
         /// <para> Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types
@@ -3516,17 +3592,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
 		public DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
-		{
-			var task = DescribeInstanceStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInstanceStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceStatus operation.
@@ -3539,12 +3615,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(DescribeInstanceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceStatusRequestMarshaller();
-			var unmarshaller = DescribeInstanceStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceStatusRequest, DescribeInstanceStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceStatusRequestMarshaller();
+            var unmarshaller = DescribeInstanceStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceStatusRequest, DescribeInstanceStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types
@@ -3584,9 +3661,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
 		public DescribeInstanceStatusResponse DescribeInstanceStatus()
-		{
-			return this.DescribeInstanceStatus(new DescribeInstanceStatusRequest());
-		}
+        {
+            return this.DescribeInstanceStatus(new DescribeInstanceStatusRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your Internet gateways. You can filter the results to return information only about Internet gateways
@@ -3605,17 +3682,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
-		{
-			var task = DescribeInternetGatewaysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeInternetGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInternetGateways operation.
@@ -3628,12 +3705,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInternetGatewaysRequestMarshaller();
-			var unmarshaller = DescribeInternetGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInternetGatewaysRequest, DescribeInternetGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInternetGatewaysRequestMarshaller();
+            var unmarshaller = DescribeInternetGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInternetGatewaysRequest, DescribeInternetGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your Internet gateways. You can filter the results to return information only about Internet gateways
@@ -3652,9 +3730,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeInternetGatewaysResponse DescribeInternetGateways()
-		{
-			return this.DescribeInternetGateways(new DescribeInternetGatewaysRequest());
-		}
+        {
+            return this.DescribeInternetGateways(new DescribeInternetGatewaysRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about
@@ -3666,17 +3744,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
 		public DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
-		{
-			var task = DescribeKeyPairsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeKeyPairsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKeyPairs operation.
@@ -3689,12 +3767,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(DescribeKeyPairsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeKeyPairsRequestMarshaller();
-			var unmarshaller = DescribeKeyPairsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeKeyPairsRequest, DescribeKeyPairsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeKeyPairsRequestMarshaller();
+            var unmarshaller = DescribeKeyPairsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeKeyPairsRequest, DescribeKeyPairsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about
@@ -3706,9 +3785,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
 		public DescribeKeyPairsResponse DescribeKeyPairs()
-		{
-			return this.DescribeKeyPairs(new DescribeKeyPairsRequest());
-		}
+        {
+            return this.DescribeKeyPairs(new DescribeKeyPairsRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
@@ -3727,9 +3806,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
 		public DescribeNetworkAclsResponse DescribeNetworkAcls()
-		{
-			return this.DescribeNetworkAcls(new DescribeNetworkAclsRequest());
-		}
+        {
+            return this.DescribeNetworkAcls(new DescribeNetworkAclsRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
@@ -3748,17 +3827,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
 		public DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
-		{
-			var task = DescribeNetworkAclsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeNetworkAclsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkAcls operation.
@@ -3771,12 +3850,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkAclsRequestMarshaller();
-			var unmarshaller = DescribeNetworkAclsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkAclsRequest, DescribeNetworkAclsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkAclsRequestMarshaller();
+            var unmarshaller = DescribeNetworkAclsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkAclsRequest, DescribeNetworkAclsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3786,17 +3866,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkInterfaceAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
-		{
-			var task = DescribeNetworkInterfaceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaceAttribute operation.
@@ -3809,12 +3889,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeNetworkInterfaceAttributeResponse> DescribeNetworkInterfaceAttributeAsync(DescribeNetworkInterfaceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkInterfaceAttributeRequest, DescribeNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkInterfaceAttributeRequest, DescribeNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3824,17 +3905,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by AmazonEC2.</returns>
 		public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
-		{
-			var task = DescribeNetworkInterfacesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeNetworkInterfacesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaces operation.
@@ -3847,12 +3928,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(DescribeNetworkInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
-			var unmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3862,9 +3944,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by AmazonEC2.</returns>
 		public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces()
-		{
-			return this.DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
-		}
+        {
+            return this.DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
@@ -3875,17 +3957,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by AmazonEC2.</returns>
 		public DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
-		{
-			var task = DescribePlacementGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribePlacementGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePlacementGroups operation.
@@ -3898,12 +3980,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(DescribePlacementGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePlacementGroupsRequestMarshaller();
-			var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePlacementGroupsRequest, DescribePlacementGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePlacementGroupsRequestMarshaller();
+            var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePlacementGroupsRequest, DescribePlacementGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
@@ -3914,9 +3997,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by AmazonEC2.</returns>
 		public DescribePlacementGroupsResponse DescribePlacementGroups()
-		{
-			return this.DescribePlacementGroups(new DescribePlacementGroupsRequest());
-		}
+        {
+            return this.DescribePlacementGroups(new DescribePlacementGroupsRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
@@ -3927,17 +4010,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by AmazonEC2.</returns>
 		public DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
-		{
-			var task = DescribeRegionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeRegionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRegions operation.
@@ -3950,12 +4033,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeRegionsResponse> DescribeRegionsAsync(DescribeRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRegionsRequestMarshaller();
-			var unmarshaller = DescribeRegionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRegionsRequest, DescribeRegionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRegionsRequestMarshaller();
+            var unmarshaller = DescribeRegionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRegionsRequest, DescribeRegionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
@@ -3966,9 +4050,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by AmazonEC2.</returns>
 		public DescribeRegionsResponse DescribeRegions()
-		{
-			return this.DescribeRegions(new DescribeRegionsRequest());
-		}
+        {
+            return this.DescribeRegions(new DescribeRegionsRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
@@ -3979,17 +4063,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
-		{
-			var task = DescribeReservedInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstances operation.
@@ -4002,12 +4086,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesRequest, DescribeReservedInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesRequest, DescribeReservedInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
@@ -4018,9 +4103,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesResponse DescribeReservedInstances()
-		{
-			return this.DescribeReservedInstances(new DescribeReservedInstancesRequest());
-		}
+        {
+            return this.DescribeReservedInstances(new DescribeReservedInstancesRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -4030,17 +4115,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
-		{
-			var task = DescribeReservedInstancesListingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedInstancesListingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesListings operation.
@@ -4053,12 +4138,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesListingsRequest, DescribeReservedInstancesListingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesListingsRequest, DescribeReservedInstancesListingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -4068,9 +4154,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings()
-		{
-			return this.DescribeReservedInstancesListings(new DescribeReservedInstancesListingsRequest());
-		}
+        {
+            return this.DescribeReservedInstancesListings(new DescribeReservedInstancesListingsRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon
@@ -4083,17 +4169,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
-		{
-			var task = DescribeReservedInstancesOfferingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedInstancesOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesOfferings operation.
@@ -4106,12 +4192,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(DescribeReservedInstancesOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesOfferingsRequest, DescribeReservedInstancesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesOfferingsRequest, DescribeReservedInstancesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon
@@ -4124,9 +4211,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by AmazonEC2.</returns>
 		public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings()
-		{
-			return this.DescribeReservedInstancesOfferings(new DescribeReservedInstancesOfferingsRequest());
-		}
+        {
+            return this.DescribeReservedInstancesOfferings(new DescribeReservedInstancesOfferingsRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your route tables. You can filter the results to return information only about tables that match criteria
@@ -4145,17 +4232,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by AmazonEC2.</returns>
 		public DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
-		{
-			var task = DescribeRouteTablesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeRouteTablesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRouteTables operation.
@@ -4168,12 +4255,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(DescribeRouteTablesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRouteTablesRequestMarshaller();
-			var unmarshaller = DescribeRouteTablesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRouteTablesRequest, DescribeRouteTablesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRouteTablesRequestMarshaller();
+            var unmarshaller = DescribeRouteTablesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRouteTablesRequest, DescribeRouteTablesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your route tables. You can filter the results to return information only about tables that match criteria
@@ -4192,9 +4280,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by AmazonEC2.</returns>
 		public DescribeRouteTablesResponse DescribeRouteTables()
-		{
-			return this.DescribeRouteTables(new DescribeRouteTablesRequest());
-		}
+        {
+            return this.DescribeRouteTables(new DescribeRouteTablesRequest());
+        }
  
         /// <summary>
         /// <para> The DescribeSecurityGroups operation returns information about security groups that you own. </para> <para> If you specify security
@@ -4207,17 +4295,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by AmazonEC2.</returns>
 		public DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
-		{
-			var task = DescribeSecurityGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSecurityGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSecurityGroups operation.
@@ -4230,12 +4318,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(DescribeSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSecurityGroupsRequest, DescribeSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSecurityGroupsRequest, DescribeSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeSecurityGroups operation returns information about security groups that you own. </para> <para> If you specify security
@@ -4248,9 +4337,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by AmazonEC2.</returns>
 		public DescribeSecurityGroupsResponse DescribeSecurityGroups()
-		{
-			return this.DescribeSecurityGroups(new DescribeSecurityGroupsRequest());
-		}
+        {
+            return this.DescribeSecurityGroups(new DescribeSecurityGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about an attribute of a snapshot. Only one attribute can be specified per call. </para>
@@ -4261,17 +4350,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSnapshotAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
-		{
-			var task = DescribeSnapshotAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotAttribute operation.
@@ -4284,12 +4373,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSnapshotAttributeResponse> DescribeSnapshotAttributeAsync(DescribeSnapshotAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
-			var unmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotAttributeRequest, DescribeSnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
+            var unmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotAttributeRequest, DescribeSnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available
@@ -4302,17 +4392,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonEC2.</returns>
 		public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
-		{
-			var task = DescribeSnapshotsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSnapshotsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
@@ -4325,12 +4415,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotsRequestMarshaller();
-			var unmarshaller = DescribeSnapshotsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotsRequest, DescribeSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotsRequest, DescribeSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available
@@ -4343,9 +4434,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonEC2.</returns>
 		public DescribeSnapshotsResponse DescribeSnapshots()
-		{
-			return this.DescribeSnapshots(new DescribeSnapshotsRequest());
-		}
+        {
+            return this.DescribeSnapshots(new DescribeSnapshotsRequest());
+        }
  
         /// <summary>
         /// <para> Describes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
@@ -4358,17 +4449,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
-		{
-			var task = DescribeSpotDatafeedSubscriptionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotDatafeedSubscription operation.
@@ -4381,12 +4472,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotDatafeedSubscriptionRequest, DescribeSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotDatafeedSubscriptionRequest, DescribeSpotDatafeedSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
@@ -4399,9 +4491,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription()
-		{
-			return this.DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
-		}
+        {
+            return this.DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
+        }
  
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
@@ -4424,17 +4516,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
-		{
-			var task = DescribeSpotInstanceRequestsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSpotInstanceRequestsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotInstanceRequests operation.
@@ -4447,12 +4539,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(DescribeSpotInstanceRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
-			var unmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
+            var unmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
@@ -4475,9 +4568,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests()
-		{
-			return this.DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest());
-		}
+        {
+            return this.DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest());
+        }
  
         /// <summary>
         /// <para> Describes the Spot Price history. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
@@ -4492,17 +4585,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
-		{
-			var task = DescribeSpotPriceHistoryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSpotPriceHistoryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotPriceHistory operation.
@@ -4515,12 +4608,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
-			var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
+            var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the Spot Price history. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
@@ -4535,9 +4629,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by AmazonEC2.</returns>
 		public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory()
-		{
-			return this.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest());
-		}
+        {
+            return this.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your subnets. You can filter the results to return information only about subnets that match criteria you
@@ -4552,17 +4646,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by AmazonEC2.</returns>
 		public DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
-		{
-			var task = DescribeSubnetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSubnetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubnets operation.
@@ -4575,12 +4669,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSubnetsResponse> DescribeSubnetsAsync(DescribeSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSubnetsRequestMarshaller();
-			var unmarshaller = DescribeSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSubnetsRequest, DescribeSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSubnetsRequestMarshaller();
+            var unmarshaller = DescribeSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSubnetsRequest, DescribeSubnetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your subnets. You can filter the results to return information only about subnets that match criteria you
@@ -4595,9 +4690,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by AmazonEC2.</returns>
 		public DescribeSubnetsResponse DescribeSubnets()
-		{
-			return this.DescribeSubnets(new DescribeSubnetsRequest());
-		}
+        {
+            return this.DescribeSubnets(new DescribeSubnetsRequest());
+        }
  
         /// <summary>
         /// <para> Describes the tags for the specified resources. </para>
@@ -4607,17 +4702,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AmazonEC2.</returns>
 		public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
-		{
-			var task = DescribeTagsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -4630,12 +4725,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTagsRequestMarshaller();
-			var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the tags for the specified resources. </para>
@@ -4645,9 +4741,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AmazonEC2.</returns>
 		public DescribeTagsResponse DescribeTags()
-		{
-			return this.DescribeTags(new DescribeTagsRequest());
-		}
+        {
+            return this.DescribeTags(new DescribeTagsRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -4657,17 +4753,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumeAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
-		{
-			var task = DescribeVolumeAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVolumeAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeAttribute operation.
@@ -4680,12 +4776,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVolumeAttributeResponse> DescribeVolumeAttributeAsync(DescribeVolumeAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumeAttributeRequestMarshaller();
-			var unmarshaller = DescribeVolumeAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumeAttributeRequest, DescribeVolumeAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumeAttributeRequestMarshaller();
+            var unmarshaller = DescribeVolumeAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumeAttributeRequest, DescribeVolumeAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have
@@ -4697,17 +4794,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by AmazonEC2.</returns>
 		public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
-		{
-			var task = DescribeVolumesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
@@ -4720,12 +4817,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumesRequestMarshaller();
-			var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumesRequestMarshaller();
+            var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have
@@ -4737,9 +4835,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by AmazonEC2.</returns>
 		public DescribeVolumesResponse DescribeVolumes()
-		{
-			return this.DescribeVolumes(new DescribeVolumesRequest());
-		}
+        {
+            return this.DescribeVolumes(new DescribeVolumesRequest());
+        }
  
         /// <summary>
         /// <para> Describes the status of a volume. </para>
@@ -4750,17 +4848,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by AmazonEC2.</returns>
 		public DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
-		{
-			var task = DescribeVolumeStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVolumeStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeStatus operation.
@@ -4773,12 +4871,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(DescribeVolumeStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumeStatusRequestMarshaller();
-			var unmarshaller = DescribeVolumeStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumeStatusRequest, DescribeVolumeStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumeStatusRequestMarshaller();
+            var unmarshaller = DescribeVolumeStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumeStatusRequest, DescribeVolumeStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of a volume. </para>
@@ -4789,9 +4888,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by AmazonEC2.</returns>
 		public DescribeVolumeStatusResponse DescribeVolumeStatus()
-		{
-			return this.DescribeVolumeStatus(new DescribeVolumeStatusRequest());
-		}
+        {
+            return this.DescribeVolumeStatus(new DescribeVolumeStatusRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -4801,17 +4900,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcAttribute service method, as returned by AmazonEC2.</returns>
 		public DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
-		{
-			var task = DescribeVpcAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVpcAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcAttribute operation.
@@ -4824,12 +4923,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVpcAttributeResponse> DescribeVpcAttributeAsync(DescribeVpcAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpcAttributeRequestMarshaller();
-			var unmarshaller = DescribeVpcAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpcAttributeRequest, DescribeVpcAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpcAttributeRequestMarshaller();
+            var unmarshaller = DescribeVpcAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpcAttributeRequest, DescribeVpcAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you
@@ -4843,17 +4943,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by AmazonEC2.</returns>
 		public DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
-		{
-			var task = DescribeVpcsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVpcsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcs operation.
@@ -4866,12 +4966,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpcsRequestMarshaller();
-			var unmarshaller = DescribeVpcsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpcsRequest, DescribeVpcsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpcsRequestMarshaller();
+            var unmarshaller = DescribeVpcsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpcsRequest, DescribeVpcsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you
@@ -4885,9 +4986,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by AmazonEC2.</returns>
 		public DescribeVpcsResponse DescribeVpcs()
-		{
-			return this.DescribeVpcs(new DescribeVpcsRequest());
-		}
+        {
+            return this.DescribeVpcs(new DescribeVpcsRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
@@ -4904,17 +5005,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
 		public DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
-		{
-			var task = DescribeVpnConnectionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVpnConnectionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnConnections operation.
@@ -4927,12 +5028,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(DescribeVpnConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpnConnectionsRequestMarshaller();
-			var unmarshaller = DescribeVpnConnectionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpnConnectionsRequest, DescribeVpnConnectionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpnConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpnConnectionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpnConnectionsRequest, DescribeVpnConnectionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
@@ -4949,9 +5051,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
 		public DescribeVpnConnectionsResponse DescribeVpnConnections()
-		{
-			return this.DescribeVpnConnections(new DescribeVpnConnectionsRequest());
-		}
+        {
+            return this.DescribeVpnConnections(new DescribeVpnConnectionsRequest());
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match
@@ -4967,17 +5069,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
-		{
-			var task = DescribeVpnGatewaysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVpnGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnGateways operation.
@@ -4990,12 +5092,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(DescribeVpnGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpnGatewaysRequestMarshaller();
-			var unmarshaller = DescribeVpnGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpnGatewaysRequest, DescribeVpnGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpnGatewaysRequestMarshaller();
+            var unmarshaller = DescribeVpnGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpnGatewaysRequest, DescribeVpnGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match
@@ -5011,9 +5114,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by AmazonEC2.</returns>
 		public DescribeVpnGatewaysResponse DescribeVpnGateways()
-		{
-			return this.DescribeVpnGateways(new DescribeVpnGatewaysRequest());
-		}
+        {
+            return this.DescribeVpnGateways(new DescribeVpnGatewaysRequest());
+        }
  
         /// <summary>
         /// <para> Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any
@@ -5025,17 +5128,17 @@ namespace Amazon.EC2
         /// <param name="detachInternetGatewayRequest">Container for the necessary parameters to execute the DetachInternetGateway service method on
         /// AmazonEC2.</param>
 		public DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
-		{
-			var task = DetachInternetGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInternetGateway operation.
@@ -5048,12 +5151,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachInternetGatewayResponse> DetachInternetGatewayAsync(DetachInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachInternetGatewayRequestMarshaller();
-			var unmarshaller = DetachInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachInternetGatewayRequest, DetachInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachInternetGatewayRequestMarshaller();
+            var unmarshaller = DetachInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachInternetGatewayRequest, DetachInternetGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5061,17 +5165,17 @@ namespace Amazon.EC2
         /// <param name="detachNetworkInterfaceRequest">Container for the necessary parameters to execute the DetachNetworkInterface service method on
         /// AmazonEC2.</param>
 		public DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
-		{
-			var task = DetachNetworkInterfaceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachNetworkInterface operation.
@@ -5084,12 +5188,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachNetworkInterfaceResponse> DetachNetworkInterfaceAsync(DetachNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachNetworkInterfaceRequestMarshaller();
-			var unmarshaller = DetachNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachNetworkInterfaceRequest, DetachNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachNetworkInterfaceRequestMarshaller();
+            var unmarshaller = DetachNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachNetworkInterfaceRequest, DetachNetworkInterfaceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Detach a previously attached volume from a running instance. </para>
@@ -5099,17 +5204,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DetachVolume service method, as returned by AmazonEC2.</returns>
 		public DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
-		{
-			var task = DetachVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVolume operation.
@@ -5122,12 +5227,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachVolumeRequestMarshaller();
-			var unmarshaller = DetachVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachVolumeRequest, DetachVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachVolumeRequestMarshaller();
+            var unmarshaller = DetachVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachVolumeRequest, DetachVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN
@@ -5139,17 +5245,17 @@ namespace Amazon.EC2
         /// <param name="detachVpnGatewayRequest">Container for the necessary parameters to execute the DetachVpnGateway service method on
         /// AmazonEC2.</param>
 		public DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
-		{
-			var task = DetachVpnGatewayAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DetachVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVpnGateway operation.
@@ -5162,12 +5268,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DetachVpnGatewayResponse> DetachVpnGatewayAsync(DetachVpnGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachVpnGatewayRequestMarshaller();
-			var unmarshaller = DetachVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachVpnGatewayRequest, DetachVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachVpnGatewayRequestMarshaller();
+            var unmarshaller = DetachVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachVpnGatewayRequest, DetachVpnGatewayResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5175,17 +5282,17 @@ namespace Amazon.EC2
         /// <param name="disableVgwRoutePropagationRequest">Container for the necessary parameters to execute the DisableVgwRoutePropagation service
         /// method on AmazonEC2.</param>
 		public DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
-		{
-			var task = DisableVgwRoutePropagationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DisableVgwRoutePropagationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DisableVgwRoutePropagation operation.
@@ -5198,12 +5305,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DisableVgwRoutePropagationResponse> DisableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
-			var unmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
+            var unmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
@@ -5213,17 +5321,17 @@ namespace Amazon.EC2
         /// <param name="disassociateAddressRequest">Container for the necessary parameters to execute the DisassociateAddress service method on
         /// AmazonEC2.</param>
 		public DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
-		{
-			var task = DisassociateAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DisassociateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateAddress operation.
@@ -5236,12 +5344,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DisassociateAddressResponse> DisassociateAddressAsync(DisassociateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisassociateAddressRequestMarshaller();
-			var unmarshaller = DisassociateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisassociateAddressRequest, DisassociateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisassociateAddressRequestMarshaller();
+            var unmarshaller = DisassociateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisassociateAddressRequest, DisassociateAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
@@ -5251,9 +5360,9 @@ namespace Amazon.EC2
         /// <param name="disassociateAddressRequest">Container for the necessary parameters to execute the DisassociateAddress service method on
         /// AmazonEC2.</param>
 		public DisassociateAddressResponse DisassociateAddress()
-		{
-			return this.DisassociateAddress(new DisassociateAddressRequest());
-		}
+        {
+            return this.DisassociateAddress(new DisassociateAddressRequest());
+        }
  
         /// <summary>
         /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
@@ -5264,17 +5373,17 @@ namespace Amazon.EC2
         /// <param name="disassociateRouteTableRequest">Container for the necessary parameters to execute the DisassociateRouteTable service method on
         /// AmazonEC2.</param>
 		public DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
-		{
-			var task = DisassociateRouteTableAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DisassociateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateRouteTable operation.
@@ -5287,12 +5396,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DisassociateRouteTableResponse> DisassociateRouteTableAsync(DisassociateRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisassociateRouteTableRequestMarshaller();
-			var unmarshaller = DisassociateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisassociateRouteTableRequest, DisassociateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisassociateRouteTableRequestMarshaller();
+            var unmarshaller = DisassociateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisassociateRouteTableRequest, DisassociateRouteTableResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5300,17 +5410,17 @@ namespace Amazon.EC2
         /// <param name="enableVgwRoutePropagationRequest">Container for the necessary parameters to execute the EnableVgwRoutePropagation service
         /// method on AmazonEC2.</param>
 		public EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
-		{
-			var task = EnableVgwRoutePropagationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EnableVgwRoutePropagationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVgwRoutePropagation operation.
@@ -5323,12 +5433,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EnableVgwRoutePropagationResponse> EnableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
-			var unmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
+            var unmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enable IO on the volume after an event has occured. </para>
@@ -5337,17 +5448,17 @@ namespace Amazon.EC2
         /// <param name="enableVolumeIORequest">Container for the necessary parameters to execute the EnableVolumeIO service method on
         /// AmazonEC2.</param>
 		public EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
-		{
-			var task = EnableVolumeIOAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EnableVolumeIOAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVolumeIO operation.
@@ -5360,12 +5471,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EnableVolumeIOResponse> EnableVolumeIOAsync(EnableVolumeIORequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableVolumeIORequestMarshaller();
-			var unmarshaller = EnableVolumeIOResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableVolumeIORequest, EnableVolumeIOResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableVolumeIORequestMarshaller();
+            var unmarshaller = EnableVolumeIOResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableVolumeIORequest, EnableVolumeIOResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The GetConsoleOutput operation retrieves console output for the specified instance. </para> <para> Instance console output is
@@ -5378,17 +5490,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the GetConsoleOutput service method, as returned by AmazonEC2.</returns>
 		public GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
-		{
-			var task = GetConsoleOutputAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetConsoleOutputAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetConsoleOutput operation.
@@ -5401,12 +5513,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetConsoleOutputResponse> GetConsoleOutputAsync(GetConsoleOutputRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetConsoleOutputRequestMarshaller();
-			var unmarshaller = GetConsoleOutputResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetConsoleOutputRequest, GetConsoleOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetConsoleOutputRequestMarshaller();
+            var unmarshaller = GetConsoleOutputResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetConsoleOutputRequest, GetConsoleOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Retrieves the encrypted administrator password for the instances running Windows. </para> <para><b>NOTE:</b> The Windows password is
@@ -5419,17 +5532,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the GetPasswordData service method, as returned by AmazonEC2.</returns>
 		public GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
-		{
-			var task = GetPasswordDataAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetPasswordDataAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetPasswordData operation.
@@ -5442,12 +5555,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetPasswordDataResponse> GetPasswordDataAsync(GetPasswordDataRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetPasswordDataRequestMarshaller();
-			var unmarshaller = GetPasswordDataResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetPasswordDataRequest, GetPasswordDataResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetPasswordDataRequestMarshaller();
+            var unmarshaller = GetPasswordDataResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetPasswordDataRequest, GetPasswordDataResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5457,17 +5571,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportInstance service method, as returned by AmazonEC2.</returns>
 		public ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
-		{
-			var task = ImportInstanceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ImportInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ImportInstance operation.
@@ -5480,12 +5594,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ImportInstanceResponse> ImportInstanceAsync(ImportInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportInstanceRequestMarshaller();
-			var unmarshaller = ImportInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportInstanceRequest, ImportInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportInstanceRequestMarshaller();
+            var unmarshaller = ImportInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportInstanceRequest, ImportInstanceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Imports the public key from an RSA key pair created with a third-party tool. This operation differs from CreateKeyPair as the private
@@ -5506,17 +5621,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportKeyPair service method, as returned by AmazonEC2.</returns>
 		public ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
-		{
-			var task = ImportKeyPairAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ImportKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ImportKeyPair operation.
@@ -5529,12 +5644,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportKeyPairRequestMarshaller();
-			var unmarshaller = ImportKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportKeyPairRequest, ImportKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportKeyPairRequestMarshaller();
+            var unmarshaller = ImportKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportKeyPairRequest, ImportKeyPairResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5543,17 +5659,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by AmazonEC2.</returns>
 		public ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
-		{
-			var task = ImportVolumeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ImportVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ImportVolume operation.
@@ -5566,12 +5682,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportVolumeRequestMarshaller();
-			var unmarshaller = ImportVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportVolumeRequest, ImportVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportVolumeRequestMarshaller();
+            var unmarshaller = ImportVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportVolumeRequest, ImportVolumeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5580,9 +5697,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by AmazonEC2.</returns>
 		public ImportVolumeResponse ImportVolume()
-		{
-			return this.ImportVolume(new ImportVolumeRequest());
-		}
+        {
+            return this.ImportVolume(new ImportVolumeRequest());
+        }
  
         /// <summary>
         /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
@@ -5591,17 +5708,17 @@ namespace Amazon.EC2
         /// <param name="modifyImageAttributeRequest">Container for the necessary parameters to execute the ModifyImageAttribute service method on
         /// AmazonEC2.</param>
 		public ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
-		{
-			var task = ModifyImageAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyImageAttribute operation.
@@ -5614,12 +5731,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyImageAttributeResponse> ModifyImageAttributeAsync(ModifyImageAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyImageAttributeRequestMarshaller();
-			var unmarshaller = ModifyImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyImageAttributeRequest, ModifyImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyImageAttributeRequest, ModifyImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an attribute of an instance. </para>
@@ -5628,17 +5746,17 @@ namespace Amazon.EC2
         /// <param name="modifyInstanceAttributeRequest">Container for the necessary parameters to execute the ModifyInstanceAttribute service method on
         /// AmazonEC2.</param>
 		public ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
-		{
-			var task = ModifyInstanceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceAttribute operation.
@@ -5651,12 +5769,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyInstanceAttributeRequestMarshaller();
-			var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyInstanceAttributeRequest, ModifyInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyInstanceAttributeRequestMarshaller();
+            var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyInstanceAttributeRequest, ModifyInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5664,17 +5783,17 @@ namespace Amazon.EC2
         /// <param name="modifyNetworkInterfaceAttributeRequest">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute
         /// service method on AmazonEC2.</param>
 		public ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
-		{
-			var task = ModifyNetworkInterfaceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyNetworkInterfaceAttribute operation.
@@ -5687,12 +5806,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeAsync(ModifyNetworkInterfaceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds or remove permission settings for the specified snapshot. </para>
@@ -5701,17 +5821,17 @@ namespace Amazon.EC2
         /// <param name="modifySnapshotAttributeRequest">Container for the necessary parameters to execute the ModifySnapshotAttribute service method on
         /// AmazonEC2.</param>
 		public ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
-		{
-			var task = ModifySnapshotAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifySnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotAttribute operation.
@@ -5724,12 +5844,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifySnapshotAttributeResponse> ModifySnapshotAttributeAsync(ModifySnapshotAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifySnapshotAttributeRequestMarshaller();
-			var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifySnapshotAttributeRequest, ModifySnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifySnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifySnapshotAttributeRequest, ModifySnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5737,17 +5858,17 @@ namespace Amazon.EC2
         /// <param name="modifyVolumeAttributeRequest">Container for the necessary parameters to execute the ModifyVolumeAttribute service method on
         /// AmazonEC2.</param>
 		public ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
-		{
-			var task = ModifyVolumeAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyVolumeAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVolumeAttribute operation.
@@ -5760,12 +5881,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyVolumeAttributeResponse> ModifyVolumeAttributeAsync(ModifyVolumeAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyVolumeAttributeRequestMarshaller();
-			var unmarshaller = ModifyVolumeAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyVolumeAttributeRequest, ModifyVolumeAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyVolumeAttributeRequestMarshaller();
+            var unmarshaller = ModifyVolumeAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyVolumeAttributeRequest, ModifyVolumeAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -5773,17 +5895,17 @@ namespace Amazon.EC2
         /// <param name="modifyVpcAttributeRequest">Container for the necessary parameters to execute the ModifyVpcAttribute service method on
         /// AmazonEC2.</param>
 		public ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
-		{
-			var task = ModifyVpcAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyVpcAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVpcAttribute operation.
@@ -5796,12 +5918,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyVpcAttributeResponse> ModifyVpcAttributeAsync(ModifyVpcAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyVpcAttributeRequestMarshaller();
-			var unmarshaller = ModifyVpcAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyVpcAttributeRequest, ModifyVpcAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyVpcAttributeRequestMarshaller();
+            var unmarshaller = ModifyVpcAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyVpcAttributeRequest, ModifyVpcAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables monitoring for a running instance. </para>
@@ -5812,17 +5935,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the MonitorInstances service method, as returned by AmazonEC2.</returns>
 		public MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
-		{
-			var task = MonitorInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = MonitorInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the MonitorInstances operation.
@@ -5835,12 +5958,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<MonitorInstancesResponse> MonitorInstancesAsync(MonitorInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new MonitorInstancesRequestMarshaller();
-			var unmarshaller = MonitorInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, MonitorInstancesRequest, MonitorInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new MonitorInstancesRequestMarshaller();
+            var unmarshaller = MonitorInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, MonitorInstancesRequest, MonitorInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The PurchaseReservedInstancesOffering operation purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
@@ -5853,17 +5977,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the PurchaseReservedInstancesOffering service method, as returned by AmazonEC2.</returns>
 		public PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
-		{
-			var task = PurchaseReservedInstancesOfferingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PurchaseReservedInstancesOfferingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedInstancesOffering operation.
@@ -5876,12 +6000,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingAsync(PurchaseReservedInstancesOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedInstancesOfferingRequest, PurchaseReservedInstancesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedInstancesOfferingRequest, PurchaseReservedInstancesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to
@@ -5892,17 +6017,17 @@ namespace Amazon.EC2
         /// <param name="rebootInstancesRequest">Container for the necessary parameters to execute the RebootInstances service method on
         /// AmazonEC2.</param>
 		public RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
-		{
-			var task = RebootInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebootInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstances operation.
@@ -5915,12 +6040,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebootInstancesResponse> RebootInstancesAsync(RebootInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootInstancesRequestMarshaller();
-			var unmarshaller = RebootInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootInstancesRequest, RebootInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootInstancesRequestMarshaller();
+            var unmarshaller = RebootInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootInstancesRequest, RebootInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more
@@ -5935,17 +6061,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by AmazonEC2.</returns>
 		public RegisterImageResponse RegisterImage(RegisterImageRequest request)
-		{
-			var task = RegisterImageAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RegisterImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterImage operation.
@@ -5958,12 +6084,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RegisterImageResponse> RegisterImageAsync(RegisterImageRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterImageRequestMarshaller();
-			var unmarshaller = RegisterImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterImageRequest, RegisterImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterImageRequestMarshaller();
+            var unmarshaller = RegisterImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterImageRequest, RegisterImageResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more
@@ -5978,9 +6105,9 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by AmazonEC2.</returns>
 		public RegisterImageResponse RegisterImage()
-		{
-			return this.RegisterImage(new RegisterImageRequest());
-		}
+        {
+            return this.RegisterImage(new RegisterImageRequest());
+        }
  
         /// <summary>
         /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
@@ -5994,17 +6121,17 @@ namespace Amazon.EC2
         /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
         /// AmazonEC2.</param>
 		public ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
-		{
-			var task = ReleaseAddressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReleaseAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReleaseAddress operation.
@@ -6017,12 +6144,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReleaseAddressRequestMarshaller();
-			var unmarshaller = ReleaseAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReleaseAddressRequest, ReleaseAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReleaseAddressRequestMarshaller();
+            var unmarshaller = ReleaseAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReleaseAddressRequest, ReleaseAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
@@ -6036,9 +6164,9 @@ namespace Amazon.EC2
         /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
         /// AmazonEC2.</param>
 		public ReleaseAddressResponse ReleaseAddress()
-		{
-			return this.ReleaseAddress(new ReleaseAddressRequest());
-		}
+        {
+            return this.ReleaseAddress(new ReleaseAddressRequest());
+        }
  
         /// <summary>
         /// <para> Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the
@@ -6050,17 +6178,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ReplaceNetworkAclAssociation service method, as returned by AmazonEC2.</returns>
 		public ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
-		{
-			var task = ReplaceNetworkAclAssociationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReplaceNetworkAclAssociationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclAssociation operation.
@@ -6073,12 +6201,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReplaceNetworkAclAssociationResponse> ReplaceNetworkAclAssociationAsync(ReplaceNetworkAclAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
-			var unmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceNetworkAclAssociationRequest, ReplaceNetworkAclAssociationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
+            var unmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceNetworkAclAssociationRequest, ReplaceNetworkAclAssociationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
@@ -6088,17 +6217,17 @@ namespace Amazon.EC2
         /// <param name="replaceNetworkAclEntryRequest">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		public ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
-		{
-			var task = ReplaceNetworkAclEntryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReplaceNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclEntry operation.
@@ -6111,12 +6240,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReplaceNetworkAclEntryResponse> ReplaceNetworkAclEntryAsync(ReplaceNetworkAclEntryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
-			var unmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
+            var unmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
@@ -6125,17 +6255,17 @@ namespace Amazon.EC2
         /// 
         /// <param name="replaceRouteRequest">Container for the necessary parameters to execute the ReplaceRoute service method on AmazonEC2.</param>
 		public ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
-		{
-			var task = ReplaceRouteAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReplaceRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRoute operation.
@@ -6148,12 +6278,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReplaceRouteResponse> ReplaceRouteAsync(ReplaceRouteRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceRouteRequestMarshaller();
-			var unmarshaller = ReplaceRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceRouteRequest, ReplaceRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceRouteRequestMarshaller();
+            var unmarshaller = ReplaceRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceRouteRequest, ReplaceRouteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
@@ -6167,17 +6298,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ReplaceRouteTableAssociation service method, as returned by AmazonEC2.</returns>
 		public ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
-		{
-			var task = ReplaceRouteTableAssociationAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReplaceRouteTableAssociationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRouteTableAssociation operation.
@@ -6190,12 +6321,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationAsync(ReplaceRouteTableAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
-			var unmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceRouteTableAssociationRequest, ReplaceRouteTableAssociationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
+            var unmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceRouteTableAssociationRequest, ReplaceRouteTableAssociationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -6203,17 +6335,17 @@ namespace Amazon.EC2
         /// <param name="reportInstanceStatusRequest">Container for the necessary parameters to execute the ReportInstanceStatus service method on
         /// AmazonEC2.</param>
 		public ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
-		{
-			var task = ReportInstanceStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReportInstanceStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReportInstanceStatus operation.
@@ -6226,12 +6358,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReportInstanceStatusResponse> ReportInstanceStatusAsync(ReportInstanceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportInstanceStatusRequestMarshaller();
-			var unmarshaller = ReportInstanceStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportInstanceStatusRequest, ReportInstanceStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportInstanceStatusRequestMarshaller();
+            var unmarshaller = ReportInstanceStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportInstanceStatusRequest, ReportInstanceStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -6239,9 +6372,9 @@ namespace Amazon.EC2
         /// <param name="reportInstanceStatusRequest">Container for the necessary parameters to execute the ReportInstanceStatus service method on
         /// AmazonEC2.</param>
 		public ReportInstanceStatusResponse ReportInstanceStatus()
-		{
-			return this.ReportInstanceStatus(new ReportInstanceStatusRequest());
-		}
+        {
+            return this.ReportInstanceStatus(new ReportInstanceStatusRequest());
+        }
  
         /// <summary>
         /// <para> Creates a Spot Instance request. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
@@ -6255,17 +6388,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RequestSpotInstances service method, as returned by AmazonEC2.</returns>
 		public RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
-		{
-			var task = RequestSpotInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RequestSpotInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RequestSpotInstances operation.
@@ -6278,12 +6411,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RequestSpotInstancesRequestMarshaller();
-			var unmarshaller = RequestSpotInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RequestSpotInstancesRequest, RequestSpotInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RequestSpotInstancesRequestMarshaller();
+            var unmarshaller = RequestSpotInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RequestSpotInstancesRequest, RequestSpotInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ResetImageAttribute operation resets an attribute of an AMI to its default value. </para> <para><b>NOTE:</b> The productCodes
@@ -6293,17 +6427,17 @@ namespace Amazon.EC2
         /// <param name="resetImageAttributeRequest">Container for the necessary parameters to execute the ResetImageAttribute service method on
         /// AmazonEC2.</param>
 		public ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
-		{
-			var task = ResetImageAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetImageAttribute operation.
@@ -6316,12 +6450,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetImageAttributeResponse> ResetImageAttributeAsync(ResetImageAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetImageAttributeRequestMarshaller();
-			var unmarshaller = ResetImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetImageAttributeRequest, ResetImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetImageAttributeRequestMarshaller();
+            var unmarshaller = ResetImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetImageAttributeRequest, ResetImageAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resets an attribute of an instance to its default value. </para>
@@ -6330,17 +6465,17 @@ namespace Amazon.EC2
         /// <param name="resetInstanceAttributeRequest">Container for the necessary parameters to execute the ResetInstanceAttribute service method on
         /// AmazonEC2.</param>
 		public ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
-		{
-			var task = ResetInstanceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetInstanceAttribute operation.
@@ -6353,12 +6488,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetInstanceAttributeResponse> ResetInstanceAttributeAsync(ResetInstanceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetInstanceAttributeRequestMarshaller();
-			var unmarshaller = ResetInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetInstanceAttributeRequest, ResetInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetInstanceAttributeRequestMarshaller();
+            var unmarshaller = ResetInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetInstanceAttributeRequest, ResetInstanceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -6366,17 +6502,17 @@ namespace Amazon.EC2
         /// <param name="resetNetworkInterfaceAttributeRequest">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute
         /// service method on AmazonEC2.</param>
 		public ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
-		{
-			var task = ResetNetworkInterfaceAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetNetworkInterfaceAttribute operation.
@@ -6389,12 +6525,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetNetworkInterfaceAttributeResponse> ResetNetworkInterfaceAttributeAsync(ResetNetworkInterfaceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resets permission settings for the specified snapshot. </para>
@@ -6403,17 +6540,17 @@ namespace Amazon.EC2
         /// <param name="resetSnapshotAttributeRequest">Container for the necessary parameters to execute the ResetSnapshotAttribute service method on
         /// AmazonEC2.</param>
 		public ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
-		{
-			var task = ResetSnapshotAttributeAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetSnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetSnapshotAttribute operation.
@@ -6426,12 +6563,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetSnapshotAttributeResponse> ResetSnapshotAttributeAsync(ResetSnapshotAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetSnapshotAttributeRequestMarshaller();
-			var unmarshaller = ResetSnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetSnapshotAttributeRequest, ResetSnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ResetSnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetSnapshotAttributeRequest, ResetSnapshotAttributeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action applies only to security groups in a VPC. It doesn't work with EC2 security groups. For information about Amazon Virtual
@@ -6446,17 +6584,17 @@ namespace Amazon.EC2
         /// <param name="revokeSecurityGroupEgressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupEgress service
         /// method on AmazonEC2.</param>
 		public RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
-		{
-			var task = RevokeSecurityGroupEgressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RevokeSecurityGroupEgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupEgress operation.
@@ -6469,12 +6607,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RevokeSecurityGroupEgressResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
-			var unmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
+            var unmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified
@@ -6487,17 +6626,17 @@ namespace Amazon.EC2
         /// <param name="revokeSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service
         /// method on AmazonEC2.</param>
 		public RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
-		{
-			var task = RevokeSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RevokeSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupIngress operation.
@@ -6510,12 +6649,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RevokeSecurityGroupIngressResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified
@@ -6528,9 +6668,9 @@ namespace Amazon.EC2
         /// <param name="revokeSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service
         /// method on AmazonEC2.</param>
 		public RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress()
-		{
-			return this.RevokeSecurityGroupIngress(new RevokeSecurityGroupIngressRequest());
-		}
+        {
+            return this.RevokeSecurityGroupIngress(new RevokeSecurityGroupIngressRequest());
+        }
  
         /// <summary>
         /// <para> The RunInstances operation launches a specified number of instances. </para> <para> If Amazon EC2 cannot launch the minimum number
@@ -6557,17 +6697,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RunInstances service method, as returned by AmazonEC2.</returns>
 		public RunInstancesResponse RunInstances(RunInstancesRequest request)
-		{
-			var task = RunInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RunInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RunInstances operation.
@@ -6580,12 +6720,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RunInstancesResponse> RunInstancesAsync(RunInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RunInstancesRequestMarshaller();
-			var unmarshaller = RunInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RunInstancesRequest, RunInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RunInstancesRequestMarshaller();
+            var unmarshaller = RunInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RunInstancesRequest, RunInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Starts an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
@@ -6600,17 +6741,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the StartInstances service method, as returned by AmazonEC2.</returns>
 		public StartInstancesResponse StartInstances(StartInstancesRequest request)
-		{
-			var task = StartInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StartInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstances operation.
@@ -6623,12 +6764,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StartInstancesResponse> StartInstancesAsync(StartInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartInstancesRequestMarshaller();
-			var unmarshaller = StartInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartInstancesRequest, StartInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartInstancesRequestMarshaller();
+            var unmarshaller = StartInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartInstancesRequest, StartInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
@@ -6643,17 +6785,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the StopInstances service method, as returned by AmazonEC2.</returns>
 		public StopInstancesResponse StopInstances(StopInstancesRequest request)
-		{
-			var task = StopInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = StopInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstances operation.
@@ -6666,12 +6808,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<StopInstancesResponse> StopInstancesAsync(StopInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StopInstancesRequestMarshaller();
-			var unmarshaller = StopInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StopInstancesRequest, StopInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StopInstancesRequestMarshaller();
+            var unmarshaller = StopInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StopInstancesRequest, StopInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The TerminateInstances operation shuts down one or more instances. This operation is idempotent; if you terminate an instance more
@@ -6684,17 +6827,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the TerminateInstances service method, as returned by AmazonEC2.</returns>
 		public TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
-		{
-			var task = TerminateInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TerminateInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstances operation.
@@ -6707,12 +6850,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TerminateInstancesResponse> TerminateInstancesAsync(TerminateInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateInstancesRequestMarshaller();
-			var unmarshaller = TerminateInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateInstancesRequest, TerminateInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TerminateInstancesRequestMarshaller();
+            var unmarshaller = TerminateInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateInstancesRequest, TerminateInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -6720,17 +6864,17 @@ namespace Amazon.EC2
         /// <param name="unassignPrivateIpAddressesRequest">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service
         /// method on AmazonEC2.</param>
 		public UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
-		{
-			var task = UnassignPrivateIpAddressesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UnassignPrivateIpAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignPrivateIpAddresses operation.
@@ -6743,12 +6887,13 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
-			var unmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
+            var unmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Disables monitoring for a running instance. </para>
@@ -6759,17 +6904,17 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the UnmonitorInstances service method, as returned by AmazonEC2.</returns>
 		public UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
-		{
-			var task = UnmonitorInstancesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UnmonitorInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UnmonitorInstances operation.
@@ -6782,11 +6927,12 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnmonitorInstancesRequestMarshaller();
-			var unmarshaller = UnmonitorInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnmonitorInstancesRequest, UnmonitorInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UnmonitorInstancesRequestMarshaller();
+            var unmarshaller = UnmonitorInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnmonitorInstancesRequest, UnmonitorInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

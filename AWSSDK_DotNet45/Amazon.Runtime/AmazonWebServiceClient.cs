@@ -99,7 +99,8 @@ namespace Amazon.Runtime
                 state.Metrics.AddProperty(RequestMetrics.Metric.MethodName, irequest.RequestName);
             }
             ConfigureRequest(state);
-            Res response = await InvokeHelper<Res>(state, cancellationToken);
+            Res response = await InvokeHelper<Res>(state, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }
 
@@ -122,7 +123,8 @@ namespace Amazon.Runtime
             if (state.RetriesAttempt > 0)
                 HandleRetry(state);
 
-            T response = await InvokeConfiguredRequest<T>(state, cancellationToken);
+            T response = await InvokeConfiguredRequest<T>(state, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }
 
@@ -138,7 +140,8 @@ namespace Amazon.Runtime
             {
                 SetContent(requestMessage, state.Request);
 
-                responseMessage = await httpClient.SendAsync(requestMessage, cancellationToken);
+                responseMessage = await httpClient.SendAsync(requestMessage, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
 
                 if (!IsErrorResponse(responseMessage) ||
                     responseMessage.StatusCode == HttpStatusCode.NotFound && state.Request.Suppress404Exceptions)
@@ -190,7 +193,8 @@ namespace Amazon.Runtime
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 state.RetriesAttempt++;
-                var retryResponse = await InvokeHelper<T>(state, cancellationToken);
+                var retryResponse = await InvokeHelper<T>(state, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
                 return (T)retryResponse;
             }
 

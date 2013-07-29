@@ -45,9 +45,9 @@ namespace Amazon.DataPipeline
     /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
 	public partial class AmazonDataPipelineClient : AmazonWebServiceClient, Amazon.DataPipeline.IAmazonDataPipeline
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -233,17 +233,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
-		{
-			var task = ActivatePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ActivatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ActivatePipeline operation.
@@ -256,12 +256,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ActivatePipelineResponse> ActivatePipelineAsync(ActivatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ActivatePipelineRequestMarshaller();
-			var unmarshaller = ActivatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ActivatePipelineRequest, ActivatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ActivatePipelineRequestMarshaller();
+            var unmarshaller = ActivatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ActivatePipelineRequest, ActivatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new empty pipeline. When this action succeeds, you can then use the PutPipelineDefinition action to populate the
@@ -276,17 +277,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
 		public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
-		{
-			var task = CreatePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
@@ -299,12 +300,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePipelineRequestMarshaller();
-			var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePipelineRequestMarshaller();
+            var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Permanently deletes a pipeline, its pipeline definition and its run history. You cannot query or restore a deleted pipeline. AWS Data
@@ -320,17 +322,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
 		public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
-		{
-			var task = DeletePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeletePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
@@ -343,12 +345,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePipelineRequestMarshaller();
-			var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePipelineRequestMarshaller();
+            var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields
@@ -365,17 +368,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
-		{
-			var task = DescribeObjectsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeObjects operation.
@@ -388,12 +391,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeObjectsResponse> DescribeObjectsAsync(DescribeObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeObjectsRequestMarshaller();
-			var unmarshaller = DescribeObjectsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeObjectsRequest, DescribeObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeObjectsRequestMarshaller();
+            var unmarshaller = DescribeObjectsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeObjectsRequest, DescribeObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Retrieve metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier,
@@ -413,17 +417,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
-		{
-			var task = DescribePipelinesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribePipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePipelines operation.
@@ -436,12 +440,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribePipelinesResponse> DescribePipelinesAsync(DescribePipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePipelinesRequestMarshaller();
-			var unmarshaller = DescribePipelinesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePipelinesRequest, DescribePipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePipelinesRequestMarshaller();
+            var unmarshaller = DescribePipelinesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePipelinesRequest, DescribePipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Evaluates a string in the context of a specified object. A task runner can use this action to evaluate SQL queries stored in Amazon
@@ -459,17 +464,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.TaskNotFoundException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
-		{
-			var task = EvaluateExpressionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EvaluateExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EvaluateExpression operation.
@@ -482,12 +487,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EvaluateExpressionResponse> EvaluateExpressionAsync(EvaluateExpressionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EvaluateExpressionRequestMarshaller();
-			var unmarshaller = EvaluateExpressionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EvaluateExpressionRequest, EvaluateExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EvaluateExpressionRequestMarshaller();
+            var unmarshaller = EvaluateExpressionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EvaluateExpressionRequest, EvaluateExpressionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the definition of the specified pipeline. You can call GetPipelineDefinition to retrieve the pipeline definition you provided
@@ -504,17 +510,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
-		{
-			var task = GetPipelineDefinitionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetPipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipelineDefinition operation.
@@ -527,12 +533,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetPipelineDefinitionResponse> GetPipelineDefinitionAsync(GetPipelineDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetPipelineDefinitionRequestMarshaller();
-			var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetPipelineDefinitionRequest, GetPipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetPipelineDefinitionRequestMarshaller();
+            var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetPipelineDefinitionRequest, GetPipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned only for pipelines you have permission to
@@ -547,17 +554,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
 		public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
-		{
-			var task = ListPipelinesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListPipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
@@ -570,12 +577,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListPipelinesRequestMarshaller();
-			var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListPipelinesRequestMarshaller();
+            var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned only for pipelines you have permission to
@@ -590,9 +598,9 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
 		public ListPipelinesResponse ListPipelines()
-		{
-			return this.ListPipelines(new ListPipelinesRequest());
-		}
+        {
+            return this.ListPipelines(new ListPipelinesRequest());
+        }
  
         /// <summary>
         /// <para> Task runners call this action to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can
@@ -613,17 +621,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.TaskNotFoundException" />
 		public PollForTaskResponse PollForTask(PollForTaskRequest request)
-		{
-			var task = PollForTaskAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PollForTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PollForTask operation.
@@ -636,12 +644,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PollForTaskResponse> PollForTaskAsync(PollForTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PollForTaskRequestMarshaller();
-			var unmarshaller = PollForTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PollForTaskRequest, PollForTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PollForTaskRequestMarshaller();
+            var unmarshaller = PollForTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PollForTaskRequest, PollForTaskResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Adds tasks, schedules, and preconditions that control the behavior of the pipeline. You can use PutPipelineDefinition to populate a
@@ -664,17 +673,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
-		{
-			var task = PutPipelineDefinitionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutPipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutPipelineDefinition operation.
@@ -687,12 +696,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutPipelineDefinitionResponse> PutPipelineDefinitionAsync(PutPipelineDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutPipelineDefinitionRequestMarshaller();
-			var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutPipelineDefinitionRequest, PutPipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutPipelineDefinitionRequestMarshaller();
+            var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutPipelineDefinitionRequest, PutPipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
@@ -711,17 +721,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
-		{
-			var task = QueryObjectsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = QueryObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the QueryObjects operation.
@@ -734,12 +744,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<QueryObjectsResponse> QueryObjectsAsync(QueryObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new QueryObjectsRequestMarshaller();
-			var unmarshaller = QueryObjectsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, QueryObjectsRequest, QueryObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new QueryObjectsRequestMarshaller();
+            var unmarshaller = QueryObjectsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, QueryObjectsRequest, QueryObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Updates the AWS Data Pipeline service on the progress of the calling task runner. When the task runner is assigned a task, it should
@@ -762,17 +773,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.TaskNotFoundException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
-		{
-			var task = ReportTaskProgressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReportTaskProgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskProgress operation.
@@ -785,12 +796,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReportTaskProgressResponse> ReportTaskProgressAsync(ReportTaskProgressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportTaskProgressRequestMarshaller();
-			var unmarshaller = ReportTaskProgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportTaskProgressRequest, ReportTaskProgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportTaskProgressRequestMarshaller();
+            var unmarshaller = ReportTaskProgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportTaskProgressRequest, ReportTaskProgressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline
@@ -806,17 +818,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
 		public ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
-		{
-			var task = ReportTaskRunnerHeartbeatAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReportTaskRunnerHeartbeatAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskRunnerHeartbeat operation.
@@ -829,12 +841,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReportTaskRunnerHeartbeatResponse> ReportTaskRunnerHeartbeatAsync(ReportTaskRunnerHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
-			var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
+            var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Requests that the status of an array of physical or logical pipeline objects be updated in the pipeline. This update may not occur
@@ -848,17 +861,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public SetStatusResponse SetStatus(SetStatusRequest request)
-		{
-			var task = SetStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetStatus operation.
@@ -871,12 +884,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetStatusResponse> SetStatusAsync(SetStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetStatusRequestMarshaller();
-			var unmarshaller = SetStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetStatusRequest, SetStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetStatusRequestMarshaller();
+            var unmarshaller = SetStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetStatusRequest, SetStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Notifies AWS Data Pipeline that a task is completed and provides information about the final status. The task runner calls this
@@ -895,17 +909,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.TaskNotFoundException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
-		{
-			var task = SetTaskStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetTaskStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetTaskStatus operation.
@@ -918,12 +932,13 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetTaskStatusResponse> SetTaskStatusAsync(SetTaskStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetTaskStatusRequestMarshaller();
-			var unmarshaller = SetTaskStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetTaskStatusRequest, SetTaskStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetTaskStatusRequestMarshaller();
+            var unmarshaller = SetTaskStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetTaskStatusRequest, SetTaskStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Tests the pipeline definition with a set of validation checks to ensure that it is well formed and can run without error. </para>
@@ -939,17 +954,17 @@ namespace Amazon.DataPipeline
         /// <exception cref="T:Amazon.DataPipeline.Model.InvalidRequestException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineDeletedException" />
 		public ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
-		{
-			var task = ValidatePipelineDefinitionAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ValidatePipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ValidatePipelineDefinition operation.
@@ -962,11 +977,12 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ValidatePipelineDefinitionResponse> ValidatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
-			var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
+            var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

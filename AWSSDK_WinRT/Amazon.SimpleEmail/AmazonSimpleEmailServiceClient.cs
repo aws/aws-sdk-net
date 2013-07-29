@@ -34,9 +34,9 @@ namespace Amazon.SimpleEmail
     /// https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial class AmazonSimpleEmailServiceClient : AmazonWebServiceClient, Amazon.SimpleEmail.IAmazonSimpleEmailService
-	{
+    {
 
-		AWS3Signer signer = new AWS3Signer();
+        AWS3Signer signer = new AWS3Signer();
         #region Constructors
 
         /// <summary>
@@ -160,12 +160,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteIdentityResponse> DeleteIdentityAsync(DeleteIdentityRequest deleteIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteIdentityRequestMarshaller();
-			var unmarshaller = DeleteIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteIdentityRequest, DeleteIdentityResponse>(deleteIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteIdentityRequestMarshaller();
+            var unmarshaller = DeleteIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteIdentityRequest, DeleteIdentityResponse>(deleteIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
@@ -179,12 +180,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
-			var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse>(deleteVerifiedEmailAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
+            var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse>(deleteVerifiedEmailAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens
@@ -210,12 +212,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetIdentityDkimAttributesResponse> GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse>(getIdentityDkimAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse>(getIdentityDkimAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
@@ -231,12 +234,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetIdentityNotificationAttributesResponse> GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse>(getIdentityNotificationAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse>(getIdentityNotificationAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
@@ -251,12 +255,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetIdentityVerificationAttributesResponse> GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
-			var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse>(getIdentityVerificationAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse>(getIdentityVerificationAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
@@ -270,12 +275,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetSendQuotaResponse> GetSendQuotaAsync(GetSendQuotaRequest getSendQuotaRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSendQuotaRequestMarshaller();
-			var unmarshaller = GetSendQuotaResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSendQuotaRequest, GetSendQuotaResponse>(getSendQuotaRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSendQuotaRequestMarshaller();
+            var unmarshaller = GetSendQuotaResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSendQuotaRequest, GetSendQuotaResponse>(getSendQuotaRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
@@ -291,12 +297,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetSendStatisticsResponse> GetSendStatisticsAsync(GetSendStatisticsRequest getSendStatisticsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetSendStatisticsRequestMarshaller();
-			var unmarshaller = GetSendStatisticsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetSendStatisticsRequest, GetSendStatisticsResponse>(getSendStatisticsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetSendStatisticsRequestMarshaller();
+            var unmarshaller = GetSendStatisticsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetSendStatisticsRequest, GetSendStatisticsResponse>(getSendStatisticsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
@@ -311,12 +318,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest listIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListIdentitiesRequestMarshaller();
-			var unmarshaller = ListIdentitiesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(listIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListIdentitiesRequestMarshaller();
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(listIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
@@ -332,12 +340,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
-			var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse>(listVerifiedEmailAddressesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
+            var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse>(listVerifiedEmailAddressesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>
@@ -361,12 +370,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SendEmailResponse> SendEmailAsync(SendEmailRequest sendEmailRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendEmailRequestMarshaller();
-			var unmarshaller = SendEmailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendEmailRequest, SendEmailResponse>(sendEmailRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendEmailRequestMarshaller();
+            var unmarshaller = SendEmailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendEmailRequest, SendEmailResponse>(sendEmailRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Sends an email message, with header and content specified by the client. The <c>SendRawEmail</c> action is useful for sending
@@ -391,12 +401,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest sendRawEmailRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SendRawEmailRequestMarshaller();
-			var unmarshaller = SendRawEmailResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SendRawEmailRequest, SendRawEmailResponse>(sendRawEmailRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SendRawEmailRequestMarshaller();
+            var unmarshaller = SendRawEmailResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SendRawEmailRequest, SendRawEmailResponse>(sendRawEmailRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
@@ -419,12 +430,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetIdentityDkimEnabledResponse> SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
-			var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse>(setIdentityDkimEnabledRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse>(setIdentityDkimEnabledRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
@@ -440,12 +452,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetIdentityFeedbackForwardingEnabledResponse> SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
-			var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse>(setIdentityFeedbackForwardingEnabledRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse>(setIdentityFeedbackForwardingEnabledRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
@@ -462,12 +475,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
-			var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse>(setIdentityNotificationTopicRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
+            var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse>(setIdentityNotificationTopicRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these
@@ -486,12 +500,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<VerifyDomainDkimResponse> VerifyDomainDkimAsync(VerifyDomainDkimRequest verifyDomainDkimRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyDomainDkimRequestMarshaller();
-			var unmarshaller = VerifyDomainDkimResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyDomainDkimRequest, VerifyDomainDkimResponse>(verifyDomainDkimRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyDomainDkimRequestMarshaller();
+            var unmarshaller = VerifyDomainDkimResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyDomainDkimRequest, VerifyDomainDkimResponse>(verifyDomainDkimRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
@@ -505,12 +520,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<VerifyDomainIdentityResponse> VerifyDomainIdentityAsync(VerifyDomainIdentityRequest verifyDomainIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyDomainIdentityRequestMarshaller();
-			var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyDomainIdentityRequest, VerifyDomainIdentityResponse>(verifyDomainIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyDomainIdentityRequestMarshaller();
+            var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyDomainIdentityRequest, VerifyDomainIdentityResponse>(verifyDomainIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
@@ -524,12 +540,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<VerifyEmailAddressResponse> VerifyEmailAddressAsync(VerifyEmailAddressRequest verifyEmailAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyEmailAddressRequestMarshaller();
-			var unmarshaller = VerifyEmailAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyEmailAddressRequest, VerifyEmailAddressResponse>(verifyEmailAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new VerifyEmailAddressRequestMarshaller();
+            var unmarshaller = VerifyEmailAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyEmailAddressRequest, VerifyEmailAddressResponse>(verifyEmailAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
@@ -544,11 +561,12 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest verifyEmailIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new VerifyEmailIdentityRequestMarshaller();
-			var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, VerifyEmailIdentityRequest, VerifyEmailIdentityResponse>(verifyEmailIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new VerifyEmailIdentityRequestMarshaller();
+            var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, VerifyEmailIdentityRequest, VerifyEmailIdentityResponse>(verifyEmailIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

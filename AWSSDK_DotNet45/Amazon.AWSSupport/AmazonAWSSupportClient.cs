@@ -59,9 +59,9 @@ namespace Amazon.AWSSupport
     /// results of checks on your resources. </para>
     /// </summary>
 	public partial class AmazonAWSSupportClient : AmazonWebServiceClient, Amazon.AWSSupport.IAmazonAWSSupport
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -247,17 +247,17 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
-		{
-			var task = AddCommunicationToCaseAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddCommunicationToCaseAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddCommunicationToCase operation.
@@ -270,12 +270,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddCommunicationToCaseResponse> AddCommunicationToCaseAsync(AddCommunicationToCaseRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddCommunicationToCaseRequestMarshaller();
-			var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddCommunicationToCaseRequest, AddCommunicationToCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddCommunicationToCaseRequestMarshaller();
+            var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddCommunicationToCaseRequest, AddCommunicationToCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center Open a new case page.
@@ -304,17 +305,17 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseCreationLimitExceededException" />
 		public CreateCaseResponse CreateCase(CreateCaseRequest request)
-		{
-			var task = CreateCaseAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCaseAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCase operation.
@@ -327,12 +328,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCaseRequestMarshaller();
-			var unmarshaller = CreateCaseResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCaseRequest, CreateCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCaseRequestMarshaller();
+            var unmarshaller = CreateCaseResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCaseRequest, CreateCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action returns a list of cases that you specify by passing one or more CaseIds. In addition, you can filter the cases by date by
@@ -351,17 +353,17 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
-		{
-			var task = DescribeCasesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCasesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCases operation.
@@ -374,12 +376,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCasesResponse> DescribeCasesAsync(DescribeCasesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCasesRequestMarshaller();
-			var unmarshaller = DescribeCasesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCasesRequest, DescribeCasesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCasesRequestMarshaller();
+            var unmarshaller = DescribeCasesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCasesRequest, DescribeCasesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action returns a list of cases that you specify by passing one or more CaseIds. In addition, you can filter the cases by date by
@@ -398,9 +401,9 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public DescribeCasesResponse DescribeCases()
-		{
-			return this.DescribeCases(new DescribeCasesRequest());
-		}
+        {
+            return this.DescribeCases(new DescribeCasesRequest());
+        }
  
         /// <summary>
         /// <para>This action returns communications regarding the support case. You can use the <i>AfterTime</i> and <i>BeforeTime</i> parameters to
@@ -417,17 +420,17 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
-		{
-			var task = DescribeCommunicationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCommunicationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommunications operation.
@@ -440,12 +443,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCommunicationsResponse> DescribeCommunicationsAsync(DescribeCommunicationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCommunicationsRequestMarshaller();
-			var unmarshaller = DescribeCommunicationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCommunicationsRequest, DescribeCommunicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCommunicationsRequestMarshaller();
+            var unmarshaller = DescribeCommunicationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCommunicationsRequest, DescribeCommunicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the current list of AWS services and a list of service categories that applies to each one. You then use service names and
@@ -463,17 +467,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
-		{
-			var task = DescribeServicesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeServicesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
@@ -486,12 +490,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeServicesRequestMarshaller();
-			var unmarshaller = DescribeServicesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeServicesRequest, DescribeServicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeServicesRequestMarshaller();
+            var unmarshaller = DescribeServicesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeServicesRequest, DescribeServicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns the current list of AWS services and a list of service categories that applies to each one. You then use service names and
@@ -509,9 +514,9 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeServicesResponse DescribeServices()
-		{
-			return this.DescribeServices(new DescribeServicesRequest());
-		}
+        {
+            return this.DescribeServices(new DescribeServicesRequest());
+        }
  
         /// <summary>
         /// <para>This action returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a
@@ -525,17 +530,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
-		{
-			var task = DescribeSeverityLevelsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeSeverityLevelsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSeverityLevels operation.
@@ -548,12 +553,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeSeverityLevelsResponse> DescribeSeverityLevelsAsync(DescribeSeverityLevelsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSeverityLevelsRequestMarshaller();
-			var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSeverityLevelsRequest, DescribeSeverityLevelsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
+            var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSeverityLevelsRequest, DescribeSeverityLevelsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a
@@ -567,9 +573,9 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeSeverityLevelsResponse DescribeSeverityLevels()
-		{
-			return this.DescribeSeverityLevels(new DescribeSeverityLevelsRequest());
-		}
+        {
+            return this.DescribeSeverityLevels(new DescribeSeverityLevelsRequest());
+        }
  
         /// <summary>
         /// <para>Returns the status of all refresh requests Trusted Advisor checks called using RefreshTrustedAdvisorCheck. </para>
@@ -582,17 +588,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
-		{
-			var task = DescribeTrustedAdvisorCheckRefreshStatusesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTrustedAdvisorCheckRefreshStatusesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckRefreshStatuses operation.
@@ -605,12 +611,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTrustedAdvisorCheckRefreshStatusesResponse> DescribeTrustedAdvisorCheckRefreshStatusesAsync(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
-			var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action responds with the results of a Trusted Advisor check. Once you have obtained the list of available Trusted Advisor checks
@@ -632,17 +639,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
-		{
-			var task = DescribeTrustedAdvisorCheckResultAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTrustedAdvisorCheckResultAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckResult operation.
@@ -655,12 +662,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTrustedAdvisorCheckResultResponse> DescribeTrustedAdvisorCheckResultAsync(DescribeTrustedAdvisorCheckResultRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
-			var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action enables you to get a list of the available Trusted Advisor checks. You must specify a language code. English ("en") and
@@ -674,17 +682,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
-		{
-			var task = DescribeTrustedAdvisorChecksAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTrustedAdvisorChecksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorChecks operation.
@@ -697,12 +705,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTrustedAdvisorChecksResponse> DescribeTrustedAdvisorChecksAsync(DescribeTrustedAdvisorChecksRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
-			var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action enables you to get the latest summaries for Trusted Advisor checks that you specify in your request. You submit the list
@@ -717,17 +726,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
-		{
-			var task = DescribeTrustedAdvisorCheckSummariesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeTrustedAdvisorCheckSummariesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckSummaries operation.
@@ -740,12 +749,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeTrustedAdvisorCheckSummariesResponse> DescribeTrustedAdvisorCheckSummariesAsync(DescribeTrustedAdvisorCheckSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
-			var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This action enables you to query the service to request a refresh for a specific Trusted Advisor check. Your request body contains a
@@ -760,17 +770,17 @@ namespace Amazon.AWSSupport
         /// 
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
 		public RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
-		{
-			var task = RefreshTrustedAdvisorCheckAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RefreshTrustedAdvisorCheckAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RefreshTrustedAdvisorCheck operation.
@@ -783,12 +793,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RefreshTrustedAdvisorCheckResponse> RefreshTrustedAdvisorCheckAsync(RefreshTrustedAdvisorCheckRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
-			var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
+            var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to ResolveCase
@@ -803,17 +814,17 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
-		{
-			var task = ResolveCaseAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResolveCaseAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResolveCase operation.
@@ -826,12 +837,13 @@ namespace Amazon.AWSSupport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResolveCaseResponse> ResolveCaseAsync(ResolveCaseRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResolveCaseRequestMarshaller();
-			var unmarshaller = ResolveCaseResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResolveCaseRequest, ResolveCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResolveCaseRequestMarshaller();
+            var unmarshaller = ResolveCaseResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResolveCaseRequest, ResolveCaseResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to ResolveCase
@@ -846,8 +858,8 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		public ResolveCaseResponse ResolveCase()
-		{
-			return this.ResolveCase(new ResolveCaseRequest());
-		}
-	}
+        {
+            return this.ResolveCase(new ResolveCaseRequest());
+        }
+    }
 }

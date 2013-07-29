@@ -46,9 +46,9 @@ namespace Amazon.StorageGateway
     /// </ul>
     /// </summary>
 	public partial class AmazonStorageGatewayClient : AmazonWebServiceClient, Amazon.StorageGateway.IAmazonStorageGateway
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -178,12 +178,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest activateGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ActivateGatewayRequestMarshaller();
-			var unmarshaller = ActivateGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(activateGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ActivateGatewayRequestMarshaller();
+            var unmarshaller = ActivateGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(activateGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only for
@@ -201,12 +202,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddCacheResponse> AddCacheAsync(AddCacheRequest addCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddCacheRequestMarshaller();
-			var unmarshaller = AddCacheResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddCacheRequest, AddCacheResponse>(addCacheRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddCacheRequestMarshaller();
+            var unmarshaller = AddCacheResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddCacheRequest, AddCacheResponse>(addCacheRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for
@@ -225,12 +227,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest addUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddUploadBufferRequestMarshaller();
-			var unmarshaller = AddUploadBufferResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(addUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddUploadBufferRequestMarshaller();
+            var unmarshaller = AddUploadBufferResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(addUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the
@@ -250,12 +253,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest addWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddWorkingStorageRequestMarshaller();
-			var unmarshaller = AddWorkingStorageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(addWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddWorkingStorageRequestMarshaller();
+            var unmarshaller = AddWorkingStorageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(addWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume
@@ -277,12 +281,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
-			var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(createCachediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
+            var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(createCachediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a snapshot of a volume.</para> <para>AWS Storage Gateway provides the ability to back up point-in-time
@@ -307,12 +312,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest createSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotRequestMarshaller();
-			var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached
@@ -337,12 +343,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
-			var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(createSnapshotFromVolumeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
+            var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(createSnapshotFromVolumeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation creates a volume on a specified gateway. This operation is supported only for the gateway-cached volume architecture.
@@ -364,12 +371,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
-			var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(createStorediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
+            var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(createStorediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or
@@ -388,12 +396,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(deleteBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(deleteBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator
@@ -411,12 +420,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest deleteChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteChapCredentialsRequestMarshaller();
-			var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(deleteChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteChapCredentialsRequestMarshaller();
+            var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(deleteChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your
@@ -440,12 +450,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest deleteGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteGatewayRequestMarshaller();
-			var unmarshaller = DeleteGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(deleteGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteGatewayRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(deleteGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This operation deletes a snapshot of a volume. </para> <para> You can take snapshots of your gateway volumes on a scheduled or ad-hoc
@@ -466,12 +477,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
-			var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(deleteSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
+            var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(deleteSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation delete the specified gateway volume that you previously created using the CreateStorediSCSIVolume API. For
@@ -494,12 +506,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest deleteVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVolumeRequestMarshaller();
-			var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVolumeRequestMarshaller();
+            var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate
@@ -519,12 +532,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(describeBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(describeBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
@@ -543,12 +557,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest describeCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheRequestMarshaller();
-			var unmarshaller = DescribeCacheResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(describeCacheRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheRequestMarshaller();
+            var unmarshaller = DescribeCacheResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(describeCacheRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the
@@ -567,12 +582,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
-			var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(describeCachediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
+            var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(describeCachediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI
@@ -590,12 +606,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest describeChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeChapCredentialsRequestMarshaller();
-			var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(describeChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeChapCredentialsRequestMarshaller();
+            var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(describeChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the
@@ -613,12 +630,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest describeGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeGatewayInformationRequestMarshaller();
-			var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(describeGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeGatewayInformationRequestMarshaller();
+            var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(describeGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in
@@ -636,12 +654,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
-			var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(describeMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(describeMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals
@@ -659,12 +678,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
-			var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(describeSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
+            var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(describeSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns description of the gateway volumes specified in the request. The list of gateway volumes in the request must be
@@ -682,12 +702,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
-			var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(describeStorediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
+            var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(describeStorediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored and
@@ -706,12 +727,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest describeUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeUploadBufferRequestMarshaller();
-			var unmarshaller = DescribeUploadBufferResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(describeUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeUploadBufferRequestMarshaller();
+            var unmarshaller = DescribeUploadBufferResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(describeUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored
@@ -731,12 +753,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest describeWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeWorkingStorageRequestMarshaller();
-			var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(describeWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeWorkingStorageRequestMarshaller();
+            var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(describeWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway
@@ -757,12 +780,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest listGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListGatewaysRequestMarshaller();
-			var unmarshaller = ListGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(listGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListGatewaysRequestMarshaller();
+            var unmarshaller = ListGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(listGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns a list of the local disks of a gateway. To specify which gateway to describe you use the Amazon Resource Name
@@ -781,12 +805,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest listLocalDisksRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListLocalDisksRequestMarshaller();
-			var unmarshaller = ListLocalDisksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(listLocalDisksRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListLocalDisksRequestMarshaller();
+            var unmarshaller = ListLocalDisksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(listLocalDisksRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
@@ -806,12 +831,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
-			var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(listVolumeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
+            var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(listVolumeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume
@@ -832,12 +858,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest listVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVolumesRequestMarshaller();
-			var unmarshaller = ListVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(listVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVolumesRequestMarshaller();
+            var unmarshaller = ListVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(listVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the
@@ -862,12 +889,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest shutdownGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ShutdownGatewayRequestMarshaller();
-			var unmarshaller = ShutdownGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(shutdownGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ShutdownGatewayRequestMarshaller();
+            var unmarshaller = ShutdownGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(shutdownGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation starts a gateway that you previously shut down (see ShutdownGateway). After the gateway starts, you can then make other
@@ -889,12 +917,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest startGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartGatewayRequestMarshaller();
-			var unmarshaller = StartGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(startGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartGatewayRequestMarshaller();
+            var unmarshaller = StartGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(startGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or
@@ -915,12 +944,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
-			var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(updateBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
+            var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(updateBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a
@@ -939,12 +969,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest updateChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateChapCredentialsRequestMarshaller();
-			var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(updateChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateChapCredentialsRequestMarshaller();
+            var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(updateChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use
@@ -962,12 +993,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest updateGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateGatewayInformationRequestMarshaller();
-			var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(updateGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateGatewayInformationRequestMarshaller();
+            var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(updateGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. </para>
@@ -989,12 +1021,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
-			var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(updateGatewaySoftwareNowRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
+            var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(updateGatewaySoftwareNowRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time
@@ -1012,12 +1045,13 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
-			var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(updateMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(updateMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
@@ -1037,11 +1071,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
-			var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(updateSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
+            var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(updateSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

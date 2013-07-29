@@ -36,9 +36,9 @@ namespace Amazon.ElastiCache
     /// hot. </para>
     /// </summary>
 	public partial class AmazonElastiCacheClient : AmazonWebServiceClient, Amazon.ElastiCache.IAmazonElastiCache
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -225,17 +225,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request)
-		{
-			var task = AuthorizeCacheSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AuthorizeCacheSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeCacheSecurityGroupIngress operation.
@@ -248,12 +248,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AuthorizeCacheSecurityGroupIngressResponse> AuthorizeCacheSecurityGroupIngressAsync(AuthorizeCacheSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeCacheSecurityGroupIngressRequest, AuthorizeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeCacheSecurityGroupIngressRequest, AuthorizeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Cluster. </para>
@@ -276,17 +277,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request)
-		{
-			var task = CreateCacheClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCacheClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheCluster operation.
@@ -299,12 +300,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCacheClusterResponse> CreateCacheClusterAsync(CreateCacheClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheClusterRequestMarshaller();
-			var unmarshaller = CreateCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheClusterRequest, CreateCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheClusterRequestMarshaller();
+            var unmarshaller = CreateCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheClusterRequest, CreateCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache Cluster.</para>
@@ -321,17 +323,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException" />
 		public CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request)
-		{
-			var task = CreateCacheParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCacheParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheParameterGroup operation.
@@ -344,12 +346,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCacheParameterGroupResponse> CreateCacheParameterGroupAsync(CreateCacheParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheParameterGroupRequestMarshaller();
-			var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheParameterGroupRequest, CreateCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheParameterGroupRequestMarshaller();
+            var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheParameterGroupRequest, CreateCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para> <para> Only use cache
@@ -367,17 +370,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupQuotaExceededException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request)
-		{
-			var task = CreateCacheSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCacheSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSecurityGroup operation.
@@ -390,12 +393,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCacheSecurityGroupResponse> CreateCacheSecurityGroupAsync(CreateCacheSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheSecurityGroupRequest, CreateCacheSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheSecurityGroupRequest, CreateCacheSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Cache Subnet Group. </para>
@@ -411,17 +415,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSubnetQuotaExceededException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidSubnetException" />
 		public CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
-		{
-			var task = CreateCacheSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateCacheSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSubnetGroup operation.
@@ -434,12 +438,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCacheSubnetGroupRequest, CreateCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCacheSubnetGroupRequest, CreateCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received
@@ -457,17 +462,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheClusterStateException" />
 		public DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
-		{
-			var task = DeleteCacheClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteCacheClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheCluster operation.
@@ -480,12 +485,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteCacheClusterResponse> DeleteCacheClusterAsync(DeleteCacheClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheClusterRequestMarshaller();
-			var unmarshaller = DeleteCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheClusterRequest, DeleteCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheClusterRequestMarshaller();
+            var unmarshaller = DeleteCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheClusterRequest, DeleteCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the specified CacheParameterGroup. The CacheParameterGroup cannot be deleted if it is associated with any cache clusters.
@@ -500,17 +506,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
 		public DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request)
-		{
-			var task = DeleteCacheParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteCacheParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheParameterGroup operation.
@@ -523,12 +529,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteCacheParameterGroupResponse> DeleteCacheParameterGroupAsync(DeleteCacheParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a Cache Security Group. </para> <para><b>NOTE:</b>The specified Cache Security Group must not be associated with any Cache
@@ -543,17 +550,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request)
-		{
-			var task = DeleteCacheSecurityGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteCacheSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSecurityGroup operation.
@@ -566,12 +573,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteCacheSecurityGroupResponse> DeleteCacheSecurityGroupAsync(DeleteCacheSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a Cache Subnet Group. </para> <para><b>NOTE:</b>The specified Cache Subnet Group must not be associated with any Cache
@@ -584,17 +592,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSubnetGroupInUseException" />
 		public DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request)
-		{
-			var task = DeleteCacheSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteCacheSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSubnetGroup operation.
@@ -607,12 +615,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteCacheSubnetGroupResponse> DeleteCacheSubnetGroupAsync(DeleteCacheSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
@@ -635,17 +644,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheClusterNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request)
-		{
-			var task = DescribeCacheClustersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheClustersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheClusters operation.
@@ -658,12 +667,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(DescribeCacheClustersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheClustersRequestMarshaller();
-			var unmarshaller = DescribeCacheClustersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheClustersRequest, DescribeCacheClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheClustersRequestMarshaller();
+            var unmarshaller = DescribeCacheClustersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheClustersRequest, DescribeCacheClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
@@ -686,9 +696,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheClusterNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeCacheClustersResponse DescribeCacheClusters()
-		{
-			return this.DescribeCacheClusters(new DescribeCacheClustersRequest());
-		}
+        {
+            return this.DescribeCacheClusters(new DescribeCacheClustersRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of the available cache engines and their versions. </para>
@@ -699,17 +709,17 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by AmazonElastiCache.</returns>
 		public DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request)
-		{
-			var task = DescribeCacheEngineVersionsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheEngineVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheEngineVersions operation.
@@ -722,12 +732,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(DescribeCacheEngineVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
-			var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of the available cache engines and their versions. </para>
@@ -738,9 +749,9 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by AmazonElastiCache.</returns>
 		public DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions()
-		{
-			return this.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
-		}
+        {
+            return this.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified, the list will contain only the
@@ -756,17 +767,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
 		public DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request)
-		{
-			var task = DescribeCacheParameterGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheParameterGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameterGroups operation.
@@ -779,12 +790,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(DescribeCacheParameterGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified, the list will contain only the
@@ -800,9 +812,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
 		public DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups()
-		{
-			return this.DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
-		}
+        {
+            return this.DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns the detailed parameter list for a particular CacheParameterGroup. </para>
@@ -817,17 +829,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
 		public DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request)
-		{
-			var task = DescribeCacheParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameters operation.
@@ -840,12 +852,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheParametersResponse> DescribeCacheParametersAsync(DescribeCacheParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheParametersRequestMarshaller();
-			var unmarshaller = DescribeCacheParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheParametersRequest, DescribeCacheParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheParametersRequestMarshaller();
+            var unmarshaller = DescribeCacheParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheParametersRequest, DescribeCacheParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
@@ -861,17 +874,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request)
-		{
-			var task = DescribeCacheSecurityGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheSecurityGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSecurityGroups operation.
@@ -884,12 +897,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(DescribeCacheSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
@@ -905,9 +919,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups()
-		{
-			return this.DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest());
-		}
+        {
+            return this.DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
@@ -921,17 +935,17 @@ namespace Amazon.ElastiCache
         /// 
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException" />
 		public DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request)
-		{
-			var task = DescribeCacheSubnetGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeCacheSubnetGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSubnetGroups operation.
@@ -944,12 +958,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(DescribeCacheSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
-			var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
@@ -963,9 +978,9 @@ namespace Amazon.ElastiCache
         /// 
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException" />
 		public DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups()
-		{
-			return this.DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
-		}
+        {
+            return this.DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
+        }
  
         /// <summary>
         /// <para> Returns the default engine and system parameter information for the specified cache engine. </para>
@@ -979,17 +994,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
-		{
-			var task = DescribeEngineDefaultParametersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEngineDefaultParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
@@ -1002,12 +1017,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
-			var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
@@ -1023,17 +1039,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
-		{
-			var task = DescribeEventsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -1046,12 +1062,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeEventsRequestMarshaller();
-			var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
@@ -1067,9 +1084,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeEventsResponse DescribeEvents()
-		{
-			return this.DescribeEvents(new DescribeEventsRequest());
-		}
+        {
+            return this.DescribeEvents(new DescribeEventsRequest());
+        }
  
         /// <summary>
         /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
@@ -1084,17 +1101,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request)
-		{
-			var task = DescribeReservedCacheNodesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedCacheNodesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodes operation.
@@ -1107,12 +1124,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(DescribeReservedCacheNodesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
-			var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
@@ -1127,9 +1145,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeReservedCacheNodesResponse DescribeReservedCacheNodes()
-		{
-			return this.DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
-		}
+        {
+            return this.DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
+        }
  
         /// <summary>
         /// <para> Lists available reserved Cache Node offerings. </para>
@@ -1144,17 +1162,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request)
-		{
-			var task = DescribeReservedCacheNodesOfferingsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeReservedCacheNodesOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
@@ -1167,12 +1185,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(DescribeReservedCacheNodesOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists available reserved Cache Node offerings. </para>
@@ -1187,9 +1206,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings()
-		{
-			return this.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
-		}
+        {
+            return this.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
+        }
  
         /// <summary>
         /// <para> Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters
@@ -1212,17 +1231,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheClusterStateException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request)
-		{
-			var task = ModifyCacheClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyCacheClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheCluster operation.
@@ -1235,12 +1254,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyCacheClusterResponse> ModifyCacheClusterAsync(ModifyCacheClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheClusterRequestMarshaller();
-			var unmarshaller = ModifyCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheClusterRequest, ModifyCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheClusterRequestMarshaller();
+            var unmarshaller = ModifyCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheClusterRequest, ModifyCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a list of ParameterName and
@@ -1257,17 +1277,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException" />
 		public ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request)
-		{
-			var task = ModifyCacheParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyCacheParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheParameterGroup operation.
@@ -1280,12 +1300,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyCacheParameterGroupResponse> ModifyCacheParameterGroupAsync(ModifyCacheParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
-			var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an existing Cache Subnet Group. </para>
@@ -1301,17 +1322,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidSubnetException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.SubnetInUseException" />
 		public ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
-		{
-			var task = ModifyCacheSubnetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ModifyCacheSubnetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheSubnetGroup operation.
@@ -1324,12 +1345,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ModifyCacheSubnetGroupResponse> ModifyCacheSubnetGroupAsync(ModifyCacheSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
-			var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyCacheSubnetGroupRequest, ModifyCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyCacheSubnetGroupRequest, ModifyCacheSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Purchases a reserved Cache Node offering. </para>
@@ -1346,17 +1368,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
 		public PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request)
-		{
-			var task = PurchaseReservedCacheNodesOfferingAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PurchaseReservedCacheNodesOfferingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedCacheNodesOffering operation.
@@ -1369,12 +1391,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PurchaseReservedCacheNodesOfferingResponse> PurchaseReservedCacheNodesOfferingAsync(PurchaseReservedCacheNodesOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedCacheNodesOfferingRequest, PurchaseReservedCacheNodesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedCacheNodesOfferingRequest, PurchaseReservedCacheNodesOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the
@@ -1391,17 +1414,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheClusterNotFoundException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheClusterStateException" />
 		public RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
-		{
-			var task = RebootCacheClusterAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RebootCacheClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCacheCluster operation.
@@ -1414,12 +1437,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RebootCacheClusterResponse> RebootCacheClusterAsync(RebootCacheClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootCacheClusterRequestMarshaller();
-			var unmarshaller = RebootCacheClusterResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootCacheClusterRequest, RebootCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootCacheClusterRequestMarshaller();
+            var unmarshaller = RebootCacheClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootCacheClusterRequest, RebootCacheClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies the parameters of a CacheParameterGroup to the engine or system default value. To reset specific parameters submit a list of
@@ -1437,17 +1461,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException" />
 		public ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request)
-		{
-			var task = ResetCacheParameterGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResetCacheParameterGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCacheParameterGroup operation.
@@ -1460,12 +1484,13 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResetCacheParameterGroupResponse> ResetCacheParameterGroupAsync(ResetCacheParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetCacheParameterGroupRequestMarshaller();
-			var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetCacheParameterGroupRequest, ResetCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetCacheParameterGroupRequest, ResetCacheParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups. </para>
@@ -1482,17 +1507,17 @@ namespace Amazon.ElastiCache
         /// <exception cref="T:Amazon.ElastiCache.Model.InvalidParameterCombinationException" />
         /// <exception cref="T:Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException" />
 		public RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request)
-		{
-			var task = RevokeCacheSecurityGroupIngressAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RevokeCacheSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeCacheSecurityGroupIngress operation.
@@ -1505,11 +1530,12 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeCacheSecurityGroupIngressRequest, RevokeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeCacheSecurityGroupIngressRequest, RevokeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

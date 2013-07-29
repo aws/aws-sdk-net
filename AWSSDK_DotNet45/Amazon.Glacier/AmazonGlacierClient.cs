@@ -68,9 +68,9 @@ namespace Amazon.Glacier
     /// </ul>
     /// </summary>
 	public partial class AmazonGlacierClient : AmazonWebServiceClient, Amazon.Glacier.IAmazonGlacier
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -260,17 +260,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
-		{
-			var task = AbortMultipartUploadAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AbortMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
@@ -283,12 +283,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AbortMultipartUploadRequestMarshaller();
-			var unmarshaller = AbortMultipartUploadResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>You call this operation to inform Amazon Glacier that all the archive parts have been uploaded and that Amazon Glacier can now
@@ -324,17 +325,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
-		{
-			var task = CompleteMultipartUploadAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CompleteMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
@@ -347,12 +348,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CompleteMultipartUploadRequestMarshaller();
-			var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation creates a new vault with the specified name. The name of the vault must be unique within a region for an AWS account.
@@ -380,17 +382,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
         /// <exception cref="T:Amazon.Glacier.Model.LimitExceededException" />
 		public CreateVaultResponse CreateVault(CreateVaultRequest request)
-		{
-			var task = CreateVaultAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVaultAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVault operation.
@@ -403,12 +405,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVaultRequestMarshaller();
-			var unmarshaller = CreateVaultResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVaultRequest, CreateVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVaultRequestMarshaller();
+            var unmarshaller = CreateVaultResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVaultRequest, CreateVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes an archive from a vault. Subsequent requests to initiate a retrieval of this archive will fail. Archive
@@ -436,17 +439,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
-		{
-			var task = DeleteArchiveAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteArchiveAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteArchive operation.
@@ -459,12 +462,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteArchiveRequestMarshaller();
-			var unmarshaller = DeleteArchiveResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteArchiveRequest, DeleteArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteArchiveRequestMarshaller();
+            var unmarshaller = DeleteArchiveResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteArchiveRequest, DeleteArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes a vault. Amazon Glacier will delete a vault only if there are no archives in the vault as of the last inventory
@@ -486,17 +490,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
-		{
-			var task = DeleteVaultAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVaultAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVault operation.
@@ -509,12 +513,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVaultRequestMarshaller();
-			var unmarshaller = DeleteVaultResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVaultRequest, DeleteVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVaultRequestMarshaller();
+            var unmarshaller = DeleteVaultResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVaultRequest, DeleteVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation deletes the notification configuration set for a vault. The operation is eventually consistent;that is, it might take
@@ -534,17 +539,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
-		{
-			var task = DeleteVaultNotificationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVaultNotificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVaultNotifications operation.
@@ -557,12 +562,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVaultNotificationsRequestMarshaller();
-			var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVaultNotificationsRequest, DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVaultNotificationsRequestMarshaller();
+            var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVaultNotificationsRequest, DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the
@@ -586,17 +592,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public DescribeJobResponse DescribeJob(DescribeJobRequest request)
-		{
-			var task = DescribeJobAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJob operation.
@@ -609,12 +615,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeJobRequestMarshaller();
-			var unmarshaller = DescribeJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeJobRequest, DescribeJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeJobRequestMarshaller();
+            var unmarshaller = DescribeJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeJobRequest, DescribeJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation returns information about a vault, including the vault's Amazon Resource Name (ARN), the date the vault was created,
@@ -639,17 +646,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
-		{
-			var task = DescribeVaultAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DescribeVaultAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVault operation.
@@ -662,12 +669,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVaultRequestMarshaller();
-			var unmarshaller = DescribeVaultResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVaultRequest, DescribeVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVaultRequestMarshaller();
+            var unmarshaller = DescribeVaultResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVaultRequest, DescribeVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation downloads the output of the job you initiated using InitiateJob. Depending on the job type you specified when you
@@ -702,17 +710,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
-		{
-			var task = GetJobOutputAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetJobOutputAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetJobOutput operation.
@@ -725,12 +733,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetJobOutputRequestMarshaller();
-			var unmarshaller = GetJobOutputResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetJobOutputRequest, GetJobOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetJobOutputRequestMarshaller();
+            var unmarshaller = GetJobOutputResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetJobOutputRequest, GetJobOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation retrieves the <c>notification-configuration</c> subresource of the specified vault.</para> <para>For information about
@@ -754,17 +763,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
-		{
-			var task = GetVaultNotificationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetVaultNotificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetVaultNotifications operation.
@@ -777,12 +786,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetVaultNotificationsRequestMarshaller();
-			var unmarshaller = GetVaultNotificationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetVaultNotificationsRequest, GetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetVaultNotificationsRequestMarshaller();
+            var unmarshaller = GetVaultNotificationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetVaultNotificationsRequest, GetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a job of the specified type. In this release, you can initiate a job to retrieve either an archive or a vault
@@ -829,17 +839,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public InitiateJobResponse InitiateJob(InitiateJobRequest request)
-		{
-			var task = InitiateJobAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = InitiateJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateJob operation.
@@ -852,12 +862,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new InitiateJobRequestMarshaller();
-			var unmarshaller = InitiateJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, InitiateJobRequest, InitiateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new InitiateJobRequestMarshaller();
+            var unmarshaller = InitiateJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, InitiateJobRequest, InitiateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation initiates a multipart upload. Amazon Glacier creates a multipart upload resource and returns its ID in the response.
@@ -887,17 +898,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
-		{
-			var task = InitiateMultipartUploadAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = InitiateMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
@@ -910,12 +921,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new InitiateMultipartUploadRequestMarshaller();
-			var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists jobs for a vault, including jobs that are in-progress and jobs that have recently finished. </para>
@@ -949,17 +961,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public ListJobsResponse ListJobs(ListJobsRequest request)
-		{
-			var task = ListJobsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListJobsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
@@ -972,12 +984,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListJobsRequestMarshaller();
-			var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListJobsRequest, ListJobsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListJobsRequestMarshaller();
+            var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListJobsRequest, ListJobsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists in-progress multipart uploads for the specified vault. An in-progress multipart upload is a multipart upload that
@@ -1006,17 +1019,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
-		{
-			var task = ListMultipartUploadsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListMultipartUploadsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
@@ -1029,12 +1042,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListMultipartUploadsRequestMarshaller();
-			var unmarshaller = ListMultipartUploadsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists the parts of an archive that have been uploaded in a specific multipart upload. You can make this request at any
@@ -1059,17 +1073,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public ListPartsResponse ListParts(ListPartsRequest request)
-		{
-			var task = ListPartsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListPartsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
@@ -1082,12 +1096,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListPartsRequestMarshaller();
-			var unmarshaller = ListPartsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListPartsRequestMarshaller();
+            var unmarshaller = ListPartsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists all vaults owned by the calling user's account. The list returned in the response is ASCII-sorted by vault name.
@@ -1112,17 +1127,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public ListVaultsResponse ListVaults(ListVaultsRequest request)
-		{
-			var task = ListVaultsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListVaultsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListVaults operation.
@@ -1135,12 +1150,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVaultsRequestMarshaller();
-			var unmarshaller = ListVaultsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVaultsRequest, ListVaultsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVaultsRequestMarshaller();
+            var unmarshaller = ListVaultsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVaultsRequest, ListVaultsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation lists all vaults owned by the calling user's account. The list returned in the response is ASCII-sorted by vault name.
@@ -1165,9 +1181,9 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public ListVaultsResponse ListVaults()
-		{
-			return this.ListVaults(new ListVaultsRequest());
-		}
+        {
+            return this.ListVaults(new ListVaultsRequest());
+        }
  
         /// <summary>
         /// <para>This operation configures notifications that will be sent when specific events happen to a vault. By default, you don't get any
@@ -1199,17 +1215,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
-		{
-			var task = SetVaultNotificationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = SetVaultNotificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the SetVaultNotifications operation.
@@ -1222,12 +1238,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new SetVaultNotificationsRequestMarshaller();
-			var unmarshaller = SetVaultNotificationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, SetVaultNotificationsRequest, SetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new SetVaultNotificationsRequestMarshaller();
+            var unmarshaller = SetVaultNotificationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetVaultNotificationsRequest, SetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation adds an archive to a vault. This is a synchronous operation, and for a successful upload, your data is durably
@@ -1260,17 +1277,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
-		{
-			var task = UploadArchiveAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UploadArchiveAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UploadArchive operation.
@@ -1283,12 +1300,13 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UploadArchiveRequestMarshaller();
-			var unmarshaller = UploadArchiveResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UploadArchiveRequest, UploadArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UploadArchiveRequestMarshaller();
+            var unmarshaller = UploadArchiveResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UploadArchiveRequest, UploadArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>This operation uploads a part of an archive. You can upload archive parts in any order. You can also upload them in parallel. You can
@@ -1328,17 +1346,17 @@ namespace Amazon.Glacier
         /// <exception cref="T:Amazon.Glacier.Model.ServiceUnavailableException" />
         /// <exception cref="T:Amazon.Glacier.Model.InvalidParameterValueException" />
 		public UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
-		{
-			var task = UploadMultipartPartAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UploadMultipartPartAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UploadMultipartPart operation.
@@ -1351,11 +1369,12 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UploadMultipartPartRequestMarshaller();
-			var unmarshaller = UploadMultipartPartResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UploadMultipartPartRequest, UploadMultipartPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UploadMultipartPartRequestMarshaller();
+            var unmarshaller = UploadMultipartPartResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UploadMultipartPartRequest, UploadMultipartPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

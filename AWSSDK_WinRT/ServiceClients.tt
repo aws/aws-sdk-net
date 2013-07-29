@@ -11,70 +11,70 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ include file="SupportServicesList.tt"#>
 <#
-	var assembly = Assembly.LoadFrom(getBaseSDKFilePath("AWSSDK.dll"));
-	var sdkDocs = XDocument.Load(getBaseSDKFilePath("AWSSDK.xml"), LoadOptions.PreserveWhitespace);
+    var assembly = Assembly.LoadFrom(getBaseSDKFilePath("AWSSDK.dll"));
+    var sdkDocs = XDocument.Load(getBaseSDKFilePath("AWSSDK.xml"), LoadOptions.PreserveWhitespace);
 
 
-	foreach(var interfaceFullName in supportedServicesInterfaces)
-	{
-		GenerateService(assembly, sdkDocs, interfaceFullName);
-	}
+    foreach(var interfaceFullName in supportedServicesInterfaces)
+    {
+        GenerateService(assembly, sdkDocs, interfaceFullName);
+    }
 #>
 <#+
-	void GenerateService(Assembly assembly, XDocument sdkDocs, string interfaceName)
-	{
-		var type = assembly.GetType(interfaceName);
-		if(type == null)
-			throw new Exception("Find type " + interfaceName + " in assembly " + assembly.Location);
+    void GenerateService(Assembly assembly, XDocument sdkDocs, string interfaceName)
+    {
+        var type = assembly.GetType(interfaceName);
+        if(type == null)
+            throw new Exception("Find type " + interfaceName + " in assembly " + assembly.Location);
 
-		GenerateServiceInterface(assembly, sdkDocs, type.FullName);
-		SaveOutput(@".\" + type.Namespace + @"\" + type.Name + ".cs");
+        GenerateServiceInterface(assembly, sdkDocs, type.FullName);
+        SaveOutput(@".\" + type.Namespace + @"\" + type.Name + ".cs");
 
-		GenerateServiceClient(assembly, sdkDocs, type.FullName);
-		SaveOutput(@".\" + type.Namespace + @"\" + type.Name.Substring(1) + "Client.cs");
-	}
+        GenerateServiceClient(assembly, sdkDocs, type.FullName);
+        SaveOutput(@".\" + type.Namespace + @"\" + type.Name.Substring(1) + "Client.cs");
+    }
 
-	// Get the latest version whether debug or release of the base SDK artifacts.
-	string getBaseSDKFilePath(string file)
-	{
-		var runtimeFolder = Host.ResolvePath("Amazon.Util");
-		var debugPath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\debug\" + file);
-		var releasePath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\release\" + file);
+    // Get the latest version whether debug or release of the base SDK artifacts.
+    string getBaseSDKFilePath(string file)
+    {
+        var runtimeFolder = Host.ResolvePath("Amazon.Util");
+        var debugPath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\debug\" + file);
+        var releasePath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\release\" + file);
 
-		if(!File.Exists(releasePath) && !File.Exists(debugPath))
-		{
-			throw new Exception(file + " is not found, make sure to compile the base SDK first");
-		}
+        if(!File.Exists(releasePath) && !File.Exists(debugPath))
+        {
+            throw new Exception(file + " is not found, make sure to compile the base SDK first");
+        }
 
-		if(!File.Exists(releasePath))
-			return debugPath;
+        if(!File.Exists(releasePath))
+            return debugPath;
 
-		if(!File.Exists(debugPath))
-			return releasePath;
+        if(!File.Exists(debugPath))
+            return releasePath;
 
-		if(File.GetLastWriteTime(releasePath) > File.GetLastWriteTime(debugPath))
-			return releasePath;
-		else
-			return debugPath;
-	}
+        if(File.GetLastWriteTime(releasePath) > File.GetLastWriteTime(debugPath))
+            return releasePath;
+        else
+            return debugPath;
+    }
 
-	void SaveOutput(string outputFileName)
-	{
-		string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
-		string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+    void SaveOutput(string outputFileName)
+    {
+        string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+        string outputFilePath = Path.Combine(templateDirectory, outputFileName);
         string outputDirectory = Path.GetDirectoryName(outputFilePath);
         Directory.CreateDirectory(outputDirectory);
-		File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+        File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
 
-		this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
-	}
+        this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+    }
 #>
 
 
 <#+
-	void GenerateServiceInterface(Assembly assembly, XDocument sdkDocs, string typeName)
-	{
-		addLicenseHeader();
+    void GenerateServiceInterface(Assembly assembly, XDocument sdkDocs, string typeName)
+    {
+        addLicenseHeader();
         var type = assembly.GetType(typeName);
 #>
 using System;
@@ -86,46 +86,46 @@ using <#= type.Namespace #>.Model;
 namespace <#= type.Namespace #>
 {
 <#= getClassDocumentation(sdkDocs, type.FullName) #>	public partial interface <#= type.Name #> : IDisposable
-	{
+    {
 <#+
         foreach (var method in type.GetMethods().OrderBy(x => x.Name))
         {
-			// Skip begin and end methods
+            // Skip begin and end methods
             if (method.ReturnType == typeof(IAsyncResult) || (method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(IAsyncResult)))
-				continue;
+                continue;
 
-			// Skip methods that are added via extensions.
-			if (method.Name.Equals("GetPreSignedURL"))
-				continue;
+            // Skip methods that are added via extensions.
+            if (method.Name.Equals("GetPreSignedURL"))
+                continue;
 
-			if(method.GetParameters().Length != 0)
-			{
+            if(method.GetParameters().Length != 0)
+            {
 #> 
 <#= getOperationDocumentation(sdkDocs, method)#>		Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request <#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, CancellationToken cancellationToken = default(CancellationToken));
 <#+          
-			}    
+            }    
         }		
 #>
-	}
+    }
 }
 <#+
 
-	}
+    }
 #>
 
 
 <#+
-	void GenerateServiceClient(Assembly assembly, XDocument sdkDocs, string interfaceName)
-	{
-		addLicenseHeader();
+    void GenerateServiceClient(Assembly assembly, XDocument sdkDocs, string interfaceName)
+    {
+        addLicenseHeader();
         var type = assembly.GetType(interfaceName);
 
         var clientName = type.Namespace + "." +  type.Name.Substring(1) + "Client";
-		var signer = getSigner(assembly, clientName);
+        var signer = getSigner(assembly, clientName);
 
-		var baseName = type.Name; 
-		if(baseName.StartsWith("I"))
-			baseName = baseName.Substring(1);
+        var baseName = type.Name; 
+        if(baseName.StartsWith("I"))
+            baseName = baseName.Substring(1);
 #>
 using System;
 using System.Threading;
@@ -141,47 +141,48 @@ using Amazon.Runtime.Internal.Transform;
 namespace <#= type.Namespace #>
 {
 <#= getClassDocumentation(sdkDocs, type.Namespace + "." + baseName + "Client") #>	public partial class <#= baseName #>Client : AmazonWebServiceClient, <#= interfaceName #>
-	{
+    {
 
-		<#= signer #> signer = new <#= signer #>();
+        <#= signer #> signer = new <#= signer #>();
 <#+
-		addConstuctors(baseName);
+        addConstuctors(baseName);
 
         foreach (var method in type.GetMethods().OrderBy(x => x.Name))
         {
-			// Skip begin and end methods
+            // Skip begin and end methods
             if (method.ReturnType == typeof(IAsyncResult) || (method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(IAsyncResult)))
-				continue;
+                continue;
 
-			// Skip methods that are added via extensions.
-			if (method.Name.Equals("GetPreSignedURL"))
-				continue;
+            // Skip methods that are added via extensions.
+            if (method.Name.Equals("GetPreSignedURL"))
+                continue;
 
-			if(method.GetParameters().Length != 0)
-			{
+            if(method.GetParameters().Length != 0)
+            {
 #> 
 <#= getOperationDocumentation(sdkDocs, method)#>		public async Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request <#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new <#= method.Name #>RequestMarshaller();
-			var unmarshaller = <#= method.Name #>ResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(<#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new <#= method.Name #>RequestMarshaller();
+            var unmarshaller = <#= method.Name #>ResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(<#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
 <#+          
-			}
+            }
         }				
 #>
-	}
+    }
 }
 <#+ 
-	}
+    }
 
 #>
 
 
 <#+
-	void addLicenseHeader()
-	{
+    void addLicenseHeader()
+    {
 #>
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
@@ -198,23 +199,23 @@ namespace <#= type.Namespace #>
  * permissions and limitations under the License.
  */
 <#+
-	}
+    }
 
-	string getSigner(Assembly assembly, string typeName)
-	{
+    string getSigner(Assembly assembly, string typeName)
+    {
         var type = assembly.GetType(typeName);
         var field = type.GetField("signer", BindingFlags.Instance | BindingFlags.NonPublic);
         return field.FieldType.Name;
-	}
+    }
 
-	string getOperationDocumentation(XDocument sdkDocs,MethodInfo method)
-	{
-		var clientType = method.DeclaringType.Namespace + "." + method.DeclaringType.Name.Substring(1) + "Client";
-		var signature = "M:" + clientType + "." + method.Name + "(" + method.DeclaringType.Namespace + ".Model." + method.Name + "Request)";
+    string getOperationDocumentation(XDocument sdkDocs,MethodInfo method)
+    {
+        var clientType = method.DeclaringType.Namespace + "." + method.DeclaringType.Name.Substring(1) + "Client";
+        var signature = "M:" + clientType + "." + method.Name + "(" + method.DeclaringType.Namespace + ".Model." + method.Name + "Request)";
 
         var element = sdkDocs.XPathSelectElement("//members/member[@name='" + signature + "']");
-		if(element == null)
-			return signature;
+        if(element == null)
+            return signature;
         var reader = element.CreateReader();
         reader.MoveToContent();
         var innerxml = reader.ReadInnerXml();
@@ -225,21 +226,21 @@ namespace <#= type.Namespace #>
             sb.AppendLine("        /// " + line.Trim());
         }
 
-		sb.AppendLine("        /// <param name=\"cancellationToken\">");
-		sb.AppendLine("        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
-		sb.AppendLine("        /// </param>");
+        sb.AppendLine("        /// <param name=\"cancellationToken\">");
+        sb.AppendLine("        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
+        sb.AppendLine("        /// </param>");
         var ndoc = sb.ToString();
 
-		return ndoc;
-	}
+        return ndoc;
+    }
 
-	string getClassDocumentation(XDocument sdkDocs, string typeName)
-	{
-		var signature = "T:" + typeName;
+    string getClassDocumentation(XDocument sdkDocs, string typeName)
+    {
+        var signature = "T:" + typeName;
 
         var element = sdkDocs.XPathSelectElement("//members/member[@name='" + signature + "']");
-		if(element == null)
-			return signature;
+        if(element == null)
+            return signature;
         var reader = element.CreateReader();
         reader.MoveToContent();
         var innerxml = reader.ReadInnerXml();
@@ -251,11 +252,11 @@ namespace <#= type.Namespace #>
         }
         var ndoc = sb.ToString();
 
-		return ndoc;
-	}
+        return ndoc;
+    }
 
-	void addConstuctors(string baseName)
-	{
+    void addConstuctors(string baseName)
+    {
 #>
         #region Constructors
 
@@ -367,5 +368,5 @@ namespace <#= type.Namespace #>
         #endregion
 
 <#+
-	}
+    }
 #>

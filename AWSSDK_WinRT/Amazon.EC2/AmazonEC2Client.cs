@@ -48,9 +48,9 @@ namespace Amazon.EC2
     /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
     /// </summary>
 	public partial class AmazonEC2Client : AmazonWebServiceClient, Amazon.EC2.IAmazonEC2
-	{
+    {
 
-		QueryStringSigner signer = new QueryStringSigner();
+        QueryStringSigner signer = new QueryStringSigner();
         #region Constructors
 
         /// <summary>
@@ -173,12 +173,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AllocateAddressResponse> AllocateAddressAsync(AllocateAddressRequest allocateAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AllocateAddressRequestMarshaller();
-			var unmarshaller = AllocateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AllocateAddressRequest, AllocateAddressResponse>(allocateAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AllocateAddressRequestMarshaller();
+            var unmarshaller = AllocateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AllocateAddressRequest, AllocateAddressResponse>(allocateAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -189,12 +190,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
-			var unmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResponse>(assignPrivateIpAddressesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
+            var unmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResponse>(assignPrivateIpAddressesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AssociateAddress operation associates an elastic IP address with an instance. </para> <para> If the IP address is currently
@@ -210,12 +212,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssociateAddressResponse> AssociateAddressAsync(AssociateAddressRequest associateAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateAddressRequestMarshaller();
-			var unmarshaller = AssociateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateAddressRequest, AssociateAddressResponse>(associateAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateAddressRequestMarshaller();
+            var unmarshaller = AssociateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateAddressRequest, AssociateAddressResponse>(associateAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options
@@ -231,12 +234,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssociateDhcpOptionsResponse> AssociateDhcpOptionsAsync(AssociateDhcpOptionsRequest associateDhcpOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateDhcpOptionsRequestMarshaller();
-			var unmarshaller = AssociateDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateDhcpOptionsRequest, AssociateDhcpOptionsResponse>(associateDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateDhcpOptionsRequestMarshaller();
+            var unmarshaller = AssociateDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateDhcpOptionsRequest, AssociateDhcpOptionsResponse>(associateDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
@@ -253,12 +257,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AssociateRouteTableResponse> AssociateRouteTableAsync(AssociateRouteTableRequest associateRouteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AssociateRouteTableRequestMarshaller();
-			var unmarshaller = AssociateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AssociateRouteTableRequest, AssociateRouteTableResponse>(associateRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AssociateRouteTableRequestMarshaller();
+            var unmarshaller = AssociateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AssociateRouteTableRequest, AssociateRouteTableResponse>(associateRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For more information about your VPC
@@ -271,12 +276,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AttachInternetGatewayResponse> AttachInternetGatewayAsync(AttachInternetGatewayRequest attachInternetGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachInternetGatewayRequestMarshaller();
-			var unmarshaller = AttachInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachInternetGatewayRequest, AttachInternetGatewayResponse>(attachInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachInternetGatewayRequestMarshaller();
+            var unmarshaller = AttachInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachInternetGatewayRequest, AttachInternetGatewayResponse>(attachInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -289,12 +295,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AttachNetworkInterfaceResponse> AttachNetworkInterfaceAsync(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachNetworkInterfaceRequestMarshaller();
-			var unmarshaller = AttachNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachNetworkInterfaceRequest, AttachNetworkInterfaceResponse>(attachNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachNetworkInterfaceRequestMarshaller();
+            var unmarshaller = AttachNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachNetworkInterfaceRequest, AttachNetworkInterfaceResponse>(attachNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attach a previously created volume to a running instance. </para>
@@ -307,12 +314,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest attachVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachVolumeRequestMarshaller();
-			var unmarshaller = AttachVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachVolumeRequest, AttachVolumeResponse>(attachVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachVolumeRequestMarshaller();
+            var unmarshaller = AttachVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachVolumeRequest, AttachVolumeResponse>(attachVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching
@@ -327,12 +335,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AttachVpnGatewayResponse> AttachVpnGatewayAsync(AttachVpnGatewayRequest attachVpnGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AttachVpnGatewayRequestMarshaller();
-			var unmarshaller = AttachVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AttachVpnGatewayRequest, AttachVpnGatewayResponse>(attachVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AttachVpnGatewayRequestMarshaller();
+            var unmarshaller = AttachVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachVpnGatewayRequest, AttachVpnGatewayResponse>(attachVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon
@@ -352,12 +361,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AuthorizeSecurityGroupEgressResponse> AuthorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
-			var unmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResponse>(authorizeSecurityGroupEgressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
+            var unmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResponse>(authorizeSecurityGroupEgressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The AuthorizeSecurityGroupIngress operation adds permissions to a security group. </para> <para> Permissions are specified by the IP
@@ -373,12 +383,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<AuthorizeSecurityGroupIngressResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResponse>(authorizeSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResponse>(authorizeSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The BundleInstance operation request that an instance is bundled the next time it boots. The bundling process creates a new image
@@ -394,12 +405,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<BundleInstanceResponse> BundleInstanceAsync(BundleInstanceRequest bundleInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new BundleInstanceRequestMarshaller();
-			var unmarshaller = BundleInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, BundleInstanceRequest, BundleInstanceResponse>(bundleInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new BundleInstanceRequestMarshaller();
+            var unmarshaller = BundleInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, BundleInstanceRequest, BundleInstanceResponse>(bundleInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for
@@ -415,12 +427,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelBundleTaskResponse> CancelBundleTaskAsync(CancelBundleTaskRequest cancelBundleTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelBundleTaskRequestMarshaller();
-			var unmarshaller = CancelBundleTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelBundleTaskRequest, CancelBundleTaskResponse>(cancelBundleTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelBundleTaskRequestMarshaller();
+            var unmarshaller = CancelBundleTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelBundleTaskRequest, CancelBundleTaskResponse>(cancelBundleTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -431,12 +444,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelConversionTaskResponse> CancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelConversionTaskRequestMarshaller();
-			var unmarshaller = CancelConversionTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelConversionTaskRequest, CancelConversionTaskResponse>(cancelConversionTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelConversionTaskRequestMarshaller();
+            var unmarshaller = CancelConversionTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelConversionTaskRequest, CancelConversionTaskResponse>(cancelConversionTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -447,12 +461,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelExportTaskRequestMarshaller();
-			var unmarshaller = CancelExportTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelExportTaskRequest, CancelExportTaskResponse>(cancelExportTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelExportTaskRequestMarshaller();
+            var unmarshaller = CancelExportTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelExportTaskRequest, CancelExportTaskResponse>(cancelExportTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -465,12 +480,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelReservedInstancesListingResponse> CancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelReservedInstancesListingRequestMarshaller();
-			var unmarshaller = CancelReservedInstancesListingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelReservedInstancesListingRequest, CancelReservedInstancesListingResponse>(cancelReservedInstancesListingRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelReservedInstancesListingRequestMarshaller();
+            var unmarshaller = CancelReservedInstancesListingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelReservedInstancesListingRequest, CancelReservedInstancesListingResponse>(cancelReservedInstancesListingRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Cancels one or more Spot Instance requests. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when
@@ -488,12 +504,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CancelSpotInstanceRequestsResponse> CancelSpotInstanceRequestsAsync(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
-			var unmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelSpotInstanceRequestsRequest, CancelSpotInstanceRequestsResponse>(cancelSpotInstanceRequestsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
+            var unmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelSpotInstanceRequestsRequest, CancelSpotInstanceRequestsResponse>(cancelSpotInstanceRequestsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation
@@ -510,12 +527,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ConfirmProductInstanceResponse> ConfirmProductInstanceAsync(ConfirmProductInstanceRequest confirmProductInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ConfirmProductInstanceRequestMarshaller();
-			var unmarshaller = ConfirmProductInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ConfirmProductInstanceRequest, ConfirmProductInstanceResponse>(confirmProductInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ConfirmProductInstanceRequestMarshaller();
+            var unmarshaller = ConfirmProductInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ConfirmProductInstanceRequest, ConfirmProductInstanceResponse>(confirmProductInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -527,12 +545,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CopyImageResponse> CopyImageAsync(CopyImageRequest copyImageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopyImageRequestMarshaller();
-			var unmarshaller = CopyImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopyImageRequest, CopyImageResponse>(copyImageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopyImageRequestMarshaller();
+            var unmarshaller = CopyImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopyImageRequest, CopyImageResponse>(copyImageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -544,12 +563,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest copySnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CopySnapshotRequestMarshaller();
-			var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CopySnapshotRequest, CopySnapshotResponse>(copySnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CopySnapshotRequestMarshaller();
+            var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CopySnapshotRequest, CopySnapshotResponse>(copySnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Provides information to AWS about your customer gateway device. The customer gateway is the appliance at your end of the VPN
@@ -570,12 +590,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateCustomerGatewayResponse> CreateCustomerGatewayAsync(CreateCustomerGatewayRequest createCustomerGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateCustomerGatewayRequestMarshaller();
-			var unmarshaller = CreateCustomerGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateCustomerGatewayRequest, CreateCustomerGatewayResponse>(createCustomerGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateCustomerGatewayRequestMarshaller();
+            var unmarshaller = CreateCustomerGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateCustomerGatewayRequest, CreateCustomerGatewayResponse>(createCustomerGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
@@ -591,12 +612,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateDhcpOptionsResponse> CreateDhcpOptionsAsync(CreateDhcpOptionsRequest createDhcpOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateDhcpOptionsRequestMarshaller();
-			var unmarshaller = CreateDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>(createDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateDhcpOptionsRequestMarshaller();
+            var unmarshaller = CreateDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>(createDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than
@@ -611,12 +633,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateImageResponse> CreateImageAsync(CreateImageRequest createImageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateImageRequestMarshaller();
-			var unmarshaller = CreateImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateImageRequest, CreateImageResponse>(createImageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateImageRequestMarshaller();
+            var unmarshaller = CreateImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateImageRequest, CreateImageResponse>(createImageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -629,12 +652,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateInstanceExportTaskResponse> CreateInstanceExportTaskAsync(CreateInstanceExportTaskRequest createInstanceExportTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInstanceExportTaskRequestMarshaller();
-			var unmarshaller = CreateInstanceExportTaskResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInstanceExportTaskRequest, CreateInstanceExportTaskResponse>(createInstanceExportTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInstanceExportTaskRequestMarshaller();
+            var unmarshaller = CreateInstanceExportTaskResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInstanceExportTaskRequest, CreateInstanceExportTaskResponse>(createInstanceExportTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to a VPC using
@@ -650,12 +674,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(CreateInternetGatewayRequest createInternetGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInternetGatewayRequestMarshaller();
-			var unmarshaller = CreateInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInternetGatewayRequest, CreateInternetGatewayResponse>(createInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInternetGatewayRequestMarshaller();
+            var unmarshaller = CreateInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInternetGatewayRequest, CreateInternetGatewayResponse>(createInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair
@@ -669,12 +694,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest createKeyPairRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateKeyPairRequestMarshaller();
-			var unmarshaller = CreateKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateKeyPairRequest, CreateKeyPairResponse>(createKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateKeyPairRequestMarshaller();
+            var unmarshaller = CreateKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateKeyPairRequest, CreateKeyPairResponse>(createKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances
@@ -689,12 +715,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateNetworkAclResponse> CreateNetworkAclAsync(CreateNetworkAclRequest createNetworkAclRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkAclRequestMarshaller();
-			var unmarshaller = CreateNetworkAclResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkAclRequest, CreateNetworkAclResponse>(createNetworkAclRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkAclRequestMarshaller();
+            var unmarshaller = CreateNetworkAclResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkAclRequest, CreateNetworkAclResponse>(createNetworkAclRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules
@@ -712,12 +739,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateNetworkAclEntryResponse> CreateNetworkAclEntryAsync(CreateNetworkAclEntryRequest createNetworkAclEntryRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkAclEntryRequestMarshaller();
-			var unmarshaller = CreateNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkAclEntryRequest, CreateNetworkAclEntryResponse>(createNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkAclEntryRequestMarshaller();
+            var unmarshaller = CreateNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkAclEntryRequest, CreateNetworkAclEntryResponse>(createNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -730,12 +758,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateNetworkInterfaceResponse> CreateNetworkInterfaceAsync(CreateNetworkInterfaceRequest createNetworkInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateNetworkInterfaceRequestMarshaller();
-			var unmarshaller = CreateNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateNetworkInterfaceRequest, CreateNetworkInterfaceResponse>(createNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateNetworkInterfaceRequestMarshaller();
+            var unmarshaller = CreateNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateNetworkInterfaceRequest, CreateNetworkInterfaceResponse>(createNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a PlacementGroup into which multiple Amazon EC2 instances can be launched. Users must give the group a name unique within the
@@ -748,12 +777,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreatePlacementGroupResponse> CreatePlacementGroupAsync(CreatePlacementGroupRequest createPlacementGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePlacementGroupRequestMarshaller();
-			var unmarshaller = CreatePlacementGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePlacementGroupRequest, CreatePlacementGroupResponse>(createPlacementGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePlacementGroupRequestMarshaller();
+            var unmarshaller = CreatePlacementGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePlacementGroupRequest, CreatePlacementGroupResponse>(createPlacementGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -766,12 +796,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateReservedInstancesListingResponse> CreateReservedInstancesListingAsync(CreateReservedInstancesListingRequest createReservedInstancesListingRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateReservedInstancesListingRequestMarshaller();
-			var unmarshaller = CreateReservedInstancesListingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateReservedInstancesListingRequest, CreateReservedInstancesListingResponse>(createReservedInstancesListingRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateReservedInstancesListingRequestMarshaller();
+            var unmarshaller = CreateReservedInstancesListingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateReservedInstancesListingRequest, CreateReservedInstancesListingResponse>(createReservedInstancesListingRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance
@@ -792,12 +823,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest createRouteRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateRouteRequestMarshaller();
-			var unmarshaller = CreateRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateRouteRequest, CreateRouteResponse>(createRouteRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateRouteRequestMarshaller();
+            var unmarshaller = CreateRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateRouteRequest, CreateRouteResponse>(createRouteRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
@@ -812,12 +844,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateRouteTableResponse> CreateRouteTableAsync(CreateRouteTableRequest createRouteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateRouteTableRequestMarshaller();
-			var unmarshaller = CreateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateRouteTableRequest, CreateRouteTableResponse>(createRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateRouteTableRequestMarshaller();
+            var unmarshaller = CreateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateRouteTableRequest, CreateRouteTableResponse>(createRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The CreateSecurityGroup operation creates a new security group. </para> <para> Every instance is launched in a security group. If no
@@ -835,12 +868,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest createSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSecurityGroupRequestMarshaller();
-			var unmarshaller = CreateSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSecurityGroupRequest, CreateSecurityGroupResponse>(createSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSecurityGroupRequest, CreateSecurityGroupResponse>(createSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.
@@ -858,12 +892,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest createSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSnapshotRequestMarshaller();
-			var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates the data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per account.
@@ -880,12 +915,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSpotDatafeedSubscriptionResponse> CreateSpotDatafeedSubscriptionAsync(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResponse>(createSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResponse>(createSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more than one subnet to a VPC, they're set
@@ -904,12 +940,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateSubnetResponse> CreateSubnetAsync(CreateSubnetRequest createSubnetRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateSubnetRequestMarshaller();
-			var unmarshaller = CreateSubnetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateSubnetRequest, CreateSubnetResponse>(createSubnetRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateSubnetRequestMarshaller();
+            var unmarshaller = CreateSubnetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateSubnetRequest, CreateSubnetResponse>(createSubnetRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value
@@ -921,12 +958,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest createTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateTagsRequestMarshaller();
-			var unmarshaller = CreateTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateTagsRequest, CreateTagsResponse>(createTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateTagsRequestMarshaller();
+            var unmarshaller = CreateTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateTagsRequest, CreateTagsResponse>(createTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Initializes an empty volume of a given size. </para>
@@ -939,12 +977,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest createVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVolumeRequestMarshaller();
-			var unmarshaller = CreateVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVolumeRequest, CreateVolumeResponse>(createVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVolumeRequestMarshaller();
+            var unmarshaller = CreateVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVolumeRequest, CreateVolumeResponse>(createVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a <c>/28</c> netmask (16 IP addresses), and the
@@ -960,12 +999,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest createVpcRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpcRequestMarshaller();
-			var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpcRequest, CreateVpcResponse>(createVpcRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpcRequestMarshaller();
+            var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpcRequest, CreateVpcResponse>(createVpcRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.
@@ -986,12 +1026,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateVpnConnectionResponse> CreateVpnConnectionAsync(CreateVpnConnectionRequest createVpnConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnConnectionRequestMarshaller();
-			var unmarshaller = CreateVpnConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnConnectionRequest, CreateVpnConnectionResponse>(createVpnConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnConnectionRequestMarshaller();
+            var unmarshaller = CreateVpnConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnConnectionRequest, CreateVpnConnectionResponse>(createVpnConnectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1002,12 +1043,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateVpnConnectionRouteResponse> CreateVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
-			var unmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResponse>(createVpnConnectionRouteRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
+            var unmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResponse>(createVpnConnectionRouteRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before
@@ -1022,12 +1064,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<CreateVpnGatewayResponse> CreateVpnGatewayAsync(CreateVpnGatewayRequest createVpnGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVpnGatewayRequestMarshaller();
-			var unmarshaller = CreateVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVpnGatewayRequest, CreateVpnGatewayResponse>(createVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVpnGatewayRequestMarshaller();
+            var unmarshaller = CreateVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVpnGatewayRequest, CreateVpnGatewayResponse>(createVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway. </para> <para> You can have a
@@ -1041,12 +1084,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteCustomerGatewayResponse> DeleteCustomerGatewayAsync(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteCustomerGatewayRequestMarshaller();
-			var unmarshaller = DeleteCustomerGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteCustomerGatewayRequest, DeleteCustomerGatewayResponse>(deleteCustomerGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteCustomerGatewayRequestMarshaller();
+            var unmarshaller = DeleteCustomerGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteCustomerGatewayRequest, DeleteCustomerGatewayResponse>(deleteCustomerGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated
@@ -1059,12 +1103,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteDhcpOptionsRequestMarshaller();
-			var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>(deleteDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteDhcpOptionsRequestMarshaller();
+            var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>(deleteDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and
@@ -1077,12 +1122,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteInternetGatewayResponse> DeleteInternetGatewayAsync(DeleteInternetGatewayRequest deleteInternetGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteInternetGatewayRequestMarshaller();
-			var unmarshaller = DeleteInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>(deleteInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteInternetGatewayRequestMarshaller();
+            var unmarshaller = DeleteInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>(deleteInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteKeyPair operation deletes a key pair. </para>
@@ -1093,12 +1139,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest deleteKeyPairRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteKeyPairRequestMarshaller();
-			var unmarshaller = DeleteKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteKeyPairRequest, DeleteKeyPairResponse>(deleteKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var unmarshaller = DeleteKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteKeyPairRequest, DeleteKeyPairResponse>(deleteKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For
@@ -1111,12 +1158,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteNetworkAclResponse> DeleteNetworkAclAsync(DeleteNetworkAclRequest deleteNetworkAclRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkAclRequestMarshaller();
-			var unmarshaller = DeleteNetworkAclResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkAclRequest, DeleteNetworkAclResponse>(deleteNetworkAclRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkAclRequestMarshaller();
+            var unmarshaller = DeleteNetworkAclResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkAclRequest, DeleteNetworkAclResponse>(deleteNetworkAclRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in
@@ -1129,12 +1177,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteNetworkAclEntryResponse> DeleteNetworkAclEntryAsync(DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
-			var unmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResponse>(deleteNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
+            var unmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResponse>(deleteNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1145,12 +1194,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
-			var unmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResponse>(deleteNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
+            var unmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResponse>(deleteNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion. </para>
@@ -1162,12 +1212,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeletePlacementGroupResponse> DeletePlacementGroupAsync(DeletePlacementGroupRequest deletePlacementGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePlacementGroupRequestMarshaller();
-			var unmarshaller = DeletePlacementGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePlacementGroupRequest, DeletePlacementGroupResponse>(deletePlacementGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePlacementGroupRequestMarshaller();
+            var unmarshaller = DeletePlacementGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePlacementGroupRequest, DeletePlacementGroupResponse>(deletePlacementGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon Virtual
@@ -1179,12 +1230,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest deleteRouteRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRouteRequestMarshaller();
-			var unmarshaller = DeleteRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRouteRequest, DeleteRouteResponse>(deleteRouteRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRouteRequestMarshaller();
+            var unmarshaller = DeleteRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRouteRequest, DeleteRouteResponse>(deleteRouteRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a route table from a VPC. The route table must not be associated with a subnet. You can't delete the main route table. For
@@ -1197,12 +1249,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteRouteTableResponse> DeleteRouteTableAsync(DeleteRouteTableRequest deleteRouteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRouteTableRequestMarshaller();
-			var unmarshaller = DeleteRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRouteTableRequest, DeleteRouteTableResponse>(deleteRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRouteTableRequestMarshaller();
+            var unmarshaller = DeleteRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRouteTableRequest, DeleteRouteTableResponse>(deleteRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeleteSecurityGroup operation deletes a security group. </para> <para><b>NOTE:</b> If you attempt to delete a security group that
@@ -1217,12 +1270,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest deleteSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSecurityGroupRequestMarshaller();
-			var unmarshaller = DeleteSecurityGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(deleteSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteSecurityGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(deleteSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the snapshot identified by <c>snapshotId</c> .
@@ -1235,12 +1289,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest deleteSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSnapshotRequestMarshaller();
-			var unmarshaller = DeleteSnapshotResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSnapshotRequest, DeleteSnapshotResponse>(deleteSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var unmarshaller = DeleteSnapshotResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSnapshotRequest, DeleteSnapshotResponse>(deleteSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
@@ -1254,12 +1309,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResponse>(deleteSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResponse>(deleteSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns
@@ -1271,12 +1327,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteSubnetResponse> DeleteSubnetAsync(DeleteSubnetRequest deleteSubnetRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSubnetRequestMarshaller();
-			var unmarshaller = DeleteSubnetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSubnetRequest, DeleteSubnetResponse>(deleteSubnetRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSubnetRequestMarshaller();
+            var unmarshaller = DeleteSubnetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSubnetRequest, DeleteSubnetResponse>(deleteSubnetRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
@@ -1287,12 +1344,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest deleteTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteTagsRequestMarshaller();
-			var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(deleteTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(deleteTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name. </para>
@@ -1303,12 +1361,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest deleteVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVolumeRequestMarshaller();
-			var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVolumeRequestMarshaller();
+            var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on the VPC first. For example, you must
@@ -1321,12 +1380,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest deleteVpcRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpcRequestMarshaller();
-			var unmarshaller = DeleteVpcResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpcRequest, DeleteVpcResponse>(deleteVpcRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpcRequestMarshaller();
+            var unmarshaller = DeleteVpcResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpcRequest, DeleteVpcResponse>(deleteVpcRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPN connection. Use this if you want to delete a VPC and all its associated components. Another reason to use this
@@ -1343,12 +1403,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVpnConnectionResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest deleteVpnConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnConnectionRequestMarshaller();
-			var unmarshaller = DeleteVpnConnectionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>(deleteVpnConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnConnectionRequestMarshaller();
+            var unmarshaller = DeleteVpnConnectionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>(deleteVpnConnectionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1359,12 +1420,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVpnConnectionRouteResponse> DeleteVpnConnectionRouteAsync(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
-			var unmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResponse>(deleteVpnConnectionRouteRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
+            var unmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResponse>(deleteVpnConnectionRouteRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components because you no longer need them. We
@@ -1378,12 +1440,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeleteVpnGatewayResponse> DeleteVpnGatewayAsync(DeleteVpnGatewayRequest deleteVpnGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVpnGatewayRequestMarshaller();
-			var unmarshaller = DeleteVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVpnGatewayRequest, DeleteVpnGatewayResponse>(deleteVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVpnGatewayRequestMarshaller();
+            var unmarshaller = DeleteVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVpnGatewayRequest, DeleteVpnGatewayResponse>(deleteVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
@@ -1395,12 +1458,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DeregisterImageResponse> DeregisterImageAsync(DeregisterImageRequest deregisterImageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeregisterImageRequestMarshaller();
-			var unmarshaller = DeregisterImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeregisterImageRequest, DeregisterImageResponse>(deregisterImageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeregisterImageRequestMarshaller();
+            var unmarshaller = DeregisterImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeregisterImageRequest, DeregisterImageResponse>(deregisterImageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1413,12 +1477,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest describeAccountAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAccountAttributesRequestMarshaller();
-			var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAccountAttributesRequest, DescribeAccountAttributesResponse>(describeAccountAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAccountAttributesRequest, DescribeAccountAttributesResponse>(describeAccountAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
@@ -1432,12 +1497,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest describeAddressesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAddressesRequestMarshaller();
-			var unmarshaller = DescribeAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAddressesRequest, DescribeAddressesResponse>(describeAddressesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAddressesRequestMarshaller();
+            var unmarshaller = DescribeAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAddressesRequest, DescribeAddressesResponse>(describeAddressesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
@@ -1453,12 +1519,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
-			var unmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResponse>(describeAvailabilityZonesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
+            var unmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResponse>(describeAvailabilityZonesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
@@ -1473,12 +1540,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(DescribeBundleTasksRequest describeBundleTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeBundleTasksRequestMarshaller();
-			var unmarshaller = DescribeBundleTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeBundleTasksRequest, DescribeBundleTasksResponse>(describeBundleTasksRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeBundleTasksRequestMarshaller();
+            var unmarshaller = DescribeBundleTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeBundleTasksRequest, DescribeBundleTasksResponse>(describeBundleTasksRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1491,12 +1559,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(DescribeConversionTasksRequest describeConversionTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeConversionTasksRequestMarshaller();
-			var unmarshaller = DescribeConversionTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeConversionTasksRequest, DescribeConversionTasksResponse>(describeConversionTasksRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeConversionTasksRequestMarshaller();
+            var unmarshaller = DescribeConversionTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeConversionTasksRequest, DescribeConversionTasksResponse>(describeConversionTasksRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your customer gateways. You can filter the results to return information only about customer gateways
@@ -1515,12 +1584,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
-			var unmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResponse>(describeCustomerGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
+            var unmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResponse>(describeCustomerGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to
@@ -1540,12 +1610,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(DescribeDhcpOptionsRequest describeDhcpOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeDhcpOptionsRequestMarshaller();
-			var unmarshaller = DescribeDhcpOptionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeDhcpOptionsRequest, DescribeDhcpOptionsResponse>(describeDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeDhcpOptionsRequestMarshaller();
+            var unmarshaller = DescribeDhcpOptionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeDhcpOptionsRequest, DescribeDhcpOptionsResponse>(describeDhcpOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1558,12 +1629,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeExportTasksRequestMarshaller();
-			var unmarshaller = DescribeExportTasksResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeExportTasksRequest, DescribeExportTasksResponse>(describeExportTasksRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeExportTasksRequest, DescribeExportTasksResponse>(describeExportTasksRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
@@ -1578,12 +1650,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeImageAttributeResponse> DescribeImageAttributeAsync(DescribeImageAttributeRequest describeImageAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeImageAttributeRequestMarshaller();
-			var unmarshaller = DescribeImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeImageAttributeRequest, DescribeImageAttributeResponse>(describeImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeImageAttributeRequest, DescribeImageAttributeResponse>(describeImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the user. Information returned includes
@@ -1616,12 +1689,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest describeImagesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeImagesRequestMarshaller();
-			var unmarshaller = DescribeImagesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeImagesRequest, DescribeImagesResponse>(describeImagesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeImagesRequestMarshaller();
+            var unmarshaller = DescribeImagesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeImagesRequest, DescribeImagesResponse>(describeImagesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
@@ -1635,12 +1709,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest describeInstanceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceAttributeRequestMarshaller();
-			var unmarshaller = DescribeInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceAttributeRequest, DescribeInstanceAttributeResponse>(describeInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceAttributeRequestMarshaller();
+            var unmarshaller = DescribeInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceAttributeRequest, DescribeInstanceAttributeResponse>(describeInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeInstances operation returns information about instances that you own. </para> <para> If you specify one or more instance
@@ -1658,12 +1733,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest describeInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstancesRequestMarshaller();
-			var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(describeInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstancesRequestMarshaller();
+            var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(describeInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types
@@ -1706,12 +1782,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(DescribeInstanceStatusRequest describeInstanceStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInstanceStatusRequestMarshaller();
-			var unmarshaller = DescribeInstanceStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInstanceStatusRequest, DescribeInstanceStatusResponse>(describeInstanceStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInstanceStatusRequestMarshaller();
+            var unmarshaller = DescribeInstanceStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInstanceStatusRequest, DescribeInstanceStatusResponse>(describeInstanceStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your Internet gateways. You can filter the results to return information only about Internet gateways
@@ -1733,12 +1810,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest describeInternetGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeInternetGatewaysRequestMarshaller();
-			var unmarshaller = DescribeInternetGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeInternetGatewaysRequest, DescribeInternetGatewaysResponse>(describeInternetGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeInternetGatewaysRequestMarshaller();
+            var unmarshaller = DescribeInternetGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeInternetGatewaysRequest, DescribeInternetGatewaysResponse>(describeInternetGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about
@@ -1753,12 +1831,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(DescribeKeyPairsRequest describeKeyPairsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeKeyPairsRequestMarshaller();
-			var unmarshaller = DescribeKeyPairsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeKeyPairsRequest, DescribeKeyPairsResponse>(describeKeyPairsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeKeyPairsRequestMarshaller();
+            var unmarshaller = DescribeKeyPairsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeKeyPairsRequest, DescribeKeyPairsResponse>(describeKeyPairsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
@@ -1780,12 +1859,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest describeNetworkAclsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkAclsRequestMarshaller();
-			var unmarshaller = DescribeNetworkAclsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkAclsRequest, DescribeNetworkAclsResponse>(describeNetworkAclsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkAclsRequestMarshaller();
+            var unmarshaller = DescribeNetworkAclsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkAclsRequest, DescribeNetworkAclsResponse>(describeNetworkAclsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1798,12 +1878,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeNetworkInterfaceAttributeResponse> DescribeNetworkInterfaceAttributeAsync(DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkInterfaceAttributeRequest, DescribeNetworkInterfaceAttributeResponse>(describeNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkInterfaceAttributeRequest, DescribeNetworkInterfaceAttributeResponse>(describeNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1816,12 +1897,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
-			var unmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResponse>(describeNetworkInterfacesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResponse>(describeNetworkInterfacesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
@@ -1835,12 +1917,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(DescribePlacementGroupsRequest describePlacementGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribePlacementGroupsRequestMarshaller();
-			var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribePlacementGroupsRequest, DescribePlacementGroupsResponse>(describePlacementGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribePlacementGroupsRequestMarshaller();
+            var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribePlacementGroupsRequest, DescribePlacementGroupsResponse>(describePlacementGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
@@ -1854,12 +1937,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeRegionsResponse> DescribeRegionsAsync(DescribeRegionsRequest describeRegionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRegionsRequestMarshaller();
-			var unmarshaller = DescribeRegionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRegionsRequest, DescribeRegionsResponse>(describeRegionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRegionsRequestMarshaller();
+            var unmarshaller = DescribeRegionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRegionsRequest, DescribeRegionsResponse>(describeRegionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
@@ -1873,12 +1957,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest describeReservedInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesRequest, DescribeReservedInstancesResponse>(describeReservedInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesRequest, DescribeReservedInstancesResponse>(describeReservedInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -1891,12 +1976,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesListingsRequest, DescribeReservedInstancesListingsResponse>(describeReservedInstancesListingsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesListingsRequest, DescribeReservedInstancesListingsResponse>(describeReservedInstancesListingsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon
@@ -1912,12 +1998,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
-			var unmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeReservedInstancesOfferingsRequest, DescribeReservedInstancesOfferingsResponse>(describeReservedInstancesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesOfferingsRequest, DescribeReservedInstancesOfferingsResponse>(describeReservedInstancesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your route tables. You can filter the results to return information only about tables that match criteria
@@ -1939,12 +2026,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(DescribeRouteTablesRequest describeRouteTablesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeRouteTablesRequestMarshaller();
-			var unmarshaller = DescribeRouteTablesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeRouteTablesRequest, DescribeRouteTablesResponse>(describeRouteTablesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeRouteTablesRequestMarshaller();
+            var unmarshaller = DescribeRouteTablesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeRouteTablesRequest, DescribeRouteTablesResponse>(describeRouteTablesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DescribeSecurityGroups operation returns information about security groups that you own. </para> <para> If you specify security
@@ -1960,12 +2048,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(DescribeSecurityGroupsRequest describeSecurityGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSecurityGroupsRequestMarshaller();
-			var unmarshaller = DescribeSecurityGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSecurityGroupsRequest, DescribeSecurityGroupsResponse>(describeSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSecurityGroupsRequest, DescribeSecurityGroupsResponse>(describeSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about an attribute of a snapshot. Only one attribute can be specified per call. </para>
@@ -1979,12 +2068,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSnapshotAttributeResponse> DescribeSnapshotAttributeAsync(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
-			var unmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotAttributeRequest, DescribeSnapshotAttributeResponse>(describeSnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
+            var unmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotAttributeRequest, DescribeSnapshotAttributeResponse>(describeSnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available
@@ -2000,12 +2090,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest describeSnapshotsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSnapshotsRequestMarshaller();
-			var unmarshaller = DescribeSnapshotsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSnapshotsRequest, DescribeSnapshotsResponse>(describeSnapshotsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSnapshotsRequest, DescribeSnapshotsResponse>(describeSnapshotsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
@@ -2021,12 +2112,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
-			var unmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotDatafeedSubscriptionRequest, DescribeSpotDatafeedSubscriptionResponse>(describeSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
+            var unmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotDatafeedSubscriptionRequest, DescribeSpotDatafeedSubscriptionResponse>(describeSpotDatafeedSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
@@ -2052,12 +2144,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
-			var unmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResponse>(describeSpotInstanceRequestsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
+            var unmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResponse>(describeSpotInstanceRequestsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the Spot Price history. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
@@ -2075,12 +2168,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
-			var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResponse>(describeSpotPriceHistoryRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
+            var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResponse>(describeSpotPriceHistoryRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your subnets. You can filter the results to return information only about subnets that match criteria you
@@ -2098,12 +2192,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeSubnetsResponse> DescribeSubnetsAsync(DescribeSubnetsRequest describeSubnetsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeSubnetsRequestMarshaller();
-			var unmarshaller = DescribeSubnetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeSubnetsRequest, DescribeSubnetsResponse>(describeSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeSubnetsRequestMarshaller();
+            var unmarshaller = DescribeSubnetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeSubnetsRequest, DescribeSubnetsResponse>(describeSubnetsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the tags for the specified resources. </para>
@@ -2116,12 +2211,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest describeTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeTagsRequestMarshaller();
-			var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(describeTagsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(describeTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2134,12 +2230,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVolumeAttributeResponse> DescribeVolumeAttributeAsync(DescribeVolumeAttributeRequest describeVolumeAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumeAttributeRequestMarshaller();
-			var unmarshaller = DescribeVolumeAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumeAttributeRequest, DescribeVolumeAttributeResponse>(describeVolumeAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumeAttributeRequestMarshaller();
+            var unmarshaller = DescribeVolumeAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumeAttributeRequest, DescribeVolumeAttributeResponse>(describeVolumeAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have
@@ -2154,12 +2251,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest describeVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumesRequestMarshaller();
-			var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(describeVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumesRequestMarshaller();
+            var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(describeVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Describes the status of a volume. </para>
@@ -2173,12 +2271,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(DescribeVolumeStatusRequest describeVolumeStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVolumeStatusRequestMarshaller();
-			var unmarshaller = DescribeVolumeStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVolumeStatusRequest, DescribeVolumeStatusResponse>(describeVolumeStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVolumeStatusRequestMarshaller();
+            var unmarshaller = DescribeVolumeStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVolumeStatusRequest, DescribeVolumeStatusResponse>(describeVolumeStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2191,12 +2290,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVpcAttributeResponse> DescribeVpcAttributeAsync(DescribeVpcAttributeRequest describeVpcAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpcAttributeRequestMarshaller();
-			var unmarshaller = DescribeVpcAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpcAttributeRequest, DescribeVpcAttributeResponse>(describeVpcAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpcAttributeRequestMarshaller();
+            var unmarshaller = DescribeVpcAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpcAttributeRequest, DescribeVpcAttributeResponse>(describeVpcAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you
@@ -2213,12 +2313,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest describeVpcsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpcsRequestMarshaller();
-			var unmarshaller = DescribeVpcsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpcsRequest, DescribeVpcsResponse>(describeVpcsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpcsRequestMarshaller();
+            var unmarshaller = DescribeVpcsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpcsRequest, DescribeVpcsResponse>(describeVpcsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
@@ -2238,12 +2339,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(DescribeVpnConnectionsRequest describeVpnConnectionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpnConnectionsRequestMarshaller();
-			var unmarshaller = DescribeVpnConnectionsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpnConnectionsRequest, DescribeVpnConnectionsResponse>(describeVpnConnectionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpnConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpnConnectionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpnConnectionsRequest, DescribeVpnConnectionsResponse>(describeVpnConnectionsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match
@@ -2262,12 +2364,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(DescribeVpnGatewaysRequest describeVpnGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DescribeVpnGatewaysRequestMarshaller();
-			var unmarshaller = DescribeVpnGatewaysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DescribeVpnGatewaysRequest, DescribeVpnGatewaysResponse>(describeVpnGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DescribeVpnGatewaysRequestMarshaller();
+            var unmarshaller = DescribeVpnGatewaysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeVpnGatewaysRequest, DescribeVpnGatewaysResponse>(describeVpnGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any
@@ -2282,12 +2385,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DetachInternetGatewayResponse> DetachInternetGatewayAsync(DetachInternetGatewayRequest detachInternetGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachInternetGatewayRequestMarshaller();
-			var unmarshaller = DetachInternetGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachInternetGatewayRequest, DetachInternetGatewayResponse>(detachInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachInternetGatewayRequestMarshaller();
+            var unmarshaller = DetachInternetGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachInternetGatewayRequest, DetachInternetGatewayResponse>(detachInternetGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2298,12 +2402,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DetachNetworkInterfaceResponse> DetachNetworkInterfaceAsync(DetachNetworkInterfaceRequest detachNetworkInterfaceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachNetworkInterfaceRequestMarshaller();
-			var unmarshaller = DetachNetworkInterfaceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachNetworkInterfaceRequest, DetachNetworkInterfaceResponse>(detachNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachNetworkInterfaceRequestMarshaller();
+            var unmarshaller = DetachNetworkInterfaceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachNetworkInterfaceRequest, DetachNetworkInterfaceResponse>(detachNetworkInterfaceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Detach a previously attached volume from a running instance. </para>
@@ -2316,12 +2421,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest detachVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachVolumeRequestMarshaller();
-			var unmarshaller = DetachVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachVolumeRequest, DetachVolumeResponse>(detachVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachVolumeRequestMarshaller();
+            var unmarshaller = DetachVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachVolumeRequest, DetachVolumeResponse>(detachVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN
@@ -2336,12 +2442,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DetachVpnGatewayResponse> DetachVpnGatewayAsync(DetachVpnGatewayRequest detachVpnGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DetachVpnGatewayRequestMarshaller();
-			var unmarshaller = DetachVpnGatewayResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DetachVpnGatewayRequest, DetachVpnGatewayResponse>(detachVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DetachVpnGatewayRequestMarshaller();
+            var unmarshaller = DetachVpnGatewayResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DetachVpnGatewayRequest, DetachVpnGatewayResponse>(detachVpnGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2352,12 +2459,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DisableVgwRoutePropagationResponse> DisableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
-			var unmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResponse>(disableVgwRoutePropagationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
+            var unmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResponse>(disableVgwRoutePropagationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
@@ -2370,12 +2478,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DisassociateAddressResponse> DisassociateAddressAsync(DisassociateAddressRequest disassociateAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisassociateAddressRequestMarshaller();
-			var unmarshaller = DisassociateAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisassociateAddressRequest, DisassociateAddressResponse>(disassociateAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisassociateAddressRequestMarshaller();
+            var unmarshaller = DisassociateAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisassociateAddressRequest, DisassociateAddressResponse>(disassociateAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
@@ -2389,12 +2498,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<DisassociateRouteTableResponse> DisassociateRouteTableAsync(DisassociateRouteTableRequest disassociateRouteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DisassociateRouteTableRequestMarshaller();
-			var unmarshaller = DisassociateRouteTableResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DisassociateRouteTableRequest, DisassociateRouteTableResponse>(disassociateRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DisassociateRouteTableRequestMarshaller();
+            var unmarshaller = DisassociateRouteTableResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DisassociateRouteTableRequest, DisassociateRouteTableResponse>(disassociateRouteTableRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2405,12 +2515,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<EnableVgwRoutePropagationResponse> EnableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
-			var unmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResponse>(enableVgwRoutePropagationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
+            var unmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResponse>(enableVgwRoutePropagationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enable IO on the volume after an event has occured. </para>
@@ -2422,12 +2533,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<EnableVolumeIOResponse> EnableVolumeIOAsync(EnableVolumeIORequest enableVolumeIORequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableVolumeIORequestMarshaller();
-			var unmarshaller = EnableVolumeIOResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableVolumeIORequest, EnableVolumeIOResponse>(enableVolumeIORequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableVolumeIORequestMarshaller();
+            var unmarshaller = EnableVolumeIOResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableVolumeIORequest, EnableVolumeIOResponse>(enableVolumeIORequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The GetConsoleOutput operation retrieves console output for the specified instance. </para> <para> Instance console output is
@@ -2443,12 +2555,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetConsoleOutputResponse> GetConsoleOutputAsync(GetConsoleOutputRequest getConsoleOutputRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetConsoleOutputRequestMarshaller();
-			var unmarshaller = GetConsoleOutputResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetConsoleOutputRequest, GetConsoleOutputResponse>(getConsoleOutputRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetConsoleOutputRequestMarshaller();
+            var unmarshaller = GetConsoleOutputResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetConsoleOutputRequest, GetConsoleOutputResponse>(getConsoleOutputRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Retrieves the encrypted administrator password for the instances running Windows. </para> <para><b>NOTE:</b> The Windows password is
@@ -2464,12 +2577,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<GetPasswordDataResponse> GetPasswordDataAsync(GetPasswordDataRequest getPasswordDataRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetPasswordDataRequestMarshaller();
-			var unmarshaller = GetPasswordDataResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetPasswordDataRequest, GetPasswordDataResponse>(getPasswordDataRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetPasswordDataRequestMarshaller();
+            var unmarshaller = GetPasswordDataResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetPasswordDataRequest, GetPasswordDataResponse>(getPasswordDataRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2482,12 +2596,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ImportInstanceResponse> ImportInstanceAsync(ImportInstanceRequest importInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportInstanceRequestMarshaller();
-			var unmarshaller = ImportInstanceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportInstanceRequest, ImportInstanceResponse>(importInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportInstanceRequestMarshaller();
+            var unmarshaller = ImportInstanceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportInstanceRequest, ImportInstanceResponse>(importInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Imports the public key from an RSA key pair created with a third-party tool. This operation differs from CreateKeyPair as the private
@@ -2511,12 +2626,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest importKeyPairRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportKeyPairRequestMarshaller();
-			var unmarshaller = ImportKeyPairResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportKeyPairRequest, ImportKeyPairResponse>(importKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportKeyPairRequestMarshaller();
+            var unmarshaller = ImportKeyPairResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportKeyPairRequest, ImportKeyPairResponse>(importKeyPairRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2528,12 +2644,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest importVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ImportVolumeRequestMarshaller();
-			var unmarshaller = ImportVolumeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ImportVolumeRequest, ImportVolumeResponse>(importVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ImportVolumeRequestMarshaller();
+            var unmarshaller = ImportVolumeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ImportVolumeRequest, ImportVolumeResponse>(importVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
@@ -2545,12 +2662,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyImageAttributeResponse> ModifyImageAttributeAsync(ModifyImageAttributeRequest modifyImageAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyImageAttributeRequestMarshaller();
-			var unmarshaller = ModifyImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyImageAttributeRequest, ModifyImageAttributeResponse>(modifyImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyImageAttributeRequest, ModifyImageAttributeResponse>(modifyImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Modifies an attribute of an instance. </para>
@@ -2562,12 +2680,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyInstanceAttributeRequestMarshaller();
-			var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyInstanceAttributeRequest, ModifyInstanceAttributeResponse>(modifyInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyInstanceAttributeRequestMarshaller();
+            var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyInstanceAttributeRequest, ModifyInstanceAttributeResponse>(modifyInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2578,12 +2697,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeAsync(ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResponse>(modifyNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResponse>(modifyNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Adds or remove permission settings for the specified snapshot. </para>
@@ -2595,12 +2715,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifySnapshotAttributeResponse> ModifySnapshotAttributeAsync(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifySnapshotAttributeRequestMarshaller();
-			var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifySnapshotAttributeRequest, ModifySnapshotAttributeResponse>(modifySnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifySnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifySnapshotAttributeRequest, ModifySnapshotAttributeResponse>(modifySnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2611,12 +2732,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyVolumeAttributeResponse> ModifyVolumeAttributeAsync(ModifyVolumeAttributeRequest modifyVolumeAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyVolumeAttributeRequestMarshaller();
-			var unmarshaller = ModifyVolumeAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyVolumeAttributeRequest, ModifyVolumeAttributeResponse>(modifyVolumeAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyVolumeAttributeRequestMarshaller();
+            var unmarshaller = ModifyVolumeAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyVolumeAttributeRequest, ModifyVolumeAttributeResponse>(modifyVolumeAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2627,12 +2749,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ModifyVpcAttributeResponse> ModifyVpcAttributeAsync(ModifyVpcAttributeRequest modifyVpcAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ModifyVpcAttributeRequestMarshaller();
-			var unmarshaller = ModifyVpcAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ModifyVpcAttributeRequest, ModifyVpcAttributeResponse>(modifyVpcAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ModifyVpcAttributeRequestMarshaller();
+            var unmarshaller = ModifyVpcAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyVpcAttributeRequest, ModifyVpcAttributeResponse>(modifyVpcAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Enables monitoring for a running instance. </para>
@@ -2646,12 +2769,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<MonitorInstancesResponse> MonitorInstancesAsync(MonitorInstancesRequest monitorInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new MonitorInstancesRequestMarshaller();
-			var unmarshaller = MonitorInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, MonitorInstancesRequest, MonitorInstancesResponse>(monitorInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new MonitorInstancesRequestMarshaller();
+            var unmarshaller = MonitorInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, MonitorInstancesRequest, MonitorInstancesResponse>(monitorInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The PurchaseReservedInstancesOffering operation purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
@@ -2667,12 +2791,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingAsync(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
-			var unmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PurchaseReservedInstancesOfferingRequest, PurchaseReservedInstancesOfferingResponse>(purchaseReservedInstancesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PurchaseReservedInstancesOfferingRequest, PurchaseReservedInstancesOfferingResponse>(purchaseReservedInstancesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to
@@ -2686,12 +2811,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RebootInstancesResponse> RebootInstancesAsync(RebootInstancesRequest rebootInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RebootInstancesRequestMarshaller();
-			var unmarshaller = RebootInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RebootInstancesRequest, RebootInstancesResponse>(rebootInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RebootInstancesRequestMarshaller();
+            var unmarshaller = RebootInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RebootInstancesRequest, RebootInstancesResponse>(rebootInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more
@@ -2709,12 +2835,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RegisterImageResponse> RegisterImageAsync(RegisterImageRequest registerImageRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RegisterImageRequestMarshaller();
-			var unmarshaller = RegisterImageResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RegisterImageRequest, RegisterImageResponse>(registerImageRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RegisterImageRequestMarshaller();
+            var unmarshaller = RegisterImageResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RegisterImageRequest, RegisterImageResponse>(registerImageRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
@@ -2731,12 +2858,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest releaseAddressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReleaseAddressRequestMarshaller();
-			var unmarshaller = ReleaseAddressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReleaseAddressRequest, ReleaseAddressResponse>(releaseAddressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReleaseAddressRequestMarshaller();
+            var unmarshaller = ReleaseAddressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReleaseAddressRequest, ReleaseAddressResponse>(releaseAddressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the
@@ -2751,12 +2879,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReplaceNetworkAclAssociationResponse> ReplaceNetworkAclAssociationAsync(ReplaceNetworkAclAssociationRequest replaceNetworkAclAssociationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
-			var unmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceNetworkAclAssociationRequest, ReplaceNetworkAclAssociationResponse>(replaceNetworkAclAssociationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
+            var unmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceNetworkAclAssociationRequest, ReplaceNetworkAclAssociationResponse>(replaceNetworkAclAssociationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
@@ -2769,12 +2898,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReplaceNetworkAclEntryResponse> ReplaceNetworkAclEntryAsync(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
-			var unmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResponse>(replaceNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
+            var unmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResponse>(replaceNetworkAclEntryRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
@@ -2786,12 +2916,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReplaceRouteResponse> ReplaceRouteAsync(ReplaceRouteRequest replaceRouteRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceRouteRequestMarshaller();
-			var unmarshaller = ReplaceRouteResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceRouteRequest, ReplaceRouteResponse>(replaceRouteRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceRouteRequestMarshaller();
+            var unmarshaller = ReplaceRouteResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceRouteRequest, ReplaceRouteResponse>(replaceRouteRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
@@ -2808,12 +2939,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationAsync(ReplaceRouteTableAssociationRequest replaceRouteTableAssociationRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
-			var unmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReplaceRouteTableAssociationRequest, ReplaceRouteTableAssociationResponse>(replaceRouteTableAssociationRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
+            var unmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReplaceRouteTableAssociationRequest, ReplaceRouteTableAssociationResponse>(replaceRouteTableAssociationRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2824,12 +2956,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ReportInstanceStatusResponse> ReportInstanceStatusAsync(ReportInstanceStatusRequest reportInstanceStatusRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReportInstanceStatusRequestMarshaller();
-			var unmarshaller = ReportInstanceStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReportInstanceStatusRequest, ReportInstanceStatusResponse>(reportInstanceStatusRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReportInstanceStatusRequestMarshaller();
+            var unmarshaller = ReportInstanceStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReportInstanceStatusRequest, ReportInstanceStatusResponse>(reportInstanceStatusRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a Spot Instance request. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
@@ -2846,12 +2979,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest requestSpotInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RequestSpotInstancesRequestMarshaller();
-			var unmarshaller = RequestSpotInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RequestSpotInstancesRequest, RequestSpotInstancesResponse>(requestSpotInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RequestSpotInstancesRequestMarshaller();
+            var unmarshaller = RequestSpotInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RequestSpotInstancesRequest, RequestSpotInstancesResponse>(requestSpotInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The ResetImageAttribute operation resets an attribute of an AMI to its default value. </para> <para><b>NOTE:</b> The productCodes
@@ -2864,12 +2998,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResetImageAttributeResponse> ResetImageAttributeAsync(ResetImageAttributeRequest resetImageAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetImageAttributeRequestMarshaller();
-			var unmarshaller = ResetImageAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetImageAttributeRequest, ResetImageAttributeResponse>(resetImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetImageAttributeRequestMarshaller();
+            var unmarshaller = ResetImageAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetImageAttributeRequest, ResetImageAttributeResponse>(resetImageAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resets an attribute of an instance to its default value. </para>
@@ -2881,12 +3016,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResetInstanceAttributeResponse> ResetInstanceAttributeAsync(ResetInstanceAttributeRequest resetInstanceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetInstanceAttributeRequestMarshaller();
-			var unmarshaller = ResetInstanceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetInstanceAttributeRequest, ResetInstanceAttributeResponse>(resetInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetInstanceAttributeRequestMarshaller();
+            var unmarshaller = ResetInstanceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetInstanceAttributeRequest, ResetInstanceAttributeResponse>(resetInstanceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -2897,12 +3033,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResetNetworkInterfaceAttributeResponse> ResetNetworkInterfaceAttributeAsync(ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
-			var unmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResponse>(resetNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
+            var unmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResponse>(resetNetworkInterfaceAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Resets permission settings for the specified snapshot. </para>
@@ -2914,12 +3051,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<ResetSnapshotAttributeResponse> ResetSnapshotAttributeAsync(ResetSnapshotAttributeRequest resetSnapshotAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResetSnapshotAttributeRequestMarshaller();
-			var unmarshaller = ResetSnapshotAttributeResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResetSnapshotAttributeRequest, ResetSnapshotAttributeResponse>(resetSnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResetSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ResetSnapshotAttributeResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResetSnapshotAttributeRequest, ResetSnapshotAttributeResponse>(resetSnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> This action applies only to security groups in a VPC. It doesn't work with EC2 security groups. For information about Amazon Virtual
@@ -2937,12 +3075,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RevokeSecurityGroupEgressResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
-			var unmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResponse>(revokeSecurityGroupEgressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
+            var unmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResponse>(revokeSecurityGroupEgressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified
@@ -2958,12 +3097,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RevokeSecurityGroupIngressResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
-			var unmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResponse>(revokeSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResponse>(revokeSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The RunInstances operation launches a specified number of instances. </para> <para> If Amazon EC2 cannot launch the minimum number
@@ -2993,12 +3133,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<RunInstancesResponse> RunInstancesAsync(RunInstancesRequest runInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RunInstancesRequestMarshaller();
-			var unmarshaller = RunInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RunInstancesRequest, RunInstancesResponse>(runInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RunInstancesRequestMarshaller();
+            var unmarshaller = RunInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RunInstancesRequest, RunInstancesResponse>(runInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Starts an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
@@ -3016,12 +3157,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<StartInstancesResponse> StartInstancesAsync(StartInstancesRequest startInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StartInstancesRequestMarshaller();
-			var unmarshaller = StartInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StartInstancesRequest, StartInstancesResponse>(startInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StartInstancesRequestMarshaller();
+            var unmarshaller = StartInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StartInstancesRequest, StartInstancesResponse>(startInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
@@ -3039,12 +3181,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<StopInstancesResponse> StopInstancesAsync(StopInstancesRequest stopInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new StopInstancesRequestMarshaller();
-			var unmarshaller = StopInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, StopInstancesRequest, StopInstancesResponse>(stopInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new StopInstancesRequestMarshaller();
+            var unmarshaller = StopInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, StopInstancesRequest, StopInstancesResponse>(stopInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> The TerminateInstances operation shuts down one or more instances. This operation is idempotent; if you terminate an instance more
@@ -3060,12 +3203,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<TerminateInstancesResponse> TerminateInstancesAsync(TerminateInstancesRequest terminateInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TerminateInstancesRequestMarshaller();
-			var unmarshaller = TerminateInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TerminateInstancesRequest, TerminateInstancesResponse>(terminateInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TerminateInstancesRequestMarshaller();
+            var unmarshaller = TerminateInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TerminateInstancesRequest, TerminateInstancesResponse>(terminateInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// </summary>
@@ -3076,12 +3220,13 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
-			var unmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResponse>(unassignPrivateIpAddressesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
+            var unmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResponse>(unassignPrivateIpAddressesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Disables monitoring for a running instance. </para>
@@ -3095,11 +3240,12 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		public async Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest unmonitorInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UnmonitorInstancesRequestMarshaller();
-			var unmarshaller = UnmonitorInstancesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UnmonitorInstancesRequest, UnmonitorInstancesResponse>(unmonitorInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UnmonitorInstancesRequestMarshaller();
+            var unmarshaller = UnmonitorInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UnmonitorInstancesRequest, UnmonitorInstancesResponse>(unmonitorInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }

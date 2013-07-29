@@ -31,9 +31,9 @@ namespace Amazon.ElasticTranscoder
     /// AWS Elastic Transcoder Service <para>The AWS Elastic Transcoder Service.</para>
     /// </summary>
 	public partial class AmazonElasticTranscoderClient : AmazonWebServiceClient, Amazon.ElasticTranscoder.IAmazonElasticTranscoder
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -221,17 +221,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CancelJobResponse CancelJob(CancelJobRequest request)
-		{
-			var task = CancelJobAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CancelJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
@@ -244,12 +244,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CancelJobRequestMarshaller();
-			var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CancelJobRequest, CancelJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CancelJobRequest, CancelJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To cancel a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
@@ -269,9 +270,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CancelJobResponse CancelJob()
-		{
-			return this.CancelJob(new CancelJobRequest());
-		}
+        {
+            return this.CancelJob(new CancelJobRequest());
+        }
  
         /// <summary>
         /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
@@ -292,17 +293,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreateJobResponse CreateJob(CreateJobRequest request)
-		{
-			var task = CreateJobAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -315,12 +316,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateJobRequestMarshaller();
-			var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateJobRequest, CreateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateJobRequest, CreateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
@@ -341,9 +343,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreateJobResponse CreateJob()
-		{
-			return this.CreateJob(new CreateJobRequest());
-		}
+        {
+            return this.CreateJob(new CreateJobRequest());
+        }
  
         /// <summary>
         /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
@@ -361,17 +363,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
-		{
-			var task = CreatePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
@@ -384,12 +386,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePipelineRequestMarshaller();
-			var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePipelineRequestMarshaller();
+            var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
@@ -407,9 +410,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreatePipelineResponse CreatePipeline()
-		{
-			return this.CreatePipeline(new CreatePipelineRequest());
-		}
+        {
+            return this.CreatePipeline(new CreatePipelineRequest());
+        }
  
         /// <summary>
         /// <para>To create a preset, send a POST request to the <c>/2012-09-25/presets</c> resource.</para> <para><b>IMPORTANT:</b>Elastic Transcoder
@@ -433,17 +436,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreatePresetResponse CreatePreset(CreatePresetRequest request)
-		{
-			var task = CreatePresetAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreatePresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePreset operation.
@@ -456,12 +459,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreatePresetRequestMarshaller();
-			var unmarshaller = CreatePresetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreatePresetRequest, CreatePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreatePresetRequestMarshaller();
+            var unmarshaller = CreatePresetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePresetRequest, CreatePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To create a preset, send a POST request to the <c>/2012-09-25/presets</c> resource.</para> <para><b>IMPORTANT:</b>Elastic Transcoder
@@ -485,9 +489,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public CreatePresetResponse CreatePreset()
-		{
-			return this.CreatePreset(new CreatePresetRequest());
-		}
+        {
+            return this.CreatePreset(new CreatePresetRequest());
+        }
  
         /// <summary>
         /// <para>To delete a pipeline, send a DELETE request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource. </para> <para> You can only
@@ -507,17 +511,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
-		{
-			var task = DeletePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeletePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
@@ -530,12 +534,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePipelineRequestMarshaller();
-			var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePipelineRequestMarshaller();
+            var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To delete a pipeline, send a DELETE request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource. </para> <para> You can only
@@ -555,9 +560,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public DeletePipelineResponse DeletePipeline()
-		{
-			return this.DeletePipeline(new DeletePipelineRequest());
-		}
+        {
+            return this.DeletePipeline(new DeletePipelineRequest());
+        }
  
         /// <summary>
         /// <para>To delete a preset, send a DELETE request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para> <para><b>NOTE:</b> If the
@@ -575,17 +580,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public DeletePresetResponse DeletePreset(DeletePresetRequest request)
-		{
-			var task = DeletePresetAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeletePresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePreset operation.
@@ -598,12 +603,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeletePresetRequestMarshaller();
-			var unmarshaller = DeletePresetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeletePresetRequest, DeletePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeletePresetRequestMarshaller();
+            var unmarshaller = DeletePresetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePresetRequest, DeletePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To delete a preset, send a DELETE request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para> <para><b>NOTE:</b> If the
@@ -621,9 +627,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public DeletePresetResponse DeletePreset()
-		{
-			return this.DeletePreset(new DeletePresetRequest());
-		}
+        {
+            return this.DeletePreset(new DeletePresetRequest());
+        }
  
         /// <summary>
         /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
@@ -642,17 +648,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
-		{
-			var task = ListJobsByPipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListJobsByPipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByPipeline operation.
@@ -665,12 +671,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListJobsByPipelineRequestMarshaller();
-			var unmarshaller = ListJobsByPipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListJobsByPipelineRequest, ListJobsByPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListJobsByPipelineRequestMarshaller();
+            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListJobsByPipelineRequest, ListJobsByPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
@@ -689,9 +696,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListJobsByPipelineResponse ListJobsByPipeline()
-		{
-			return this.ListJobsByPipeline(new ListJobsByPipelineRequest());
-		}
+        {
+            return this.ListJobsByPipeline(new ListJobsByPipelineRequest());
+        }
  
         /// <summary>
         /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
@@ -710,17 +717,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
-		{
-			var task = ListJobsByStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListJobsByStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByStatus operation.
@@ -733,12 +740,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListJobsByStatusRequestMarshaller();
-			var unmarshaller = ListJobsByStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListJobsByStatusRequest, ListJobsByStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListJobsByStatusRequestMarshaller();
+            var unmarshaller = ListJobsByStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListJobsByStatusRequest, ListJobsByStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
@@ -757,9 +765,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListJobsByStatusResponse ListJobsByStatus()
-		{
-			return this.ListJobsByStatus(new ListJobsByStatusRequest());
-		}
+        {
+            return this.ListJobsByStatus(new ListJobsByStatusRequest());
+        }
  
         /// <summary>
         /// <para>To get a list of the pipelines associated with the current AWS account, send a GET request to the <c>/2012-09-25/pipelines</c>
@@ -776,17 +784,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
-		{
-			var task = ListPipelinesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListPipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
@@ -799,12 +807,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListPipelinesRequestMarshaller();
-			var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListPipelinesRequestMarshaller();
+            var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get a list of the pipelines associated with the current AWS account, send a GET request to the <c>/2012-09-25/pipelines</c>
@@ -821,9 +830,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListPipelinesResponse ListPipelines()
-		{
-			return this.ListPipelines(new ListPipelinesRequest());
-		}
+        {
+            return this.ListPipelines(new ListPipelinesRequest());
+        }
  
         /// <summary>
         /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
@@ -840,17 +849,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListPresetsResponse ListPresets(ListPresetsRequest request)
-		{
-			var task = ListPresetsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListPresetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListPresets operation.
@@ -863,12 +872,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListPresetsRequestMarshaller();
-			var unmarshaller = ListPresetsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListPresetsRequest, ListPresetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListPresetsRequestMarshaller();
+            var unmarshaller = ListPresetsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPresetsRequest, ListPresetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
@@ -885,9 +895,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ListPresetsResponse ListPresets()
-		{
-			return this.ListPresets(new ListPresetsRequest());
-		}
+        {
+            return this.ListPresets(new ListPresetsRequest());
+        }
  
         /// <summary>
         /// <para>To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para>
@@ -904,17 +914,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadJobResponse ReadJob(ReadJobRequest request)
-		{
-			var task = ReadJobAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReadJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReadJob operation.
@@ -927,12 +937,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReadJobRequestMarshaller();
-			var unmarshaller = ReadJobResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReadJobRequest, ReadJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReadJobRequestMarshaller();
+            var unmarshaller = ReadJobResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReadJobRequest, ReadJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get detailed information about a job, send a GET request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para>
@@ -949,9 +960,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadJobResponse ReadJob()
-		{
-			return this.ReadJob(new ReadJobRequest());
-		}
+        {
+            return this.ReadJob(new ReadJobRequest());
+        }
  
         /// <summary>
         /// <para>To get detailed information about a pipeline, send a GET request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource.</para>
@@ -968,17 +979,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
-		{
-			var task = ReadPipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReadPipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPipeline operation.
@@ -991,12 +1002,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReadPipelineRequestMarshaller();
-			var unmarshaller = ReadPipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReadPipelineRequest, ReadPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReadPipelineRequestMarshaller();
+            var unmarshaller = ReadPipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReadPipelineRequest, ReadPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get detailed information about a pipeline, send a GET request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource.</para>
@@ -1013,9 +1025,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadPipelineResponse ReadPipeline()
-		{
-			return this.ReadPipeline(new ReadPipelineRequest());
-		}
+        {
+            return this.ReadPipeline(new ReadPipelineRequest());
+        }
  
         /// <summary>
         /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
@@ -1032,17 +1044,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadPresetResponse ReadPreset(ReadPresetRequest request)
-		{
-			var task = ReadPresetAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ReadPresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPreset operation.
@@ -1055,12 +1067,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ReadPresetRequestMarshaller();
-			var unmarshaller = ReadPresetResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ReadPresetRequest, ReadPresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ReadPresetRequestMarshaller();
+            var unmarshaller = ReadPresetResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ReadPresetRequest, ReadPresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
@@ -1077,9 +1090,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public ReadPresetResponse ReadPreset()
-		{
-			return this.ReadPreset(new ReadPresetRequest());
-		}
+        {
+            return this.ReadPreset(new ReadPresetRequest());
+        }
  
         /// <summary>
         /// <para> To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the
@@ -1100,17 +1113,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public TestRoleResponse TestRole(TestRoleRequest request)
-		{
-			var task = TestRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = TestRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the TestRole operation.
@@ -1123,12 +1136,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new TestRoleRequestMarshaller();
-			var unmarshaller = TestRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, TestRoleRequest, TestRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new TestRoleRequestMarshaller();
+            var unmarshaller = TestRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, TestRoleRequest, TestRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the
@@ -1149,9 +1163,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public TestRoleResponse TestRole()
-		{
-			return this.TestRole(new TestRoleRequest());
-		}
+        {
+            return this.TestRole(new TestRoleRequest());
+        }
  
         /// <summary>
         /// </summary>
@@ -1168,17 +1182,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
-		{
-			var task = UpdatePipelineAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
@@ -1191,12 +1205,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdatePipelineRequestMarshaller();
-			var unmarshaller = UpdatePipelineResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdatePipelineRequest, UpdatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdatePipelineRequestMarshaller();
+            var unmarshaller = UpdatePipelineResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdatePipelineRequest, UpdatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline, send a POST request to the
@@ -1216,17 +1231,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
-		{
-			var task = UpdatePipelineNotificationsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdatePipelineNotificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineNotifications operation.
@@ -1239,12 +1254,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
-			var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
+            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>To update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline, send a POST request to the
@@ -1264,9 +1280,9 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public UpdatePipelineNotificationsResponse UpdatePipelineNotifications()
-		{
-			return this.UpdatePipelineNotifications(new UpdatePipelineNotificationsRequest());
-		}
+        {
+            return this.UpdatePipelineNotifications(new UpdatePipelineNotificationsRequest());
+        }
  
         /// <summary>
         /// <para> To pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline. Send a POST
@@ -1287,17 +1303,17 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
-		{
-			var task = UpdatePipelineStatusAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdatePipelineStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineStatus operation.
@@ -1310,12 +1326,13 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdatePipelineStatusRequestMarshaller();
-			var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdatePipelineStatusRequest, UpdatePipelineStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdatePipelineStatusRequestMarshaller();
+            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdatePipelineStatusRequest, UpdatePipelineStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> To pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline. Send a POST
@@ -1336,8 +1353,8 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		public UpdatePipelineStatusResponse UpdatePipelineStatus()
-		{
-			return this.UpdatePipelineStatus(new UpdatePipelineStatusRequest());
-		}
-	}
+        {
+            return this.UpdatePipelineStatus(new UpdatePipelineStatusRequest());
+        }
+    }
 }

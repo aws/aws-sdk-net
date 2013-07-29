@@ -37,9 +37,9 @@ namespace Amazon.IdentityManagement
     /// http://aws.amazon.com/documentation/.</para>
     /// </summary>
 	public partial class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, Amazon.IdentityManagement.IAmazonIdentityManagementService
-	{
+    {
 
-		AWS4Signer signer = new AWS4Signer();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -221,17 +221,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
-		{
-			var task = AddRoleToInstanceProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddRoleToInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
@@ -244,12 +244,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
-			var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
+            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Adds the specified user to the specified group.</para>
@@ -261,17 +262,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
-		{
-			var task = AddUserToGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = AddUserToGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the AddUserToGroup operation.
@@ -284,12 +285,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new AddUserToGroupRequestMarshaller();
-			var unmarshaller = AddUserToGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, AddUserToGroupRequest, AddUserToGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new AddUserToGroupRequestMarshaller();
+            var unmarshaller = AddUserToGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddUserToGroupRequest, AddUserToGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Changes the password of the IAM user calling <c>ChangePassword</c> . The root account password is not affected by this action. For
@@ -302,17 +304,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.InvalidUserTypeException" />
 		public ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
-		{
-			var task = ChangePasswordAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ChangePasswordAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ChangePassword operation.
@@ -325,12 +327,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ChangePasswordRequestMarshaller();
-			var unmarshaller = ChangePasswordResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ChangePasswordRequest, ChangePasswordResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ChangePasswordRequestMarshaller();
+            var unmarshaller = ChangePasswordResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ChangePasswordRequest, ChangePasswordResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new AWS Secret Access Key and corresponding AWS Access Key ID for the specified user. The default status for new keys is
@@ -351,17 +354,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
-		{
-			var task = CreateAccessKeyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccessKey operation.
@@ -374,12 +377,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAccessKeyRequestMarshaller();
-			var unmarshaller = CreateAccessKeyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAccessKeyRequest, CreateAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAccessKeyRequestMarshaller();
+            var unmarshaller = CreateAccessKeyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAccessKeyRequest, CreateAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new AWS Secret Access Key and corresponding AWS Access Key ID for the specified user. The default status for new keys is
@@ -400,9 +404,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public CreateAccessKeyResponse CreateAccessKey()
-		{
-			return this.CreateAccessKey(new CreateAccessKeyRequest());
-		}
+        {
+            return this.CreateAccessKey(new CreateAccessKeyRequest());
+        }
  
         /// <summary>
         /// <para>This action creates an alias for your AWS account. For information about using an AWS account alias, see Using an Alias for Your AWS
@@ -414,17 +418,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
-		{
-			var task = CreateAccountAliasAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateAccountAliasAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccountAlias operation.
@@ -437,12 +441,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateAccountAliasRequestMarshaller();
-			var unmarshaller = CreateAccountAliasResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateAccountAliasRequest, CreateAccountAliasResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateAccountAliasRequestMarshaller();
+            var unmarshaller = CreateAccountAliasResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateAccountAliasRequest, CreateAccountAliasResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new group.</para> <para>For information about the number of groups you can create, see Limitations on IAM Entities in
@@ -458,17 +463,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateGroupResponse CreateGroup(CreateGroupRequest request)
-		{
-			var task = CreateGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGroup operation.
@@ -481,12 +486,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateGroupRequestMarshaller();
-			var unmarshaller = CreateGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateGroupRequest, CreateGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateGroupRequestMarshaller();
+            var unmarshaller = CreateGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateGroupRequest, CreateGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new instance profile. For information about instance profiles, go to About Instance Profiles.</para> <para>For information
@@ -502,17 +508,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
-		{
-			var task = CreateInstanceProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
@@ -525,12 +531,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateInstanceProfileRequestMarshaller();
-			var unmarshaller = CreateInstanceProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateInstanceProfileRequest, CreateInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateInstanceProfileRequestMarshaller();
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateInstanceProfileRequest, CreateInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For
@@ -546,17 +553,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
-		{
-			var task = CreateLoginProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoginProfile operation.
@@ -569,12 +576,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateLoginProfileRequestMarshaller();
-			var unmarshaller = CreateLoginProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateLoginProfileRequest, CreateLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateLoginProfileRequestMarshaller();
+            var unmarshaller = CreateLoginProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateLoginProfileRequest, CreateLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new role for your AWS account. For more information about roles, go to Working with Roles. For information about limitations
@@ -592,17 +600,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateRoleResponse CreateRole(CreateRoleRequest request)
-		{
-			var task = CreateRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRole operation.
@@ -615,12 +623,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateRoleRequestMarshaller();
-			var unmarshaller = CreateRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateRoleRequest, CreateRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateRoleRequestMarshaller();
+            var unmarshaller = CreateRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateRoleRequest, CreateRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see
@@ -636,17 +645,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateUserResponse CreateUser(CreateUserRequest request)
-		{
-			var task = CreateUserAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUser operation.
@@ -659,12 +668,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateUserRequestMarshaller();
-			var unmarshaller = CreateUserResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateUserRequest, CreateUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateUserRequestMarshaller();
+            var unmarshaller = CreateUserResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateUserRequest, CreateUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use EnableMFADevice to attach the MFA device to
@@ -683,17 +693,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
-		{
-			var task = CreateVirtualMFADeviceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = CreateVirtualMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVirtualMFADevice operation.
@@ -706,12 +716,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
-			var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled.</para>
@@ -723,17 +734,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
-		{
-			var task = DeactivateMFADeviceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeactivateMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivateMFADevice operation.
@@ -746,12 +757,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeactivateMFADeviceRequestMarshaller();
-			var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeactivateMFADeviceRequest, DeactivateMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeactivateMFADeviceRequestMarshaller();
+            var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeactivateMFADeviceRequest, DeactivateMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the access key associated with the specified user.</para> <para>If you do not specify a user name, IAM determines the user
@@ -764,17 +776,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
-		{
-			var task = DeleteAccessKeyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccessKey operation.
@@ -787,12 +799,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAccessKeyRequestMarshaller();
-			var unmarshaller = DeleteAccessKeyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAccessKeyRequest, DeleteAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAccessKeyRequestMarshaller();
+            var unmarshaller = DeleteAccessKeyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAccessKeyRequest, DeleteAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified AWS account alias. For information about using an AWS account alias, see Using an Alias for Your AWS Account ID
@@ -804,17 +817,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
-		{
-			var task = DeleteAccountAliasAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAccountAliasAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountAlias operation.
@@ -827,12 +840,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAccountAliasRequestMarshaller();
-			var unmarshaller = DeleteAccountAliasResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAccountAliasRequest, DeleteAccountAliasResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAccountAliasRequestMarshaller();
+            var unmarshaller = DeleteAccountAliasResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAccountAliasRequest, DeleteAccountAliasResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the password policy for the AWS account.</para>
@@ -843,17 +857,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
-		{
-			var task = DeleteAccountPasswordPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountPasswordPolicy operation.
@@ -866,12 +880,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
-			var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the password policy for the AWS account.</para>
@@ -882,9 +897,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy()
-		{
-			return this.DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
-		}
+        {
+            return this.DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
+        }
  
         /// <summary>
         /// <para>Deletes the specified group. The group must not contain any users or have any attached policies.</para>
@@ -896,17 +911,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
-		{
-			var task = DeleteGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroup operation.
@@ -919,12 +934,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteGroupRequestMarshaller();
-			var unmarshaller = DeleteGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteGroupRequest, DeleteGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteGroupRequestMarshaller();
+            var unmarshaller = DeleteGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteGroupRequest, DeleteGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified policy that is associated with the specified group.</para>
@@ -935,17 +951,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
-		{
-			var task = DeleteGroupPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroupPolicy operation.
@@ -958,12 +974,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteGroupPolicyRequestMarshaller();
-			var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteGroupPolicyRequest, DeleteGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteGroupPolicyRequestMarshaller();
+            var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteGroupPolicyRequest, DeleteGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified instance profile. The instance profile must not have an associated role.</para> <para><b>IMPORTANT:</b>Make sure
@@ -978,17 +995,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
-		{
-			var task = DeleteInstanceProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
@@ -1001,12 +1018,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteInstanceProfileRequestMarshaller();
-			var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteInstanceProfileRequest, DeleteInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteInstanceProfileRequestMarshaller();
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteInstanceProfileRequest, DeleteInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management
@@ -1021,17 +1039,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
-		{
-			var task = DeleteLoginProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoginProfile operation.
@@ -1044,12 +1062,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteLoginProfileRequestMarshaller();
-			var unmarshaller = DeleteLoginProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteLoginProfileRequest, DeleteLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var unmarshaller = DeleteLoginProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteLoginProfileRequest, DeleteLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to Working with
@@ -1063,17 +1082,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
-		{
-			var task = DeleteRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRole operation.
@@ -1086,12 +1105,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRoleRequestMarshaller();
-			var unmarshaller = DeleteRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRoleRequest, DeleteRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRoleRequestMarshaller();
+            var unmarshaller = DeleteRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRoleRequest, DeleteRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified policy associated with the specified role.</para>
@@ -1102,17 +1122,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
-		{
-			var task = DeleteRolePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
@@ -1125,12 +1145,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteRolePolicyRequestMarshaller();
-			var unmarshaller = DeleteRolePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteRolePolicyRequest, DeleteRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteRolePolicyRequestMarshaller();
+            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteRolePolicyRequest, DeleteRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified server certificate.</para> <para><b>IMPORTANT:</b>If you are using a server certificate with Elastic Load
@@ -1146,17 +1167,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
-		{
-			var task = DeleteServerCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteServerCertificate operation.
@@ -1169,12 +1190,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteServerCertificateRequestMarshaller();
-			var unmarshaller = DeleteServerCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteServerCertificateRequest, DeleteServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var unmarshaller = DeleteServerCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteServerCertificateRequest, DeleteServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified signing certificate associated with the specified user.</para> <para>If you do not specify a user name, IAM
@@ -1187,17 +1209,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
-		{
-			var task = DeleteSigningCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSigningCertificate operation.
@@ -1210,12 +1232,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteSigningCertificateRequestMarshaller();
-			var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteSigningCertificateRequest, DeleteSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteSigningCertificateRequestMarshaller();
+            var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteSigningCertificateRequest, DeleteSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached
@@ -1228,17 +1251,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteUserResponse DeleteUser(DeleteUserRequest request)
-		{
-			var task = DeleteUserAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUser operation.
@@ -1251,12 +1274,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteUserRequestMarshaller();
-			var unmarshaller = DeleteUserResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteUserRequest, DeleteUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteUserRequestMarshaller();
+            var unmarshaller = DeleteUserResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteUserRequest, DeleteUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes the specified policy associated with the specified user.</para>
@@ -1267,17 +1291,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
-		{
-			var task = DeleteUserPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserPolicy operation.
@@ -1290,12 +1314,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteUserPolicyRequestMarshaller();
-			var unmarshaller = DeleteUserPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteUserPolicyRequest, DeleteUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteUserPolicyRequestMarshaller();
+            var unmarshaller = DeleteUserPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteUserPolicyRequest, DeleteUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Deletes a virtual MFA device.</para> <para><b>NOTE:</b>You must deactivate a user's virtual MFA device before you can delete it. For
@@ -1308,17 +1333,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.DeleteConflictException" />
 		public DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
-		{
-			var task = DeleteVirtualMFADeviceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = DeleteVirtualMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualMFADevice operation.
@@ -1331,12 +1356,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
-			var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every
@@ -1352,17 +1378,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
-		{
-			var task = EnableMFADeviceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = EnableMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMFADevice operation.
@@ -1375,12 +1401,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new EnableMFADeviceRequestMarshaller();
-			var unmarshaller = EnableMFADeviceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, EnableMFADeviceRequest, EnableMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new EnableMFADeviceRequestMarshaller();
+            var unmarshaller = EnableMFADeviceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, EnableMFADeviceRequest, EnableMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
@@ -1394,17 +1421,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
-		{
-			var task = GetAccountPasswordPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountPasswordPolicy operation.
@@ -1417,12 +1444,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
-			var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
@@ -1436,9 +1464,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy()
-		{
-			return this.GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
-		}
+        {
+            return this.GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
+        }
  
         /// <summary>
         /// <para>Retrieves account level information about account entity usage and IAM quotas.</para> <para>For information about limitations on IAM
@@ -1450,17 +1478,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccountSummary service method, as returned by AmazonIdentityManagementService.</returns>
 		public GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
-		{
-			var task = GetAccountSummaryAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetAccountSummaryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountSummary operation.
@@ -1473,12 +1501,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetAccountSummaryRequestMarshaller();
-			var unmarshaller = GetAccountSummaryResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetAccountSummaryRequest, GetAccountSummaryResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetAccountSummaryRequestMarshaller();
+            var unmarshaller = GetAccountSummaryResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetAccountSummaryRequest, GetAccountSummaryResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves account level information about account entity usage and IAM quotas.</para> <para>For information about limitations on IAM
@@ -1490,9 +1519,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccountSummary service method, as returned by AmazonIdentityManagementService.</returns>
 		public GetAccountSummaryResponse GetAccountSummary()
-		{
-			return this.GetAccountSummary(new GetAccountSummaryRequest());
-		}
+        {
+            return this.GetAccountSummary(new GetAccountSummaryRequest());
+        }
  
         /// <summary>
         /// <para>Returns a list of users that are in the specified group. You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
@@ -1506,17 +1535,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetGroupResponse GetGroup(GetGroupRequest request)
-		{
-			var task = GetGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroup operation.
@@ -1529,12 +1558,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetGroupRequestMarshaller();
-			var unmarshaller = GetGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetGroupRequest, GetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetGroupRequestMarshaller();
+            var unmarshaller = GetGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetGroupRequest, GetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves the specified policy document for the specified group. The returned policy is URL-encoded according to RFC 3986. For more
@@ -1548,17 +1578,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
-		{
-			var task = GetGroupPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroupPolicy operation.
@@ -1571,12 +1601,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetGroupPolicyRequestMarshaller();
-			var unmarshaller = GetGroupPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetGroupPolicyRequest, GetGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetGroupPolicyRequestMarshaller();
+            var unmarshaller = GetGroupPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetGroupPolicyRequest, GetGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more
@@ -1590,17 +1621,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
-		{
-			var task = GetInstanceProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetInstanceProfile operation.
@@ -1613,12 +1644,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetInstanceProfileRequestMarshaller();
-			var unmarshaller = GetInstanceProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetInstanceProfileRequest, GetInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetInstanceProfileRequestMarshaller();
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetInstanceProfileRequest, GetInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves the user name and password create date for the specified user.</para>
@@ -1631,17 +1663,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
-		{
-			var task = GetLoginProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetLoginProfile operation.
@@ -1654,12 +1686,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetLoginProfileRequestMarshaller();
-			var unmarshaller = GetLoginProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetLoginProfileRequest, GetLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetLoginProfileRequestMarshaller();
+            var unmarshaller = GetLoginProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetLoginProfileRequest, GetLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to EC2 to
@@ -1675,17 +1708,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetRoleResponse GetRole(GetRoleRequest request)
-		{
-			var task = GetRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetRole operation.
@@ -1698,12 +1731,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetRoleResponse> GetRoleAsync(GetRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetRoleRequestMarshaller();
-			var unmarshaller = GetRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetRoleRequest, GetRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetRoleRequestMarshaller();
+            var unmarshaller = GetRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetRoleRequest, GetRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to Working with Roles.</para>
@@ -1718,17 +1752,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
-		{
-			var task = GetRolePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetRolePolicy operation.
@@ -1741,12 +1775,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetRolePolicyRequestMarshaller();
-			var unmarshaller = GetRolePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetRolePolicyRequest, GetRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetRolePolicyRequestMarshaller();
+            var unmarshaller = GetRolePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetRolePolicyRequest, GetRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves information about the specified server certificate.</para>
@@ -1759,17 +1794,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
-		{
-			var task = GetServerCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetServerCertificate operation.
@@ -1782,12 +1817,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetServerCertificateRequestMarshaller();
-			var unmarshaller = GetServerCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetServerCertificateRequest, GetServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetServerCertificateRequestMarshaller();
+            var unmarshaller = GetServerCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetServerCertificateRequest, GetServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves information about the specified user, including the user's path, GUID, and ARN.</para> <para>If you do not specify a user
@@ -1801,17 +1837,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetUserResponse GetUser(GetUserRequest request)
-		{
-			var task = GetUserAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetUser operation.
@@ -1824,12 +1860,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetUserResponse> GetUserAsync(GetUserRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetUserRequestMarshaller();
-			var unmarshaller = GetUserResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetUserRequest, GetUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetUserRequestMarshaller();
+            var unmarshaller = GetUserResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetUserRequest, GetUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Retrieves information about the specified user, including the user's path, GUID, and ARN.</para> <para>If you do not specify a user
@@ -1843,9 +1880,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetUserResponse GetUser()
-		{
-			return this.GetUser(new GetUserRequest());
-		}
+        {
+            return this.GetUser(new GetUserRequest());
+        }
  
         /// <summary>
         /// <para>Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more
@@ -1859,17 +1896,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
-		{
-			var task = GetUserPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = GetUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the GetUserPolicy operation.
@@ -1882,12 +1919,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new GetUserPolicyRequestMarshaller();
-			var unmarshaller = GetUserPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, GetUserPolicyRequest, GetUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new GetUserPolicyRequestMarshaller();
+            var unmarshaller = GetUserPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetUserPolicyRequest, GetUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns information about the Access Key IDs associated with the specified user. If there are none, the action returns an empty
@@ -1905,17 +1943,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
-		{
-			var task = ListAccessKeysAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListAccessKeysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccessKeys operation.
@@ -1928,12 +1966,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListAccessKeysRequestMarshaller();
-			var unmarshaller = ListAccessKeysResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListAccessKeysRequest, ListAccessKeysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListAccessKeysRequestMarshaller();
+            var unmarshaller = ListAccessKeysResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListAccessKeysRequest, ListAccessKeysResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns information about the Access Key IDs associated with the specified user. If there are none, the action returns an empty
@@ -1951,9 +1990,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListAccessKeysResponse ListAccessKeys()
-		{
-			return this.ListAccessKeys(new ListAccessKeysRequest());
-		}
+        {
+            return this.ListAccessKeys(new ListAccessKeysRequest());
+        }
  
         /// <summary>
         /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see Using an Alias for Your
@@ -1966,17 +2005,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
-		{
-			var task = ListAccountAliasesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListAccountAliasesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccountAliases operation.
@@ -1989,12 +2028,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListAccountAliasesRequestMarshaller();
-			var unmarshaller = ListAccountAliasesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListAccountAliasesRequest, ListAccountAliasesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListAccountAliasesRequestMarshaller();
+            var unmarshaller = ListAccountAliasesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListAccountAliasesRequest, ListAccountAliasesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see Using an Alias for Your
@@ -2007,9 +2047,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListAccountAliasesResponse ListAccountAliases()
-		{
-			return this.ListAccountAliases(new ListAccountAliasesRequest());
-		}
+        {
+            return this.ListAccountAliases(new ListAccountAliasesRequest());
+        }
  
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified group. If there are none, the action returns an empty list.</para>
@@ -2023,17 +2063,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
-		{
-			var task = ListGroupPoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListGroupPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupPolicies operation.
@@ -2046,12 +2086,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListGroupPoliciesRequestMarshaller();
-			var unmarshaller = ListGroupPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListGroupPoliciesRequest, ListGroupPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListGroupPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListGroupPoliciesRequest, ListGroupPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the groups that have the specified path prefix.</para> <para>You can paginate the results using the <c>MaxItems</c> and
@@ -2063,17 +2104,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListGroups service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListGroupsResponse ListGroups(ListGroupsRequest request)
-		{
-			var task = ListGroupsAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroups operation.
@@ -2086,12 +2127,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListGroupsRequestMarshaller();
-			var unmarshaller = ListGroupsResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListGroupsRequest, ListGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListGroupsRequestMarshaller();
+            var unmarshaller = ListGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListGroupsRequest, ListGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the groups that have the specified path prefix.</para> <para>You can paginate the results using the <c>MaxItems</c> and
@@ -2103,9 +2145,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListGroups service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListGroupsResponse ListGroups()
-		{
-			return this.ListGroups(new ListGroupsRequest());
-		}
+        {
+            return this.ListGroups(new ListGroupsRequest());
+        }
  
         /// <summary>
         /// <para>Lists the groups the specified user belongs to.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
@@ -2119,17 +2161,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
-		{
-			var task = ListGroupsForUserAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListGroupsForUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupsForUser operation.
@@ -2142,12 +2184,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListGroupsForUserRequestMarshaller();
-			var unmarshaller = ListGroupsForUserResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListGroupsForUserRequest, ListGroupsForUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListGroupsForUserRequestMarshaller();
+            var unmarshaller = ListGroupsForUserResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListGroupsForUserRequest, ListGroupsForUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more
@@ -2160,17 +2203,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListInstanceProfiles service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
-		{
-			var task = ListInstanceProfilesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListInstanceProfilesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
@@ -2183,12 +2226,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListInstanceProfilesRequestMarshaller();
-			var unmarshaller = ListInstanceProfilesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListInstanceProfilesRequest, ListInstanceProfilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListInstanceProfilesRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListInstanceProfilesRequest, ListInstanceProfilesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more
@@ -2201,9 +2245,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListInstanceProfiles service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListInstanceProfilesResponse ListInstanceProfiles()
-		{
-			return this.ListInstanceProfiles(new ListInstanceProfilesRequest());
-		}
+        {
+            return this.ListInstanceProfiles(new ListInstanceProfilesRequest());
+        }
  
         /// <summary>
         /// <para>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more
@@ -2218,17 +2262,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
-		{
-			var task = ListInstanceProfilesForRoleAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListInstanceProfilesForRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
@@ -2241,12 +2285,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
-			var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
@@ -2261,17 +2306,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
-		{
-			var task = ListMFADevicesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListMFADevicesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListMFADevices operation.
@@ -2284,12 +2329,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListMFADevicesRequestMarshaller();
-			var unmarshaller = ListMFADevicesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListMFADevicesRequest, ListMFADevicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListMFADevicesRequestMarshaller();
+            var unmarshaller = ListMFADevicesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListMFADevicesRequest, ListMFADevicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
@@ -2304,9 +2350,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListMFADevicesResponse ListMFADevices()
-		{
-			return this.ListMFADevices(new ListMFADevicesRequest());
-		}
+        {
+            return this.ListMFADevices(new ListMFADevicesRequest());
+        }
  
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified role. If there are none, the action returns an empty list.</para>
@@ -2320,17 +2366,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
-		{
-			var task = ListRolePoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListRolePoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListRolePolicies operation.
@@ -2343,12 +2389,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListRolePoliciesRequestMarshaller();
-			var unmarshaller = ListRolePoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListRolePoliciesRequest, ListRolePoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListRolePoliciesRequestMarshaller();
+            var unmarshaller = ListRolePoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListRolePoliciesRequest, ListRolePoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
@@ -2362,17 +2409,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListRoles service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListRolesResponse ListRoles(ListRolesRequest request)
-		{
-			var task = ListRolesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListRolesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListRoles operation.
@@ -2385,12 +2432,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListRolesResponse> ListRolesAsync(ListRolesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListRolesRequestMarshaller();
-			var unmarshaller = ListRolesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListRolesRequest, ListRolesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListRolesRequestMarshaller();
+            var unmarshaller = ListRolesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListRolesRequest, ListRolesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
@@ -2404,9 +2452,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListRoles service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListRolesResponse ListRoles()
-		{
-			return this.ListRoles(new ListRolesRequest());
-		}
+        {
+            return this.ListRoles(new ListRolesRequest());
+        }
  
         /// <summary>
         /// <para>Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list.</para> <para>You
@@ -2418,17 +2466,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
-		{
-			var task = ListServerCertificatesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListServerCertificatesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListServerCertificates operation.
@@ -2441,12 +2489,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListServerCertificatesRequestMarshaller();
-			var unmarshaller = ListServerCertificatesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListServerCertificatesRequest, ListServerCertificatesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListServerCertificatesRequestMarshaller();
+            var unmarshaller = ListServerCertificatesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListServerCertificatesRequest, ListServerCertificatesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list.</para> <para>You
@@ -2458,9 +2507,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListServerCertificatesResponse ListServerCertificates()
-		{
-			return this.ListServerCertificates(new ListServerCertificatesRequest());
-		}
+        {
+            return this.ListServerCertificates(new ListServerCertificatesRequest());
+        }
  
         /// <summary>
         /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
@@ -2477,17 +2526,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
-		{
-			var task = ListSigningCertificatesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListSigningCertificatesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListSigningCertificates operation.
@@ -2500,12 +2549,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListSigningCertificatesRequestMarshaller();
-			var unmarshaller = ListSigningCertificatesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListSigningCertificatesRequest, ListSigningCertificatesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListSigningCertificatesRequestMarshaller();
+            var unmarshaller = ListSigningCertificatesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListSigningCertificatesRequest, ListSigningCertificatesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
@@ -2522,9 +2572,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListSigningCertificatesResponse ListSigningCertificates()
-		{
-			return this.ListSigningCertificates(new ListSigningCertificatesRequest());
-		}
+        {
+            return this.ListSigningCertificates(new ListSigningCertificatesRequest());
+        }
  
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified user. If there are none, the action returns an empty list.</para>
@@ -2538,17 +2588,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
-		{
-			var task = ListUserPoliciesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListUserPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListUserPolicies operation.
@@ -2561,12 +2611,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListUserPoliciesRequestMarshaller();
-			var unmarshaller = ListUserPoliciesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListUserPoliciesRequest, ListUserPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListUserPoliciesRequestMarshaller();
+            var unmarshaller = ListUserPoliciesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListUserPoliciesRequest, ListUserPoliciesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the users that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can
@@ -2578,17 +2629,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListUsers service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListUsersResponse ListUsers(ListUsersRequest request)
-		{
-			var task = ListUsersAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListUsersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListUsers operation.
@@ -2601,12 +2652,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListUsersRequestMarshaller();
-			var unmarshaller = ListUsersResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListUsersRequest, ListUsersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListUsersRequestMarshaller();
+            var unmarshaller = ListUsersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListUsersRequest, ListUsersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Lists the users that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can
@@ -2618,9 +2670,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListUsers service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListUsersResponse ListUsers()
-		{
-			return this.ListUsers(new ListUsersRequest());
-		}
+        {
+            return this.ListUsers(new ListUsersRequest());
+        }
  
         /// <summary>
         /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
@@ -2635,17 +2687,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
-		{
-			var task = ListVirtualMFADevicesAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ListVirtualMFADevicesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ListVirtualMFADevices operation.
@@ -2658,12 +2710,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ListVirtualMFADevicesRequestMarshaller();
-			var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
+            var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
@@ -2678,9 +2731,9 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by AmazonIdentityManagementService.</returns>
 		public ListVirtualMFADevicesResponse ListVirtualMFADevices()
-		{
-			return this.ListVirtualMFADevices(new ListVirtualMFADevicesRequest());
-		}
+        {
+            return this.ListVirtualMFADevices(new ListVirtualMFADevicesRequest());
+        }
  
         /// <summary>
         /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to Overview of Policies
@@ -2698,17 +2751,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
-		{
-			var task = PutGroupPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutGroupPolicy operation.
@@ -2721,12 +2774,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutGroupPolicyRequestMarshaller();
-			var unmarshaller = PutGroupPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutGroupPolicyRequest, PutGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutGroupPolicyRequestMarshaller();
+            var unmarshaller = PutGroupPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutGroupPolicyRequest, PutGroupPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, go to Overview of Policies in
@@ -2744,17 +2798,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
-		{
-			var task = PutRolePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutRolePolicy operation.
@@ -2767,12 +2821,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutRolePolicyRequestMarshaller();
-			var unmarshaller = PutRolePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutRolePolicyRequest, PutRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutRolePolicyRequestMarshaller();
+            var unmarshaller = PutRolePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutRolePolicyRequest, PutRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Adds (or updates) a policy document associated with the specified user. For information about policies, refer to Overview of Policies
@@ -2790,17 +2845,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
 		public PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
-		{
-			var task = PutUserPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = PutUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the PutUserPolicy operation.
@@ -2813,12 +2868,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new PutUserPolicyRequestMarshaller();
-			var unmarshaller = PutUserPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, PutUserPolicyRequest, PutUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new PutUserPolicyRequestMarshaller();
+            var unmarshaller = PutUserPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, PutUserPolicyRequest, PutUserPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes the specified role from the specified instance profile.</para> <para><b>IMPORTANT:</b>Make sure you do not have any Amazon EC2
@@ -2832,17 +2888,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
-		{
-			var task = RemoveRoleFromInstanceProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemoveRoleFromInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
@@ -2855,12 +2911,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
-			var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
+            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Removes the specified user from the specified group.</para>
@@ -2871,17 +2928,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
-		{
-			var task = RemoveUserFromGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = RemoveUserFromGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveUserFromGroup operation.
@@ -2894,12 +2951,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new RemoveUserFromGroupRequestMarshaller();
-			var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new RemoveUserFromGroupRequestMarshaller();
+            var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Synchronizes the specified MFA device with AWS servers.</para>
@@ -2911,17 +2969,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException" />
 		public ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
-		{
-			var task = ResyncMFADeviceAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = ResyncMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the ResyncMFADevice operation.
@@ -2934,12 +2992,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new ResyncMFADeviceRequestMarshaller();
-			var unmarshaller = ResyncMFADeviceResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, ResyncMFADeviceRequest, ResyncMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new ResyncMFADeviceRequestMarshaller();
+            var unmarshaller = ResyncMFADeviceResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ResyncMFADeviceRequest, ResyncMFADeviceResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key
@@ -2954,17 +3013,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
-		{
-			var task = UpdateAccessKeyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccessKey operation.
@@ -2977,12 +3036,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAccessKeyRequestMarshaller();
-			var unmarshaller = UpdateAccessKeyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAccessKeyRequest, UpdateAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateAccessKeyRequestMarshaller();
+            var unmarshaller = UpdateAccessKeyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAccessKeyRequest, UpdateAccessKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
@@ -2995,17 +3055,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.MalformedPolicyDocumentException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
-		{
-			var task = UpdateAccountPasswordPolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccountPasswordPolicy operation.
@@ -3018,12 +3078,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
-			var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
@@ -3036,9 +3097,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.MalformedPolicyDocumentException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy()
-		{
-			return this.UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
-		}
+        {
+            return this.UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
+        }
  
         /// <summary>
         /// <para>Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For
@@ -3051,17 +3112,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.MalformedPolicyDocumentException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
-		{
-			var task = UpdateAssumeRolePolicyAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateAssumeRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
@@ -3074,12 +3135,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
-			var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
+            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the name and/or the path of the specified group.</para> <para><b>IMPORTANT:</b> You should understand the implications of
@@ -3095,17 +3157,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
-		{
-			var task = UpdateGroupAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGroup operation.
@@ -3118,12 +3180,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateGroupRequestMarshaller();
-			var unmarshaller = UpdateGroupResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateGroupRequest, UpdateGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateGroupRequestMarshaller();
+            var unmarshaller = UpdateGroupResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateGroupRequest, UpdateGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Changes the password for the specified user.</para>
@@ -3136,17 +3199,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
-		{
-			var task = UpdateLoginProfileAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLoginProfile operation.
@@ -3159,12 +3222,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateLoginProfileRequestMarshaller();
-			var unmarshaller = UpdateLoginProfileResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateLoginProfileRequest, UpdateLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var unmarshaller = UpdateLoginProfileResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateLoginProfileRequest, UpdateLoginProfileResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the name and/or the path of the specified server certificate.</para> <para><b>IMPORTANT:</b> You should understand the
@@ -3181,17 +3245,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
-		{
-			var task = UpdateServerCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServerCertificate operation.
@@ -3204,12 +3268,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateServerCertificateRequestMarshaller();
-			var unmarshaller = UpdateServerCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateServerCertificateRequest, UpdateServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var unmarshaller = UpdateServerCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateServerCertificateRequest, UpdateServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a
@@ -3224,17 +3289,17 @@ namespace Amazon.IdentityManagement
         /// 
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
 		public UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
-		{
-			var task = UpdateSigningCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSigningCertificate operation.
@@ -3247,12 +3312,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateSigningCertificateRequestMarshaller();
-			var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateSigningCertificateRequest, UpdateSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateSigningCertificateRequestMarshaller();
+            var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateSigningCertificateRequest, UpdateSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Updates the name and/or the path of the specified user.</para> <para><b>IMPORTANT:</b> You should understand the implications of
@@ -3269,17 +3335,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public UpdateUserResponse UpdateUser(UpdateUserRequest request)
-		{
-			var task = UpdateUserAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UpdateUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUser operation.
@@ -3292,12 +3358,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UpdateUserRequestMarshaller();
-			var unmarshaller = UpdateUserResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UpdateUserRequest, UpdateUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UpdateUserRequestMarshaller();
+            var unmarshaller = UpdateUserResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UpdateUserRequest, UpdateUserResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private
@@ -3319,17 +3386,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
-		{
-			var task = UploadServerCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UploadServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UploadServerCertificate operation.
@@ -3342,12 +3409,13 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UploadServerCertificateRequestMarshaller();
-			var unmarshaller = UploadServerCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UploadServerCertificateRequest, UploadServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
+        {
+            var marshaller = new UploadServerCertificateRequestMarshaller();
+            var unmarshaller = UploadServerCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UploadServerCertificateRequest, UploadServerCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to
@@ -3372,17 +3440,17 @@ namespace Amazon.IdentityManagement
         /// <exception cref="T:Amazon.IdentityManagement.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.IdentityManagement.Model.EntityAlreadyExistsException" />
 		public UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
-		{
-			var task = UploadSigningCertificateAsync(request);
-			try
-			{
-				return task.Result;
-			}
-			catch(AggregateException e)
-			{
-				throw e.InnerException;
-			}
-		}
+        {
+            var task = UploadSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
           
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSigningCertificate operation.
@@ -3395,11 +3463,12 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		public async Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
-		{
-			var marshaller = new UploadSigningCertificateRequestMarshaller();
-			var unmarshaller = UploadSigningCertificateResponseUnmarshaller.GetInstance();
-			var response = await Invoke<IRequest, UploadSigningCertificateRequest, UploadSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-			return response;
-		}
-	}
+        {
+            var marshaller = new UploadSigningCertificateRequestMarshaller();
+            var unmarshaller = UploadSigningCertificateResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, UploadSigningCertificateRequest, UploadSigningCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+    }
 }
