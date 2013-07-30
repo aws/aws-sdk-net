@@ -573,8 +573,8 @@ namespace Amazon.Runtime.Internal.Transform
                         {
                             if (escaped)
                             {
-                                char escapedChar = GetEscapedChar(nextChar);
-                                sb.Append(escapedChar);
+                                string escapedSequence = GetEscapedSequence(nextChar);
+                                sb.Append(escapedSequence);
                             }
                             else
                             {
@@ -641,31 +641,40 @@ namespace Amazon.Runtime.Internal.Transform
             return ret;
         }
 
-        private static char GetEscapedChar(int character)
+        private string GetEscapedSequence(int character)
         {
             switch (character)
             {
                 case 'n':
-                    return '\n';
+                    return "\n";
 
                 case 't':
-                    return '\t';
+                    return "\t";
 
                 case 'r':
-                    return '\r';
+                    return "\r";
 
                 case 'b':
-                    return '\b';
+                    return "\b";
 
                 case 'f':
-                    return '\f';
+                    return "\f";
+
+                case 'u':
+                    char[] characters = new char[4];
+                    jsonStream.Read(characters, 0, characters.Length);
+                    string unicodeString = new string(characters);
+
+                    int intValue = int.Parse(unicodeString, System.Globalization.NumberStyles.HexNumber);
+                    string result = char.ConvertFromUtf32(intValue);
+                    return result;
 
                 //case '"':
                 //case '\'':
                 //case '\\':
                 //case '/':
                 default:
-                    return Convert.ToChar(character);
+                    return Convert.ToChar(character).ToString();
             }
         }
 
