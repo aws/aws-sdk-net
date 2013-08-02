@@ -57,7 +57,6 @@ namespace Amazon.SQS.Util
 
         public static string CalculateMD5(string message)
         {
-            var decodedMessage = Uri.UnescapeDataString(message).Replace("+", " ");
             var messageBytes = System.Text.Encoding.UTF8.GetBytes(message);
             var md5Hash = MD5Hash.ComputeHash(messageBytes);
             var calculatedMd5 = BitConverter.ToString(md5Hash).Replace("-", string.Empty).ToLower();
