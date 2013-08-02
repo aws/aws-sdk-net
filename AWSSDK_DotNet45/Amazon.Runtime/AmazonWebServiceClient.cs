@@ -240,6 +240,12 @@ namespace Amazon.Runtime
                 if (request.Headers.ContainsKey("Content-MD5"))
                     requestMessage.Content.Headers.TryAddWithoutValidation("Content-MD5", request.Headers["Content-MD5"]);
 
+                if (request.Headers.ContainsKey("Content-Encoding"))
+                    requestMessage.Content.Headers.TryAddWithoutValidation("Content-Encoding", request.Headers["Content-Encoding"]);
+
+                if (request.Headers.ContainsKey("Content-Disposition"))
+                    requestMessage.Content.Headers.TryAddWithoutValidation("Content-Disposition", request.Headers["Content-Disposition"]);
+
             }
         }
 
