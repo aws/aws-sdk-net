@@ -45,7 +45,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.28.3";
+        internal const string SDKVersionNumber = "1.5.28.4";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -80,7 +80,7 @@ namespace Amazon.Util
         /// The Set of accepted and valid Url characters per RFC3986. 
         /// Characters outside of this set will be encoded.
         /// </summary>
-        public const string ValidUrlCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~'";
+        public const string ValidUrlCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
 
         /// <summary>
         /// The Set of accepted and valid Url characters per RFC1738. 
@@ -838,7 +838,7 @@ namespace Amazon.Util
             if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
                 validUrlCharacters = ValidUrlCharacters;
 
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:" : ""));
+            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:'()" : ""));
 
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
             {
