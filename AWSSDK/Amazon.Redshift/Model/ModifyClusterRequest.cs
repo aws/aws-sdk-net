@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -95,6 +96,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterType">The value to set for the ClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterType(string clusterType)
         {
             this.clusterType = clusterType;
@@ -127,6 +129,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -159,6 +162,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -189,6 +193,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterSecurityGroups(params string[] clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -204,6 +209,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterSecurityGroups(IEnumerable<string> clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -234,6 +240,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -249,6 +256,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -286,6 +294,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -316,6 +325,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroupName">The value to set for the ClusterParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterParameterGroupName(string clusterParameterGroupName)
         {
             this.clusterParameterGroupName = clusterParameterGroupName;
@@ -347,6 +357,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
             this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -379,6 +390,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -411,6 +423,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -439,6 +452,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="allowVersionUpgrade">The value to set for the AllowVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
             this.allowVersionUpgrade = allowVersionUpgrade;

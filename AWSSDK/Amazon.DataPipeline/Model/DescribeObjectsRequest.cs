@@ -64,6 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -92,6 +93,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="objectIds">The values to add to the ObjectIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsRequest WithObjectIds(params string[] objectIds)
         {
             foreach (string element in objectIds)
@@ -107,6 +109,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="objectIds">The values to add to the ObjectIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsRequest WithObjectIds(IEnumerable<string> objectIds)
         {
             foreach (string element in objectIds)
@@ -138,6 +141,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="evaluateExpressions">The value to set for the EvaluateExpressions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsRequest WithEvaluateExpressions(bool evaluateExpressions)
         {
             this.evaluateExpressions = evaluateExpressions;
@@ -181,6 +185,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsRequest WithMarker(string marker)
         {
             this.marker = marker;

@@ -67,6 +67,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Key dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -135,6 +137,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithAttributesToGet(params string[] attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -150,6 +153,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithAttributesToGet(IEnumerable<string> attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -181,6 +185,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consistentRead">The value to set for the ConsistentRead property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithConsistentRead(bool consistentRead)
         {
             this.consistentRead = consistentRead;
@@ -219,6 +224,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;

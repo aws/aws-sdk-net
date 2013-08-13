@@ -58,6 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskStartToCloseTimeout">The value to set for the DefaultTaskStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeConfiguration WithDefaultTaskStartToCloseTimeout(string defaultTaskStartToCloseTimeout)
         {
             this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -100,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskHeartbeatTimeout">The value to set for the DefaultTaskHeartbeatTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeConfiguration WithDefaultTaskHeartbeatTimeout(string defaultTaskHeartbeatTimeout)
         {
             this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
@@ -130,6 +132,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskList">The value to set for the DefaultTaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeConfiguration WithDefaultTaskList(TaskList defaultTaskList)
         {
             this.defaultTaskList = defaultTaskList;
@@ -170,6 +173,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskScheduleToStartTimeout">The value to set for the DefaultTaskScheduleToStartTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeConfiguration WithDefaultTaskScheduleToStartTimeout(string defaultTaskScheduleToStartTimeout)
         {
             this.defaultTaskScheduleToStartTimeout = defaultTaskScheduleToStartTimeout;
@@ -209,6 +213,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskScheduleToCloseTimeout">The value to set for the DefaultTaskScheduleToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeConfiguration WithDefaultTaskScheduleToCloseTimeout(string defaultTaskScheduleToCloseTimeout)
         {
             this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;

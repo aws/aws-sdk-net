@@ -49,6 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheParameterGroupRequest WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -77,6 +78,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheParameterGroupRequest WithParameterNameValues(params ParameterNameValue[] parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)
@@ -92,6 +94,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheParameterGroupRequest WithParameterNameValues(IEnumerable<ParameterNameValue> parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)

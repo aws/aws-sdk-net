@@ -57,6 +57,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AlarmHistoryItem WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -85,6 +86,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AlarmHistoryItem WithTimestamp(DateTime timestamp)
         {
             this.timestamp = timestamp;
@@ -122,6 +124,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="historyItemType">The value to set for the HistoryItemType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AlarmHistoryItem WithHistoryItemType(string historyItemType)
         {
             this.historyItemType = historyItemType;
@@ -159,6 +162,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="historySummary">The value to set for the HistorySummary property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AlarmHistoryItem WithHistorySummary(string historySummary)
         {
             this.historySummary = historySummary;
@@ -196,6 +200,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="historyData">The value to set for the HistoryData property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AlarmHistoryItem WithHistoryData(string historyData)
         {
             this.historyData = historyData;

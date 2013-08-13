@@ -57,6 +57,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkId">The value to set for the CheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckResultRequest WithCheckId(string checkId)
         {
             this.checkId = checkId;
@@ -86,6 +87,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckResultRequest WithLanguage(string language)
         {
             this.language = language;

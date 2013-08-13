@@ -79,6 +79,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="roleArn">The value to set for the RoleArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithRoleArn(string roleArn)
         {
             this.roleArn = roleArn;
@@ -122,6 +123,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="roleSessionName">The value to set for the RoleSessionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithRoleSessionName(string roleSessionName)
         {
             this.roleSessionName = roleSessionName;
@@ -161,6 +163,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="webIdentityToken">The value to set for the WebIdentityToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithWebIdentityToken(string webIdentityToken)
         {
             this.webIdentityToken = webIdentityToken;
@@ -200,6 +203,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="providerId">The value to set for the ProviderId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithProviderId(string providerId)
         {
             this.providerId = providerId;
@@ -243,6 +247,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="policy">The value to set for the Policy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithPolicy(string policy)
         {
             this.policy = policy;
@@ -281,6 +286,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="durationSeconds">The value to set for the DurationSeconds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleWithWebIdentityRequest WithDurationSeconds(int durationSeconds)
         {
             this.durationSeconds = durationSeconds;

@@ -53,6 +53,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="requestId">The Id associated with the request. Be sure to reference
         /// this Id when contacting AWS support.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseMetadata WithRequestId(string requestId)
         {
             this.requestIdField = requestId;

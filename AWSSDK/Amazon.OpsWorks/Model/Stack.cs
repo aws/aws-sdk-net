@@ -58,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithName(string name)
         {
             this.name = name;
@@ -115,6 +117,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithRegion(string region)
         {
             this.region = region;
@@ -143,6 +146,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -174,6 +178,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceRoleArn">The value to set for the ServiceRoleArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithServiceRoleArn(string serviceRoleArn)
         {
             this.serviceRoleArn = serviceRoleArn;
@@ -203,6 +208,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultInstanceProfileArn">The value to set for the DefaultInstanceProfileArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithDefaultInstanceProfileArn(string defaultInstanceProfileArn)
         {
             this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -231,6 +237,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultOs">The value to set for the DefaultOs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithDefaultOs(string defaultOs)
         {
             this.defaultOs = defaultOs;
@@ -259,6 +266,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="hostnameTheme">The value to set for the HostnameTheme property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithHostnameTheme(string hostnameTheme)
         {
             this.hostnameTheme = hostnameTheme;
@@ -288,6 +296,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultAvailabilityZone">The value to set for the DefaultAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithDefaultAvailabilityZone(string defaultAvailabilityZone)
         {
             this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -319,6 +328,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customJson">The value to set for the CustomJson property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithCustomJson(string customJson)
         {
             this.customJson = customJson;
@@ -347,6 +357,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithConfigurationManager(StackConfigurationManager configurationManager)
         {
             this.configurationManager = configurationManager;
@@ -375,6 +386,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="useCustomCookbooks">The value to set for the UseCustomCookbooks property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithUseCustomCookbooks(bool useCustomCookbooks)
         {
             this.useCustomCookbooks = useCustomCookbooks;
@@ -405,6 +417,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customCookbooksSource">The value to set for the CustomCookbooksSource property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithCustomCookbooksSource(Source customCookbooksSource)
         {
             this.customCookbooksSource = customCookbooksSource;
@@ -433,6 +446,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultSshKeyName">The value to set for the DefaultSshKeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithDefaultSshKeyName(string defaultSshKeyName)
         {
             this.defaultSshKeyName = defaultSshKeyName;
@@ -461,6 +475,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="createdAt">The value to set for the CreatedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithCreatedAt(string createdAt)
         {
             this.createdAt = createdAt;
@@ -500,6 +515,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultRootDeviceType">The value to set for the DefaultRootDeviceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Stack WithDefaultRootDeviceType(string defaultRootDeviceType)
         {
             this.defaultRootDeviceType = defaultRootDeviceType;

@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSigningCertificateRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -104,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateId">The value to set for the CertificateId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSigningCertificateRequest WithCertificateId(string certificateId)
         {
             this.certificateId = certificateId;

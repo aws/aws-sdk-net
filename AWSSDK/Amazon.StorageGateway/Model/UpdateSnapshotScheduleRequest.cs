@@ -62,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -100,6 +101,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="startAt">The value to set for the StartAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithStartAt(int startAt)
         {
             this.startAt = startAt;
@@ -137,6 +139,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="recurrenceInHours">The value to set for the RecurrenceInHours property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithRecurrenceInHours(int recurrenceInHours)
         {
             this.recurrenceInHours = recurrenceInHours;
@@ -174,6 +177,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithDescription(string description)
         {
             this.description = description;

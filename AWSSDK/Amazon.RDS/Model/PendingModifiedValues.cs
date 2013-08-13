@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithAllocatedStorage(int allocatedStorage)
         {
             this.allocatedStorage = allocatedStorage;
@@ -107,6 +109,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -135,6 +138,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithPort(int port)
         {
             this.port = port;
@@ -163,6 +167,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
             this.backupRetentionPeriod = backupRetentionPeriod;
@@ -191,6 +196,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -219,6 +225,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -247,6 +254,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iops">The value to set for the Iops property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithIops(int iops)
         {
             this.iops = iops;
@@ -275,6 +283,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;

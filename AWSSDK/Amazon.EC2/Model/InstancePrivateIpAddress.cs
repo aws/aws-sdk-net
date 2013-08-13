@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipAddress">Private IP address.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancePrivateIpAddress WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateDnsName">Private DNS name.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancePrivateIpAddress WithPrivateDnsName(string privateDnsName)
         {
             this.privateDnsNameField = privateDnsName;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="primary">Whether this is a primary IP.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancePrivateIpAddress WithPrimary(bool primary)
         {
             this.primaryField = primary;
@@ -142,6 +145,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="association">Instance Network Interface Association.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancePrivateIpAddress WithAssociation(InstanceNetworkInterfaceAssociation association)
         {
             this.associationField = association;

@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// Valid Values: reachability 
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusDetailType WithName(string name)
         {
             this.nameField = name;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// Valid Values: passed | failed | insufficient-data
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusDetailType WithStatus(string status)
         {
             this.statusField = status;
@@ -118,6 +120,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="impairedSince">The time of the status check failure</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusDetailType WithImpairedSince(string impairedSince)
         {
             this.impairedSinceField = impairedSince;

@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distributionConfig">The value to set for the DistributionConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithDistributionConfig(DistributionConfig distributionConfig)
         {
             this.distributionConfig = distributionConfig;
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithId(string id)
         {
             this.id = id;
@@ -105,6 +107,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="ifMatch">The value to set for the IfMatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithIfMatch(string ifMatch)
         {
             this.ifMatch = ifMatch;

@@ -65,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -93,6 +94,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -121,6 +123,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotCreateTime">The value to set for the SnapshotCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotCreateTime(DateTime snapshotCreateTime)
         {
             this.snapshotCreateTime = snapshotCreateTime;
@@ -151,6 +154,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithStatus(string status)
         {
             this.status = status;
@@ -179,6 +183,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithPort(int port)
         {
             this.port = port;
@@ -207,6 +212,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -235,6 +241,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterCreateTime">The value to set for the ClusterCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterCreateTime(DateTime clusterCreateTime)
         {
             this.clusterCreateTime = clusterCreateTime;
@@ -263,6 +270,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithMasterUsername(string masterUsername)
         {
             this.masterUsername = masterUsername;
@@ -291,6 +299,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -319,6 +328,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotType">The value to set for the SnapshotType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotType(string snapshotType)
         {
             this.snapshotType = snapshotType;
@@ -347,6 +357,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -375,6 +386,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -403,6 +415,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -431,6 +444,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -459,6 +473,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="encrypted">The value to set for the Encrypted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithEncrypted(bool encrypted)
         {
             this.encrypted = encrypted;
@@ -487,6 +502,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="accountsWithRestoreAccess">The values to add to the AccountsWithRestoreAccess collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithAccountsWithRestoreAccess(params AccountWithRestoreAccess[] accountsWithRestoreAccess)
         {
             foreach (AccountWithRestoreAccess element in accountsWithRestoreAccess)
@@ -502,6 +518,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="accountsWithRestoreAccess">The values to add to the AccountsWithRestoreAccess collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithAccountsWithRestoreAccess(IEnumerable<AccountWithRestoreAccess> accountsWithRestoreAccess)
         {
             foreach (AccountWithRestoreAccess element in accountsWithRestoreAccess)
@@ -534,6 +551,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithOwnerAccount(string ownerAccount)
         {
             this.ownerAccount = ownerAccount;
@@ -562,6 +580,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="totalBackupSizeInMegaBytes">The value to set for the TotalBackupSizeInMegaBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithTotalBackupSizeInMegaBytes(double totalBackupSizeInMegaBytes)
         {
             this.totalBackupSizeInMegaBytes = totalBackupSizeInMegaBytes;
@@ -590,6 +609,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="actualIncrementalBackupSizeInMegaBytes">The value to set for the ActualIncrementalBackupSizeInMegaBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithActualIncrementalBackupSizeInMegaBytes(double actualIncrementalBackupSizeInMegaBytes)
         {
             this.actualIncrementalBackupSizeInMegaBytes = actualIncrementalBackupSizeInMegaBytes;
@@ -618,6 +638,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="backupProgressInMegaBytes">The value to set for the BackupProgressInMegaBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithBackupProgressInMegaBytes(double backupProgressInMegaBytes)
         {
             this.backupProgressInMegaBytes = backupProgressInMegaBytes;
@@ -646,6 +667,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="currentBackupRateInMegaBytesPerSecond">The value to set for the CurrentBackupRateInMegaBytesPerSecond property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithCurrentBackupRateInMegaBytesPerSecond(double currentBackupRateInMegaBytesPerSecond)
         {
             this.currentBackupRateInMegaBytesPerSecond = currentBackupRateInMegaBytesPerSecond;
@@ -674,6 +696,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="estimatedSecondsToCompletion">The value to set for the EstimatedSecondsToCompletion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithEstimatedSecondsToCompletion(long estimatedSecondsToCompletion)
         {
             this.estimatedSecondsToCompletion = estimatedSecondsToCompletion;
@@ -702,6 +725,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="elapsedTimeInSeconds">The value to set for the ElapsedTimeInSeconds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithElapsedTimeInSeconds(long elapsedTimeInSeconds)
         {
             this.elapsedTimeInSeconds = elapsedTimeInSeconds;

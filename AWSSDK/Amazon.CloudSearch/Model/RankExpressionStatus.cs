@@ -44,6 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="options">The value to set for the Options property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RankExpressionStatus WithOptions(NamedRankExpression options)
         {
             this.options = options;
@@ -72,6 +73,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RankExpressionStatus WithStatus(OptionStatus status)
         {
             this.status = status;

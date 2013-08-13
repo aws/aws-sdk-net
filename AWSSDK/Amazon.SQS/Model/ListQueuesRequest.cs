@@ -54,6 +54,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueNamePrefix">Prefix to use for filtering the list results.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListQueuesRequest WithQueueNamePrefix(string queueNamePrefix)
         {
             this.queueNamePrefixField = queueNamePrefix;
@@ -91,6 +92,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListQueuesRequest WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

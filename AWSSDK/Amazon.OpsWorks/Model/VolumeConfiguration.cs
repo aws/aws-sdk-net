@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="mountPoint">The value to set for the MountPoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeConfiguration WithMountPoint(string mountPoint)
         {
             this.mountPoint = mountPoint;
@@ -74,6 +75,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidLevel">The value to set for the RaidLevel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeConfiguration WithRaidLevel(int raidLevel)
         {
             this.raidLevel = raidLevel;
@@ -102,6 +104,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="numberOfDisks">The value to set for the NumberOfDisks property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeConfiguration WithNumberOfDisks(int numberOfDisks)
         {
             this.numberOfDisks = numberOfDisks;
@@ -130,6 +133,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="size">The value to set for the Size property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeConfiguration WithSize(int size)
         {
             this.size = size;

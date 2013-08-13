@@ -52,6 +52,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic you want
         /// to set the attribute value of.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTopicAttributesRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="attributeName">The name of the attribute you want to set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTopicAttributesRequest WithAttributeName(string attributeName)
         {
             this.attributeNameField = attributeName;
@@ -113,6 +115,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="attributeValue">The value of the attribute you want to set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTopicAttributesRequest WithAttributeValue(string attributeValue)
         {
             this.attributeValueField = attributeValue;

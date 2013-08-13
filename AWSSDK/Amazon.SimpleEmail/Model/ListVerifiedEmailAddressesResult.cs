@@ -42,6 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verifiedEmailAddresses">The values to add to the VerifiedEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVerifiedEmailAddressesResult WithVerifiedEmailAddresses(params string[] verifiedEmailAddresses)
         {
             foreach (string element in verifiedEmailAddresses)
@@ -57,6 +58,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verifiedEmailAddresses">The values to add to the VerifiedEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVerifiedEmailAddressesResult WithVerifiedEmailAddresses(IEnumerable<string> verifiedEmailAddresses)
         {
             foreach (string element in verifiedEmailAddresses)

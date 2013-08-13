@@ -45,6 +45,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;
@@ -75,6 +76,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="assumedRoleUser">The value to set for the AssumedRoleUser property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithAssumedRoleUser(AssumedRoleUser assumedRoleUser)
         {
             this.assumedRoleUser = assumedRoleUser;
@@ -113,6 +115,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="packedPolicySize">The value to set for the PackedPolicySize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithPackedPolicySize(int packedPolicySize)
         {
             this.packedPolicySize = packedPolicySize;

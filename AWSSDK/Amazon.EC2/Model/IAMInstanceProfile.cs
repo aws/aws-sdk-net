@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// <param name="arn">IAM Instance Profile to use if a profile should be
         /// attached to the new Amazon EC2 instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IAMInstanceProfile WithArn(string arn)
         {
             this.arnField = arn;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// <param name="id">IAM Instance Profile to use if a profile should be
         /// attached to the new Amazon EC2 instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IAMInstanceProfile WithId(string id)
         {
             this.idField = id;

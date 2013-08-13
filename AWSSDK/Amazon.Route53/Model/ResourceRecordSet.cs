@@ -61,6 +61,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithName(string name)
         {
             this.name = name;
@@ -98,6 +99,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithType(string type)
         {
             this.type = type;
@@ -136,6 +138,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="setIdentifier">The value to set for the SetIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithSetIdentifier(string setIdentifier)
         {
             this.setIdentifier = setIdentifier;
@@ -174,6 +177,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="weight">The value to set for the Weight property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithWeight(long weight)
         {
             this.weight = weight;
@@ -216,6 +220,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithRegion(string region)
         {
             this.region = region;
@@ -260,6 +265,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="failover">The value to set for the Failover property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithFailover(string failover)
         {
             this.failover = failover;
@@ -297,6 +303,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="tTL">The value to set for the TTL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithTTL(long tTL)
         {
             this.tTL = tTL;
@@ -333,6 +340,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecords">The values to add to the ResourceRecords collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithResourceRecords(params ResourceRecord[] resourceRecords)
         {
             foreach (ResourceRecord element in resourceRecords)
@@ -348,6 +356,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecords">The values to add to the ResourceRecords collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithResourceRecords(IEnumerable<ResourceRecord> resourceRecords)
         {
             foreach (ResourceRecord element in resourceRecords)
@@ -379,6 +388,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="aliasTarget">The value to set for the AliasTarget property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithAliasTarget(AliasTarget aliasTarget)
         {
             this.aliasTarget = aliasTarget;
@@ -417,6 +427,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthCheckId">The value to set for the HealthCheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceRecordSet WithHealthCheckId(string healthCheckId)
         {
             this.healthCheckId = healthCheckId;

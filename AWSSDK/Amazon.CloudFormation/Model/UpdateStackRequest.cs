@@ -56,6 +56,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -95,6 +96,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;
@@ -134,6 +136,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateURL">The value to set for the TemplateURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithTemplateURL(string templateURL)
         {
             this.templateURL = templateURL;
@@ -161,6 +164,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -176,6 +180,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)
@@ -238,6 +243,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithCapabilities(params string[] capabilities)
         {
             foreach (string element in capabilities)
@@ -253,6 +259,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithCapabilities(IEnumerable<string> capabilities)
         {
             foreach (string element in capabilities)

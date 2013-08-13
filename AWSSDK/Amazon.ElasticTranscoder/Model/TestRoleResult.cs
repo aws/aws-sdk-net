@@ -53,6 +53,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="success">The value to set for the Success property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleResult WithSuccess(string success)
         {
             this.success = success;
@@ -81,6 +82,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleResult WithMessages(params string[] messages)
         {
             foreach (string element in messages)
@@ -96,6 +98,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleResult WithMessages(IEnumerable<string> messages)
         {
             foreach (string element in messages)

@@ -67,6 +67,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsRequest WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -104,6 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metricName">The value to set for the MetricName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsRequest WithMetricName(string metricName)
         {
             this.metricName = metricName;
@@ -140,6 +142,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsRequest WithDimensions(params DimensionFilter[] dimensions)
         {
             foreach (DimensionFilter element in dimensions)
@@ -155,6 +158,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsRequest WithDimensions(IEnumerable<DimensionFilter> dimensions)
         {
             foreach (DimensionFilter element in dimensions)
@@ -186,6 +190,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

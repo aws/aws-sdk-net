@@ -54,9 +54,11 @@ namespace Amazon.S3.Model
         /// <param name="permission">The permission for the grantee.</param>
         public void AddGrant(S3Grantee grantee, S3Permission permission)
         {
-            S3Grant grant = new S3Grant();
-            grant.WithGrantee(grantee);
-            grant.WithPermission(permission);
+            S3Grant grant = new S3Grant
+            {
+                Grantee = grantee,
+                Permission = permission
+            };
             Grants.Add(grant);
         }
 
@@ -163,6 +165,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="args">Grants property</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3BucketLoggingConfig WithGrants(params S3Grant[] args)
         {
             foreach (S3Grant arg in args)
@@ -200,6 +203,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="targetBucketName">Target bucket name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3BucketLoggingConfig WithTargetBucketName(string targetBucketName)
         {
             this.targetBucketName = targetBucketName;
@@ -236,6 +240,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="targetPrefix">Target prefix</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3BucketLoggingConfig WithTargetPrefix(string targetPrefix)
         {
             this.targetPrefix = targetPrefix;

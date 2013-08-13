@@ -74,6 +74,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -111,6 +112,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmDescription">The value to set for the AlarmDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithAlarmDescription(string alarmDescription)
         {
             this.alarmDescription = alarmDescription;
@@ -139,6 +141,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="actionsEnabled">The value to set for the ActionsEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithActionsEnabled(bool actionsEnabled)
         {
             this.actionsEnabled = actionsEnabled;
@@ -176,6 +179,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="oKActions">The values to add to the OKActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithOKActions(params string[] oKActions)
         {
             foreach (string element in oKActions)
@@ -191,6 +195,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="oKActions">The values to add to the OKActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithOKActions(IEnumerable<string> oKActions)
         {
             foreach (string element in oKActions)
@@ -231,6 +236,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmActions">The values to add to the AlarmActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithAlarmActions(params string[] alarmActions)
         {
             foreach (string element in alarmActions)
@@ -246,6 +252,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmActions">The values to add to the AlarmActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithAlarmActions(IEnumerable<string> alarmActions)
         {
             foreach (string element in alarmActions)
@@ -287,6 +294,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="insufficientDataActions">The values to add to the InsufficientDataActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithInsufficientDataActions(params string[] insufficientDataActions)
         {
             foreach (string element in insufficientDataActions)
@@ -302,6 +310,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="insufficientDataActions">The values to add to the InsufficientDataActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithInsufficientDataActions(IEnumerable<string> insufficientDataActions)
         {
             foreach (string element in insufficientDataActions)
@@ -342,6 +351,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metricName">The value to set for the MetricName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithMetricName(string metricName)
         {
             this.metricName = metricName;
@@ -383,6 +393,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -420,6 +431,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="statistic">The value to set for the Statistic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithStatistic(string statistic)
         {
             this.statistic = statistic;
@@ -456,6 +468,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithDimensions(params Dimension[] dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -471,6 +484,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithDimensions(IEnumerable<Dimension> dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -511,6 +525,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="period">The value to set for the Period property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithPeriod(int period)
         {
             this.period = period;
@@ -548,6 +563,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="unit">The value to set for the Unit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithUnit(string unit)
         {
             this.unit = unit;
@@ -585,6 +601,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="evaluationPeriods">The value to set for the EvaluationPeriods property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithEvaluationPeriods(int evaluationPeriods)
         {
             this.evaluationPeriods = evaluationPeriods;
@@ -613,6 +630,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="threshold">The value to set for the Threshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithThreshold(double threshold)
         {
             this.threshold = threshold;
@@ -651,6 +669,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="comparisonOperator">The value to set for the ComparisonOperator property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutMetricAlarmRequest WithComparisonOperator(string comparisonOperator)
         {
             this.comparisonOperator = comparisonOperator;

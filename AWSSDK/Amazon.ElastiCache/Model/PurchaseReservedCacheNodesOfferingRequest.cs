@@ -49,6 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodesOfferingId">The value to set for the ReservedCacheNodesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedCacheNodesOfferingRequest WithReservedCacheNodesOfferingId(string reservedCacheNodesOfferingId)
         {
             this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
@@ -77,6 +78,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodeId">The value to set for the ReservedCacheNodeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedCacheNodesOfferingRequest WithReservedCacheNodeId(string reservedCacheNodeId)
         {
             this.reservedCacheNodeId = reservedCacheNodeId;
@@ -105,6 +107,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeCount">The value to set for the CacheNodeCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedCacheNodesOfferingRequest WithCacheNodeCount(int cacheNodeCount)
         {
             this.cacheNodeCount = cacheNodeCount;

@@ -64,6 +64,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="subject">The value to set for the Subject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithSubject(Content subject)
         {
             this.subject = subject;
@@ -92,6 +93,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithBody(Body body)
         {
             this.body = body;

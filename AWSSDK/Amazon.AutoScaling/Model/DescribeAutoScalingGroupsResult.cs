@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithAutoScalingGroups(params AutoScalingGroup[] autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -58,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithAutoScalingGroups(IEnumerable<AutoScalingGroup> autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterId">The value to set for the CacheClusterId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheClusterId(string cacheClusterId)
         {
             this.cacheClusterId = cacheClusterId;
@@ -78,6 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheNodeIdsToReboot(params string[] cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)
@@ -93,6 +95,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheNodeIdsToReboot(IEnumerable<string> cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)

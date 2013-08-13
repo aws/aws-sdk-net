@@ -65,6 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSnapshotFromVolumeRecoveryPointRequest WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -104,6 +105,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="snapshotDescription">The value to set for the SnapshotDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSnapshotFromVolumeRecoveryPointRequest WithSnapshotDescription(string snapshotDescription)
         {
             this.snapshotDescription = snapshotDescription;

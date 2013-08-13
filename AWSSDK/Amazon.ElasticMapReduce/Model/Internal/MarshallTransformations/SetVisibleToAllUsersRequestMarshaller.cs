@@ -14,42 +14,91 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Set Visible To All Users Request Marshaller
     /// </summary>       
-    public class SetVisibleToAllUsersRequestMarshaller : IMarshaller<IRequest, SetVisibleToAllUsersRequest>
+    internal class SetVisibleToAllUsersRequestMarshaller : IMarshaller<IRequest, SetVisibleToAllUsersRequest> 
     {
-        public IRequest Marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest)
-        {
-            IRequest request = new DefaultRequest(setVisibleToAllUsersRequest, "AmazonElasticMapReduce");
-            request.Parameters.Add("Action", "SetVisibleToAllUsers");
-            request.Parameters.Add("Version", "2009-03-31");
-            if (setVisibleToAllUsersRequest != null)
-            {
-                List<string> jobFlowIdsList = setVisibleToAllUsersRequest.JobFlowIds;
+        
 
-                int jobFlowIdsListIndex = 1;
-                foreach (string jobFlowIdsListValue in jobFlowIdsList)
-                { 
-                    request.Parameters.Add("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.FromString(jobFlowIdsListValue));
-                    jobFlowIdsListIndex++;
+        public IRequest Marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) 
+        {
+
+            IRequest request = new DefaultRequest(setVisibleToAllUsersRequest, "AmazonElasticMapReduce");
+            string target = "ElasticMapReduce.SetVisibleToAllUsers";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
+                {
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    {
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
                 }
             }
-            if (setVisibleToAllUsersRequest != null && setVisibleToAllUsersRequest.IsSetVisibleToAllUsers())
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
+            using (StringWriter stringWriter = new StringWriter())
             {
-                request.Parameters.Add("VisibleToAllUsers", StringUtils.FromBool(setVisibleToAllUsersRequest.VisibleToAllUsers));
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                
+
+                if (setVisibleToAllUsersRequest != null && setVisibleToAllUsersRequest.JobFlowIds != null && setVisibleToAllUsersRequest.JobFlowIds.Count > 0) 
+                {
+                    List<string> jobFlowIdsList = setVisibleToAllUsersRequest.JobFlowIds;
+                    writer.WritePropertyName("JobFlowIds");
+                    writer.WriteArrayStart();
+
+                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
+                    { 
+                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    }
+
+                    writer.WriteArrayEnd();
+                }
+                if (setVisibleToAllUsersRequest != null && setVisibleToAllUsersRequest.IsSetVisibleToAllUsers()) 
+                {
+                    writer.WritePropertyName("VisibleToAllUsers");
+                    writer.Write(setVisibleToAllUsersRequest.VisibleToAllUsers);
+                }
+
+                writer.WriteObjectEnd();
+                
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+        
 
             return request;
         }

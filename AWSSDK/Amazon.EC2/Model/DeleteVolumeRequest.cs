@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// The volume must be in the available state (not attached to an instance).
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteVolumeRequest
+    public class DeleteVolumeRequest : EC2Request
     {    
         private string volumeIdField;
 
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the volume to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVolumeRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;

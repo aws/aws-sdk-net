@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -46,39 +46,45 @@ namespace Amazon.ElasticMapReduce.Model
     /// intensive step.
     ///
     /// <code>
-    /// AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-    /// AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
+    ///    AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+    ///    AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
     ///
-    /// HadoopJarStepConfig config = new ResizeJobFlowStep()
-    ///     .WithResizeAction(new ModifyInstanceGroup()
-    ///         .WithInstanceGroup("core")
-    ///         .WithInstanceCount(10))
-    ///     .WithResizeAction(new AddInstanceGroup()
-    ///         .WithInstanceGroup("task")
-    ///         .WithInstanceCount(10)
-    ///         .WithInstanceType("m1.small"))
-    ///     .WithOnArrested(OnArrested.Continue)
-    ///     .WithOnFailure(OnFailure.Continue)
-    ///     .ToHadoopJarStepConfig();
+    ///    HadoopJarStepConfig config = new ResizeJobFlowStep()
+    ///        .WithResizeAction(new ModifyInstanceGroup()
+    ///            .WithInstanceGroup("core")
+    ///            .WithInstanceCount(10))
+    ///        .WithResizeAction(new AddInstanceGroup()
+    ///            .WithInstanceGroup("task")
+    ///            .WithInstanceCount(10)
+    ///            .WithInstanceType("m1.small"))
+    ///        .WithOnArrested(OnArrested.Continue)
+    ///        .WithOnFailure(OnFailure.Continue)
+    ///        .ToHadoopJarStepConfig();
     ///
-    /// StepConfig resizeJobFlow = new StepConfig()
-    ///     .WithName("Resize job flow")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(config);
+    ///    StepConfig resizeJobFlow = new StepConfig
+    ///    {
+    ///        Name = "Resize job flow",
+    ///        ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///        HadoopJarStep = config
+    ///    };
     ///
-    /// RunJobFlowRequest request = new RunJobFlowRequest()
-    ///     .WithName("Resize job flow")
-    ///     .WithSteps(resizeJobFlow)
-    ///     .WithLogUri("s3://log-bucket/")
-    ///     .WithInstances(new JobFlowInstancesConfig()
-    ///         .WithEc2KeyName("keypair")
-    ///         .WithHadoopVersion("0.20")
-    ///         .WithInstanceCount(5)
-    ///         .WithKeepJobFlowAliveWhenNoSteps(true)
-    ///         .WithMasterInstanceType("m1.small")
-    ///         .WithSlaveInstanceType("m1.small"));
+    ///    RunJobFlowRequest request = new RunJobFlowRequest
+    ///    {
+    ///        Name = "Resize job flow",
+    ///        Steps = new List&lt;StepConfig&gt; { resizeJobFlow },
+    ///        LogUri = "s3://log-bucket/",
+    ///        Instances = new JobFlowInstancesConfig
+    ///        {
+    ///            Ec2KeyName = "keypair",
+    ///            HadoopVersion = "0.20",
+    ///            InstanceCount = 5,
+    ///            KeepJobFlowAliveWhenNoSteps = true,
+    ///            MasterInstanceType = "m1.small",
+    ///            SlaveInstanceType = "m1.small"
+    ///        }
+    ///    };
     ///
-    /// RunJobFlowResult result = emr.RunJobFlow(request).RunJobFlowResult;
+    ///    RunJobFlowResult result = emr.RunJobFlow(request).RunJobFlowResult;
     /// </code>
     /// </summary>
     public class ResizeJobFlowStep
@@ -123,6 +129,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="resizeAction">An instance of ResizeAction defining the change.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResizeJobFlowStep WithResizeAction(ResizeAction resizeAction)
         {
             this.args.AddRange(resizeAction.Args);
@@ -137,6 +144,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="wait">Whether this step should wait for the modification to complete.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResizeJobFlowStep WithWait(bool wait)
         {
             this.wait = wait;
@@ -151,6 +159,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="onArrested">OnArrested enum specifying which action to take</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResizeJobFlowStep WithOnArrested(OnArrested onArrested)
         {
             this.onArrested = onArrested;
@@ -164,6 +173,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="onFailure">OnFailure enum specifying which action to take.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResizeJobFlowStep WithOnFailure(OnFailure onFailure)
         {
             this.onFailure = onFailure;
@@ -199,9 +209,11 @@ namespace Amazon.ElasticMapReduce.Model
                 args.Add(onFailure.ToString());
             }
 
-            return new HadoopJarStepConfig()
-                .WithJar("s3://" + bucket + "/libs/resize-job-flow/0.1/resize-job-flow.jar")
-                .WithArgs(args.ToArray());
+            return new HadoopJarStepConfig
+            {
+                Jar = "s3://" + bucket + "/libs/resize-job-flow/0.1/resize-job-flow.jar",
+                Args = args
+            };
         }
     }
 
@@ -227,6 +239,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceGroup">Identifier for the instance group.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceGroup WithInstanceGroup(string instanceGroup)
         {
             this.instanceGroup = instanceGroup;
@@ -239,6 +252,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceCount">Target size of the instance group.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///         together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceGroup WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;
@@ -284,6 +298,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceGroup">New instance group's role.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddInstanceGroup WithInstanceGroup(string instanceGroup)
         {
             this.instanceGroup = instanceGroup;
@@ -296,6 +311,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceCount">Target instance group size.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddInstanceGroup WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;
@@ -308,6 +324,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceType">Instance type.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddInstanceGroup WithInstanceType(string instanceType)
         {
             this.instanceType = instanceType;

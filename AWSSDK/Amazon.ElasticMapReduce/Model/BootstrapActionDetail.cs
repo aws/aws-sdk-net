@@ -43,6 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="bootstrapActionConfig">The value to set for the BootstrapActionConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BootstrapActionDetail WithBootstrapActionConfig(BootstrapActionConfig bootstrapActionConfig)
         {
             this.bootstrapActionConfig = bootstrapActionConfig;

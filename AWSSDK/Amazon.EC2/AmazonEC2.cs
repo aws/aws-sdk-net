@@ -61,6 +61,13 @@ namespace Amazon.EC2
     public interface AmazonEC2 : IDisposable
     {
         /// <summary>
+        /// Checks whether you have the required permissions for the action, without actually making the request.
+        /// </summary>
+        /// <param name="request">Request to do a dry run of.</param>
+        /// <returns>Result of the dry run.</returns>
+        DryRunResponse DryRun(EC2Request request);
+
+        /// <summary>
         /// Activates a license.
         /// </summary>
         /// <remarks>
@@ -2447,5 +2454,37 @@ namespace Amazon.EC2
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Account Attributes response from the service</returns>
         DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request);
+
+        /// <summary>
+        /// Creates a new export task, produces an image of an EC2 instance for use in another virtualization environment, 
+        /// and then writes the image to the specified Amazon S3 bucket. If the instance is running at the time of export, 
+        /// Amazon EC2 will attempt to shut down the instance, initiate the export process, and then reboot the instance. 
+        /// Only instances derived from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Create Instance Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Instance Export Task response from the service</returns>
+        CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request);
+
+        /// <summary>
+        /// Describes your export tasks. If no export task IDs are specified, all export tasks initiated by you are returned.
+        /// </summary>
+        /// <param name="request">Describe Export Tasks request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Export Tasks response from the service</returns>
+        DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
+
+        /// <summary>
+        /// Cancels an active export task. The command removes all artifacts of the export, including any partially 
+        /// created Amazon S3 objects. If the export task is complete or is in the process of transferring the final 
+        /// disk image, the command fails and returns an error.
+        /// </summary>
+        /// <param name="request">Cancel Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Cancel Export Task response from the service</returns>
+        CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
     }
 }

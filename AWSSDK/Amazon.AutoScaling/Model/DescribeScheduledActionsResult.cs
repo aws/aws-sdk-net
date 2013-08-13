@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(params ScheduledUpdateGroupAction[] scheduledUpdateGroupActions)
         {
             foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
@@ -60,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(IEnumerable<ScheduledUpdateGroupAction> scheduledUpdateGroupActions)
         {
             foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
@@ -100,6 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

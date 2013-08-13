@@ -61,6 +61,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterId">The value to set for the CacheClusterId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheClusterId(string cacheClusterId)
         {
             this.cacheClusterId = cacheClusterId;
@@ -89,6 +90,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="configurationEndpoint">The value to set for the ConfigurationEndpoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithConfigurationEndpoint(Endpoint configurationEndpoint)
         {
             this.configurationEndpoint = configurationEndpoint;
@@ -117,6 +119,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="clientDownloadLandingPage">The value to set for the ClientDownloadLandingPage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithClientDownloadLandingPage(string clientDownloadLandingPage)
         {
             this.clientDownloadLandingPage = clientDownloadLandingPage;
@@ -145,6 +148,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeType">The value to set for the CacheNodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheNodeType(string cacheNodeType)
         {
             this.cacheNodeType = cacheNodeType;
@@ -173,6 +177,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithEngine(string engine)
         {
             this.engine = engine;
@@ -201,6 +206,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -229,6 +235,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterStatus">The value to set for the CacheClusterStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheClusterStatus(string cacheClusterStatus)
         {
             this.cacheClusterStatus = cacheClusterStatus;
@@ -257,6 +264,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="numCacheNodes">The value to set for the NumCacheNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithNumCacheNodes(int numCacheNodes)
         {
             this.numCacheNodes = numCacheNodes;
@@ -285,6 +293,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="preferredAvailabilityZone">The value to set for the PreferredAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithPreferredAvailabilityZone(string preferredAvailabilityZone)
         {
             this.preferredAvailabilityZone = preferredAvailabilityZone;
@@ -313,6 +322,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterCreateTime">The value to set for the CacheClusterCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheClusterCreateTime(DateTime cacheClusterCreateTime)
         {
             this.cacheClusterCreateTime = cacheClusterCreateTime;
@@ -341,6 +351,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -370,6 +381,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="pendingModifiedValues">The value to set for the PendingModifiedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithPendingModifiedValues(PendingModifiedValues pendingModifiedValues)
         {
             this.pendingModifiedValues = pendingModifiedValues;
@@ -398,6 +410,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="notificationConfiguration">The value to set for the NotificationConfiguration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithNotificationConfiguration(NotificationConfiguration notificationConfiguration)
         {
             this.notificationConfiguration = notificationConfiguration;
@@ -426,6 +439,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroups">The values to add to the CacheSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheSecurityGroups(params CacheSecurityGroupMembership[] cacheSecurityGroups)
         {
             foreach (CacheSecurityGroupMembership element in cacheSecurityGroups)
@@ -441,6 +455,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroups">The values to add to the CacheSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheSecurityGroups(IEnumerable<CacheSecurityGroupMembership> cacheSecurityGroups)
         {
             foreach (CacheSecurityGroupMembership element in cacheSecurityGroups)
@@ -472,6 +487,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroup">The value to set for the CacheParameterGroup property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheParameterGroup(CacheParameterGroupStatus cacheParameterGroup)
         {
             this.cacheParameterGroup = cacheParameterGroup;
@@ -500,6 +516,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupName">The value to set for the CacheSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheSubnetGroupName(string cacheSubnetGroupName)
         {
             this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -527,6 +544,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodes">The values to add to the CacheNodes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheNodes(params CacheNode[] cacheNodes)
         {
             foreach (CacheNode element in cacheNodes)
@@ -542,6 +560,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodes">The values to add to the CacheNodes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithCacheNodes(IEnumerable<CacheNode> cacheNodes)
         {
             foreach (CacheNode element in cacheNodes)
@@ -573,6 +592,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -600,6 +620,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithSecurityGroups(params SecurityGroupMembership[] securityGroups)
         {
             foreach (SecurityGroupMembership element in securityGroups)
@@ -615,6 +636,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheCluster WithSecurityGroups(IEnumerable<SecurityGroupMembership> securityGroups)
         {
             foreach (SecurityGroupMembership element in securityGroups)

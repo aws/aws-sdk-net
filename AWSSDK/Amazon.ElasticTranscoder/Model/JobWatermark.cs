@@ -56,6 +56,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presetWatermarkId">The value to set for the PresetWatermarkId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobWatermark WithPresetWatermarkId(string presetWatermarkId)
         {
             this.presetWatermarkId = presetWatermarkId;
@@ -100,6 +101,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="inputKey">The value to set for the InputKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobWatermark WithInputKey(string inputKey)
         {
             this.inputKey = inputKey;

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Reset Network Interface Attribute request
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ResetNetworkInterfaceAttributeRequest
+    public class ResetNetworkInterfaceAttributeRequest : EC2Request
     {
         private string networkInterfaceIdField;
         private string attributeField;
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network Interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetNetworkInterfaceAttributeRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// If not set, defaults to sourceDestCheck.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetNetworkInterfaceAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

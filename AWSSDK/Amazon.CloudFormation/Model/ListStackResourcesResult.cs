@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackResourceSummaries">The values to add to the StackResourceSummaries collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStackResourcesResult WithStackResourceSummaries(params StackResourceSummary[] stackResourceSummaries)
         {
             foreach (StackResourceSummary element in stackResourceSummaries)
@@ -58,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackResourceSummaries">The values to add to the StackResourceSummaries collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStackResourcesResult WithStackResourceSummaries(IEnumerable<StackResourceSummary> stackResourceSummaries)
         {
             foreach (StackResourceSummary element in stackResourceSummaries)
@@ -98,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStackResourcesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

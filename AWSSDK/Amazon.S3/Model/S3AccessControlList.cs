@@ -80,8 +80,8 @@ namespace Amazon.S3.Model
         public void AddGrant(S3Grantee grantee, S3Permission permission)
         {
             S3Grant grant = new S3Grant();
-            grant.WithGrantee(grantee);
-            grant.WithPermission(permission);
+            grant.Grantee = grantee;
+            grant.Permission = permission;
             this.Grants.Add(grant);
         }
 
@@ -187,6 +187,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="owner">Owner property</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3AccessControlList WithOwner(Owner owner)
         {
             this.owner = owner;
@@ -231,6 +232,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="args">Grants property</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3AccessControlList WithGrants(params S3Grant[] args)
         {
             foreach (S3Grant arg in args)

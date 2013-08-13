@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="diskImageFormat">Disk image format; valid Values: vmdk | vhd</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExportToS3TaskType WithDiskImageFormat(string diskImageFormat)
         {
             this.diskImageFormatField = diskImageFormat;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="containerFormat">Container format; valid values: ova</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExportToS3TaskType WithContainerFormat(string containerFormat)
         {
             this.containerFormatField = containerFormat;
@@ -118,6 +120,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="s3Bucket">S3 bucket name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExportToS3TaskType WithS3Bucket(string s3Bucket)
         {
             this.s3BucketField = s3Bucket;
@@ -152,6 +155,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="s3Prefix">Key prefix; full key will be set as S3Prefix + exportTaskId + ‘.’ +diskImageFormat.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExportToS3TaskType WithS3Prefix(string s3Prefix)
         {
             this.s3PrefixField = s3Prefix;

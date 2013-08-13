@@ -83,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -111,6 +112,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startTimeFilter">The value to set for the StartTimeFilter property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithStartTimeFilter(ExecutionTimeFilter startTimeFilter)
         {
             this.startTimeFilter = startTimeFilter;
@@ -140,6 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="typeFilter">The value to set for the TypeFilter property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithTypeFilter(WorkflowTypeFilter typeFilter)
         {
             this.typeFilter = typeFilter;
@@ -169,6 +172,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="tagFilter">The value to set for the TagFilter property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithTagFilter(TagFilter tagFilter)
         {
             this.tagFilter = tagFilter;
@@ -207,6 +211,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;
@@ -246,6 +251,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="maximumPageSize">The value to set for the MaximumPageSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithMaximumPageSize(int maximumPageSize)
         {
             this.maximumPageSize = maximumPageSize;
@@ -275,6 +281,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="reverseOrder">The value to set for the ReverseOrder property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithReverseOrder(bool reverseOrder)
         {
             this.reverseOrder = reverseOrder;
@@ -304,6 +311,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionFilter">The value to set for the ExecutionFilter property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListOpenWorkflowExecutionsRequest WithExecutionFilter(WorkflowExecutionFilter executionFilter)
         {
             this.executionFilter = executionFilter;

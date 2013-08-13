@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -108,6 +110,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithMarker(string marker)
         {
             this.marker = marker;

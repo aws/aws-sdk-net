@@ -61,6 +61,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobType">The value to set for the JobType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithJobType(string jobType)
         {
             this.jobType = jobType;
@@ -89,6 +90,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="manifest">The value to set for the Manifest property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithManifest(string manifest)
         {
             this.manifest = manifest;
@@ -117,6 +119,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="manifestAddendum">The value to set for the ManifestAddendum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithManifestAddendum(string manifestAddendum)
         {
             this.manifestAddendum = manifestAddendum;
@@ -145,6 +148,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="validateOnly">The value to set for the ValidateOnly property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithValidateOnly(bool validateOnly)
         {
             this.validateOnly = validateOnly;

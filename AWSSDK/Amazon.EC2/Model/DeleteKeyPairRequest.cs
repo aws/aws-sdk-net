@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// public key from Amazon EC2. You must own the key pair.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteKeyPairRequest
+    public class DeleteKeyPairRequest : EC2Request
     {    
         private string keyNameField;
 
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">Name of the key pair to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteKeyPairRequest WithKeyName(string keyName)
         {
             this.keyNameField = keyName;

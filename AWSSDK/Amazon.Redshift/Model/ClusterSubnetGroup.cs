@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -75,6 +76,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithDescription(string description)
         {
             this.description = description;
@@ -103,6 +105,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -131,6 +134,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetGroupStatus">The value to set for the SubnetGroupStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnetGroupStatus(string subnetGroupStatus)
         {
             this.subnetGroupStatus = subnetGroupStatus;
@@ -158,6 +162,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnets(params Subnet[] subnets)
         {
             foreach (Subnet element in subnets)
@@ -173,6 +178,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnets(IEnumerable<Subnet> subnets)
         {
             foreach (Subnet element in subnets)

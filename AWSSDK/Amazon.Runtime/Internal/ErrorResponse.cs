@@ -23,6 +23,7 @@ namespace Amazon.Runtime.Internal
         private ErrorType type;
         private string 
             code, message, requestId;
+        private Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         public ErrorType Type
         {
@@ -46,6 +47,11 @@ namespace Amazon.Runtime.Internal
         {
             get { return requestId; }
             set { requestId = value; }
+        }
+
+        public Dictionary<string, string> Metadata
+        {
+            get { return metadata; }
         }
     }
 }

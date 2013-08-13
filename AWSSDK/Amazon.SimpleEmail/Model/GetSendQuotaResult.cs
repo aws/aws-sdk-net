@@ -45,6 +45,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="max24HourSend">The value to set for the Max24HourSend property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSendQuotaResult WithMax24HourSend(double max24HourSend)
         {
             this.max24HourSend = max24HourSend;
@@ -73,6 +74,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="maxSendRate">The value to set for the MaxSendRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSendQuotaResult WithMaxSendRate(double maxSendRate)
         {
             this.maxSendRate = maxSendRate;
@@ -101,6 +103,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="sentLast24Hours">The value to set for the SentLast24Hours property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSendQuotaResult WithSentLast24Hours(double sentLast24Hours)
         {
             this.sentLast24Hours = sentLast24Hours;

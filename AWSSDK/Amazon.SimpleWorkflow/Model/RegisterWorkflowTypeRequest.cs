@@ -83,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -122,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithName(string name)
         {
             this.name = name;
@@ -162,6 +164,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="version">The value to set for the Version property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithVersion(string version)
         {
             this.version = version;
@@ -199,6 +202,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDescription(string description)
         {
             this.description = description;
@@ -239,6 +243,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskStartToCloseTimeout">The value to set for the DefaultTaskStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDefaultTaskStartToCloseTimeout(string defaultTaskStartToCloseTimeout)
         {
             this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -280,6 +285,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultExecutionStartToCloseTimeout">The value to set for the DefaultExecutionStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDefaultExecutionStartToCloseTimeout(string defaultExecutionStartToCloseTimeout)
         {
             this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
@@ -310,6 +316,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskList">The value to set for the DefaultTaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDefaultTaskList(TaskList defaultTaskList)
         {
             this.defaultTaskList = defaultTaskList;
@@ -353,6 +360,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultChildPolicy">The value to set for the DefaultChildPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterWorkflowTypeRequest WithDefaultChildPolicy(string defaultChildPolicy)
         {
             this.defaultChildPolicy = defaultChildPolicy;

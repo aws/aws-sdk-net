@@ -30,11 +30,11 @@ namespace Amazon.EC2.Model
     /// </summary>
     /// <remarks>
     /// This action can only be used by the owner of the product code.
-    /// It is useful when a product code owner needs to verify whether another EC2 user’s
+    /// It is useful when a product code owner needs to verify whether another EC2 userï¿½s
     /// instance is eligible for support.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ConfirmProductInstanceRequest
+    public class ConfirmProductInstanceRequest : EC2Request
     {    
         private string productCodeField;
         private string instanceIdField;
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productCode">The product code to confirm.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfirmProductInstanceRequest WithProductCode(string productCode)
         {
             this.productCodeField = productCode;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The instance to confirm.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfirmProductInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;

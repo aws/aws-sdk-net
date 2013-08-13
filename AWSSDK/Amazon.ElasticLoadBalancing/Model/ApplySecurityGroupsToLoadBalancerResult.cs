@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerResult WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerResult WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)

@@ -76,6 +76,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The value to set for the AccountId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithAccountId(string accountId)
         {
             this.accountId = accountId;
@@ -104,6 +105,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -132,6 +134,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadId">The value to set for the UploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithUploadId(string uploadId)
         {
             this.uploadId = uploadId;
@@ -160,6 +163,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="checksum">The value to set for the Checksum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithChecksum(string checksum)
         {
             this.checksum = checksum;
@@ -189,6 +193,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="range">The value to set for the Range property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithRange(string range)
         {
             this.range = range;
@@ -217,6 +222,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartRequest WithBody(Stream body)
         {
             this.body = body;

@@ -51,6 +51,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="maxJobs">The value to set for the MaxJobs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsRequest WithMaxJobs(int maxJobs)
         {
             this.maxJobs = maxJobs;
@@ -80,6 +81,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsRequest WithMarker(string marker)
         {
             this.marker = marker;

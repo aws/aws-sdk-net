@@ -59,6 +59,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="disks">The values to add to the Disks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithDisks(params Disk[] disks)
         {
             foreach (Disk element in disks)
@@ -101,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="disks">The values to add to the Disks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithDisks(IEnumerable<Disk> disks)
         {
             foreach (Disk element in disks)

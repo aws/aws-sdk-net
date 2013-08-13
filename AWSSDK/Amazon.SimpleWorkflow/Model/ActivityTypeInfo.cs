@@ -47,6 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityType">The value to set for the ActivityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeInfo WithActivityType(ActivityType activityType)
         {
             this.activityType = activityType;
@@ -84,6 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeInfo WithStatus(string status)
         {
             this.status = status;
@@ -121,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeInfo WithDescription(string description)
         {
             this.description = description;
@@ -149,6 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeInfo WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -177,6 +181,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="deprecationDate">The value to set for the DeprecationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeInfo WithDeprecationDate(DateTime deprecationDate)
         {
             this.deprecationDate = deprecationDate;

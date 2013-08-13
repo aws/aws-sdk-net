@@ -931,8 +931,7 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("bucketName", "The bucketName cannot be null or empty string!");
             }
             
-            var listVersionsRequest = new ListVersionsRequest()
-                                        .WithBucketName(bucketName);
+            var listVersionsRequest = new ListVersionsRequest { BucketName=bucketName };
             
             ListVersionsResponse listVersionsResponse;
 
@@ -956,23 +955,25 @@ namespace Amazon.S3.Util
                     break;
                 }
 
-                var keyVersionList = new KeyVersion[listVersionsResponse.Versions.Count];
+                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
                 for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
                 {
-                    keyVersionList[index] = new KeyVersion(
+                    keyVersionList.Add(new KeyVersion(
                                                 listVersionsResponse.Versions[index].Key,
                                                 listVersionsResponse.Versions[index].VersionId
-                                            );
+                                            ));
                 }
 
                 try
                 {
                     // Delete the current set of objects.
                     var deleteObjectsResponse =
-                        s3Client.DeleteObjects(new DeleteObjectsRequest()
-                                            .WithBucketName(bucketName)
-                                            .WithQuiet(deleteOptions.QuietMode)
-                                            .WithKeys(keyVersionList));
+                        s3Client.DeleteObjects(new DeleteObjectsRequest
+                        {
+                            BucketName=bucketName,
+                            Quiet=deleteOptions.QuietMode,
+                            Keys=keyVersionList
+                        });
 
                     if (!deleteOptions.QuietMode)
                     {
@@ -1022,9 +1023,7 @@ namespace Amazon.S3.Util
                 try
                 {
                     // Bucket is empty, delete the bucket.
-                    s3Client.DeleteBucket(
-                        new DeleteBucketRequest().WithBucketName(bucketName)
-                        );
+                    s3Client.DeleteBucket( new DeleteBucketRequest { BucketName = bucketName } );
                     
                     break;
                 }
@@ -1085,10 +1084,12 @@ namespace Amazon.S3.Util
             setACLRequest.ACL = getACLResponse.AccessControlList;
 
 
-            ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest()
-                .WithBucketName(bucketName)
-                .WithPrefix(key)
-                .WithMaxKeys(1));
+            ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest
+            {
+                BucketName = bucketName,
+                Prefix = key,
+                MaxKeys = 1
+            });
 
             if (listObjectResponse.S3Objects.Count != 1)
             {

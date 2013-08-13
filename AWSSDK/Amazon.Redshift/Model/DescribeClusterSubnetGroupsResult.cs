@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSubnetGroupsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroups">The values to add to the ClusterSubnetGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSubnetGroupsResult WithClusterSubnetGroups(params ClusterSubnetGroup[] clusterSubnetGroups)
         {
             foreach (ClusterSubnetGroup element in clusterSubnetGroups)
@@ -87,6 +89,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroups">The values to add to the ClusterSubnetGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSubnetGroupsResult WithClusterSubnetGroups(IEnumerable<ClusterSubnetGroup> clusterSubnetGroups)
         {
             foreach (ClusterSubnetGroup element in clusterSubnetGroups)

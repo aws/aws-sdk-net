@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="dhcpOptionsId">The ID of the set of DHCP options</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DhcpOptions WithDhcpOptionsId(string dhcpOptionsId)
         {
             this.dhcpOptionsIdField = dhcpOptionsId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Information about the set of DHCP options</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DhcpOptions WithConfiguration(params DhcpConfiguration[] list)
         {
             foreach (DhcpConfiguration item in list)
@@ -127,6 +129,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the DhcpOptions.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DhcpOptions WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

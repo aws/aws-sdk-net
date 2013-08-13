@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionName">The value to set for the OptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithOptionName(string optionName)
         {
             this.optionName = optionName;
@@ -78,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionDescription">The value to set for the OptionDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithOptionDescription(string optionDescription)
         {
             this.optionDescription = optionDescription;
@@ -106,6 +108,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="persistent">The value to set for the Persistent property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithPersistent(bool persistent)
         {
             this.persistent = persistent;
@@ -134,6 +137,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="permanent">The value to set for the Permanent property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithPermanent(bool permanent)
         {
             this.permanent = permanent;
@@ -162,6 +166,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithPort(int port)
         {
             this.port = port;
@@ -189,6 +194,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithOptionSettings(params OptionSetting[] optionSettings)
         {
             foreach (OptionSetting element in optionSettings)
@@ -204,6 +210,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithOptionSettings(IEnumerable<OptionSetting> optionSettings)
         {
             foreach (OptionSetting element in optionSettings)
@@ -234,6 +241,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupMemberships">The values to add to the DBSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithDBSecurityGroupMemberships(params DBSecurityGroupMembership[] dBSecurityGroupMemberships)
         {
             foreach (DBSecurityGroupMembership element in dBSecurityGroupMemberships)
@@ -249,6 +257,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupMemberships">The values to add to the DBSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithDBSecurityGroupMemberships(IEnumerable<DBSecurityGroupMembership> dBSecurityGroupMemberships)
         {
             foreach (DBSecurityGroupMembership element in dBSecurityGroupMemberships)
@@ -279,6 +288,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithVpcSecurityGroupMemberships(params VpcSecurityGroupMembership[] vpcSecurityGroupMemberships)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroupMemberships)
@@ -294,6 +304,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Option WithVpcSecurityGroupMemberships(IEnumerable<VpcSecurityGroupMembership> vpcSecurityGroupMemberships)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroupMemberships)

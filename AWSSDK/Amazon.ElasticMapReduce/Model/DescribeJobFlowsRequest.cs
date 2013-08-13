@@ -63,6 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="createdAfter">The value to set for the CreatedAfter property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithCreatedAfter(DateTime createdAfter)
         {
             this.createdAfter = createdAfter;
@@ -91,6 +92,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="createdBefore">The value to set for the CreatedBefore property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithCreatedBefore(DateTime createdBefore)
         {
             this.createdBefore = createdBefore;
@@ -118,6 +120,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowIds(params string[] jobFlowIds)
         {
             foreach (string element in jobFlowIds)
@@ -133,6 +136,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowIds(IEnumerable<string> jobFlowIds)
         {
             foreach (string element in jobFlowIds)
@@ -163,6 +167,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowStates">The values to add to the JobFlowStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowStates(params string[] jobFlowStates)
         {
             foreach (string element in jobFlowStates)
@@ -178,6 +183,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowStates">The values to add to the JobFlowStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowStates(IEnumerable<string> jobFlowStates)
         {
             foreach (string element in jobFlowStates)

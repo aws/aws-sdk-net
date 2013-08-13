@@ -47,6 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionInfo">The value to set for the ExecutionInfo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionDetail WithExecutionInfo(WorkflowExecutionInfo executionInfo)
         {
             this.executionInfo = executionInfo;
@@ -75,6 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionConfiguration">The value to set for the ExecutionConfiguration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionDetail WithExecutionConfiguration(WorkflowExecutionConfiguration executionConfiguration)
         {
             this.executionConfiguration = executionConfiguration;
@@ -103,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="openCounts">The value to set for the OpenCounts property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionDetail WithOpenCounts(WorkflowExecutionOpenCounts openCounts)
         {
             this.openCounts = openCounts;
@@ -132,6 +135,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="latestActivityTaskTimestamp">The value to set for the LatestActivityTaskTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionDetail WithLatestActivityTaskTimestamp(DateTime latestActivityTaskTimestamp)
         {
             this.latestActivityTaskTimestamp = latestActivityTaskTimestamp;
@@ -170,6 +174,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="latestExecutionContext">The value to set for the LatestExecutionContext property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionDetail WithLatestExecutionContext(string latestExecutionContext)
         {
             this.latestExecutionContext = latestExecutionContext;

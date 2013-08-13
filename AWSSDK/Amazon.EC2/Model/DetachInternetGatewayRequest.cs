@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// go to Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DetachInternetGatewayRequest
+    public class DetachInternetGatewayRequest : EC2Request
     {    
         private string internetGatewayIdField;
         private string vpcIdField;
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to attach.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachInternetGatewayRequest WithInternetGatewayId(string internetGatewayId)
         {
             this.internetGatewayIdField = internetGatewayId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachInternetGatewayRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

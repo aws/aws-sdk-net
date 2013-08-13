@@ -48,6 +48,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -76,6 +77,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -104,6 +106,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithCreationDate(string creationDate)
         {
             this.creationDate = creationDate;
@@ -133,6 +136,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="lastInventoryDate">The value to set for the LastInventoryDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithLastInventoryDate(string lastInventoryDate)
         {
             this.lastInventoryDate = lastInventoryDate;
@@ -162,6 +166,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="numberOfArchives">The value to set for the NumberOfArchives property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithNumberOfArchives(long numberOfArchives)
         {
             this.numberOfArchives = numberOfArchives;
@@ -191,6 +196,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sizeInBytes">The value to set for the SizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultResult WithSizeInBytes(long sizeInBytes)
         {
             this.sizeInBytes = sizeInBytes;

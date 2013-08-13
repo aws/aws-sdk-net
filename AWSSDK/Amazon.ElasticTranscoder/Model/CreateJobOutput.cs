@@ -59,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithKey(string key)
         {
             this.key = key;
@@ -108,6 +109,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailPattern">The value to set for the ThumbnailPattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithThumbnailPattern(string thumbnailPattern)
         {
             this.thumbnailPattern = thumbnailPattern;
@@ -147,6 +149,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="rotate">The value to set for the Rotate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithRotate(string rotate)
         {
             this.rotate = rotate;
@@ -185,6 +188,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presetId">The value to set for the PresetId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithPresetId(string presetId)
         {
             this.presetId = presetId;
@@ -223,6 +227,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithSegmentDuration(string segmentDuration)
         {
             this.segmentDuration = segmentDuration;
@@ -250,6 +255,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="watermarks">The values to add to the Watermarks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithWatermarks(params JobWatermark[] watermarks)
         {
             foreach (JobWatermark element in watermarks)
@@ -265,6 +271,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="watermarks">The values to add to the Watermarks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithWatermarks(IEnumerable<JobWatermark> watermarks)
         {
             foreach (JobWatermark element in watermarks)

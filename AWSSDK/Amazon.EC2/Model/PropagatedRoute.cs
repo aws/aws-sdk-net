@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="destinationCidrBlock">CIDR</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PropagatedRoute WithDestinationCidrBlock(string destinationCidrBlock)
         {
             this.destinationCidrBlockField = destinationCidrBlock;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="gatewayId">Gateway Id</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PropagatedRoute WithGatewayId(string gatewayId)
         {
             this.gatewayIdField = gatewayId;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Route status</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PropagatedRoute WithStatus(string status)
         {
             this.statusField = status;
@@ -141,6 +144,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceId">DOCS_TODO</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PropagatedRoute WithSourceId(string sourceId)
         {
             this.sourceIdField = sourceId;

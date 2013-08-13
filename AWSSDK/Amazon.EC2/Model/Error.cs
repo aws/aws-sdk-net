@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">Type of error</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Error WithType(string type)
         {
             this.typeField = type;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">Error code</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Error WithCode(string code)
         {
             this.codeField = code;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="message">Error message</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Error WithMessage(string message)
         {
             this.messageField = message;
@@ -141,6 +144,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="detail">Details</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Error WithDetail(Object detail)
         {
             this.detailField = detail;

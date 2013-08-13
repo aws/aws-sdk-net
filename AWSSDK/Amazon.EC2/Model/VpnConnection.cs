@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpnConnectionId">The ID of the VPN connection</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithVpnConnectionId(string vpnConnectionId)
         {
             this.vpnConnectionIdField = vpnConnectionId;
@@ -89,6 +90,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnConnectionState">The current state of the VPN connection
         /// (pending, available, deleting, deleted)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithVpnConnectionState(string vpnConnectionState)
         {
             this.vpnConnectionStateField = vpnConnectionState;
@@ -122,6 +124,7 @@ namespace Amazon.EC2.Model
         /// connection's customer gateway (in the
         /// native XML format).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithCustomerGatewayConfiguration(string customerGatewayConfiguration)
         {
             this.customerGatewayConfigurationField = customerGatewayConfiguration;
@@ -152,6 +155,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The type of VPN connection (ipsec.1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithType(string type)
         {
             this.typeField = type;
@@ -183,6 +187,7 @@ namespace Amazon.EC2.Model
         /// <param name="customerGatewayId">ID of the customer gateway at your end of the
         /// VPN connection</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithCustomerGatewayId(string customerGatewayId)
         {
             this.customerGatewayIdField = customerGatewayId;
@@ -214,6 +219,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnGatewayId">ID of the VPN gateway at the VPC end of the VPN
         /// connection</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithVpnGatewayId(string vpnGatewayId)
         {
             this.vpnGatewayIdField = vpnGatewayId;
@@ -251,6 +257,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Tag property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -292,6 +299,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The virtual private gateways.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithVgwTelemetry(params VpnTunnelTelemetry[] list)
         {
             foreach (VpnTunnelTelemetry item in list)
@@ -327,6 +335,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="staticRoutesOnly">Static routes only value</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithStaticRoutesOnly(bool staticRoutesOnly)
         {
             this.staticRoutesOnlyField = staticRoutesOnly;
@@ -364,6 +373,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Set of static routes</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnConnection WithRoutes(params VpnStaticRoute[] list)
         {
             foreach (VpnStaticRoute item in list)

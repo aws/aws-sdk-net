@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HostedZone WithId(string id)
         {
             this.id = id;
@@ -96,6 +97,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HostedZone WithName(string name)
         {
             this.name = name;
@@ -133,6 +135,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HostedZone WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -161,6 +164,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="config">The value to set for the Config property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HostedZone WithConfig(HostedZoneConfig config)
         {
             this.config = config;
@@ -189,6 +193,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecordSetCount">The value to set for the ResourceRecordSetCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HostedZone WithResourceRecordSetCount(long resourceRecordSetCount)
         {
             this.resourceRecordSetCount = resourceRecordSetCount;

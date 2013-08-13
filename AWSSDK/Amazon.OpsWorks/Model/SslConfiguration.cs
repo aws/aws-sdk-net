@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="certificate">The value to set for the Certificate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SslConfiguration WithCertificate(string certificate)
         {
             this.certificate = certificate;
@@ -73,6 +74,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="privateKey">The value to set for the PrivateKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SslConfiguration WithPrivateKey(string privateKey)
         {
             this.privateKey = privateKey;
@@ -101,6 +103,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="chain">The value to set for the Chain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SslConfiguration WithChain(string chain)
         {
             this.chain = chain;

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeImageAttributeRequest
+    public class DescribeImageAttributeRequest : EC2Request
     {    
         private string imageIdField;
         private string attributeField;
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">The ID of the AMI for which an attribute will
         /// be described.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImageAttributeRequest WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImageAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

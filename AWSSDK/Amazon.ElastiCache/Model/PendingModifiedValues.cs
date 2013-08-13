@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="numCacheNodes">The value to set for the NumCacheNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithNumCacheNodes(int numCacheNodes)
         {
             this.numCacheNodes = numCacheNodes;
@@ -72,6 +73,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithCacheNodeIdsToRemove(params string[] cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -87,6 +89,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithCacheNodeIdsToRemove(IEnumerable<string> cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -118,6 +121,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;

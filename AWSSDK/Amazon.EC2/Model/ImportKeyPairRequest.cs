@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// - SSH public key file format as specified in RFC4716.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ImportKeyPairRequest
+    public class ImportKeyPairRequest : EC2Request
     {    
         private string keyNameField;
         private string publicKeyMaterialField;
@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">The unique name for the key pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportKeyPairRequest WithKeyName(string keyName)
         {
             this.keyNameField = keyName;
@@ -95,6 +96,7 @@ namespace Amazon.EC2.Model
         /// <param name="publicKeyMaterial">The public key. This key must be base64 encoded before calling
         /// this operation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportKeyPairRequest WithPublicKeyMaterial(string publicKeyMaterial)
         {
             this.publicKeyMaterialField = publicKeyMaterial;

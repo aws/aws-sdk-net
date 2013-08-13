@@ -64,6 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithName(string name)
         {
             this.name = name;
@@ -111,6 +112,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="uniqueId">The value to set for the UniqueId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithUniqueId(string uniqueId)
         {
             this.uniqueId = uniqueId;
@@ -152,6 +154,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithDescription(string description)
         {
             this.description = description;

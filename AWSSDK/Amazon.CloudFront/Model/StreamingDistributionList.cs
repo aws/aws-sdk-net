@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithMarker(string marker)
         {
             this.marker = marker;
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="nextMarker">The value to set for the NextMarker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithNextMarker(string nextMarker)
         {
             this.nextMarker = nextMarker;
@@ -105,6 +107,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -134,6 +137,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -162,6 +166,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="quantity">The value to set for the Quantity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithQuantity(int quantity)
         {
             this.quantity = quantity;
@@ -189,6 +194,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithItems(params StreamingDistributionSummary[] items)
         {
             foreach (StreamingDistributionSummary element in items)
@@ -204,6 +210,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionList WithItems(IEnumerable<StreamingDistributionSummary> items)
         {
             foreach (StreamingDistributionSummary element in items)

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// capacity and current Spot Instance requests.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CancelSpotInstanceRequestsRequest
+    public class CancelSpotInstanceRequestsRequest : EC2Request
     {    
         private List<string> spotInstanceRequestIdField;
 
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">The list of Spot Instance requests that you
         /// want to cancel.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelSpotInstanceRequestsRequest WithSpotInstanceRequestId(params string[] list)
         {
             foreach (string item in list)

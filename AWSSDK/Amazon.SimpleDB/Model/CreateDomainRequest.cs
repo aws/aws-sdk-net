@@ -55,6 +55,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="domainName">The name of the domain to create. The name can range between 3 and 255 characters
         /// and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDomainRequest WithDomainName(string domainName)
         {
             this.domainNameField = domainName;

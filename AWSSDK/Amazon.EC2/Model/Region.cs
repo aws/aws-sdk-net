@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="regionName">Name of the region.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Region WithRegionName(string regionName)
         {
             this.regionNameField = regionName;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="endpoint">Region service endpoint.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Region WithEndpoint(string endpoint)
         {
             this.endpointField = endpoint;

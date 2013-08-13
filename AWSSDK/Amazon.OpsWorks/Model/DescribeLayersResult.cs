@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layers">The values to add to the Layers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLayersResult WithLayers(params Layer[] layers)
         {
             foreach (Layer element in layers)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layers">The values to add to the Layers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLayersResult WithLayers(IEnumerable<Layer> layers)
         {
             foreach (Layer element in layers)

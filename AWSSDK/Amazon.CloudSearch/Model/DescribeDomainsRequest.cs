@@ -47,6 +47,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainNames">The values to add to the DomainNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDomainsRequest WithDomainNames(params string[] domainNames)
         {
             foreach (string element in domainNames)
@@ -62,6 +63,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainNames">The values to add to the DomainNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDomainsRequest WithDomainNames(IEnumerable<string> domainNames)
         {
             foreach (string element in domainNames)

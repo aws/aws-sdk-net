@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appId">The value to set for the AppId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithAppId(string appId)
         {
             this.appId = appId;
@@ -107,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploymentIds">The values to add to the DeploymentIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithDeploymentIds(params string[] deploymentIds)
         {
             foreach (string element in deploymentIds)
@@ -122,6 +125,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploymentIds">The values to add to the DeploymentIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithDeploymentIds(IEnumerable<string> deploymentIds)
         {
             foreach (string element in deploymentIds)

@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateMetadataList">The values to add to the ServerCertificateMetadataList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListServerCertificatesResult WithServerCertificateMetadataList(params ServerCertificateMetadata[] serverCertificateMetadataList)
         {
             foreach (ServerCertificateMetadata element in serverCertificateMetadataList)
@@ -59,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateMetadataList">The values to add to the ServerCertificateMetadataList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListServerCertificatesResult WithServerCertificateMetadataList(IEnumerable<ServerCertificateMetadata> serverCertificateMetadataList)
         {
             foreach (ServerCertificateMetadata element in serverCertificateMetadataList)
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListServerCertificatesResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListServerCertificatesResult WithMarker(string marker)
         {
             this.marker = marker;

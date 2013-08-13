@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -94,6 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithDescription(string description)
         {
             this.description = description;
@@ -131,6 +133,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -159,6 +162,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sourceBundle">The value to set for the SourceBundle property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithSourceBundle(S3Location sourceBundle)
         {
             this.sourceBundle = sourceBundle;
@@ -187,6 +191,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateCreated">The value to set for the DateCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithDateCreated(DateTime dateCreated)
         {
             this.dateCreated = dateCreated;
@@ -215,6 +220,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateUpdated">The value to set for the DateUpdated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationVersionDescription WithDateUpdated(DateTime dateUpdated)
         {
             this.dateUpdated = dateUpdated;

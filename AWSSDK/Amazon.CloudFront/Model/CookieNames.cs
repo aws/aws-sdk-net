@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="quantity">The value to set for the Quantity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookieNames WithQuantity(int quantity)
         {
             this.quantity = quantity;
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookieNames WithItems(params string[] items)
         {
             foreach (string element in items)
@@ -87,6 +89,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookieNames WithItems(IEnumerable<string> items)
         {
             foreach (string element in items)

@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -71,6 +72,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodes">The values to add to the ReservedNodes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodesResult WithReservedNodes(params ReservedNode[] reservedNodes)
         {
             foreach (ReservedNode element in reservedNodes)
@@ -86,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodes">The values to add to the ReservedNodes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodesResult WithReservedNodes(IEnumerable<ReservedNode> reservedNodes)
         {
             foreach (ReservedNode element in reservedNodes)

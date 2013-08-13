@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDBInstanceRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -85,6 +86,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="skipFinalSnapshot">The value to set for the SkipFinalSnapshot property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDBInstanceRequest WithSkipFinalSnapshot(bool skipFinalSnapshot)
         {
             this.skipFinalSnapshot = skipFinalSnapshot;
@@ -115,6 +117,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="finalDBSnapshotIdentifier">The value to set for the FinalDBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDBInstanceRequest WithFinalDBSnapshotIdentifier(string finalDBSnapshotIdentifier)
         {
             this.finalDBSnapshotIdentifier = finalDBSnapshotIdentifier;

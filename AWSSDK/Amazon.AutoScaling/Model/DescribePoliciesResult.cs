@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithScalingPolicies(params ScalingPolicy[] scalingPolicies)
         {
             foreach (ScalingPolicy element in scalingPolicies)
@@ -58,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithScalingPolicies(IEnumerable<ScalingPolicy> scalingPolicies)
         {
             foreach (ScalingPolicy element in scalingPolicies)
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

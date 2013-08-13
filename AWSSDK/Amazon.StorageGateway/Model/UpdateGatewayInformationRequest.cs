@@ -60,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -102,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayName">The value to set for the GatewayName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayName(string gatewayName)
         {
             this.gatewayName = gatewayName;
@@ -140,6 +142,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayTimezone">The value to set for the GatewayTimezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayTimezone(string gatewayTimezone)
         {
             this.gatewayTimezone = gatewayTimezone;

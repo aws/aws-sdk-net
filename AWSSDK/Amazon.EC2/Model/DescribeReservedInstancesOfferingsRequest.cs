@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud Developer Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeReservedInstancesOfferingsRequest
+    public class DescribeReservedInstancesOfferingsRequest : EC2Request
     {    
         private List<string> reservedInstancesIdField;
         private string instanceTypeField;
@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">ID of the Reserved Instances to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithReservedInstancesId(params string[] list)
         {
             foreach (string item in list)
@@ -108,6 +109,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceType">The instance type on which the Reserved
         /// Instance can be used.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -139,6 +141,7 @@ namespace Amazon.EC2.Model
         /// <param name="availabilityZone">The Availability Zone in which the Reserved
         /// Instance can be used.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -173,6 +176,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productDescription">The Reserved Instance description.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithProductDescription(string productDescription)
         {
             this.productDescriptionField = productDescription;
@@ -217,6 +221,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)
@@ -256,6 +261,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceTenancy">Instance Tenancy. Valid Values: default | dedicated</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithInstanceTenancy(string instanceTenancy)
         {
             this.instanceTenancyField = instanceTenancy;
@@ -287,6 +293,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="offeringType">Offering type. Valid values: Heavy Utilization | Medium Utilization | Light Utilization</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithOfferingType(string offeringType)
         {
             this.offeringTypeField = offeringType;
@@ -317,6 +324,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="includeMarketplace">True to include Marketplace listings</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithIncludeMarketplace(bool includeMarketplace)
         {
             this.includeMarketplaceField = includeMarketplace;
@@ -348,6 +356,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="minDuration">Duration in seconds; default: 2592000 (1 month)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithMinDuration(Decimal minDuration)
         {
             this.minDurationField = minDuration;
@@ -381,6 +390,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxDuration">Duration in seconds; default: 94608000 (3 years)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithMaxDuration(Decimal maxDuration)
         {
             this.maxDurationField = maxDuration;
@@ -412,6 +422,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxInstanceCount">Maximum instance count; default - 20</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithMaxInstanceCount(int maxInstanceCount)
         {
             this.maxInstanceCountField = maxInstanceCount;
@@ -443,6 +454,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxResults">Maximum offerings to return; Default: 1000, Maximum: 1000</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithMaxResults(int maxResults)
         {
             this.maxResultsField = maxResults;
@@ -474,6 +486,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="nextToken">Token for next page; first page is returned if empty string</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesOfferingsRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;

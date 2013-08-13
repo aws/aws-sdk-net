@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Acquires an elastic IP address for use with your account or your VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class AllocateAddressRequest
+    public class AllocateAddressRequest : EC2Request
     {    
         private string domainField;
 
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="domain">The domain of the address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AllocateAddressRequest WithDomain(string domain)
         {
             this.domainField = domain;

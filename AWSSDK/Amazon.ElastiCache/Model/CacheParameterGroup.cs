@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroup WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -73,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupFamily">The value to set for the CacheParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroup WithCacheParameterGroupFamily(string cacheParameterGroupFamily)
         {
             this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -101,6 +103,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroup WithDescription(string description)
         {
             this.description = description;

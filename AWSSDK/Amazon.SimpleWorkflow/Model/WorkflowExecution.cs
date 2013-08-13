@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowId">The value to set for the WorkflowId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecution WithWorkflowId(string workflowId)
         {
             this.workflowId = workflowId;
@@ -90,6 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="runId">The value to set for the RunId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecution WithRunId(string runId)
         {
             this.runId = runId;

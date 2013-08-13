@@ -62,6 +62,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="role">The value to set for the Role property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleRequest WithRole(string role)
         {
             this.role = role;
@@ -99,6 +100,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="inputBucket">The value to set for the InputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleRequest WithInputBucket(string inputBucket)
         {
             this.inputBucket = inputBucket;
@@ -136,6 +138,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputBucket">The value to set for the OutputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleRequest WithOutputBucket(string outputBucket)
         {
             this.outputBucket = outputBucket;
@@ -172,6 +175,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="topics">The values to add to the Topics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleRequest WithTopics(params string[] topics)
         {
             foreach (string element in topics)
@@ -187,6 +191,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="topics">The values to add to the Topics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleRequest WithTopics(IEnumerable<string> topics)
         {
             foreach (string element in topics)

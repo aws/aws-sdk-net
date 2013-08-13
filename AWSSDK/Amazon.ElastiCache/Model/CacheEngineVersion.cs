@@ -47,6 +47,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheEngineVersion WithEngine(string engine)
         {
             this.engine = engine;
@@ -75,6 +76,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheEngineVersion WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -103,6 +105,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupFamily">The value to set for the CacheParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheEngineVersion WithCacheParameterGroupFamily(string cacheParameterGroupFamily)
         {
             this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -131,6 +134,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheEngineDescription">The value to set for the CacheEngineDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheEngineVersion WithCacheEngineDescription(string cacheEngineDescription)
         {
             this.cacheEngineDescription = cacheEngineDescription;
@@ -159,6 +163,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheEngineVersionDescription">The value to set for the CacheEngineVersionDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheEngineVersion WithCacheEngineVersionDescription(string cacheEngineVersionDescription)
         {
             this.cacheEngineVersionDescription = cacheEngineVersionDescription;

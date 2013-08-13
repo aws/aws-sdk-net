@@ -72,6 +72,7 @@ namespace Amazon.SimpleDB.Model
         /// See http://docs.amazonwebservices.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html for more information
         /// on building expressions.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectRequest WithSelectExpression(string selectExpression)
         {
             this.selectExpressionField = selectExpression;
@@ -103,6 +104,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="nextToken">String that tells Amazon SimpleDB where to start the next list of item names.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;
@@ -136,6 +138,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="consistentRead">If set to true, this flag ensures that the most recently written data is
         /// returned.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectRequest WithConsistentRead(bool consistentRead)
         {
             this.consistentReadField = consistentRead;

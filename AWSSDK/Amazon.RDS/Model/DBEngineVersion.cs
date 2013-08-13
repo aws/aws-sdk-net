@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithEngine(string engine)
         {
             this.engine = engine;
@@ -77,6 +78,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -105,6 +107,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -133,6 +136,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBEngineDescription">The value to set for the DBEngineDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithDBEngineDescription(string dBEngineDescription)
         {
             this.dBEngineDescription = dBEngineDescription;
@@ -161,6 +165,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBEngineVersionDescription">The value to set for the DBEngineVersionDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithDBEngineVersionDescription(string dBEngineVersionDescription)
         {
             this.dBEngineVersionDescription = dBEngineVersionDescription;
@@ -190,6 +195,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="defaultCharacterSet">The value to set for the DefaultCharacterSet property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithDefaultCharacterSet(CharacterSet defaultCharacterSet)
         {
             this.defaultCharacterSet = defaultCharacterSet;
@@ -217,6 +223,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="supportedCharacterSets">The values to add to the SupportedCharacterSets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithSupportedCharacterSets(params CharacterSet[] supportedCharacterSets)
         {
             foreach (CharacterSet element in supportedCharacterSets)
@@ -232,6 +239,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="supportedCharacterSets">The values to add to the SupportedCharacterSets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBEngineVersion WithSupportedCharacterSets(IEnumerable<CharacterSet> supportedCharacterSets)
         {
             foreach (CharacterSet element in supportedCharacterSets)

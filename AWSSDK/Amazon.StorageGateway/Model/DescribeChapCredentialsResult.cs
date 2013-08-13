@@ -47,6 +47,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="chapCredentials">The values to add to the ChapCredentials collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeChapCredentialsResult WithChapCredentials(params ChapInfo[] chapCredentials)
         {
             foreach (ChapInfo element in chapCredentials)
@@ -62,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="chapCredentials">The values to add to the ChapCredentials collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeChapCredentialsResult WithChapCredentials(IEnumerable<ChapInfo> chapCredentials)
         {
             foreach (ChapInfo element in chapCredentials)

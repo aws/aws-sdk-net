@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecution">The value to set for the WorkflowExecution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChildWorkflowExecutionStartedEventAttributes WithWorkflowExecution(WorkflowExecution workflowExecution)
         {
             this.workflowExecution = workflowExecution;
@@ -73,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowType">The value to set for the WorkflowType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChildWorkflowExecutionStartedEventAttributes WithWorkflowType(WorkflowType workflowType)
         {
             this.workflowType = workflowType;
@@ -103,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="initiatedEventId">The value to set for the InitiatedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChildWorkflowExecutionStartedEventAttributes WithInitiatedEventId(long initiatedEventId)
         {
             this.initiatedEventId = initiatedEventId;

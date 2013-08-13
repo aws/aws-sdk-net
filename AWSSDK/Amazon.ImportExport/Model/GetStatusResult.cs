@@ -58,6 +58,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -95,6 +96,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobType">The value to set for the JobType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithJobType(string jobType)
         {
             this.jobType = jobType;
@@ -123,6 +125,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="awsShippingAddress">The value to set for the AwsShippingAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithAwsShippingAddress(string awsShippingAddress)
         {
             this.awsShippingAddress = awsShippingAddress;
@@ -151,6 +154,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="locationCode">The value to set for the LocationCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithLocationCode(string locationCode)
         {
             this.locationCode = locationCode;
@@ -179,6 +183,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="locationMessage">The value to set for the LocationMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithLocationMessage(string locationMessage)
         {
             this.locationMessage = locationMessage;
@@ -207,6 +212,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="progressCode">The value to set for the ProgressCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithProgressCode(string progressCode)
         {
             this.progressCode = progressCode;
@@ -235,6 +241,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="progressMessage">The value to set for the ProgressMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithProgressMessage(string progressMessage)
         {
             this.progressMessage = progressMessage;
@@ -263,6 +270,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="carrier">The value to set for the Carrier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithCarrier(string carrier)
         {
             this.carrier = carrier;
@@ -292,6 +300,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="trackingNumber">The value to set for the TrackingNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithTrackingNumber(string trackingNumber)
         {
             this.trackingNumber = trackingNumber;
@@ -320,6 +329,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="logBucket">The value to set for the LogBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithLogBucket(string logBucket)
         {
             this.logBucket = logBucket;
@@ -348,6 +358,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="logKey">The value to set for the LogKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithLogKey(string logKey)
         {
             this.logKey = logKey;
@@ -376,6 +387,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="errorCount">The value to set for the ErrorCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithErrorCount(int errorCount)
         {
             this.errorCount = errorCount;
@@ -405,6 +417,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="signature">The value to set for the Signature property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithSignature(string signature)
         {
             this.signature = signature;
@@ -434,6 +447,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="signatureFileContents">The value to set for the SignatureFileContents property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithSignatureFileContents(string signatureFileContents)
         {
             this.signatureFileContents = signatureFileContents;
@@ -462,6 +476,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="currentManifest">The value to set for the CurrentManifest property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithCurrentManifest(string currentManifest)
         {
             this.currentManifest = currentManifest;
@@ -490,6 +505,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStatusResult WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;

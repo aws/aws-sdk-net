@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithParameters(params TemplateParameter[] parameters)
         {
             foreach (TemplateParameter element in parameters)
@@ -60,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithParameters(IEnumerable<TemplateParameter> parameters)
         {
             foreach (TemplateParameter element in parameters)
@@ -91,6 +93,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithDescription(string description)
         {
             this.description = description;
@@ -120,6 +123,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithCapabilities(params string[] capabilities)
         {
             foreach (string element in capabilities)
@@ -135,6 +139,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithCapabilities(IEnumerable<string> capabilities)
         {
             foreach (string element in capabilities)
@@ -166,6 +171,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilitiesReason">The value to set for the CapabilitiesReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateResult WithCapabilitiesReason(string capabilitiesReason)
         {
             this.capabilitiesReason = capabilitiesReason;

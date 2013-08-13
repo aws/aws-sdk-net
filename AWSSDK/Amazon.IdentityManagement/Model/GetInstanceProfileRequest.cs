@@ -60,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileName">The value to set for the InstanceProfileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInstanceProfileRequest WithInstanceProfileName(string instanceProfileName)
         {
             this.instanceProfileName = instanceProfileName;

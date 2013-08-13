@@ -49,6 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="offeringId">The value to set for the OfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithOfferingId(string offeringId)
         {
             this.offeringId = offeringId;
@@ -77,6 +78,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithRegion(string region)
         {
             this.region = region;
@@ -105,6 +107,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithLocation(string location)
         {
             this.location = location;
@@ -133,6 +136,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="offeringName">The value to set for the OfferingName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithOfferingName(string offeringName)
         {
             this.offeringName = offeringName;
@@ -161,6 +165,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithDescription(string description)
         {
             this.description = description;
@@ -189,6 +194,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="bandwidth">The value to set for the Bandwidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithBandwidth(string bandwidth)
         {
             this.bandwidth = bandwidth;
@@ -216,6 +222,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionCosts">The values to add to the ConnectionCosts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithConnectionCosts(params ConnectionCost[] connectionCosts)
         {
             foreach (ConnectionCost element in connectionCosts)
@@ -231,6 +238,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionCosts">The values to add to the ConnectionCosts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Offering WithConnectionCosts(IEnumerable<ConnectionCost> connectionCosts)
         {
             foreach (ConnectionCost element in connectionCosts)

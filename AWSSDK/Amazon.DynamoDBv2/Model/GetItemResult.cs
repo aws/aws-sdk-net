@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Item dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemResult WithItem(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -78,6 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The value to set for the ConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemResult WithConsumedCapacity(ConsumedCapacity consumedCapacity)
         {
             this.consumedCapacity = consumedCapacity;

@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDefaultSearchFieldRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -93,6 +94,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultSearchField">The value to set for the DefaultSearchField property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDefaultSearchFieldRequest WithDefaultSearchField(string defaultSearchField)
         {
             this.defaultSearchField = defaultSearchField;

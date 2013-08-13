@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZone">The value to set for the HostedZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetHostedZoneResult WithHostedZone(HostedZone hostedZone)
         {
             this.hostedZone = hostedZone;
@@ -72,6 +73,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="delegationSet">The value to set for the DelegationSet property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetHostedZoneResult WithDelegationSet(DelegationSet delegationSet)
         {
             this.delegationSet = delegationSet;

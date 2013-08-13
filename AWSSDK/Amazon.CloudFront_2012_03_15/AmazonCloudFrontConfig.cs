@@ -62,6 +62,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="serviceURL">ServiceURL property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithServiceURL(string serviceURL)
         {
             this.serviceURL = serviceURL;
@@ -91,6 +92,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="userAgent">UserAgent property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithUserAgent(string userAgent)
         {
             this.userAgent = userAgent;
@@ -120,6 +122,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="proxyHost">ProxyHost property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithProxyHost(string proxyHost)
         {
             this.proxyHost = proxyHost;
@@ -149,6 +152,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="proxyPort">ProxyPort property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithProxyPort(int proxyPort)
         {
             this.proxyPort = proxyPort;
@@ -186,6 +190,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="proxyCredentials">ProxyCredentials property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithProxyCredentials(ICredentials proxyCredentials)
         {
             this.proxyCredentials = proxyCredentials;
@@ -215,6 +220,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="maxErrorRetry">MaxErrorRetry property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithMaxErrorRetry(int maxErrorRetry)
         {
             this.maxErrorRetry = maxErrorRetry;
@@ -274,6 +280,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// recommended unless absolutely necessary.
         /// </remarks>
         /// <seealso cref="T:System.Security.SecureString"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonCloudFrontConfig WithUseSecureStringForAwsSecretKey(bool fSecure)
         {
             fUseSecureString = fSecure;

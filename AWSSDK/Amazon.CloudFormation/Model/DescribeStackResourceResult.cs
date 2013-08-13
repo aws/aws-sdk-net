@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackResourceDetail">The value to set for the StackResourceDetail property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourceResult WithStackResourceDetail(StackResourceDetail stackResourceDetail)
         {
             this.stackResourceDetail = stackResourceDetail;

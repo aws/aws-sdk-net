@@ -61,6 +61,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="document">The value to set for the Document property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceIdentity WithDocument(string document)
         {
             this.document = document;
@@ -102,6 +103,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="signature">The value to set for the Signature property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceIdentity WithSignature(string signature)
         {
             this.signature = signature;

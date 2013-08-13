@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -77,6 +78,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupDescription">The value to set for the OptionGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithOptionGroupDescription(string optionGroupDescription)
         {
             this.optionGroupDescription = optionGroupDescription;
@@ -105,6 +107,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineName">The value to set for the EngineName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithEngineName(string engineName)
         {
             this.engineName = engineName;
@@ -133,6 +136,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="majorEngineVersion">The value to set for the MajorEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithMajorEngineVersion(string majorEngineVersion)
         {
             this.majorEngineVersion = majorEngineVersion;
@@ -160,6 +164,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="options">The values to add to the Options collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithOptions(params Option[] options)
         {
             foreach (Option element in options)
@@ -175,6 +180,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="options">The values to add to the Options collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithOptions(IEnumerable<Option> options)
         {
             foreach (Option element in options)
@@ -207,6 +213,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allowsVpcAndNonVpcInstanceMemberships">The value to set for the AllowsVpcAndNonVpcInstanceMemberships property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithAllowsVpcAndNonVpcInstanceMemberships(bool allowsVpcAndNonVpcInstanceMemberships)
         {
             this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
@@ -237,6 +244,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroup WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;

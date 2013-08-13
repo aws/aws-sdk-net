@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(params string[] instanceIds)
         {
             foreach (string element in instanceIds)
@@ -61,6 +62,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
             foreach (string element in instanceIds)

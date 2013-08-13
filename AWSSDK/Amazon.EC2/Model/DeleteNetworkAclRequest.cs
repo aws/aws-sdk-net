@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteNetworkAclRequest
+    public class DeleteNetworkAclRequest : EC2Request
     {    
         private string networkAclIdField;
 
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkAclId">The ID of the network ACL to be deleted.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteNetworkAclRequest WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;

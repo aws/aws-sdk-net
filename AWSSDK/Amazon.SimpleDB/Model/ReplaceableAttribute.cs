@@ -57,6 +57,7 @@ namespace Amazon.SimpleDB.Model
         /// in XML documents. Control characters and any sequences that are not valid in XML are not allowed. These
         /// strings can be up to 1024 bytes long.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceableAttribute WithName(string name)
         {
             this.nameField = name;
@@ -94,6 +95,7 @@ namespace Amazon.SimpleDB.Model
         /// XML documents. Control characters and any sequences that are not valid in XML are not allowed. These strings
         /// can be up to 1024 bytes long.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceableAttribute WithValue(string value)
         {
             this.valueField = value;
@@ -124,6 +126,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="replace">Replace property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceableAttribute WithReplace(bool replace)
         {
             this.replaceField = replace;

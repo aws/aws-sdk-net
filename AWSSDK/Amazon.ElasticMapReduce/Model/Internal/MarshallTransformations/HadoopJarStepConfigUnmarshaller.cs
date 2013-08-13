@@ -12,81 +12,105 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   HadoopJarStepConfig Unmarshaller
-     /// </summary>
-    internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>, IUnmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public HadoopJarStepConfig Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// HadoopJarStepConfigUnmarshaller
+      /// </summary>
+      internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>, IUnmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext>
+      {
+        HadoopJarStepConfig IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
+          hadoopJarStepConfig.Properties = null;
+                        hadoopJarStepConfig.Args = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Properties/member", targetDepth))
-                    {
-                        hadoopJarStepConfig.Properties.Add(KeyValueUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Jar", targetDepth))
-                    {
-                        hadoopJarStepConfig.Jar = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("MainClass", targetDepth))
-                    {
-                        hadoopJarStepConfig.MainClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Args/member", targetDepth))
-                    {
-                        hadoopJarStepConfig.Args.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("Properties", targetDepth))
+              {
+                hadoopJarStepConfig.Properties = new List<KeyValue>();
+                        KeyValueUnmarshaller unmarshaller = KeyValueUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     hadoopJarStepConfig.Properties.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                continue;
+              }
+  
+              if (context.TestExpression("Jar", targetDepth))
+              {
+                hadoopJarStepConfig.Jar = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("MainClass", targetDepth))
+              {
+                hadoopJarStepConfig.MainClass = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Args", targetDepth))
+              {
+                hadoopJarStepConfig.Args = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     hadoopJarStepConfig.Args.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return hadoopJarStepConfig;
                 }
             }
-                        
-
+          
 
             return hadoopJarStepConfig;
         }
 
-        public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static HadoopJarStepConfigUnmarshaller instance;
-
-        public static HadoopJarStepConfigUnmarshaller GetInstance() 
+        public static HadoopJarStepConfigUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new HadoopJarStepConfigUnmarshaller();
-
+            if (instance == null)
+                instance = new HadoopJarStepConfigUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

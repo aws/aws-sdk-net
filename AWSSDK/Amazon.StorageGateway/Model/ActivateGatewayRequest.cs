@@ -67,6 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="activationKey">The value to set for the ActivationKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayRequest WithActivationKey(string activationKey)
         {
             this.activationKey = activationKey;
@@ -109,6 +110,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayName">The value to set for the GatewayName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayRequest WithGatewayName(string gatewayName)
         {
             this.gatewayName = gatewayName;
@@ -147,6 +149,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayTimezone">The value to set for the GatewayTimezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayRequest WithGatewayTimezone(string gatewayTimezone)
         {
             this.gatewayTimezone = gatewayTimezone;
@@ -188,6 +191,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayRegion">The value to set for the GatewayRegion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayRequest WithGatewayRegion(string gatewayRegion)
         {
             this.gatewayRegion = gatewayRegion;
@@ -226,6 +230,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayType">The value to set for the GatewayType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayRequest WithGatewayType(string gatewayType)
         {
             this.gatewayType = gatewayType;

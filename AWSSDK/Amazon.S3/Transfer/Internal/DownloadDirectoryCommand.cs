@@ -112,7 +112,7 @@ namespace Amazon.S3.Transfer.Internal
                 downloadRequest.Key = s3o.Key;
                 downloadRequest.FilePath = Path.Combine(this._request.LocalDirectory, this._currentFile);
                 downloadRequest.Timeout = this._request.Timeout;
-                downloadRequest.WithSubscriber(new EventHandler<WriteObjectProgressArgs>(downloadedProgressEventCallback));
+                downloadRequest.WriteObjectProgressEvent += new EventHandler<WriteObjectProgressArgs>(downloadedProgressEventCallback);
 
 
                 DownloadCommand command = new DownloadCommand(this._s3Client, downloadRequest);

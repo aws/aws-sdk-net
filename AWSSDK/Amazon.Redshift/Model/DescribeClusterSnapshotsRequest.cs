@@ -56,6 +56,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -84,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -113,6 +115,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotType">The value to set for the SnapshotType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithSnapshotType(string snapshotType)
         {
             this.snapshotType = snapshotType;
@@ -143,6 +146,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -173,6 +177,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -203,6 +208,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -232,6 +238,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -261,6 +268,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithOwnerAccount(string ownerAccount)
         {
             this.ownerAccount = ownerAccount;

@@ -81,6 +81,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendRawEmailRequest WithSource(string source)
         {
             this.source = source;
@@ -108,6 +109,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="destinations">The values to add to the Destinations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendRawEmailRequest WithDestinations(params string[] destinations)
         {
             foreach (string element in destinations)
@@ -123,6 +125,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="destinations">The values to add to the Destinations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendRawEmailRequest WithDestinations(IEnumerable<string> destinations)
         {
             foreach (string element in destinations)
@@ -158,6 +161,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="rawMessage">The value to set for the RawMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendRawEmailRequest WithRawMessage(RawMessage rawMessage)
         {
             this.rawMessage = rawMessage;

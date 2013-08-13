@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSnapshotIdentifier">The value to set for the DBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSnapshotRequest WithDBSnapshotIdentifier(string dBSnapshotIdentifier)
         {
             this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -80,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSnapshotRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;

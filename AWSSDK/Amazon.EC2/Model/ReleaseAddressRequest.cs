@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
     /// the address.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ReleaseAddressRequest
+    public class ReleaseAddressRequest : EC2Request
     {    
         private string publicIpField;
         private string allocationIdField;
@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// <param name="publicIp">The IP address that you are releasing from
         /// your account.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReleaseAddressRequest WithPublicIp(string publicIp)
         {
             this.publicIpField = publicIp;
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// Default: None
         /// Condition: Required for VPC elastic IP addresses</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReleaseAddressRequest WithAllocationId(string allocationId)
         {
             this.allocationIdField = allocationId;

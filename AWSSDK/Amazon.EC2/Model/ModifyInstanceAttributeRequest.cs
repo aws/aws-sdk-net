@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Modifies an attribute of an instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyInstanceAttributeRequest
+    public class ModifyInstanceAttributeRequest : EC2Request
     {    
         private string instanceIdField;
         private string attributeField;
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceAttributeRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// "instanceInitiatedShutdownBehavior", "sourceDestCheck", "rootDeviceName",
         /// "blockDeviceMapping" and "ebsOptimized"</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="value">New value of the attribute.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceAttributeRequest WithValue(string value)
         {
             this.valueField = value;
@@ -159,6 +162,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Modifies the mapping that defines native device names
         /// to use when exposing virtual devices.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceAttributeRequest WithBlockDeviceMapping(params InstanceBlockDeviceMappingParameter[] list)
         {
             foreach (InstanceBlockDeviceMappingParameter item in list)
@@ -210,6 +214,7 @@ namespace Amazon.EC2.Model
         /// replaces the current set. You must specify at least one
         /// group, even if it's just the default security group in the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceAttributeRequest WithGroupId(params string[] list)
         {
             foreach (string item in list)

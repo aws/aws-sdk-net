@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceCount">The value to set for the InstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="thresholdsWaitTime">The value to set for the ThresholdsWaitTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithThresholdsWaitTime(int thresholdsWaitTime)
         {
             this.thresholdsWaitTime = thresholdsWaitTime;
@@ -127,6 +129,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ignoreMetricsTime">The value to set for the IgnoreMetricsTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithIgnoreMetricsTime(int ignoreMetricsTime)
         {
             this.ignoreMetricsTime = ignoreMetricsTime;
@@ -155,6 +158,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="cpuThreshold">The value to set for the CpuThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithCpuThreshold(double cpuThreshold)
         {
             this.cpuThreshold = cpuThreshold;
@@ -183,6 +187,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="memoryThreshold">The value to set for the MemoryThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithMemoryThreshold(double memoryThreshold)
         {
             this.memoryThreshold = memoryThreshold;
@@ -212,6 +217,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="loadThreshold">The value to set for the LoadThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithLoadThreshold(double loadThreshold)
         {
             this.loadThreshold = loadThreshold;

@@ -48,6 +48,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLayersRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -76,6 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLayersRequest WithLayerIds(params string[] layerIds)
         {
             foreach (string element in layerIds)
@@ -91,6 +93,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLayersRequest WithLayerIds(IEnumerable<string> layerIds)
         {
             foreach (string element in layerIds)

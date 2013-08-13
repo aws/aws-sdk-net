@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
         {
             this.sourceIdentifier = sourceIdentifier;
@@ -97,6 +98,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -126,6 +128,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -155,6 +158,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -183,6 +187,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithDuration(int duration)
         {
             this.duration = duration;
@@ -210,6 +215,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEventCategories(params string[] eventCategories)
         {
             foreach (string element in eventCategories)
@@ -225,6 +231,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEventCategories(IEnumerable<string> eventCategories)
         {
             foreach (string element in eventCategories)
@@ -258,6 +265,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -287,6 +295,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMarker(string marker)
         {
             this.marker = marker;

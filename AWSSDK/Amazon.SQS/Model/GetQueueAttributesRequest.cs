@@ -51,6 +51,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetQueueAttributesRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -94,6 +95,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="list">The attribute you want to get.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetQueueAttributesRequest WithAttributeName(params string[] list)
         {
             foreach (string item in list)

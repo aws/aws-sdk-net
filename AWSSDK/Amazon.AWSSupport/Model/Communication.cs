@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Communication WithCaseId(string caseId)
         {
             this.caseId = caseId;
@@ -75,6 +76,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Communication WithBody(string body)
         {
             this.body = body;
@@ -103,6 +105,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="submittedBy">The value to set for the SubmittedBy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Communication WithSubmittedBy(string submittedBy)
         {
             this.submittedBy = submittedBy;
@@ -131,6 +134,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="timeCreated">The value to set for the TimeCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Communication WithTimeCreated(string timeCreated)
         {
             this.timeCreated = timeCreated;

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Describes one or more Network Interfaces.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeNetworkInterfacesRequest
+    public class DescribeNetworkInterfacesRequest : EC2Request
     {
         private List<string> networkInterfaceIdField;
         private List<Filter> filterField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Network Interface Ids to describe</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNetworkInterfacesRequest WithNetworkInterfaceId(params string[] list)
         {
             foreach (string item in list)
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNetworkInterfacesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

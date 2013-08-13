@@ -14,46 +14,96 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Modify Instance Groups Request Marshaller
     /// </summary>       
-    public class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest>
+    internal class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
     {
-        public IRequest Marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest)
+        
+
+        public IRequest Marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
         {
+
             IRequest request = new DefaultRequest(modifyInstanceGroupsRequest, "AmazonElasticMapReduce");
-            request.Parameters.Add("Action", "ModifyInstanceGroups");
-            request.Parameters.Add("Version", "2009-03-31");
+            string target = "ElasticMapReduce.ModifyInstanceGroups";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            if (modifyInstanceGroupsRequest != null)
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
             {
-                List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.InstanceGroups;
-                int instanceGroupsListIndex = 1;
-                foreach (InstanceGroupModifyConfig instanceGroupsListValue in instanceGroupsList)
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
                 {
-                    if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceGroupId())
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
-                        request.Parameters.Add("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceGroupId", StringUtils.FromString(instanceGroupsListValue.InstanceGroupId));
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
-                    if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount())
+                    else
                     {
-                        request.Parameters.Add("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.FromInt(instanceGroupsListValue.InstanceCount));
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
-
-                    instanceGroupsListIndex++;
                 }
             }
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
+            using (StringWriter stringWriter = new StringWriter())
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                
+
+                if (modifyInstanceGroupsRequest != null && modifyInstanceGroupsRequest.InstanceGroups != null && modifyInstanceGroupsRequest.InstanceGroups.Count > 0)
+                {
+                    List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.InstanceGroups;
+                    writer.WritePropertyName("InstanceGroups");
+                    writer.WriteArrayStart();
+
+                    foreach (InstanceGroupModifyConfig instanceGroupsListValue in instanceGroupsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceGroupId()) 
+                        {
+                            writer.WritePropertyName("InstanceGroupId");
+                            writer.Write(instanceGroupsListValue.InstanceGroupId);
+                        }
+                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
+                        {
+                            writer.WritePropertyName("InstanceCount");
+                            writer.Write(instanceGroupsListValue.InstanceCount);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+        
 
             return request;
         }

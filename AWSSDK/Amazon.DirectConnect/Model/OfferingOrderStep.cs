@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="number">The value to set for the Number property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OfferingOrderStep WithNumber(string number)
         {
             this.number = number;
@@ -75,6 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OfferingOrderStep WithName(string name)
         {
             this.name = name;
@@ -104,6 +106,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OfferingOrderStep WithDescription(string description)
         {
             this.description = description;
@@ -132,6 +135,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="owner">The value to set for the Owner property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OfferingOrderStep WithOwner(string owner)
         {
             this.owner = owner;
@@ -160,6 +164,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="sla">The value to set for the Sla property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OfferingOrderStep WithSla(int sla)
         {
             this.sla = sla;

@@ -84,6 +84,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="roleArn">The value to set for the RoleArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithRoleArn(string roleArn)
         {
             this.roleArn = roleArn;
@@ -125,6 +126,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="roleSessionName">The value to set for the RoleSessionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithRoleSessionName(string roleSessionName)
         {
             this.roleSessionName = roleSessionName;
@@ -168,6 +170,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="policy">The value to set for the Policy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithPolicy(string policy)
         {
             this.policy = policy;
@@ -206,6 +209,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="durationSeconds">The value to set for the DurationSeconds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithDurationSeconds(int durationSeconds)
         {
             this.durationSeconds = durationSeconds;
@@ -252,6 +256,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="externalId">The value to set for the ExternalId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithExternalId(string externalId)
         {
             this.externalId = externalId;

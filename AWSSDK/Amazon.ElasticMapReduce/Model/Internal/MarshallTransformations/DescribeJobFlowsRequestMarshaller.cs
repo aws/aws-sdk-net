@@ -14,57 +14,110 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Describe Job Flows Request Marshaller
     /// </summary>       
-    public class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest>
+    internal class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
     {
-        public IRequest Marshall(DescribeJobFlowsRequest describeJobFlowsRequest)
+        
+
+        public IRequest Marshall(DescribeJobFlowsRequest describeJobFlowsRequest) 
         {
+
             IRequest request = new DefaultRequest(describeJobFlowsRequest, "AmazonElasticMapReduce");
-            request.Parameters.Add("Action", "DescribeJobFlows");
-            request.Parameters.Add("Version", "2009-03-31");
-            if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedAfter())
-            {
-                request.Parameters.Add("CreatedAfter", StringUtils.FromDateTime(describeJobFlowsRequest.CreatedAfter));
-            }
-            if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedBefore())
-            {
-                request.Parameters.Add("CreatedBefore", StringUtils.FromDateTime(describeJobFlowsRequest.CreatedBefore));
-            }
-            if (describeJobFlowsRequest != null)
-            {
-                List<string> jobFlowIdsList = describeJobFlowsRequest.JobFlowIds;
+            string target = "ElasticMapReduce.DescribeJobFlows";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-                int jobFlowIdsListIndex = 1;
-                foreach (string jobFlowIdsListValue in jobFlowIdsList)
-                { 
-                    request.Parameters.Add("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.FromString(jobFlowIdsListValue));
-                    jobFlowIdsListIndex++;
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
+                {
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    {
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
                 }
             }
-            if (describeJobFlowsRequest != null)
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
+            using (StringWriter stringWriter = new StringWriter())
             {
-                List<string> jobFlowStatesList = describeJobFlowsRequest.JobFlowStates;
-
-                int jobFlowStatesListIndex = 1;
-                foreach (string jobFlowStatesListValue in jobFlowStatesList)
-                { 
-                    request.Parameters.Add("JobFlowStates.member." + jobFlowStatesListIndex, StringUtils.FromString(jobFlowStatesListValue));
-                    jobFlowStatesListIndex++;
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                
+                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedAfter()) 
+                {
+                    writer.WritePropertyName("CreatedAfter");
+                    writer.Write(describeJobFlowsRequest.CreatedAfter);
                 }
+                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedBefore()) 
+                {
+                    writer.WritePropertyName("CreatedBefore");
+                    writer.Write(describeJobFlowsRequest.CreatedBefore);
+                }
+
+                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowIds != null && describeJobFlowsRequest.JobFlowIds.Count > 0) 
+                {
+                    List<string> jobFlowIdsList = describeJobFlowsRequest.JobFlowIds;
+                    writer.WritePropertyName("JobFlowIds");
+                    writer.WriteArrayStart();
+
+                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
+                    { 
+                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    }
+
+                    writer.WriteArrayEnd();
+                }
+
+                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowStates != null && describeJobFlowsRequest.JobFlowStates.Count > 0) 
+                {
+                    List<string> jobFlowStatesList = describeJobFlowsRequest.JobFlowStates;
+                    writer.WritePropertyName("JobFlowStates");
+                    writer.WriteArrayStart();
+
+                    foreach (string jobFlowStatesListValue in jobFlowStatesList) 
+                    { 
+                        writer.Write(StringUtils.FromString(jobFlowStatesListValue));
+                    }
+
+                    writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+        
 
             return request;
         }

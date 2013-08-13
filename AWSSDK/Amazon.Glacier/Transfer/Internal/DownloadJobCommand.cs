@@ -73,11 +73,13 @@ namespace Amazon.Glacier.Transfer.Internal
                         output = File.Open(filePath, fileMode, FileAccess.Write, FileShare.None);
                         try
                         {
-                            GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest()
-                                .WithAccountId(this.options.AccountId)
-                                .WithVaultName(this.vaultName)
-                                .WithJobId(jobId)
-                                .WithRange(rangeValue);
+                            GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest
+                            {
+                                AccountId = this.options.AccountId,
+                                VaultName = this.vaultName,
+                                JobId = jobId,
+                                Range = rangeValue
+                            };
                             getJobOutputRequest.BeforeRequestEvent += new UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync;
                             GetJobOutputResponse jobOutputResponse = this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
                             if (contentLength < 0)

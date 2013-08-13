@@ -192,5 +192,125 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Publish  Response from the service</returns>
         PublishResponse Publish(PublishRequest request);
 
+        /// <summary>
+        /// Creates a platform application object for one of the supported push notification services, 
+        /// such as APNS and GCM, to which devices and mobile apps may register.
+        /// </summary>
+        /// <remarks>
+        /// You must specify PlatformPrincipal and PlatformCredential attributes when using this method.
+        /// The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". 
+        /// For GCM, PlatformPrincipal is not applicable. For ADM PlatformPrincipal is "client id". The PlatformCredential is also received from the notification service. 
+        /// For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret".   
+        /// The PlatformApplicationArn that is returned by this method is then used as an attribute for the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.CreatePlatformEndpoint"/> method.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. 
+        /// </remarks>
+        /// <param name="request">Create Platform Application request.</param>
+        /// <returns>Create Platform Application response from the service.</returns>
+        CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request);
+
+        /// <summary>
+        /// Creates an endpoint for a device on one of the supported push notification services, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// This method requires the PlatformApplicationArn that is returned from <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.CreatePlatformApplication"/>. 
+        /// The EndpointArn that is returned when using this method can then be used by the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.Publish"/> method to 
+        /// send a message to a mobile app or by the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.Subscribe"/> action for subscription to a topic.        
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Create Platform Endpoint request.</param>
+        /// <returns>Create Platform Endpoint response from the service.</returns>
+        CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request);
+
+        /// <summary>
+        /// Deletes the endpoint for a device on one of the supported push notification services, such as GCM and APNS. 
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Delete Endpoint request.</param>
+        /// <returns>Delete Endpoint response from the service.</returns>
+        DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
+
+        /// <summary>
+        /// Deletes a platform application object for one of the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Delete Platform Application request.</param>
+        /// <returns>Delete Platform Application response from the service.</returns>
+        DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request);
+
+        /// <summary>
+        /// Sets the attributes of the platform application object for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Set Platform Application Attributes request.</param>
+        /// <returns>Set Platform Application Attributes response from the service.</returns>
+        SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request);
+
+        /// <summary>
+        /// Sets the attributes for the an endpoint for a device on one of the supported push notification services, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Set Endpoint Attributes request.</param>
+        /// <returns>Set Endpoint Attributes response from the service.</returns>
+        SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request);
+
+        /// <summary>
+        /// Retrieves the attributes of the platform application object for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Get Platform Application Attributes request.</param>
+        /// <returns>Get Platform Application Attributes response from the service.</returns>
+        GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request);
+
+        /// <summary>
+        /// Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS. 
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Get Endpoint Attributes request.</param>
+        /// <returns>Get Endpoint Attributes response from the service.</returns>
+        GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request);
+
+        /// <summary>
+        /// Lists the platform application objects for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// The results for this method are paginated and return a limited list of applications, up to 100.
+        /// If additional records are available after the first page results, then a NextToken string will be returned. 
+        /// To receive the next page, you call this method again using the NextToken string received from the previous call. 
+        /// When there are no more records to return, NextToken will be null.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">List Platform Applications request.</param>
+        /// <returns>List Platform Applications response from the service.</returns>
+        ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request);
+
+        /// <summary>
+        /// Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// The results for this method are paginated and return a limited list of endpoints, up to 100.
+        /// If additional records are available after the first page results, then a NextToken string will be returned. 
+        /// To receive the next page, you call this method again using the NextToken string received from the previous call. 
+        /// When there are no more records to return, NextToken will be null.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">List Endpoints By Platform Application request.</param>
+        /// <returns>List Endpoints By Platform Application response from the service.</returns>
+        ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request);
     }
 }

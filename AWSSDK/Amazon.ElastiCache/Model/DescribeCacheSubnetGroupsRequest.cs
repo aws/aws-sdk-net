@@ -50,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupName">The value to set for the CacheSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsRequest WithCacheSubnetGroupName(string cacheSubnetGroupName)
         {
             this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -79,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -108,6 +110,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsRequest WithMarker(string marker)
         {
             this.marker = marker;

@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
     /// explicit permissions, or all for public AMIs.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeImagesRequest
+    public class DescribeImagesRequest : EC2Request
     {    
         private List<string> imageIdField;
         private List<string> ownerField;
@@ -98,6 +98,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">AMI IDs to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImagesRequest WithImageId(params string[] list)
         {
             foreach (string item in list)
@@ -140,6 +141,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Returns AMIs owned by the specified owner.
         /// Multiple owners can be specified.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImagesRequest WithOwner(params string[] list)
         {
             foreach (string item in list)
@@ -184,6 +186,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Returns AMIs for which the specified user has
         /// explicit launch permissions.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImagesRequest WithExecutableBy(params string[] list)
         {
             foreach (string item in list)
@@ -231,6 +234,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImagesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

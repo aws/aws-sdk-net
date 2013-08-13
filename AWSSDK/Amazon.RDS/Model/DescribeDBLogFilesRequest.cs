@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -82,6 +83,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="filenameContains">The value to set for the FilenameContains property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithFilenameContains(string filenameContains)
         {
             this.filenameContains = filenameContains;
@@ -110,6 +112,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="fileLastWritten">The value to set for the FileLastWritten property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithFileLastWritten(long fileLastWritten)
         {
             this.fileLastWritten = fileLastWritten;
@@ -138,6 +141,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="fileSize">The value to set for the FileSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithFileSize(long fileSize)
         {
             this.fileSize = fileSize;
@@ -167,6 +171,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -196,6 +201,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesRequest WithMarker(string marker)
         {
             this.marker = marker;

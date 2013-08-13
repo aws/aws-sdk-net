@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstancesOfferingId">The value to set for the ReservedDBInstancesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithReservedDBInstancesOfferingId(string reservedDBInstancesOfferingId)
         {
             this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -80,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -108,6 +110,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithDuration(int duration)
         {
             this.duration = duration;
@@ -136,6 +139,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="fixedPrice">The value to set for the FixedPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithFixedPrice(double fixedPrice)
         {
             this.fixedPrice = fixedPrice;
@@ -164,6 +168,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="usagePrice">The value to set for the UsagePrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithUsagePrice(double usagePrice)
         {
             this.usagePrice = usagePrice;
@@ -192,6 +197,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="currencyCode">The value to set for the CurrencyCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithCurrencyCode(string currencyCode)
         {
             this.currencyCode = currencyCode;
@@ -220,6 +226,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="productDescription">The value to set for the ProductDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithProductDescription(string productDescription)
         {
             this.productDescription = productDescription;
@@ -248,6 +255,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="offeringType">The value to set for the OfferingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithOfferingType(string offeringType)
         {
             this.offeringType = offeringType;
@@ -276,6 +284,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -303,6 +312,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithRecurringCharges(params RecurringCharge[] recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)
@@ -318,6 +328,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedDBInstancesOffering WithRecurringCharges(IEnumerable<RecurringCharge> recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)

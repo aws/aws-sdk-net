@@ -12,63 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   RunJobFlowResult Unmarshaller
-     /// </summary>
-    internal class RunJobFlowResultUnmarshaller : IUnmarshaller<RunJobFlowResult, XmlUnmarshallerContext>, IUnmarshaller<RunJobFlowResult, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public RunJobFlowResult Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// RunJobFlowResultUnmarshaller
+      /// </summary>
+      internal class RunJobFlowResultUnmarshaller : IUnmarshaller<RunJobFlowResult, XmlUnmarshallerContext>, IUnmarshaller<RunJobFlowResult, JsonUnmarshallerContext>
+      {
+        RunJobFlowResult IUnmarshaller<RunJobFlowResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public RunJobFlowResult Unmarshall(JsonUnmarshallerContext context)
         {
             RunJobFlowResult runJobFlowResult = new RunJobFlowResult();
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("JobFlowId", targetDepth))
-                    {
-                        runJobFlowResult.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("JobFlowId", targetDepth))
+              {
+                runJobFlowResult.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return runJobFlowResult;
                 }
             }
-                        
-
+          
 
             return runJobFlowResult;
         }
 
-        public RunJobFlowResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static RunJobFlowResultUnmarshaller instance;
-
-        public static RunJobFlowResultUnmarshaller GetInstance() 
+        public static RunJobFlowResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new RunJobFlowResultUnmarshaller();
-
+            if (instance == null)
+                instance = new RunJobFlowResultUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

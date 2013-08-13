@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterName">The value to set for the ParameterName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ParameterNameValue WithParameterName(string parameterName)
         {
             this.parameterName = parameterName;
@@ -72,6 +73,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterValue">The value to set for the ParameterValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ParameterNameValue WithParameterValue(string parameterValue)
         {
             this.parameterValue = parameterValue;

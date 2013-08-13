@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// routing tables of an Amazon VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class EnableVGWRoutePropagationRequest
+    public class EnableVGWRoutePropagationRequest : EC2Request
     {
         private string routeTableIdField;
         private string gatewayIdField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="routeTableId">Routing table id</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableVGWRoutePropagationRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="gatewayId">Gateway Id</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableVGWRoutePropagationRequest WithGatewayId(string gatewayId)
         {
             this.gatewayIdField = gatewayId;

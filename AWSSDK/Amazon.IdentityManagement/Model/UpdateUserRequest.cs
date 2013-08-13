@@ -66,6 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateUserRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -107,6 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newPath">The value to set for the NewPath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateUserRequest WithNewPath(string newPath)
         {
             this.newPath = newPath;
@@ -148,6 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newUserName">The value to set for the NewUserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateUserRequest WithNewUserName(string newUserName)
         {
             this.newUserName = newUserName;

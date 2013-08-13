@@ -56,6 +56,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeValueList">The values to add to the AttributeValueList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Condition WithAttributeValueList(params AttributeValue[] attributeValueList)
         {
             foreach (AttributeValue element in attributeValueList)
@@ -71,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeValueList">The values to add to the AttributeValueList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Condition WithAttributeValueList(IEnumerable<AttributeValue> attributeValueList)
         {
             foreach (AttributeValue element in attributeValueList)
@@ -152,6 +154,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="comparisonOperator">The value to set for the ComparisonOperator property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Condition WithComparisonOperator(string comparisonOperator)
         {
             this.comparisonOperator = comparisonOperator;

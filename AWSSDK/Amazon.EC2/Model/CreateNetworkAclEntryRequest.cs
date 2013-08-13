@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// the old one.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateNetworkAclEntryRequest
+    public class CreateNetworkAclEntryRequest : EC2Request
     {    
         private string networkAclIdField;
         private Decimal? ruleNumberField;
@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkAclId">ID of the ACL where the entry will be created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;
@@ -101,6 +102,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ruleNumber">Rule number to assign to the entry (e.g., 100).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithRuleNumber(Decimal ruleNumber)
         {
             this.ruleNumberField = ruleNumber;
@@ -132,6 +134,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="protocol">IP protocol the rule applies to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithProtocol(string protocol)
         {
             this.protocolField = protocol;
@@ -165,6 +168,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ruleAction">Whether to allow or deny traffic that matches the rule.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithRuleAction(string ruleAction)
         {
             this.ruleActionField = ruleAction;
@@ -198,6 +202,7 @@ namespace Amazon.EC2.Model
         /// <param name="egress">Whether this rule applies to egress traffic from the 
         /// subnet (true) or ingress traffic to the subnet (false).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithEgress(bool egress)
         {
             this.egressField = egress;
@@ -230,6 +235,7 @@ namespace Amazon.EC2.Model
         /// <param name="cidrBlock">The CIDR range to allow or deny, in CIDR notation
         /// (e.g., 172.16.0.0/24).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithCidrBlock(string cidrBlock)
         {
             this.cidrBlockField = cidrBlock;
@@ -260,6 +266,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="icmp">For the ICMP protocol, this is the ICMP type and code.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithIcmp(Icmp icmp)
         {
             this.icmpField = icmp;
@@ -290,6 +297,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="portRange">For the TCP or UDP protocols, the range of ports the rule applies to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclEntryRequest WithPortRange(PortRange portRange)
         {
             this.portRangeField = portRange;

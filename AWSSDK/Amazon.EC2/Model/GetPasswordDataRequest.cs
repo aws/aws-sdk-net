@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// provided.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class GetPasswordDataRequest
+    public class GetPasswordDataRequest : EC2Request
     {    
         private string instanceIdField;
 
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceId">The ID of the instance for which to get the
         /// password.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPasswordDataRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;

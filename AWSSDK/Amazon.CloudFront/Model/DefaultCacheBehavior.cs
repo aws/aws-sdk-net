@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="targetOriginId">The value to set for the TargetOriginId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefaultCacheBehavior WithTargetOriginId(string targetOriginId)
         {
             this.targetOriginId = targetOriginId;
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="forwardedValues">The value to set for the ForwardedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefaultCacheBehavior WithForwardedValues(ForwardedValues forwardedValues)
         {
             this.forwardedValues = forwardedValues;
@@ -111,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="trustedSigners">The value to set for the TrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefaultCacheBehavior WithTrustedSigners(TrustedSigners trustedSigners)
         {
             this.trustedSigners = trustedSigners;
@@ -150,6 +153,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="viewerProtocolPolicy">The value to set for the ViewerProtocolPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefaultCacheBehavior WithViewerProtocolPolicy(string viewerProtocolPolicy)
         {
             this.viewerProtocolPolicy = viewerProtocolPolicy;
@@ -179,6 +183,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="minTTL">The value to set for the MinTTL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefaultCacheBehavior WithMinTTL(long minTTL)
         {
             this.minTTL = minTTL;

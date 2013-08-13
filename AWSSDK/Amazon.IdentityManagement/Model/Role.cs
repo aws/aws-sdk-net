@@ -70,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithPath(string path)
         {
             this.path = path;
@@ -111,6 +112,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -154,6 +156,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleId">The value to set for the RoleId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithRoleId(string roleId)
         {
             this.roleId = roleId;
@@ -193,6 +196,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithArn(string arn)
         {
             this.arn = arn;
@@ -221,6 +225,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -262,6 +267,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="assumeRolePolicyDocument">The value to set for the AssumeRolePolicyDocument property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithAssumeRolePolicyDocument(string assumeRolePolicyDocument)
         {
             this.assumeRolePolicyDocument = assumeRolePolicyDocument;

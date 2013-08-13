@@ -68,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -105,6 +106,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayId">The value to set for the GatewayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayId(string gatewayId)
         {
             this.gatewayId = gatewayId;
@@ -142,6 +144,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayTimezone">The value to set for the GatewayTimezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayTimezone(string gatewayTimezone)
         {
             this.gatewayTimezone = gatewayTimezone;
@@ -179,6 +182,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayState">The value to set for the GatewayState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayState(string gatewayState)
         {
             this.gatewayState = gatewayState;
@@ -206,6 +210,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayNetworkInterfaces">The values to add to the GatewayNetworkInterfaces collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayNetworkInterfaces(params NetworkInterface[] gatewayNetworkInterfaces)
         {
             foreach (NetworkInterface element in gatewayNetworkInterfaces)
@@ -221,6 +226,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayNetworkInterfaces">The values to add to the GatewayNetworkInterfaces collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayNetworkInterfaces(IEnumerable<NetworkInterface> gatewayNetworkInterfaces)
         {
             foreach (NetworkInterface element in gatewayNetworkInterfaces)
@@ -261,6 +267,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayType">The value to set for the GatewayType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithGatewayType(string gatewayType)
         {
             this.gatewayType = gatewayType;
@@ -300,6 +307,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="nextUpdateAvailabilityDate">The value to set for the NextUpdateAvailabilityDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeGatewayInformationResult WithNextUpdateAvailabilityDate(string nextUpdateAvailabilityDate)
         {
             this.nextUpdateAvailabilityDate = nextUpdateAvailabilityDate;

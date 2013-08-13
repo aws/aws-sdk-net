@@ -42,6 +42,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankExpressions">The values to add to the RankExpressions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRankExpressionsResult WithRankExpressions(params RankExpressionStatus[] rankExpressions)
         {
             foreach (RankExpressionStatus element in rankExpressions)
@@ -57,6 +58,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankExpressions">The values to add to the RankExpressions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRankExpressionsResult WithRankExpressions(IEnumerable<RankExpressionStatus> rankExpressions)
         {
             foreach (RankExpressionStatus element in rankExpressions)

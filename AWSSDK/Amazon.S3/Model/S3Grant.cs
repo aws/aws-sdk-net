@@ -81,6 +81,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="grantee">S3Grantee property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Grant WithGrantee(S3Grantee grantee)
         {
             this.grantee = grantee;
@@ -111,6 +112,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="permission">S3Permission property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Grant WithPermission(S3Permission permission)
         {
             this.permission = permission;

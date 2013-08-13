@@ -67,6 +67,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="signatureMethod">SignatureMethod property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithSignatureMethod(string signatureMethod)
         {
             this.signatureMethod = signatureMethod;
@@ -95,6 +96,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="signatureVersion">SignatureVersion property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithSignatureVersion(string signatureVersion)
         {
             this.signatureVersion = signatureVersion;
@@ -124,6 +126,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="userAgent">UserAgent property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithUserAgent(string userAgent)
         {
             this.userAgent = userAgent;
@@ -181,6 +184,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="serviceURL">ServiceURL property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithServiceURL(string serviceURL)
         {
             this.serviceURL = serviceURL;
@@ -210,6 +214,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="proxyHost">ProxyHost property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithProxyHost(string proxyHost)
         {
             this.proxyHost = proxyHost;
@@ -239,6 +244,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="proxyPort">ProxyPort property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithProxyPort(int proxyPort)
         {
             this.proxyPort = proxyPort;
@@ -268,6 +274,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="maxErrorRetry">MaxErrorRetry property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithMaxErrorRetry(int maxErrorRetry)
         {
             this.maxErrorRetry = maxErrorRetry;
@@ -327,6 +334,7 @@ namespace Amazon.SimpleDB
         /// recommended unless absolutely necessary.
         /// </remarks>
         /// <seealso cref="T:System.Security.SecureString"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithUseSecureStringForAwsSecretKey(bool fSecure)
         {
             fUseSecureString = fSecure;
@@ -436,6 +444,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="proxyCredentials">ProxyCredentials property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleDBConfig WithProxyCredentials(ICredentials proxyCredentials)
         {
             this.proxyCredentials = proxyCredentials;

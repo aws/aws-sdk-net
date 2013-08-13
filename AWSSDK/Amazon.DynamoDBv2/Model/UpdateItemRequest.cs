@@ -69,6 +69,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -97,6 +98,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Key dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -160,6 +162,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the AttributeUpdates dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithAttributeUpdates(params KeyValuePair<string, AttributeValueUpdate>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValueUpdate> pair in pairs)
@@ -206,6 +209,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Expected dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithExpected(params KeyValuePair<string, ExpectedAttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, ExpectedAttributeValue> pair in pairs)
@@ -251,6 +255,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnValues">The value to set for the ReturnValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithReturnValues(string returnValues)
         {
             this.returnValues = returnValues;
@@ -289,6 +294,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;
@@ -327,6 +333,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnItemCollectionMetrics">The value to set for the ReturnItemCollectionMetrics property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithReturnItemCollectionMetrics(string returnItemCollectionMetrics)
         {
             this.returnItemCollectionMetrics = returnItemCollectionMetrics;

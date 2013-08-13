@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bytesConverted">Number of bytes converted so far.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithBytesConverted(Decimal bytesConverted)
         {
             this.bytesConvertedField = bytesConverted;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where the resulting instance will reside.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="image">Information about the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithImage(DiskImageDescriptionType image)
         {
             this.imageField = image;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description you provided when starting the import instance task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithDescription(string description)
         {
             this.descriptionField = description;
@@ -174,6 +178,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volume">Information about the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithVolume(DiskImageVolumeDescriptionType volume)
         {
             this.volumeField = volume;
@@ -204,6 +209,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Status of the import of this particular disk image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithStatus(string status)
         {
             this.statusField = status;
@@ -234,6 +240,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="statusMessage">Status information or errors related to the disk image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceVolumeDetailItemType WithStatusMessage(string statusMessage)
         {
             this.statusMessageField = statusMessage;

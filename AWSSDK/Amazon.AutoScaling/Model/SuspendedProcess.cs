@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="processName">The value to set for the ProcessName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithProcessName(string processName)
         {
             this.processName = processName;
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="suspensionReason">The value to set for the SuspensionReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithSuspensionReason(string suspensionReason)
         {
             this.suspensionReason = suspensionReason;

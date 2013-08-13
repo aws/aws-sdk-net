@@ -48,6 +48,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -85,6 +86,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobType">The value to set for the JobType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithJobType(string jobType)
         {
             this.jobType = jobType;
@@ -113,6 +115,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="awsShippingAddress">The value to set for the AwsShippingAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithAwsShippingAddress(string awsShippingAddress)
         {
             this.awsShippingAddress = awsShippingAddress;
@@ -142,6 +145,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="signature">The value to set for the Signature property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithSignature(string signature)
         {
             this.signature = signature;
@@ -170,6 +174,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="signatureFileContents">The value to set for the SignatureFileContents property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithSignatureFileContents(string signatureFileContents)
         {
             this.signatureFileContents = signatureFileContents;
@@ -198,6 +203,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="warningMessage">The value to set for the WarningMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithWarningMessage(string warningMessage)
         {
             this.warningMessage = warningMessage;

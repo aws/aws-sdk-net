@@ -66,6 +66,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithKey(Key key)
         {
             this.key = key;
@@ -124,6 +126,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the AttributeUpdates dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithAttributeUpdates(params KeyValuePair<string, AttributeValueUpdate>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValueUpdate> pair in pairs)
@@ -156,6 +159,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Expected dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithExpected(params KeyValuePair<string, ExpectedAttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, ExpectedAttributeValue> pair in pairs)
@@ -202,6 +206,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="returnValues">The value to set for the ReturnValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemRequest WithReturnValues(string returnValues)
         {
             this.returnValues = returnValues;

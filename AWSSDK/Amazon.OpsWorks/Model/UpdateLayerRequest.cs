@@ -58,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithName(string name)
         {
             this.name = name;
@@ -115,6 +117,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="shortname">The value to set for the Shortname property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithShortname(string shortname)
         {
             this.shortname = shortname;
@@ -143,6 +146,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -175,6 +179,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customInstanceProfileArn">The value to set for the CustomInstanceProfileArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithCustomInstanceProfileArn(string customInstanceProfileArn)
         {
             this.customInstanceProfileArn = customInstanceProfileArn;
@@ -202,6 +207,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customSecurityGroupIds">The values to add to the CustomSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithCustomSecurityGroupIds(params string[] customSecurityGroupIds)
         {
             foreach (string element in customSecurityGroupIds)
@@ -217,6 +223,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customSecurityGroupIds">The values to add to the CustomSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithCustomSecurityGroupIds(IEnumerable<string> customSecurityGroupIds)
         {
             foreach (string element in customSecurityGroupIds)
@@ -247,6 +254,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="packages">The values to add to the Packages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithPackages(params string[] packages)
         {
             foreach (string element in packages)
@@ -262,6 +270,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="packages">The values to add to the Packages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithPackages(IEnumerable<string> packages)
         {
             foreach (string element in packages)
@@ -292,6 +301,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeConfigurations">The values to add to the VolumeConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithVolumeConfigurations(params VolumeConfiguration[] volumeConfigurations)
         {
             foreach (VolumeConfiguration element in volumeConfigurations)
@@ -307,6 +317,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeConfigurations">The values to add to the VolumeConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithVolumeConfigurations(IEnumerable<VolumeConfiguration> volumeConfigurations)
         {
             foreach (VolumeConfiguration element in volumeConfigurations)
@@ -338,6 +349,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enableAutoHealing">The value to set for the EnableAutoHealing property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithEnableAutoHealing(bool enableAutoHealing)
         {
             this.enableAutoHealing = enableAutoHealing;
@@ -367,6 +379,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="autoAssignElasticIps">The value to set for the AutoAssignElasticIps property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithAutoAssignElasticIps(bool autoAssignElasticIps)
         {
             this.autoAssignElasticIps = autoAssignElasticIps;
@@ -395,6 +408,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customRecipes">The value to set for the CustomRecipes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithCustomRecipes(Recipes customRecipes)
         {
             this.customRecipes = customRecipes;
@@ -418,6 +432,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLayerRequest WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
         {
             this.installUpdatesOnBoot = installUpdatesOnBoot;

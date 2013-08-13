@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Deletes a route from a route table in a VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteRouteRequest
+    public class DeleteRouteRequest : EC2Request
     {    
         private string routeTableIdField;
         private string destinationCidrBlockField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// <param name="routeTableId">The ID of the route table where the route will 
         /// be deleted.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteRouteRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// match the CIDR for the route you want to
         /// delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteRouteRequest WithDestinationCidrBlock(string destinationCidrBlock)
         {
             this.destinationCidrBlockField = destinationCidrBlock;

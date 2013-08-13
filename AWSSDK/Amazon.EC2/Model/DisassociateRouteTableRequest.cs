@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// Tables in the Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DisassociateRouteTableRequest
+    public class DisassociateRouteTableRequest : EC2Request
     {    
         private string associationIdField;
 
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// association between the route table and
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisassociateRouteTableRequest WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;

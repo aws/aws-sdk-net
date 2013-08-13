@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cloudFrontOriginAccessIdentity">The value to set for the CloudFrontOriginAccessIdentity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateCloudFrontOriginAccessIdentityResult WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity)
         {
             this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateCloudFrontOriginAccessIdentityResult WithETag(string eTag)
         {
             this.eTag = eTag;

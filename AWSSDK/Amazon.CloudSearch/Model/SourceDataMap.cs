@@ -58,6 +58,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceName">The value to set for the SourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataMap WithSourceName(string sourceName)
         {
             this.sourceName = sourceName;
@@ -95,6 +96,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataMap WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -123,6 +125,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Cases dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataMap WithCases(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)

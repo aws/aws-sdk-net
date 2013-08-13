@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
     /// native XML format.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpnConnectionsRequest
+    public class DescribeVpnConnectionsRequest : EC2Request
     {    
         private List<string> vpnConnectionIdField;
         private List<Filter> filterField;
@@ -86,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A VPN connection ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpnConnectionsRequest WithVpnConnectionId(params string[] list)
         {
             foreach (string item in list)
@@ -168,6 +169,7 @@ namespace Amazon.EC2.Model
         /// Example: To list just the resources assigned tag Purpose=X, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X.
         /// Example: To list just resources assigned tag Purpose=X OR Purpose=Y, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X and Filter.1.Value.2=Y.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpnConnectionsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

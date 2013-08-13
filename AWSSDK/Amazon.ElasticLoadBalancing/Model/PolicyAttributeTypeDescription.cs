@@ -48,6 +48,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -76,6 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeType">The value to set for the AttributeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithAttributeType(string attributeType)
         {
             this.attributeType = attributeType;
@@ -104,6 +106,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithDescription(string description)
         {
             this.description = description;
@@ -132,6 +135,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -162,6 +166,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="cardinality">The value to set for the Cardinality property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithCardinality(string cardinality)
         {
             this.cardinality = cardinality;

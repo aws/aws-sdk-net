@@ -58,6 +58,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metricName">The value to set for the MetricName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithMetricName(string metricName)
         {
             this.metricName = metricName;
@@ -95,6 +96,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithDimensions(params Dimension[] dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -110,6 +112,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithDimensions(IEnumerable<Dimension> dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -141,6 +144,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithTimestamp(DateTime timestamp)
         {
             this.timestamp = timestamp;
@@ -171,6 +175,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithValue(double value)
         {
             this.value = value;
@@ -199,6 +204,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="statisticValues">The value to set for the StatisticValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithStatisticValues(StatisticSet statisticValues)
         {
             this.statisticValues = statisticValues;
@@ -236,6 +242,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="unit">The value to set for the Unit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricDatum WithUnit(string unit)
         {
             this.unit = unit;

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ReplaceRouteTableAssociationRequest
+    public class ReplaceRouteTableAssociationRequest : EC2Request
     {    
         private string associationIdField;
         private string routeTableIdField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// between the original route table and the
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceRouteTableAssociationRequest WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;
@@ -90,6 +91,7 @@ namespace Amazon.EC2.Model
         /// <param name="routeTableId">The ID of the new route table to associate with 
         /// the subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceRouteTableAssociationRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;

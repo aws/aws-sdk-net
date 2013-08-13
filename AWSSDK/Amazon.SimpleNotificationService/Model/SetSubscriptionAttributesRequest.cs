@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -52,6 +52,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="subscriptionArn">The Amazon Reference Name (ARN) of the subscription.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetSubscriptionAttributesRequest WithSubscriptionArn(string subscriptionArn)
         {
             this.subscriptionArnField = subscriptionArn;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="attributeName">The name of the attribute you want to set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetSubscriptionAttributesRequest WithAttributeName(string attributeName)
         {
             this.attributeNameField = attributeName;
@@ -113,6 +115,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="attributeValue">The value of the attribute you want to set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetSubscriptionAttributesRequest WithAttributeValue(string attributeValue)
         {
             this.attributeValueField = attributeValue;

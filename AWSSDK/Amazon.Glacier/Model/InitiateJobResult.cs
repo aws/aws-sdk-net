@@ -44,6 +44,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateJobResult WithLocation(string location)
         {
             this.location = location;
@@ -72,6 +73,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateJobResult WithJobId(string jobId)
         {
             this.jobId = jobId;

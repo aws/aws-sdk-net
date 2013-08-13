@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checks">The values to add to the Checks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorChecksResult WithChecks(params TrustedAdvisorCheckDescription[] checks)
         {
             foreach (TrustedAdvisorCheckDescription element in checks)
@@ -58,6 +59,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checks">The values to add to the Checks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorChecksResult WithChecks(IEnumerable<TrustedAdvisorCheckDescription> checks)
         {
             foreach (TrustedAdvisorCheckDescription element in checks)

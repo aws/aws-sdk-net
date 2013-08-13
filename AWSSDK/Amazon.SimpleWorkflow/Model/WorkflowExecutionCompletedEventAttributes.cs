@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="result">The value to set for the Result property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionCompletedEventAttributes WithResult(string result)
         {
             this.result = result;
@@ -82,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskCompletedEventId">The value to set for the DecisionTaskCompletedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionCompletedEventAttributes WithDecisionTaskCompletedEventId(long decisionTaskCompletedEventId)
         {
             this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

@@ -56,6 +56,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cause">The value to set for the Cause property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteWorkflowExecutionFailedEventAttributes WithCause(string cause)
         {
             this.cause = cause;
@@ -85,6 +86,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskCompletedEventId">The value to set for the DecisionTaskCompletedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteWorkflowExecutionFailedEventAttributes WithDecisionTaskCompletedEventId(long decisionTaskCompletedEventId)
         {
             this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

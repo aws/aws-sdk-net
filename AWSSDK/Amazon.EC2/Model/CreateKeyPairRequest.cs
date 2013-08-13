@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// create the key pair. To create a key pair that works in all Regions, use ImportKeyPair.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateKeyPairRequest
+    public class CreateKeyPairRequest : EC2Request
     {    
         private string keyNameField;
 
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">A unique name for the key pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateKeyPairRequest WithKeyName(string keyName)
         {
             this.keyNameField = keyName;

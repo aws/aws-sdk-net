@@ -53,6 +53,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="marker">the value that Marker is set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationListRequest WithMarker(string marker)
         {
             this.reqMarker = marker;
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="maxItems">the value that MaxItems is set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationListRequest WithMaxItems(int maxItems)
         {
             this.reqMaxItems = maxItems;
@@ -108,6 +110,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationListRequest WithDistributionId(string distributionId)
         {
             this.distributionId = distributionId;

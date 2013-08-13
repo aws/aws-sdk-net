@@ -67,6 +67,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseIdList">The values to add to the CaseIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithCaseIdList(params string[] caseIdList)
         {
             foreach (string element in caseIdList)
@@ -82,6 +83,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseIdList">The values to add to the CaseIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithCaseIdList(IEnumerable<string> caseIdList)
         {
             foreach (string element in caseIdList)
@@ -113,6 +115,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="displayId">The value to set for the DisplayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithDisplayId(string displayId)
         {
             this.displayId = displayId;
@@ -141,6 +144,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="afterTime">The value to set for the AfterTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithAfterTime(string afterTime)
         {
             this.afterTime = afterTime;
@@ -169,6 +173,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="beforeTime">The value to set for the BeforeTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithBeforeTime(string beforeTime)
         {
             this.beforeTime = beforeTime;
@@ -198,6 +203,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="includeResolvedCases">The value to set for the IncludeResolvedCases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithIncludeResolvedCases(bool includeResolvedCases)
         {
             this.includeResolvedCases = includeResolvedCases;
@@ -226,6 +232,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -263,6 +270,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="maxResults">The value to set for the MaxResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithMaxResults(int maxResults)
         {
             this.maxResults = maxResults;
@@ -292,6 +300,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithLanguage(string language)
         {
             this.language = language;

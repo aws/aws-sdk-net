@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// This is an idempotent operation. If you call it more than once, Amazon EC2 does not return an error.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AssociateAddressRequest
+    public class AssociateAddressRequest : EC2Request
     {    
         private string instanceIdField;
         private string publicIpField;
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The instance to associate with the IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -89,6 +90,7 @@ namespace Amazon.EC2.Model
         /// <param name="publicIp">IP address that you are assigning to the
         /// instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithPublicIp(string publicIp)
         {
             this.publicIpField = publicIp;
@@ -123,6 +125,7 @@ namespace Amazon.EC2.Model
         /// <param name="allocationId">The allocation ID that AWS returned when you allocated
         /// the elastic IP address for use with Amazon VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithAllocationId(string allocationId)
         {
             this.allocationIdField = allocationId;
@@ -154,6 +157,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -186,6 +190,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddress">Private IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;
@@ -221,6 +226,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="allowReassociation">Whether reassociation is allowed.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateAddressRequest WithAllowReassociation(bool allowReassociation)
         {
             this.allowReassociationField = allowReassociation;

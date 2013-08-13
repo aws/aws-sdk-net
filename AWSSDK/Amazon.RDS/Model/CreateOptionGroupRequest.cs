@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOptionGroupRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -80,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineName">The value to set for the EngineName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOptionGroupRequest WithEngineName(string engineName)
         {
             this.engineName = engineName;
@@ -108,6 +110,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="majorEngineVersion">The value to set for the MajorEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOptionGroupRequest WithMajorEngineVersion(string majorEngineVersion)
         {
             this.majorEngineVersion = majorEngineVersion;
@@ -136,6 +139,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupDescription">The value to set for the OptionGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOptionGroupRequest WithOptionGroupDescription(string optionGroupDescription)
         {
             this.optionGroupDescription = optionGroupDescription;

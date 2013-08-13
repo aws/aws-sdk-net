@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -50,6 +50,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="key">The key in the key/value pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SubscriptionAttribute WithKey(string key)
         {
             this.keyField = key;
@@ -80,6 +81,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="value">The value in the key/value pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SubscriptionAttribute WithValue(string value)
         {
             this.valueField = value;

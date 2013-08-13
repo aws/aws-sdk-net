@@ -80,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -108,6 +109,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -136,6 +138,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithEngine(string engine)
         {
             this.engine = engine;
@@ -164,6 +167,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceStatus">The value to set for the DBInstanceStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBInstanceStatus(string dBInstanceStatus)
         {
             this.dBInstanceStatus = dBInstanceStatus;
@@ -192,6 +196,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithMasterUsername(string masterUsername)
         {
             this.masterUsername = masterUsername;
@@ -222,6 +227,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -250,6 +256,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="endpoint">The value to set for the Endpoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithEndpoint(Endpoint endpoint)
         {
             this.endpoint = endpoint;
@@ -278,6 +285,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithAllocatedStorage(int allocatedStorage)
         {
             this.allocatedStorage = allocatedStorage;
@@ -306,6 +314,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="instanceCreateTime">The value to set for the InstanceCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithInstanceCreateTime(DateTime instanceCreateTime)
         {
             this.instanceCreateTime = instanceCreateTime;
@@ -335,6 +344,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithPreferredBackupWindow(string preferredBackupWindow)
         {
             this.preferredBackupWindow = preferredBackupWindow;
@@ -363,6 +373,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
             this.backupRetentionPeriod = backupRetentionPeriod;
@@ -390,6 +401,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBSecurityGroups(params DBSecurityGroupMembership[] dBSecurityGroups)
         {
             foreach (DBSecurityGroupMembership element in dBSecurityGroups)
@@ -405,6 +417,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBSecurityGroups(IEnumerable<DBSecurityGroupMembership> dBSecurityGroups)
         {
             foreach (DBSecurityGroupMembership element in dBSecurityGroups)
@@ -435,6 +448,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithVpcSecurityGroups(params VpcSecurityGroupMembership[] vpcSecurityGroups)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
@@ -450,6 +464,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithVpcSecurityGroups(IEnumerable<VpcSecurityGroupMembership> vpcSecurityGroups)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
@@ -480,6 +495,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBParameterGroups(params DBParameterGroupStatus[] dBParameterGroups)
         {
             foreach (DBParameterGroupStatus element in dBParameterGroups)
@@ -495,6 +511,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBParameterGroups(IEnumerable<DBParameterGroupStatus> dBParameterGroups)
         {
             foreach (DBParameterGroupStatus element in dBParameterGroups)
@@ -526,6 +543,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -555,6 +573,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroup">The value to set for the DBSubnetGroup property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithDBSubnetGroup(DBSubnetGroup dBSubnetGroup)
         {
             this.dBSubnetGroup = dBSubnetGroup;
@@ -583,6 +602,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -612,6 +632,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="pendingModifiedValues">The value to set for the PendingModifiedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithPendingModifiedValues(PendingModifiedValues pendingModifiedValues)
         {
             this.pendingModifiedValues = pendingModifiedValues;
@@ -640,6 +661,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="latestRestorableTime">The value to set for the LatestRestorableTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithLatestRestorableTime(DateTime latestRestorableTime)
         {
             this.latestRestorableTime = latestRestorableTime;
@@ -668,6 +690,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -696,6 +719,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -724,6 +748,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -752,6 +777,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="readReplicaSourceDBInstanceIdentifier">The value to set for the ReadReplicaSourceDBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithReadReplicaSourceDBInstanceIdentifier(string readReplicaSourceDBInstanceIdentifier)
         {
             this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
@@ -779,6 +805,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="readReplicaDBInstanceIdentifiers">The values to add to the ReadReplicaDBInstanceIdentifiers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithReadReplicaDBInstanceIdentifiers(params string[] readReplicaDBInstanceIdentifiers)
         {
             foreach (string element in readReplicaDBInstanceIdentifiers)
@@ -794,6 +821,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="readReplicaDBInstanceIdentifiers">The values to add to the ReadReplicaDBInstanceIdentifiers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithReadReplicaDBInstanceIdentifiers(IEnumerable<string> readReplicaDBInstanceIdentifiers)
         {
             foreach (string element in readReplicaDBInstanceIdentifiers)
@@ -825,6 +853,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="licenseModel">The value to set for the LicenseModel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithLicenseModel(string licenseModel)
         {
             this.licenseModel = licenseModel;
@@ -853,6 +882,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iops">The value to set for the Iops property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithIops(int iops)
         {
             this.iops = iops;
@@ -880,6 +910,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupMemberships">The values to add to the OptionGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithOptionGroupMemberships(params OptionGroupMembership[] optionGroupMemberships)
         {
             foreach (OptionGroupMembership element in optionGroupMemberships)
@@ -895,6 +926,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupMemberships">The values to add to the OptionGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithOptionGroupMemberships(IEnumerable<OptionGroupMembership> optionGroupMemberships)
         {
             foreach (OptionGroupMembership element in optionGroupMemberships)
@@ -926,6 +958,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="characterSetName">The value to set for the CharacterSetName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithCharacterSetName(string characterSetName)
         {
             this.characterSetName = characterSetName;
@@ -954,6 +987,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="secondaryAvailabilityZone">The value to set for the SecondaryAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithSecondaryAvailabilityZone(string secondaryAvailabilityZone)
         {
             this.secondaryAvailabilityZone = secondaryAvailabilityZone;
@@ -987,6 +1021,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -1014,6 +1049,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="statusInfos">The values to add to the StatusInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithStatusInfos(params DBInstanceStatusInfo[] statusInfos)
         {
             foreach (DBInstanceStatusInfo element in statusInfos)
@@ -1029,6 +1065,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="statusInfos">The values to add to the StatusInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstance WithStatusInfos(IEnumerable<DBInstanceStatusInfo> statusInfos)
         {
             foreach (DBInstanceStatusInfo element in statusInfos)

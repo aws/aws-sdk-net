@@ -62,6 +62,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="toAddresses">The values to add to the ToAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithToAddresses(params string[] toAddresses)
         {
             foreach (string element in toAddresses)
@@ -77,6 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="toAddresses">The values to add to the ToAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithToAddresses(IEnumerable<string> toAddresses)
         {
             foreach (string element in toAddresses)
@@ -107,6 +109,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="ccAddresses">The values to add to the CcAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithCcAddresses(params string[] ccAddresses)
         {
             foreach (string element in ccAddresses)
@@ -122,6 +125,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="ccAddresses">The values to add to the CcAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithCcAddresses(IEnumerable<string> ccAddresses)
         {
             foreach (string element in ccAddresses)
@@ -152,6 +156,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="bccAddresses">The values to add to the BccAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithBccAddresses(params string[] bccAddresses)
         {
             foreach (string element in bccAddresses)
@@ -167,6 +172,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="bccAddresses">The values to add to the BccAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Destination WithBccAddresses(IEnumerable<string> bccAddresses)
         {
             foreach (string element in bccAddresses)

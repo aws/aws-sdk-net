@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="deviceName">The device name (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceBlockDeviceMappingParameter WithDeviceName(string deviceName)
         {
             this.deviceNameField = deviceName;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="virtualName">The virtual device name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceBlockDeviceMappingParameter WithVirtualName(string virtualName)
         {
             this.virtualNameField = virtualName;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// <param name="ebs">Specifies parameters used to automatically
         /// setup Amazon EBS volumes when the instance is launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceBlockDeviceMappingParameter WithEbs(InstanceEbsBlockDeviceParameter ebs)
         {
             this.ebsField = ebs;
@@ -145,6 +148,7 @@ namespace Amazon.EC2.Model
         /// <param name="noDevice">Specifies the device name (e.g., /dev/sdb) to
         /// suppress during instance launch.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceBlockDeviceMappingParameter WithNoDevice(string noDevice)
         {
             this.noDeviceField = noDevice;

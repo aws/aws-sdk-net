@@ -42,6 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlows">The values to add to the JobFlows collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsResult WithJobFlows(params JobFlowDetail[] jobFlows)
         {
             foreach (JobFlowDetail element in jobFlows)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlows">The values to add to the JobFlows collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsResult WithJobFlows(IEnumerable<JobFlowDetail> jobFlows)
         {
             foreach (JobFlowDetail element in jobFlows)

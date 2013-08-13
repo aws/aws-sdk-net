@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -67,6 +67,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="directory">The value that Directory is set to</param>
         /// <returns>The request with the Directory set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithDirectory(string directory)
         {
             this._directory = directory;
@@ -102,6 +103,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="keyPrefix">The value that KeyPrefix is set to</param>
         /// <returns>The request with the KeyPrefix set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithKeyPrefix(string keyPrefix)
         {
             this._keyPrefix = keyPrefix;
@@ -150,6 +152,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithSearchPattern(string searchPattern)
         {
             this._searchPattern = searchPattern;
@@ -193,6 +196,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithSearchOption(SearchOption searchOption)
         {
             this._searchOption = searchOption;
@@ -224,6 +228,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithBucketName(string bucketName)
         {
             this._bucketname = bucketName;
@@ -276,6 +281,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithCannedACL(S3CannedACL acl)
         {
             this._cannedACL = acl;
@@ -440,6 +446,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithStorageClass(S3StorageClass sClass)
         {
             this._storageClass = sClass;
@@ -473,6 +480,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// The response with the ServerSideEncryptionMethod set.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -524,6 +532,7 @@ namespace Amazon.S3.Transfer
         /// </returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithTimeout(int timeout)
         {
             Timeout = _timeout;
@@ -566,6 +575,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="handler">A method that is called when UploadDirectoryProgressEvent is fired.</param>
         /// <returns>this instance of the TransferUtilityUploadDirectoryRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadDirectoryRequest WithSubscriber(EventHandler<UploadDirectoryProgressArgs> handler)
         {
             this.UploadDirectoryProgressEvent += handler;

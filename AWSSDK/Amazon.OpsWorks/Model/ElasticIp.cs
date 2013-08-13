@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ip">The value to set for the Ip property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithIp(string ip)
         {
             this.ip = ip;
@@ -74,6 +75,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithName(string name)
         {
             this.name = name;
@@ -102,6 +104,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithDomain(string domain)
         {
             this.domain = domain;
@@ -130,6 +133,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithRegion(string region)
         {
             this.region = region;

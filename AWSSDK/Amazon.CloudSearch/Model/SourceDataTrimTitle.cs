@@ -59,6 +59,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceName">The value to set for the SourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataTrimTitle WithSourceName(string sourceName)
         {
             this.sourceName = sourceName;
@@ -96,6 +97,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataTrimTitle WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -124,6 +126,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="separator">The value to set for the Separator property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataTrimTitle WithSeparator(string separator)
         {
             this.separator = separator;
@@ -162,6 +165,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceDataTrimTitle WithLanguage(string language)
         {
             this.language = language;

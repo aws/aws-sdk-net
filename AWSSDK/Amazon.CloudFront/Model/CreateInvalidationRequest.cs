@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distributionId">The value to set for the DistributionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationRequest WithDistributionId(string distributionId)
         {
             this.distributionId = distributionId;
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="invalidationBatch">The value to set for the InvalidationBatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationRequest WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {
             this.invalidationBatch = invalidationBatch;

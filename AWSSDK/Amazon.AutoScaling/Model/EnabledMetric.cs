@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metric">The value to set for the Metric property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnabledMetric WithMetric(string metric)
         {
             this.metric = metric;
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularity">The value to set for the Granularity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnabledMetric WithGranularity(string granularity)
         {
             this.granularity = granularity;

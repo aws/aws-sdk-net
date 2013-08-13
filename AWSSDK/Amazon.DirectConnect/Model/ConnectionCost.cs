@@ -46,6 +46,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConnectionCost WithName(string name)
         {
             this.name = name;
@@ -74,6 +75,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="unit">The value to set for the Unit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConnectionCost WithUnit(string unit)
         {
             this.unit = unit;
@@ -102,6 +104,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="currencyCode">The value to set for the CurrencyCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConnectionCost WithCurrencyCode(string currencyCode)
         {
             this.currencyCode = currencyCode;
@@ -130,6 +133,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="amount">The value to set for the Amount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConnectionCost WithAmount(string amount)
         {
             this.amount = amount;

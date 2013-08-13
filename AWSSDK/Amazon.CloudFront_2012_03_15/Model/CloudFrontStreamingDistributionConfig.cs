@@ -93,6 +93,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="comment">Comment property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithComment(string comment)
         {
             this.Comment = comment;
@@ -104,6 +105,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="callerReference">CallerReference property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithCallerReference(string callerReference)
         {
             this.CallerReference = callerReference;
@@ -116,6 +118,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="cnames">CNAME property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithCNames(params string[] cnames)
         {
             foreach (string cname in cnames)
@@ -130,6 +133,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="enabled">Enabled property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithEnabled(bool enabled)
         {
             this.Enabled = enabled;
@@ -157,6 +161,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="signers">TrustedSigners property is set to this value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithTrustedSigners(UrlTrustedSigners signers)
         {
             this.TrustedSigners = signers;
@@ -173,6 +178,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// <param name="bucket">The bucket into which logs will be put</param>
         /// <param name="prefix">The prefix for the log files</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontStreamingDistributionConfig WithLogging(string bucket, string prefix)
         {
             if (String.IsNullOrEmpty(bucket))

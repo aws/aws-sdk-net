@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="routeTableId">The route table's ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the route table is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of routes in the route table.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithRoutes(params Route[] list)
         {
             foreach (Route item in list)
@@ -162,6 +165,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">A list of associations between the route table and one or more
         /// subnets.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithAssociations(params RouteTableAssociation[] list)
         {
             foreach (RouteTableAssociation item in list)
@@ -202,6 +206,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the RouteTable.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -242,6 +247,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithPropagatingVpnGateways(params string[] list)
         {
             foreach (string item in list)
@@ -282,6 +288,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTable WithPropagatedRoutes(params PropagatedRoute[] list)
         {
             foreach (PropagatedRoute item in list)

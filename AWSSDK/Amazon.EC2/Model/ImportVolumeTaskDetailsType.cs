@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bytesConverted">Number of bytes converted so far.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeTaskDetailsType WithBytesConverted(Decimal bytesConverted)
         {
             this.bytesConvertedField = bytesConverted;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where the resulting volume will reside.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeTaskDetailsType WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description you provided when starting the import volume task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeTaskDetailsType WithDescription(string description)
         {
             this.descriptionField = description;
@@ -143,6 +146,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="image">Information about the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeTaskDetailsType WithImage(DiskImageDescriptionType image)
         {
             this.imageField = image;
@@ -173,6 +177,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volume">Information about the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeTaskDetailsType WithVolume(DiskImageVolumeDescriptionType volume)
         {
             this.volumeField = volume;

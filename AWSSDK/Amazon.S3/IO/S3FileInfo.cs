@@ -119,12 +119,12 @@ namespace Amazon.S3.IO
             bucketExists = true;
             try
             {
-                var request = new GetObjectMetadataRequest()
+                var request = new GetObjectMetadataRequest
                 {
                     BucketName = bucket,
                     Key = S3Helper.EncodeKey(key)
                 };
-                request.WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
+                request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
 
                 // If the object doesn't exist then a "NoSuchKey" will be thrown
                 s3Client.GetObjectMetadata(request);
@@ -183,11 +183,14 @@ namespace Amazon.S3.IO
                 DateTime ret = DateTime.MinValue;
                 if (Exists)
                 {
-                    ret = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
-                            .WithBucketName(bucket)
-                            .WithKey(S3Helper.EncodeKey(key))
-                            .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectMetadataRequest)
-                        .LastModified.ToLocalTime();
+                    var request = new GetObjectMetadataRequest
+                    {
+                        BucketName = bucket,
+                        Key = S3Helper.EncodeKey(key),
+                    };
+                    request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    var response = s3Client.GetObjectMetadata(request);
+                    ret = response.LastModified.ToLocalTime();
                 }
                 return ret;
             }
@@ -206,11 +209,14 @@ namespace Amazon.S3.IO
                 DateTime ret = DateTime.MinValue;
                 if (Exists)
                 {
-                    ret = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
-                            .WithBucketName(bucket)
-                            .WithKey(S3Helper.EncodeKey(key))
-                            .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectMetadataRequest)
-                        .LastModified;
+                    var request = new GetObjectMetadataRequest
+                    {
+                        BucketName = bucket,
+                        Key = S3Helper.EncodeKey(key),
+                    };
+                    request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    var response = s3Client.GetObjectMetadata(request);
+                    ret = response.LastModified;
                 }
                 return ret;
             }
@@ -228,11 +234,14 @@ namespace Amazon.S3.IO
                 long ret = 0;
                 if (Exists)
                 {
-                    ret = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
-                            .WithBucketName(bucket)
-                            .WithKey(S3Helper.EncodeKey(key))
-                            .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectMetadataRequest)
-                        .ContentLength;
+                    var request = new GetObjectMetadataRequest
+                    {
+                        BucketName = bucket,
+                        Key = S3Helper.EncodeKey(key),
+                    };
+                    request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    var response = s3Client.GetObjectMetadata(request);
+                    ret = response.ContentLength;
                 }
                 return ret;
             }
@@ -380,26 +389,35 @@ namespace Amazon.S3.IO
 
             if (SameClient(file))
             {
-                s3Client.CopyObject(new CopyObjectRequest()
-                    .WithDestinationBucket(file.BucketName)
-                    .WithDestinationKey(S3Helper.EncodeKey(file.ObjectKey))
-                    .WithSourceBucket(bucket)
-                    .WithSourceKey(S3Helper.EncodeKey(key))
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as CopyObjectRequest);
+                var request = new CopyObjectRequest
+                {
+                    DestinationBucket = file.BucketName,
+                    DestinationKey = S3Helper.EncodeKey(file.ObjectKey),
+                    SourceBucket = bucket,
+                    SourceKey = S3Helper.EncodeKey(key)
+                };
+                request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                s3Client.CopyObject(request);
             }
             else
             {
-                using (Stream stream = s3Client.GetObject(new GetObjectRequest()
-                                .WithBucketName(bucket)
-                                .WithKey(S3Helper.EncodeKey(key))
-                                .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectRequest)
-                            .ResponseStream)
+                var getObjectRequest = new GetObjectRequest
                 {
-                    file.S3Client.PutObject((PutObjectRequest)new PutObjectRequest()
-                        .WithBucketName(file.BucketName)
-                        .WithKey(S3Helper.EncodeKey(file.ObjectKey))
-                        .WithInputStream(stream)
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler));
+                    BucketName = bucket,
+                    Key = S3Helper.EncodeKey(key)
+                };
+                getObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                var getObjectResponse = s3Client.GetObject(getObjectRequest);
+                using (Stream stream = getObjectResponse.ResponseStream)
+                {
+                    var putObjectRequest = new PutObjectRequest
+                    {
+                        BucketName = file.BucketName,
+                        Key = S3Helper.EncodeKey(file.ObjectKey),
+                        InputStream = stream
+                    };
+                    putObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    file.S3Client.PutObject(putObjectRequest);
                 }
             }
 
@@ -440,10 +458,13 @@ namespace Amazon.S3.IO
                 }
             }
 
-            s3Client.GetObject(new GetObjectRequest()
-                    .WithBucketName(bucket)
-                    .WithKey(S3Helper.EncodeKey(key))
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectRequest)
+            var getObjectRequest = new GetObjectRequest
+            {
+                BucketName = bucket,
+                Key = S3Helper.EncodeKey(key)
+            };
+            getObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+            s3Client.GetObject(getObjectRequest)
                 .WriteResponseStreamToFile(destFileName);
 
             return new FileInfo(destFileName);
@@ -483,11 +504,14 @@ namespace Amazon.S3.IO
                 }
             }
 
-            s3Client.PutObject(new PutObjectRequest()
-                    .WithBucketName(bucket)
-                    .WithKey(S3Helper.EncodeKey(key))
-                    .WithFilePath(srcFileName)
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as PutObjectRequest);
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucket,
+                Key = S3Helper.EncodeKey(key),
+                FilePath = srcFileName
+            };
+            putObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+            s3Client.PutObject(putObjectRequest);
 
             return this;
         }
@@ -523,10 +547,13 @@ namespace Amazon.S3.IO
         {
             if (Exists)
             {
-                s3Client.DeleteObject(new DeleteObjectRequest()
-                    .WithBucketName(bucket)
-                    .WithKey(S3Helper.EncodeKey(key))
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as DeleteObjectRequest);
+                var deleteObjectRequest = new DeleteObjectRequest
+                {
+                    BucketName = bucket,
+                    Key = S3Helper.EncodeKey(key)
+                };
+                deleteObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                s3Client.DeleteObject(deleteObjectRequest);
 
                 Directory.Create();
             }

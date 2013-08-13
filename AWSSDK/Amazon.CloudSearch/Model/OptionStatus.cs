@@ -46,6 +46,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -74,6 +75,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="updateDate">The value to set for the UpdateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithUpdateDate(DateTime updateDate)
         {
             this.updateDate = updateDate;
@@ -111,6 +113,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="updateVersion">The value to set for the UpdateVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithUpdateVersion(int updateVersion)
         {
             this.updateVersion = updateVersion;
@@ -151,6 +154,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithState(string state)
         {
             this.state = state;

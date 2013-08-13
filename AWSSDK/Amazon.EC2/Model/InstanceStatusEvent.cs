@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">Valid parameters are instance-reboot|system-reboot|instance-retirement</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusEvent WithCode(string code)
         {
             this.codeField = code;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Event description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusEvent WithDescription(string description)
         {
             this.descriptionField = description;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="notBefore">Scheduled start time</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusEvent WithNotBefore(string notBefore)
         {
             this.notBeforeField = notBefore;
@@ -142,6 +145,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="notAfter">Scheduled end time</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatusEvent WithNotAfter(string notAfter)
         {
             this.notAfterField = notAfter;

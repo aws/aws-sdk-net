@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// Amazon Elastic Compute Cloud Developer Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeReservedInstancesRequest
+    public class DescribeReservedInstancesRequest : EC2Request
     {    
         private List<string> reservedInstancesIdField;
         private List<Filter> filterField;
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the Reserved Instance to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesRequest WithReservedInstancesId(params string[] list)
         {
             foreach (string item in list)
@@ -108,6 +109,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)
@@ -142,6 +144,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="offeringType">Offering type. Valid values: Heavy Utilization | Medium Utilization | Light Utilization</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesRequest WithOfferingType(string offeringType)
         {
             this.offeringTypeField = offeringType;

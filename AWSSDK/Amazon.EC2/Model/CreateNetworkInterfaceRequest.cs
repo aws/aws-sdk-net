@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// This action is supported only in Amazon VPC.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateNetworkInterfaceRequest
+    public class CreateNetworkInterfaceRequest : EC2Request
     {
         private string subnetIdField;
         private string descriptionField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">ID of the subnet</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -86,6 +87,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description of the network interface</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipAddress">IP address of the network interface</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithPrivateIpAddress(string ipAddress)
         {
             this.privateIpAddressField = ipAddress;
@@ -153,6 +156,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">List of security group IDs</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -194,6 +198,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithPrivateIpAddresses(params PrivateIpAddress[] privateIpAddresses)
         {
             foreach (PrivateIpAddress privateIpAddress in privateIpAddresses)
@@ -228,6 +233,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkInterfaceRequest WithSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
         {
             this.secondaryPrivateIpAddressCountField = secondaryPrivateIpAddressCount;

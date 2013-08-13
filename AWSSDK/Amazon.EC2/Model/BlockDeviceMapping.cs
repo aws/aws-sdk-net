@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="deviceName">The device name (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithDeviceName(string deviceName)
         {
             this.deviceNameField = deviceName;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="virtualName">The virtual name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithVirtualName(string virtualName)
         {
             this.virtualNameField = virtualName;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// setup Amazon EBS
         /// volumes when the instance is launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithEbs(EbsBlockDevice ebs)
         {
             this.ebsField = ebs;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// <param name="noDevice">Specifies the device name to suppress during
         /// instance launch.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithNoDevice(string noDevice)
         {
             this.noDeviceField = noDevice;

@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipAddress">Private IP address.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PrivateIpAddress WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -77,6 +78,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="primary">Whether this is a primary IP.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PrivateIpAddress WithPrimary(bool primary)
         {
             this.primaryField = primary;

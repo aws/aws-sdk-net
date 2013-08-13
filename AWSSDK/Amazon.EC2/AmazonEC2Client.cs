@@ -83,10 +83,54 @@ namespace Amazon.EC2
     /// <seealso cref="P:Amazon.EC2.AmazonEC2Config.UseSecureStringForAwsSecretKey"/>
     public class AmazonEC2Client : AmazonEC2
     {
+        #region Private members
+
         private bool ownCredentials;
         private AWSCredentials credentials; 
         private AmazonEC2Config config;
         private bool disposed;
+
+        private static Dictionary<Type, MethodInfo> _methodCache = null;
+        private static Dictionary<Type, MethodInfo> MethodCache
+        {
+            get
+            {
+                if (_methodCache == null)
+                {
+                    _methodCache = new Dictionary<Type, MethodInfo>();
+
+                    var ec2RequestType = typeof(EC2Request);
+                    var allMethods = typeof(AmazonEC2Client).GetMethods(BindingFlags.Public | BindingFlags.Instance);
+                    foreach (var method in allMethods)
+                    {
+                        // Return type must be named "*Response"
+                        var returnType = method.ReturnType;
+                        if (!returnType.Name.EndsWith("Response", StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        // There must be only one input parameter
+                        var parameters = method.GetParameters();
+                        if (parameters.Length != 1)
+                            continue;
+
+                        // The input parameter must extend EC2Request, but must not be EC2Request
+                        var inputType = parameters[0].ParameterType;
+                        if (inputType == ec2RequestType || !ec2RequestType.IsAssignableFrom(inputType))
+                            continue;
+
+                        // Method name must match: [Name]Request = [InputTypeName]
+                        if (!string.Equals(method.Name + "Request", inputType.Name, StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        _methodCache[inputType] = method;
+                    }
+                }
+
+                return _methodCache;
+            }
+        }
+
+        #endregion
 
         #region Dispose Pattern Implementation
 
@@ -276,6 +320,64 @@ namespace Amazon.EC2
         #endregion
 
         #region Public API
+
+        /// <summary>
+        /// Checks whether you have the required permissions for the action, without actually making the request.
+        /// </summary>
+        /// <param name="request">Request to do a dry run of.</param>
+        /// <returns>Result of the dry run.</returns>
+        public DryRunResponse DryRun(EC2Request request)
+        {
+            DryRunResult result = new DryRunResult { IsSuccessful = false };
+            DryRunResponse response = new DryRunResponse { DryRunResult = result };
+
+            if (request == null)
+            {
+                result.Message = "Request must not be null";
+                return response;
+            }
+
+            MethodInfo method;
+            Type requestType = request.GetType();
+            if (!MethodCache.TryGetValue(requestType, out method) || method == null)
+            {
+                result.Message = "Unrecognized request";
+                return response;
+            }
+
+            try
+            {
+                request.IsDryRun = true;
+                method.Invoke(this, new object[] { request });
+
+                // If no exception thrown, consider this a failure
+                result.Message = "Unrecognized service response for the dry-run request.";
+            }
+            catch (Exception invokeException)
+            {
+                Exception actualException = invokeException.InnerException;
+                AmazonEC2Exception ec2e = actualException as AmazonEC2Exception;
+
+                result.Message = actualException.Message;
+                if (ec2e != null)
+                {
+                    result.IsSuccessful = ec2e.StatusCode == HttpStatusCode.PreconditionFailed;
+                    response.ResponseMetadata = new Model.ResponseMetadata
+                    {
+                        RequestId = ec2e.RequestId
+                    };
+                }
+
+                if (!result.IsSuccessful)
+                    result.Error = actualException;
+            }
+            finally
+            {
+                request.IsDryRun = false;
+            }
+
+            return response;
+        }
 
         /// <summary>
         /// Activates a license.
@@ -3143,6 +3245,47 @@ namespace Amazon.EC2
             return Invoke<DescribeAccountAttributesResponse>(ConvertDescribeAccountAttributes(request));
         }
 
+        /// <summary>
+        /// Creates a new export task, produces an image of an EC2 instance for use in another virtualization environment, 
+        /// and then writes the image to the specified Amazon S3 bucket. If the instance is running at the time of export, 
+        /// Amazon EC2 will attempt to shut down the instance, initiate the export process, and then reboot the instance. 
+        /// Only instances derived from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Create Instance Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Instance Export Task response from the service</returns>
+        public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
+        {
+            return Invoke<CreateInstanceExportTaskResponse>(ConvertCreateInstanceExportTask(request));
+        }
+
+        /// <summary>
+        /// Describes your export tasks. If no export task IDs are specified, all export tasks initiated by you are returned.
+        /// </summary>
+        /// <param name="request">Describe Export Tasks request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Export Tasks response from the service</returns>
+        public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            return Invoke<DescribeExportTasksResponse>(ConvertDescribeExportTasks(request));
+        }
+
+        /// <summary>
+        /// Cancels an active export task. The command removes all artifacts of the export, including any partially 
+        /// created Amazon S3 objects. If the export task is complete or is in the process of transferring the final 
+        /// disk image, the command fails and returns an error.
+        /// </summary>
+        /// <param name="request">Cancel Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Cancel Export Task response from the service</returns>
+        public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        {
+            return Invoke<CancelExportTaskResponse>(ConvertCancelExportTask(request));
+        }
+
         #endregion
 
         #region Private API
@@ -3474,12 +3617,28 @@ namespace Amazon.EC2
             }
         }
 
+
+        /**
+         * Convert base EC2Request
+         */
+        private static IDictionary<string, string> ConvertBase(EC2Request request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+            if (request.IsSetIsDryRun())
+            {
+                parameters["DryRun"] = request.IsDryRun.ToString().ToLower();
+            }
+
+            return parameters;
+        }
+
         /**
          * Convert ActivateLicenseRequest to name value pairs
          */
         private static IDictionary<string, string> ConvertActivateLicense(ActivateLicenseRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ActivateLicense";
             if (request.IsSetLicenseId())
             {
@@ -3498,7 +3657,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAllocateAddress(AllocateAddressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AllocateAddress";
             if (request.IsSetDomain())
             {
@@ -3513,7 +3672,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAttachVpnGateway(AttachVpnGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AttachVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
@@ -3532,7 +3691,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AssociateDhcpOptions";
             if (request.IsSetDhcpOptionsId())
             {
@@ -3551,7 +3710,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAssociateAddress(AssociateAddressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AssociateAddress";
             if (request.IsSetInstanceId())
             {
@@ -3586,7 +3745,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AuthorizeSecurityGroupIngress";
             if (request.IsSetUserId())
             {
@@ -3678,7 +3837,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertBundleInstance(BundleInstanceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "BundleInstance";
             if (request.IsSetInstanceId())
             {
@@ -3721,7 +3880,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCancelBundleTask(CancelBundleTaskRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CancelBundleTask";
             if (request.IsSetBundleId())
             {
@@ -3736,7 +3895,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ConfirmProductInstance";
             if (request.IsSetProductCode())
             {
@@ -3755,7 +3914,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreatePlacementGroup(CreatePlacementGroupRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreatePlacementGroup";
             if (request.IsSetGroupName())
             {
@@ -3774,7 +3933,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateImage(CreateImageRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateImage";
             if (request.IsSetInstanceId())
             {
@@ -3843,7 +4002,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateKeyPair(CreateKeyPairRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateKeyPair";
             if (request.IsSetKeyName())
             {
@@ -3858,7 +4017,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertImportKeyPair(ImportKeyPairRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ImportKeyPair";
             if (request.IsSetKeyName())
             {
@@ -3877,7 +4036,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateTags(CreateTagsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateTags";
             List<string> createTagsRequestResourceIdList = request.ResourceId;
             int createTagsRequestResourceIdListIndex = 1;
@@ -3910,7 +4069,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeTags(DescribeTagsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeTags";
             List<Filter> describeTagsRequestFilterList = request.Filter;
             int describeTagsRequestFilterListIndex = 1;
@@ -3939,7 +4098,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteTags(DeleteTagsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteTags";
             List<string> deleteTagsRequestResourceIdList = request.ResourceId;
             int deleteTagsRequestResourceIdListIndex = 1;
@@ -3972,7 +4131,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateSubnet(CreateSubnetRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateSubnet";
             if (request.IsSetVpcId())
             {
@@ -3995,7 +4154,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateVpnConnection(CreateVpnConnectionRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateVpnConnection";
             if (request.IsSetType())
             {
@@ -4021,7 +4180,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateVpnGateway(CreateVpnGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateVpnGateway";
             if (request.IsSetType())
             {
@@ -4040,7 +4199,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateDhcpOptions";
             List<DhcpConfiguration> createDhcpOptionsRequestDhcpConfigurationList = request.DhcpConfiguration;
             int createDhcpOptionsRequestDhcpConfigurationListIndex = 1;
@@ -4069,7 +4228,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateVpc(CreateVpcRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateVpc";
             if (request.IsSetCidrBlock())
             {
@@ -4088,7 +4247,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateCustomerGateway";
             if (request.IsSetType())
             {
@@ -4111,7 +4270,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateSecurityGroup(CreateSecurityGroupRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateSecurityGroup";
             if (request.IsSetGroupName())
             {
@@ -4134,7 +4293,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeactivateLicense(DeactivateLicenseRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeactivateLicense";
             if (request.IsSetLicenseId())
             {
@@ -4153,7 +4312,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteKeyPair(DeleteKeyPairRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteKeyPair";
             if (request.IsSetKeyName())
             {
@@ -4168,7 +4327,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeletePlacementGroup(DeletePlacementGroupRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeletePlacementGroup";
             if (request.IsSetGroupName())
             {
@@ -4183,7 +4342,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteVpc(DeleteVpcRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteVpc";
             if (request.IsSetVpcId())
             {
@@ -4198,7 +4357,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
@@ -4213,7 +4372,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteVpnConnection";
             if (request.IsSetVpnConnectionId())
             {
@@ -4228,7 +4387,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteDhcpOptions";
             if (request.IsSetDhcpOptionsId())
             {
@@ -4243,7 +4402,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteCustomerGateway";
             if (request.IsSetCustomerGatewayId())
             {
@@ -4258,7 +4417,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteSecurityGroup";
             if (request.IsSetGroupId())
             {
@@ -4277,7 +4436,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteSubnet(DeleteSubnetRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteSubnet";
             if (request.IsSetSubnetId())
             {
@@ -4292,7 +4451,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVpcs(DescribeVpcsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVpcs";
             List<string> describeVpcsRequestVpcIdList = request.VpcId;
             int describeVpcsRequestVpcIdListIndex = 1;
@@ -4328,7 +4487,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVpnGateways";
             List<string> describeVpnGatewaysRequestVpnGatewayIdList = request.VpnGatewayId;
             int describeVpnGatewaysRequestVpnGatewayIdListIndex = 1;
@@ -4364,7 +4523,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeDhcpOptions";
             List<string> describeDhcpOptionsRequestDhcpOptionsIdList = request.DhcpOptionsId;
             int describeDhcpOptionsRequestDhcpOptionsIdListIndex = 1;
@@ -4400,7 +4559,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVpnConnections";
             List<string> describeVpnConnectionsRequestVpnConnectionIdList = request.VpnConnectionId;
             int describeVpnConnectionsRequestVpnConnectionIdListIndex = 1;
@@ -4436,7 +4595,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeCustomerGateways";
             List<string> describeCustomerGatewaysRequestCustomerGatewayIdList = request.CustomerGatewayId;
             int describeCustomerGatewaysRequestCustomerGatewayIdListIndex = 1;
@@ -4472,7 +4631,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeReservedInstancesOfferings";
             List<string> describeReservedInstancesOfferingsRequestReservedInstancesIdList = request.ReservedInstancesId;
             int describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex = 1;
@@ -4551,7 +4710,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeReservedInstances";
             List<string> describeReservedInstancesRequestReservedInstancesIdList = request.ReservedInstancesId;
             int describeReservedInstancesRequestReservedInstancesIdListIndex = 1;
@@ -4591,7 +4750,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSubnets(DescribeSubnetsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSubnets";
             List<string> describeSubnetsRequestSubnetIdList = request.SubnetId;
             int describeSubnetsRequestSubnetIdListIndex = 1;
@@ -4627,7 +4786,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertPurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "PurchaseReservedInstancesOffering";
             if (request.IsSetReservedInstancesOfferingId())
             {
@@ -4654,7 +4813,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeregisterImage(DeregisterImageRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeregisterImage";
             if (request.IsSetImageId())
             {
@@ -4669,7 +4828,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeAddresses(DescribeAddressesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeAddresses";
             List<string> describeAddressesRequestPublicIpList = request.PublicIp;
             int describeAddressesRequestPublicIpListIndex = 1;
@@ -4712,7 +4871,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeAvailabilityZones";
             List<string> describeAvailabilityZonesRequestZoneNameList = request.ZoneName;
             int describeAvailabilityZonesRequestZoneNameListIndex = 1;
@@ -4748,7 +4907,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeBundleTasks(DescribeBundleTasksRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeBundleTasks";
             List<string> describeBundleTasksRequestBundleIdList = request.BundleId;
             int describeBundleTasksRequestBundleIdListIndex = 1;
@@ -4784,7 +4943,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeImageAttribute(DescribeImageAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeImageAttribute";
             if (request.IsSetImageId())
             {
@@ -4803,7 +4962,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeInstanceAttribute";
             if (request.IsSetInstanceId())
             {
@@ -4822,7 +4981,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
@@ -4841,7 +5000,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeImages(DescribeImagesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeImages";
             List<string> describeImagesRequestImageIdList = request.ImageId;
             int describeImagesRequestImageIdListIndex = 1;
@@ -4891,7 +5050,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeInstanceStatus(DescribeInstanceStatusRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeInstanceStatus";
             List<string> describeInstanceStatusRequestInstanceIdList = request.InstanceId;
             int describeInstanceStatusRequestInstanceIdListIndex = 1;
@@ -4919,6 +5078,19 @@ namespace Amazon.EC2
                 describeInstanceStatusRequestFilterListIndex++;
             }
 
+            if (request.IsSetIncludeAllInstances())
+            {
+                parameters["IncludeAllInstances"] = request.IncludeAllInstances.ToString();
+            }
+            if (request.IsSetMaxResults())
+            {
+                parameters["MaxResults"] = request.MaxResults.ToString();
+            }
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
+
             return parameters;
         }
 
@@ -4927,7 +5099,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReportInstanceStatus(ReportInstanceStatusRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReportInstanceStatus";
 
             List<string> reportInstanceStatusRequestInstanceIdList = request.InstanceId;
@@ -4964,7 +5136,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeInstances(DescribeInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeInstances";
             List<string> describeInstancesRequestInstanceIdList = request.InstanceId;
             int describeInstancesRequestInstanceIdListIndex = 1;
@@ -5000,7 +5172,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeKeyPairs(DescribeKeyPairsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeKeyPairs";
             List<string> describeKeyPairsRequestKeyNameList = request.KeyName;
             int describeKeyPairsRequestKeyNameListIndex = 1;
@@ -5036,7 +5208,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeLicenses(DescribeLicensesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeLicenses";
             List<string> describeLicensesRequestLicenseIdList = request.LicenseId;
             int describeLicensesRequestLicenseIdListIndex = 1;
@@ -5072,7 +5244,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribePlacementGroups(DescribePlacementGroupsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribePlacementGroups";
             List<string> describePlacementGroupsRequestGroupNameList = request.GroupName;
             int describePlacementGroupsRequestGroupNameListIndex = 1;
@@ -5108,7 +5280,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSecurityGroups";
             List<string> describeSecurityGroupsRequestGroupNameList = request.GroupName;
             int describeSecurityGroupsRequestGroupNameListIndex = 1;
@@ -5151,7 +5323,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDisassociateAddress(DisassociateAddressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DisassociateAddress";
             if (request.IsSetPublicIp())
             {
@@ -5170,7 +5342,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertGetConsoleOutput(GetConsoleOutputRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "GetConsoleOutput";
             if (request.IsSetInstanceId())
             {
@@ -5185,7 +5357,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertGetPasswordData(GetPasswordDataRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "GetPasswordData";
             if (request.IsSetInstanceId())
             {
@@ -5200,7 +5372,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifyImageAttribute(ModifyImageAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifyImageAttribute";
             if (request.IsSetImageId())
             {
@@ -5249,7 +5421,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifyInstanceAttribute";
             if (request.IsSetInstanceId())
             {
@@ -5310,7 +5482,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifySnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
@@ -5347,7 +5519,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertMonitorInstances(MonitorInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "MonitorInstances";
             List<string> monitorInstancesRequestInstanceIdList = request.InstanceId;
             int monitorInstancesRequestInstanceIdListIndex = 1;
@@ -5365,7 +5537,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertUnmonitorInstances(UnmonitorInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "UnmonitorInstances";
             List<string> unmonitorInstancesRequestInstanceIdList = request.InstanceId;
             int unmonitorInstancesRequestInstanceIdListIndex = 1;
@@ -5383,7 +5555,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRebootInstances(RebootInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RebootInstances";
             List<string> rebootInstancesRequestInstanceIdList = request.InstanceId;
             int rebootInstancesRequestInstanceIdListIndex = 1;
@@ -5401,7 +5573,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRegisterImage(RegisterImageRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RegisterImage";
             if (request.IsSetImageLocation())
             {
@@ -5483,7 +5655,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReleaseAddress(ReleaseAddressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReleaseAddress";
             if (request.IsSetPublicIp())
             {
@@ -5502,7 +5674,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertResetImageAttribute(ResetImageAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ResetImageAttribute";
             if (request.IsSetImageId())
             {
@@ -5521,7 +5693,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ResetInstanceAttribute";
             if (request.IsSetInstanceId())
             {
@@ -5540,7 +5712,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ResetSnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
@@ -5559,7 +5731,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RevokeSecurityGroupIngress";
             if (request.IsSetUserId())
             {
@@ -5651,7 +5823,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRunInstances(RunInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RunInstances";
             if (request.IsSetImageId())
             {
@@ -5876,7 +6048,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertStopInstances(StopInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "StopInstances";
             List<string> stopInstancesRequestInstanceIdList = request.InstanceId;
             int stopInstancesRequestInstanceIdListIndex = 1;
@@ -5898,7 +6070,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertStartInstances(StartInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "StartInstances";
             List<string> startInstancesRequestInstanceIdList = request.InstanceId;
             int startInstancesRequestInstanceIdListIndex = 1;
@@ -5916,7 +6088,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertTerminateInstances(TerminateInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "TerminateInstances";
             List<string> terminateInstancesRequestInstanceIdList = request.InstanceId;
             int terminateInstancesRequestInstanceIdListIndex = 1;
@@ -5934,7 +6106,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteVolume(DeleteVolumeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteVolume";
             if (request.IsSetVolumeId())
             {
@@ -5949,7 +6121,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateVolume(CreateVolumeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateVolume";
             if (request.IsSetSize())
             {
@@ -5980,7 +6152,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVolumes(DescribeVolumesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVolumes";
             List<string> describeVolumesRequestVolumeIdList = request.VolumeId;
             int describeVolumesRequestVolumeIdListIndex = 1;
@@ -6016,7 +6188,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDetachVolume(DetachVolumeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DetachVolume";
             if (request.IsSetVolumeId())
             {
@@ -6043,7 +6215,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDetachVpnGateway(DetachVpnGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DetachVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
@@ -6062,7 +6234,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSnapshots";
             List<string> describeSnapshotsRequestSnapshotIdList = request.SnapshotId;
             int describeSnapshotsRequestSnapshotIdListIndex = 1;
@@ -6106,7 +6278,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteSnapshot(DeleteSnapshotRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteSnapshot";
             if (request.IsSetSnapshotId())
             {
@@ -6121,7 +6293,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateSnapshot(CreateSnapshotRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateSnapshot";
             if (request.IsSetVolumeId())
             {
@@ -6140,7 +6312,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAttachVolume(AttachVolumeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AttachVolume";
             if (request.IsSetVolumeId())
             {
@@ -6163,7 +6335,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeRegions(DescribeRegionsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeRegions";
             List<string> describeRegionsRequestRegionNameList = request.RegionName;
             int describeRegionsRequestRegionNameListIndex = 1;
@@ -6199,7 +6371,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRequestSpotInstances(RequestSpotInstancesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RequestSpotInstances";
             if (request.IsSetSpotPrice())
             {
@@ -6411,7 +6583,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSpotInstanceRequests";
             List<string> describeSpotInstanceRequestsRequestSpotInstanceRequestIdList = request.SpotInstanceRequestId;
             int describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex = 1;
@@ -6447,7 +6619,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CancelSpotInstanceRequests";
             List<string> cancelSpotInstanceRequestsRequestSpotInstanceRequestIdList = request.SpotInstanceRequestId;
             int cancelSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex = 1;
@@ -6465,7 +6637,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSpotPriceHistory";
             if (request.IsSetStartTime())
             {
@@ -6528,7 +6700,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateSpotDatafeedSubscription";
             if (request.IsSetBucket())
             {
@@ -6547,7 +6719,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeSpotDatafeedSubscription";
 
             return parameters;
@@ -6558,7 +6730,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteSpotDatafeedSubscription";
 
             return parameters;
@@ -6569,7 +6741,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertImportInstance(ImportInstanceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ImportInstance";
             if (request.IsSetDescription())
             {
@@ -6685,7 +6857,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertImportVolume(ImportVolumeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ImportVolume";
             if (request.IsSetAvailabilityZone())
             {
@@ -6728,7 +6900,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeConversionTasks(DescribeConversionTasksRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeConversionTasks";
             List<string> describeConversionTasksRequestConversionTaskIdList = request.ConversionTaskId;
             int describeConversionTasksRequestConversionTaskIdListIndex = 1;
@@ -6746,7 +6918,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCancelConversionTask(CancelConversionTaskRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CancelConversionTask";
             if (request.IsSetConversionTaskId())
             {
@@ -6761,7 +6933,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AuthorizeSecurityGroupEgress";
             if (request.IsSetGroupId())
             {
@@ -6821,7 +6993,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertRevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "RevokeSecurityGroupEgress";
             if (request.IsSetGroupId())
             {
@@ -6881,7 +7053,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateInternetGateway(CreateInternetGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateInternetGateway";
 
             return parameters;
@@ -6892,7 +7064,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeInternetGateways(DescribeInternetGatewaysRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeInternetGateways";
             List<string> describeInternetGatewaysRequestInternetGatewayIdList = request.InternetGatewayId;
             int describeInternetGatewaysRequestInternetGatewayIdListIndex = 1;
@@ -6928,7 +7100,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteInternetGateway(DeleteInternetGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteInternetGateway";
             if (request.IsSetInternetGatewayId())
             {
@@ -6943,7 +7115,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAttachInternetGateway(AttachInternetGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AttachInternetGateway";
             if (request.IsSetInternetGatewayId())
             {
@@ -6962,7 +7134,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDetachInternetGateway(DetachInternetGatewayRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DetachInternetGateway";
             if (request.IsSetInternetGatewayId())
             {
@@ -6981,7 +7153,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateRouteTable(CreateRouteTableRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateRouteTable";
             if (request.IsSetVpcId())
             {
@@ -6996,7 +7168,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeRouteTables(DescribeRouteTablesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeRouteTables";
             List<string> describeRouteTablesRequestRouteTableIdList = request.RouteTableId;
             int describeRouteTablesRequestRouteTableIdListIndex = 1;
@@ -7032,7 +7204,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteRouteTable(DeleteRouteTableRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteRouteTable";
             if (request.IsSetRouteTableId())
             {
@@ -7047,7 +7219,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAssociateRouteTable(AssociateRouteTableRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AssociateRouteTable";
             if (request.IsSetRouteTableId())
             {
@@ -7066,7 +7238,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReplaceRouteTableAssociation";
             if (request.IsSetAssociationId())
             {
@@ -7085,7 +7257,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDisassociateRouteTable(DisassociateRouteTableRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DisassociateRouteTable";
             if (request.IsSetAssociationId())
             {
@@ -7100,7 +7272,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateRoute(CreateRouteRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateRoute";
             if (request.IsSetRouteTableId())
             {
@@ -7131,7 +7303,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReplaceRoute(ReplaceRouteRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReplaceRoute";
             if (request.IsSetRouteTableId())
             {
@@ -7162,7 +7334,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteRoute(DeleteRouteRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteRoute";
             if (request.IsSetRouteTableId())
             {
@@ -7181,7 +7353,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateNetworkAcl(CreateNetworkAclRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateNetworkAcl";
             if (request.IsSetVpcId())
             {
@@ -7196,7 +7368,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeNetworkAcls(DescribeNetworkAclsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeNetworkAcls";
             List<string> describeNetworkAclsRequestNetworkAclIdList = request.NetworkAclId;
             int describeNetworkAclsRequestNetworkAclIdListIndex = 1;
@@ -7232,7 +7404,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteNetworkAcl(DeleteNetworkAclRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteNetworkAcl";
             if (request.IsSetNetworkAclId())
             {
@@ -7247,7 +7419,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReplaceNetworkAclAssociation";
             if (request.IsSetAssociationId())
             {
@@ -7266,7 +7438,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateNetworkAclEntry";
             if (request.IsSetNetworkAclId())
             {
@@ -7325,7 +7497,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ReplaceNetworkAclEntry";
             if (request.IsSetNetworkAclId())
             {
@@ -7384,7 +7556,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteNetworkAclEntry";
             if (request.IsSetNetworkAclId())
             {
@@ -7407,7 +7579,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAttachNetworkInterface(AttachNetworkInterfaceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AttachNetworkInterface";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7425,7 +7597,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateNetworkInterface(CreateNetworkInterfaceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateNetworkInterface";
 
             if (request.IsSetSubnetId())
@@ -7469,7 +7641,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteNetworkInterface";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7483,7 +7655,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeNetworkInterfaceAttribute";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7503,7 +7675,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeNetworkInterfaces";
 
             List<string> describeNetworkInterfacesRequestIdList = request.NetworkInterfaceId;
@@ -7541,7 +7713,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDetachNetworkInterface(DetachNetworkInterfaceRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DetachNetworkInterface";
 
             if (request.IsSetAttachmentId())
@@ -7557,7 +7729,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifyNetworkInterfaceAttribute";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7603,7 +7775,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ResetNetworkInterfaceAttribute";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7623,7 +7795,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVolumeStatus(DescribeVolumeStatusRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVolumeStatus";
 
             if (request.IsSetVolumeId())
@@ -7677,7 +7849,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertEnableVolumeIO(EnableVolumeIORequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "EnableVolumeIO";
 
             if (request.IsSetVolumeId())
@@ -7693,7 +7865,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifyVolumeAttribute";
 
             if (request.IsSetVolumeId())
@@ -7713,7 +7885,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVolumeAttribute";
 
             if (request.IsSetVolumeId())
@@ -7734,7 +7906,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertAssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "AssignPrivateIpAddresses";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7768,7 +7940,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertUnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "UnassignPrivateIpAddresses";
 
             if (request.IsSetNetworkInterfaceId())
@@ -7794,7 +7966,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateVpnConnectionRoute";
 
             if (request.IsSetVpnConnectionId())
@@ -7814,7 +7986,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DeleteVpnConnectionRoute";
 
             if (request.IsSetVpnConnectionId())
@@ -7834,7 +8006,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertEnableVGWRoutePropagation(EnableVGWRoutePropagationRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "EnableVGWRoutePropagation";
 
             if (request.IsSetRouteTableId())
@@ -7854,7 +8026,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDisableVGWRoutePropagation(DisableVGWRoutePropagationRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DisableVGWRoutePropagation";
 
             if (request.IsSetRouteTableId())
@@ -7875,7 +8047,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CancelReservedInstancesListing";
 
             if (request.IsSetReservedInstancesListingId())
@@ -7891,7 +8063,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CreateReservedInstancesListing";
 
             if (request.IsSetReservedInstancesId())
@@ -7936,7 +8108,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeReservedInstancesListing";
 
             if (request.IsSetReservedInstancesListingId())
@@ -7986,7 +8158,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCopySnapshot(CopySnapshotRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CopySnapshot";
             if (request.IsSetSourceRegion())
             {
@@ -8009,7 +8181,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertCopyImage(CopyImageRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "CopyImage";
             if (request.IsSetSourceRegion())
             {
@@ -8040,7 +8212,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeVpcAttribute";
             if (request.IsSetVpcId())
             {
@@ -8058,7 +8230,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "ModifyVpcAttribute";
             if (request.IsSetVpcId())
             {
@@ -8081,7 +8253,7 @@ namespace Amazon.EC2
          */
         private static IDictionary<string, string> ConvertDescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            IDictionary<string, string> parameters = ConvertBase(request);
             parameters["Action"] = "DescribeAccountAttributes";
             if (request.IsSetAccountAttributeNames())
             {
@@ -8119,6 +8291,87 @@ namespace Amazon.EC2
             return parameters;
         }
 
+        /**
+         * Convert CreateInstanceExportTaskRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateInstanceExportTask(CreateInstanceExportTaskRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "CreateInstanceExportTask";
+
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetInstanceId())
+            {
+                parameters["InstanceId"] = request.InstanceId;
+            }
+            if (request.IsSetTargetEnvironment())
+            {
+                parameters["TargetEnvironment"] = request.TargetEnvironment;
+            }
+            if (request.IsSetExportToS3Task())
+            {
+                if (request.ExportToS3Task.IsSetDiskImageFormat())
+                {
+                    parameters["ExportToS3.DiskImageFormat"] = request.ExportToS3Task.DiskImageFormat;
+                }
+                if (request.ExportToS3Task.IsSetContainerFormat())
+                {
+                    parameters["ExportToS3.ContainerFormat"] = request.ExportToS3Task.ContainerFormat;
+                }
+                if (request.ExportToS3Task.IsSetS3Bucket())
+                {
+                    parameters["ExportToS3.S3Bucket"] = request.ExportToS3Task.S3Bucket;
+                }
+                if (request.ExportToS3Task.IsSetS3Prefix())
+                {
+                    parameters["ExportToS3.S3Prefix"] = request.ExportToS3Task.S3Prefix;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeExportTasksRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "DescribeExportTasks";
+
+            if (request.IsSetExportTaskIds())
+            {
+                List<string> exportTaskIdsList = request.ExportTaskIds;
+                int exportTaskIdsListIndex = 1;
+                foreach (string exportTaskId in exportTaskIdsList)
+                {
+                    parameters[String.Concat("ExportTaskId", ".", exportTaskIdsListIndex)] = exportTaskId;
+                    exportTaskIdsListIndex++;
+                }
+
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CancelExportTaskRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCancelExportTask(CancelExportTaskRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "CancelExportTask";
+
+            if (request.IsSetExportTaskId())
+            {
+                parameters["ExportTaskId"] = request.ExportTaskId;
+            }
+
+            return parameters;
+        }
 
         /*
          *  Transforms response based on xslt template

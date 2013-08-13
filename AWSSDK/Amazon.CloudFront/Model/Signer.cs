@@ -46,6 +46,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="awsAccountNumber">The value to set for the AwsAccountNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithAwsAccountNumber(string awsAccountNumber)
         {
             this.awsAccountNumber = awsAccountNumber;
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="keyPairIds">The value to set for the KeyPairIds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithKeyPairIds(KeyPairIds keyPairIds)
         {
             this.keyPairIds = keyPairIds;

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -71,6 +71,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="domainName">The name of the domain in which to perform the operation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchDeleteAttributesRequest WithDomainName(string domainName)
         {
             this.domainNameField = domainName;
@@ -107,6 +108,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Items represent individual objects that contain one or more attribute name-value pairs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchDeleteAttributesRequest WithItem(params DeleteableItem[] list)
         {
             foreach (DeleteableItem item in list)

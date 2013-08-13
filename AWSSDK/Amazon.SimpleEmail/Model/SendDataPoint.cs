@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendDataPoint WithTimestamp(DateTime timestamp)
         {
             this.timestamp = timestamp;
@@ -75,6 +76,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="deliveryAttempts">The value to set for the DeliveryAttempts property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendDataPoint WithDeliveryAttempts(long deliveryAttempts)
         {
             this.deliveryAttempts = deliveryAttempts;
@@ -103,6 +105,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="bounces">The value to set for the Bounces property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendDataPoint WithBounces(long bounces)
         {
             this.bounces = bounces;
@@ -131,6 +134,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="complaints">The value to set for the Complaints property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendDataPoint WithComplaints(long complaints)
         {
             this.complaints = complaints;
@@ -159,6 +163,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="rejects">The value to set for the Rejects property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendDataPoint WithRejects(long rejects)
         {
             this.rejects = rejects;

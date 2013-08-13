@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -84,6 +85,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithAutoScalingGroups(params AutoScalingGroup[] autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -99,6 +101,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithAutoScalingGroups(IEnumerable<AutoScalingGroup> autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -129,6 +132,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -144,6 +148,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -174,6 +179,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLaunchConfigurations(params LaunchConfiguration[] launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -189,6 +195,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLaunchConfigurations(IEnumerable<LaunchConfiguration> launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -219,6 +226,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancers">The values to add to the LoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLoadBalancers(params LoadBalancer[] loadBalancers)
         {
             foreach (LoadBalancer element in loadBalancers)
@@ -234,6 +242,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancers">The values to add to the LoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLoadBalancers(IEnumerable<LoadBalancer> loadBalancers)
         {
             foreach (LoadBalancer element in loadBalancers)
@@ -264,6 +273,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="triggers">The values to add to the Triggers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithTriggers(params Trigger[] triggers)
         {
             foreach (Trigger element in triggers)
@@ -279,6 +289,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="triggers">The values to add to the Triggers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithTriggers(IEnumerable<Trigger> triggers)
         {
             foreach (Trigger element in triggers)

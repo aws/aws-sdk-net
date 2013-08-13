@@ -52,6 +52,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityNotificationTopicRequest WithIdentity(string identity)
         {
             this.identity = identity;
@@ -89,6 +90,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="notificationType">The value to set for the NotificationType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityNotificationTopicRequest WithNotificationType(string notificationType)
         {
             this.notificationType = notificationType;
@@ -118,6 +120,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="snsTopic">The value to set for the SnsTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityNotificationTopicRequest WithSnsTopic(string snsTopic)
         {
             this.snsTopic = snsTopic;

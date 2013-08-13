@@ -51,6 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sourceEnvironmentId">The value to set for the SourceEnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SwapEnvironmentCNAMEsRequest WithSourceEnvironmentId(string sourceEnvironmentId)
         {
             this.sourceEnvironmentId = sourceEnvironmentId;
@@ -89,6 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sourceEnvironmentName">The value to set for the SourceEnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SwapEnvironmentCNAMEsRequest WithSourceEnvironmentName(string sourceEnvironmentName)
         {
             this.sourceEnvironmentName = sourceEnvironmentName;
@@ -119,6 +121,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="destinationEnvironmentId">The value to set for the DestinationEnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SwapEnvironmentCNAMEsRequest WithDestinationEnvironmentId(string destinationEnvironmentId)
         {
             this.destinationEnvironmentId = destinationEnvironmentId;
@@ -158,6 +161,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="destinationEnvironmentName">The value to set for the DestinationEnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SwapEnvironmentCNAMEsRequest WithDestinationEnvironmentName(string destinationEnvironmentName)
         {
             this.destinationEnvironmentName = destinationEnvironmentName;

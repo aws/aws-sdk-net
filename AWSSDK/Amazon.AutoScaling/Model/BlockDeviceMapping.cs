@@ -58,6 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="virtualName">The value to set for the VirtualName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithVirtualName(string virtualName)
         {
             this.virtualName = virtualName;
@@ -99,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="deviceName">The value to set for the DeviceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithDeviceName(string deviceName)
         {
             this.deviceName = deviceName;
@@ -127,6 +129,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ebs">The value to set for the Ebs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithEbs(Ebs ebs)
         {
             this.ebs = ebs;

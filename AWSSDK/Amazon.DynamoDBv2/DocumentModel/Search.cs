@@ -39,6 +39,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             NextKey = null;
             Matches = new List<Document>();
             SearchMethod = searchMethod;
+            CollectResults = true;
         }
 
         #endregion
@@ -50,6 +51,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Name of the table being searched
         /// </summary>
         public String TableName { get; internal set; }
+
+        /// <summary>
+        /// Whether to collect GetNextSet and GetRemaining results in Matches property.
+        /// Default is true. If set to false, Matches will always be empty.
+        /// </summary>
+        public bool CollectResults { get; internal set; }
 
         /// <summary>
         /// Upper limit on the number of items returned.
@@ -106,9 +113,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public int Segment { get; set; }
 
         /// <summary>
-        /// Gets the total number of items that match the search parameters
+        /// Gets the total number of items that match the search parameters.
         /// 
-        /// If IsDone is true, returns Matches.Count
+        /// If IsDone is true and CollectResults is true, returns Matches.Count.
         /// Otherwise, makes a call to DynamoDB to find out the number of
         /// matching items, without retrieving the items. Count is then cached.
         /// </summary>
@@ -178,7 +185,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         {
                             Document doc = Document.FromAttributeMap(item);
                             ret.Add(doc);
-                            Matches.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = scanResult.LastEvaluatedKey;
                         if (NextKey == null)
@@ -208,7 +218,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         {
                             Document doc = Document.FromAttributeMap(item);
                             ret.Add(doc);
-                            Matches.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = queryResult.LastEvaluatedKey;
                         if (NextKey == null)
@@ -314,7 +327,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private int GetCount()
         {
-            if (IsDone)
+            if (IsDone && CollectResults)
             {
                 return Matches.Count;
             }

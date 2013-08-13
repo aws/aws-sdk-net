@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="spotInstanceRequestId">The ID of the SpotInstanceRequest.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithSpotInstanceRequestId(string spotInstanceRequestId)
         {
             this.spotInstanceRequestIdField = spotInstanceRequestId;
@@ -94,6 +95,7 @@ namespace Amazon.EC2.Model
         /// <param name="spotPrice">Specifies the maximum price you will pay to
         /// launch one or more Spot Instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithSpotPrice(string spotPrice)
         {
             this.spotPriceField = spotPrice;
@@ -124,6 +126,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The instance type (eg. m1.small)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithType(string type)
         {
             this.typeField = type;
@@ -156,6 +159,7 @@ namespace Amazon.EC2.Model
         /// <param name="state">The state of the Spot Instance request.
         /// Valid values: open | closed | cancelled | failed</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithState(string state)
         {
             this.stateField = state;
@@ -186,6 +190,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="fault">Fault details for the Spot Instance request, if any.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithFault(SpotInstanceStateFault fault)
         {
             this.faultField = fault;
@@ -217,6 +222,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Status details for the Spot Instance request, if any.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithStatus(SpotInstanceStatusMessage status)
         {
             this.statusField = status;
@@ -259,6 +265,7 @@ namespace Amazon.EC2.Model
         /// active until it expires or is
         /// canceled.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithValidFrom(string validFrom)
         {
             this.validFromField = validFrom;
@@ -299,6 +306,7 @@ namespace Amazon.EC2.Model
         /// persistent, it remains
         /// active until it expires or is canceled.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithValidUntil(string validUntil)
         {
             this.validUntilField = validUntil;
@@ -331,6 +339,7 @@ namespace Amazon.EC2.Model
         /// <param name="launchGroup">Sets the instance launch group. Launch
         /// groups are Spot Instances that launch and terminate together.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithLaunchGroup(string launchGroup)
         {
             this.launchGroupField = launchGroup;
@@ -367,6 +376,7 @@ namespace Amazon.EC2.Model
         /// Instances are launched in the same
         /// Availability Zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithAvailabilityZoneGroup(string availabilityZoneGroup)
         {
             this.availabilityZoneGroupField = availabilityZoneGroup;
@@ -398,6 +408,7 @@ namespace Amazon.EC2.Model
         /// <param name="launchSpecification">Specifies additional launch instance
         /// information.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithLaunchSpecification(LaunchSpecification launchSpecification)
         {
             this.launchSpecificationField = launchSpecification;
@@ -429,6 +440,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceId">The instance associated with the Spot Instance
         /// Request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -460,6 +472,7 @@ namespace Amazon.EC2.Model
         /// <param name="createTime">Time stamp when the Spot Instance request was
         /// fulfilled.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithCreateTime(string createTime)
         {
             this.createTimeField = createTime;
@@ -491,6 +504,7 @@ namespace Amazon.EC2.Model
         /// <param name="productDescription">The product description associated with the
         /// Spot Instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithProductDescription(string productDescription)
         {
             this.productDescriptionField = productDescription;
@@ -528,6 +542,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the specified resources.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -560,6 +575,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="launchedAvailabilityZone">The Availability Zone in which the bid is launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceRequest WithLaunchedAvailabilityZone(string launchedAvailabilityZone)
         {
             this.launchedAvailabilityZoneField = launchedAvailabilityZone;

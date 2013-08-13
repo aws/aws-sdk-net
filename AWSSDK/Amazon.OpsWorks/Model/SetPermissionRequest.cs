@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetPermissionRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -78,6 +79,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetPermissionRequest WithIamUserArn(string iamUserArn)
         {
             this.iamUserArn = iamUserArn;
@@ -106,6 +108,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="allowSsh">The value to set for the AllowSsh property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetPermissionRequest WithAllowSsh(bool allowSsh)
         {
             this.allowSsh = allowSsh;
@@ -134,6 +137,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="allowSudo">The value to set for the AllowSudo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetPermissionRequest WithAllowSudo(bool allowSudo)
         {
             this.allowSudo = allowSudo;

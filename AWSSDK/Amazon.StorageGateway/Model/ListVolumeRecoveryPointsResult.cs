@@ -58,6 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumeRecoveryPointsResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeRecoveryPointInfos">The values to add to the VolumeRecoveryPointInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumeRecoveryPointsResult WithVolumeRecoveryPointInfos(params VolumeRecoveryPointInfo[] volumeRecoveryPointInfos)
         {
             foreach (VolumeRecoveryPointInfo element in volumeRecoveryPointInfos)
@@ -101,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeRecoveryPointInfos">The values to add to the VolumeRecoveryPointInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumeRecoveryPointsResult WithVolumeRecoveryPointInfos(IEnumerable<VolumeRecoveryPointInfo> volumeRecoveryPointInfos)
         {
             foreach (VolumeRecoveryPointInfo element in volumeRecoveryPointInfos)

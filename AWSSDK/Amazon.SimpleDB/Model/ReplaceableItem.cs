@@ -51,6 +51,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="itemName">The name of the item.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceableItem WithItemName(string itemName)
         {
             this.itemNameField = itemName;
@@ -90,6 +91,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="list">An attribute associated with an item. Similar to columns on a spreadsheet, attributes represent
         /// categories of data that can be assigned to items.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceableItem WithAttribute(params ReplaceableAttribute[] list)
         {
             foreach (ReplaceableAttribute item in list)

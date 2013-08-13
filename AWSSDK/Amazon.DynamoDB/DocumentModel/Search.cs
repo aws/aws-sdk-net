@@ -138,10 +138,12 @@ namespace Amazon.DynamoDB.DocumentModel
                 switch (SearchMethod)
                 {
                     case SearchType.Scan:
-                        ScanRequest scanReq = new ScanRequest()
-                            .WithExclusiveStartKey(NextKey)
-                            .WithLimit(Limit)
-                            .WithTableName(TableName);
+                        ScanRequest scanReq = new ScanRequest
+                        {
+                            ExclusiveStartKey = NextKey,
+                            Limit = Limit,
+                            TableName = TableName
+                        };
                         scanReq.BeforeRequestEvent += isAsync ?
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);
@@ -162,13 +164,15 @@ namespace Amazon.DynamoDB.DocumentModel
                         }
                         return ret;
                     case SearchType.Query:
-                        QueryRequest queryReq = new QueryRequest()
-                            .WithConsistentRead(IsConsistentRead)
-                            .WithExclusiveStartKey(NextKey)
-                            .WithHashKeyValue(HashKey)
-                            .WithLimit(Limit)
-                            .WithScanIndexForward(!IsBackwardSearch)
-                            .WithTableName(TableName);
+                        QueryRequest queryReq = new QueryRequest
+                        {
+                            ConsistentRead=IsConsistentRead,
+                            ExclusiveStartKey=NextKey,
+                            HashKeyValue=HashKey,
+                            Limit=Limit,
+                            ScanIndexForward=!IsBackwardSearch,
+                            TableName=TableName,
+                        };
                         if (Filter != null)
                             queryReq.RangeKeyCondition = ((RangeFilter)Filter).Condition;
                         queryReq.BeforeRequestEvent += isAsync ?
@@ -302,25 +306,29 @@ namespace Amazon.DynamoDB.DocumentModel
                     switch (SearchMethod)
                     {
                         case SearchType.Scan:
-                            ScanRequest scanReq = new ScanRequest()
-                                .WithCount(true)
-                                .WithExclusiveStartKey(NextKey)
-                                .WithTableName(TableName)
-                                .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync) as ScanRequest;
+                            ScanRequest scanReq = new ScanRequest
+                            {
+                                Count=true,
+                                ExclusiveStartKey=NextKey,
+                                TableName=TableName,
+                            };
+                            scanReq.BeforeRequestEvent += SourceTable.UserAgentRequestEventHandlerSync;
                             scanReq.ScanFilter = (ScanFilter)Filter;
                             ScanResult scanResult = SourceTable.DDBClient.Scan(scanReq).ScanResult;
                             count = Matches.Count + scanResult.Count;
                             return count;
                         case SearchType.Query:
-                            QueryRequest queryReq = new QueryRequest()
-                                .WithConsistentRead(IsConsistentRead)
-                                .WithCount(true)
-                                .WithExclusiveStartKey(NextKey)
-                                .WithHashKeyValue(HashKey)
-                                .WithRangeKeyCondition(((RangeFilter)Filter).Condition)
-                                .WithScanIndexForward(!IsBackwardSearch)
-                                .WithTableName(TableName)
-                                .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync) as QueryRequest;
+                            QueryRequest queryReq = new QueryRequest
+                            {
+                                ConsistentRead=IsConsistentRead,
+                                Count=true,
+                                ExclusiveStartKey=NextKey,
+                                HashKeyValue=HashKey,
+                                RangeKeyCondition = ((RangeFilter)Filter).Condition,
+                                ScanIndexForward=!IsBackwardSearch,
+                                TableName=TableName,
+                            };
+                            queryReq.BeforeRequestEvent += SourceTable.UserAgentRequestEventHandlerSync;
                             QueryResult queryResult = SourceTable.DDBClient.Query(queryReq).QueryResult;
                             count = Matches.Count + queryResult.Count;
                             return count;

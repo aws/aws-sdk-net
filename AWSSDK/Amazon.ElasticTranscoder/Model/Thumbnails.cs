@@ -60,6 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="format">The value to set for the Format property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithFormat(string format)
         {
             this.format = format;
@@ -97,6 +98,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="interval">The value to set for the Interval property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithInterval(string interval)
         {
             this.interval = interval;
@@ -138,6 +140,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="resolution">The value to set for the Resolution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithResolution(string resolution)
         {
             this.resolution = resolution;
@@ -179,6 +182,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="aspectRatio">The value to set for the AspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithAspectRatio(string aspectRatio)
         {
             this.aspectRatio = aspectRatio;
@@ -217,6 +221,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxWidth">The value to set for the MaxWidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithMaxWidth(string maxWidth)
         {
             this.maxWidth = maxWidth;
@@ -255,6 +260,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxHeight">The value to set for the MaxHeight property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithMaxHeight(string maxHeight)
         {
             this.maxHeight = maxHeight;
@@ -304,6 +310,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sizingPolicy">The value to set for the SizingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithSizingPolicy(string sizingPolicy)
         {
             this.sizingPolicy = sizingPolicy;
@@ -343,6 +350,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="paddingPolicy">The value to set for the PaddingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Thumbnails WithPaddingPolicy(string paddingPolicy)
         {
             this.paddingPolicy = paddingPolicy;

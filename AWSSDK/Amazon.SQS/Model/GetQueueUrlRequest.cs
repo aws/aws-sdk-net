@@ -48,6 +48,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueNameField">The name of the queue whose URL must be fetched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetQueueUrlRequest WithQueueName(string queueNameField)
         {
             this.queueNameField = queueNameField;
@@ -77,6 +78,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="id">The AWS account number of the queue's owner.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetQueueUrlRequest WithQueueOwnerAWSAccountId(string id)
         {
             this.queueOwnerAWSAccountIdField = id;

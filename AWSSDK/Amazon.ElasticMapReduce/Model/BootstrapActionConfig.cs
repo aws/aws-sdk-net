@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BootstrapActionConfig WithName(string name)
         {
             this.name = name;
@@ -85,6 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="scriptBootstrapAction">The value to set for the ScriptBootstrapAction property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BootstrapActionConfig WithScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction)
         {
             this.scriptBootstrapAction = scriptBootstrapAction;

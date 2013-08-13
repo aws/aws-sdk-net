@@ -67,6 +67,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -101,6 +102,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The object key</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithKey(string key)
         {
             this.key = key;
@@ -137,6 +139,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="versionId">Object version id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;
@@ -177,6 +180,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="modifiedSinceDate">Date and time to test</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.modifiedSinceDate = modifiedSinceDate;
@@ -217,6 +221,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="unmodifiedSinceDate">The date and time to test</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.unmodifiedSinceDate = unmodifiedSinceDate;
@@ -257,6 +262,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagToMatch">The ETag to match</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithETagToMatch(string etagToMatch)
         {
             this.etagToMatch = etagToMatch;
@@ -298,6 +304,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagToNotMatch">The ETag to test</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithETagToNotMatch(string etagToNotMatch)
         {
             this.etagToNotMatch = etagToNotMatch;
@@ -333,6 +340,7 @@ namespace Amazon.S3.Model
         /// <param name="startIndex">The index to start at</param>
         /// <param name="endIndex">The index to end at</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithByteRangeLong(long startIndex, long endIndex)
         {
             if (startIndex > endIndex)
@@ -377,6 +385,7 @@ namespace Amazon.S3.Model
         /// <param name="startIndex">The index to start at</param>
         /// <param name="endIndex">The index to end at</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithByteRange(int startIndex, int endIndex)
         {
             if (startIndex > endIndex)
@@ -432,6 +441,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public GetObjectRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -458,6 +468,7 @@ namespace Amazon.S3.Model
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public GetObjectRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
@@ -492,6 +503,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="responseHeaderOverrides">Response headers to return</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
         {
             this.ResponseHeaderOverrides = responseHeaderOverrides;

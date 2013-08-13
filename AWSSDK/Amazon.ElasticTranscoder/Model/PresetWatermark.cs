@@ -67,6 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithId(string id)
         {
             this.id = id;
@@ -107,6 +108,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxWidth">The value to set for the MaxWidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithMaxWidth(string maxWidth)
         {
             this.maxWidth = maxWidth;
@@ -147,6 +149,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxHeight">The value to set for the MaxHeight property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithMaxHeight(string maxHeight)
         {
             this.maxHeight = maxHeight;
@@ -190,6 +193,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sizingPolicy">The value to set for the SizingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithSizingPolicy(string sizingPolicy)
         {
             this.sizingPolicy = sizingPolicy;
@@ -229,6 +233,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="horizontalAlign">The value to set for the HorizontalAlign property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithHorizontalAlign(string horizontalAlign)
         {
             this.horizontalAlign = horizontalAlign;
@@ -273,6 +278,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="horizontalOffset">The value to set for the HorizontalOffset property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithHorizontalOffset(string horizontalOffset)
         {
             this.horizontalOffset = horizontalOffset;
@@ -312,6 +318,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="verticalAlign">The value to set for the VerticalAlign property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithVerticalAlign(string verticalAlign)
         {
             this.verticalAlign = verticalAlign;
@@ -357,6 +364,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="verticalOffset">The value to set for the VerticalOffset property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithVerticalOffset(string verticalOffset)
         {
             this.verticalOffset = verticalOffset;
@@ -397,6 +405,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="opacity">The value to set for the Opacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithOpacity(string opacity)
         {
             this.opacity = opacity;
@@ -440,6 +449,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="target">The value to set for the Target property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PresetWatermark WithTarget(string target)
         {
             this.target = target;

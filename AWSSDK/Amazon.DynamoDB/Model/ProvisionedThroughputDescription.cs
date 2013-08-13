@@ -41,6 +41,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="lastIncreaseDateTime">The value to set for the LastIncreaseDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithLastIncreaseDateTime(DateTime lastIncreaseDateTime)
         {
             this.lastIncreaseDateTime = lastIncreaseDateTime;
@@ -64,6 +65,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="lastDecreaseDateTime">The value to set for the LastDecreaseDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithLastDecreaseDateTime(DateTime lastDecreaseDateTime)
         {
             this.lastDecreaseDateTime = lastDecreaseDateTime;
@@ -87,6 +89,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="numberOfDecreasesToday">The value to set for the NumberOfDecreasesToday property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithNumberOfDecreasesToday(long numberOfDecreasesToday)
         {
             this.numberOfDecreasesToday = numberOfDecreasesToday;
@@ -110,6 +113,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="readCapacityUnits">The value to set for the ReadCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithReadCapacityUnits(long readCapacityUnits)
         {
             this.readCapacityUnits = readCapacityUnits;
@@ -133,6 +137,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="writeCapacityUnits">The value to set for the WriteCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithWriteCapacityUnits(long writeCapacityUnits)
         {
             this.writeCapacityUnits = writeCapacityUnits;

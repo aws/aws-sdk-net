@@ -56,6 +56,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="progressing">The value to set for the Progressing property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Notifications WithProgressing(string progressing)
         {
             this.progressing = progressing;
@@ -93,6 +94,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="completed">The value to set for the Completed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Notifications WithCompleted(string completed)
         {
             this.completed = completed;
@@ -130,6 +132,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="warning">The value to set for the Warning property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Notifications WithWarning(string warning)
         {
             this.warning = warning;
@@ -167,6 +170,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="error">The value to set for the Error property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Notifications WithError(string error)
         {
             this.error = error;

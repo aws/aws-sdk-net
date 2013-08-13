@@ -53,6 +53,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedNodeOfferingRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
         {
             this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -81,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeCount">The value to set for the NodeCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedNodeOfferingRequest WithNodeCount(int nodeCount)
         {
             this.nodeCount = nodeCount;

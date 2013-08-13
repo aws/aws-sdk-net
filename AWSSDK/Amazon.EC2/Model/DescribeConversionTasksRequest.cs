@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeConversionTasksRequest
+    public class DescribeConversionTasksRequest : EC2Request
     {    
         private List<string> conversionTaskIdField;
 
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of conversion tasks.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConversionTasksRequest WithConversionTaskId(params string[] list)
         {
             foreach (string item in list)

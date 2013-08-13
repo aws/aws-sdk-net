@@ -73,6 +73,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReceiveMessageRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -108,6 +109,7 @@ namespace Amazon.SQS.Model
         /// Not necessarily all the messages in the queue are returned (for more information, see the preceding note about
         /// machine sampling). Values can be from 1 to 10. Default is 1.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReceiveMessageRequest WithMaxNumberOfMessages(Decimal maxNumberOfMessages)
         {
             this.maxNumberOfMessagesField = maxNumberOfMessages;
@@ -141,6 +143,7 @@ namespace Amazon.SQS.Model
         /// <param name="visibilityTimeout">The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved
         /// by a ReceiveMessage request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReceiveMessageRequest WithVisibilityTimeout(Decimal visibilityTimeout)
         {
             this.visibilityTimeoutField = visibilityTimeout;
@@ -181,6 +184,7 @@ namespace Amazon.SQS.Model
         /// <param name="list">The attribute you want to get. Valid values: All | SenderId | SentTimestamp | ApproximateReceiveCount |
         /// ApproximateFirstReceiveTimestamp</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReceiveMessageRequest WithAttributeName(params string[] list)
         {
             foreach (string item in list)
@@ -216,6 +220,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="waitTimeSeconds">The number of seconds to wait for messages in the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReceiveMessageRequest WithWaitTimeSeconds(int waitTimeSeconds)
         {
             this.waitTimeSecondsField = waitTimeSeconds;

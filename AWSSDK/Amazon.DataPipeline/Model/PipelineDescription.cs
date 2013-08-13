@@ -59,6 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineDescription WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -100,6 +101,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineDescription WithName(string name)
         {
             this.name = name;
@@ -127,6 +129,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="fields">The values to add to the Fields collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineDescription WithFields(params Field[] fields)
         {
             foreach (Field element in fields)
@@ -142,6 +145,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="fields">The values to add to the Fields collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineDescription WithFields(IEnumerable<Field> fields)
         {
             foreach (Field element in fields)
@@ -186,6 +190,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineDescription WithDescription(string description)
         {
             this.description = description;

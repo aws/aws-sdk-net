@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Copies a snapshot from a source region to the current region.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CopySnapshotRequest
+    public class CopySnapshotRequest : EC2Request
     {
         private string sourceRegionField;
         private string sourceSnapshotIdField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceRegion">Source region.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopySnapshotRequest WithSourceRegion(string sourceRegion)
         {
             this.sourceRegionField = sourceRegion;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceSnapshotId">Snapshot id.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopySnapshotRequest WithSourceSnapshotId(string sourceSnapshotId)
         {
             this.sourceSnapshotIdField = sourceSnapshotId;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopySnapshotRequest WithDescription(string description)
         {
             this.descriptionField = description;

@@ -53,6 +53,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="subscriptionArn">The subscription's ARN.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subscription WithSubscriptionArn(string subscriptionArn)
         {
             this.subscriptionArnField = subscriptionArn;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="owner">The subscription's owner.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subscription WithOwner(string owner)
         {
             this.ownerField = owner;
@@ -113,6 +115,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="protocol">The subscription's protocol.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subscription WithProtocol(string protocol)
         {
             this.protocolField = protocol;
@@ -143,6 +146,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="endpoint">The subscription's endpoint.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subscription WithEndpoint(string endpoint)
         {
             this.endpointField = endpoint;
@@ -173,6 +177,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the subscription's topic.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subscription WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;

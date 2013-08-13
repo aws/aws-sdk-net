@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// after they have persisted for at least a 90-day period.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeactivateLicenseRequest
+    public class DeactivateLicenseRequest : EC2Request
     {    
         private string licenseIdField;
         private Decimal? capacityField;
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="licenseId">LicenseId property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeactivateLicenseRequest WithLicenseId(string licenseId)
         {
             this.licenseIdField = licenseId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="capacity">Capacity property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeactivateLicenseRequest WithCapacity(Decimal capacity)
         {
             this.capacityField = capacity;

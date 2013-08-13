@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroupName">The value to set for the ClusterSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
             this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -74,6 +75,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithDescription(string description)
         {
             this.description = description;
@@ -101,6 +103,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithEC2SecurityGroups(params EC2SecurityGroup[] eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)
@@ -116,6 +119,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithEC2SecurityGroups(IEnumerable<EC2SecurityGroup> eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)
@@ -146,6 +150,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="iPRanges">The values to add to the IPRanges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithIPRanges(params IPRange[] iPRanges)
         {
             foreach (IPRange element in iPRanges)
@@ -161,6 +166,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="iPRanges">The values to add to the IPRanges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSecurityGroup WithIPRanges(IEnumerable<IPRange> iPRanges)
         {
             foreach (IPRange element in iPRanges)

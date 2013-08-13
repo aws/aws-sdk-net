@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -79,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="resetAllParameters">The value to set for the ResetAllParameters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithResetAllParameters(bool resetAllParameters)
         {
             this.resetAllParameters = resetAllParameters;
@@ -107,6 +109,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithParameterNameValues(params ParameterNameValue[] parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)
@@ -122,6 +125,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithParameterNameValues(IEnumerable<ParameterNameValue> parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)

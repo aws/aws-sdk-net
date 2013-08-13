@@ -88,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Unique ID of the instance launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -119,6 +120,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">Image ID of the AMI used to launch the
         /// instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -149,6 +151,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceState">The current state of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithInstanceState(InstanceState instanceState)
         {
             this.instanceStateField = instanceState;
@@ -184,6 +187,7 @@ namespace Amazon.EC2.Model
         /// This element remains empty until the instance
         /// enters a running state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithPrivateDnsName(string privateDnsName)
         {
             this.privateDnsNameField = privateDnsName;
@@ -220,6 +224,7 @@ namespace Amazon.EC2.Model
         /// This element remains empty until the
         /// instance enters a running state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithPublicDnsName(string publicDnsName)
         {
             this.publicDnsNameField = publicDnsName;
@@ -252,6 +257,7 @@ namespace Amazon.EC2.Model
         /// <param name="stateTransitionReason">Reason for the most recent state transition.
         /// This might be an empty string.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithStateTransitionReason(string stateTransitionReason)
         {
             this.stateTransitionReasonField = stateTransitionReason;
@@ -285,6 +291,7 @@ namespace Amazon.EC2.Model
         /// displays the key pair
         /// name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithKeyName(string keyName)
         {
             this.keyNameField = keyName;
@@ -320,6 +327,7 @@ namespace Amazon.EC2.Model
         /// within the launch
         /// group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithAmiLaunchIndex(string amiLaunchIndex)
         {
             this.amiLaunchIndexField = amiLaunchIndex;
@@ -400,6 +408,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product codes attached to this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithProductCodes(params ProductCode[] list)
         {
             foreach (ProductCode item in list)
@@ -433,6 +442,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceType">The instance type.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -463,6 +473,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="launchTime">The time the instance launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithLaunchTime(string launchTime)
         {
             this.launchTimeField = launchTime;
@@ -493,6 +504,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="placement">The location where the instance launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithPlacement(Placement placement)
         {
             this.placementField = placement;
@@ -523,6 +535,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="kernelId">Kernel associated with this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -553,6 +566,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ramdiskId">RAM disk associated with this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -583,6 +597,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="platform">Platform of the instance (e.g., Windows).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithPlatform(string platform)
         {
             this.platformField = platform;
@@ -614,6 +629,7 @@ namespace Amazon.EC2.Model
         /// <param name="monitoring">Specifies whether monitoring is enabled for the
         /// instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithMonitoring(Monitoring monitoring)
         {
             this.monitoringField = monitoring;
@@ -645,6 +661,7 @@ namespace Amazon.EC2.Model
         /// <param name="subnetId">Specifies the subnet ID in which the instance
         /// is running (Amazon Virtual Private Cloud).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -676,6 +693,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpcId">Specifies the VPC in which the instance is
         /// running (Amazon Virtual Private Cloud).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -707,6 +725,7 @@ namespace Amazon.EC2.Model
         /// <param name="privateIpAddress">Specifies the private IP address that is
         /// assigned to the instance (Amazon VPC).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;
@@ -737,6 +756,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipAddress">Specifies the IP address of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -778,6 +798,7 @@ namespace Amazon.EC2.Model
         /// Private Cloud User Guide.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -815,6 +836,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of VPC security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -855,6 +877,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -888,6 +911,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="stateReason">The reason for the state change.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithStateReason(StateReason stateReason)
         {
             this.stateReasonField = stateReason;
@@ -918,6 +942,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="architecture">The architecture of the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithArchitecture(string architecture)
         {
             this.architectureField = architecture;
@@ -950,6 +975,7 @@ namespace Amazon.EC2.Model
         /// <param name="rootDeviceType">The root device type used by the AMI. The AMI
         /// can use an Amazon EBS or instance store root device.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithRootDeviceType(string rootDeviceType)
         {
             this.rootDeviceTypeField = rootDeviceType;
@@ -980,6 +1006,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithRootDeviceName(string rootDeviceName)
         {
             this.rootDeviceNameField = rootDeviceName;
@@ -1017,6 +1044,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Block device mapping set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithBlockDeviceMapping(params InstanceBlockDeviceMapping[] list)
         {
             foreach (InstanceBlockDeviceMapping item in list)
@@ -1052,6 +1080,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceLifecycle">InstanceLifecycle property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithInstanceLifecycle(string instanceLifecycle)
         {
             this.instanceLifecycleField = instanceLifecycle;
@@ -1083,6 +1112,7 @@ namespace Amazon.EC2.Model
         /// <param name="spotInstanceRequestId">The ID of the Spot Instance request that
         /// started this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithSpotInstanceRequestId(string spotInstanceRequestId)
         {
             this.spotInstanceRequestIdField = spotInstanceRequestId;
@@ -1114,6 +1144,7 @@ namespace Amazon.EC2.Model
         /// <param name="license">The active license in use and attached to the
         /// Amazon EC2 instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithLicense(InstanceLicense license)
         {
             this.licenseField = license;
@@ -1148,6 +1179,7 @@ namespace Amazon.EC2.Model
         /// hardware virtual machine
         /// (HVM) or a para-virtual machine (PVM).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithVirtualizationType(string virtualizationType)
         {
             this.virtualizationTypeField = virtualizationType;
@@ -1178,6 +1210,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="clientToken">ClientToken property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithClientToken(string clientToken)
         {
             this.clientTokenField = clientToken;
@@ -1215,6 +1248,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the RunningInstance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -1248,6 +1282,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="hypervisor">The instance's hypervisor type.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithHypervisor(string hypervisor)
         {
             this.hypervisorField = hypervisor;
@@ -1285,6 +1320,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Collection of InstanceNetworkInterface items</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithNetworkInterfaceSet(params InstanceNetworkInterface[] list)
         {
             foreach (InstanceNetworkInterface item in list)
@@ -1319,6 +1355,7 @@ namespace Amazon.EC2.Model
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimizedField = ebsOptimized;
@@ -1349,6 +1386,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceProfile">An Identity and Access Management Instance Profile</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunningInstance WithInstanceProfile(IAMInstanceProfile instanceProfile)
         {
             this.instanceProfileField = instanceProfile;

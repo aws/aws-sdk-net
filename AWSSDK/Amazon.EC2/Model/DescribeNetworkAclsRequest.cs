@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeNetworkAclsRequest
+    public class DescribeNetworkAclsRequest : EC2Request
     {    
         private List<string> networkAclIdField;
         private List<Filter> filterField;
@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the route tables.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNetworkAclsRequest WithNetworkAclId(params string[] list)
         {
             foreach (string item in list)
@@ -121,6 +122,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNetworkAclsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

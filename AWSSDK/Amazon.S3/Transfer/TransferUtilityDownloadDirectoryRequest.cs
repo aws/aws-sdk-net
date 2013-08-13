@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -74,6 +74,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithBucketName(string bucketName)
         {
             this.BucketName = bucketName;
@@ -100,6 +101,7 @@ namespace Amazon.S3.Transfer
         /// <param name="localDirectory">The name of the local directory where objects from 
 				/// Amazon S3 will be downloaded.</param>
         /// <returns>This object instance, enabling additional method calls to be chained together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithLocalDirectory(string localDirectory)
         {
             this.localDirectory = localDirectory;
@@ -137,6 +139,7 @@ namespace Amazon.S3.Transfer
         /// <param name="s3Directory">The name of the Amazon S3 directory which is translated to a key 
 				/// prefix; keys that have this prefix will be downloaded.</param>
         /// <returns>This object instance, enabling additional method calls to be chained together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithS3Directory(string s3Directory)
         {
             this.s3Directory = s3Directory;
@@ -192,6 +195,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.modifiedSinceDate = modifiedSinceDate;
@@ -233,6 +237,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.unmodifiedSinceDate = unmodifiedSinceDate;
@@ -282,6 +287,7 @@ namespace Amazon.S3.Transfer
         /// </returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithTimeout(int timeout)
         {
             this.timeout = timeout;
@@ -325,6 +331,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="handler">A method that is called when UploadDirectoryProgressEvent is fired.</param>
         /// <returns>this instance of the TransferUtilityUploadDirectoryRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadDirectoryRequest WithSubscriber(EventHandler<DownloadDirectoryProgressArgs> handler)
         {
             this.DownloadedDirectoryProgressEvent += handler;

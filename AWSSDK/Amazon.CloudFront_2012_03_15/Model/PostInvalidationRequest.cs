@@ -72,6 +72,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PostInvalidationRequest WithDistribtionId(string distributionId)
         {
             this.distributionId = distributionId;
@@ -105,6 +106,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="invalidationBatch">An InvalidationBatch object that lists all the paths of objects to be invalidated.</param>
         /// <returns>The request with the InvalidationBatch property set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PostInvalidationRequest WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {
             this.invalidationBatch = invalidationBatch;

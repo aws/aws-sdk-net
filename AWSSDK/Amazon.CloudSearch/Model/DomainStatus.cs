@@ -63,6 +63,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainId">The value to set for the DomainId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithDomainId(string domainId)
         {
             this.domainId = domainId;
@@ -106,6 +107,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -135,6 +137,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="created">The value to set for the Created property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithCreated(bool created)
         {
             this.created = created;
@@ -165,6 +168,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="deleted">The value to set for the Deleted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithDeleted(bool deleted)
         {
             this.deleted = deleted;
@@ -202,6 +206,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="numSearchableDocs">The value to set for the NumSearchableDocs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithNumSearchableDocs(int numSearchableDocs)
         {
             this.numSearchableDocs = numSearchableDocs;
@@ -230,6 +235,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="docService">The value to set for the DocService property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithDocService(ServiceEndpoint docService)
         {
             this.docService = docService;
@@ -258,6 +264,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="searchService">The value to set for the SearchService property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithSearchService(ServiceEndpoint searchService)
         {
             this.searchService = searchService;
@@ -286,6 +293,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="requiresIndexDocuments">The value to set for the RequiresIndexDocuments property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithRequiresIndexDocuments(bool requiresIndexDocuments)
         {
             this.requiresIndexDocuments = requiresIndexDocuments;
@@ -314,6 +322,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="processing">The value to set for the Processing property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithProcessing(bool processing)
         {
             this.processing = processing;
@@ -351,6 +360,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="searchInstanceType">The value to set for the SearchInstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithSearchInstanceType(string searchInstanceType)
         {
             this.searchInstanceType = searchInstanceType;
@@ -388,6 +398,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="searchPartitionCount">The value to set for the SearchPartitionCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithSearchPartitionCount(int searchPartitionCount)
         {
             this.searchPartitionCount = searchPartitionCount;
@@ -425,6 +436,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="searchInstanceCount">The value to set for the SearchInstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainStatus WithSearchInstanceCount(int searchInstanceCount)
         {
             this.searchInstanceCount = searchInstanceCount;

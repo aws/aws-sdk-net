@@ -61,6 +61,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -91,6 +92,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="keySchema">The value to set for the KeySchema property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithKeySchema(KeySchema keySchema)
         {
             this.keySchema = keySchema;
@@ -114,6 +116,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableStatus">The value to set for the TableStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableStatus(string tableStatus)
         {
             this.tableStatus = tableStatus;
@@ -137,6 +140,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithCreationDateTime(DateTime creationDateTime)
         {
             this.creationDateTime = creationDateTime;
@@ -160,6 +164,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput)
         {
             this.provisionedThroughput = provisionedThroughput;
@@ -183,6 +188,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableSizeBytes">The value to set for the TableSizeBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableSizeBytes(long tableSizeBytes)
         {
             this.tableSizeBytes = tableSizeBytes;
@@ -206,6 +212,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="itemCount">The value to set for the ItemCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithItemCount(long itemCount)
         {
             this.itemCount = itemCount;

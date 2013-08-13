@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -62,6 +62,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="config">The value that WithWebsiteConfiguration is set to</param>
         /// <returns>the request with the WebsiteConfiguration set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetBucketWebsiteResponse WithWebsiteConfiguration(WebsiteConfiguration config)
         {
             this.WebsiteConfiguration = config;

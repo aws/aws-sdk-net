@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
     /// public snapshots.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeSnapshotsRequest
+    public class DescribeSnapshotsRequest : EC2Request
     {    
         private List<string> snapshotIdField;
         private string ownerField;
@@ -106,6 +106,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotsRequest WithSnapshotId(params string[] list)
         {
             foreach (string item in list)
@@ -141,6 +142,7 @@ namespace Amazon.EC2.Model
         /// <param name="owner">Returns snapshots owned by the specified
         /// owner. Valid Values: self | amazon | AWS Account ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotsRequest WithOwner(string owner)
         {
             this.ownerField = owner;
@@ -172,6 +174,7 @@ namespace Amazon.EC2.Model
         /// <param name="restorableBy">Account ID of a user that can create volumes
         /// from the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotsRequest WithRestorableBy(string restorableBy)
         {
             this.restorableByField = restorableBy;
@@ -216,6 +219,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

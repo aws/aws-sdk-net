@@ -12,63 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   DescribeJobFlowsResult Unmarshaller
-     /// </summary>
-    internal class DescribeJobFlowsResultUnmarshaller : IUnmarshaller<DescribeJobFlowsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public DescribeJobFlowsResult Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// DescribeJobFlowsResultUnmarshaller
+      /// </summary>
+      internal class DescribeJobFlowsResultUnmarshaller : IUnmarshaller<DescribeJobFlowsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext>
+      {
+        DescribeJobFlowsResult IUnmarshaller<DescribeJobFlowsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public DescribeJobFlowsResult Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeJobFlowsResult describeJobFlowsResult = new DescribeJobFlowsResult();
+          describeJobFlowsResult.JobFlows = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("JobFlows/member", targetDepth))
-                    {
-                        describeJobFlowsResult.JobFlows.Add(JobFlowDetailUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("JobFlows", targetDepth))
+              {
+                describeJobFlowsResult.JobFlows = new List<JobFlowDetail>();
+                        JobFlowDetailUnmarshaller unmarshaller = JobFlowDetailUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     describeJobFlowsResult.JobFlows.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                continue;
+              }
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return describeJobFlowsResult;
                 }
             }
-                        
-
+          
 
             return describeJobFlowsResult;
         }
 
-        public DescribeJobFlowsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static DescribeJobFlowsResultUnmarshaller instance;
-
-        public static DescribeJobFlowsResultUnmarshaller GetInstance() 
+        public static DescribeJobFlowsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeJobFlowsResultUnmarshaller();
-
+            if (instance == null)
+                instance = new DescribeJobFlowsResultUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

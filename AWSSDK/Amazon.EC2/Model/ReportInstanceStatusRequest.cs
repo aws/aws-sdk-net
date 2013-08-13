@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// Use of this action does not change the value returned by DescribeInstanceStatus.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ReportInstanceStatusRequest
+    public class ReportInstanceStatusRequest : EC2Request
     {
         private List<string> instanceIdField;
         private string statusField;
@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Instance IDs to report on.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithInstanceId(params string[] list)
         {
             foreach (string item in list)
@@ -103,6 +104,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Status for the instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithStatus(string status)
         {
             this.statusField = status;
@@ -133,6 +135,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="startTime">The start time of the health state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithStartTime(string startTime)
         {
             this.startTimeField = startTime;
@@ -163,6 +166,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="endTime">The end time of the health state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithEndTime(string endTime)
         {
             this.endTimeField = endTime;
@@ -207,6 +211,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">One or more reason codes</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithReasonCode(params string[] list)
         {
             foreach (string item in list)
@@ -240,6 +245,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReportInstanceStatusRequest WithDescription(string description)
         {
             this.descriptionField = description;

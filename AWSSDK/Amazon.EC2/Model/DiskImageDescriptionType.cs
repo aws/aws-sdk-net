@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// 
         /// Valid Values: VMDK | RAW</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageDescriptionType WithFormat(string format)
         {
             this.formatField = format;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="size">Size of the disk image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageDescriptionType WithSize(Decimal size)
         {
             this.sizeField = size;
@@ -118,6 +120,7 @@ namespace Amazon.EC2.Model
         /// creating a pre-signed URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the
         /// Authenticating REST Requests topic in the Amazon Simple Storage Service Developer Guide.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageDescriptionType WithImportManifestUrl(string importManifestUrl)
         {
             this.importManifestUrlField = importManifestUrl;
@@ -148,6 +151,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="checksum">Checksum computed for the disk image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageDescriptionType WithChecksum(string checksum)
         {
             this.checksumField = checksum;

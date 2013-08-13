@@ -55,6 +55,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -83,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3Origin">The value to set for the S3Origin property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithS3Origin(S3Origin s3Origin)
         {
             this.s3Origin = s3Origin;
@@ -111,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -139,6 +142,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithComment(string comment)
         {
             this.comment = comment;
@@ -167,6 +171,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="logging">The value to set for the Logging property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithLogging(StreamingLoggingConfig logging)
         {
             this.logging = logging;
@@ -201,6 +206,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="trustedSigners">The value to set for the TrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithTrustedSigners(TrustedSigners trustedSigners)
         {
             this.trustedSigners = trustedSigners;
@@ -238,6 +244,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -266,6 +273,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;

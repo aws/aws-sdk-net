@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Modifies attributes of a VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyVpcAttributeRequest
+    public class ModifyVpcAttributeRequest : EC2Request
     {
         private string vpcIdField;
         private bool? enableDnsSupportField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">VPC ID to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyVpcAttributeRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="enableDnsSupport">Whether Dns is supported.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyVpcAttributeRequest WithEnableDnsSupport(bool enableDnsSupport)
         {
             this.enableDnsSupportField = enableDnsSupport;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="enableDnsHostnames">Whether Dns hostnames are enabled.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyVpcAttributeRequest WithEnableDnsHostnames(bool enableDnsHostnames)
         {
             this.enableDnsHostnamesField = enableDnsHostnames;

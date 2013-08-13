@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -72,6 +72,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="indexDocumentSuffix">Index document suffix</param>
         /// <returns>the WebsiteConfiguration with the IndexDocumentSuffix set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WebsiteConfiguration WithIndexDocumentSuffix(string indexDocumentSuffix)
         {
             this._indexDocumentSuffix = indexDocumentSuffix;
@@ -106,6 +107,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="errorDocument">Error document key</param>
         /// <returns>the WebsiteConfiguration with the ErrorDocument set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WebsiteConfiguration WithErrorDocument(string errorDocument)
         {
             this._errorDocument = errorDocument;
@@ -145,6 +147,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="redirectAllRequestsTo">The container for redirect information</param>
         /// <returns>the WebsiteConfiguration with the RedirectAllRequestsTo set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WebsiteConfiguration WithRedirectAllRequestsTo(RoutingRuleRedirect redirectAllRequestsTo)
         {
             this._redirectAllRequestsTo = redirectAllRequestsTo;

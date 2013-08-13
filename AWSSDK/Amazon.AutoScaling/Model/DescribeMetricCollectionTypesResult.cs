@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithMetrics(params MetricCollectionType[] metrics)
         {
             foreach (MetricCollectionType element in metrics)
@@ -60,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithMetrics(IEnumerable<MetricCollectionType> metrics)
         {
             foreach (MetricCollectionType element in metrics)
@@ -90,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(params MetricGranularityType[] granularities)
         {
             foreach (MetricGranularityType element in granularities)
@@ -105,6 +108,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(IEnumerable<MetricGranularityType> granularities)
         {
             foreach (MetricGranularityType element in granularities)

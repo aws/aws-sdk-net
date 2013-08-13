@@ -50,6 +50,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualInterfacesRequest WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -78,6 +79,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceId">The value to set for the VirtualInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualInterfacesRequest WithVirtualInterfaceId(string virtualInterfaceId)
         {
             this.virtualInterfaceId = virtualInterfaceId;

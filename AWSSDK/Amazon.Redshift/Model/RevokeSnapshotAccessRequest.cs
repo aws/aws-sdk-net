@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSnapshotAccessRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -79,6 +80,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="accountWithRestoreAccess">The value to set for the AccountWithRestoreAccess property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSnapshotAccessRequest WithAccountWithRestoreAccess(string accountWithRestoreAccess)
         {
             this.accountWithRestoreAccess = accountWithRestoreAccess;

@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploymentId">The value to set for the DeploymentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsRequest WithDeploymentId(string deploymentId)
         {
             this.deploymentId = deploymentId;
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -107,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="commandIds">The values to add to the CommandIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsRequest WithCommandIds(params string[] commandIds)
         {
             foreach (string element in commandIds)
@@ -122,6 +125,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="commandIds">The values to add to the CommandIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsRequest WithCommandIds(IEnumerable<string> commandIds)
         {
             foreach (string element in commandIds)

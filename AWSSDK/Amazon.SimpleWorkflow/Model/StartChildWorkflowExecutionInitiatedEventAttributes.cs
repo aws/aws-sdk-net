@@ -61,6 +61,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowId">The value to set for the WorkflowId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithWorkflowId(string workflowId)
         {
             this.workflowId = workflowId;
@@ -89,6 +90,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowType">The value to set for the WorkflowType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithWorkflowType(WorkflowType workflowType)
         {
             this.workflowType = workflowType;
@@ -126,6 +128,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="control">The value to set for the Control property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithControl(string control)
         {
             this.control = control;
@@ -163,6 +166,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithInput(string input)
         {
             this.input = input;
@@ -202,6 +206,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionStartToCloseTimeout">The value to set for the ExecutionStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithExecutionStartToCloseTimeout(string executionStartToCloseTimeout)
         {
             this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -230,6 +235,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskList">The value to set for the TaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithTaskList(TaskList taskList)
         {
             this.taskList = taskList;
@@ -260,6 +266,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskCompletedEventId">The value to set for the DecisionTaskCompletedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithDecisionTaskCompletedEventId(long decisionTaskCompletedEventId)
         {
             this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -302,6 +309,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childPolicy">The value to set for the ChildPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithChildPolicy(string childPolicy)
         {
             this.childPolicy = childPolicy;
@@ -340,6 +348,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskStartToCloseTimeout">The value to set for the TaskStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithTaskStartToCloseTimeout(string taskStartToCloseTimeout)
         {
             this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -376,6 +385,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithTagList(params string[] tagList)
         {
             foreach (string element in tagList)
@@ -391,6 +401,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartChildWorkflowExecutionInitiatedEventAttributes WithTagList(IEnumerable<string> tagList)
         {
             foreach (string element in tagList)

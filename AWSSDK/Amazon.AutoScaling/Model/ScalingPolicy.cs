@@ -63,6 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -104,6 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -133,6 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingAdjustment">The value to set for the ScalingAdjustment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithScalingAdjustment(int scalingAdjustment)
         {
             this.scalingAdjustment = scalingAdjustment;
@@ -175,6 +178,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="adjustmentType">The value to set for the AdjustmentType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithAdjustmentType(string adjustmentType)
         {
             this.adjustmentType = adjustmentType;
@@ -203,6 +207,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="cooldown">The value to set for the Cooldown property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithCooldown(int cooldown)
         {
             this.cooldown = cooldown;
@@ -244,6 +249,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="policyARN">The value to set for the PolicyARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithPolicyARN(string policyARN)
         {
             this.policyARN = policyARN;
@@ -271,6 +277,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarms">The values to add to the Alarms collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithAlarms(params Alarm[] alarms)
         {
             foreach (Alarm element in alarms)
@@ -286,6 +293,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarms">The values to add to the Alarms collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithAlarms(IEnumerable<Alarm> alarms)
         {
             foreach (Alarm element in alarms)
@@ -317,6 +325,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="minAdjustmentStep">The value to set for the MinAdjustmentStep property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScalingPolicy WithMinAdjustmentStep(int minAdjustmentStep)
         {
             this.minAdjustmentStep = minAdjustmentStep;

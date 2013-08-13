@@ -24,34 +24,37 @@ namespace Amazon.ElasticMapReduce.Model
     /// See also: <a href="http://hadoop.apache.org/common/docs/r0.20.2/streaming.html">Hadoop Streaming</a>
     /// </para>
     /// <code>
-    /// AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-    /// AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
+    ///    AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+    ///    AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
     ///
-    /// HadoopJarStepConfig config = new StreamingStep()
-    ///     .WithInputs("s3://elasticmapreduce/samples/wordcount/input")
-    ///     .WithOutput("s3://my-bucket/output/")
-    ///     .WithMapper("s3://elasticmapreduce/samples/wordcount/wordSplitter.py")
-    ///     .WithReducer("aggregate")
-    ///     .ToHadoopJarStepConfig();
+    /// HadoopJarStepConfig config = new StreamingStep {
+    ///     Inputs = new List&lt;string> { "s3://elasticmapreduce/samples/wordcount/input" },
+    ///     Output = "s3://my-bucket/output/",
+    ///     Mapper = "s3://elasticmapreduce/samples/wordcount/wordSplitter.py",
+    ///     Reducer = "aggregate"
+    /// }.ToHadoopJarStepConfig();
     ///
-    /// StepConfig wordCount = new StepConfig()
-    ///     .WithName("Word Count")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(config);
+    /// StepConfig wordCount = new StepConfig {
+    ///     Name = "Word Count",
+    ///     ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///     HadoopJarStep = config
+    /// };
     ///
-    /// RunJobFlowRequest request = new RunJobFlowRequest()
-    ///     .WithName("Word Count")
-    ///     .WithSteps(wordCount)
-    ///     .WithLogUri("s3://log-bucket/")
-    ///     .WithInstances(new JobFlowInstancesConfig()
-    ///         .WithEc2KeyName("keypairt")
-    ///         .WithHadoopVersion("0.20")
-    ///         .WithInstanceCount(5)
-    ///         .WithKeepJobFlowAliveWhenNoSteps(true)
-    ///         .WithMasterInstanceType("m1.small")
-    ///         .WithSlaveInstanceType("m1.small"));
+    /// RunJobFlowRequest request = new RunJobFlowRequest {
+    ///     Name = "Word Count",
+    ///     Steps = new List&lt;StepConfig> { wordCount },
+    ///     LogUri = "s3://log-bucket/",
+    ///     Instances = new JobFlowInstancesConfig {
+    ///         Ec2KeyName = "keypair",
+    ///         HadoopVersion = "0.20",
+    ///         InstanceCount = 5,
+    ///         KeepJobFlowAliveWhenNoSteps = true,
+    ///         MasterInstanceType = "m1.small",
+    ///         SlaveInstanceType = "m1.small"
+    ///    }
+    /// };
     ///
-    /// RunJobFlowResult result = emr.RunJobFlow(request).RunJobFlowResult;
+    ///    RunJobFlowResult result = emr.RunJobFlow(request).RunJobFlowResult;
     /// </code>
     /// </summary>
     public class StreamingStep
@@ -85,6 +88,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="inputs">inputs a list of inputs to this step.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         ///       together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingStep WithInputs(params string[] inputs) 
         {
             if (this.inputs == null)
@@ -115,6 +119,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="output">The output path.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingStep WithOutput(string output) 
         {
             this.output = output;
@@ -137,6 +142,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="mapper">The mapper.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingStep WithMapper(string mapper) 
         {
             this.mapper = mapper;
@@ -160,6 +166,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="reducer">The reducer.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingStep WithReducer(string reducer)
         {
             this.reducer = reducer;
@@ -185,6 +192,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="value">Configuration value.</param>
         /// <returns>A reference to this updated object so that method calls can be chained
         /// together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingStep WithHadoopConfig(string key, string value) 
         {
             hadoopConfig[key] = value;
@@ -230,9 +238,11 @@ namespace Amazon.ElasticMapReduce.Model
                 args.Add(reducer);
             }
 
-            return new HadoopJarStepConfig()
-                .WithJar("/home/hadoop/contrib/streaming/hadoop-streaming.jar")
-                .WithArgs(args.ToArray());
+            return new HadoopJarStepConfig
+            {
+                Jar = "/home/hadoop/contrib/streaming/hadoop-streaming.jar",
+                Args = args
+            };
         }
     }
 }

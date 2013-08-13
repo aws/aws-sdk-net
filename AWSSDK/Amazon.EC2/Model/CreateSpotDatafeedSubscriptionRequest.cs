@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// You can create one data feed per account.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateSpotDatafeedSubscriptionRequest
+    public class CreateSpotDatafeedSubscriptionRequest : EC2Request
     {    
         private string bucketField;
         private string prefixField;
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSpotDatafeedSubscriptionRequest WithBucket(string bucket)
         {
             this.bucketField = bucket;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="prefix">Prefix that is prepended to datafeed files.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSpotDatafeedSubscriptionRequest WithPrefix(string prefix)
         {
             this.prefixField = prefix;

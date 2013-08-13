@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGateways">The values to add to the VirtualGateways collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualGatewaysResult WithVirtualGateways(params VirtualGateway[] virtualGateways)
         {
             foreach (VirtualGateway element in virtualGateways)
@@ -57,6 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGateways">The values to add to the VirtualGateways collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualGatewaysResult WithVirtualGateways(IEnumerable<VirtualGateway> virtualGateways)
         {
             foreach (VirtualGateway element in virtualGateways)

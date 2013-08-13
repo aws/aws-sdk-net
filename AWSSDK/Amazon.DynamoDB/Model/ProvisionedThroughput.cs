@@ -57,6 +57,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="readCapacityUnits">The value to set for the ReadCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughput WithReadCapacityUnits(long readCapacityUnits)
         {
             this.readCapacityUnits = readCapacityUnits;
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="writeCapacityUnits">The value to set for the WriteCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughput WithWriteCapacityUnits(long writeCapacityUnits)
         {
             this.writeCapacityUnits = writeCapacityUnits;

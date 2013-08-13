@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -69,6 +69,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="contentType">The content type for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithContentType(string contentType)
         {
             this.ContentType = contentType;
@@ -89,6 +90,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="contentLanguage">The content language for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithContentLanguage(string contentLanguage)
         {
             this.ContentLanguage = contentLanguage;
@@ -109,6 +111,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="expires">The expires for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithExpires(string expires)
         {
             this.Expires = expires;
@@ -129,6 +132,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="cacheControl">The cache control for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithCacheControl(string cacheControl)
         {
             this.CacheControl = cacheControl;
@@ -149,6 +153,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="contentDisposition">The content disposition for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithContentDisposition(string contentDisposition)
         {
             this.ContentDisposition = contentDisposition;
@@ -169,6 +174,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="contentEncoding">The content encoding for the returned object.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseHeaderOverrides WithContentEncoding(string contentEncoding)
         {
             this.ContentEncoding = contentEncoding;

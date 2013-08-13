@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistributionList">The value to set for the StreamingDistributionList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStreamingDistributionsResult WithStreamingDistributionList(StreamingDistributionList streamingDistributionList)
         {
             this.streamingDistributionList = streamingDistributionList;

@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthChecks">The values to add to the HealthChecks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithHealthChecks(params HealthCheck[] healthChecks)
         {
             foreach (HealthCheck element in healthChecks)
@@ -61,6 +62,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthChecks">The values to add to the HealthChecks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithHealthChecks(IEnumerable<HealthCheck> healthChecks)
         {
             foreach (HealthCheck element in healthChecks)
@@ -102,6 +104,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -131,6 +134,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -169,6 +173,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nextMarker">The value to set for the NextMarker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithNextMarker(string nextMarker)
         {
             this.nextMarker = nextMarker;
@@ -200,6 +205,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHealthChecksResult WithMaxItems(string maxItems)
         {
             this.maxItems = maxItems;

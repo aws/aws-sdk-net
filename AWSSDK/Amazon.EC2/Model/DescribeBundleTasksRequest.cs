@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// If no bundle ids are given, all bundle tasks are returned.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeBundleTasksRequest
+    public class DescribeBundleTasksRequest : EC2Request
     {    
         private List<string> bundleIdField;
         private List<Filter> filterField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The ID of the bundle task to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeBundleTasksRequest WithBundleId(params string[] list)
         {
             foreach (string item in list)
@@ -109,6 +110,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeBundleTasksRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

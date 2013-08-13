@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// in the Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteNetworkAclEntryRequest
+    public class DeleteNetworkAclEntryRequest : EC2Request
     {    
         private string networkAclIdField;
         private Decimal? ruleNumberField;
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkAclId">ID of the network ACL.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteNetworkAclEntryRequest WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ruleNumber">Rule number for the entry to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteNetworkAclEntryRequest WithRuleNumber(Decimal ruleNumber)
         {
             this.ruleNumberField = ruleNumber;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// <param name="egress">Whether the rule to delete is an egress rule (true) or 
         /// ingress rule (false).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteNetworkAclEntryRequest WithEgress(bool egress)
         {
             this.egressField = egress;

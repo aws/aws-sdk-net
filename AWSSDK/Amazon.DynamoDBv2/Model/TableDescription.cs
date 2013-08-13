@@ -52,6 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeDefinitions">The values to add to the AttributeDefinitions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithAttributeDefinitions(params AttributeDefinition[] attributeDefinitions)
         {
             foreach (AttributeDefinition element in attributeDefinitions)
@@ -67,6 +68,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeDefinitions">The values to add to the AttributeDefinitions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithAttributeDefinitions(IEnumerable<AttributeDefinition> attributeDefinitions)
         {
             foreach (AttributeDefinition element in attributeDefinitions)
@@ -111,6 +113,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -151,6 +154,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -166,6 +170,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -209,6 +214,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableStatus">The value to set for the TableStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableStatus(string tableStatus)
         {
             this.tableStatus = tableStatus;
@@ -237,6 +243,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithCreationDateTime(DateTime creationDateTime)
         {
             this.creationDateTime = creationDateTime;
@@ -266,6 +273,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput)
         {
             this.provisionedThroughput = provisionedThroughput;
@@ -295,6 +303,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableSizeBytes">The value to set for the TableSizeBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithTableSizeBytes(long tableSizeBytes)
         {
             this.tableSizeBytes = tableSizeBytes;
@@ -324,6 +333,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="itemCount">The value to set for the ItemCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithItemCount(long itemCount)
         {
             this.itemCount = itemCount;
@@ -366,6 +376,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="localSecondaryIndexes">The values to add to the LocalSecondaryIndexes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithLocalSecondaryIndexes(params LocalSecondaryIndexDescription[] localSecondaryIndexes)
         {
             foreach (LocalSecondaryIndexDescription element in localSecondaryIndexes)
@@ -381,6 +392,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="localSecondaryIndexes">The values to add to the LocalSecondaryIndexes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TableDescription WithLocalSecondaryIndexes(IEnumerable<LocalSecondaryIndexDescription> localSecondaryIndexes)
         {
             foreach (LocalSecondaryIndexDescription element in localSecondaryIndexes)

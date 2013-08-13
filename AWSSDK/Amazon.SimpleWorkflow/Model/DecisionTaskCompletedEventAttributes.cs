@@ -54,6 +54,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionContext">The value to set for the ExecutionContext property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTaskCompletedEventAttributes WithExecutionContext(string executionContext)
         {
             this.executionContext = executionContext;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduledEventId">The value to set for the ScheduledEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTaskCompletedEventAttributes WithScheduledEventId(long scheduledEventId)
         {
             this.scheduledEventId = scheduledEventId;
@@ -112,6 +114,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startedEventId">The value to set for the StartedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTaskCompletedEventAttributes WithStartedEventId(long startedEventId)
         {
             this.startedEventId = startedEventId;

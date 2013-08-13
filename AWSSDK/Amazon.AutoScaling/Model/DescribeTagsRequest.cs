@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="filters">The values to add to the Filters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsRequest WithFilters(params Filter[] filters)
         {
             foreach (Filter element in filters)
@@ -68,6 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="filters">The values to add to the Filters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsRequest WithFilters(IEnumerable<Filter> filters)
         {
             foreach (Filter element in filters)
@@ -108,6 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -145,6 +148,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;

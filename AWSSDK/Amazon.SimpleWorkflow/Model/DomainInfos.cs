@@ -43,6 +43,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domainInfos">The values to add to the DomainInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainInfos WithName(params DomainInfo[] domainInfos)
         {
             foreach (DomainInfo element in domainInfos)
@@ -58,6 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domainInfos">The values to add to the DomainInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainInfos WithName(IEnumerable<DomainInfo> domainInfos)
         {
             foreach (DomainInfo element in domainInfos)
@@ -99,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainInfos WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;

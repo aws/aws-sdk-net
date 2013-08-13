@@ -54,6 +54,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TextOptions WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -82,6 +83,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="facetEnabled">The value to set for the FacetEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TextOptions WithFacetEnabled(bool facetEnabled)
         {
             this.facetEnabled = facetEnabled;
@@ -110,6 +112,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="resultEnabled">The value to set for the ResultEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TextOptions WithResultEnabled(bool resultEnabled)
         {
             this.resultEnabled = resultEnabled;

@@ -54,6 +54,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="setup">The values to add to the Setup collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithSetup(params string[] setup)
         {
             foreach (string element in setup)
@@ -69,6 +70,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="setup">The values to add to the Setup collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithSetup(IEnumerable<string> setup)
         {
             foreach (string element in setup)
@@ -99,6 +101,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="configure">The values to add to the Configure collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithConfigure(params string[] configure)
         {
             foreach (string element in configure)
@@ -114,6 +117,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="configure">The values to add to the Configure collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithConfigure(IEnumerable<string> configure)
         {
             foreach (string element in configure)
@@ -144,6 +148,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploy">The values to add to the Deploy collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithDeploy(params string[] deploy)
         {
             foreach (string element in deploy)
@@ -159,6 +164,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploy">The values to add to the Deploy collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithDeploy(IEnumerable<string> deploy)
         {
             foreach (string element in deploy)
@@ -189,6 +195,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="undeploy">The values to add to the Undeploy collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithUndeploy(params string[] undeploy)
         {
             foreach (string element in undeploy)
@@ -204,6 +211,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="undeploy">The values to add to the Undeploy collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithUndeploy(IEnumerable<string> undeploy)
         {
             foreach (string element in undeploy)
@@ -234,6 +242,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="shutdown">The values to add to the Shutdown collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithShutdown(params string[] shutdown)
         {
             foreach (string element in shutdown)
@@ -249,6 +258,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="shutdown">The values to add to the Shutdown collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Recipes WithShutdown(IEnumerable<string> shutdown)
         {
             foreach (string element in shutdown)

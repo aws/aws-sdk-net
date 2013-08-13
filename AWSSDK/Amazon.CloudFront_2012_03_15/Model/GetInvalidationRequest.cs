@@ -55,6 +55,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="invalidationId">The invalidation's id</param>
         /// <returns>The request with the InvalidationId property set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationRequest WithInvalidationId(string invalidationId)
         {
             this.invalidationId = invalidationId;
@@ -84,6 +85,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationRequest WithDistributionId(string distributionId)
         {
             this.distributionId = distributionId;

@@ -65,6 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -94,6 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithMetrics(params string[] metrics)
         {
             foreach (string element in metrics)
@@ -109,6 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithMetrics(IEnumerable<string> metrics)
         {
             foreach (string element in metrics)
@@ -153,6 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularity">The value to set for the Granularity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithGranularity(string granularity)
         {
             this.granularity = granularity;

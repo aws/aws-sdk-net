@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// Network ACLs in the Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class ReplaceNetworkAclAssociationRequest
+    public class ReplaceNetworkAclAssociationRequest : EC2Request
     {    
         private string associationIdField;
         private string networkAclIdField;
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// between the original network ACL and the
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceNetworkAclAssociationRequest WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;
@@ -89,6 +90,7 @@ namespace Amazon.EC2.Model
         /// <param name="networkAclId">The ID of the new ACL to associate with the 
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReplaceNetworkAclAssociationRequest WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;

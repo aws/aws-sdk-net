@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="licenseId">The unique ID identifying the license.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public License WithLicenseId(string licenseId)
         {
             this.licenseIdField = licenseId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The license type (ex. "Microsoft/Windows/Standard").</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public License WithType(string type)
         {
             this.typeField = type;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="pool">The name of the pool in which the license is kept.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public License WithPool(string pool)
         {
             this.poolField = pool;
@@ -153,6 +156,7 @@ namespace Amazon.EC2.Model
         /// indicating how many licenses are in use, how many are available,
         /// how many Amazon EC2 instances can be supported, etc.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public License WithLicenseCapacity(params LicenseCapacity[] list)
         {
             foreach (LicenseCapacity item in list)
@@ -193,6 +197,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the License.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public License WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

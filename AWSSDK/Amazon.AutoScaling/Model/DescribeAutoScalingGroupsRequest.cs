@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupNames">The values to add to the AutoScalingGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsRequest WithAutoScalingGroupNames(params string[] autoScalingGroupNames)
         {
             foreach (string element in autoScalingGroupNames)
@@ -66,6 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupNames">The values to add to the AutoScalingGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsRequest WithAutoScalingGroupNames(IEnumerable<string> autoScalingGroupNames)
         {
             foreach (string element in autoScalingGroupNames)
@@ -106,6 +108,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -143,6 +146,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;

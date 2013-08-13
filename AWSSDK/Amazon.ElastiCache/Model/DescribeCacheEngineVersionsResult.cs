@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheEngineVersions">The values to add to the CacheEngineVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsResult WithCacheEngineVersions(params CacheEngineVersion[] cacheEngineVersions)
         {
             foreach (CacheEngineVersion element in cacheEngineVersions)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheEngineVersions">The values to add to the CacheEngineVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsResult WithCacheEngineVersions(IEnumerable<CacheEngineVersion> cacheEngineVersions)
         {
             foreach (CacheEngineVersion element in cacheEngineVersions)

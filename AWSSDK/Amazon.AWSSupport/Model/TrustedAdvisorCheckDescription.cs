@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithId(string id)
         {
             this.id = id;
@@ -75,6 +76,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithName(string name)
         {
             this.name = name;
@@ -103,6 +105,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithDescription(string description)
         {
             this.description = description;
@@ -131,6 +134,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="category">The value to set for the Category property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithCategory(string category)
         {
             this.category = category;
@@ -159,6 +163,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="metadata">The values to add to the Metadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithMetadata(params string[] metadata)
         {
             foreach (string element in metadata)
@@ -174,6 +179,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="metadata">The values to add to the Metadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckDescription WithMetadata(IEnumerable<string> metadata)
         {
             foreach (string element in metadata)

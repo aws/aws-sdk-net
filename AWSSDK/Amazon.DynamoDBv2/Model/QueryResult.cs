@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithItems(params Dictionary<string,AttributeValue>[] items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -61,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithItems(IEnumerable<Dictionary<string,AttributeValue>> items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -92,6 +94,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="count">The value to set for the Count property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithCount(int count)
         {
             this.count = count;
@@ -122,6 +125,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the LastEvaluatedKey dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithLastEvaluatedKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -156,6 +160,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The value to set for the ConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithConsumedCapacity(ConsumedCapacity consumedCapacity)
         {
             this.consumedCapacity = consumedCapacity;

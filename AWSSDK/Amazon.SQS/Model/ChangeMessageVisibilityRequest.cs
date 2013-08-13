@@ -52,6 +52,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -86,6 +87,7 @@ namespace Amazon.SQS.Model
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout you want to change.
         /// This parameter is returned by the ReceiveMessage action.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityRequest WithReceiptHandle(string receiptHandle)
         {
             this.receiptHandleField = receiptHandle;
@@ -116,6 +118,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityRequest WithVisibilityTimeout(Decimal visibilityTimeout)
         {
             this.visibilityTimeoutField = visibilityTimeout;
@@ -153,6 +156,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityRequest WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

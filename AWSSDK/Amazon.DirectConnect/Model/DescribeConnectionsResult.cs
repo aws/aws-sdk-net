@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connections">The values to add to the Connections collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionsResult WithConnections(params Connection[] connections)
         {
             foreach (Connection element in connections)
@@ -57,6 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connections">The values to add to the Connections collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionsResult WithConnections(IEnumerable<Connection> connections)
         {
             foreach (Connection element in connections)

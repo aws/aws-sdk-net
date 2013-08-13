@@ -74,6 +74,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -111,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithAttributesToGet(params string[] attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -126,6 +128,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithAttributesToGet(IEnumerable<string> attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -172,6 +175,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithLimit(int limit)
         {
             this.limit = limit;
@@ -223,6 +227,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="select">The value to set for the Select property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithSelect(string select)
         {
             this.select = select;
@@ -300,6 +305,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ScanFilter dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithScanFilter(params KeyValuePair<string, Condition>[] pairs)
         {
             foreach (KeyValuePair<string, Condition> pair in pairs)
@@ -340,6 +346,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ExclusiveStartKey dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithExclusiveStartKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -381,6 +388,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;
@@ -424,6 +432,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="totalSegments">The value to set for the TotalSegments property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithTotalSegments(int totalSegments)
         {
             this.totalSegments = totalSegments;
@@ -466,6 +475,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="segment">The value to set for the Segment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanRequest WithSegment(int segment)
         {
             this.segment = segment;

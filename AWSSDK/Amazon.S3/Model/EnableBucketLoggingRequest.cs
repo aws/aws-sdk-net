@@ -53,6 +53,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableBucketLoggingRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -94,6 +95,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="loggingConfig">Logging configuration settings</param>
         /// <returns>the request with the LoggingConfig set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableBucketLoggingRequest WithLoggingConfig(S3BucketLoggingConfig loggingConfig)
         {
             this.loggingConfig = loggingConfig;

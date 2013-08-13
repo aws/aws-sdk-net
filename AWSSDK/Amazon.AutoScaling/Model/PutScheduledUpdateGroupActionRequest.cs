@@ -69,6 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -110,6 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionName">The value to set for the ScheduledActionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithScheduledActionName(string scheduledActionName)
         {
             this.scheduledActionName = scheduledActionName;
@@ -140,6 +142,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="time">The value to set for the Time property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithTime(DateTime time)
         {
             this.time = time;
@@ -169,6 +172,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -197,6 +201,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -240,6 +245,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="recurrence">The value to set for the Recurrence property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithRecurrence(string recurrence)
         {
             this.recurrence = recurrence;
@@ -268,6 +274,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="minSize">The value to set for the MinSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithMinSize(int minSize)
         {
             this.minSize = minSize;
@@ -296,6 +303,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxSize">The value to set for the MaxSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithMaxSize(int maxSize)
         {
             this.maxSize = maxSize;
@@ -324,6 +332,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="desiredCapacity">The value to set for the DesiredCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScheduledUpdateGroupActionRequest WithDesiredCapacity(int desiredCapacity)
         {
             this.desiredCapacity = desiredCapacity;

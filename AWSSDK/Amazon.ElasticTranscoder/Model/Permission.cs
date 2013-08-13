@@ -54,6 +54,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="granteeType">The value to set for the GranteeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithGranteeType(string granteeType)
         {
             this.granteeType = granteeType;
@@ -91,6 +92,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="grantee">The value to set for the Grantee property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithGrantee(string grantee)
         {
             this.grantee = grantee;
@@ -127,6 +129,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="access">The values to add to the Access collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAccess(params string[] access)
         {
             foreach (string element in access)
@@ -142,6 +145,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="access">The values to add to the Access collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAccess(IEnumerable<string> access)
         {
             foreach (string element in access)

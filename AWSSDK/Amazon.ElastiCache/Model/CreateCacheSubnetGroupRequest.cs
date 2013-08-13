@@ -50,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupName">The value to set for the CacheSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithCacheSubnetGroupName(string cacheSubnetGroupName)
         {
             this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -78,6 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupDescription">The value to set for the CacheSubnetGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithCacheSubnetGroupDescription(string cacheSubnetGroupDescription)
         {
             this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
@@ -105,6 +107,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -120,6 +123,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)

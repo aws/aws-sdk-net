@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="customerAwsId">The value to set for the CustomerAwsId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithCustomerAwsId(string customerAwsId)
         {
             this.customerAwsId = customerAwsId;
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="custSubscriptionId">The value to set for the CustSubscriptionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithCustSubscriptionId(string custSubscriptionId)
         {
             this.custSubscriptionId = custSubscriptionId;
@@ -107,6 +109,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="snsTopicArn">The value to set for the SnsTopicArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithSnsTopicArn(string snsTopicArn)
         {
             this.snsTopicArn = snsTopicArn;
@@ -137,6 +140,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithStatus(string status)
         {
             this.status = status;
@@ -165,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subscriptionCreationTime">The value to set for the SubscriptionCreationTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithSubscriptionCreationTime(string subscriptionCreationTime)
         {
             this.subscriptionCreationTime = subscriptionCreationTime;
@@ -193,6 +198,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -220,6 +226,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIdsList">The values to add to the SourceIdsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithSourceIdsList(params string[] sourceIdsList)
         {
             foreach (string element in sourceIdsList)
@@ -235,6 +242,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIdsList">The values to add to the SourceIdsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithSourceIdsList(IEnumerable<string> sourceIdsList)
         {
             foreach (string element in sourceIdsList)
@@ -265,6 +273,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategoriesList">The values to add to the EventCategoriesList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithEventCategoriesList(params string[] eventCategoriesList)
         {
             foreach (string element in eventCategoriesList)
@@ -280,6 +289,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategoriesList">The values to add to the EventCategoriesList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithEventCategoriesList(IEnumerable<string> eventCategoriesList)
         {
             foreach (string element in eventCategoriesList)
@@ -311,6 +321,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventSubscription WithEnabled(bool enabled)
         {
             this.enabled = enabled;

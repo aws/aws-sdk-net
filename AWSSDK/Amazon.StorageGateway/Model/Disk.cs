@@ -57,6 +57,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskId">The value to set for the DiskId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskId(string diskId)
         {
             this.diskId = diskId;
@@ -85,6 +86,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskPath">The value to set for the DiskPath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskPath(string diskPath)
         {
             this.diskPath = diskPath;
@@ -113,6 +115,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskNode">The value to set for the DiskNode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskNode(string diskNode)
         {
             this.diskNode = diskNode;
@@ -141,6 +144,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskSizeInBytes">The value to set for the DiskSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskSizeInBytes(long diskSizeInBytes)
         {
             this.diskSizeInBytes = diskSizeInBytes;
@@ -178,6 +182,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskAllocationType">The value to set for the DiskAllocationType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskAllocationType(string diskAllocationType)
         {
             this.diskAllocationType = diskAllocationType;
@@ -207,6 +212,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskAllocationResource">The value to set for the DiskAllocationResource property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Disk WithDiskAllocationResource(string diskAllocationResource)
         {
             this.diskAllocationResource = diskAllocationResource;

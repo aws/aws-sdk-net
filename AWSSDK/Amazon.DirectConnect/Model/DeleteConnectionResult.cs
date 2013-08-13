@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteConnectionResult WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -75,6 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionName">The value to set for the ConnectionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteConnectionResult WithConnectionName(string connectionName)
         {
             this.connectionName = connectionName;
@@ -116,6 +118,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionState">The value to set for the ConnectionState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteConnectionResult WithConnectionState(string connectionState)
         {
             this.connectionState = connectionState;
@@ -144,6 +147,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteConnectionResult WithRegion(string region)
         {
             this.region = region;
@@ -172,6 +176,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteConnectionResult WithLocation(string location)
         {
             this.location = location;

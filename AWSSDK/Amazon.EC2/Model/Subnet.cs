@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The subnet's ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// <param name="subnetState">The current state of the subnet (pending or
         /// available).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetState(string subnetState)
         {
             this.subnetStateField = subnetState;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the subnet is in</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -147,6 +150,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="cidrBlock">The CIDR block assigned to the subnet</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithCidrBlock(string cidrBlock)
         {
             this.cidrBlockField = cidrBlock;
@@ -178,6 +182,7 @@ namespace Amazon.EC2.Model
         /// <param name="availableIpAddressCount">The number of unused IP addresses in the
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithAvailableIpAddressCount(Decimal availableIpAddressCount)
         {
             this.availableIpAddressCountField = availableIpAddressCount;
@@ -208,6 +213,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone the subnet is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -238,6 +244,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="defaultForAz">Whether the subnet is default for the availability zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithDefaultForAz(bool defaultForAz)
         {
             this.defaultForAzField = defaultForAz;
@@ -268,6 +275,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="mapPublicIpOnLaunch">Whether to map the public IP on launch.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithMapPublicIpOnLaunch(bool mapPublicIpOnLaunch)
         {
             this.mapPublicIpOnLaunchField = mapPublicIpOnLaunch;
@@ -305,6 +313,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the Subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

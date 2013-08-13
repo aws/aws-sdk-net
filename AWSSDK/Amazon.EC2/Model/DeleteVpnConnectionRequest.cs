@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
     /// connection.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteVpnConnectionRequest
+    public class DeleteVpnConnectionRequest : EC2Request
     {    
         private string vpnConnectionIdField;
 
@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnConnectionId">The ID of the VPN connection you want to
         /// delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVpnConnectionRequest WithVpnConnectionId(string vpnConnectionId)
         {
             this.vpnConnectionIdField = vpnConnectionId;

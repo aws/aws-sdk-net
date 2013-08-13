@@ -61,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -102,6 +103,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -143,6 +145,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -184,6 +187,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="lifecycleState">The value to set for the LifecycleState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithLifecycleState(string lifecycleState)
         {
             this.lifecycleState = lifecycleState;
@@ -226,6 +230,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="healthStatus">The value to set for the HealthStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithHealthStatus(string healthStatus)
         {
             this.healthStatus = healthStatus;
@@ -267,6 +272,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingInstanceDetails WithLaunchConfigurationName(string launchConfigurationName)
         {
             this.launchConfigurationName = launchConfigurationName;

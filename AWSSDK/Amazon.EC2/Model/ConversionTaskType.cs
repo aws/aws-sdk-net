@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="conversionTaskId">ID of the conversion task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithConversionTaskId(string conversionTaskId)
         {
             this.conversionTaskIdField = conversionTaskId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="expirationTime">When the task expires. If the upload isn't complete before the expiration time, the task is automatically canceled.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithExpirationTime(string expirationTime)
         {
             this.expirationTimeField = expirationTime;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="importVolumeRequest">If the task is for importing a volume, this contains information about the import volume task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithImportVolumeRequest(ImportVolumeTaskDetailsType importVolumeRequest)
         {
             this.importVolumeRequestField = importVolumeRequest;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="importInstanceRequest">If the task is for importing an instance, this contains information about the import instance task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithImportInstanceRequest(ImportInstanceTaskDetailsType importInstanceRequest)
         {
             this.importInstanceRequestField = importInstanceRequest;
@@ -175,6 +179,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="state">State of the conversion task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithState(string state)
         {
             this.stateField = state;
@@ -205,6 +210,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="statusMessage">Status message related to the conversion task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConversionTaskType WithStatusMessage(string statusMessage)
         {
             this.statusMessageField = statusMessage;

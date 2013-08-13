@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithId(string id)
         {
             this.id = id;
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -108,6 +110,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3OriginConfig">The value to set for the S3OriginConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithS3OriginConfig(S3OriginConfig s3OriginConfig)
         {
             this.s3OriginConfig = s3OriginConfig;
@@ -137,6 +140,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="customOriginConfig">The value to set for the CustomOriginConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithCustomOriginConfig(CustomOriginConfig customOriginConfig)
         {
             this.customOriginConfig = customOriginConfig;

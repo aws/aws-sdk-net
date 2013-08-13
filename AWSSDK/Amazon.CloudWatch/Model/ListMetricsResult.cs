@@ -43,6 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsResult WithMetrics(params Metric[] metrics)
         {
             foreach (Metric element in metrics)
@@ -58,6 +59,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsResult WithMetrics(IEnumerable<Metric> metrics)
         {
             foreach (Metric element in metrics)
@@ -89,6 +91,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMetricsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

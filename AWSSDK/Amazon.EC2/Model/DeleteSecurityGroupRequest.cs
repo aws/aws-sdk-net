@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// allow rule is removed.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteSecurityGroupRequest
+    public class DeleteSecurityGroupRequest : EC2Request
     {    
         private string groupIdField;
         private string groupNameField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupId">ID of the security group to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSecurityGroupRequest WithGroupId(string groupId)
         {
             this.groupIdField = groupId;
@@ -89,6 +90,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the security group to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSecurityGroupRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;

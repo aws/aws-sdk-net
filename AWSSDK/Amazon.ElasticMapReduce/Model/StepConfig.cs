@@ -58,6 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepConfig WithName(string name)
         {
             this.name = name;
@@ -95,6 +96,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="actionOnFailure">The value to set for the ActionOnFailure property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepConfig WithActionOnFailure(string actionOnFailure)
         {
             this.actionOnFailure = actionOnFailure;
@@ -123,6 +125,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="hadoopJarStep">The value to set for the HadoopJarStep property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepConfig WithHadoopJarStep(HadoopJarStepConfig hadoopJarStep)
         {
             this.hadoopJarStep = hadoopJarStep;

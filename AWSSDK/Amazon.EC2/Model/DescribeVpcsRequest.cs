@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
     /// The current state of the VPC (pending or available)
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpcsRequest
+    public class DescribeVpcsRequest : EC2Request
     {    
         private List<string> vpcIdField;
         private List<Filter> filterField;
@@ -83,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The ID of a VPC you want information about.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpcsRequest WithVpcId(params string[] list)
         {
             foreach (string item in list)
@@ -140,6 +141,7 @@ namespace Amazon.EC2.Model
         /// digits (e.g., /28).
         /// 3. dhcpOptionsId - The IP of a set of DHCP options.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpcsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

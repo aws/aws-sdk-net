@@ -59,6 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="taskId">The value to set for the TaskId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TaskObject WithTaskId(string taskId)
         {
             this.taskId = taskId;
@@ -100,6 +101,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TaskObject WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -141,6 +143,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="attemptId">The value to set for the AttemptId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TaskObject WithAttemptId(string attemptId)
         {
             this.attemptId = attemptId;
@@ -169,6 +172,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Objects dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TaskObject WithObjects(params KeyValuePair<string, PipelineObject>[] pairs)
         {
             foreach (KeyValuePair<string, PipelineObject> pair in pairs)

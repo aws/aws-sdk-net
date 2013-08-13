@@ -53,6 +53,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="action">The value to set for the Action property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Change WithAction(string action)
         {
             this.action = action;
@@ -81,6 +82,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecordSet">The value to set for the ResourceRecordSet property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Change WithResourceRecordSet(ResourceRecordSet resourceRecordSet)
         {
             this.resourceRecordSet = resourceRecordSet;

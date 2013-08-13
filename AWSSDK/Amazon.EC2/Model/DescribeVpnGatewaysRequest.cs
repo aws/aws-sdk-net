@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     /// attachment (attaching, attached, detaching, detached)
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVpnGatewaysRequest
+    public class DescribeVpnGatewaysRequest : EC2Request
     {    
         private List<string> vpnGatewayIdField;
         private List<Filter> filterField;
@@ -76,6 +76,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A VPN gateway ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpnGatewaysRequest WithVpnGatewayId(params string[] list)
         {
             foreach (string item in list)
@@ -124,6 +125,7 @@ namespace Amazon.EC2.Model
         /// b. type - The type of VPN gateway. Currently the only supported type is ipsec.1.
         /// c. availabilityZone - The Availability Zone the VPN gateway is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVpnGatewaysRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

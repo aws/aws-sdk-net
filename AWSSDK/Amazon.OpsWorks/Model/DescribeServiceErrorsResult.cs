@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceErrors">The values to add to the ServiceErrors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsResult WithServiceErrors(params ServiceError[] serviceErrors)
         {
             foreach (ServiceError element in serviceErrors)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceErrors">The values to add to the ServiceErrors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsResult WithServiceErrors(IEnumerable<ServiceError> serviceErrors)
         {
             foreach (ServiceError element in serviceErrors)

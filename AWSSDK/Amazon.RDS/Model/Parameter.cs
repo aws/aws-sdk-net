@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="parameterName">The value to set for the ParameterName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithParameterName(string parameterName)
         {
             this.parameterName = parameterName;
@@ -81,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="parameterValue">The value to set for the ParameterValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithParameterValue(string parameterValue)
         {
             this.parameterValue = parameterValue;
@@ -109,6 +111,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithDescription(string description)
         {
             this.description = description;
@@ -137,6 +140,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithSource(string source)
         {
             this.source = source;
@@ -165,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyType">The value to set for the ApplyType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithApplyType(string applyType)
         {
             this.applyType = applyType;
@@ -193,6 +198,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dataType">The value to set for the DataType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithDataType(string dataType)
         {
             this.dataType = dataType;
@@ -221,6 +227,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allowedValues">The value to set for the AllowedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithAllowedValues(string allowedValues)
         {
             this.allowedValues = allowedValues;
@@ -250,6 +257,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="isModifiable">The value to set for the IsModifiable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithIsModifiable(bool isModifiable)
         {
             this.isModifiable = isModifiable;
@@ -278,6 +286,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="minimumEngineVersion">The value to set for the MinimumEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithMinimumEngineVersion(string minimumEngineVersion)
         {
             this.minimumEngineVersion = minimumEngineVersion;
@@ -315,6 +324,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyMethod">The value to set for the ApplyMethod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Parameter WithApplyMethod(string applyMethod)
         {
             this.applyMethod = applyMethod;

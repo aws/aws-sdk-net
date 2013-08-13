@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="name">Specifies the name of the filter.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithName(string name)
         {
             this.nameField = name;
@@ -96,6 +97,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Contains one or more values for the filter.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValue(params string[] list)
         {
             foreach (string item in list)

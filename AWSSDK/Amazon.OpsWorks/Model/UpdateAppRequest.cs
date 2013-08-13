@@ -55,6 +55,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appId">The value to set for the AppId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithAppId(string appId)
         {
             this.appId = appId;
@@ -83,6 +84,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithName(string name)
         {
             this.name = name;
@@ -111,6 +113,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithDescription(string description)
         {
             this.description = description;
@@ -148,6 +151,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithType(string type)
         {
             this.type = type;
@@ -176,6 +180,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appSource">The value to set for the AppSource property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithAppSource(Source appSource)
         {
             this.appSource = appSource;
@@ -203,6 +208,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="domains">The values to add to the Domains collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithDomains(params string[] domains)
         {
             foreach (string element in domains)
@@ -218,6 +224,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="domains">The values to add to the Domains collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithDomains(IEnumerable<string> domains)
         {
             foreach (string element in domains)
@@ -249,6 +256,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enableSsl">The value to set for the EnableSsl property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithEnableSsl(bool enableSsl)
         {
             this.enableSsl = enableSsl;
@@ -277,6 +285,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sslConfiguration">The value to set for the SslConfiguration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithSslConfiguration(SslConfiguration sslConfiguration)
         {
             this.sslConfiguration = sslConfiguration;
@@ -305,6 +314,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAppRequest WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)

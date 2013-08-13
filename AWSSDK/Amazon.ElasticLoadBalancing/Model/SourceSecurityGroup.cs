@@ -47,6 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="ownerAlias">The value to set for the OwnerAlias property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceSecurityGroup WithOwnerAlias(string ownerAlias)
         {
             this.ownerAlias = ownerAlias;
@@ -76,6 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="groupName">The value to set for the GroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceSecurityGroup WithGroupName(string groupName)
         {
             this.groupName = groupName;

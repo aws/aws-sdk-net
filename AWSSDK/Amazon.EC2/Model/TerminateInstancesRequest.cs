@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     /// </para>
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class TerminateInstancesRequest
+    public class TerminateInstancesRequest : EC2Request
     {    
         private List<string> instanceIdField;
 
@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Instance ID to terminate.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateInstancesRequest WithInstanceId(params string[] list)
         {
             foreach (string item in list)

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// deletion.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeletePlacementGroupRequest
+    public class DeletePlacementGroupRequest : EC2Request
     {    
         private string groupNameField;
 
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">The name of the PlacementGroup to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeletePlacementGroupRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;

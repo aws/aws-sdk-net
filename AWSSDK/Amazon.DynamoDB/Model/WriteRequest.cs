@@ -45,6 +45,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="putRequest">The value to set for the PutRequest property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WriteRequest WithPutRequest(PutRequest putRequest)
         {
             this.putRequest = putRequest;
@@ -73,6 +74,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="deleteRequest">The value to set for the DeleteRequest property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WriteRequest WithDeleteRequest(DeleteRequest deleteRequest)
         {
             this.deleteRequest = deleteRequest;

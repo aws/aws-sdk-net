@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;
@@ -78,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -93,6 +95,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)

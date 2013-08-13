@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// small delay might occur.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class RevokeSecurityGroupEgressRequest
+    public class RevokeSecurityGroupEgressRequest : EC2Request
     {    
         private string groupIdField;
         private List<IpPermissionSpecification> ipPermissionsField;
@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupId">ID of the VPC security group to modify.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupEgressRequest WithGroupId(string groupId)
         {
             this.groupIdField = groupId;
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupEgressRequest WithIpPermissions(params IpPermissionSpecification[] list)
         {
             foreach (IpPermissionSpecification item in list)

@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// recent post.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class GetConsoleOutputRequest
+    public class GetConsoleOutputRequest : EC2Request
     {    
         private string instanceIdField;
 
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceId">ID of the instance for which you want console
         /// output.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetConsoleOutputRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;

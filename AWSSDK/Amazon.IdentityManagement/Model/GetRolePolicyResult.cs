@@ -58,6 +58,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetRolePolicyResult WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -99,6 +100,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetRolePolicyResult WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -140,6 +142,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="policyDocument">The value to set for the PolicyDocument property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetRolePolicyResult WithPolicyDocument(string policyDocument)
         {
             this.policyDocument = policyDocument;

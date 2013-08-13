@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="zoneName">Name of the Availability Zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithZoneName(string zoneName)
         {
             this.zoneNameField = zoneName;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="zoneState">State of the Availability Zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithZoneState(string zoneState)
         {
             this.zoneStateField = zoneState;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="regionName">Name of the region.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithRegionName(string regionName)
         {
             this.regionNameField = regionName;
@@ -148,6 +151,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The Availability Zone messages.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithMessage(params string[] list)
         {
             foreach (string item in list)

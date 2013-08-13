@@ -84,6 +84,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="dnsName">The DNS name of your Amazon S3 bucket.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Origin WithDNSName(string dnsName)
         {
             this.DNSName = dnsName;
@@ -115,6 +116,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="originAccessIdentity">The origin access identity.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Origin WithOriginAccessIdentity(CloudFrontOriginAccessIdentity originAccessIdentity)
         {
             this.OriginAccessIdentity = originAccessIdentity;

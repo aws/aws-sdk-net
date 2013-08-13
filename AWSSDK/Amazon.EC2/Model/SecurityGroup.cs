@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="ownerId">AWS Access Key ID of the owner of the security
         /// group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -86,6 +87,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The vpc to which the group belongs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupId">Id of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithGroupId(string groupId)
         {
             this.groupIdField = groupId;
@@ -146,6 +149,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -176,6 +180,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupDescription">Description of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithGroupDescription(string groupDescription)
         {
             this.groupDescriptionField = groupDescription;
@@ -213,6 +218,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -254,6 +260,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithIpPermission(params IpPermission[] list)
         {
             foreach (IpPermission item in list)
@@ -294,6 +301,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of outbound rules associated with the security group (for VPC security groups).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroup WithIpPermissionsEgress(params IpPermission[] list)
         {
             foreach (IpPermission item in list)

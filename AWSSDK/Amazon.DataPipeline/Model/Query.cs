@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="selectors">The values to add to the Selectors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Query WithSelectors(params Selector[] selectors)
         {
             foreach (Selector element in selectors)
@@ -57,6 +58,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="selectors">The values to add to the Selectors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Query WithSelectors(IEnumerable<Selector> selectors)
         {
             foreach (Selector element in selectors)

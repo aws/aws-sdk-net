@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">The ID of the network interface</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description of the network interface</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithDescription(string description)
         {
             this.descriptionField = description;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceDestCheck">Flag indicating whether traffic to or from the instance is validated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -151,6 +154,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">ID of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -191,6 +195,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Name of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -224,6 +229,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachment">Network Interface Attachment</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttribute WithAttachment(NetworkInterfaceAttachment attachment)
         {
             this.attachmentField = attachment;

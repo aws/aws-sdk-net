@@ -71,6 +71,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZoneId">The value to set for the HostedZoneId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeResourceRecordSetsRequest WithHostedZoneId(string hostedZoneId)
         {
             this.hostedZoneId = hostedZoneId;
@@ -99,6 +100,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="changeBatch">The value to set for the ChangeBatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeResourceRecordSetsRequest WithChangeBatch(ChangeBatch changeBatch)
         {
             this.changeBatch = changeBatch;

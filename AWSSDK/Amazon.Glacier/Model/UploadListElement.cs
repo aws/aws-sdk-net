@@ -47,6 +47,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="multipartUploadId">The value to set for the MultipartUploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithMultipartUploadId(string multipartUploadId)
         {
             this.multipartUploadId = multipartUploadId;
@@ -75,6 +76,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -103,6 +105,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;
@@ -132,6 +135,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="partSizeInBytes">The value to set for the PartSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithPartSizeInBytes(long partSizeInBytes)
         {
             this.partSizeInBytes = partSizeInBytes;
@@ -160,6 +164,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;

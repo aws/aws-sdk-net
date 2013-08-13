@@ -42,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityLevels">The values to add to the SeverityLevels collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSeverityLevelsResult WithSeverityLevels(params SeverityLevel[] severityLevels)
         {
             foreach (SeverityLevel element in severityLevels)
@@ -57,6 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityLevels">The values to add to the SeverityLevels collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSeverityLevelsResult WithSeverityLevels(IEnumerable<SeverityLevel> severityLevels)
         {
             foreach (SeverityLevel element in severityLevels)

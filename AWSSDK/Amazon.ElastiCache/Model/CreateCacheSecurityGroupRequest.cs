@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupName">The value to set for the CacheSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSecurityGroupRequest WithCacheSecurityGroupName(string cacheSecurityGroupName)
         {
             this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -79,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSecurityGroupRequest WithDescription(string description)
         {
             this.description = description;

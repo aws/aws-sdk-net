@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithName(string name)
         {
             this.name = name;
@@ -80,6 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(params string[] values)
         {
             foreach (string element in values)
@@ -95,6 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(IEnumerable<string> values)
         {
             foreach (string element in values)

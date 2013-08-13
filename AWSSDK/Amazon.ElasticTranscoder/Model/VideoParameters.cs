@@ -67,6 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="codec">The value to set for the Codec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithCodec(string codec)
         {
             this.codec = codec;
@@ -121,6 +122,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the CodecOptions dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithCodecOptions(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -163,6 +165,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="keyframesMaxDist">The value to set for the KeyframesMaxDist property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithKeyframesMaxDist(string keyframesMaxDist)
         {
             this.keyframesMaxDist = keyframesMaxDist;
@@ -202,6 +205,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="fixedGOP">The value to set for the FixedGOP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithFixedGOP(string fixedGOP)
         {
             this.fixedGOP = fixedGOP;
@@ -245,6 +249,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="bitRate">The value to set for the BitRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithBitRate(string bitRate)
         {
             this.bitRate = bitRate;
@@ -291,6 +296,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="frameRate">The value to set for the FrameRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithFrameRate(string frameRate)
         {
             this.frameRate = frameRate;
@@ -331,6 +337,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxFrameRate">The value to set for the MaxFrameRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithMaxFrameRate(string maxFrameRate)
         {
             this.maxFrameRate = maxFrameRate;
@@ -380,6 +387,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="resolution">The value to set for the Resolution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithResolution(string resolution)
         {
             this.resolution = resolution;
@@ -423,6 +431,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="aspectRatio">The value to set for the AspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithAspectRatio(string aspectRatio)
         {
             this.aspectRatio = aspectRatio;
@@ -461,6 +470,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxWidth">The value to set for the MaxWidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithMaxWidth(string maxWidth)
         {
             this.maxWidth = maxWidth;
@@ -499,6 +509,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxHeight">The value to set for the MaxHeight property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithMaxHeight(string maxHeight)
         {
             this.maxHeight = maxHeight;
@@ -536,6 +547,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="displayAspectRatio">The value to set for the DisplayAspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithDisplayAspectRatio(string displayAspectRatio)
         {
             this.displayAspectRatio = displayAspectRatio;
@@ -585,6 +597,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sizingPolicy">The value to set for the SizingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithSizingPolicy(string sizingPolicy)
         {
             this.sizingPolicy = sizingPolicy;
@@ -623,6 +636,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="paddingPolicy">The value to set for the PaddingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithPaddingPolicy(string paddingPolicy)
         {
             this.paddingPolicy = paddingPolicy;
@@ -655,6 +669,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="watermarks">The values to add to the Watermarks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithWatermarks(params PresetWatermark[] watermarks)
         {
             foreach (PresetWatermark element in watermarks)
@@ -670,6 +685,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="watermarks">The values to add to the Watermarks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithWatermarks(IEnumerable<PresetWatermark> watermarks)
         {
             foreach (PresetWatermark element in watermarks)

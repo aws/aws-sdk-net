@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexFieldName">The value to set for the IndexFieldName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithIndexFieldName(string indexFieldName)
         {
             this.indexFieldName = indexFieldName;
@@ -101,6 +102,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexFieldType">The value to set for the IndexFieldType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithIndexFieldType(string indexFieldType)
         {
             this.indexFieldType = indexFieldType;
@@ -129,6 +131,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="uIntOptions">The value to set for the UIntOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithUIntOptions(UIntOptions uIntOptions)
         {
             this.uIntOptions = uIntOptions;
@@ -157,6 +160,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="literalOptions">The value to set for the LiteralOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithLiteralOptions(LiteralOptions literalOptions)
         {
             this.literalOptions = literalOptions;
@@ -185,6 +189,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="textOptions">The value to set for the TextOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithTextOptions(TextOptions textOptions)
         {
             this.textOptions = textOptions;
@@ -214,6 +219,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceAttributes">The values to add to the SourceAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithSourceAttributes(params SourceAttribute[] sourceAttributes)
         {
             foreach (SourceAttribute element in sourceAttributes)
@@ -229,6 +235,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceAttributes">The values to add to the SourceAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithSourceAttributes(IEnumerable<SourceAttribute> sourceAttributes)
         {
             foreach (SourceAttribute element in sourceAttributes)

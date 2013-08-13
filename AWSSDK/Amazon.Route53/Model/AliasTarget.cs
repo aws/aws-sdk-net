@@ -57,6 +57,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZoneId">The value to set for the HostedZoneId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithHostedZoneId(string hostedZoneId)
         {
             this.hostedZoneId = hostedZoneId;
@@ -96,6 +97,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="dNSName">The value to set for the DNSName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithDNSName(string dNSName)
         {
             this.dNSName = dNSName;
@@ -127,6 +129,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="evaluateTargetHealth">The value to set for the EvaluateTargetHealth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithEvaluateTargetHealth(bool evaluateTargetHealth)
         {
             this.evaluateTargetHealth = evaluateTargetHealth;

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">The ID of the network interface.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -122,6 +124,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -152,6 +155,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithDescription(string description)
         {
             this.descriptionField = description;
@@ -182,6 +186,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ownerId">The ID of the customer who created the interface.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -213,6 +218,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">"available" or "in-use"</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithStatus(string status)
         {
             this.statusField = status;
@@ -243,6 +249,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="macAddress">MAC address of the interface within the subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithMacAddress(string macAddress)
         {
             this.macAddressField = macAddress;
@@ -273,6 +280,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddress">IP address of the interface within the subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;
@@ -303,6 +311,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateDnsName">Private Dns Name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithPrivateDnsName(string privateDnsName)
         {
             this.privateDnsNameField = privateDnsName;
@@ -333,6 +342,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceDestCheck">Flag indicating whether traffic to or from the instance is validated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -370,6 +380,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -410,6 +421,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -443,6 +455,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachment">Network Interface Attachment</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithAttachment(InstanceNetworkInterfaceAttachment attachment)
         {
             this.instanceNetworkInterfaceAttachmentField = attachment;
@@ -473,6 +486,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="association">Instance Network Interface Association</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithAssociation(InstanceNetworkInterfaceAssociation association)
         {
             this.instanceNetworkInterfaceAssociationField = association;
@@ -511,6 +525,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceNetworkInterface WithPrivateIpAddresses(params InstancePrivateIpAddress[] privateIpAddresses)
         {
             foreach (InstancePrivateIpAddress privateIpAddress in privateIpAddresses)

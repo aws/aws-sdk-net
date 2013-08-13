@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="reservedInstancesId">The ID of the Reserved Instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithReservedInstancesId(string reservedInstancesId)
         {
             this.reservedInstancesIdField = reservedInstancesId;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceType">The instance type on which the Reserved
         /// Instance can be used.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -124,6 +126,7 @@ namespace Amazon.EC2.Model
         /// <param name="availabilityZone">The Availability Zone in which the Reserved
         /// Instance can be used.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -155,6 +158,7 @@ namespace Amazon.EC2.Model
         /// <param name="duration">The duration of the Reserved Instance, in
         /// seconds.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithDuration(Decimal duration)
         {
             this.durationField = duration;
@@ -186,6 +190,7 @@ namespace Amazon.EC2.Model
         /// <param name="usagePrice">The usage price of the Reserved Instance, per
         /// hour.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithUsagePrice(string usagePrice)
         {
             this.usagePriceField = usagePrice;
@@ -216,6 +221,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="fixedPrice">The purchase price of the Reserved Instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithFixedPrice(string fixedPrice)
         {
             this.fixedPriceField = fixedPrice;
@@ -246,6 +252,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceCount">The number of Reserved Instances purchased.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithInstanceCount(Decimal instanceCount)
         {
             this.instanceCountField = instanceCount;
@@ -276,6 +283,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productDescription">The Reserved Instance description.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithProductDescription(string productDescription)
         {
             this.productDescriptionField = productDescription;
@@ -309,6 +317,7 @@ namespace Amazon.EC2.Model
         /// Valid Values:
         /// pending-payment | active | payment-failed | retired</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithPurchaseState(string purchaseState)
         {
             this.purchaseStateField = purchaseState;
@@ -340,6 +349,7 @@ namespace Amazon.EC2.Model
         /// <param name="startTime">The date and time the Reserved Instance
         /// started.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithStartTime(string startTime)
         {
             this.startTimeField = startTime;
@@ -377,6 +387,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the ReservedInstances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -419,6 +430,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="offeringType">The Reserved Instance Offering type</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithOfferingType(string offeringType)
         {
             this.offeringTypeField = offeringType;
@@ -477,6 +489,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceTenancy">The tenancy of the reserved instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithInstanceTenancy(string instanceTenancy)
         {
             this.instanceTenancyField = instanceTenancy;
@@ -508,6 +521,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="currencyCode">The ISO 4217 CurrencyCode (e.g., USD, JPY).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedInstances WithCurrencyCode(string currencyCode)
         {
             this.currencyCodeField = currencyCode;

@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDeviceParameter WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// <param name="deleteOnTermination">Specifies whether the Amazon EBS volume is
         /// deleted on instance termination.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDeviceParameter WithDeleteOnTermination(bool deleteOnTermination)
         {
             this.deleteOnTerminationField = deleteOnTermination;

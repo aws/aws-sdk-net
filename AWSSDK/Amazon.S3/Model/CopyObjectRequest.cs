@@ -72,6 +72,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcBucket">Name of the bucket containing the object to copy</param>
         /// <returns>the request with the SourceBucket set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithSourceBucket(string srcBucket)
         {
             this.srcBucket = srcBucket;
@@ -105,6 +106,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcKey">Key of the S3 object to copy</param>
         /// <returns>the request with the SourceKey set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithSourceKey(string srcKey)
         {
             this.srcKey = srcKey;
@@ -138,6 +140,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="dstBucket">Name of the bucket to contain the copy</param>
         /// <returns>the request with the DestinationBucket set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithDestinationBucket(string dstBucket)
         {
             this.dstBucket = dstBucket;
@@ -170,6 +173,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="dstKey">Key of the copy of the source object</param>
         /// <returns>the response with the Destinationkey set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithDestinationKey(string dstKey)
         {
             this.dstKey = dstKey;
@@ -216,6 +220,7 @@ namespace Amazon.S3.Model
         /// directive is REPLACE.
         /// <param name="contentType">Content type to be set</param>
         /// <returns>The request with the ContentType set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -264,6 +269,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagToMatch">The ETag value to be matched</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithETagToMatch(string etagToMatch)
         {
             this.etagToMatch = etagToMatch;
@@ -311,6 +317,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagToNotMatch">The value that ETagToNotMatch is set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithETagToNotMatch(string etagToNotMatch)
         {
             this.etagToNotMatch = etagToNotMatch;
@@ -356,6 +363,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="modifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.modifiedSinceDate = modifiedSinceDate;
@@ -402,6 +410,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="unmodifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.unmodifiedSinceDate = unmodifiedSinceDate;
@@ -456,6 +465,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="directive">Metadata directive</param>
         /// <returns>the request with the Directive set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithDirective(S3MetadataDirective directive)
         {
             this.directive = directive;
@@ -552,6 +562,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -596,6 +607,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public CopyObjectRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -613,6 +625,7 @@ namespace Amazon.S3.Model
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public CopyObjectRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
@@ -638,6 +651,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcVersionId">Id of the version of the source object to be copied</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithSourceVersionId(string srcVersionId)
         {
             this.srcVersionId = srcVersionId;
@@ -690,6 +704,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="sClass">The storage class to be set on the new object</param>
         /// <returns>The request with the StorageClass set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithStorageClass(S3StorageClass sClass)
         {
             this.StorageClass = sClass;
@@ -709,6 +724,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -743,6 +759,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="encryption">ServerSideEncryptionMethod for the new object</param>
         /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -770,6 +787,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="websiteRedirectLocation">The redirect value to be returned on a GET request</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyObjectRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {
             this.websiteRedirectLocation = websiteRedirectLocation;

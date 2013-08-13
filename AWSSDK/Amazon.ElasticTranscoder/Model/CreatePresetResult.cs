@@ -44,6 +44,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="preset">The value to set for the Preset property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePresetResult WithPreset(Preset preset)
         {
             this.preset = preset;
@@ -74,6 +75,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="warning">The value to set for the Warning property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePresetResult WithWarning(string warning)
         {
             this.warning = warning;

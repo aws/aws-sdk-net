@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Deletes tags from the specified resources.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteTagsRequest
+    public class DeleteTagsRequest : EC2Request
     {    
         private List<string> resourceIdField;
         private List<DeleteTags> tagField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of one or more resource IDs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteTagsRequest WithResourceId(params string[] list)
         {
             foreach (string item in list)
@@ -101,6 +102,7 @@ namespace Amazon.EC2.Model
         /// If a tag doesn't have a value defined in the key-value pair, 
         /// the tag is deleted regardless of its value.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteTagsRequest WithTag(params DeleteTags[] list)
         {
             foreach (DeleteTags item in list)

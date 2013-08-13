@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// than once, Amazon EC2 does not return an error.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DisassociateAddressRequest
+    public class DisassociateAddressRequest : EC2Request
     {    
         private string publicIpField;
         private string associationIdField;
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// <param name="publicIp">IP address that you are disassociating from
         /// the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisassociateAddressRequest WithPublicIp(string publicIp)
         {
             this.publicIpField = publicIp;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         ///
         /// Condition: Required for VPC elastic IP addresses</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisassociateAddressRequest WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;

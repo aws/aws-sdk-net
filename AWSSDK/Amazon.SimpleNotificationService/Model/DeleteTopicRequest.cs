@@ -55,6 +55,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic the client wants to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteTopicRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;

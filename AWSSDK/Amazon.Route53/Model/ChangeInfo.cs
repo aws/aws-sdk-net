@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeInfo WithId(string id)
         {
             this.id = id;
@@ -94,6 +95,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeInfo WithStatus(string status)
         {
             this.status = status;
@@ -124,6 +126,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="submittedAt">The value to set for the SubmittedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeInfo WithSubmittedAt(DateTime submittedAt)
         {
             this.submittedAt = submittedAt;
@@ -162,6 +165,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeInfo WithComment(string comment)
         {
             this.comment = comment;

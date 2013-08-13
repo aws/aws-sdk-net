@@ -59,6 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -87,6 +88,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appId">The value to set for the AppId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithAppId(string appId)
         {
             this.appId = appId;
@@ -114,6 +116,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithInstanceIds(params string[] instanceIds)
         {
             foreach (string element in instanceIds)
@@ -129,6 +132,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
             foreach (string element in instanceIds)
@@ -160,6 +164,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="command">The value to set for the Command property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithCommand(DeploymentCommand command)
         {
             this.command = command;
@@ -188,6 +193,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithComment(string comment)
         {
             this.comment = comment;
@@ -219,6 +225,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customJson">The value to set for the CustomJson property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithCustomJson(string customJson)
         {
             this.customJson = customJson;

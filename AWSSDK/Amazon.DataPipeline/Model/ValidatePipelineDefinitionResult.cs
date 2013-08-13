@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="validationErrors">The values to add to the ValidationErrors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidatePipelineDefinitionResult WithValidationErrors(params ValidationError[] validationErrors)
         {
             foreach (ValidationError element in validationErrors)
@@ -59,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="validationErrors">The values to add to the ValidationErrors collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidatePipelineDefinitionResult WithValidationErrors(IEnumerable<ValidationError> validationErrors)
         {
             foreach (ValidationError element in validationErrors)
@@ -89,6 +91,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidatePipelineDefinitionResult WithValidationWarnings(params ValidationWarning[] validationWarnings)
         {
             foreach (ValidationWarning element in validationWarnings)
@@ -104,6 +107,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="validationWarnings">The values to add to the ValidationWarnings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidatePipelineDefinitionResult WithValidationWarnings(IEnumerable<ValidationWarning> validationWarnings)
         {
             foreach (ValidationWarning element in validationWarnings)
@@ -135,6 +139,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="errored">The value to set for the Errored property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidatePipelineDefinitionResult WithErrored(bool errored)
         {
             this.errored = errored;

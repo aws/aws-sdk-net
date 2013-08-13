@@ -59,6 +59,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankName">The value to set for the RankName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NamedRankExpression WithRankName(string rankName)
         {
             this.rankName = rankName;
@@ -111,6 +112,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankExpression">The value to set for the RankExpression property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NamedRankExpression WithRankExpression(string rankExpression)
         {
             this.rankExpression = rankExpression;

@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTagsForResourceResult WithTagList(params Tag[] tagList)
         {
             foreach (Tag element in tagList)
@@ -57,6 +58,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTagsForResourceResult WithTagList(IEnumerable<Tag> tagList)
         {
             foreach (Tag element in tagList)

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// for the instances in your VPC.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateNetworkAclRequest
+    public class CreateNetworkAclRequest : EC2Request
     {    
         private string vpcIdField;
 
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC where the network ACL will be created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateNetworkAclRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

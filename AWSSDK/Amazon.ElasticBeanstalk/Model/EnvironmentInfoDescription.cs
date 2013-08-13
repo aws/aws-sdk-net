@@ -55,6 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="infoType">The value to set for the InfoType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithInfoType(string infoType)
         {
             this.infoType = infoType;
@@ -83,6 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="ec2InstanceId">The value to set for the Ec2InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithEc2InstanceId(string ec2InstanceId)
         {
             this.ec2InstanceId = ec2InstanceId;
@@ -111,6 +113,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sampleTimestamp">The value to set for the SampleTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithSampleTimestamp(DateTime sampleTimestamp)
         {
             this.sampleTimestamp = sampleTimestamp;
@@ -139,6 +142,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithMessage(string message)
         {
             this.message = message;

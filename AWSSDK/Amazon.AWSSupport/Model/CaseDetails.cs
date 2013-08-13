@@ -74,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithCaseId(string caseId)
         {
             this.caseId = caseId;
@@ -102,6 +103,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="displayId">The value to set for the DisplayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithDisplayId(string displayId)
         {
             this.displayId = displayId;
@@ -130,6 +132,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="subject">The value to set for the Subject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithSubject(string subject)
         {
             this.subject = subject;
@@ -158,6 +161,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithStatus(string status)
         {
             this.status = status;
@@ -186,6 +190,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="serviceCode">The value to set for the ServiceCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithServiceCode(string serviceCode)
         {
             this.serviceCode = serviceCode;
@@ -214,6 +219,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categoryCode">The value to set for the CategoryCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithCategoryCode(string categoryCode)
         {
             this.categoryCode = categoryCode;
@@ -243,6 +249,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityCode">The value to set for the SeverityCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithSeverityCode(string severityCode)
         {
             this.severityCode = severityCode;
@@ -271,6 +278,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="submittedBy">The value to set for the SubmittedBy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithSubmittedBy(string submittedBy)
         {
             this.submittedBy = submittedBy;
@@ -299,6 +307,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="timeCreated">The value to set for the TimeCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithTimeCreated(string timeCreated)
         {
             this.timeCreated = timeCreated;
@@ -328,6 +337,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="recentCommunications">The value to set for the RecentCommunications property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithRecentCommunications(RecentCaseCommunications recentCommunications)
         {
             this.recentCommunications = recentCommunications;
@@ -355,6 +365,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithCcEmailAddresses(params string[] ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -370,6 +381,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithCcEmailAddresses(IEnumerable<string> ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -402,6 +414,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CaseDetails WithLanguage(string language)
         {
             this.language = language;

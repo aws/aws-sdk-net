@@ -63,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="markerName">The value to set for the MarkerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecordMarkerDecisionAttributes WithMarkerName(string markerName)
         {
             this.markerName = markerName;
@@ -100,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="details">The value to set for the Details property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecordMarkerDecisionAttributes WithDetails(string details)
         {
             this.details = details;

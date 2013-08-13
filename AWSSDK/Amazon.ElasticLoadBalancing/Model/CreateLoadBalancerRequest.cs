@@ -101,6 +101,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -128,6 +129,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithListeners(params Listener[] listeners)
         {
             foreach (Listener element in listeners)
@@ -143,6 +145,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithListeners(IEnumerable<Listener> listeners)
         {
             foreach (Listener element in listeners)
@@ -175,6 +178,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -190,6 +194,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -220,6 +225,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithSubnets(params string[] subnets)
         {
             foreach (string element in subnets)
@@ -235,6 +241,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithSubnets(IEnumerable<string> subnets)
         {
             foreach (string element in subnets)
@@ -265,6 +272,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -280,6 +288,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -313,6 +322,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="scheme">The value to set for the Scheme property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerRequest WithScheme(string scheme)
         {
             this.scheme = scheme;

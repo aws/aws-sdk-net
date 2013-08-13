@@ -61,6 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetAlarmStateRequest WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -98,6 +99,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="stateValue">The value to set for the StateValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetAlarmStateRequest WithStateValue(string stateValue)
         {
             this.stateValue = stateValue;
@@ -135,6 +137,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="stateReason">The value to set for the StateReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetAlarmStateRequest WithStateReason(string stateReason)
         {
             this.stateReason = stateReason;
@@ -172,6 +175,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="stateReasonData">The value to set for the StateReasonData property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetAlarmStateRequest WithStateReasonData(string stateReasonData)
         {
             this.stateReasonData = stateReasonData;

@@ -54,6 +54,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithId(string id)
         {
             this.id = id;
@@ -83,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithStatus(string status)
         {
             this.status = status;
@@ -111,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="lastModifiedTime">The value to set for the LastModifiedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithLastModifiedTime(DateTime lastModifiedTime)
         {
             this.lastModifiedTime = lastModifiedTime;
@@ -139,6 +142,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -167,6 +171,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -195,6 +200,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="origins">The value to set for the Origins property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithOrigins(Origins origins)
         {
             this.origins = origins;
@@ -224,6 +230,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="defaultCacheBehavior">The value to set for the DefaultCacheBehavior property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior)
         {
             this.defaultCacheBehavior = defaultCacheBehavior;
@@ -252,6 +259,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cacheBehaviors">The value to set for the CacheBehaviors property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithCacheBehaviors(CacheBehaviors cacheBehaviors)
         {
             this.cacheBehaviors = cacheBehaviors;
@@ -280,6 +288,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithComment(string comment)
         {
             this.comment = comment;
@@ -303,6 +312,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -331,6 +341,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -359,6 +370,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="viewerCertificate">The value to set for the ViewerCertificate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionSummary WithViewerCertificate(ViewerCertificate viewerCertificate)
         {
             this.viewerCertificate = viewerCertificate;

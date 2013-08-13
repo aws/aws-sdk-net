@@ -45,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="ipv4Address">The value to set for the Ipv4Address property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithIpv4Address(string ipv4Address)
         {
             this.ipv4Address = ipv4Address;
@@ -73,6 +74,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="macAddress">The value to set for the MacAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithMacAddress(string macAddress)
         {
             this.macAddress = macAddress;
@@ -101,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="ipv6Address">The value to set for the Ipv6Address property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithIpv6Address(string ipv6Address)
         {
             this.ipv6Address = ipv6Address;

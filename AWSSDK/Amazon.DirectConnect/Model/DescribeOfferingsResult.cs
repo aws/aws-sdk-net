@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="offerings">The values to add to the Offerings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOfferingsResult WithOfferings(params Offering[] offerings)
         {
             foreach (Offering element in offerings)
@@ -57,6 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="offerings">The values to add to the Offerings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOfferingsResult WithOfferings(IEnumerable<Offering> offerings)
         {
             foreach (Offering element in offerings)

@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Origin WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -73,6 +74,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="originAccessIdentity">The value to set for the OriginAccessIdentity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Origin WithOriginAccessIdentity(string originAccessIdentity)
         {
             this.originAccessIdentity = originAccessIdentity;

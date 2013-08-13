@@ -122,6 +122,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="inputStream">InputStream property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Request WithInputStream(Stream inputStream)
         {
             this.inputStream = inputStream;
@@ -191,6 +192,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Request WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -243,6 +245,7 @@ namespace Amazon.S3.Model
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Request WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;

@@ -54,6 +54,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkId">The value to set for the CheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithCheckId(string checkId)
         {
             this.checkId = checkId;
@@ -82,6 +83,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithTimestamp(string timestamp)
         {
             this.timestamp = timestamp;
@@ -110,6 +112,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithStatus(string status)
         {
             this.status = status;
@@ -138,6 +141,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="hasFlaggedResources">The value to set for the HasFlaggedResources property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithHasFlaggedResources(bool hasFlaggedResources)
         {
             this.hasFlaggedResources = hasFlaggedResources;
@@ -167,6 +171,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesSummary">The value to set for the ResourcesSummary property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary)
         {
             this.resourcesSummary = resourcesSummary;
@@ -195,6 +200,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categorySpecificSummary">The value to set for the CategorySpecificSummary property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckSummary WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary categorySpecificSummary)
         {
             this.categorySpecificSummary = categorySpecificSummary;

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// contains sensitive cryptographic information for configuring your customer gateway.
     /// </remakrs>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteVpnConnectionRouteRequest
+    public class DeleteVpnConnectionRouteRequest : EC2Request
     {
         private string vpnConnectionIdField;
         private string destinationCidrBlockField;
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpnConnectionId">ID of the VPN connection</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVpnConnectionRouteRequest WithVpnConnectionId(string vpnConnectionId)
         {
             this.vpnConnectionIdField = vpnConnectionId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="destinationCidrBlock">CIDR</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVpnConnectionRouteRequest WithDestinationCidrBlock(string destinationCidrBlock)
         {
             this.destinationCidrBlockField = destinationCidrBlock;

@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesRequest WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -105,6 +107,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesRequest WithInstanceIds(params string[] instanceIds)
         {
             foreach (string element in instanceIds)
@@ -120,6 +123,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
             foreach (string element in instanceIds)

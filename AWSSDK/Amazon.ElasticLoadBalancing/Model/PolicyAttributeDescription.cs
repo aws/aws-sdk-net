@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeDescription WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeValue">The value to set for the AttributeValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeDescription WithAttributeValue(string attributeValue)
         {
             this.attributeValue = attributeValue;

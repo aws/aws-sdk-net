@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Alarm WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarmARN">The value to set for the AlarmARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Alarm WithAlarmARN(string alarmARN)
         {
             this.alarmARN = alarmARN;

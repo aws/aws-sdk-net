@@ -48,6 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<StepConfig> steps = new List<StepConfig>();
         private List<BootstrapActionConfig> bootstrapActions = new List<BootstrapActionConfig>();
         private List<string> supportedProducts = new List<string>();
+        private List<SupportedProductConfig> newSupportedProducts = new List<SupportedProductConfig>();
         private bool? visibleToAllUsers;
         private string jobFlowRole;
 
@@ -79,6 +80,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithName(string name)
         {
             this.name = name;
@@ -120,6 +122,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="logUri">The value to set for the LogUri property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithLogUri(string logUri)
         {
             this.logUri = logUri;
@@ -161,6 +164,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="additionalInfo">The value to set for the AdditionalInfo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithAdditionalInfo(string additionalInfo)
         {
             this.additionalInfo = additionalInfo;
@@ -208,6 +212,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="amiVersion">The value to set for the AmiVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithAmiVersion(string amiVersion)
         {
             this.amiVersion = amiVersion;
@@ -236,6 +241,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instances">The value to set for the Instances property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithInstances(JobFlowInstancesConfig instances)
         {
             this.instances = instances;
@@ -263,6 +269,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithSteps(params StepConfig[] steps)
         {
             foreach (StepConfig element in steps)
@@ -278,6 +285,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithSteps(IEnumerable<StepConfig> steps)
         {
             foreach (StepConfig element in steps)
@@ -308,6 +316,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="bootstrapActions">The values to add to the BootstrapActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithBootstrapActions(params BootstrapActionConfig[] bootstrapActions)
         {
             foreach (BootstrapActionConfig element in bootstrapActions)
@@ -323,6 +332,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="bootstrapActions">The values to add to the BootstrapActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithBootstrapActions(IEnumerable<BootstrapActionConfig> bootstrapActions)
         {
             foreach (BootstrapActionConfig element in bootstrapActions)
@@ -357,6 +367,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="supportedProducts">The values to add to the SupportedProducts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithSupportedProducts(params string[] supportedProducts)
         {
             foreach (string element in supportedProducts)
@@ -372,6 +383,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="supportedProducts">The values to add to the SupportedProducts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithSupportedProducts(IEnumerable<string> supportedProducts)
         {
             foreach (string element in supportedProducts)
@@ -386,6 +398,59 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetSupportedProducts()
         {
             return this.supportedProducts.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards
+        /// the argument list to the corresponding installation script as bootstrap action arguments. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the MapR Distribution for
+        /// Hadoop</a>. Currently supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a
+        /// href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li> <li>"mapr-m3" - launch the job flow using MapR M3
+        /// Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments specifying "--edition,m3"
+        /// or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</li> </ul>
+        ///  
+        /// </summary>
+        public List<SupportedProductConfig> NewSupportedProducts
+        {
+            get { return this.newSupportedProducts; }
+            set { this.newSupportedProducts = value; }
+        }
+        /// <summary>
+        /// Adds elements to the NewSupportedProducts collection
+        /// </summary>
+        /// <param name="newSupportedProducts">The values to add to the NewSupportedProducts collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RunJobFlowRequest WithNewSupportedProducts(params SupportedProductConfig[] newSupportedProducts)
+        {
+            foreach (SupportedProductConfig element in newSupportedProducts)
+            {
+                this.newSupportedProducts.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the NewSupportedProducts collection
+        /// </summary>
+        /// <param name="newSupportedProducts">The values to add to the NewSupportedProducts collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RunJobFlowRequest WithNewSupportedProducts(IEnumerable<SupportedProductConfig> newSupportedProducts)
+        {
+            foreach (SupportedProductConfig element in newSupportedProducts)
+            {
+                this.newSupportedProducts.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if NewSupportedProducts property is set
+        internal bool IsSetNewSupportedProducts()
+        {
+            return this.newSupportedProducts.Count > 0;
         }
 
         /// <summary>
@@ -405,6 +470,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="visibleToAllUsers">The value to set for the VisibleToAllUsers property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithVisibleToAllUsers(bool visibleToAllUsers)
         {
             this.visibleToAllUsers = visibleToAllUsers;
@@ -447,6 +513,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowRole">The value to set for the JobFlowRole property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunJobFlowRequest WithJobFlowRole(string jobFlowRole)
         {
             this.jobFlowRole = jobFlowRole;

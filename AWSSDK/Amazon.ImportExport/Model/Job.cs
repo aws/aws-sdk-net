@@ -46,6 +46,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -74,6 +75,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -102,6 +104,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="isCanceled">The value to set for the IsCanceled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithIsCanceled(bool isCanceled)
         {
             this.isCanceled = isCanceled;
@@ -139,6 +142,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobType">The value to set for the JobType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithJobType(string jobType)
         {
             this.jobType = jobType;

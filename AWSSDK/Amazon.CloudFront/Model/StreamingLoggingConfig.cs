@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingLoggingConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="bucket">The value to set for the Bucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingLoggingConfig WithBucket(string bucket)
         {
             this.bucket = bucket;
@@ -106,6 +108,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="prefix">The value to set for the Prefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingLoggingConfig WithPrefix(string prefix)
         {
             this.prefix = prefix;

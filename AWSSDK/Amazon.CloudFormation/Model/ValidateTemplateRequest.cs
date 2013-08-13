@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateRequest WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;
@@ -99,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateURL">The value to set for the TemplateURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateRequest WithTemplateURL(string templateURL)
         {
             this.templateURL = templateURL;

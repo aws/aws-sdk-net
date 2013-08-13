@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">Error code.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTaskError WithCode(string code)
         {
             this.codeField = code;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="message">Error message.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTaskError WithMessage(string message)
         {
             this.messageField = message;

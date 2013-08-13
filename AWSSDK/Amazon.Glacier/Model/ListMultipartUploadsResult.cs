@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadsList">The values to add to the UploadsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithUploadsList(params UploadListElement[] uploadsList)
         {
             foreach (UploadListElement element in uploadsList)
@@ -58,6 +59,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadsList">The values to add to the UploadsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithUploadsList(IEnumerable<UploadListElement> uploadsList)
         {
             foreach (UploadListElement element in uploadsList)
@@ -90,6 +92,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithMarker(string marker)
         {
             this.marker = marker;

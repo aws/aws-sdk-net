@@ -52,6 +52,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithId(string id)
         {
             this.id = id;
@@ -81,6 +82,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithStatus(string status)
         {
             this.status = status;
@@ -109,6 +111,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="lastModifiedTime">The value to set for the LastModifiedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithLastModifiedTime(DateTime lastModifiedTime)
         {
             this.lastModifiedTime = lastModifiedTime;
@@ -137,6 +140,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -165,6 +169,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3Origin">The value to set for the S3Origin property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithS3Origin(S3Origin s3Origin)
         {
             this.s3Origin = s3Origin;
@@ -193,6 +198,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -227,6 +233,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="trustedSigners">The value to set for the TrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithTrustedSigners(TrustedSigners trustedSigners)
         {
             this.trustedSigners = trustedSigners;
@@ -255,6 +262,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithComment(string comment)
         {
             this.comment = comment;
@@ -278,6 +286,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -306,6 +315,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionSummary WithEnabled(bool enabled)
         {
             this.enabled = enabled;

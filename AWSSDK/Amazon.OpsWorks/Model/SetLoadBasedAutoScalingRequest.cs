@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -81,6 +82,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enable">The value to set for the Enable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithEnable(bool enable)
         {
             this.enable = enable;
@@ -110,6 +112,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="upScaling">The value to set for the UpScaling property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithUpScaling(AutoScalingThresholds upScaling)
         {
             this.upScaling = upScaling;
@@ -139,6 +142,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="downScaling">The value to set for the DownScaling property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithDownScaling(AutoScalingThresholds downScaling)
         {
             this.downScaling = downScaling;

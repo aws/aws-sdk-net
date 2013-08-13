@@ -54,6 +54,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="forward">The value to set for the Forward property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookiePreference WithForward(string forward)
         {
             this.forward = forward;
@@ -83,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="whitelistedNames">The value to set for the WhitelistedNames property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookiePreference WithWhitelistedNames(CookieNames whitelistedNames)
         {
             this.whitelistedNames = whitelistedNames;

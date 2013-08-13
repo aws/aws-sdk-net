@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeId">The value to set for the VolumeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithVolumeId(string volumeId)
         {
             this.volumeId = volumeId;
@@ -81,6 +82,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ec2VolumeId">The value to set for the Ec2VolumeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithEc2VolumeId(string ec2VolumeId)
         {
             this.ec2VolumeId = ec2VolumeId;
@@ -109,6 +111,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithName(string name)
         {
             this.name = name;
@@ -137,6 +140,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidArrayId">The value to set for the RaidArrayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithRaidArrayId(string raidArrayId)
         {
             this.raidArrayId = raidArrayId;
@@ -165,6 +169,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -194,6 +199,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithStatus(string status)
         {
             this.status = status;
@@ -222,6 +228,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="size">The value to set for the Size property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithSize(int size)
         {
             this.size = size;
@@ -250,6 +257,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="device">The value to set for the Device property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithDevice(string device)
         {
             this.device = device;
@@ -278,6 +286,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="mountPoint">The value to set for the MountPoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithMountPoint(string mountPoint)
         {
             this.mountPoint = mountPoint;
@@ -307,6 +316,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithRegion(string region)
         {
             this.region = region;
@@ -336,6 +346,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;

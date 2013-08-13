@@ -81,6 +81,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithSource(string source)
         {
             this.source = source;
@@ -109,6 +110,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="destination">The value to set for the Destination property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithDestination(Destination destination)
         {
             this.destination = destination;
@@ -137,6 +139,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithMessage(Message message)
         {
             this.message = message;
@@ -164,6 +167,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="replyToAddresses">The values to add to the ReplyToAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithReplyToAddresses(params string[] replyToAddresses)
         {
             foreach (string element in replyToAddresses)
@@ -179,6 +183,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="replyToAddresses">The values to add to the ReplyToAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithReplyToAddresses(IEnumerable<string> replyToAddresses)
         {
             foreach (string element in replyToAddresses)
@@ -212,6 +217,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="returnPath">The value to set for the ReturnPath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailRequest WithReturnPath(string returnPath)
         {
             this.returnPath = returnPath;

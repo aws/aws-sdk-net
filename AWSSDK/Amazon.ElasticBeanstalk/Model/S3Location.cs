@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="s3Bucket">The value to set for the S3Bucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Location WithS3Bucket(string s3Bucket)
         {
             this.s3Bucket = s3Bucket;
@@ -90,6 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="s3Key">The value to set for the S3Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Location WithS3Key(string s3Key)
         {
             this.s3Key = s3Key;

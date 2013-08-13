@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// with the VPC.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteDhcpOptionsRequest
+    public class DeleteDhcpOptionsRequest : EC2Request
     {    
         private string dhcpOptionsIdField;
 
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="dhcpOptionsId">The ID of the DHCP options set you want to
         /// delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDhcpOptionsRequest WithDhcpOptionsId(string dhcpOptionsId)
         {
             this.dhcpOptionsIdField = dhcpOptionsId;

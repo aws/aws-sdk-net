@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// You can't delete the main route table.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteRouteTableRequest
+    public class DeleteRouteTableRequest : EC2Request
     {    
         private string routeTableIdField;
 
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="routeTableId">The ID of the route table to be deleted.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteRouteTableRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;

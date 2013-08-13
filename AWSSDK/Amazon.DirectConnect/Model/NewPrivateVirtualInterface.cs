@@ -49,6 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceName">The value to set for the VirtualInterfaceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVirtualInterfaceName(string virtualInterfaceName)
         {
             this.virtualInterfaceName = virtualInterfaceName;
@@ -77,6 +78,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="vlan">The value to set for the Vlan property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVlan(int vlan)
         {
             this.vlan = vlan;
@@ -105,6 +107,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="asn">The value to set for the Asn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAsn(int asn)
         {
             this.asn = asn;
@@ -133,6 +136,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="authKey">The value to set for the AuthKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAuthKey(string authKey)
         {
             this.authKey = authKey;
@@ -161,6 +165,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="amazonAddress">The value to set for the AmazonAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAmazonAddress(string amazonAddress)
         {
             this.amazonAddress = amazonAddress;
@@ -184,6 +189,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="customerAddress">The value to set for the CustomerAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithCustomerAddress(string customerAddress)
         {
             this.customerAddress = customerAddress;
@@ -212,6 +218,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGatewayId">The value to set for the VirtualGatewayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVirtualGatewayId(string virtualGatewayId)
         {
             this.virtualGatewayId = virtualGatewayId;

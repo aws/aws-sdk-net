@@ -96,6 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the RequestItems dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemRequest WithRequestItems(params KeyValuePair<string, List<WriteRequest>>[] pairs)
         {
             foreach (KeyValuePair<string, List<WriteRequest>> pair in pairs)
@@ -137,6 +138,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;
@@ -175,6 +177,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnItemCollectionMetrics">The value to set for the ReturnItemCollectionMetrics property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemRequest WithReturnItemCollectionMetrics(string returnItemCollectionMetrics)
         {
             this.returnItemCollectionMetrics = returnItemCollectionMetrics;

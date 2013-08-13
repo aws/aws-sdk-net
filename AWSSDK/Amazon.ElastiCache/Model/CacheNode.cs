@@ -48,6 +48,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeId">The value to set for the CacheNodeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNode WithCacheNodeId(string cacheNodeId)
         {
             this.cacheNodeId = cacheNodeId;
@@ -76,6 +77,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeStatus">The value to set for the CacheNodeStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNode WithCacheNodeStatus(string cacheNodeStatus)
         {
             this.cacheNodeStatus = cacheNodeStatus;
@@ -104,6 +106,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeCreateTime">The value to set for the CacheNodeCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNode WithCacheNodeCreateTime(DateTime cacheNodeCreateTime)
         {
             this.cacheNodeCreateTime = cacheNodeCreateTime;
@@ -132,6 +135,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="endpoint">The value to set for the Endpoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNode WithEndpoint(Endpoint endpoint)
         {
             this.endpoint = endpoint;
@@ -160,6 +164,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterGroupStatus">The value to set for the ParameterGroupStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNode WithParameterGroupStatus(string parameterGroupStatus)
         {
             this.parameterGroupStatus = parameterGroupStatus;

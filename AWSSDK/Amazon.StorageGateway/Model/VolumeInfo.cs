@@ -55,6 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeInfo WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -92,6 +93,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeType">The value to set for the VolumeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeInfo WithVolumeType(string volumeType)
         {
             this.volumeType = volumeType;

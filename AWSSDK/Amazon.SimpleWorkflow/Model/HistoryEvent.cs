@@ -151,6 +151,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="eventTimestamp">The value to set for the EventTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithEventTimestamp(DateTime eventTimestamp)
         {
             this.eventTimestamp = eventTimestamp;
@@ -188,6 +189,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="eventType">The value to set for the EventType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithEventType(string eventType)
         {
             this.eventType = eventType;
@@ -216,6 +218,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="eventId">The value to set for the EventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithEventId(long eventId)
         {
             this.eventId = eventId;
@@ -245,6 +248,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionStartedEventAttributes">The value to set for the WorkflowExecutionStartedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionStartedEventAttributes(WorkflowExecutionStartedEventAttributes workflowExecutionStartedEventAttributes)
         {
             this.workflowExecutionStartedEventAttributes = workflowExecutionStartedEventAttributes;
@@ -274,6 +278,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionCompletedEventAttributes">The value to set for the WorkflowExecutionCompletedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionCompletedEventAttributes(WorkflowExecutionCompletedEventAttributes workflowExecutionCompletedEventAttributes)
         {
             this.workflowExecutionCompletedEventAttributes = workflowExecutionCompletedEventAttributes;
@@ -303,6 +308,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="completeWorkflowExecutionFailedEventAttributes">The value to set for the CompleteWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithCompleteWorkflowExecutionFailedEventAttributes(CompleteWorkflowExecutionFailedEventAttributes completeWorkflowExecutionFailedEventAttributes)
         {
             this.completeWorkflowExecutionFailedEventAttributes = completeWorkflowExecutionFailedEventAttributes;
@@ -332,6 +338,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionFailedEventAttributes">The value to set for the WorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionFailedEventAttributes(WorkflowExecutionFailedEventAttributes workflowExecutionFailedEventAttributes)
         {
             this.workflowExecutionFailedEventAttributes = workflowExecutionFailedEventAttributes;
@@ -361,6 +368,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="failWorkflowExecutionFailedEventAttributes">The value to set for the FailWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithFailWorkflowExecutionFailedEventAttributes(FailWorkflowExecutionFailedEventAttributes failWorkflowExecutionFailedEventAttributes)
         {
             this.failWorkflowExecutionFailedEventAttributes = failWorkflowExecutionFailedEventAttributes;
@@ -390,6 +398,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionTimedOutEventAttributes">The value to set for the WorkflowExecutionTimedOutEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionTimedOutEventAttributes(WorkflowExecutionTimedOutEventAttributes workflowExecutionTimedOutEventAttributes)
         {
             this.workflowExecutionTimedOutEventAttributes = workflowExecutionTimedOutEventAttributes;
@@ -419,6 +428,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionCanceledEventAttributes">The value to set for the WorkflowExecutionCanceledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionCanceledEventAttributes(WorkflowExecutionCanceledEventAttributes workflowExecutionCanceledEventAttributes)
         {
             this.workflowExecutionCanceledEventAttributes = workflowExecutionCanceledEventAttributes;
@@ -448,6 +458,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cancelWorkflowExecutionFailedEventAttributes">The value to set for the CancelWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithCancelWorkflowExecutionFailedEventAttributes(CancelWorkflowExecutionFailedEventAttributes cancelWorkflowExecutionFailedEventAttributes)
         {
             this.cancelWorkflowExecutionFailedEventAttributes = cancelWorkflowExecutionFailedEventAttributes;
@@ -477,6 +488,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionContinuedAsNewEventAttributes">The value to set for the WorkflowExecutionContinuedAsNewEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionContinuedAsNewEventAttributes(WorkflowExecutionContinuedAsNewEventAttributes workflowExecutionContinuedAsNewEventAttributes)
         {
             this.workflowExecutionContinuedAsNewEventAttributes = workflowExecutionContinuedAsNewEventAttributes;
@@ -506,6 +518,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="continueAsNewWorkflowExecutionFailedEventAttributes">The value to set for the ContinueAsNewWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithContinueAsNewWorkflowExecutionFailedEventAttributes(ContinueAsNewWorkflowExecutionFailedEventAttributes continueAsNewWorkflowExecutionFailedEventAttributes)
         {
             this.continueAsNewWorkflowExecutionFailedEventAttributes = continueAsNewWorkflowExecutionFailedEventAttributes;
@@ -535,6 +548,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionTerminatedEventAttributes">The value to set for the WorkflowExecutionTerminatedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionTerminatedEventAttributes(WorkflowExecutionTerminatedEventAttributes workflowExecutionTerminatedEventAttributes)
         {
             this.workflowExecutionTerminatedEventAttributes = workflowExecutionTerminatedEventAttributes;
@@ -564,6 +578,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionCancelRequestedEventAttributes">The value to set for the WorkflowExecutionCancelRequestedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionCancelRequestedEventAttributes(WorkflowExecutionCancelRequestedEventAttributes workflowExecutionCancelRequestedEventAttributes)
         {
             this.workflowExecutionCancelRequestedEventAttributes = workflowExecutionCancelRequestedEventAttributes;
@@ -593,6 +608,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskScheduledEventAttributes">The value to set for the DecisionTaskScheduledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithDecisionTaskScheduledEventAttributes(DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes)
         {
             this.decisionTaskScheduledEventAttributes = decisionTaskScheduledEventAttributes;
@@ -622,6 +638,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskStartedEventAttributes">The value to set for the DecisionTaskStartedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithDecisionTaskStartedEventAttributes(DecisionTaskStartedEventAttributes decisionTaskStartedEventAttributes)
         {
             this.decisionTaskStartedEventAttributes = decisionTaskStartedEventAttributes;
@@ -651,6 +668,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskCompletedEventAttributes">The value to set for the DecisionTaskCompletedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithDecisionTaskCompletedEventAttributes(DecisionTaskCompletedEventAttributes decisionTaskCompletedEventAttributes)
         {
             this.decisionTaskCompletedEventAttributes = decisionTaskCompletedEventAttributes;
@@ -680,6 +698,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskTimedOutEventAttributes">The value to set for the DecisionTaskTimedOutEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithDecisionTaskTimedOutEventAttributes(DecisionTaskTimedOutEventAttributes decisionTaskTimedOutEventAttributes)
         {
             this.decisionTaskTimedOutEventAttributes = decisionTaskTimedOutEventAttributes;
@@ -709,6 +728,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskScheduledEventAttributes">The value to set for the ActivityTaskScheduledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskScheduledEventAttributes(ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes)
         {
             this.activityTaskScheduledEventAttributes = activityTaskScheduledEventAttributes;
@@ -738,6 +758,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskStartedEventAttributes">The value to set for the ActivityTaskStartedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskStartedEventAttributes(ActivityTaskStartedEventAttributes activityTaskStartedEventAttributes)
         {
             this.activityTaskStartedEventAttributes = activityTaskStartedEventAttributes;
@@ -767,6 +788,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskCompletedEventAttributes">The value to set for the ActivityTaskCompletedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskCompletedEventAttributes(ActivityTaskCompletedEventAttributes activityTaskCompletedEventAttributes)
         {
             this.activityTaskCompletedEventAttributes = activityTaskCompletedEventAttributes;
@@ -796,6 +818,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskFailedEventAttributes">The value to set for the ActivityTaskFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskFailedEventAttributes(ActivityTaskFailedEventAttributes activityTaskFailedEventAttributes)
         {
             this.activityTaskFailedEventAttributes = activityTaskFailedEventAttributes;
@@ -825,6 +848,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskTimedOutEventAttributes">The value to set for the ActivityTaskTimedOutEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskTimedOutEventAttributes(ActivityTaskTimedOutEventAttributes activityTaskTimedOutEventAttributes)
         {
             this.activityTaskTimedOutEventAttributes = activityTaskTimedOutEventAttributes;
@@ -854,6 +878,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskCanceledEventAttributes">The value to set for the ActivityTaskCanceledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskCanceledEventAttributes(ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes)
         {
             this.activityTaskCanceledEventAttributes = activityTaskCanceledEventAttributes;
@@ -883,6 +908,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityTaskCancelRequestedEventAttributes">The value to set for the ActivityTaskCancelRequestedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithActivityTaskCancelRequestedEventAttributes(ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes)
         {
             this.activityTaskCancelRequestedEventAttributes = activityTaskCancelRequestedEventAttributes;
@@ -912,6 +938,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionSignaledEventAttributes">The value to set for the WorkflowExecutionSignaledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithWorkflowExecutionSignaledEventAttributes(WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes)
         {
             this.workflowExecutionSignaledEventAttributes = workflowExecutionSignaledEventAttributes;
@@ -941,6 +968,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="markerRecordedEventAttributes">The value to set for the MarkerRecordedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithMarkerRecordedEventAttributes(MarkerRecordedEventAttributes markerRecordedEventAttributes)
         {
             this.markerRecordedEventAttributes = markerRecordedEventAttributes;
@@ -970,6 +998,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="recordMarkerFailedEventAttributes">The value to set for the RecordMarkerFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes)
         {
             this.recordMarkerFailedEventAttributes = recordMarkerFailedEventAttributes;
@@ -999,6 +1028,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="timerStartedEventAttributes">The value to set for the TimerStartedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithTimerStartedEventAttributes(TimerStartedEventAttributes timerStartedEventAttributes)
         {
             this.timerStartedEventAttributes = timerStartedEventAttributes;
@@ -1028,6 +1058,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="timerFiredEventAttributes">The value to set for the TimerFiredEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithTimerFiredEventAttributes(TimerFiredEventAttributes timerFiredEventAttributes)
         {
             this.timerFiredEventAttributes = timerFiredEventAttributes;
@@ -1057,6 +1088,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="timerCanceledEventAttributes">The value to set for the TimerCanceledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithTimerCanceledEventAttributes(TimerCanceledEventAttributes timerCanceledEventAttributes)
         {
             this.timerCanceledEventAttributes = timerCanceledEventAttributes;
@@ -1086,6 +1118,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startChildWorkflowExecutionInitiatedEventAttributes">The value to set for the StartChildWorkflowExecutionInitiatedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithStartChildWorkflowExecutionInitiatedEventAttributes(StartChildWorkflowExecutionInitiatedEventAttributes startChildWorkflowExecutionInitiatedEventAttributes)
         {
             this.startChildWorkflowExecutionInitiatedEventAttributes = startChildWorkflowExecutionInitiatedEventAttributes;
@@ -1115,6 +1148,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionStartedEventAttributes">The value to set for the ChildWorkflowExecutionStartedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionStartedEventAttributes(ChildWorkflowExecutionStartedEventAttributes childWorkflowExecutionStartedEventAttributes)
         {
             this.childWorkflowExecutionStartedEventAttributes = childWorkflowExecutionStartedEventAttributes;
@@ -1144,6 +1178,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionCompletedEventAttributes">The value to set for the ChildWorkflowExecutionCompletedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionCompletedEventAttributes(ChildWorkflowExecutionCompletedEventAttributes childWorkflowExecutionCompletedEventAttributes)
         {
             this.childWorkflowExecutionCompletedEventAttributes = childWorkflowExecutionCompletedEventAttributes;
@@ -1173,6 +1208,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionFailedEventAttributes">The value to set for the ChildWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionFailedEventAttributes(ChildWorkflowExecutionFailedEventAttributes childWorkflowExecutionFailedEventAttributes)
         {
             this.childWorkflowExecutionFailedEventAttributes = childWorkflowExecutionFailedEventAttributes;
@@ -1202,6 +1238,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionTimedOutEventAttributes">The value to set for the ChildWorkflowExecutionTimedOutEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionTimedOutEventAttributes(ChildWorkflowExecutionTimedOutEventAttributes childWorkflowExecutionTimedOutEventAttributes)
         {
             this.childWorkflowExecutionTimedOutEventAttributes = childWorkflowExecutionTimedOutEventAttributes;
@@ -1231,6 +1268,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionCanceledEventAttributes">The value to set for the ChildWorkflowExecutionCanceledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionCanceledEventAttributes(ChildWorkflowExecutionCanceledEventAttributes childWorkflowExecutionCanceledEventAttributes)
         {
             this.childWorkflowExecutionCanceledEventAttributes = childWorkflowExecutionCanceledEventAttributes;
@@ -1260,6 +1298,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childWorkflowExecutionTerminatedEventAttributes">The value to set for the ChildWorkflowExecutionTerminatedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithChildWorkflowExecutionTerminatedEventAttributes(ChildWorkflowExecutionTerminatedEventAttributes childWorkflowExecutionTerminatedEventAttributes)
         {
             this.childWorkflowExecutionTerminatedEventAttributes = childWorkflowExecutionTerminatedEventAttributes;
@@ -1289,6 +1328,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="signalExternalWorkflowExecutionInitiatedEventAttributes">The value to set for the SignalExternalWorkflowExecutionInitiatedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithSignalExternalWorkflowExecutionInitiatedEventAttributes(SignalExternalWorkflowExecutionInitiatedEventAttributes signalExternalWorkflowExecutionInitiatedEventAttributes)
         {
             this.signalExternalWorkflowExecutionInitiatedEventAttributes = signalExternalWorkflowExecutionInitiatedEventAttributes;
@@ -1318,6 +1358,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalWorkflowExecutionSignaledEventAttributes">The value to set for the ExternalWorkflowExecutionSignaledEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithExternalWorkflowExecutionSignaledEventAttributes(ExternalWorkflowExecutionSignaledEventAttributes externalWorkflowExecutionSignaledEventAttributes)
         {
             this.externalWorkflowExecutionSignaledEventAttributes = externalWorkflowExecutionSignaledEventAttributes;
@@ -1347,6 +1388,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="signalExternalWorkflowExecutionFailedEventAttributes">The value to set for the SignalExternalWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithSignalExternalWorkflowExecutionFailedEventAttributes(SignalExternalWorkflowExecutionFailedEventAttributes signalExternalWorkflowExecutionFailedEventAttributes)
         {
             this.signalExternalWorkflowExecutionFailedEventAttributes = signalExternalWorkflowExecutionFailedEventAttributes;
@@ -1376,6 +1418,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalWorkflowExecutionCancelRequestedEventAttributes">The value to set for the ExternalWorkflowExecutionCancelRequestedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithExternalWorkflowExecutionCancelRequestedEventAttributes(ExternalWorkflowExecutionCancelRequestedEventAttributes externalWorkflowExecutionCancelRequestedEventAttributes)
         {
             this.externalWorkflowExecutionCancelRequestedEventAttributes = externalWorkflowExecutionCancelRequestedEventAttributes;
@@ -1405,6 +1448,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="requestCancelExternalWorkflowExecutionInitiatedEventAttributes">The value to set for the RequestCancelExternalWorkflowExecutionInitiatedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(RequestCancelExternalWorkflowExecutionInitiatedEventAttributes requestCancelExternalWorkflowExecutionInitiatedEventAttributes)
         {
             this.requestCancelExternalWorkflowExecutionInitiatedEventAttributes = requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
@@ -1434,6 +1478,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="requestCancelExternalWorkflowExecutionFailedEventAttributes">The value to set for the RequestCancelExternalWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithRequestCancelExternalWorkflowExecutionFailedEventAttributes(RequestCancelExternalWorkflowExecutionFailedEventAttributes requestCancelExternalWorkflowExecutionFailedEventAttributes)
         {
             this.requestCancelExternalWorkflowExecutionFailedEventAttributes = requestCancelExternalWorkflowExecutionFailedEventAttributes;
@@ -1463,6 +1508,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduleActivityTaskFailedEventAttributes">The value to set for the ScheduleActivityTaskFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithScheduleActivityTaskFailedEventAttributes(ScheduleActivityTaskFailedEventAttributes scheduleActivityTaskFailedEventAttributes)
         {
             this.scheduleActivityTaskFailedEventAttributes = scheduleActivityTaskFailedEventAttributes;
@@ -1492,6 +1538,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="requestCancelActivityTaskFailedEventAttributes">The value to set for the RequestCancelActivityTaskFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithRequestCancelActivityTaskFailedEventAttributes(RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes)
         {
             this.requestCancelActivityTaskFailedEventAttributes = requestCancelActivityTaskFailedEventAttributes;
@@ -1521,6 +1568,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startTimerFailedEventAttributes">The value to set for the StartTimerFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithStartTimerFailedEventAttributes(StartTimerFailedEventAttributes startTimerFailedEventAttributes)
         {
             this.startTimerFailedEventAttributes = startTimerFailedEventAttributes;
@@ -1550,6 +1598,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cancelTimerFailedEventAttributes">The value to set for the CancelTimerFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithCancelTimerFailedEventAttributes(CancelTimerFailedEventAttributes cancelTimerFailedEventAttributes)
         {
             this.cancelTimerFailedEventAttributes = cancelTimerFailedEventAttributes;
@@ -1579,6 +1628,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startChildWorkflowExecutionFailedEventAttributes">The value to set for the StartChildWorkflowExecutionFailedEventAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HistoryEvent WithStartChildWorkflowExecutionFailedEventAttributes(StartChildWorkflowExecutionFailedEventAttributes startChildWorkflowExecutionFailedEventAttributes)
         {
             this.startChildWorkflowExecutionFailedEventAttributes = startChildWorkflowExecutionFailedEventAttributes;

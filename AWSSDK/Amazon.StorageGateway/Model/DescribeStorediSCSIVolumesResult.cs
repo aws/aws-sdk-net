@@ -57,6 +57,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="storediSCSIVolumes">The values to add to the StorediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStorediSCSIVolumesResult WithStorediSCSIVolumes(params StorediSCSIVolume[] storediSCSIVolumes)
         {
             foreach (StorediSCSIVolume element in storediSCSIVolumes)
@@ -72,6 +73,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="storediSCSIVolumes">The values to add to the StorediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStorediSCSIVolumesResult WithStorediSCSIVolumes(IEnumerable<StorediSCSIVolume> storediSCSIVolumes)
         {
             foreach (StorediSCSIVolume element in storediSCSIVolumes)

@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// <param name="networkAclAssociationId">An identifier representing the association between a network ACL
         /// and a subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAclAssociation WithNetworkAclAssociationId(string networkAclAssociationId)
         {
             this.networkAclAssociationIdField = networkAclAssociationId;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkAclId">The ID of the network ACL in the association.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAclAssociation WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet in the association.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAclAssociation WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;

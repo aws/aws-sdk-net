@@ -73,6 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="protocol">The value to set for the Protocol property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithProtocol(string protocol)
         {
             this.protocol = protocol;
@@ -101,6 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerPort">The value to set for the LoadBalancerPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithLoadBalancerPort(int loadBalancerPort)
         {
             this.loadBalancerPort = loadBalancerPort;
@@ -134,6 +136,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceProtocol">The value to set for the InstanceProtocol property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithInstanceProtocol(string instanceProtocol)
         {
             this.instanceProtocol = instanceProtocol;
@@ -171,6 +174,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instancePort">The value to set for the InstancePort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithInstancePort(int instancePort)
         {
             this.instancePort = instancePort;
@@ -201,6 +205,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="sSLCertificateId">The value to set for the SSLCertificateId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithSSLCertificateId(string sSLCertificateId)
         {
             this.sSLCertificateId = sSLCertificateId;

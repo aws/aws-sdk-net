@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatus WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The new availability zone</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatus WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeStatusInfo">The new VolumeStatusInfo</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatus WithVolumeStatusInfo(VolumeStatusInfo volumeStatusInfo)
         {
             this.volumeStatusInfoField = volumeStatusInfo;
@@ -147,6 +150,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The new VolumeStatusEvent</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatus WithVolumeStatusEvent(params VolumeStatusEvent[] list)
         {
             foreach (VolumeStatusEvent item in list)
@@ -185,6 +189,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The new VolumeStatusAction</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatus WithVolumeStatusAction(params VolumeStatusAction[] list)
         {
             foreach (VolumeStatusAction item in list)

@@ -44,6 +44,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="initialCaseStatus">The value to set for the InitialCaseStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResolveCaseResult WithInitialCaseStatus(string initialCaseStatus)
         {
             this.initialCaseStatus = initialCaseStatus;
@@ -72,6 +73,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="finalCaseStatus">The value to set for the FinalCaseStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResolveCaseResult WithFinalCaseStatus(string finalCaseStatus)
         {
             this.finalCaseStatus = finalCaseStatus;

@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroupStatus WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -73,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterApplyStatus">The value to set for the ParameterApplyStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroupStatus WithParameterApplyStatus(string parameterApplyStatus)
         {
             this.parameterApplyStatus = parameterApplyStatus;
@@ -100,6 +102,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroupStatus WithCacheNodeIdsToReboot(params string[] cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)
@@ -115,6 +118,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheParameterGroupStatus WithCacheNodeIdsToReboot(IEnumerable<string> cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)

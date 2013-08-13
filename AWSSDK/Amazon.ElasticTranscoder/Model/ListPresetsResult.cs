@@ -42,6 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presets">The values to add to the Presets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPresetsResult WithPresets(params Preset[] presets)
         {
             foreach (Preset element in presets)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presets">The values to add to the Presets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPresetsResult WithPresets(IEnumerable<Preset> presets)
         {
             foreach (Preset element in presets)

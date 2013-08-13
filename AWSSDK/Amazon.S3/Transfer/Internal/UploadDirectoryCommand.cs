@@ -77,16 +77,23 @@ namespace Amazon.S3.Transfer.Internal
 
                 key = prefix + key;
 
-                TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest()
-                    .WithBucketName(this._request.BucketName)
-                    .WithKey(key)
-                    .WithFilePath(filepath)
-                    .WithCannedACL(this._request.CannedACL)
-                    .WithTimeout(this._request.Timeout)
-                    .WithMetadata(this._request.Metadata)
-                    .WithStorageClass(this._request.StorageClass)
-                    .WithServerSideEncryptionMethod(this._request.ServerSideEncryptionMethod)
-                    .WithBeforeRequestHandler(RequestEventHandler) as TransferUtilityUploadRequest;
+                TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = this._request.BucketName,
+                    Key = key,
+                    FilePath = filepath,
+                    CannedACL = this._request.CannedACL,
+                    Timeout = this._request.Timeout,
+                    StorageClass = this._request.StorageClass,
+                    ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod
+                };
+                // metadata
+                foreach (string metadaKey in this._request.Metadata.AllKeys)
+                {
+                    var value = this._request.Metadata[metadaKey];
+                    uploadRequest.WithMetadata(metadaKey, value);
+                }
+                uploadRequest.BeforeRequestEvent += RequestEventHandler;
                 uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(uploadProgressEventCallback);
 
                 this._utility.Upload(uploadRequest);

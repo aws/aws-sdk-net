@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScriptBootstrapActionConfig WithPath(string path)
         {
             this.path = path;
@@ -84,6 +85,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="args">The values to add to the Args collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScriptBootstrapActionConfig WithArgs(params string[] args)
         {
             foreach (string element in args)
@@ -99,6 +101,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="args">The values to add to the Args collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScriptBootstrapActionConfig WithArgs(IEnumerable<string> args)
         {
             foreach (string element in args)

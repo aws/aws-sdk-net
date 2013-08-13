@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingInstances">The values to add to the AutoScalingInstances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithAutoScalingInstances(params AutoScalingInstanceDetails[] autoScalingInstances)
         {
             foreach (AutoScalingInstanceDetails element in autoScalingInstances)
@@ -58,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingInstances">The values to add to the AutoScalingInstances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithAutoScalingInstances(IEnumerable<AutoScalingInstanceDetails> autoScalingInstances)
         {
             foreach (AutoScalingInstanceDetails element in autoScalingInstances)
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

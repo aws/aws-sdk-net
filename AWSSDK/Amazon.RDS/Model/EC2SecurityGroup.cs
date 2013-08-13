@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithStatus(string status)
         {
             this.status = status;
@@ -80,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupName">The value to set for the EC2SecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithEC2SecurityGroupName(string eC2SecurityGroupName)
         {
             this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -108,6 +110,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupId">The value to set for the EC2SecurityGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithEC2SecurityGroupId(string eC2SecurityGroupId)
         {
             this.eC2SecurityGroupId = eC2SecurityGroupId;
@@ -136,6 +139,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupOwnerId">The value to set for the EC2SecurityGroupOwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithEC2SecurityGroupOwnerId(string eC2SecurityGroupOwnerId)
         {
             this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

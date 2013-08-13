@@ -80,6 +80,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="domainName">The name of the domain in which to perform the operation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchPutAttributesRequest WithDomainName(string domainName)
         {
             this.domainNameField = domainName;
@@ -117,6 +118,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Items represent individual objects that contain one or more attribute name-value pairs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchPutAttributesRequest WithItem(params ReplaceableItem[] list)
         {
             foreach (ReplaceableItem item in list)

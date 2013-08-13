@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithId(string id)
         {
             this.id = id;
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3CanonicalUserId">The value to set for the S3CanonicalUserId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithS3CanonicalUserId(string s3CanonicalUserId)
         {
             this.s3CanonicalUserId = s3CanonicalUserId;
@@ -102,6 +104,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cloudFrontOriginAccessIdentityConfig">The value to set for the CloudFrontOriginAccessIdentityConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {
             this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;

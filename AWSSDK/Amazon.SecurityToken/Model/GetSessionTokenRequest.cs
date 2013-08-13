@@ -71,6 +71,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="durationSeconds">The value to set for the DurationSeconds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSessionTokenRequest WithDurationSeconds(int durationSeconds)
         {
             this.durationSeconds = durationSeconds;
@@ -115,6 +116,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="serialNumber">The value to set for the SerialNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSessionTokenRequest WithSerialNumber(string serialNumber)
         {
             this.serialNumber = serialNumber;
@@ -158,6 +160,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="tokenCode">The value to set for the TokenCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSessionTokenRequest WithTokenCode(string tokenCode)
         {
             this.tokenCode = tokenCode;

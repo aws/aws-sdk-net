@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="hTTPPort">The value to set for the HTTPPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithHTTPPort(int hTTPPort)
         {
             this.hTTPPort = hTTPPort;
@@ -73,6 +74,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="hTTPSPort">The value to set for the HTTPSPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithHTTPSPort(int hTTPSPort)
         {
             this.hTTPSPort = hTTPSPort;
@@ -110,6 +112,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="originProtocolPolicy">The value to set for the OriginProtocolPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithOriginProtocolPolicy(string originProtocolPolicy)
         {
             this.originProtocolPolicy = originProtocolPolicy;

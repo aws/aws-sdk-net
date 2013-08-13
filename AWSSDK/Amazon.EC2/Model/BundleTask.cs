@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Instance associated with this bundle task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bundleId">Identifier for this task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithBundleId(string bundleId)
         {
             this.bundleIdField = bundleId;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bundleState">The state of the task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithBundleState(string bundleState)
         {
             this.bundleStateField = bundleState;
@@ -147,6 +150,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="startTime">The time this task started.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithStartTime(string startTime)
         {
             this.startTimeField = startTime;
@@ -178,6 +182,7 @@ namespace Amazon.EC2.Model
         /// <param name="updateTime">The time of the most recent update for the
         /// task.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithUpdateTime(string updateTime)
         {
             this.updateTimeField = updateTime;
@@ -208,6 +213,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="storage">Amazon S3 storage locations.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithStorage(Storage storage)
         {
             this.storageField = storage;
@@ -238,6 +244,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="progress">The level of task completion, in percent (e.g., 20%).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithProgress(string progress)
         {
             this.progressField = progress;
@@ -268,6 +275,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bundleTaskError">If the task fails, a description of the error.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleTask WithBundleTaskError(BundleTaskError bundleTaskError)
         {
             this.bundleTaskErrorField = bundleTaskError;

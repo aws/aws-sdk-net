@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithCommunications(params Communication[] communications)
         {
             foreach (Communication element in communications)
@@ -58,6 +59,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithCommunications(IEnumerable<Communication> communications)
         {
             foreach (Communication element in communications)
@@ -89,6 +91,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

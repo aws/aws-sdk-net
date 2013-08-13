@@ -68,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersRequest WithLoadBalancerNames(params string[] loadBalancerNames)
         {
             foreach (string element in loadBalancerNames)
@@ -83,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersRequest WithLoadBalancerNames(IEnumerable<string> loadBalancerNames)
         {
             foreach (string element in loadBalancerNames)
@@ -114,6 +116,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersRequest WithMarker(string marker)
         {
             this.marker = marker;

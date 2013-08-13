@@ -76,6 +76,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerListenerSSLCertificateRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -104,6 +105,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerPort">The value to set for the LoadBalancerPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerListenerSSLCertificateRequest WithLoadBalancerPort(int loadBalancerPort)
         {
             this.loadBalancerPort = loadBalancerPort;
@@ -134,6 +136,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="sSLCertificateId">The value to set for the SSLCertificateId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerListenerSSLCertificateRequest WithSSLCertificateId(string sSLCertificateId)
         {
             this.sSLCertificateId = sSLCertificateId;

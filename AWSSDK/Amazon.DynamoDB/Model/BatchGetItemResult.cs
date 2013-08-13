@@ -43,6 +43,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Responses dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchGetItemResult WithResponses(params KeyValuePair<string, BatchResponse>[] pairs)
         {
             foreach (KeyValuePair<string, BatchResponse> pair in pairs)
@@ -85,6 +86,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the UnprocessedKeys dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchGetItemResult WithUnprocessedKeys(params KeyValuePair<string, KeysAndAttributes>[] pairs)
         {
             foreach (KeyValuePair<string, KeysAndAttributes> pair in pairs)

@@ -45,6 +45,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;
@@ -74,6 +75,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="federatedUser">The value to set for the FederatedUser property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithFederatedUser(FederatedUser federatedUser)
         {
             this.federatedUser = federatedUser;
@@ -112,6 +114,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="packedPolicySize">The value to set for the PackedPolicySize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithPackedPolicySize(int packedPolicySize)
         {
             this.packedPolicySize = packedPolicySize;

@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// reconfigure your customer gateway with the new information returned from CreateVpnConnection.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateVpnConnectionRequest
+    public class CreateVpnConnectionRequest : EC2Request
     {    
         private string typeField;
         private string customerGatewayIdField;
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The type of VPN connection</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnConnectionRequest WithType(string type)
         {
             this.typeField = type;
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="customerGatewayId">The ID of the customer gateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnConnectionRequest WithCustomerGatewayId(string customerGatewayId)
         {
             this.customerGatewayIdField = customerGatewayId;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnConnectionRequest WithVpnGatewayId(string vpnGatewayId)
         {
             this.vpnGatewayIdField = vpnGatewayId;
@@ -160,6 +163,7 @@ namespace Amazon.EC2.Model
         /// If you are creating a VPN connection for a device that does not support BGP, you must 
         /// specify this value as true.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnConnectionRequest WithStaticRoutesOnly(bool staticRoutesOnly)
         {
             this.staticRoutesOnlyField = staticRoutesOnly;

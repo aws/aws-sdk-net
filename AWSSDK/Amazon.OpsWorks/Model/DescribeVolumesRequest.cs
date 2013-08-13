@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidArrayId">The value to set for the RaidArrayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithRaidArrayId(string raidArrayId)
         {
             this.raidArrayId = raidArrayId;
@@ -107,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeIds">The values to add to the VolumeIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithVolumeIds(params string[] volumeIds)
         {
             foreach (string element in volumeIds)
@@ -122,6 +125,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeIds">The values to add to the VolumeIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithVolumeIds(IEnumerable<string> volumeIds)
         {
             foreach (string element in volumeIds)

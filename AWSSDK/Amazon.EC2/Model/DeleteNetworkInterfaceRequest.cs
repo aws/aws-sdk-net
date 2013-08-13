@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Deletes the specified network interface.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteNetworkInterfaceRequest
+    public class DeleteNetworkInterfaceRequest : EC2Request
     {
         private string networkInterfaceIdField;
 
@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">The network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteNetworkInterfaceRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = NetworkInterfaceId;

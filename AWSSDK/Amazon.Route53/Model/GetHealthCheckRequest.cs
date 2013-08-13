@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthCheckId">The value to set for the HealthCheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetHealthCheckRequest WithHealthCheckId(string healthCheckId)
         {
             this.healthCheckId = healthCheckId;

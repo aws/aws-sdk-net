@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="device">Specifies how the device is exposed to the instance (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithDevice(string device)
         {
             this.deviceField = device;
@@ -149,6 +152,7 @@ namespace Amazon.EC2.Model
         /// <param name="status">Attachment state. Valid Values: attaching |
         /// attached | detaching | detached</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithStatus(string status)
         {
             this.statusField = status;
@@ -180,6 +184,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachTime">Time stamp when the association was created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithAttachTime(string attachTime)
         {
             this.attachTimeField = attachTime;
@@ -213,6 +218,7 @@ namespace Amazon.EC2.Model
         /// <param name="deleteOnTermination">Determines whether the EBS block device is
         /// deleted on instance termination.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Attachment WithDeleteOnTermination(bool deleteOnTermination)
         {
             this.deleteOnTerminationField = deleteOnTermination;

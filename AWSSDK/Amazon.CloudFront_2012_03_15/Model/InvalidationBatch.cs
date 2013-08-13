@@ -84,6 +84,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="callerReference">A unique name that ensures the request can't be replayed.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InvalidationBatch WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -110,6 +111,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="path">A list of paths to objects that will be invalidated</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InvalidationBatch WithPaths(params string[] path)
         {
             foreach (string p in path)
@@ -125,6 +127,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="paths">A list of paths to objects that will be invalidated</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InvalidationBatch WithPaths(IEnumerable<string> paths)
         {
             foreach (string p in paths)

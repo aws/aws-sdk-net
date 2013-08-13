@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingRequest WithLayerIds(params string[] layerIds)
         {
             foreach (string element in layerIds)
@@ -61,6 +62,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingRequest WithLayerIds(IEnumerable<string> layerIds)
         {
             foreach (string element in layerIds)

@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="capacity">The number of licenses available.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LicenseCapacity WithCapacity(Decimal capacity)
         {
             this.capacityField = capacity;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// supported with the
         /// license's capacity.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LicenseCapacity WithInstanceCapacity(Decimal instanceCapacity)
         {
             this.instanceCapacityField = instanceCapacity;
@@ -115,6 +117,7 @@ namespace Amazon.EC2.Model
         /// indicating
         /// whether the license is actively being used or not.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LicenseCapacity WithState(string state)
         {
             this.stateField = state;
@@ -149,6 +152,7 @@ namespace Amazon.EC2.Model
         /// Some licenses have time restrictions on when
         /// they can be activated and reactivated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LicenseCapacity WithEarliestAllowedDeactivationTime(string earliestAllowedDeactivationTime)
         {
             this.earliestAllowedDeactivationTimeField = earliestAllowedDeactivationTime;

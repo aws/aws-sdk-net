@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="logFileName">The value to set for the LogFileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesDetails WithLogFileName(string logFileName)
         {
             this.logFileName = logFileName;
@@ -73,6 +74,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="lastWritten">The value to set for the LastWritten property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesDetails WithLastWritten(long lastWritten)
         {
             this.lastWritten = lastWritten;
@@ -101,6 +103,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="size">The value to set for the Size property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBLogFilesDetails WithSize(long size)
         {
             this.size = size;

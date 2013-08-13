@@ -45,6 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -73,6 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithDomain(string domain)
         {
             this.domain = domain;
@@ -100,6 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListeners(params Listener[] listeners)
         {
             foreach (Listener element in listeners)
@@ -115,6 +118,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListeners(IEnumerable<Listener> listeners)
         {
             foreach (Listener element in listeners)

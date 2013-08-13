@@ -81,6 +81,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="handler">A method that consumes the put object progress notification</param>
         /// <returns>this instance of the PutObjectRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithSubscriber(EventHandler<PutObjectProgressArgs> handler)
         {
             this.PutObjectProgressEvent += handler;
@@ -106,6 +107,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -139,6 +141,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithKey(string key)
         {
             this.key = key;
@@ -174,6 +177,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="filePath">Full path and name of a file</param>
         /// <returns>the request with the FilePath set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithFilePath(string filePath)
         {
             this.filePath = filePath;
@@ -211,6 +215,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -286,6 +291,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="digest">Computed MD5 digest value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithMD5Digest(string digest)
         {
             this.md5Digest = digest;
@@ -327,6 +333,7 @@ namespace Amazon.S3.Model
         /// This is a computationally expensive operation, and will add to the total time it will take to upload
         /// data to S3. Please use this option judicially.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithGenerateChecksum(bool fGenerateMD5Digest)
         {
             this.fGenerateMD5Digest = fGenerateMD5Digest;
@@ -359,6 +366,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="contentType">The content type</param>
         /// <returns>The request with the ContentType set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -401,6 +409,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="contentBody">The content to upload</param>
         /// <returns>The request with the ContentBody set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithContentBody(string contentBody)
         {
             this.contentBody = contentBody;
@@ -517,6 +526,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public PutObjectRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -543,6 +553,7 @@ namespace Amazon.S3.Model
         /// <param name="readWriteTimeout">ReadWriteTimeout value</param>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public PutObjectRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
@@ -583,6 +594,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="sClass">The Storage Class to be set on the object</param>
         /// <returns>The request with the StorageClass set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithStorageClass(S3StorageClass sClass)
         {
             this.storageClass = sClass;
@@ -600,6 +612,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -624,6 +637,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="encryption">Encryption method to use</param>
         /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -649,6 +663,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="websiteRedirectLocation">The redirect location to be returned on a GET request to this object</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {
             this.websiteRedirectLocation = websiteRedirectLocation;
@@ -698,6 +713,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="autoCloseStream">the value the AutoCloseStream to be set to</param>
         /// <returns>The request with the AutoCloseStream set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutObjectRequest WithAutoCloseStream(bool autoCloseStream)
         {
             this.autoCloseStream = autoCloseStream;

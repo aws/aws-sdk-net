@@ -51,6 +51,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -88,6 +89,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="messageBody">The message body to send.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageRequest WithMessageBody(string messageBody)
         {
             this.messageBodyField = messageBody;
@@ -117,6 +119,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="delaySeconds">The number of seconds to delay the message from being available for processing.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageRequest WithDelaySeconds(int delaySeconds)
         {
             this.delaySecondsField = delaySeconds;

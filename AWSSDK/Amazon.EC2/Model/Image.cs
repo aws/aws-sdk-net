@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -101,6 +102,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageLocation">The location of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithImageLocation(string imageLocation)
         {
             this.imageLocationField = imageLocation;
@@ -131,6 +133,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageState">Current state of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithImageState(string imageState)
         {
             this.imageStateField = imageState;
@@ -161,6 +164,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ownerId">AWS Access Key ID of the image owner.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -192,6 +196,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="visibility">Visibility - public or private</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithVisibility(string visibility)
         {
             this.visibilityField = visibility;
@@ -272,6 +277,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product codes attached to this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithProductCodes(params ProductCode[] list)
         {
             foreach (ProductCode item in list)
@@ -305,6 +311,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="architecture">The architecture of the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithArchitecture(string architecture)
         {
             this.architectureField = architecture;
@@ -335,6 +342,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageType">The type of image</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithImageType(string imageType)
         {
             this.imageTypeField = imageType;
@@ -367,6 +375,7 @@ namespace Amazon.EC2.Model
         /// <param name="kernelId">The kernel associated with the image, if any.
         /// Only applicable for machine images.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -399,6 +408,7 @@ namespace Amazon.EC2.Model
         /// <param name="ramdiskId">The RAM disk associated with the image, if any.
         /// Only applicable for machine images.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -429,6 +439,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="platform">The operating platform of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithPlatform(string platform)
         {
             this.platformField = platform;
@@ -459,6 +470,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="stateReason">The reason for the state change.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithStateReason(StateReason stateReason)
         {
             this.stateReasonField = stateReason;
@@ -492,6 +504,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageOwnerAlias">The AWS account alias (e.g., "amazon") or AWS
         /// account ID that owns the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithImageOwnerAlias(string imageOwnerAlias)
         {
             this.imageOwnerAliasField = imageOwnerAlias;
@@ -522,6 +535,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="name">The name of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithName(string name)
         {
             this.nameField = name;
@@ -552,6 +566,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">The description of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithDescription(string description)
         {
             this.descriptionField = description;
@@ -584,6 +599,7 @@ namespace Amazon.EC2.Model
         /// <param name="rootDeviceType">The root device type used by the AMI. The AMI
         /// can use an Amazon EBS or instance store root device.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithRootDeviceType(string rootDeviceType)
         {
             this.rootDeviceTypeField = rootDeviceType;
@@ -614,6 +630,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithRootDeviceName(string rootDeviceName)
         {
             this.rootDeviceNameField = rootDeviceName;
@@ -652,6 +669,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Specifies how block devices are exposed to the
         /// instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)
@@ -689,6 +707,7 @@ namespace Amazon.EC2.Model
         /// hardware virtual machine
         /// (HVM) or a para-virtual machine (PVM).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithVirtualizationType(string virtualizationType)
         {
             this.virtualizationTypeField = virtualizationType;
@@ -726,6 +745,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the Image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -759,6 +779,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="hypervisor">Hypervisor property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Image WithHypervisor(string hypervisor)
         {
             this.hypervisorField = hypervisor;

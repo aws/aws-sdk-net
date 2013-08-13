@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Deletes the datafeed for Spot Instances.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteSpotDatafeedSubscriptionRequest
+    public class DeleteSpotDatafeedSubscriptionRequest : EC2Request
     {    
 
     }

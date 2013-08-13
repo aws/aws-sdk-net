@@ -58,6 +58,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="assumedRoleId">The value to set for the AssumedRoleId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumedRoleUser WithAssumedRoleId(string assumedRoleId)
         {
             this.assumedRoleId = assumedRoleId;
@@ -97,6 +98,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumedRoleUser WithArn(string arn)
         {
             this.arn = arn;

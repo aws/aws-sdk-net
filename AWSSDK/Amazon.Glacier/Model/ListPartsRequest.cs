@@ -62,6 +62,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The value to set for the AccountId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsRequest WithAccountId(string accountId)
         {
             this.accountId = accountId;
@@ -90,6 +91,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsRequest WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -118,6 +120,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadId">The value to set for the UploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsRequest WithUploadId(string uploadId)
         {
             this.uploadId = uploadId;
@@ -148,6 +151,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -177,6 +181,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsRequest WithLimit(int limit)
         {
             this.limit = limit;

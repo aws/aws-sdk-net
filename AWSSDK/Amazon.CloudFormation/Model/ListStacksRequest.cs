@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStacksRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -87,6 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackStatusFilter">The values to add to the StackStatusFilter collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStacksRequest WithStackStatusFilter(params string[] stackStatusFilter)
         {
             foreach (string element in stackStatusFilter)
@@ -102,6 +104,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackStatusFilter">The values to add to the StackStatusFilter collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStacksRequest WithStackStatusFilter(IEnumerable<string> stackStatusFilter)
         {
             foreach (string element in stackStatusFilter)

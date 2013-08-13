@@ -14,236 +14,392 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Run Job Flow Request Marshaller
     /// </summary>       
-    public class RunJobFlowRequestMarshaller : IMarshaller<IRequest, RunJobFlowRequest>
+    internal class RunJobFlowRequestMarshaller : IMarshaller<IRequest, RunJobFlowRequest> 
     {
-        public IRequest Marshall(RunJobFlowRequest runJobFlowRequest)
+        
+
+        public IRequest Marshall(RunJobFlowRequest runJobFlowRequest) 
         {
+
             IRequest request = new DefaultRequest(runJobFlowRequest, "AmazonElasticMapReduce");
-            request.Parameters.Add("Action", "RunJobFlow");
-            request.Parameters.Add("Version", "2009-03-31");
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(runJobFlowRequest.Name));
-            }
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetLogUri())
-            {
-                request.Parameters.Add("LogUri", StringUtils.FromString(runJobFlowRequest.LogUri));
-            }
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetAdditionalInfo())
-            {
-                request.Parameters.Add("AdditionalInfo", StringUtils.FromString(runJobFlowRequest.AdditionalInfo));
-            }
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetAmiVersion())
-            {
-                request.Parameters.Add("AmiVersion", StringUtils.FromString(runJobFlowRequest.AmiVersion));
-            }
-            if (runJobFlowRequest != null)
-            {
-                JobFlowInstancesConfig instances = runJobFlowRequest.Instances;
-                if (instances != null && instances.IsSetMasterInstanceType())
-                {
-                    request.Parameters.Add("Instances.MasterInstanceType", StringUtils.FromString(instances.MasterInstanceType));
-                }
-                if (instances != null && instances.IsSetSlaveInstanceType())
-                {
-                    request.Parameters.Add("Instances.SlaveInstanceType", StringUtils.FromString(instances.SlaveInstanceType));
-                }
-                if (instances != null && instances.IsSetInstanceCount())
-                {
-                    request.Parameters.Add("Instances.InstanceCount", StringUtils.FromInt(instances.InstanceCount));
-                }
+            string target = "ElasticMapReduce.RunJobFlow";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-                if (instances != null)
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
                 {
-                    List<InstanceGroupConfig> instanceGroupsList = instances.InstanceGroups;
-                    int instanceGroupsListIndex = 1;
-                    foreach (InstanceGroupConfig instanceGroupsListValue in instanceGroupsList)
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetName())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.FromString(instanceGroupsListValue.Name));
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetMarket())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.FromString(instanceGroupsListValue.Market));
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceRole())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.FromString(instanceGroupsListValue.InstanceRole));
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetBidPrice())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.FromString(instanceGroupsListValue.BidPrice));
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceType())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.FromString(instanceGroupsListValue.InstanceType));
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount())
-                        {
-                            request.Parameters.Add("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.FromInt(instanceGroupsListValue.InstanceCount));
-                        }
-
-                        instanceGroupsListIndex++;
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 }
-                if (instances != null && instances.IsSetEc2KeyName())
-                {
-                    request.Parameters.Add("Instances.Ec2KeyName", StringUtils.FromString(instances.Ec2KeyName));
-                }
-                if (instances != null)
-                {
-                    PlacementType placement = instances.Placement;
-                    if (placement != null && placement.IsSetAvailabilityZone())
-                    {
-                        request.Parameters.Add("Instances.Placement.AvailabilityZone", StringUtils.FromString(placement.AvailabilityZone));
-                    }
-                }
-                if (instances != null && instances.IsSetKeepJobFlowAliveWhenNoSteps())
-                {
-                    request.Parameters.Add("Instances.KeepJobFlowAliveWhenNoSteps", StringUtils.FromBool(instances.KeepJobFlowAliveWhenNoSteps));
-                }
-                if (instances != null && instances.IsSetTerminationProtected())
-                {
-                    request.Parameters.Add("Instances.TerminationProtected", StringUtils.FromBool(instances.TerminationProtected));
-                }
-                if (instances != null && instances.IsSetHadoopVersion())
-                {
-                    request.Parameters.Add("Instances.HadoopVersion", StringUtils.FromString(instances.HadoopVersion));
-                }
-                if (instances != null && instances.IsSetEc2SubnetId())
-                {
-                    request.Parameters.Add("Instances.Ec2SubnetId", StringUtils.FromString(instances.Ec2SubnetId));
-                }
             }
-
-            if (runJobFlowRequest != null)
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
+            using (StringWriter stringWriter = new StringWriter())
             {
-                List<StepConfig> stepsList = runJobFlowRequest.Steps;
-                int stepsListIndex = 1;
-                foreach (StepConfig stepsListValue in stepsList)
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetName()) 
                 {
-                    if (stepsListValue != null && stepsListValue.IsSetName())
-                    {
-                        request.Parameters.Add("Steps.member." + stepsListIndex + ".Name", StringUtils.FromString(stepsListValue.Name));
-                    }
-                    if (stepsListValue != null && stepsListValue.IsSetActionOnFailure())
-                    {
-                        request.Parameters.Add("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.FromString(stepsListValue.ActionOnFailure));
-                    }
-                    if (stepsListValue != null)
-                    {
-                        HadoopJarStepConfig hadoopJarStep = stepsListValue.HadoopJarStep;
+                    writer.WritePropertyName("Name");
+                    writer.Write(runJobFlowRequest.Name);
+                }
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetLogUri()) 
+                {
+                    writer.WritePropertyName("LogUri");
+                    writer.Write(runJobFlowRequest.LogUri);
+                }
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetAdditionalInfo()) 
+                {
+                    writer.WritePropertyName("AdditionalInfo");
+                    writer.Write(runJobFlowRequest.AdditionalInfo);
+                }
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetAmiVersion()) 
+                {
+                    writer.WritePropertyName("AmiVersion");
+                    writer.Write(runJobFlowRequest.AmiVersion);
+                }
 
-                        if (hadoopJarStep != null)
+                if (runJobFlowRequest != null) 
+                {
+                    JobFlowInstancesConfig instances = runJobFlowRequest.Instances;
+                    if (instances != null)
+                    {
+                        writer.WritePropertyName("Instances");
+                        writer.WriteObjectStart();
+                        if (instances != null && instances.IsSetMasterInstanceType()) 
                         {
-                            List<KeyValue> propertiesList = hadoopJarStep.Properties;
-                            int propertiesListIndex = 1;
-                            foreach (KeyValue propertiesListValue in propertiesList)
+                            writer.WritePropertyName("MasterInstanceType");
+                            writer.Write(instances.MasterInstanceType);
+                        }
+                        if (instances != null && instances.IsSetSlaveInstanceType()) 
+                        {
+                            writer.WritePropertyName("SlaveInstanceType");
+                            writer.Write(instances.SlaveInstanceType);
+                        }
+                        if (instances != null && instances.IsSetInstanceCount()) 
+                        {
+                            writer.WritePropertyName("InstanceCount");
+                            writer.Write(instances.InstanceCount);
+                        }
+
+                        if (instances != null && instances.InstanceGroups != null && instances.InstanceGroups.Count > 0)
+                        {
+                            List<InstanceGroupConfig> instanceGroupsList = instances.InstanceGroups;
+                            writer.WritePropertyName("InstanceGroups");
+                            writer.WriteArrayStart();
+
+                            foreach (InstanceGroupConfig instanceGroupsListValue in instanceGroupsList) 
                             {
-                                if (propertiesListValue != null && propertiesListValue.IsSetKey())
+                                writer.WriteObjectStart();
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetName()) 
                                 {
-                                    request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.FromString(propertiesListValue.Key));
+                                    writer.WritePropertyName("Name");
+                                    writer.Write(instanceGroupsListValue.Name);
                                 }
-                                if (propertiesListValue != null && propertiesListValue.IsSetValue())
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetMarket()) 
                                 {
-                                    request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.FromString(propertiesListValue.Value));
+                                    writer.WritePropertyName("Market");
+                                    writer.Write(instanceGroupsListValue.Market);
                                 }
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceRole()) 
+                                {
+                                    writer.WritePropertyName("InstanceRole");
+                                    writer.Write(instanceGroupsListValue.InstanceRole);
+                                }
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetBidPrice()) 
+                                {
+                                    writer.WritePropertyName("BidPrice");
+                                    writer.Write(instanceGroupsListValue.BidPrice);
+                                }
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceType()) 
+                                {
+                                    writer.WritePropertyName("InstanceType");
+                                    writer.Write(instanceGroupsListValue.InstanceType);
+                                }
+                                if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
+                                {
+                                    writer.WritePropertyName("InstanceCount");
+                                    writer.Write(instanceGroupsListValue.InstanceCount);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+                        if (instances != null && instances.IsSetEc2KeyName()) 
+                        {
+                            writer.WritePropertyName("Ec2KeyName");
+                            writer.Write(instances.Ec2KeyName);
+                        }
 
-                                propertiesListIndex++;
+                        if (instances != null) 
+                        {
+                            PlacementType placement = instances.Placement;
+                            if (placement != null)
+                            {
+                                writer.WritePropertyName("Placement");
+                                writer.WriteObjectStart();
+                                if (placement != null && placement.IsSetAvailabilityZone()) 
+                                {
+                                    writer.WritePropertyName("AvailabilityZone");
+                                    writer.Write(placement.AvailabilityZone);
+                                }
+                                writer.WriteObjectEnd();
                             }
                         }
-                        if (hadoopJarStep != null && hadoopJarStep.IsSetJar())
+                        if (instances != null && instances.IsSetKeepJobFlowAliveWhenNoSteps()) 
                         {
-                            request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.FromString(hadoopJarStep.Jar));
+                            writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
+                            writer.Write(instances.KeepJobFlowAliveWhenNoSteps);
                         }
-                        if (hadoopJarStep != null && hadoopJarStep.IsSetMainClass())
+                        if (instances != null && instances.IsSetTerminationProtected()) 
                         {
-                            request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.FromString(hadoopJarStep.MainClass));
+                            writer.WritePropertyName("TerminationProtected");
+                            writer.Write(instances.TerminationProtected);
                         }
-                        if (hadoopJarStep != null)
+                        if (instances != null && instances.IsSetHadoopVersion()) 
                         {
-                            List<string> argsList = hadoopJarStep.Args;
-
-                            int argsListIndex = 1;
-                            foreach (string argsListValue in argsList)
-                            { 
-                                request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.FromString(argsListValue));
-                                argsListIndex++;
-                            }
+                            writer.WritePropertyName("HadoopVersion");
+                            writer.Write(instances.HadoopVersion);
                         }
+                        if (instances != null && instances.IsSetEc2SubnetId()) 
+                        {
+                            writer.WritePropertyName("Ec2SubnetId");
+                            writer.Write(instances.Ec2SubnetId);
+                        }
+                        writer.WriteObjectEnd();
                     }
-
-                    stepsListIndex++;
                 }
-            }
 
-            if (runJobFlowRequest != null)
-            {
-                List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.BootstrapActions;
-                int bootstrapActionsListIndex = 1;
-                foreach (BootstrapActionConfig bootstrapActionsListValue in bootstrapActionsList)
+                if (runJobFlowRequest != null && runJobFlowRequest.Steps != null && runJobFlowRequest.Steps.Count > 0)
                 {
-                    if (bootstrapActionsListValue != null && bootstrapActionsListValue.IsSetName())
-                    {
-                        request.Parameters.Add("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.FromString(bootstrapActionsListValue.Name));
-                    }
-                    if (bootstrapActionsListValue != null)
-                    {
-                        ScriptBootstrapActionConfig scriptBootstrapAction = bootstrapActionsListValue.ScriptBootstrapAction;
-                        if (scriptBootstrapAction != null && scriptBootstrapAction.IsSetPath())
-                        {
-                            request.Parameters.Add("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Path", StringUtils.FromString(scriptBootstrapAction.Path));
-                        }
-                        if (scriptBootstrapAction != null)
-                        {
-                            List<string> argsList = scriptBootstrapAction.Args;
+                    List<StepConfig> stepsList = runJobFlowRequest.Steps;
+                    writer.WritePropertyName("Steps");
+                    writer.WriteArrayStart();
 
-                            int argsListIndex = 1;
-                            foreach (string argsListValue in argsList)
-                            { 
-                                request.Parameters.Add("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.FromString(argsListValue));
-                                argsListIndex++;
+                    foreach (StepConfig stepsListValue in stepsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (stepsListValue != null && stepsListValue.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(stepsListValue.Name);
+                        }
+                        if (stepsListValue != null && stepsListValue.IsSetActionOnFailure()) 
+                        {
+                            writer.WritePropertyName("ActionOnFailure");
+                            writer.Write(stepsListValue.ActionOnFailure);
+                        }
+
+                        if (stepsListValue != null) 
+                        {
+                            HadoopJarStepConfig hadoopJarStep = stepsListValue.HadoopJarStep;
+                            if (hadoopJarStep != null)
+                            {
+                                writer.WritePropertyName("HadoopJarStep");
+                                writer.WriteObjectStart();
+
+                                if (hadoopJarStep != null && hadoopJarStep.Properties != null && hadoopJarStep.Properties.Count > 0)
+                                {
+                                    List<KeyValue> propertiesList = hadoopJarStep.Properties;
+                                    writer.WritePropertyName("Properties");
+                                    writer.WriteArrayStart();
+
+                                    foreach (KeyValue propertiesListValue in propertiesList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (propertiesListValue != null && propertiesListValue.IsSetKey()) 
+                                        {
+                                            writer.WritePropertyName("Key");
+                                            writer.Write(propertiesListValue.Key);
+                                        }
+                                        if (propertiesListValue != null && propertiesListValue.IsSetValue()) 
+                                        {
+                                            writer.WritePropertyName("Value");
+                                            writer.Write(propertiesListValue.Value);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                if (hadoopJarStep != null && hadoopJarStep.IsSetJar()) 
+                                {
+                                    writer.WritePropertyName("Jar");
+                                    writer.Write(hadoopJarStep.Jar);
+                                }
+                                if (hadoopJarStep != null && hadoopJarStep.IsSetMainClass()) 
+                                {
+                                    writer.WritePropertyName("MainClass");
+                                    writer.Write(hadoopJarStep.MainClass);
+                                }
+
+                                if (hadoopJarStep != null && hadoopJarStep.Args != null && hadoopJarStep.Args.Count > 0) 
+                                {
+                                    List<string> argsList = hadoopJarStep.Args;
+                                    writer.WritePropertyName("Args");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string argsListValue in argsList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(argsListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
                             }
                         }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if (runJobFlowRequest != null && runJobFlowRequest.BootstrapActions != null && runJobFlowRequest.BootstrapActions.Count > 0)
+                {
+                    List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.BootstrapActions;
+                    writer.WritePropertyName("BootstrapActions");
+                    writer.WriteArrayStart();
+
+                    foreach (BootstrapActionConfig bootstrapActionsListValue in bootstrapActionsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (bootstrapActionsListValue != null && bootstrapActionsListValue.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(bootstrapActionsListValue.Name);
+                        }
+
+                        if (bootstrapActionsListValue != null) 
+                        {
+                            ScriptBootstrapActionConfig scriptBootstrapAction = bootstrapActionsListValue.ScriptBootstrapAction;
+                            if (scriptBootstrapAction != null)
+                            {
+                                writer.WritePropertyName("ScriptBootstrapAction");
+                                writer.WriteObjectStart();
+                                if (scriptBootstrapAction != null && scriptBootstrapAction.IsSetPath()) 
+                                {
+                                    writer.WritePropertyName("Path");
+                                    writer.Write(scriptBootstrapAction.Path);
+                                }
+
+                                if (scriptBootstrapAction != null && scriptBootstrapAction.Args != null && scriptBootstrapAction.Args.Count > 0) 
+                                {
+                                    List<string> argsList = scriptBootstrapAction.Args;
+                                    writer.WritePropertyName("Args");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string argsListValue in argsList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(argsListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if (runJobFlowRequest != null && runJobFlowRequest.SupportedProducts != null && runJobFlowRequest.SupportedProducts.Count > 0) 
+                {
+                    List<string> supportedProductsList = runJobFlowRequest.SupportedProducts;
+                    writer.WritePropertyName("SupportedProducts");
+                    writer.WriteArrayStart();
+
+                    foreach (string supportedProductsListValue in supportedProductsList) 
+                    { 
+                        writer.Write(StringUtils.FromString(supportedProductsListValue));
                     }
 
-                    bootstrapActionsListIndex++;
+                    writer.WriteArrayEnd();
                 }
-            }
-            if (runJobFlowRequest != null)
-            {
-                List<string> supportedProductsList = runJobFlowRequest.SupportedProducts;
 
-                int supportedProductsListIndex = 1;
-                foreach (string supportedProductsListValue in supportedProductsList)
-                { 
-                    request.Parameters.Add("SupportedProducts.member." + supportedProductsListIndex, StringUtils.FromString(supportedProductsListValue));
-                    supportedProductsListIndex++;
+                if (runJobFlowRequest != null && runJobFlowRequest.NewSupportedProducts != null && runJobFlowRequest.NewSupportedProducts.Count > 0)
+                {
+                    List<SupportedProductConfig> newSupportedProductsList = runJobFlowRequest.NewSupportedProducts;
+                    writer.WritePropertyName("NewSupportedProducts");
+                    writer.WriteArrayStart();
+
+                    foreach (SupportedProductConfig newSupportedProductsListValue in newSupportedProductsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (newSupportedProductsListValue != null && newSupportedProductsListValue.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(newSupportedProductsListValue.Name);
+                        }
+
+                        if (newSupportedProductsListValue != null && newSupportedProductsListValue.Args != null && newSupportedProductsListValue.Args.Count > 0) 
+                        {
+                            List<string> argsList = newSupportedProductsListValue.Args;
+                            writer.WritePropertyName("Args");
+                            writer.WriteArrayStart();
+
+                            foreach (string argsListValue in argsList) 
+                            { 
+                                writer.Write(StringUtils.FromString(argsListValue));
+                            }
+
+                            writer.WriteArrayEnd();
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
                 }
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetVisibleToAllUsers()) 
+                {
+                    writer.WritePropertyName("VisibleToAllUsers");
+                    writer.Write(runJobFlowRequest.VisibleToAllUsers);
+                }
+                if (runJobFlowRequest != null && runJobFlowRequest.IsSetJobFlowRole()) 
+                {
+                    writer.WritePropertyName("JobFlowRole");
+                    writer.Write(runJobFlowRequest.JobFlowRole);
+                }
+
+                writer.WriteObjectEnd();
+                
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetVisibleToAllUsers())
-            {
-                request.Parameters.Add("VisibleToAllUsers", StringUtils.FromBool(runJobFlowRequest.VisibleToAllUsers));
-            }
-            if (runJobFlowRequest != null && runJobFlowRequest.IsSetJobFlowRole())
-            {
-                request.Parameters.Add("JobFlowRole", StringUtils.FromString(runJobFlowRequest.JobFlowRole));
-            }
+        
 
             return request;
         }

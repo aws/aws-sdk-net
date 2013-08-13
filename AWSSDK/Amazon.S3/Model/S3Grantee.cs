@@ -162,6 +162,7 @@ namespace Amazon.S3.Model
         /// <param name="displayName">Display name of the canonical user</param>
         /// <param name="id">The ID of the canonical user</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Grantee WithCanonicalUser(string id, string displayName)
         {
             canonicalUser = new Tuple<string, string>(id, displayName);
@@ -198,6 +199,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="emailAddress">EmailAddress property</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Grantee WithEmailAddress(string emailAddress)
         {
             this.emailAddress = emailAddress;
@@ -232,6 +234,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="uri">URI property</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Grantee WithURI(string uri)
         {
             this.uri = uri;

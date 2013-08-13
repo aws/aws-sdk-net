@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productCodeId">The product code</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProductCode WithProductCodeId(string productCodeId)
         {
             this.productCodeIdField = productCodeId;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productType">The product type</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProductCode WithProductType(string productType)
         {
             this.typeField = productType;

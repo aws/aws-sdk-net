@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distribution">The value to set for the Distribution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDistributionResult WithDistribution(Distribution distribution)
         {
             this.distribution = distribution;
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDistributionResult WithLocation(string location)
         {
             this.location = location;
@@ -102,6 +104,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDistributionResult WithETag(string eTag)
         {
             this.eTag = eTag;

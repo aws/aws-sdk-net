@@ -59,6 +59,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="accessKeyId">The value to set for the AccessKeyId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithAccessKeyId(string accessKeyId)
         {
             this.accessKeyId = accessKeyId;
@@ -87,6 +88,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="secretAccessKey">The value to set for the SecretAccessKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithSecretAccessKey(string secretAccessKey)
         {
             this.secretAccessKey = secretAccessKey;
@@ -115,6 +117,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="sessionToken">The value to set for the SessionToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithSessionToken(string sessionToken)
         {
             this.sessionToken = sessionToken;
@@ -143,6 +146,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="expiration">The value to set for the Expiration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithExpiration(DateTime expiration)
         {
             this.expiration = expiration;

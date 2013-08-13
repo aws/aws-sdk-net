@@ -56,6 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepExecutionStatusDetail WithState(string state)
         {
             this.state = state;
@@ -84,6 +85,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepExecutionStatusDetail WithCreationDateTime(DateTime creationDateTime)
         {
             this.creationDateTime = creationDateTime;
@@ -112,6 +114,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="startDateTime">The value to set for the StartDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepExecutionStatusDetail WithStartDateTime(DateTime startDateTime)
         {
             this.startDateTime = startDateTime;
@@ -140,6 +143,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="endDateTime">The value to set for the EndDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepExecutionStatusDetail WithEndDateTime(DateTime endDateTime)
         {
             this.endDateTime = endDateTime;
@@ -181,6 +185,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="lastStateChangeReason">The value to set for the LastStateChangeReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepExecutionStatusDetail WithLastStateChangeReason(string lastStateChangeReason)
         {
             this.lastStateChangeReason = lastStateChangeReason;

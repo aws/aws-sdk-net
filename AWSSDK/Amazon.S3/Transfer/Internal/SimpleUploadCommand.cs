@@ -54,17 +54,19 @@ namespace Amazon.S3.Transfer.Internal
             if (this._fileTransporterRequest.Timeout != 0)
                 timeout = this._fileTransporterRequest.Timeout;
 
-            PutObjectRequest putRequest = new PutObjectRequest()
-                .WithBucketName(this._fileTransporterRequest.BucketName)
-                .WithKey(this._fileTransporterRequest.Key)
-                .WithCannedACL(this._fileTransporterRequest.CannedACL)
-                .WithContentType(this._fileTransporterRequest.ContentType)
-                .WithFilePath(this._fileTransporterRequest.FilePath)
-                .WithTimeout(timeout)
-                .WithStorageClass(this._fileTransporterRequest.StorageClass)
-                .WithAutoCloseStream(this._fileTransporterRequest.AutoCloseStream)
-                    .WithServerSideEncryptionMethod(this._fileTransporterRequest.ServerSideEncryptionMethod)
-                .WithSubscriber(new EventHandler<PutObjectProgressArgs>(this.putObjectProgressEventCallback));
+            PutObjectRequest putRequest = new PutObjectRequest
+            {
+                BucketName = this._fileTransporterRequest.BucketName,
+                Key = this._fileTransporterRequest.Key,
+                CannedACL = this._fileTransporterRequest.CannedACL,
+                ContentType = this._fileTransporterRequest.ContentType,
+                FilePath = this._fileTransporterRequest.FilePath,
+                Timeout = timeout,
+                StorageClass = this._fileTransporterRequest.StorageClass,
+                AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
+                ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
+            };
+            putRequest.PutObjectProgressEvent += new EventHandler<PutObjectProgressArgs>(this.putObjectProgressEventCallback);
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
 

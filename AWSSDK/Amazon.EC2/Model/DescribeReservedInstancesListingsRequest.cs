@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeReservedInstancesListingsRequest
+    public class DescribeReservedInstancesListingsRequest : EC2Request
     {
         private List<string> reservedInstancesListingIdField;
         private List<string> reservedInstancesIdField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Reserved Instance Listing Ids</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesListingsRequest WithReservedInstancesListingId(params string[] list)
         {
             foreach (string item in list)
@@ -96,6 +97,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the Reserved Instances to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesListingsRequest WithReservedInstancesId(params string[] list)
         {
             foreach (string item in list)
@@ -154,6 +156,7 @@ namespace Amazon.EC2.Model
         /// * reserved-instances-listing-id - The ID of the Reserved Instance listing.
         /// * reserved-instances-id - The ID of the Reserved Instances.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedInstancesListingsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

@@ -56,6 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PlacementType WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;

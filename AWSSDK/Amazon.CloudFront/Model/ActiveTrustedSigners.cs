@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="quantity">The value to set for the Quantity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithQuantity(int quantity)
         {
             this.quantity = quantity;
@@ -104,6 +106,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithItems(params Signer[] items)
         {
             foreach (Signer element in items)
@@ -119,6 +122,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithItems(IEnumerable<Signer> items)
         {
             foreach (Signer element in items)

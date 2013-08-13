@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingNotificationTypes">The values to add to the AutoScalingNotificationTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingNotificationTypesResult WithAutoScalingNotificationTypes(params string[] autoScalingNotificationTypes)
         {
             foreach (string element in autoScalingNotificationTypes)
@@ -58,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingNotificationTypes">The values to add to the AutoScalingNotificationTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingNotificationTypesResult WithAutoScalingNotificationTypes(IEnumerable<string> autoScalingNotificationTypes)
         {
             foreach (string element in autoScalingNotificationTypes)

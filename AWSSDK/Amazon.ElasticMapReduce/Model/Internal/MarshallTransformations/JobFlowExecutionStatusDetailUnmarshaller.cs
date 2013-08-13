@@ -12,93 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   JobFlowExecutionStatusDetail Unmarshaller
-     /// </summary>
-    internal class JobFlowExecutionStatusDetailUnmarshaller : IUnmarshaller<JobFlowExecutionStatusDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowExecutionStatusDetail, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public JobFlowExecutionStatusDetail Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// JobFlowExecutionStatusDetailUnmarshaller
+      /// </summary>
+      internal class JobFlowExecutionStatusDetailUnmarshaller : IUnmarshaller<JobFlowExecutionStatusDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowExecutionStatusDetail, JsonUnmarshallerContext>
+      {
+        JobFlowExecutionStatusDetail IUnmarshaller<JobFlowExecutionStatusDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public JobFlowExecutionStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             JobFlowExecutionStatusDetail jobFlowExecutionStatusDetail = new JobFlowExecutionStatusDetail();
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("State", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("CreationDateTime", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("StartDateTime", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ReadyDateTime", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("EndDateTime", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("LastStateChangeReason", targetDepth))
-                    {
-                        jobFlowExecutionStatusDetail.LastStateChangeReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("State", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.State = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("CreationDateTime", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("StartDateTime", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ReadyDateTime", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("EndDateTime", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("LastStateChangeReason", targetDepth))
+              {
+                jobFlowExecutionStatusDetail.LastStateChangeReason = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return jobFlowExecutionStatusDetail;
                 }
             }
-                        
-
+          
 
             return jobFlowExecutionStatusDetail;
         }
 
-        public JobFlowExecutionStatusDetail Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static JobFlowExecutionStatusDetailUnmarshaller instance;
-
-        public static JobFlowExecutionStatusDetailUnmarshaller GetInstance() 
+        public static JobFlowExecutionStatusDetailUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new JobFlowExecutionStatusDetailUnmarshaller();
-
+            if (instance == null)
+                instance = new JobFlowExecutionStatusDetailUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="publicIp">The public IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithPublicIp(string publicIp)
         {
             this.publicIpField = publicIp;
@@ -124,6 +126,7 @@ namespace Amazon.EC2.Model
         /// <param name="allocationId">The ID representing the allocation of the address for use with Amazon
         /// VPC</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithAllocationId(string allocationId)
         {
             this.allocationIdField = allocationId;
@@ -155,6 +158,7 @@ namespace Amazon.EC2.Model
         /// <param name="associationId">The ID representing the association of a VPC elastic IP address with
         /// an instance in a VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;
@@ -186,6 +190,7 @@ namespace Amazon.EC2.Model
         /// <param name="domain">Whether this elastic IP address is for instances in EC2 (i.e., standard)
         /// or Amazon VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithDomain(string domain)
         {
             this.domainField = domain;
@@ -216,6 +221,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -246,6 +252,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceOwnerId">Network interface owner ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithNetworkInterfaceOwnerId(string networkInterfaceOwnerId)
         {
             this.networkInterfaceOwnerIdField = networkInterfaceOwnerId;
@@ -276,6 +283,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddress">Private IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Address WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;

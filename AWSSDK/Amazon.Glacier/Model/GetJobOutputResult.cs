@@ -49,6 +49,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithBody(Stream body)
         {
             this.body = body;
@@ -83,6 +84,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="checksum">The value to set for the Checksum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithChecksum(string checksum)
         {
             this.checksum = checksum;
@@ -111,6 +113,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithStatus(int status)
         {
             this.status = status;
@@ -140,6 +143,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="contentRange">The value to set for the ContentRange property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithContentRange(string contentRange)
         {
             this.contentRange = contentRange;
@@ -169,6 +173,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="acceptRanges">The value to set for the AcceptRanges property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithAcceptRanges(string acceptRanges)
         {
             this.acceptRanges = acceptRanges;
@@ -199,6 +204,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="contentType">The value to set for the ContentType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -227,6 +233,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;

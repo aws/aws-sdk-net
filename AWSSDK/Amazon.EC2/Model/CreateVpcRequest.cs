@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// means that there are no running Amazon EC2 instances in the VPC).
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateVpcRequest
+    public class CreateVpcRequest : EC2Request
     {    
         private string cidrBlockField;
         private string instanceTenancyField;
@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         ///
         /// Constraints: Must contain the slash followed by one or two digits (e.g., /28)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpcRequest WithCidrBlock(string cidrBlock)
         {
             this.cidrBlockField = cidrBlock;
@@ -115,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceTenancy">The allowed tenancy of instances launched into the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpcRequest WithInstanceTenancy(string instanceTenancy)
         {
             this.instanceTenancyField = instanceTenancy;

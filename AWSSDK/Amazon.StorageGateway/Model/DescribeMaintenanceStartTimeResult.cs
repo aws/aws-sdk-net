@@ -65,6 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMaintenanceStartTimeResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -103,6 +104,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="hourOfDay">The value to set for the HourOfDay property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMaintenanceStartTimeResult WithHourOfDay(int hourOfDay)
         {
             this.hourOfDay = hourOfDay;
@@ -141,6 +143,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="minuteOfHour">The value to set for the MinuteOfHour property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMaintenanceStartTimeResult WithMinuteOfHour(int minuteOfHour)
         {
             this.minuteOfHour = minuteOfHour;
@@ -179,6 +182,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="dayOfWeek">The value to set for the DayOfWeek property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMaintenanceStartTimeResult WithDayOfWeek(int dayOfWeek)
         {
             this.dayOfWeek = dayOfWeek;
@@ -217,6 +221,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="timezone">The value to set for the Timezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMaintenanceStartTimeResult WithTimezone(string timezone)
         {
             this.timezone = timezone;

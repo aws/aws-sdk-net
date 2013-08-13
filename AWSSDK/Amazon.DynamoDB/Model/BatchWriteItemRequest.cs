@@ -57,6 +57,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the RequestItems dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemRequest WithRequestItems(params KeyValuePair<string, List<WriteRequest>>[] pairs)
         {
             foreach (KeyValuePair<string, List<WriteRequest>> pair in pairs)

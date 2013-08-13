@@ -54,6 +54,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="activityIds">The values to add to the ActivityIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithActivityIds(params string[] activityIds)
         {
             foreach (string element in activityIds)
@@ -69,6 +70,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="activityIds">The values to add to the ActivityIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithActivityIds(IEnumerable<string> activityIds)
         {
             foreach (string element in activityIds)
@@ -113,6 +115,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -150,6 +153,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -187,6 +191,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

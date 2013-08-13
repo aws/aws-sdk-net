@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithIndexName(string indexName)
         {
             this.indexName = indexName;
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -110,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -142,6 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projection">The value to set for the Projection property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithProjection(Projection projection)
         {
             this.projection = projection;

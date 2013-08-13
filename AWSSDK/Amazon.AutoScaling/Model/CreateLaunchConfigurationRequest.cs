@@ -77,6 +77,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithLaunchConfigurationName(string launchConfigurationName)
         {
             this.launchConfigurationName = launchConfigurationName;
@@ -119,6 +120,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="imageId">The value to set for the ImageId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithImageId(string imageId)
         {
             this.imageId = imageId;
@@ -160,6 +162,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="keyName">The value to set for the KeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithKeyName(string keyName)
         {
             this.keyName = keyName;
@@ -193,6 +196,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -208,6 +212,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -253,6 +258,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="userData">The value to set for the UserData property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithUserData(string userData)
         {
             this.userData = userData;
@@ -295,6 +301,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceType">The value to set for the InstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithInstanceType(string instanceType)
         {
             this.instanceType = instanceType;
@@ -336,6 +343,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="kernelId">The value to set for the KernelId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithKernelId(string kernelId)
         {
             this.kernelId = kernelId;
@@ -377,6 +385,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ramdiskId">The value to set for the RamdiskId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithRamdiskId(string ramdiskId)
         {
             this.ramdiskId = ramdiskId;
@@ -408,6 +417,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithBlockDeviceMappings(params BlockDeviceMapping[] blockDeviceMappings)
         {
             foreach (BlockDeviceMapping element in blockDeviceMappings)
@@ -423,6 +433,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithBlockDeviceMappings(IEnumerable<BlockDeviceMapping> blockDeviceMappings)
         {
             foreach (BlockDeviceMapping element in blockDeviceMappings)
@@ -456,6 +467,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceMonitoring">The value to set for the InstanceMonitoring property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithInstanceMonitoring(InstanceMonitoring instanceMonitoring)
         {
             this.instanceMonitoring = instanceMonitoring;
@@ -496,6 +508,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="spotPrice">The value to set for the SpotPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithSpotPrice(string spotPrice)
         {
             this.spotPrice = spotPrice;
@@ -540,6 +553,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="iamInstanceProfile">The value to set for the IamInstanceProfile property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithIamInstanceProfile(string iamInstanceProfile)
         {
             this.iamInstanceProfile = iamInstanceProfile;
@@ -572,6 +586,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLaunchConfigurationRequest WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimized = ebsOptimized;

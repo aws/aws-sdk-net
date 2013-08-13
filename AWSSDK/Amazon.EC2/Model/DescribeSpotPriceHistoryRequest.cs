@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Describes the Spot Price history.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeSpotPriceHistoryRequest
+    public class DescribeSpotPriceHistoryRequest : EC2Request
     {    
         private string startTimeField;
         private string endTimeField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="startTime">Start date and time of the Spot Instance price
         /// history data.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithStartTime(string startTime)
         {
             this.startTimeField = startTime;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// <param name="endTime">End date and time of the Spot Instance price
         /// history data.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithEndTime(string endTime)
         {
             this.endTimeField = endTime;
@@ -130,6 +132,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of instance types.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithInstanceType(params string[] list)
         {
             foreach (string item in list)
@@ -175,6 +178,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of AMI descriptions</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithProductDescription(params string[] list)
         {
             foreach (string item in list)
@@ -222,6 +226,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)
@@ -256,6 +261,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">Filters the results by availability zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -286,6 +292,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxResults">Specifies the number of rows to return.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithMaxResults(int maxResults)
         {
             this.maxResultsField = maxResults;
@@ -315,6 +322,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="nextToken">Specifies the next set of rows to return.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSpotPriceHistoryRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;

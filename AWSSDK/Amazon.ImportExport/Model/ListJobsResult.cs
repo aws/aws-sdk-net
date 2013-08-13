@@ -43,6 +43,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithJobs(params Job[] jobs)
         {
             foreach (Job element in jobs)
@@ -58,6 +59,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithJobs(IEnumerable<Job> jobs)
         {
             foreach (Job element in jobs)
@@ -89,6 +91,7 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;

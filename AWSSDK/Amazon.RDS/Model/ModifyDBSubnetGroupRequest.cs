@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBSubnetGroupRequest WithDBSubnetGroupName(string dBSubnetGroupName)
         {
             this.dBSubnetGroupName = dBSubnetGroupName;
@@ -78,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupDescription">The value to set for the DBSubnetGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBSubnetGroupRequest WithDBSubnetGroupDescription(string dBSubnetGroupDescription)
         {
             this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -105,6 +107,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -120,6 +123,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)

@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// a small delay is might occur.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class RevokeSecurityGroupIngressRequest
+    public class RevokeSecurityGroupIngressRequest : EC2Request
     {
         private string userIdField;
         private string groupIdField;
@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userId">AWS Access Key ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithUserId(string userId)
         {
             this.userIdField = userId;
@@ -103,6 +104,7 @@ namespace Amazon.EC2.Model
         /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify. Conditional
         /// The group must belong to your account.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithGroupId(string groupId)
         {
             this.groupIdField = groupId;
@@ -133,6 +135,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the group to modify.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -165,6 +168,7 @@ namespace Amazon.EC2.Model
         /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used
         /// when specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithSourceSecurityGroupName(string sourceSecurityGroupName)
         {
             this.sourceSecurityGroupNameField = sourceSecurityGroupName;
@@ -197,6 +201,7 @@ namespace Amazon.EC2.Model
         /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when
         /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithSourceSecurityGroupOwnerId(string sourceSecurityGroupOwnerId)
         {
             this.sourceSecurityGroupOwnerIdField = sourceSecurityGroupOwnerId;
@@ -228,6 +233,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipProtocol">IP protocol. Valid Values: tcp | udp | icmp</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithIpProtocol(string ipProtocol)
         {
             this.ipProtocolField = ipProtocol;
@@ -265,6 +271,7 @@ namespace Amazon.EC2.Model
         /// indicates a wildcard (i.e.,
         /// any ICMP type number).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithFromPort(Decimal fromPort)
         {
             this.fromPortField = fromPort;
@@ -299,6 +306,7 @@ namespace Amazon.EC2.Model
         /// An ICMP code of -1 indicates a
         /// wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithToPort(Decimal toPort)
         {
             this.toPortField = toPort;
@@ -329,6 +337,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="cidrIp">CIDR range.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithCidrIp(string cidrIp)
         {
             this.cidrIpField = cidrIp;
@@ -367,6 +376,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeSecurityGroupIngressRequest WithIpPermissions(params IpPermissionSpecification[] list)
         {
             foreach (IpPermissionSpecification item in list)

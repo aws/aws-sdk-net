@@ -77,6 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -114,6 +115,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowId">The value to set for the WorkflowId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithWorkflowId(string workflowId)
         {
             this.workflowId = workflowId;
@@ -151,6 +153,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="runId">The value to set for the RunId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithRunId(string runId)
         {
             this.runId = runId;
@@ -188,6 +191,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="reason">The value to set for the Reason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithReason(string reason)
         {
             this.reason = reason;
@@ -225,6 +229,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="details">The value to set for the Details property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithDetails(string details)
         {
             this.details = details;
@@ -269,6 +274,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childPolicy">The value to set for the ChildPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateWorkflowExecutionRequest WithChildPolicy(string childPolicy)
         {
             this.childPolicy = childPolicy;

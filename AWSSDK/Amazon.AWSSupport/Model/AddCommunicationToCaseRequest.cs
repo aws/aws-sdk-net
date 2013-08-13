@@ -54,6 +54,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCaseId(string caseId)
         {
             this.caseId = caseId;
@@ -91,6 +92,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communicationBody">The value to set for the CommunicationBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCommunicationBody(string communicationBody)
         {
             this.communicationBody = communicationBody;
@@ -127,6 +129,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCcEmailAddresses(params string[] ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -142,6 +145,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCcEmailAddresses(IEnumerable<string> ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)

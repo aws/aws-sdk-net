@@ -42,6 +42,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexDocumentsResult WithFieldNames(params string[] fieldNames)
         {
             foreach (string element in fieldNames)
@@ -57,6 +58,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexDocumentsResult WithFieldNames(IEnumerable<string> fieldNames)
         {
             foreach (string element in fieldNames)

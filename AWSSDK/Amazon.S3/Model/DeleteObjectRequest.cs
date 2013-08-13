@@ -69,6 +69,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -101,6 +102,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">Object key</param>
         /// <returns>the request with the Key set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectRequest WithKey(string key)
         {
             this.key = key;
@@ -135,6 +137,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="versionId">Version ID</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;
@@ -191,6 +194,7 @@ namespace Amazon.S3.Model
         /// <param name="serial">Serial number of the authentication device</param>
         /// <param name="token">Token displayed on the authentication device</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectRequest WithMfaCodes(string serial, string token)
         {
             mfaCodes = new Tuple<string, string>(serial, token);

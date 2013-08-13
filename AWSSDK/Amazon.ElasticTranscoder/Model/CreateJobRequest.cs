@@ -66,6 +66,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -94,6 +95,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithInput(JobInput input)
         {
             this.input = input;
@@ -122,6 +124,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="output">The value to set for the Output property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutput(CreateJobOutput output)
         {
             this.output = output;
@@ -159,6 +162,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputs(params CreateJobOutput[] outputs)
         {
             foreach (CreateJobOutput element in outputs)
@@ -174,6 +178,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputs(IEnumerable<CreateJobOutput> outputs)
         {
             foreach (CreateJobOutput element in outputs)
@@ -215,6 +220,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputKeyPrefix">The value to set for the OutputKeyPrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputKeyPrefix(string outputKeyPrefix)
         {
             this.outputKeyPrefix = outputKeyPrefix;
@@ -253,6 +259,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPlaylists(params CreateJobPlaylist[] playlists)
         {
             foreach (CreateJobPlaylist element in playlists)
@@ -268,6 +275,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPlaylists(IEnumerable<CreateJobPlaylist> playlists)
         {
             foreach (CreateJobPlaylist element in playlists)

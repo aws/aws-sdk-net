@@ -45,6 +45,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGatewayId">The value to set for the VirtualGatewayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualGateway WithVirtualGatewayId(string virtualGatewayId)
         {
             this.virtualGatewayId = virtualGatewayId;
@@ -76,6 +77,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGatewayState">The value to set for the VirtualGatewayState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualGateway WithVirtualGatewayState(string virtualGatewayState)
         {
             this.virtualGatewayState = virtualGatewayState;

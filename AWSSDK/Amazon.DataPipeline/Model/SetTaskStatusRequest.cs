@@ -67,6 +67,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="taskId">The value to set for the TaskId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTaskStatusRequest WithTaskId(string taskId)
         {
             this.taskId = taskId;
@@ -105,6 +106,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="taskStatus">The value to set for the TaskStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTaskStatusRequest WithTaskStatus(string taskStatus)
         {
             this.taskStatus = taskStatus;
@@ -147,6 +149,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="errorId">The value to set for the ErrorId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTaskStatusRequest WithErrorId(string errorId)
         {
             this.errorId = errorId;
@@ -176,6 +179,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="errorMessage">The value to set for the ErrorMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTaskStatusRequest WithErrorMessage(string errorMessage)
         {
             this.errorMessage = errorMessage;
@@ -218,6 +222,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="errorStackTrace">The value to set for the ErrorStackTrace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTaskStatusRequest WithErrorStackTrace(string errorStackTrace)
         {
             this.errorStackTrace = errorStackTrace;

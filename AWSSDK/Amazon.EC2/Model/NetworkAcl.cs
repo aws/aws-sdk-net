@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkAclId">The network ACL's ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithNetworkAclId(string networkAclId)
         {
             this.networkAclIdField = networkAclId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC the network ACL is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="isDefault">Whether this is the default network ACL in the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithDefault(bool isDefault)
         {
             this.defaultField = isDefault;
@@ -150,6 +153,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of entries (rules) in the network ACL.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithEntries(params NetworkAclEntry[] list)
         {
             foreach (NetworkAclEntry item in list)
@@ -191,6 +195,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">A list of associations between the network ACL and one or more
         /// subnets.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithAssociations(params NetworkAclAssociation[] list)
         {
             foreach (NetworkAclAssociation item in list)
@@ -231,6 +236,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the NetworkAcl.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkAcl WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

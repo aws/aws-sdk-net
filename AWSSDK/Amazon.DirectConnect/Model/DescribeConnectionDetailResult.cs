@@ -50,6 +50,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -78,6 +79,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionName">The value to set for the ConnectionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithConnectionName(string connectionName)
         {
             this.connectionName = connectionName;
@@ -119,6 +121,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionState">The value to set for the ConnectionState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithConnectionState(string connectionState)
         {
             this.connectionState = connectionState;
@@ -147,6 +150,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithRegion(string region)
         {
             this.region = region;
@@ -175,6 +179,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithLocation(string location)
         {
             this.location = location;
@@ -203,6 +208,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="bandwidth">The value to set for the Bandwidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithBandwidth(string bandwidth)
         {
             this.bandwidth = bandwidth;
@@ -230,6 +236,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionCosts">The values to add to the ConnectionCosts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithConnectionCosts(params ConnectionCost[] connectionCosts)
         {
             foreach (ConnectionCost element in connectionCosts)
@@ -245,6 +252,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionCosts">The values to add to the ConnectionCosts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithConnectionCosts(IEnumerable<ConnectionCost> connectionCosts)
         {
             foreach (ConnectionCost element in connectionCosts)
@@ -275,6 +283,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="orderSteps">The values to add to the OrderSteps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithOrderSteps(params ConnectionOrderStep[] orderSteps)
         {
             foreach (ConnectionOrderStep element in orderSteps)
@@ -290,6 +299,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="orderSteps">The values to add to the OrderSteps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionDetailResult WithOrderSteps(IEnumerable<ConnectionOrderStep> orderSteps)
         {
             foreach (ConnectionOrderStep element in orderSteps)

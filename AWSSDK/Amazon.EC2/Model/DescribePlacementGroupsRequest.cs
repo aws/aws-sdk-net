@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// in a user's account.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribePlacementGroupsRequest
+    public class DescribePlacementGroupsRequest : EC2Request
     {    
         private List<string> groupNameField;
         private List<Filter> filterField;
@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePlacementGroupsRequest WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -104,6 +105,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePlacementGroupsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

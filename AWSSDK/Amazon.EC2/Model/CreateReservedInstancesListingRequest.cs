@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// Your Reserved Instance listings then become available for purchase.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateReservedInstancesListingRequest
+    public class CreateReservedInstancesListingRequest : EC2Request
     {
         private string reservedInstancesIdField;
         private int? instanceCountField;
@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="reservedInstancesId">Id of the ReservedInstance</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateReservedInstancesListingRequest WithReservedInstancesId(string reservedInstancesId)
         {
             this.reservedInstancesIdField = reservedInstancesId;
@@ -108,6 +109,7 @@ namespace Amazon.EC2.Model
         /// associated with the Reserved Instance ID specified in the
         /// request.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateReservedInstancesListingRequest WithInstanceCount(int instanceCount)
         {
             this.instanceCountField = instanceCount;
@@ -144,6 +146,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Price to be listed</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateReservedInstancesListingRequest WithPricingSchedules(params PricingSchedule[] list)
         {
             foreach (PricingSchedule item in list)
@@ -187,6 +190,7 @@ namespace Amazon.EC2.Model
         /// This helps avoid duplicate listings. For more information, see 
         /// 'Ensuring Idempotency' in the Amazon Elastic Compute Cloud User Guide.
         /// </remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateReservedInstancesListingRequest WithClientToken(string clientToken)
         {
             this.clientTokenField = clientToken;

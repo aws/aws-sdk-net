@@ -46,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationNames">The values to add to the ApplicationNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsRequest WithApplicationNames(params string[] applicationNames)
         {
             foreach (string element in applicationNames)
@@ -61,6 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationNames">The values to add to the ApplicationNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsRequest WithApplicationNames(IEnumerable<string> applicationNames)
         {
             foreach (string element in applicationNames)

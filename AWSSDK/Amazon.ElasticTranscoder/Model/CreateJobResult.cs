@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="job">The value to set for the Job property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithJob(Job job)
         {
             this.job = job;

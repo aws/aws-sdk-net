@@ -82,6 +82,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZoneId">The value to set for the HostedZoneId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsRequest WithHostedZoneId(string hostedZoneId)
         {
             this.hostedZoneId = hostedZoneId;
@@ -119,6 +120,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="startRecordName">The value to set for the StartRecordName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsRequest WithStartRecordName(string startRecordName)
         {
             this.startRecordName = startRecordName;
@@ -160,6 +162,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="startRecordType">The value to set for the StartRecordType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsRequest WithStartRecordType(string startRecordType)
         {
             this.startRecordType = startRecordType;
@@ -199,6 +202,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="startRecordIdentifier">The value to set for the StartRecordIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsRequest WithStartRecordIdentifier(string startRecordIdentifier)
         {
             this.startRecordIdentifier = startRecordIdentifier;
@@ -227,6 +231,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsRequest WithMaxItems(string maxItems)
         {
             this.maxItems = maxItems;

@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// <param name="keyName">The key pair name provided in the original
         /// request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeyPair WithKeyName(string keyName)
         {
             this.keyNameField = keyName;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyFingerprint">A SHA-1 digest of the DER encoded private key.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeyPair WithKeyFingerprint(string keyFingerprint)
         {
             this.keyFingerprintField = keyFingerprint;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyMaterial">Only returned on create</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeyPair WithKeyMaterial(string keyMaterial)
         {
             this.keyMaterialField = keyMaterial;

@@ -60,6 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithIndexName(string indexName)
         {
             this.indexName = indexName;
@@ -97,6 +98,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -112,6 +114,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -144,6 +147,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projection">The value to set for the Projection property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithProjection(Projection projection)
         {
             this.projection = projection;
@@ -173,6 +177,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexSizeBytes">The value to set for the IndexSizeBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithIndexSizeBytes(long indexSizeBytes)
         {
             this.indexSizeBytes = indexSizeBytes;
@@ -202,6 +207,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="itemCount">The value to set for the ItemCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithItemCount(long itemCount)
         {
             this.itemCount = itemCount;

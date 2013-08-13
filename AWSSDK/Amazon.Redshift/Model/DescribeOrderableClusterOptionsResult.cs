@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="orderableClusterOptions">The values to add to the OrderableClusterOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableClusterOptionsResult WithOrderableClusterOptions(params OrderableClusterOption[] orderableClusterOptions)
         {
             foreach (OrderableClusterOption element in orderableClusterOptions)
@@ -58,6 +59,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="orderableClusterOptions">The values to add to the OrderableClusterOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableClusterOptionsResult WithOrderableClusterOptions(IEnumerable<OrderableClusterOption> orderableClusterOptions)
         {
             foreach (OrderableClusterOption element in orderableClusterOptions)
@@ -89,6 +91,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableClusterOptionsResult WithMarker(string marker)
         {
             this.marker = marker;

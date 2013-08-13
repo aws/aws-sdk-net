@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="resourceId">The resource ID for the Tag.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceTag WithResourceId(string resourceId)
         {
             this.resourceIdField = resourceId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// <param name="resourceType">The type of resource identified by the associated resource ID 
         /// (ex: instance, AMI, EBS volume, etc).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceTag WithResourceType(string resourceType)
         {
             this.resourceTypeField = resourceType;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="key">The tag's key.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceTag WithKey(string key)
         {
             this.keyField = key;
@@ -143,6 +146,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="value">The tag's value.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResourceTag WithValue(string value)
         {
             this.valueField = value;

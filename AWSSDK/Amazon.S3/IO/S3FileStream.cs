@@ -295,16 +295,18 @@ namespace Amazon.S3.IO
                 {
                     if (!this.bucketExist)
                     {
-                        file.S3Client.PutBucket(new PutBucketRequest().WithBucketName(file.BucketName).WithUseClientRegion(true));
+                        file.S3Client.PutBucket(new PutBucketRequest { BucketName = file.BucketName, UseClientRegion = true });
                         this.bucketExist = true;
                     }
 
-                    var request = (PutObjectRequest)new PutObjectRequest()
-                        .WithBucketName(file.BucketName)
-                        .WithKey(S3Helper.EncodeKey(file.ObjectKey))
-                        .WithAutoCloseStream(false)
-                        .WithInputStream(buffer)
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
+                    var request = new PutObjectRequest
+                    {
+                        BucketName = file.BucketName,
+                        Key=S3Helper.EncodeKey(file.ObjectKey),
+                        InputStream = buffer,
+                        AutoCloseStream = false
+                    };
+                    request.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
 
                     try
                     {
@@ -393,10 +395,14 @@ namespace Amazon.S3.IO
 
         private void PopulateData()
         {
-            using (Stream data = file.S3Client.GetObject(new GetObjectRequest()
-                 .WithBucketName(file.BucketName)
-                 .WithKey(S3Helper.EncodeKey(file.ObjectKey))
-                 .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectRequest).ResponseStream)
+            var getObjectRequest = new GetObjectRequest
+            {
+                BucketName = file.BucketName,
+                Key = S3Helper.EncodeKey(file.ObjectKey)
+            };
+            getObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+            var getObjectResponse = file.S3Client.GetObject(getObjectRequest);
+            using (Stream data = getObjectResponse.ResponseStream)
             {
                 byte[] tempBuffer = new byte[S3Constants.DefaultBufferSize];
                 int bytesRead = 0;

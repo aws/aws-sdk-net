@@ -61,6 +61,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="oaiConfig">The value that OriginAccessIdentityConfig is set to</param>
         /// <returns>the request with the Id set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOriginAccessIdentityRequest WithOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig oaiConfig)
         {
             this.oaiConfig = oaiConfig;

@@ -119,9 +119,12 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="values">AttributeValues to compare to</param>
         public void AddCondition(string attributeName, ScanOperator op, List<AttributeValue> values)
         {
-            AddCondition(attributeName, new Condition()
-                                    .WithComparisonOperator(EnumToStringMapper.Convert(op))
-                                    .WithAttributeValueList(values));
+            AddCondition(attributeName,
+                new Condition
+                {
+                    ComparisonOperator = EnumToStringMapper.Convert(op),
+                    AttributeValueList = values
+                });
         }
 
         /// <summary>
@@ -133,9 +136,12 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="values">Values to compare to</param>
         public void AddCondition(string attributeName, ScanOperator op, params DynamoDBEntry[] values)
         {
-            AddCondition(attributeName, new Condition()
-                                    .WithComparisonOperator(EnumToStringMapper.Convert(op))
-                                    .WithAttributeValueList(ConvertToAttributeValues(values)));
+            AddCondition(attributeName,
+                new Condition
+                {
+                    ComparisonOperator = EnumToStringMapper.Convert(op),
+                    AttributeValueList = ConvertToAttributeValues(values)
+                });
         }
 
         #endregion
@@ -195,9 +201,11 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="values">Values to compare against</param>
         public RangeFilter(QueryOperator op, List<AttributeValue> values)
         {
-            Condition = new Condition()
-                .WithComparisonOperator(EnumToStringMapper.Convert(op))
-                .WithAttributeValueList(values);
+            Condition = new Condition
+            {
+                ComparisonOperator = EnumToStringMapper.Convert(op),
+                AttributeValueList = values
+            };
         }
 
         #endregion

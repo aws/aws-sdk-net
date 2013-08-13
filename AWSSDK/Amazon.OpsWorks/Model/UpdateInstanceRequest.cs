@@ -56,6 +56,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -83,6 +84,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithLayerIds(params string[] layerIds)
         {
             foreach (string element in layerIds)
@@ -98,6 +100,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithLayerIds(IEnumerable<string> layerIds)
         {
             foreach (string element in layerIds)
@@ -131,6 +134,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceType">The value to set for the InstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithInstanceType(string instanceType)
         {
             this.instanceType = instanceType;
@@ -171,6 +175,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="autoScalingType">The value to set for the AutoScalingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithAutoScalingType(string autoScalingType)
         {
             this.autoScalingType = autoScalingType;
@@ -199,6 +204,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="hostname">The value to set for the Hostname property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithHostname(string hostname)
         {
             this.hostname = hostname;
@@ -227,6 +233,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="os">The value to set for the Os property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithOs(string os)
         {
             this.os = os;
@@ -256,6 +263,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="amiId">The value to set for the AmiId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithAmiId(string amiId)
         {
             this.amiId = amiId;
@@ -284,6 +292,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshKeyName">The value to set for the SshKeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithSshKeyName(string sshKeyName)
         {
             this.sshKeyName = sshKeyName;
@@ -323,6 +332,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="architecture">The value to set for the Architecture property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithArchitecture(string architecture)
         {
             this.architecture = architecture;
@@ -353,6 +363,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateInstanceRequest WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
         {
             this.installUpdatesOnBoot = installUpdatesOnBoot;

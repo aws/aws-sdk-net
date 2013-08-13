@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -60,6 +60,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>The request with the BucketName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -92,6 +93,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithKey(string key)
         {
             this.key = key;
@@ -127,6 +129,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -175,6 +178,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="contentType">The content type</param>
         /// <returns>The request with the ContentType set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -306,6 +310,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="sClass">The Storage Class to be set on the object</param>
         /// <returns>The request with the StorageClass set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithStorageClass(S3StorageClass sClass)
         {
             this.storageClass = sClass;
@@ -323,6 +328,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="grants">One or more S3 Grants</param>
         /// <returns>The request with the Grants set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -357,6 +363,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="encryption">ServerSideEncryptionMethod for the new object</param>
         /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -384,6 +391,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="websiteRedirectLocation">The redirect value to be returned on a GET request</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {
             this.websiteRedirectLocation = websiteRedirectLocation;

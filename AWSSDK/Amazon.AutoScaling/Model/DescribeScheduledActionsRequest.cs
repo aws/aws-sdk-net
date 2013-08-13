@@ -66,6 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -95,6 +96,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithScheduledActionNames(params string[] scheduledActionNames)
         {
             foreach (string element in scheduledActionNames)
@@ -110,6 +112,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithScheduledActionNames(IEnumerable<string> scheduledActionNames)
         {
             foreach (string element in scheduledActionNames)
@@ -141,6 +144,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -169,6 +173,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -206,6 +211,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -243,6 +249,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;

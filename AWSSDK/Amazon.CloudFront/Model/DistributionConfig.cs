@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -86,6 +87,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -119,6 +121,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="defaultRootObject">The value to set for the DefaultRootObject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithDefaultRootObject(string defaultRootObject)
         {
             this.defaultRootObject = defaultRootObject;
@@ -147,6 +150,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="origins">The value to set for the Origins property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithOrigins(Origins origins)
         {
             this.origins = origins;
@@ -176,6 +180,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="defaultCacheBehavior">The value to set for the DefaultCacheBehavior property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior)
         {
             this.defaultCacheBehavior = defaultCacheBehavior;
@@ -204,6 +209,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cacheBehaviors">The value to set for the CacheBehaviors property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithCacheBehaviors(CacheBehaviors cacheBehaviors)
         {
             this.cacheBehaviors = cacheBehaviors;
@@ -232,6 +238,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithComment(string comment)
         {
             this.comment = comment;
@@ -260,6 +267,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="logging">The value to set for the Logging property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithLogging(LoggingConfig logging)
         {
             this.logging = logging;
@@ -297,6 +305,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -325,6 +334,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -353,6 +363,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="viewerCertificate">The value to set for the ViewerCertificate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithViewerCertificate(ViewerCertificate viewerCertificate)
         {
             this.viewerCertificate = viewerCertificate;

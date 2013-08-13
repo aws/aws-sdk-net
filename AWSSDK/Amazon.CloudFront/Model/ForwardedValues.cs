@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="queryString">The value to set for the QueryString property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ForwardedValues WithQueryString(bool queryString)
         {
             this.queryString = queryString;
@@ -73,6 +74,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cookies">The value to set for the Cookies property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ForwardedValues WithCookies(CookiePreference cookies)
         {
             this.cookies = cookies;

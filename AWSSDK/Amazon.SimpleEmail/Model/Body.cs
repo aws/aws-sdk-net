@@ -65,6 +65,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="text">The value to set for the Text property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Body WithText(Content text)
         {
             this.text = text;
@@ -94,6 +95,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="html">The value to set for the Html property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Body WithHtml(Content html)
         {
             this.html = html;

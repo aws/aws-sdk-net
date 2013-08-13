@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceType">The instance type.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotPriceHistory WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="productDescription">The description of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotPriceHistory WithProductDescription(string productDescription)
         {
             this.productDescriptionField = productDescription;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// <param name="spotPrice">Specifies the price paid to launch one or more
         /// instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotPriceHistory WithSpotPrice(string spotPrice)
         {
             this.spotPriceField = spotPrice;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// <param name="timestamp">Specifies the creation timestamp of the
         /// request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotPriceHistory WithTimestamp(string timestamp)
         {
             this.timestampField = timestamp;
@@ -174,6 +178,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotPriceHistory WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;

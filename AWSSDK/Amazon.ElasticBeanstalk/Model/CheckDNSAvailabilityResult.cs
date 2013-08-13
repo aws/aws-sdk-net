@@ -46,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="available">The value to set for the Available property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithAvailable(bool available)
         {
             this.available = available;
@@ -83,6 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="fullyQualifiedCNAME">The value to set for the FullyQualifiedCNAME property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithFullyQualifiedCNAME(string fullyQualifiedCNAME)
         {
             this.fullyQualifiedCNAME = fullyQualifiedCNAME;

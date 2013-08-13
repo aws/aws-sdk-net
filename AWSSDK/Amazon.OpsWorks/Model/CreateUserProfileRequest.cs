@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateUserProfileRequest WithIamUserArn(string iamUserArn)
         {
             this.iamUserArn = iamUserArn;
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshUsername">The value to set for the SshUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateUserProfileRequest WithSshUsername(string sshUsername)
         {
             this.sshUsername = sshUsername;
@@ -105,6 +107,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshPublicKey">The value to set for the SshPublicKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateUserProfileRequest WithSshPublicKey(string sshPublicKey)
         {
             this.sshPublicKey = sshPublicKey;

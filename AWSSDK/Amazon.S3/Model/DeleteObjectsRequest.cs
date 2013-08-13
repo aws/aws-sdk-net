@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -64,6 +64,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectsRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -108,6 +109,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="quiet">True for Quiet mode, false for Verbose mode</param>
         /// <returns>This instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectsRequest WithQuiet(bool quiet)
         {
             this.quiet = quiet;
@@ -181,6 +183,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="keys">KeyVersions that will be added to this request.</param>
         /// <returns></returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectsRequest WithKeys(params KeyVersion[] keys)
         {
             AddKeys(keys);
@@ -226,6 +229,7 @@ namespace Amazon.S3.Model
         /// <param name="serial">Serial number of the authentication device</param>
         /// <param name="token">Token displayed on the authentication device</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteObjectsRequest WithMfaCodes(string serial, string token)
         {
             mfaCodes = new Tuple<string, string>(serial, token);

@@ -60,6 +60,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="domainName">The name of the domain in which to perform the operation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesRequest WithDomainName(string domainName)
         {
             this.domainNameField = domainName;
@@ -91,6 +92,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="itemName">The name of the item in which to perform the operation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesRequest WithItemName(string itemName)
         {
             this.itemNameField = itemName;
@@ -129,6 +131,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">The name of the attribute.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesRequest WithAttributeName(params string[] list)
         {
             foreach (string item in list)
@@ -165,6 +168,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="consistentRead">If set to true, this flag ensures that the most recently written data is
         /// returned.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesRequest WithConsistentRead(bool consistentRead)
         {
             this.consistentReadField = consistentRead;

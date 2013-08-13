@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Enables monitoring for a running instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class MonitorInstancesRequest
+    public class MonitorInstancesRequest : EC2Request
     {    
         private List<string> instanceIdField;
 
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Instance ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MonitorInstancesRequest WithInstanceId(params string[] list)
         {
             foreach (string item in list)

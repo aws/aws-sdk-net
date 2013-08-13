@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="reservationId">Unique ID of the reservation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithReservationId(string reservationId)
         {
             this.reservationIdField = reservationId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// <param name="ownerId">AWS Access Key ID of the user who owns the
         /// reservation</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="requesterId">ID of the requester.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithRequesterId(string requesterId)
         {
             this.requesterIdField = requesterId;
@@ -151,6 +154,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Ids of the security groups.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -191,6 +195,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Names of the security groups.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -231,6 +236,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Running instance</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Reservation WithRunningInstance(params RunningInstance[] list)
         {
             foreach (RunningInstance item in list)

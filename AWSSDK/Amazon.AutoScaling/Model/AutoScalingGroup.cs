@@ -75,6 +75,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -116,6 +117,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupARN">The value to set for the AutoScalingGroupARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithAutoScalingGroupARN(string autoScalingGroupARN)
         {
             this.autoScalingGroupARN = autoScalingGroupARN;
@@ -157,6 +159,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithLaunchConfigurationName(string launchConfigurationName)
         {
             this.launchConfigurationName = launchConfigurationName;
@@ -185,6 +188,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="minSize">The value to set for the MinSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithMinSize(int minSize)
         {
             this.minSize = minSize;
@@ -213,6 +217,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxSize">The value to set for the MaxSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithMaxSize(int maxSize)
         {
             this.maxSize = maxSize;
@@ -241,6 +246,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="desiredCapacity">The value to set for the DesiredCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithDesiredCapacity(int desiredCapacity)
         {
             this.desiredCapacity = desiredCapacity;
@@ -269,6 +275,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="defaultCooldown">The value to set for the DefaultCooldown property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithDefaultCooldown(int defaultCooldown)
         {
             this.defaultCooldown = defaultCooldown;
@@ -305,6 +312,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -320,6 +328,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -350,6 +359,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithLoadBalancerNames(params string[] loadBalancerNames)
         {
             foreach (string element in loadBalancerNames)
@@ -365,6 +375,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithLoadBalancerNames(IEnumerable<string> loadBalancerNames)
         {
             foreach (string element in loadBalancerNames)
@@ -409,6 +420,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="healthCheckType">The value to set for the HealthCheckType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithHealthCheckType(string healthCheckType)
         {
             this.healthCheckType = healthCheckType;
@@ -438,6 +450,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="healthCheckGracePeriod">The value to set for the HealthCheckGracePeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithHealthCheckGracePeriod(int healthCheckGracePeriod)
         {
             this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -465,6 +478,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -480,6 +494,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -511,6 +526,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="createdTime">The value to set for the CreatedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithCreatedTime(DateTime createdTime)
         {
             this.createdTime = createdTime;
@@ -538,6 +554,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="suspendedProcesses">The values to add to the SuspendedProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithSuspendedProcesses(params SuspendedProcess[] suspendedProcesses)
         {
             foreach (SuspendedProcess element in suspendedProcesses)
@@ -553,6 +570,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="suspendedProcesses">The values to add to the SuspendedProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithSuspendedProcesses(IEnumerable<SuspendedProcess> suspendedProcesses)
         {
             foreach (SuspendedProcess element in suspendedProcesses)
@@ -599,6 +617,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="placementGroup">The value to set for the PlacementGroup property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithPlacementGroup(string placementGroup)
         {
             this.placementGroup = placementGroup;
@@ -642,6 +661,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="vPCZoneIdentifier">The value to set for the VPCZoneIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithVPCZoneIdentifier(string vPCZoneIdentifier)
         {
             this.vPCZoneIdentifier = vPCZoneIdentifier;
@@ -669,6 +689,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="enabledMetrics">The values to add to the EnabledMetrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithEnabledMetrics(params EnabledMetric[] enabledMetrics)
         {
             foreach (EnabledMetric element in enabledMetrics)
@@ -684,6 +705,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="enabledMetrics">The values to add to the EnabledMetrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithEnabledMetrics(IEnumerable<EnabledMetric> enabledMetrics)
         {
             foreach (EnabledMetric element in enabledMetrics)
@@ -728,6 +750,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithStatus(string status)
         {
             this.status = status;
@@ -755,6 +778,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithTags(params TagDescription[] tags)
         {
             foreach (TagDescription element in tags)
@@ -770,6 +794,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithTags(IEnumerable<TagDescription> tags)
         {
             foreach (TagDescription element in tags)
@@ -800,6 +825,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithTerminationPolicies(params string[] terminationPolicies)
         {
             foreach (string element in terminationPolicies)
@@ -815,6 +841,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingGroup WithTerminationPolicies(IEnumerable<string> terminationPolicies)
         {
             foreach (string element in terminationPolicies)

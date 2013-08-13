@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -82,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithDescription(string description)
         {
             this.description = description;
@@ -109,6 +111,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -124,6 +127,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)

@@ -73,6 +73,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="queueName">The name to use for the queue created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateQueueRequest WithQueueName(string queueName)
         {
             this.queueNameField = queueName;
@@ -115,6 +116,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="defaultVisibilityTimeout">The visibility timeout (in seconds) to use for this queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateQueueRequest WithDefaultVisibilityTimeout(Decimal defaultVisibilityTimeout)
         {
             this.DefaultVisibilityTimeout = defaultVisibilityTimeout;
@@ -152,6 +154,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="delaySeconds">The default number of seconds for which the message has to be delayed.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateQueueRequest WithDelaySeconds(int delaySeconds)
         {
             this.DelaySeconds = delaySeconds;
@@ -189,6 +192,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateQueueRequest WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)
@@ -222,9 +226,11 @@ namespace Amazon.SQS.Model
             Attribute attr = AmazonSQSUtil.FindAttribute(this.Attribute, name);
             if (attr == null)
             {
-                Attribute newAttr = new Attribute()
-                    .WithName(name)
-                    .WithValue(value.ToString());
+                Attribute newAttr = new Attribute
+                {
+                    Name = name,
+                    Value = value.ToString()
+                };
                 this.Attribute.Add(newAttr);
             }
             else

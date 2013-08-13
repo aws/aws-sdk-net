@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
     /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AuthorizeSecurityGroupIngressRequest
+    public class AuthorizeSecurityGroupIngressRequest : EC2Request
     {    
         private string userIdField;
         private string groupIdField;
@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userId">AWS Access Key ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithUserId(string userId)
         {
             this.userIdField = userId;
@@ -106,6 +107,7 @@ namespace Amazon.EC2.Model
         /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithGroupId(string groupId)
         {
             this.groupIdField = groupId;
@@ -136,6 +138,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the group to modify.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -168,6 +171,7 @@ namespace Amazon.EC2.Model
         /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used
         /// when specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithSourceSecurityGroupName(string sourceSecurityGroupName)
         {
             this.sourceSecurityGroupNameField = sourceSecurityGroupName;
@@ -200,6 +204,7 @@ namespace Amazon.EC2.Model
         /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when
         /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithSourceSecurityGroupOwnerId(string sourceSecurityGroupOwnerId)
         {
             this.sourceSecurityGroupOwnerIdField = sourceSecurityGroupOwnerId;
@@ -232,6 +237,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipProtocol">IP protocol.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithIpProtocol(string ipProtocol)
         {
             this.ipProtocolField = ipProtocol;
@@ -264,6 +270,7 @@ namespace Amazon.EC2.Model
         /// <param name="fromPort">The start of port range for the TCP and UDP protocols, or an ICMP type number.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithFromPort(Decimal fromPort)
         {
             this.fromPortField = fromPort;
@@ -296,6 +303,7 @@ namespace Amazon.EC2.Model
         /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code.
         /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithToPort(Decimal toPort)
         {
             this.toPortField = toPort;
@@ -327,6 +335,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="cidrIp">CIDR range.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithCidrIp(string cidrIp)
         {
             this.cidrIpField = cidrIp;
@@ -365,6 +374,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Set of IP permissions associated with the
         /// security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeSecurityGroupIngressRequest WithIpPermissions(params IpPermissionSpecification[] list)
         {
             foreach (IpPermissionSpecification item in list)

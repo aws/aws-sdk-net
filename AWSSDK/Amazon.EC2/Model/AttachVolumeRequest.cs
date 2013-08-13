@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud Developer Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AttachVolumeRequest
+    public class AttachVolumeRequest : EC2Request
     {    
         private string volumeIdField;
         private string instanceIdField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachVolumeRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -95,6 +96,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceId">The ID of the instance to which the volume
         /// attaches.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachVolumeRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -126,6 +128,7 @@ namespace Amazon.EC2.Model
         /// <param name="device">Specifies how the device is exposed to the
         /// instance (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachVolumeRequest WithDevice(string device)
         {
             this.deviceField = device;

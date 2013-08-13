@@ -46,6 +46,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceEndpoint WithArn(string arn)
         {
             this.arn = arn;
@@ -74,6 +75,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="endpoint">The value to set for the Endpoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceEndpoint WithEndpoint(string endpoint)
         {
             this.endpoint = endpoint;

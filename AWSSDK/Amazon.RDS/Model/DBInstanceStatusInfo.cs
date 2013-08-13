@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="statusType">The value to set for the StatusType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstanceStatusInfo WithStatusType(string statusType)
         {
             this.statusType = statusType;
@@ -74,6 +75,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="normal">The value to set for the Normal property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstanceStatusInfo WithNormal(bool normal)
         {
             this.normal = normal;
@@ -102,6 +104,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstanceStatusInfo WithStatus(string status)
         {
             this.status = status;
@@ -130,6 +133,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBInstanceStatusInfo WithMessage(string message)
         {
             this.message = message;

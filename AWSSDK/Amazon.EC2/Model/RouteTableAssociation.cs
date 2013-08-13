@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// <param name="routeTableAssociationId">An identifier representing the association between a route table and
         /// a subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTableAssociation WithRouteTableAssociationId(string routeTableAssociationId)
         {
             this.routeTableAssociationIdField = routeTableAssociationId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="routeTableId">The ID of the route table in the association.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTableAssociation WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet in the association.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTableAssociation WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -142,6 +145,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="main">Whether this is the main route table.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteTableAssociation WithMain(bool main)
         {
             this.mainField = main;

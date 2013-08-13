@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZone">The value to set for the HostedZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHostedZoneResult WithHostedZone(HostedZone hostedZone)
         {
             this.hostedZone = hostedZone;
@@ -75,6 +76,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="changeInfo">The value to set for the ChangeInfo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHostedZoneResult WithChangeInfo(ChangeInfo changeInfo)
         {
             this.changeInfo = changeInfo;
@@ -103,6 +105,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="delegationSet">The value to set for the DelegationSet property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHostedZoneResult WithDelegationSet(DelegationSet delegationSet)
         {
             this.delegationSet = delegationSet;
@@ -140,6 +143,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHostedZoneResult WithLocation(string location)
         {
             this.location = location;

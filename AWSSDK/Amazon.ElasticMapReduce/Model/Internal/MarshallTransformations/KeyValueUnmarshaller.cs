@@ -12,69 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   KeyValue Unmarshaller
-     /// </summary>
-    internal class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext>, IUnmarshaller<KeyValue, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public KeyValue Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// KeyValueUnmarshaller
+      /// </summary>
+      internal class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext>, IUnmarshaller<KeyValue, JsonUnmarshallerContext>
+      {
+        KeyValue IUnmarshaller<KeyValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public KeyValue Unmarshall(JsonUnmarshallerContext context)
         {
             KeyValue keyValue = new KeyValue();
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Key", targetDepth))
-                    {
-                        keyValue.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Value", targetDepth))
-                    {
-                        keyValue.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("Key", targetDepth))
+              {
+                keyValue.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Value", targetDepth))
+              {
+                keyValue.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return keyValue;
                 }
             }
-                        
-
+          
 
             return keyValue;
         }
 
-        public KeyValue Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static KeyValueUnmarshaller instance;
-
-        public static KeyValueUnmarshaller GetInstance() 
+        public static KeyValueUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new KeyValueUnmarshaller();
-
+            if (instance == null)
+                instance = new KeyValueUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

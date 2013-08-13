@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// or attach a different VPC to the VPN gateway.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DetachVpnGatewayRequest
+    public class DetachVpnGatewayRequest : EC2Request
     {    
         private string vpnGatewayIdField;
         private string vpcIdField;
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnGatewayId">The ID of the VPN gateway you want to detach
         /// from the VPC</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVpnGatewayRequest WithVpnGatewayId(string vpnGatewayId)
         {
             this.vpnGatewayIdField = vpnGatewayId;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpcId">The ID of the VPC you want to detach the VPN
         /// gateway from.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVpnGatewayRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

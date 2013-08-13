@@ -61,6 +61,7 @@ namespace Amazon.SimpleDB.Model
         /// replica that was accessed for this operation, an empty set is returned. The system does not return
         /// an error as it cannot guarantee the item does not exist on other replicas.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesResponse WithGetAttributesResult(GetAttributesResult getAttributesResult)
         {
             this.getAttributesResultField = getAttributesResult;
@@ -92,6 +93,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="responseMetadata">Information about the request provided by Amazon SimpleDB.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesResponse WithResponseMetadata(ResponseMetadata responseMetadata)
         {
             this.responseMetadataField = responseMetadata;

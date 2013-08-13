@@ -58,6 +58,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListObjectsRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -96,6 +97,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListObjectsRequest WithPrefix(string prefix)
         {
             this.prefix = prefix;
@@ -136,6 +138,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="marker">The marker value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListObjectsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -172,6 +175,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="maxKeys">The maximum keys value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListObjectsRequest WithMaxKeys(int maxKeys)
         {
             this.maxKeys = maxKeys;
@@ -212,6 +216,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListObjectsRequest WithDelimiter(string delimiter)
         {
             this.delimiter = delimiter;

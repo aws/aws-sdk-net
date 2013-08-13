@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -54,6 +54,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="protocol">The protocol to use in the redirect request</param>
         /// <returns>the RoutingRuleCondition with the Protocol set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRuleRedirect WithProtocol(string protocol)
         {
             this._protocol = protocol;
@@ -87,6 +88,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="hostName">The host name to use in the redirect request</param>
         /// <returns>the RoutingRuleCondition with the HostName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRuleRedirect WithHostName(string hostName)
         {
             this._hostName = hostName;
@@ -124,6 +126,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="replaceKeyPrefixWith">The object key prefix to use in the redirect request</param>
         /// <returns>the RoutingRuleCondition with the ReplaceKeyPrefixWith set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRuleRedirect WithReplaceKeyPrefixWith(string replaceKeyPrefixWith)
         {
             this._replaceKeyPrefixWith = replaceKeyPrefixWith;
@@ -157,6 +160,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="replaceKeyWith">The specific object key to use in the redirect request</param>
         /// <returns>the RoutingRuleCondition with the ReplaceKeyWith set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRuleRedirect WithReplaceKeyWith(string replaceKeyWith)
         {
             this._replaceKeyWith = replaceKeyWith;
@@ -190,6 +194,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="httpRedirectCode">The HTTP redirect code to use on the response</param>
         /// <returns>the RoutingRuleCondition with the HttpRedirectCode set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRuleRedirect WithHttpRedirectCode(string httpRedirectCode)
         {
             this._httpRedirectCode = httpRedirectCode;

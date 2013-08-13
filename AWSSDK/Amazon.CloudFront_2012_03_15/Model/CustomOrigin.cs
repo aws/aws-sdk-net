@@ -108,6 +108,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="dnsName">The DNSName for the origin.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOrigin WithDNSName(string dnsName)
         {
             this.DNSName = dnsName;
@@ -136,6 +137,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="httpPort">The HTTP port.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOrigin WithHttpPort(int httpPort)
         {
             this.HttpPort = httpPort;
@@ -159,6 +161,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="httpsPort">The HTTPS port.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOrigin WithHttpsPort(int httpsPort)
         {
             this.HttpsPort = httpsPort;
@@ -190,6 +193,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="protocolPolicy">The origin protocol policy.</param>
         /// <returns>This instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOrigin WithProtocolPolicy(OriginProtocolPolicy protocolPolicy)
         {
             this.ProtocolPolicy = protocolPolicy;
