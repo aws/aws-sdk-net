@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway
     /// </ul>
     /// </summary>
 	public partial interface IAmazonStorageGateway : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1084,5 +1084,5 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

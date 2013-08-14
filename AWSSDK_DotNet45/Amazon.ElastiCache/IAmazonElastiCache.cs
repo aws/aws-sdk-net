@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache
     /// hot. </para>
     /// </summary>
 	public partial interface IAmazonElastiCache : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -896,5 +896,5 @@ namespace Amazon.ElastiCache
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

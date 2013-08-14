@@ -56,7 +56,7 @@ namespace Amazon.Redshift
     /// Services Glossary</i> . </para>
     /// </summary>
 	public partial interface IAmazonRedshift : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1169,5 +1169,5 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

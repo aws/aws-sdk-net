@@ -220,6 +220,7 @@ namespace Amazon.Runtime
                 var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, request.ContentStream.Length);
                 eventStream.OnRead += tracker.ReadProgress;
                 requestMessage.Content = new StreamContent(eventStream);
+                requestMessage.Content.Headers.ContentLength = request.ContentStream.Length;
             }
             else if ((requestData = GetRequestData(request)) != null)
             {
@@ -337,6 +338,7 @@ namespace Amazon.Runtime
         {
             var httpMessageHandler = new HttpClientHandler();
 
+
 #if BCL
             
             // Make one time configuration changes to the service point
@@ -368,7 +370,7 @@ namespace Amazon.Runtime
 
 
             var httpClient = new HttpClient(httpMessageHandler);
-            httpClient.Timeout = new TimeSpan(int.MaxValue);
+            httpClient.Timeout = TimeSpan.FromMilliseconds(int.MaxValue);
             
             return httpClient;
         }

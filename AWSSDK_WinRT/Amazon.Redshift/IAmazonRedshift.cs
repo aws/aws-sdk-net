@@ -56,7 +56,7 @@ namespace Amazon.Redshift
     /// Services Glossary</i> . </para>
     /// </summary>
 	public partial interface IAmazonRedshift : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is
@@ -699,5 +699,5 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect
     /// </ul>
     /// </summary>
 	public partial interface IAmazonDirectConnect : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Creates a new network connection between the customer network and a specific AWS Direct Connect location.</para> <para>A connection
@@ -231,5 +231,5 @@ namespace Amazon.DirectConnect
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

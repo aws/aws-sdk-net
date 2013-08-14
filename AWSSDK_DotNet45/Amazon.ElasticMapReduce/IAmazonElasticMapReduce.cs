@@ -29,7 +29,7 @@ namespace Amazon.ElasticMapReduce
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial interface IAmazonElasticMapReduce : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -293,5 +293,5 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

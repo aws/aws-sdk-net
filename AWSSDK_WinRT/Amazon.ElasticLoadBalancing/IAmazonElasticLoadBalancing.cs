@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     /// </summary>
 	public partial interface IAmazonElasticLoadBalancing : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Associates one or more security groups with your LoadBalancer in VPC. The provided security group IDs will override any currently
@@ -493,5 +493,5 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -40,7 +40,7 @@
     <SccProvider>
     </SccProvider>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>awssdk.dll.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\aws-sdk-private.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -52,20 +52,21 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;BCL</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BCL;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.xml</DocumentationFile>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>BCL</DefineConstants>
+    <DefineConstants>TRACE;BCL;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\AWSSDK.xml</DocumentationFile>
@@ -74,7 +75,8 @@
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -9050,6 +9052,58 @@
     <Compile Include="Amazon.SimpleDB\ServiceEnumerations.cs" />
     <Compile Include="Amazon.SimpleEmail\IAmazonSimpleEmailService.cs" />
     <Compile Include="Amazon.SimpleEmail\ServiceEnumerations.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformEndpointRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformEndpointResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformEndpointResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeleteEndpointRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeleteEndpointResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeletePlatformApplicationRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeletePlatformApplicationResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Endpoint.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\EndpointDisabledException.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetEndpointAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetEndpointAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetEndpointAttributesResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetPlatformApplicationAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetPlatformApplicationAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetPlatformApplicationAttributesResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreatePlatformApplicationRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreatePlatformApplicationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreatePlatformEndpointRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreatePlatformEndpointResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeleteEndpointRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeleteEndpointResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeletePlatformApplicationRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeletePlatformApplicationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\EndpointUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetEndpointAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetEndpointAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetPlatformApplicationAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetPlatformApplicationAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListEndpointsByPlatformApplicationRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListEndpointsByPlatformApplicationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListPlatformApplicationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListPlatformApplicationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\PlatformApplicationUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetEndpointAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetEndpointAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetPlatformApplicationAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetPlatformApplicationAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListEndpointsByPlatformApplicationRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListEndpointsByPlatformApplicationResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListEndpointsByPlatformApplicationResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListPlatformApplicationsRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListPlatformApplicationsResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListPlatformApplicationsResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\PlatformApplication.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\PlatformApplicationDisabledException.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetEndpointAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetEndpointAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetPlatformApplicationAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetPlatformApplicationAttributesResponse.cs" />
     <Compile Include="Amazon.SimpleNotificationService\ServiceEnumerations.cs" />
     <Compile Include="Amazon.SimpleWorkflow\IAmazonSimpleWorkflow.cs" />
     <Compile Include="Amazon.SimpleWorkflow\ServiceEnumerations.cs" />
@@ -10288,6 +10342,7 @@
     </Compile>
     <Compile Include="AWSConfigs.bcl.cs" />
     <Compile Include="AWSConfigs.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
     <Compile Include="RegionEndpoint.cs" />

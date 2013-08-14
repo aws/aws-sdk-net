@@ -19,7 +19,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
-using AWSSDK.Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {

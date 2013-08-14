@@ -40,7 +40,7 @@ namespace Amazon.DataPipeline
     /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
 	public partial interface IAmazonDataPipeline : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -534,5 +534,5 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<ValidatePipelineDefinitionResponse> ValidatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// 
+    /// <para>Response from CreateTopic action.</para>
     /// </summary>
     public partial class CreateTopicResult : AmazonWebServiceResponse
     {

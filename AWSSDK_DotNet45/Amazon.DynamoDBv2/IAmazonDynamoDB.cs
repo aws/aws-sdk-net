@@ -27,7 +27,7 @@ namespace Amazon.DynamoDBv2
     /// DynamoDB API. </para>
     /// </summary>
 	public partial interface IAmazonDynamoDB : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -487,5 +487,5 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

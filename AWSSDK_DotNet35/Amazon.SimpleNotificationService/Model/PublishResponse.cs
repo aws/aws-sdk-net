@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the PublishResult property.
-        /// 
+        /// Response for Publish action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PublishResult class are now available on the PublishResponse class. You should use the properties on PublishResponse instead of accessing them through PublishResult.")]
         public PublishResult PublishResult

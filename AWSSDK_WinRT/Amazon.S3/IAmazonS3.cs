@@ -30,7 +30,7 @@ namespace Amazon.S3
     /// 
     /// </summary>
 	public partial interface IAmazonS3 : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Aborts a multipart upload.</para>
@@ -586,5 +586,5 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UploadPartResponse> UploadPartAsync(UploadPartRequest uploadPartRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

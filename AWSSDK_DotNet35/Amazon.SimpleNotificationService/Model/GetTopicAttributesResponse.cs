@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the GetTopicAttributesResult property.
-        /// 
+        /// Response for GetTopicAttributes action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetTopicAttributesResult class are now available on the GetTopicAttributesResponse class. You should use the properties on GetTopicAttributesResponse instead of accessing them through GetTopicAttributesResult.")]
         public GetTopicAttributesResult GetTopicAttributesResult

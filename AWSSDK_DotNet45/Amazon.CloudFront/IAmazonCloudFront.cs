@@ -26,7 +26,7 @@ namespace Amazon.CloudFront
     /// 
     /// </summary>
 	public partial interface IAmazonCloudFront : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -805,5 +805,5 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

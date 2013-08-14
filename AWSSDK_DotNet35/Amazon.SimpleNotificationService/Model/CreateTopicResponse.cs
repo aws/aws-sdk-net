@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the CreateTopicResult property.
-        /// 
+        /// Response from CreateTopic action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateTopicResult class are now available on the CreateTopicResponse class. You should use the properties on CreateTopicResponse instead of accessing them through CreateTopicResult.")]
         public CreateTopicResult CreateTopicResult

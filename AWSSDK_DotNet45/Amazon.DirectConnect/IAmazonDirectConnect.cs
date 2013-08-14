@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect
     /// </ul>
     /// </summary>
 	public partial interface IAmazonDirectConnect : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -441,5 +441,5 @@ namespace Amazon.DirectConnect
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectServerException" />
         /// <exception cref="T:Amazon.DirectConnect.Model.DirectConnectClientException" />
 		DescribeVirtualInterfacesResponse DescribeVirtualInterfaces();
-	}
+    }
 }

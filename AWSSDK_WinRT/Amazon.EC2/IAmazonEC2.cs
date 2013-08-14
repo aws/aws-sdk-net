@@ -32,7 +32,7 @@ namespace Amazon.EC2
     /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
     /// </summary>
 	public partial interface IAmazonEC2 : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
@@ -2098,5 +2098,5 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest unmonitorInstancesRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

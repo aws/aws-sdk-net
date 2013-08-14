@@ -30,7 +30,7 @@ namespace Amazon.S3
     /// 
     /// </summary>
 	public partial interface IAmazonS3 : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1055,5 +1055,5 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -26,7 +26,7 @@ namespace Amazon.Route53
     /// 
     /// </summary>
 	public partial interface IAmazonRoute53 : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
@@ -272,5 +272,5 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest listResourceRecordSetsRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

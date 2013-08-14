@@ -49,12 +49,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="protocol"> The protocol you want to use. Supported protocols include: <ul> <li><c>http</c> -- delivery of JSON-encoded message
         /// via HTTP POST</li> <li><c>https</c> -- delivery of JSON-encoded message via HTTPS POST</li> <li><c>email</c> -- delivery of message via
         /// SMTP</li> <li><c>email-json</c> -- delivery of JSON-encoded message via SMTP</li> <li><c>sms</c> -- delivery of message via SMS</li>
-        /// <li><c>sqs</c> -- delivery of JSON-encoded message to an Amazon SQS queue</li> </ul> </param>
+        /// <li><c>sqs</c> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li><c>application</c> -- delivery of JSON-encoded message to
+        /// an EndpointArn for a mobile app and device.</li> </ul> </param>
         /// <param name="endpoint"> The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li>For the <c>http</c>
         /// protocol, the endpoint is an URL beginning with "http://"</li> <li>For the <c>https</c> protocol, the endpoint is a URL beginning with
         /// "https://"</li> <li>For the <c>email</c> protocol, the endpoint is an email address</li> <li>For the <c>email-json</c> protocol, the
         /// endpoint is an email address</li> <li>For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device</li> <li>For the
-        /// <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul> </param>
+        /// <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue</li> <li>For the <c>application</c> protocol, the endpoint is the
+        /// EndpointArn of a mobile app and device.</li> </ul> </param>
         public SubscribeRequest(string topicArn, string protocol, string endpoint)
         {
             this.topicArn = topicArn;
@@ -83,7 +85,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// The protocol you want to use. Supported protocols include: <ul> <li><c>http</c> -- delivery of JSON-encoded message via HTTP POST</li>
         /// <li><c>https</c> -- delivery of JSON-encoded message via HTTPS POST</li> <li><c>email</c> -- delivery of message via SMTP</li>
         /// <li><c>email-json</c> -- delivery of JSON-encoded message via SMTP</li> <li><c>sms</c> -- delivery of message via SMS</li> <li><c>sqs</c> --
-        /// delivery of JSON-encoded message to an Amazon SQS queue</li> </ul>
+        /// delivery of JSON-encoded message to an Amazon SQS queue</li> <li><c>application</c> -- delivery of JSON-encoded message to an EndpointArn
+        /// for a mobile app and device.</li> </ul>
         ///  
         /// </summary>
         public string Protocol
@@ -103,7 +106,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// URL beginning with "http://"</li> <li>For the <c>https</c> protocol, the endpoint is a URL beginning with "https://"</li> <li>For the
         /// <c>email</c> protocol, the endpoint is an email address</li> <li>For the <c>email-json</c> protocol, the endpoint is an email address</li>
         /// <li>For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device</li> <li>For the <c>sqs</c> protocol, the endpoint
-        /// is the ARN of an Amazon SQS queue</li> </ul>
+        /// is the ARN of an Amazon SQS queue</li> <li>For the <c>application</c> protocol, the endpoint is the EndpointArn of a mobile app and
+        /// device.</li> </ul>
         ///  
         /// </summary>
         public string Endpoint

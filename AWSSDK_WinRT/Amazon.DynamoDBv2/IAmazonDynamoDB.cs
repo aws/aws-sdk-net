@@ -27,7 +27,7 @@ namespace Amazon.DynamoDBv2
     /// DynamoDB API. </para>
     /// </summary>
 	public partial interface IAmazonDynamoDB : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>The <i>BatchGetItem</i> operation returns the attributes of one or more items from one or more tables. You identify requested items by
@@ -346,5 +346,5 @@ namespace Amazon.DynamoDBv2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest updateTableRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

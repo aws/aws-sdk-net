@@ -42,7 +42,7 @@ namespace Amazon.Glacier
     /// </ul>
     /// </summary>
 	public partial interface IAmazonGlacier : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>This operation aborts a multipart upload identified by the upload ID.</para> <para>After the Abort Multipart Upload request succeeds,
@@ -640,5 +640,5 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest uploadMultipartPartRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// 
+    /// <para>Response for Publish action.</para>
     /// </summary>
     public partial class PublishResult : AmazonWebServiceResponse
     {

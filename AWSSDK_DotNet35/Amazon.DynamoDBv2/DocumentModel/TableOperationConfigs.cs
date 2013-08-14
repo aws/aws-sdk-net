@@ -166,6 +166,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </para>
         /// </summary>
         public int Segment { get; set; }
+
+        /// <summary>
+        /// Whether to collect GetNextSet and GetRemaining results in Matches property.
+        /// Default is true. If set to false, Matches will always be empty.
+        /// </summary>
+        public bool CollectResults { get; set; }
     }
 
     /// <summary>
@@ -219,5 +225,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Enum specifying what data to return from query.
         /// </summary>
         public SelectValues Select { get; set; }
+
+        /// <summary>
+        /// Whether to collect GetNextSet and GetRemaining results in Matches property.
+        /// Default is true. If set to false, Matches will always be empty.
+        /// </summary>
+        public bool CollectResults { get; set; }
     }
 }

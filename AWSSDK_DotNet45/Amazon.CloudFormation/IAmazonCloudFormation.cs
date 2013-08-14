@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation
     /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para>
     /// </summary>
 	public partial interface IAmazonCloudFormation : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -424,5 +424,5 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by AmazonCloudFormation.</returns>
 		ValidateTemplateResponse ValidateTemplate();
-	}
+    }
 }

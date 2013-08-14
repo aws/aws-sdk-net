@@ -42,7 +42,7 @@ namespace Amazon.Glacier
     /// </ul>
     /// </summary>
 	public partial interface IAmazonGlacier : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -854,5 +854,5 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

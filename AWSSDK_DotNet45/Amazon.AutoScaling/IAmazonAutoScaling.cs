@@ -32,7 +32,7 @@ namespace Amazon.AutoScaling
     /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
 	public partial interface IAmazonAutoScaling : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1045,5 +1045,5 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

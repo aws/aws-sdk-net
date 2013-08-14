@@ -32,7 +32,7 @@ namespace Amazon.AutoScaling
     /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
 	public partial interface IAmazonAutoScaling : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
@@ -544,5 +544,5 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

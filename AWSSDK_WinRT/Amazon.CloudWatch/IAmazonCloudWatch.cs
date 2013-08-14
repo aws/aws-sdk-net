@@ -40,7 +40,7 @@ namespace Amazon.CloudWatch
     /// </ul>
     /// </summary>
 	public partial interface IAmazonCloudWatch : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Deletes all specified alarms. In the event of an error, no alarms are deleted. </para>
@@ -229,5 +229,5 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

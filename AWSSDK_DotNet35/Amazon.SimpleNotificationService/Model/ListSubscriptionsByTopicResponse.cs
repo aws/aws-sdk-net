@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the ListSubscriptionsByTopicResult property.
-        /// 
+        /// Response for ListSubscriptionsByTopic action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListSubscriptionsByTopicResult class are now available on the ListSubscriptionsByTopicResponse class. You should use the properties on ListSubscriptionsByTopicResponse instead of accessing them through ListSubscriptionsByTopicResult.")]
         public ListSubscriptionsByTopicResult ListSubscriptionsByTopicResult

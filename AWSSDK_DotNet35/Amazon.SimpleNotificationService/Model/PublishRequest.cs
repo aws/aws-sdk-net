@@ -27,11 +27,15 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the Publish operation.
     /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
     /// has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each
-    /// subscribed endpoint depends on the notification protocol selected.</para>
+    /// subscribed endpoint depends on the notification protocol selected.</para> <para>To use the <c>Publish</c> action for sending a message to a
+    /// mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when
+    /// making a call with the <c>CreatePlatformEndpoint</c> action. The second example below shows a request and response for publishing to a
+    /// mobile endpoint. </para>
     /// </summary>
     public partial class PublishRequest : AmazonWebServiceRequest
     {
         private string topicArn;
+        private string targetArn;
         private string message;
         private string subject;
         private string messageStructure;
@@ -107,6 +111,22 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetTopicArn()
         {
             return this.topicArn != null;
+        }
+
+        /// <summary>
+        /// Either TopicArn or EndpointArn, but not both.
+        ///  
+        /// </summary>
+        public string TargetArn
+        {
+            get { return this.targetArn; }
+            set { this.targetArn = value; }
+        }
+
+        // Check to see if TargetArn property is set
+        internal bool IsSetTargetArn()
+        {
+            return this.targetArn != null;
         }
 
         /// <summary>

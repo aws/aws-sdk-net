@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the SubscribeResult property.
-        /// 
+        /// Response for Subscribe action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SubscribeResult class are now available on the SubscribeResponse class. You should use the properties on SubscribeResponse instead of accessing them through SubscribeResult.")]
         public SubscribeResult SubscribeResult

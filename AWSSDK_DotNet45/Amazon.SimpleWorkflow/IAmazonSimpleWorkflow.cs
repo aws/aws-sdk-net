@@ -130,7 +130,7 @@ namespace Amazon.SimpleWorkflow
     /// </ul>
     /// </summary>
 	public partial interface IAmazonSimpleWorkflow : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1413,5 +1413,5 @@ namespace Amazon.SimpleWorkflow
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

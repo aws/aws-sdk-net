@@ -19,7 +19,6 @@ using System.Linq;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
-using AWSSDK.Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -408,9 +407,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
+        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
+        {
+            return FromScanAsync<T>(scanConfig, null);
+        }
+
+        /// <summary>
+        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="scanConfig">Scan request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 

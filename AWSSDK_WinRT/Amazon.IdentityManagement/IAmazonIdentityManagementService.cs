@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement
     /// http://aws.amazon.com/documentation/.</para>
     /// </summary>
 	public partial interface IAmazonIdentityManagementService : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Adds the specified role to the specified instance profile. For more information about roles, go to Working with Roles. For more
@@ -1174,5 +1174,5 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest uploadSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

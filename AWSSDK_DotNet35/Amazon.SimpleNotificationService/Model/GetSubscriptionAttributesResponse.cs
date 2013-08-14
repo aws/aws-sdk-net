@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the GetSubscriptionAttributesResult property.
-        /// 
+        /// Response for GetSubscriptionAttributes action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetSubscriptionAttributesResult class are now available on the GetSubscriptionAttributesResponse class. You should use the properties on GetSubscriptionAttributesResponse instead of accessing them through GetSubscriptionAttributesResult.")]
         public GetSubscriptionAttributesResult GetSubscriptionAttributesResult

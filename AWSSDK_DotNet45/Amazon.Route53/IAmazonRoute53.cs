@@ -26,7 +26,7 @@ namespace Amazon.Route53
     /// 
     /// </summary>
 	public partial interface IAmazonRoute53 : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -414,5 +414,5 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

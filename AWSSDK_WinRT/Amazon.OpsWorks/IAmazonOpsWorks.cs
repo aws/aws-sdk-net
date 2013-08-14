@@ -26,7 +26,7 @@ namespace Amazon.OpsWorks
     /// AWS OpsWorks
     /// </summary>
 	public partial interface IAmazonOpsWorks : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
@@ -678,5 +678,5 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest updateUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

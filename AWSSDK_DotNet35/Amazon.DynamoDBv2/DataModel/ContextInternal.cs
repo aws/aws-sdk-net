@@ -22,7 +22,6 @@ using System.Reflection;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
-using AWSSDK.Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -744,8 +743,10 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (search == null) throw new ArgumentNullException("search");
 
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            // Configure search to not collect results
+            search.CollectResults = false;
 
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             while (!search.IsDone)
             {
                 List<Document> set = search.GetNextSet();

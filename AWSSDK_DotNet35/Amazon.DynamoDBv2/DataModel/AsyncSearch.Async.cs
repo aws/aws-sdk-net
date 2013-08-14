@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Amazon.DynamoDBv2;
 
-namespace AWSSDK.Amazon.DynamoDBv2.DataModel
+namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
     /// A strongly-typed object for retrieving search results (Query or Scan)

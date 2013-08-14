@@ -32,7 +32,7 @@ namespace Amazon.EC2
     /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
     /// </summary>
 	public partial interface IAmazonEC2 : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1380,6 +1380,16 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
+        /// <summary>
+        /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
+        /// Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
+        /// service method on AmazonEC2.</param>
+		DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription();
+ 
 
         /// <summary>
         /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
@@ -1402,16 +1412,6 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
-        /// Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
-        /// </para>
-        /// </summary>
-        /// 
-        /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
-        /// service method on AmazonEC2.</param>
-		DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription();
  
 
         /// <summary>
@@ -2206,24 +2206,6 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
 		DescribeKeyPairsResponse DescribeKeyPairs();
  
-        /// <summary>
-        /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
-        /// criteria you specify. For example, you could get information only the ACL associated with a particular subnet. The ACL must match at least
-        /// one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g., the ACL is
-        /// associated with a particular subnet and has an egress entry that denies traffic to a particular port). The result includes information for a
-        /// particular ACL only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty.
-        /// </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
-        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
-        /// for the literal string <c>*amazon?\</c> .
-        /// </para>
-        /// </summary>
-        /// 
-        /// <param name="describeNetworkAclsRequest">Container for the necessary parameters to execute the DescribeNetworkAcls service method on
-        /// AmazonEC2.</param>
-        /// 
-        /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
-		DescribeNetworkAclsResponse DescribeNetworkAcls();
- 
 
         /// <summary>
         /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
@@ -2254,6 +2236,24 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
+        /// criteria you specify. For example, you could get information only the ACL associated with a particular subnet. The ACL must match at least
+        /// one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g., the ACL is
+        /// associated with a particular subnet and has an egress entry that denies traffic to a particular port). The result includes information for a
+        /// particular ACL only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty.
+        /// </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="describeNetworkAclsRequest">Container for the necessary parameters to execute the DescribeNetworkAcls service method on
+        /// AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
+		DescribeNetworkAclsResponse DescribeNetworkAcls();
  
 
         /// <summary>
@@ -2979,6 +2979,22 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpcs service method, as returned by AmazonEC2.</returns>
 		DescribeVpcsResponse DescribeVpcs();
  
+        /// <summary>
+        /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
+        /// this operation because the response contains sensitive cryptographic information for configuring your customer gateway. You can filter the
+        /// results to return information only about VPN connections that match criteria you specify. For example, you could ask to get information
+        /// about a particular VPN connection (or all) only if the VPN's state is pending or available. You can specify multiple filters (e.g., the VPN
+        /// connection is associated with a particular VPN gateway, and the gateway's state is pending or available). The result includes information
+        /// for a particular VPN connection only if the VPN connection matches all your filters. If there's no match, no special message is returned;
+        /// the response is simply empty. The following table shows the available filters. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeVpnConnectionsRequest">Container for the necessary parameters to execute the DescribeVpnConnections service method on
+        /// AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
+		DescribeVpnConnectionsResponse DescribeVpnConnections();
+ 
 
         /// <summary>
         /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
@@ -3007,22 +3023,6 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(DescribeVpnConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
-        /// this operation because the response contains sensitive cryptographic information for configuring your customer gateway. You can filter the
-        /// results to return information only about VPN connections that match criteria you specify. For example, you could ask to get information
-        /// about a particular VPN connection (or all) only if the VPN's state is pending or available. You can specify multiple filters (e.g., the VPN
-        /// connection is associated with a particular VPN gateway, and the gateway's state is pending or available). The result includes information
-        /// for a particular VPN connection only if the VPN connection matches all your filters. If there's no match, no special message is returned;
-        /// the response is simply empty. The following table shows the available filters. </para>
-        /// </summary>
-        /// 
-        /// <param name="describeVpnConnectionsRequest">Container for the necessary parameters to execute the DescribeVpnConnections service method on
-        /// AmazonEC2.</param>
-        /// 
-        /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
-		DescribeVpnConnectionsResponse DescribeVpnConnections();
  
 
         /// <summary>
@@ -3641,6 +3641,19 @@ namespace Amazon.EC2
         /// <returns>The response from the RegisterImage service method, as returned by AmazonEC2.</returns>
 		RegisterImageResponse RegisterImage();
  
+        /// <summary>
+        /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
+        /// address automatically disassociates it from any instance with which it is associated. For more information, see DisassociateAddress. </para>
+        /// <para><b>IMPORTANT:</b> After releasing an elastic IP address, it is released to the IP address pool and might no longer be available to
+        /// your account. Make sure to update your DNS records and any servers or devices that communicate with the address. If you run this operation
+        /// on an elastic IP address that is already released, the address might be assigned to another account which will cause Amazon EC2 to return an
+        /// error. </para>
+        /// </summary>
+        /// 
+        /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
+        /// AmazonEC2.</param>
+		ReleaseAddressResponse ReleaseAddress();
+ 
 
         /// <summary>
         /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
@@ -3666,19 +3679,6 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
-        /// address automatically disassociates it from any instance with which it is associated. For more information, see DisassociateAddress. </para>
-        /// <para><b>IMPORTANT:</b> After releasing an elastic IP address, it is released to the IP address pool and might no longer be available to
-        /// your account. Make sure to update your DNS records and any servers or devices that communicate with the address. If you run this operation
-        /// on an elastic IP address that is already released, the address might be assigned to another account which will cause Amazon EC2 to return an
-        /// error. </para>
-        /// </summary>
-        /// 
-        /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
-        /// AmazonEC2.</param>
-		ReleaseAddressResponse ReleaseAddress();
  
 
         /// <summary>
@@ -4134,5 +4134,5 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

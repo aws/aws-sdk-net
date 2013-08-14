@@ -26,10 +26,9 @@ namespace Amazon.CloudFront
     /// 
     /// </summary>
 	public partial interface IAmazonCloudFront : IDisposable
-	{
+    {
  
         /// <summary>
-        /// <para> Create a new origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="createCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -48,7 +47,6 @@ namespace Amazon.CloudFront
 		Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Create a new distribution. </para>
         /// </summary>
         /// 
         /// <param name="createDistributionRequest">Container for the necessary parameters to execute the CreateDistribution service method on
@@ -69,10 +67,8 @@ namespace Amazon.CloudFront
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
@@ -83,7 +79,6 @@ namespace Amazon.CloudFront
 		Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest createDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Create a new invalidation. </para>
         /// </summary>
         /// 
         /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation service method on
@@ -104,7 +99,6 @@ namespace Amazon.CloudFront
 		Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest createInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Create a new streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution service
@@ -130,7 +124,6 @@ namespace Amazon.CloudFront
 		Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest createStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Delete an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -147,7 +140,6 @@ namespace Amazon.CloudFront
 		Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Delete a distribution. </para>
         /// </summary>
         /// 
         /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution service method on
@@ -164,7 +156,6 @@ namespace Amazon.CloudFront
 		Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Delete a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution service
@@ -181,7 +172,6 @@ namespace Amazon.CloudFront
 		Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the information about an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="getCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -197,7 +187,6 @@ namespace Amazon.CloudFront
 		Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
@@ -213,7 +202,6 @@ namespace Amazon.CloudFront
 		Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the information about a distribution. </para>
         /// </summary>
         /// 
         /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution service method on
@@ -229,7 +217,6 @@ namespace Amazon.CloudFront
 		Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest getDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
         /// </summary>
         /// 
         /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig service method on
@@ -245,7 +232,6 @@ namespace Amazon.CloudFront
 		Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the information about an invalidation. </para>
         /// </summary>
         /// 
         /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation service method on
@@ -262,7 +248,6 @@ namespace Amazon.CloudFront
 		Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest getInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution service method
@@ -278,7 +263,6 @@ namespace Amazon.CloudFront
 		Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
@@ -294,7 +278,6 @@ namespace Amazon.CloudFront
 		Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> List origin access identities. </para>
         /// </summary>
         /// 
         /// <param name="listCloudFrontOriginAccessIdentitiesRequest">Container for the necessary parameters to execute the
@@ -309,7 +292,6 @@ namespace Amazon.CloudFront
 		Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> List distributions. </para>
         /// </summary>
         /// 
         /// <param name="listDistributionsRequest">Container for the necessary parameters to execute the ListDistributions service method on
@@ -324,7 +306,6 @@ namespace Amazon.CloudFront
 		Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest listDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> List invalidation batches. </para>
         /// </summary>
         /// 
         /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations service method on
@@ -341,7 +322,6 @@ namespace Amazon.CloudFront
 		Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> List streaming distributions. </para>
         /// </summary>
         /// 
         /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions service
@@ -356,7 +336,6 @@ namespace Amazon.CloudFront
 		Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest listStreamingDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Update an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -378,7 +357,6 @@ namespace Amazon.CloudFront
 		Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Update a distribution. </para>
         /// </summary>
         /// 
         /// <param name="updateDistributionRequest">Container for the necessary parameters to execute the UpdateDistribution service method on
@@ -400,11 +378,9 @@ namespace Amazon.CloudFront
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
@@ -414,7 +390,6 @@ namespace Amazon.CloudFront
 		Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest updateDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para> Update a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="updateStreamingDistributionRequest">Container for the necessary parameters to execute the UpdateStreamingDistribution service
@@ -439,5 +414,5 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest updateStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

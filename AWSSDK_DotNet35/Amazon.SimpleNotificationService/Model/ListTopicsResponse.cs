@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the ListTopicsResult property.
-        /// 
+        /// Response for ListTopics action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListTopicsResult class are now available on the ListTopicsResponse class. You should use the properties on ListTopicsResponse instead of accessing them through ListTopicsResult.")]
         public ListTopicsResult ListTopicsResult

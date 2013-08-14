@@ -33,7 +33,7 @@ namespace Amazon.CloudFront
 	public partial class AmazonCloudFrontClient : AmazonWebServiceClient, Amazon.CloudFront.IAmazonCloudFront
     {
 
-        AWS4Signer signer = new AWS4Signer();
+        CloudFrontSigner signer = new CloudFrontSigner();
         #region Constructors
 
         /// <summary>
@@ -145,7 +145,6 @@ namespace Amazon.CloudFront
 
  
         /// <summary>
-        /// <para> Create a new origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="createCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -171,7 +170,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Create a new distribution. </para>
         /// </summary>
         /// 
         /// <param name="createDistributionRequest">Container for the necessary parameters to execute the CreateDistribution service method on
@@ -192,10 +190,8 @@ namespace Amazon.CloudFront
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
@@ -213,7 +209,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Create a new invalidation. </para>
         /// </summary>
         /// 
         /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation service method on
@@ -241,7 +236,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Create a new streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution service
@@ -274,7 +268,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Delete an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -298,7 +291,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Delete a distribution. </para>
         /// </summary>
         /// 
         /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution service method on
@@ -322,7 +314,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Delete a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution service
@@ -346,7 +337,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the information about an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="getCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -369,7 +359,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
@@ -392,7 +381,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the information about a distribution. </para>
         /// </summary>
         /// 
         /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution service method on
@@ -415,7 +403,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
         /// </summary>
         /// 
         /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig service method on
@@ -438,7 +425,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the information about an invalidation. </para>
         /// </summary>
         /// 
         /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation service method on
@@ -462,7 +448,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution service method
@@ -485,7 +470,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
@@ -508,7 +492,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> List origin access identities. </para>
         /// </summary>
         /// 
         /// <param name="listCloudFrontOriginAccessIdentitiesRequest">Container for the necessary parameters to execute the
@@ -530,7 +513,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> List distributions. </para>
         /// </summary>
         /// 
         /// <param name="listDistributionsRequest">Container for the necessary parameters to execute the ListDistributions service method on
@@ -552,7 +534,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> List invalidation batches. </para>
         /// </summary>
         /// 
         /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations service method on
@@ -576,7 +557,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> List streaming distributions. </para>
         /// </summary>
         /// 
         /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions service
@@ -598,7 +578,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Update an origin access identity. </para>
         /// </summary>
         /// 
         /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
@@ -627,7 +606,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Update a distribution. </para>
         /// </summary>
         /// 
         /// <param name="updateDistributionRequest">Container for the necessary parameters to execute the UpdateDistribution service method on
@@ -649,11 +627,9 @@ namespace Amazon.CloudFront
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
@@ -670,7 +646,6 @@ namespace Amazon.CloudFront
         }
  
         /// <summary>
-        /// <para> Update a streaming distribution. </para>
         /// </summary>
         /// 
         /// <param name="updateStreamingDistributionRequest">Container for the necessary parameters to execute the UpdateStreamingDistribution service

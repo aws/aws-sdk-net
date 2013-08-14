@@ -33,7 +33,7 @@ namespace Amazon.SimpleDB
     /// more information. </para>
     /// </summary>
 	public partial interface IAmazonSimpleDB : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -403,5 +403,5 @@ namespace Amazon.SimpleDB
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<SelectResponse> SelectAsync(SelectRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

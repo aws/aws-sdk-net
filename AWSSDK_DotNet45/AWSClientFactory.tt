@@ -55,12 +55,12 @@ namespace Amazon
 <#
 foreach(var interfaceFullName in supportedServicesInterfaces)
 {
-	var interfaceName = interfaceFullName.Substring(interfaceFullName.LastIndexOf('.') + 1);
+    var interfaceName = interfaceFullName.Substring(interfaceFullName.LastIndexOf('.') + 1);
     var baseName = interfaceName.Substring(1);
     var clientName = baseName + "Client";
     var serviceName = baseName.Substring(0, "Amazon".Length) + " " + baseName.Substring("Amazon".Length);
 #>
-		#region <#=serviceName#>
+        #region <#=serviceName#>
 
         /// <summary>
         /// Create a client for the <#=serviceName#> Service with the credentials loaded from the application's
@@ -217,11 +217,11 @@ foreach(var interfaceFullName in supportedServicesInterfaces)
         {
             return new <#=clientName#>(credentials, config);
         }
-		#endregion
+        #endregion
 
 <#
 }
 #>
 
-	}
+    }
 }

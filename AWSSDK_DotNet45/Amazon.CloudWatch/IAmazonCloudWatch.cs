@@ -40,7 +40,7 @@ namespace Amazon.CloudWatch
     /// </ul>
     /// </summary>
 	public partial interface IAmazonCloudWatch : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -382,5 +382,5 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

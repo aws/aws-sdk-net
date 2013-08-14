@@ -54,7 +54,7 @@ namespace Amazon.AWSSupport
     /// results of checks on your resources. </para>
     /// </summary>
 	public partial interface IAmazonAWSSupport : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>This action adds additional customer communication to an AWS Support case. You use the <i>CaseId</i> value to identify the case to
@@ -288,5 +288,5 @@ namespace Amazon.AWSSupport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<ResolveCaseResponse> ResolveCaseAsync(ResolveCaseRequest resolveCaseRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

@@ -39,6 +39,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 request.Parameters.Add("TopicArn", StringUtils.FromString(publishRequest.TopicArn));
             }
+            if (publishRequest != null && publishRequest.IsSetTargetArn())
+            {
+                request.Parameters.Add("TargetArn", StringUtils.FromString(publishRequest.TargetArn));
+            }
             if (publishRequest != null && publishRequest.IsSetMessage())
             {
                 request.Parameters.Add("Message", StringUtils.FromString(publishRequest.Message));

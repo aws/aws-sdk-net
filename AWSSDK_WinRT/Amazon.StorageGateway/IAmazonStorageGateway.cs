@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway
     /// </ul>
     /// </summary>
 	public partial interface IAmazonStorageGateway : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>This operation activates the gateway you previously deployed on your VMware host. For more information, see Downloading and Deploying
@@ -717,5 +717,5 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

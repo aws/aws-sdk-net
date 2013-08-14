@@ -33,7 +33,7 @@ namespace Amazon.SQS
     /// running at the same time.</para> <para>Visit http://aws.amazon.com/sqs/ for more information.</para>
     /// </summary>
 	public partial interface IAmazonSQS : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -460,5 +460,5 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

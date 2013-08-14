@@ -37,7 +37,7 @@ namespace Amazon.RDS
     /// Amazon RDS User Guide. </para>
     /// </summary>
 	public partial interface IAmazonRDS : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Adds a source identifier to an existing RDS event notification subscription.</para>
@@ -967,5 +967,5 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

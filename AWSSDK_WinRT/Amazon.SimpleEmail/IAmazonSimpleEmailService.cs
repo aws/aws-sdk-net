@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmail
     /// https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial interface IAmazonSimpleEmailService : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
@@ -326,5 +326,5 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest verifyEmailIdentityRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

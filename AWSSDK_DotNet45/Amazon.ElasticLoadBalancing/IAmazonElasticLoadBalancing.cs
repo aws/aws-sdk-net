@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     /// </summary>
 	public partial interface IAmazonElasticLoadBalancing : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -768,5 +768,5 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

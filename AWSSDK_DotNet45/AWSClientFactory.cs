@@ -66,7 +66,7 @@ namespace Amazon
 
     public static class AWSClientFactory
     {
-		#region Amazon AutoScaling
+        #region Amazon AutoScaling
 
         /// <summary>
         /// Create a client for the Amazon AutoScaling Service with the credentials loaded from the application's
@@ -223,9 +223,9 @@ namespace Amazon
         {
             return new AmazonAutoScalingClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon CloudFormation
+        #region Amazon CloudFormation
 
         /// <summary>
         /// Create a client for the Amazon CloudFormation Service with the credentials loaded from the application's
@@ -382,9 +382,9 @@ namespace Amazon
         {
             return new AmazonCloudFormationClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon CloudFront
+        #region Amazon CloudFront
 
         /// <summary>
         /// Create a client for the Amazon CloudFront Service with the credentials loaded from the application's
@@ -541,9 +541,9 @@ namespace Amazon
         {
             return new AmazonCloudFrontClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon CloudSearch
+        #region Amazon CloudSearch
 
         /// <summary>
         /// Create a client for the Amazon CloudSearch Service with the credentials loaded from the application's
@@ -700,9 +700,9 @@ namespace Amazon
         {
             return new AmazonCloudSearchClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon CloudWatch
+        #region Amazon CloudWatch
 
         /// <summary>
         /// Create a client for the Amazon CloudWatch Service with the credentials loaded from the application's
@@ -859,9 +859,9 @@ namespace Amazon
         {
             return new AmazonCloudWatchClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon DataPipeline
+        #region Amazon DataPipeline
 
         /// <summary>
         /// Create a client for the Amazon DataPipeline Service with the credentials loaded from the application's
@@ -1018,9 +1018,9 @@ namespace Amazon
         {
             return new AmazonDataPipelineClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon DirectConnect
+        #region Amazon DirectConnect
 
         /// <summary>
         /// Create a client for the Amazon DirectConnect Service with the credentials loaded from the application's
@@ -1177,9 +1177,9 @@ namespace Amazon
         {
             return new AmazonDirectConnectClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon DynamoDB
+        #region Amazon DynamoDB
 
         /// <summary>
         /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's
@@ -1336,9 +1336,9 @@ namespace Amazon
         {
             return new AmazonDynamoDBClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon EC2
+        #region Amazon EC2
 
         /// <summary>
         /// Create a client for the Amazon EC2 Service with the credentials loaded from the application's
@@ -1495,9 +1495,9 @@ namespace Amazon
         {
             return new AmazonEC2Client(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ElasticBeanstalk
+        #region Amazon ElasticBeanstalk
 
         /// <summary>
         /// Create a client for the Amazon ElasticBeanstalk Service with the credentials loaded from the application's
@@ -1654,9 +1654,9 @@ namespace Amazon
         {
             return new AmazonElasticBeanstalkClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ElastiCache
+        #region Amazon ElastiCache
 
         /// <summary>
         /// Create a client for the Amazon ElastiCache Service with the credentials loaded from the application's
@@ -1813,9 +1813,9 @@ namespace Amazon
         {
             return new AmazonElastiCacheClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ElasticLoadBalancing
+        #region Amazon ElasticLoadBalancing
 
         /// <summary>
         /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials loaded from the application's
@@ -1972,9 +1972,9 @@ namespace Amazon
         {
             return new AmazonElasticLoadBalancingClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ElasticMapReduce
+        #region Amazon ElasticMapReduce
 
         /// <summary>
         /// Create a client for the Amazon ElasticMapReduce Service with the credentials loaded from the application's
@@ -2131,9 +2131,9 @@ namespace Amazon
         {
             return new AmazonElasticMapReduceClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ElasticTranscoder
+        #region Amazon ElasticTranscoder
 
         /// <summary>
         /// Create a client for the Amazon ElasticTranscoder Service with the credentials loaded from the application's
@@ -2290,9 +2290,9 @@ namespace Amazon
         {
             return new AmazonElasticTranscoderClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon Glacier
+        #region Amazon Glacier
 
         /// <summary>
         /// Create a client for the Amazon Glacier Service with the credentials loaded from the application's
@@ -2449,9 +2449,9 @@ namespace Amazon
         {
             return new AmazonGlacierClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon IdentityManagementService
+        #region Amazon IdentityManagementService
 
         /// <summary>
         /// Create a client for the Amazon IdentityManagementService Service with the credentials loaded from the application's
@@ -2608,9 +2608,9 @@ namespace Amazon
         {
             return new AmazonIdentityManagementServiceClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon ImportExport
+        #region Amazon ImportExport
 
         /// <summary>
         /// Create a client for the Amazon ImportExport Service with the credentials loaded from the application's
@@ -2767,9 +2767,9 @@ namespace Amazon
         {
             return new AmazonImportExportClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon OpsWorks
+        #region Amazon OpsWorks
 
         /// <summary>
         /// Create a client for the Amazon OpsWorks Service with the credentials loaded from the application's
@@ -2926,9 +2926,9 @@ namespace Amazon
         {
             return new AmazonOpsWorksClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon RDS
+        #region Amazon RDS
 
         /// <summary>
         /// Create a client for the Amazon RDS Service with the credentials loaded from the application's
@@ -3085,9 +3085,9 @@ namespace Amazon
         {
             return new AmazonRDSClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon Redshift
+        #region Amazon Redshift
 
         /// <summary>
         /// Create a client for the Amazon Redshift Service with the credentials loaded from the application's
@@ -3244,9 +3244,9 @@ namespace Amazon
         {
             return new AmazonRedshiftClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon Route53
+        #region Amazon Route53
 
         /// <summary>
         /// Create a client for the Amazon Route53 Service with the credentials loaded from the application's
@@ -3403,9 +3403,9 @@ namespace Amazon
         {
             return new AmazonRoute53Client(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon S3
+        #region Amazon S3
 
         /// <summary>
         /// Create a client for the Amazon S3 Service with the credentials loaded from the application's
@@ -3562,9 +3562,9 @@ namespace Amazon
         {
             return new AmazonS3Client(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SecurityTokenService
+        #region Amazon SecurityTokenService
 
         /// <summary>
         /// Create a client for the Amazon SecurityTokenService Service with the credentials loaded from the application's
@@ -3721,9 +3721,9 @@ namespace Amazon
         {
             return new AmazonSecurityTokenServiceClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SimpleDB
+        #region Amazon SimpleDB
 
         /// <summary>
         /// Create a client for the Amazon SimpleDB Service with the credentials loaded from the application's
@@ -3880,9 +3880,9 @@ namespace Amazon
         {
             return new AmazonSimpleDBClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SimpleEmailService
+        #region Amazon SimpleEmailService
 
         /// <summary>
         /// Create a client for the Amazon SimpleEmailService Service with the credentials loaded from the application's
@@ -4039,9 +4039,9 @@ namespace Amazon
         {
             return new AmazonSimpleEmailServiceClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SimpleNotificationService
+        #region Amazon SimpleNotificationService
 
         /// <summary>
         /// Create a client for the Amazon SimpleNotificationService Service with the credentials loaded from the application's
@@ -4198,9 +4198,9 @@ namespace Amazon
         {
             return new AmazonSimpleNotificationServiceClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SimpleWorkflow
+        #region Amazon SimpleWorkflow
 
         /// <summary>
         /// Create a client for the Amazon SimpleWorkflow Service with the credentials loaded from the application's
@@ -4357,9 +4357,9 @@ namespace Amazon
         {
             return new AmazonSimpleWorkflowClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon SQS
+        #region Amazon SQS
 
         /// <summary>
         /// Create a client for the Amazon SQS Service with the credentials loaded from the application's
@@ -4516,9 +4516,9 @@ namespace Amazon
         {
             return new AmazonSQSClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon StorageGateway
+        #region Amazon StorageGateway
 
         /// <summary>
         /// Create a client for the Amazon StorageGateway Service with the credentials loaded from the application's
@@ -4675,9 +4675,9 @@ namespace Amazon
         {
             return new AmazonStorageGatewayClient(credentials, config);
         }
-		#endregion
+        #endregion
 
-		#region Amazon AWSSupport
+        #region Amazon AWSSupport
 
         /// <summary>
         /// Create a client for the Amazon AWSSupport Service with the credentials loaded from the application's
@@ -4834,8 +4834,8 @@ namespace Amazon
         {
             return new AmazonAWSSupportClient(credentials, config);
         }
-		#endregion
+        #endregion
 
 
-	}
+    }
 }

@@ -31,10 +31,10 @@ namespace Amazon.SimpleNotificationService
     /// Amazon Simple Notification Service <para>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
     /// distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
     /// subscribers over multiple delivery protocols. For more information about this product see http://aws.amazon.com/sns. For detailed
-    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Getting Started Guide. </para> <para>We also
-    /// provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that
-    /// automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses.
-    /// For a list of available SDKs, go to Tools for Amazon Web Services. </para>
+    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Developer Guide. </para> <para>We also provide SDKs
+    /// that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care
+    /// of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
+    /// SDKs, go to Tools for Amazon Web Services. </para>
     /// </summary>
     public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, IAmazonSimpleNotificationService
     {
@@ -338,6 +338,154 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
     
+        #region CreatePlatformApplication
+
+        /// <summary>
+        /// <para>The <c>CreatePlatformApplication</c> action creates a platform application object for one of the supported push notification services,
+        /// such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes
+        /// when using the <c>CreatePlatformApplication</c> action. The PlatformPrincipal is received from the notification service. For
+        /// APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+        /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
+        /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
+        /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
+        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformApplicationRequest">Container for the necessary parameters to execute the CreatePlatformApplication service
+        ///          method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformApplication service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest)
+        {
+            IAsyncResult asyncResult = invokeCreatePlatformApplication(createPlatformApplicationRequest, null, null, true);
+            return EndCreatePlatformApplication(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformApplicationRequest">Container for the necessary parameters to execute the CreatePlatformApplication operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreatePlatformApplication operation.</returns>
+        public IAsyncResult BeginCreatePlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreatePlatformApplication(createPlatformApplicationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreatePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformApplication.</param>
+        /// 
+        /// <returns>Returns a CreatePlatformApplicationResult from AmazonSimpleNotificationService.</returns>
+        public CreatePlatformApplicationResponse EndCreatePlatformApplication(IAsyncResult asyncResult)
+        {
+            return endOperation<CreatePlatformApplicationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreatePlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreatePlatformApplicationRequestMarshaller().Marshall(createPlatformApplicationRequest);
+            var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreatePlatformEndpoint
+
+        /// <summary>
+        /// <para>The <c>CreatePlatformEndpoint</c> creates an endpoint for a device and mobile app on one of the supported push notification services,
+        /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
+        /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
+        /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
+        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformEndpointRequest">Container for the necessary parameters to execute the CreatePlatformEndpoint service method on
+        ///          AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformEndpoint service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest)
+        {
+            IAsyncResult asyncResult = invokeCreatePlatformEndpoint(createPlatformEndpointRequest, null, null, true);
+            return EndCreatePlatformEndpoint(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformEndpointRequest">Container for the necessary parameters to execute the CreatePlatformEndpoint operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreatePlatformEndpoint operation.</returns>
+        public IAsyncResult BeginCreatePlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreatePlatformEndpoint(createPlatformEndpointRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreatePlatformEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformEndpoint.</param>
+        /// 
+        /// <returns>Returns a CreatePlatformEndpointResult from AmazonSimpleNotificationService.</returns>
+        public CreatePlatformEndpointResponse EndCreatePlatformEndpoint(IAsyncResult asyncResult)
+        {
+            return endOperation<CreatePlatformEndpointResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreatePlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreatePlatformEndpointRequestMarshaller().Marshall(createPlatformEndpointRequest);
+            var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region CreateTopic
 
         /// <summary>
@@ -409,6 +557,130 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
     
+        #region DeleteEndpoint
+
+        /// <summary>
+        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see Using Amazon SNS
+        /// Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteEndpointRequest">Container for the necessary parameters to execute the DeleteEndpoint service method on
+        ///          AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteEndpoint(deleteEndpointRequest, null, null, true);
+            return EndDeleteEndpoint(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeleteEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteEndpointRequest">Container for the necessary parameters to execute the DeleteEndpoint operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteEndpoint(deleteEndpointRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeleteEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
+        public DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteEndpointResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteEndpointRequestMarshaller().Marshall(deleteEndpointRequest);
+            var unmarshaller = DeleteEndpointResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeletePlatformApplication
+
+        /// <summary>
+        /// <para>The <c>DeletePlatformApplication</c> action deletes a platform application object for one of the supported push notification services,
+        /// such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="deletePlatformApplicationRequest">Container for the necessary parameters to execute the DeletePlatformApplication service
+        ///          method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest)
+        {
+            IAsyncResult asyncResult = invokeDeletePlatformApplication(deletePlatformApplicationRequest, null, null, true);
+            return EndDeletePlatformApplication(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeletePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="deletePlatformApplicationRequest">Container for the necessary parameters to execute the DeletePlatformApplication operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeletePlatformApplication(deletePlatformApplicationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeletePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeletePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlatformApplication.</param>
+        public DeletePlatformApplicationResponse EndDeletePlatformApplication(IAsyncResult asyncResult)
+        {
+            return endOperation<DeletePlatformApplicationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeletePlatformApplicationRequestMarshaller().Marshall(deletePlatformApplicationRequest);
+            var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DeleteTopic
 
         /// <summary>
@@ -464,6 +736,146 @@ namespace Amazon.SimpleNotificationService
         {
             IRequest irequest = new DeleteTopicRequestMarshaller().Marshall(deleteTopicRequest);
             var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region GetEndpointAttributes
+
+        /// <summary>
+        /// <para>The <c>GetEndpointAttributes</c> retrieves the endpoint attributes for a device on one of the supported push notification services,
+        /// such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="getEndpointAttributesRequest">Container for the necessary parameters to execute the GetEndpointAttributes service method on
+        ///          AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the GetEndpointAttributes service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest)
+        {
+            IAsyncResult asyncResult = invokeGetEndpointAttributes(getEndpointAttributesRequest, null, null, true);
+            return EndGetEndpointAttributes(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="getEndpointAttributesRequest">Container for the necessary parameters to execute the GetEndpointAttributes operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetEndpointAttributes operation.</returns>
+        public IAsyncResult BeginGetEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetEndpointAttributes(getEndpointAttributesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpointAttributes.</param>
+        /// 
+        /// <returns>Returns a GetEndpointAttributesResult from AmazonSimpleNotificationService.</returns>
+        public GetEndpointAttributesResponse EndGetEndpointAttributes(IAsyncResult asyncResult)
+        {
+            return endOperation<GetEndpointAttributesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetEndpointAttributesRequestMarshaller().Marshall(getEndpointAttributesRequest);
+            var unmarshaller = GetEndpointAttributesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region GetPlatformApplicationAttributes
+
+        /// <summary>
+        /// <para>The <c>GetPlatformApplicationAttributes</c> action retrieves the attributes of the platform application object for the supported push
+        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="getPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the GetPlatformApplicationAttributes
+        ///          service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the GetPlatformApplicationAttributes service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest)
+        {
+            IAsyncResult asyncResult = invokeGetPlatformApplicationAttributes(getPlatformApplicationAttributesRequest, null, null, true);
+            return EndGetPlatformApplicationAttributes(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="getPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the GetPlatformApplicationAttributes
+        ///          operation on AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetPlatformApplicationAttributes operation.</returns>
+        public IAsyncResult BeginGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetPlatformApplicationAttributes(getPlatformApplicationAttributesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlatformApplicationAttributes.</param>
+        /// 
+        /// <returns>Returns a GetPlatformApplicationAttributesResult from AmazonSimpleNotificationService.</returns>
+        public GetPlatformApplicationAttributesResponse EndGetPlatformApplicationAttributes(IAsyncResult asyncResult)
+        {
+            return endOperation<GetPlatformApplicationAttributesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetPlatformApplicationAttributesRequestMarshaller().Marshall(getPlatformApplicationAttributesRequest);
+            var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -608,6 +1020,171 @@ namespace Amazon.SimpleNotificationService
             return result;
         }
         
+        
+
+        #endregion
+    
+        #region ListEndpointsByPlatformApplication
+
+        /// <summary>
+        /// <para>The <c>ListEndpointsByPlatformApplication</c> action lists the endpoints and endpoint attributes for devices in a supported push
+        /// notification service, such as GCM and APNS. The results for <c>ListEndpointsByPlatformApplication</c> are paginated and return a limited
+        /// list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To
+        /// receive the next page, you call <c>ListEndpointsByPlatformApplication</c> again using the NextToken string received from the previous call.
+        /// When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="listEndpointsByPlatformApplicationRequest">Container for the necessary parameters to execute the
+        ///          ListEndpointsByPlatformApplication service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the ListEndpointsByPlatformApplication service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest)
+        {
+            IAsyncResult asyncResult = invokeListEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest, null, null, true);
+            return EndListEndpointsByPlatformApplication(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEndpointsByPlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListEndpointsByPlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="listEndpointsByPlatformApplicationRequest">Container for the necessary parameters to execute the
+        ///          ListEndpointsByPlatformApplication operation on AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListEndpointsByPlatformApplication operation.</returns>
+        public IAsyncResult BeginListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest, AsyncCallback callback, object state)
+        {
+            return invokeListEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListEndpointsByPlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListEndpointsByPlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpointsByPlatformApplication.</param>
+        /// 
+        /// <returns>Returns a ListEndpointsByPlatformApplicationResult from AmazonSimpleNotificationService.</returns>
+        public ListEndpointsByPlatformApplicationResponse EndListEndpointsByPlatformApplication(IAsyncResult asyncResult)
+        {
+            return endOperation<ListEndpointsByPlatformApplicationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListEndpointsByPlatformApplicationRequestMarshaller().Marshall(listEndpointsByPlatformApplicationRequest);
+            var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ListPlatformApplications
+
+        /// <summary>
+        /// <para>The <c>ListPlatformApplications</c> action lists the platform application objects for the supported push notification services, such
+        /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
+        /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
+        /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
+        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications service method
+        ///          on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the ListPlatformApplications service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest)
+        {
+            IAsyncResult asyncResult = invokeListPlatformApplications(listPlatformApplicationsRequest, null, null, true);
+            return EndListPlatformApplications(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformApplications operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListPlatformApplications"/>
+        /// </summary>
+        /// 
+        /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListPlatformApplications operation.</returns>
+        public IAsyncResult BeginListPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest, AsyncCallback callback, object state)
+        {
+            return invokeListPlatformApplications(listPlatformApplicationsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListPlatformApplications operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListPlatformApplications"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformApplications.</param>
+        /// 
+        /// <returns>Returns a ListPlatformApplicationsResult from AmazonSimpleNotificationService.</returns>
+        public ListPlatformApplicationsResponse EndListPlatformApplications(IAsyncResult asyncResult)
+        {
+            return endOperation<ListPlatformApplicationsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListPlatformApplicationsRequestMarshaller().Marshall(listPlatformApplicationsRequest);
+            var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>The <c>ListPlatformApplications</c> action lists the platform application objects for the supported push notification services, such
+        /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
+        /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
+        /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
+        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListPlatformApplications service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public ListPlatformApplicationsResponse ListPlatformApplications()
+        {
+            return ListPlatformApplications(new ListPlatformApplicationsRequest());
+        }
         
 
         #endregion
@@ -862,7 +1439,10 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
         /// has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each
-        /// subscribed endpoint depends on the notification protocol selected.</para>
+        /// subscribed endpoint depends on the notification protocol selected.</para> <para>To use the <c>Publish</c> action for sending a message to a
+        /// mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when
+        /// making a call with the <c>CreatePlatformEndpoint</c> action. The second example below shows a request and response for publishing to a
+        /// mobile endpoint. </para>
         /// </summary>
         /// 
         /// <param name="publishRequest">Container for the necessary parameters to execute the Publish service method on
@@ -871,6 +1451,8 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the Publish service method, as returned by AmazonSimpleNotificationService.</returns>
         /// 
         /// <exception cref="NotFoundException"/>
+        /// <exception cref="PlatformApplicationDisabledException"/>
+        /// <exception cref="EndpointDisabledException"/>
         /// <exception cref="AuthorizationErrorException"/>
         /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidParameterException"/>
@@ -981,6 +1563,132 @@ namespace Amazon.SimpleNotificationService
         {
             IRequest irequest = new RemovePermissionRequestMarshaller().Marshall(removePermissionRequest);
             var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region SetEndpointAttributes
+
+        /// <summary>
+        /// <para>The <c>SetEndpointAttributes</c> action sets the attributes for an endpoint for a device on one of the supported push notification
+        /// services, such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="setEndpointAttributesRequest">Container for the necessary parameters to execute the SetEndpointAttributes service method on
+        ///          AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest)
+        {
+            IAsyncResult asyncResult = invokeSetEndpointAttributes(setEndpointAttributesRequest, null, null, true);
+            return EndSetEndpointAttributes(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="setEndpointAttributesRequest">Container for the necessary parameters to execute the SetEndpointAttributes operation on
+        ///          AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginSetEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest, AsyncCallback callback, object state)
+        {
+            return invokeSetEndpointAttributes(setEndpointAttributesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetEndpointAttributes.</param>
+        public SetEndpointAttributesResponse EndSetEndpointAttributes(IAsyncResult asyncResult)
+        {
+            return endOperation<SetEndpointAttributesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeSetEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new SetEndpointAttributesRequestMarshaller().Marshall(setEndpointAttributesRequest);
+            var unmarshaller = SetEndpointAttributesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region SetPlatformApplicationAttributes
+
+        /// <summary>
+        /// <para>The <c>SetPlatformApplicationAttributes</c> action sets the attributes of the platform application object for the supported push
+        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="setPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the SetPlatformApplicationAttributes
+        ///          service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="NotFoundException"/>
+        /// <exception cref="AuthorizationErrorException"/>
+        /// <exception cref="InternalErrorException"/>
+        /// <exception cref="InvalidParameterException"/>
+        public SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest)
+        {
+            IAsyncResult asyncResult = invokeSetPlatformApplicationAttributes(setPlatformApplicationAttributesRequest, null, null, true);
+            return EndSetPlatformApplicationAttributes(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="setPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the SetPlatformApplicationAttributes
+        ///          operation on AmazonSimpleNotificationService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest, AsyncCallback callback, object state)
+        {
+            return invokeSetPlatformApplicationAttributes(setPlatformApplicationAttributesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetPlatformApplicationAttributes.</param>
+        public SetPlatformApplicationAttributesResponse EndSetPlatformApplicationAttributes(IAsyncResult asyncResult)
+        {
+            return endOperation<SetPlatformApplicationAttributesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new SetPlatformApplicationAttributesRequestMarshaller().Marshall(setPlatformApplicationAttributesRequest);
+            var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

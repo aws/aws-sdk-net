@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken
     /// the abbreviated form IAM. All copyrights and legal protections still apply. </para>
     /// </summary>
 	public partial interface IAmazonSecurityTokenService : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -225,5 +225,5 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by AmazonSecurityTokenService.</returns>
 		GetSessionTokenResponse GetSessionToken();
-	}
+    }
 }

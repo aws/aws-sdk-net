@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken
     /// the abbreviated form IAM. All copyrights and legal protections still apply. </para>
     /// </summary>
 	public partial interface IAmazonSecurityTokenService : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) that you
@@ -165,5 +165,5 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest getSessionTokenRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

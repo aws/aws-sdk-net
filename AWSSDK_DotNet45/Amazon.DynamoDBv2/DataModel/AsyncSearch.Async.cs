@@ -17,9 +17,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.Runtime.Internal;
 
-namespace AWSSDK.Amazon.DynamoDBv2.DataModel
+using Amazon.Runtime.Internal;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.DataModel;
+
+namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
     /// A strongly-typed object for retrieving search results (Query or Scan)

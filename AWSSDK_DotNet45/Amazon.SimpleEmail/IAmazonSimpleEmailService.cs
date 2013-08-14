@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmail
     /// https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial interface IAmazonSimpleEmailService : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -551,5 +551,5 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

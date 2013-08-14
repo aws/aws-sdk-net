@@ -32,7 +32,7 @@ namespace Amazon.ElasticBeanstalk
     /// .</para>
     /// </summary>
 	public partial interface IAmazonElasticBeanstalk : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -853,5 +853,5 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

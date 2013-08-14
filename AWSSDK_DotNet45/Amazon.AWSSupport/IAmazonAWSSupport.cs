@@ -54,7 +54,7 @@ namespace Amazon.AWSSupport
     /// results of checks on your resources. </para>
     /// </summary>
 	public partial interface IAmazonAWSSupport : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -470,5 +470,5 @@ namespace Amazon.AWSSupport
         /// <exception cref="T:Amazon.AWSSupport.Model.InternalServerErrorException" />
         /// <exception cref="T:Amazon.AWSSupport.Model.CaseIdNotFoundException" />
 		ResolveCaseResponse ResolveCase();
-	}
+    }
 }

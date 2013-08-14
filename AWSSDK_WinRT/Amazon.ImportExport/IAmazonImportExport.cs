@@ -29,7 +29,7 @@ namespace Amazon.ImportExport
     /// effective than upgrading your connectivity. </para>
     /// </summary>
 	public partial interface IAmazonImportExport : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is
@@ -143,5 +143,5 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest updateJobRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

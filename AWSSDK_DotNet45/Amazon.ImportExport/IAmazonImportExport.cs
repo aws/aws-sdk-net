@@ -29,7 +29,7 @@ namespace Amazon.ImportExport
     /// effective than upgrading your connectivity. </para>
     /// </summary>
 	public partial interface IAmazonImportExport : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -207,5 +207,5 @@ namespace Amazon.ImportExport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

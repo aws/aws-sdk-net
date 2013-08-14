@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation
     /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para>
     /// </summary>
 	public partial interface IAmazonCloudFormation : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the
@@ -231,5 +231,5 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest validateTemplateRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

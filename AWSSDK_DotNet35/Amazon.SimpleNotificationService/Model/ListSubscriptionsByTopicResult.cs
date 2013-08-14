@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// 
+    /// <para>Response for ListSubscriptionsByTopic action.</para>
     /// </summary>
     public partial class ListSubscriptionsByTopicResult : AmazonWebServiceResponse
     {

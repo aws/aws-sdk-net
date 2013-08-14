@@ -27,7 +27,7 @@ namespace Amazon.CloudSearch
     /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
     /// </summary>
 	public partial interface IAmazonCloudSearch : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -607,5 +607,5 @@ namespace Amazon.CloudSearch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateSynonymOptionsResponse> UpdateSynonymOptionsAsync(UpdateSynonymOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

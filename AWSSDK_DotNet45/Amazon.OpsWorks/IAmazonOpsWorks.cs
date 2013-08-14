@@ -26,7 +26,7 @@ namespace Amazon.OpsWorks
     /// AWS OpsWorks
     /// </summary>
 	public partial interface IAmazonOpsWorks : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -1147,5 +1147,5 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

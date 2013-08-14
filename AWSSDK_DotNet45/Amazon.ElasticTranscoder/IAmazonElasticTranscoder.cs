@@ -26,7 +26,7 @@ namespace Amazon.ElasticTranscoder
     /// AWS Elastic Transcoder Service <para>The AWS Elastic Transcoder Service.</para>
     /// </summary>
 	public partial interface IAmazonElasticTranscoder : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -844,5 +844,5 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
         /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
 		UpdatePipelineStatusResponse UpdatePipelineStatus();
-	}
+    }
 }

@@ -29,7 +29,7 @@ namespace Amazon.ElasticMapReduce
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial interface IAmazonElasticMapReduce : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para>AddInstanceGroups adds an instance group to a running cluster.</para>
@@ -188,5 +188,5 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest terminateJobFlowsRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

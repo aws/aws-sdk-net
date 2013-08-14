@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         /// <summary>
         /// Gets and sets the ConfirmSubscriptionResult property.
-        /// 
+        /// Response for ConfirmSubscriptions action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ConfirmSubscriptionResult class are now available on the ConfirmSubscriptionResponse class. You should use the properties on ConfirmSubscriptionResponse instead of accessing them through ConfirmSubscriptionResult.")]
         public ConfirmSubscriptionResult ConfirmSubscriptionResult

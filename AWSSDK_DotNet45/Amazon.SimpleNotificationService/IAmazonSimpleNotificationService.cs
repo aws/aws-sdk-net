@@ -32,7 +32,7 @@ namespace Amazon.SimpleNotificationService
     /// For a list of available SDKs, go to Tools for Amazon Web Services. </para>
     /// </summary>
 	public partial interface IAmazonSimpleNotificationService : IDisposable
-	{
+    {
  
 
         /// <summary>
@@ -494,5 +494,5 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

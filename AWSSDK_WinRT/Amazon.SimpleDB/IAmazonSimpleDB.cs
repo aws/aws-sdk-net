@@ -33,7 +33,7 @@ namespace Amazon.SimpleDB
     /// more information. </para>
     /// </summary>
 	public partial interface IAmazonSimpleDB : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB
@@ -288,5 +288,5 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<SelectResponse> SelectAsync(SelectRequest selectRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }

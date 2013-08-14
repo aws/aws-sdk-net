@@ -130,7 +130,7 @@ namespace Amazon.SimpleWorkflow
     /// </ul>
     /// </summary>
 	public partial interface IAmazonSimpleWorkflow : IDisposable
-	{
+    {
  
         /// <summary>
         /// <para> Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria. </para>
@@ -1103,5 +1103,5 @@ namespace Amazon.SimpleWorkflow
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken));
-	}
+    }
 }
