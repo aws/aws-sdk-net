@@ -40,7 +40,7 @@
     <SccProvider>
     </SccProvider>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\aws-sdk-private.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>awssdk.dll.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

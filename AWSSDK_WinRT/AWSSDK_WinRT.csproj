@@ -188,7 +188,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\aws-sdk-private.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>awssdk.dll.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Amazon.MissingTypes\IOrderedDictionary.cs" />
