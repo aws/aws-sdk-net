@@ -5972,6 +5972,10 @@ namespace Amazon.EC2
                 int instanceNetworkInterfaceListIndex = 1;
                 foreach (InstanceNetworkInterfaceSpecification instanceNetworkInterface in instanceNetworkInterfaceList)
                 {
+                    if (instanceNetworkInterface.IsSetAssociatePublicIpAddress())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "AssociatePublicIpAddress")] = instanceNetworkInterface.AssociatePublicIpAddress.ToString();
+                    }
                     if (instanceNetworkInterface.IsSetNetworkInterfaceId())
                     {
                         parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "NetworkInterfaceId")] = instanceNetworkInterface.NetworkInterfaceId;
@@ -6523,6 +6527,10 @@ namespace Amazon.EC2
                     int instanceNetworkInterfaceListIndex = 1;
                     foreach (InstanceNetworkInterfaceSpecification instanceNetworkInterface in instanceNetworkInterfaceList)
                     {
+                        if (instanceNetworkInterface.IsSetAssociatePublicIpAddress())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "AssociatePublicIpAddress")] = instanceNetworkInterface.AssociatePublicIpAddress.ToString();
+                        }
                         if (instanceNetworkInterface.IsSetNetworkInterfaceId())
                         {
                             parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "NetworkInterfaceId")] = instanceNetworkInterface.NetworkInterfaceId;
@@ -6556,6 +6564,21 @@ namespace Amazon.EC2
                                 parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SecurityGroupId", ".", groupIdIndex)] = groupId;
                                 groupIdIndex++;
                             }
+                        }
+                        if (instanceNetworkInterface.IsSetPrivateIpAddresses())
+                        {
+                            List<PrivateIpAddress> privateIpAddressesList = instanceNetworkInterface.PrivateIpAddresses;
+                            int privateIpAddressesListIndex = 1;
+                            foreach (PrivateIpAddress privateIpAddress in privateIpAddressesList)
+                            {
+                                parameters[String.Concat("LaunchSpecification", ".","NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "Primary")] = privateIpAddress.Primary.ToString().ToLower();
+                                parameters[String.Concat("LaunchSpecification", ".","NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "PrivateIpAddress")] = privateIpAddress.IpAddress;
+                                privateIpAddressesListIndex++;
+                            }
+                        }
+                        if (instanceNetworkInterface.IsSetSecondaryPrivateIpAddressCount())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".","NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SecondaryPrivateIpAddressCount")] = instanceNetworkInterface.SecondaryPrivateIpAddressCount.ToString();
                         }
 
                         instanceNetworkInterfaceListIndex++;

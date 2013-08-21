@@ -23,8 +23,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -35,17 +34,14 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
-
-
-using Amazon.Util;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
+using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-
-using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
-using System.Globalization;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3
 {
@@ -6301,10 +6297,8 @@ namespace Amazon.S3
             {
                 if (httpResponse != null && string.IsNullOrEmpty(httpResponse.Headers["Location"]))
                 {
-                    throw new WebException(
-                        "A redirect was returned without a new location.  This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.",
-                        WebExceptionStatus.ProtocolError
-                        );
+                    throw new AmazonS3Exception(
+                        "A redirect was returned without a new location. This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.");
                 }
 
                 shouldRetry = true;

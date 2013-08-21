@@ -31,18 +31,92 @@ namespace Amazon.EC2.Model
     [XmlRootAttribute(IsNullable = false)]
     public class InstanceNetworkInterfaceSpecification
     {
-        private string networkInterfaceIdField;
-        private int? deviceIndexField;
-        private string subnetIdField;
-        private string descriptionField;
-        private string privateIpAddressField;
-        private List<string> groupIdField;
+        private bool? associatePublicIpAddress;
         private bool? deleteOnTerminationField;
+        private string descriptionField;
+        private int? deviceIndexField;
+        private List<string> groupIdField;
+        private string networkInterfaceIdField;
+        private string privateIpAddressField;
         private List<PrivateIpAddress> privateIpAddressesField;
         private int? secondaryPrivateIpAddressCountField;
+        private string subnetIdField;
+
 
         /// <summary>
-        /// The ID of the network interface.
+        /// Indicates whether to assign a public IP address to an instance in a VPC.        
+        /// </summary>
+        /// <remarks>
+        /// <para>The public IP address is associated with a specific network interface. 
+        /// If set to <b>true</b>, the following rules apply:</para>
+        /// <ol>
+        /// <li>
+        /// <p>Can only be associated with a single network interface with
+        /// the device index of 0. You can't associate a public IP address
+        /// with a second network interface, and you can't associate a
+        /// public IP address if you are launching more than one network
+        /// interface.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can only be associated with a new network interface, 
+        /// not an existing one.</p>
+        /// </li>
+        /// </ol>
+        /// <p>
+        /// Default: If launching into a default subnet, the default value is <b>true</b>.
+        /// If launching into a nondefault subnet, the default value is <b>false</b>. 
+        /// </p>
+        /// </remarks>
+        [XmlElementAttribute(ElementName = "AssociatePublicIpAddress")]
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress.GetValueOrDefault(); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        /// <summary>
+        /// Indicates whether to assign a public IP address to an instance in a VPC.        
+        /// </summary>
+        /// <remarks>
+        /// <para>The public IP address is associated with a specific network interface. 
+        /// If set to <b>true</b>, the following rules apply:</para>
+        /// <ol>
+        /// <li>
+        /// <p>Can only be associated with a single network interface with
+        /// the device index of 0. You can't associate a public IP address
+        /// with a second network interface, and you can't associate a
+        /// public IP address if you are launching more than one network
+        /// interface.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can only be associated with a new network interface, 
+        /// not an existing one.</p>
+        /// </li>
+        /// </ol>
+        /// <p>
+        /// Default: If launching into a default subnet, the default value is <b>true</b>.
+        /// If launching into a nondefault subnet, the default value is <b>false</b>. 
+        /// </p>
+        /// </remarks>
+        /// <param name="associatePublicIpAddress">Indicates whether to assign a public IP address to an instance in a VPC.</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterfaceSpecification WithAssociatePublicIpAddress(bool associatePublicIpAddress)
+        {
+            this.associatePublicIpAddress = associatePublicIpAddress;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the AssociatePublicIpAddress property is set.
+        /// </summary>
+        /// <returns>true if the AssociatePublicIpAddress property is set.</returns>
+        public bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress != null;
+        }
+
+        /// <summary>
+        /// An existing interface to attach to a single instance. Requires n=1 instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
         public string NetworkInterfaceId
@@ -52,7 +126,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ID of the network interface.
+        /// An existing interface to attach to a single instance. Requires n=1 instances.
         /// </summary>
         /// <param name="networkInterfaceId">The network interface ID.</param>
         /// <returns>this instance</returns>
@@ -73,8 +147,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The index of the device on the instance for the network interface attachment.
+        /// The device index. Applies to both attaching an existing network interface and when
+        /// creating a network interface.
         /// </summary>
+        /// <remarks>
+        /// Condition: If you are specifying a network interface in the
+        /// request, you must provide the device index.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "DeviceIndex")]
         public int DeviceIndex
         {
@@ -83,8 +162,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the index of the device on the instance for the network interface attachment.
+        /// The device index. Applies to both attaching an existing network interface and when
+        /// creating a network interface.
         /// </summary>
+        /// <remarks>
+        /// Condition: If you are specifying a network interface in the
+        /// request, you must provide the device index.
+        /// </remarks>
         /// <param name="deviceIndex">The index of the device on the instance for the network interface attachment.</param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
@@ -104,7 +188,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the subnet.
+        /// The subnet ID. Applies only when creating a network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -114,7 +198,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ID of the subnet.
+        /// The subnet ID. Applies only when creating a network interface.
         /// </summary>
         /// <param name="subnetId">The ID of the subnet associated with the network string.</param>
         /// <returns>this instance</returns>
@@ -135,7 +219,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description of the network interface.
+        /// A description. Applies only when creating a network interface.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
@@ -145,7 +229,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the description of the network interface.
+        /// A description. Applies only when creating a network interface.
         /// </summary>
         /// <param name="description">The description of the network interface.</param>
         /// <returns>this instance</returns>
@@ -166,7 +250,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The private IP address of the network interface.
+        /// The primary private IP address. 
+        /// Applies only when creating a network interface. 
+        /// Requires n=1 network interfaces in launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -176,7 +262,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the private IP address of the network interface.
+        /// The primary private IP address. 
+        /// Applies only when creating a network interface. 
+        /// Requires n=1 network interfaces in launch.
         /// </summary>
         /// <param name="ipAddress">IP address of the network interface</param>
         /// <returns>this instance</returns>
