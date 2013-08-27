@@ -316,7 +316,12 @@ namespace Amazon.S3.Transfer
         /// </summary>
         internal NameValueCollection Metadata
         {
-            get { return this._metadata; }
+            get
+            {
+                if (this._metadata == null)
+                    this._metadata = new NameValueCollection();
+                return this._metadata;
+            }
             set { this._metadata = value; }
         }
 
