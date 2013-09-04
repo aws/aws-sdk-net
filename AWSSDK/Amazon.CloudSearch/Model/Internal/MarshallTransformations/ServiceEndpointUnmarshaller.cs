@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ServiceEndpoint Unmarshaller
      /// </summary>
-    internal class ServiceEndpointUnmarshaller : IUnmarshaller<ServiceEndpoint, XmlUnmarshallerContext> 
+    internal class ServiceEndpointUnmarshaller : IUnmarshaller<ServiceEndpoint, XmlUnmarshallerContext>, IUnmarshaller<ServiceEndpoint, JsonUnmarshallerContext> 
     {
         public ServiceEndpoint Unmarshall(XmlUnmarshallerContext context) 
         {
             ServiceEndpoint serviceEndpoint = new ServiceEndpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return serviceEndpoint;
+        }
+
+        public ServiceEndpoint Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ServiceEndpointUnmarshaller instance;

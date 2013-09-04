@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Specifies the current state of this Cache Node. </para>
+    /// <para>Provides ownership and status information for an Amazon EC2 security group.</para>
     /// </summary>
     public class EC2SecurityGroup
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// Provides the status of the EC2 Security Group.
+        /// The status of the Amazon EC2 security group.
         ///  
         /// </summary>
         public string Status
@@ -60,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the EC2 Security Group.
+        /// The name of the Amazon EC2 security group.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -89,7 +89,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the AWS ID of the owner of the EC2 Security Group specified in the <i>EC2SecurityGroupName</i> field.
+        /// The AWS account ID of the Amazon EC2 security group owner.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId

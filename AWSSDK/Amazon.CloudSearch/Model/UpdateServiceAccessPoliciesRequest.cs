@@ -26,7 +26,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Container for the parameters to the UpdateServiceAccessPolicies operation.
     /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
-    /// document is 100KB.</para>
+    /// document is 100 KB.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.UpdateServiceAccessPolicies"/>
     public class UpdateServiceAccessPoliciesRequest : AmazonWebServiceRequest
@@ -75,15 +75,16 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
         /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
-        /// document is 100KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:search/movies",
-        /// "Condition": { "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</c>
+        /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
+        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
+        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
+        /// ["203.0.113.1/32"] } }} ] }</c>
         ///  
         /// </summary>
         public string AccessPolicies
@@ -108,7 +109,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;       
+            return this.accessPolicies != null;
         }
     }
 }

@@ -23,13 +23,13 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a <c>uint</c> field in the search index.</para>
     /// </summary>
-    public class UIntOptions  
+    public class UIntOptions
     {
         
         private int? defaultValue;
 
         /// <summary>
-        /// The default value for an unsigned integer field.
+        /// The default value for an unsigned integer field. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -63,7 +63,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue.HasValue;       
+            return this.defaultValue.HasValue;
         }
     }
 }

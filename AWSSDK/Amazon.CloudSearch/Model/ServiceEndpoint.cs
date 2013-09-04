@@ -24,14 +24,14 @@ namespace Amazon.CloudSearch.Model
     /// <para>The endpoint to which service requests can be submitted, including the actual URL prefix for sending requests and the Amazon Resource
     /// Name (ARN) so the endpoint can be referenced in other API calls such as UpdateServiceAccessPolicies.</para>
     /// </summary>
-    public class ServiceEndpoint  
+    public class ServiceEndpoint
     {
         
         private string arn;
         private string endpoint;
 
         /// <summary>
-        /// An Amazon Resource Name (ARN). See <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+        /// An Amazon Resource Name (ARN). See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
         /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
         ///  
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;       
+            return this.endpoint != null;
         }
     }
 }

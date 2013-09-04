@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UIntOptions Unmarshaller
      /// </summary>
-    internal class UIntOptionsUnmarshaller : IUnmarshaller<UIntOptions, XmlUnmarshallerContext> 
+    internal class UIntOptionsUnmarshaller : IUnmarshaller<UIntOptions, XmlUnmarshallerContext>, IUnmarshaller<UIntOptions, JsonUnmarshallerContext> 
     {
         public UIntOptions Unmarshall(XmlUnmarshallerContext context) 
         {
             UIntOptions uIntOptions = new UIntOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return uIntOptions;
+        }
+
+        public UIntOptions Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UIntOptionsUnmarshaller instance;

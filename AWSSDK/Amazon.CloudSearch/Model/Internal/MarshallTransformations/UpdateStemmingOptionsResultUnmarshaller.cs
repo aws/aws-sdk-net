@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UpdateStemmingOptionsResult Unmarshaller
      /// </summary>
-    internal class UpdateStemmingOptionsResultUnmarshaller : IUnmarshaller<UpdateStemmingOptionsResult, XmlUnmarshallerContext> 
+    internal class UpdateStemmingOptionsResultUnmarshaller : IUnmarshaller<UpdateStemmingOptionsResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateStemmingOptionsResult, JsonUnmarshallerContext> 
     {
         public UpdateStemmingOptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UpdateStemmingOptionsResult updateStemmingOptionsResult = new UpdateStemmingOptionsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return updateStemmingOptionsResult;
+        }
+
+        public UpdateStemmingOptionsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UpdateStemmingOptionsResultUnmarshaller instance;

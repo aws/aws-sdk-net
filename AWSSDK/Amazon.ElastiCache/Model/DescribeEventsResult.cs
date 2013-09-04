@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of Events. </para>
+    /// <para>Represents the output of a <i>DescribeEvents</i> operation.</para>
     /// </summary>
     public class DescribeEventsResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<Event> events = new List<Event>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>Event</a> instances.
+        /// A list of events. Each element in the list contains detailed information about one event.
         ///  
         /// </summary>
         public List<Event> Events

@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
-    /// </para>
+    /// <para>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant
+    /// caching software - either Memcached or Redis.</para>
     /// </summary>
     public class CacheNode
     {
@@ -32,9 +32,11 @@ namespace Amazon.ElastiCache.Model
         private DateTime? cacheNodeCreateTime;
         private Endpoint endpoint;
         private string parameterGroupStatus;
+        private string sourceCacheNodeId;
 
         /// <summary>
-        /// Specifies a Cache Node identifier. This is the unique key that identifies a Cache Node per Customer (AWS account).
+        /// The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely
+        /// identifies every cache node used in a customer's AWS account.
         ///  
         /// </summary>
         public string CacheNodeId
@@ -63,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the current state of this Cache Node.
+        /// The current state of this cache node.
         ///  
         /// </summary>
         public string CacheNodeStatus
@@ -92,7 +94,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the date and time the Cache Node was created.
+        /// The date and time the cache node was created.
         ///  
         /// </summary>
         public DateTime CacheNodeCreateTime
@@ -121,7 +123,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the endpoint details for a Cache Node.
+        /// The hostname and IP address for connecting to this cache node.
         ///  
         /// </summary>
         public Endpoint Endpoint
@@ -150,7 +152,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the status of the parameter group applied to this Cache Node.
+        /// The status of the parameter group applied to this cache node.
         ///  
         /// </summary>
         public string ParameterGroupStatus
@@ -176,6 +178,36 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetParameterGroupStatus()
         {
             return this.parameterGroupStatus != null;
+        }
+
+        /// <summary>
+        /// The ID of the primary node to which this read replica node is synchronized. If this field is empty, then this node is not associated with a
+        /// primary cache cluster.
+        ///  
+        /// </summary>
+        public string SourceCacheNodeId
+        {
+            get { return this.sourceCacheNodeId; }
+            set { this.sourceCacheNodeId = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceCacheNodeId property
+        /// </summary>
+        /// <param name="sourceCacheNodeId">The value to set for the SourceCacheNodeId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CacheNode WithSourceCacheNodeId(string sourceCacheNodeId)
+        {
+            this.sourceCacheNodeId = sourceCacheNodeId;
+            return this;
+        }
+            
+
+        // Check to see if SourceCacheNodeId property is set
+        internal bool IsSetSourceCacheNodeId()
+        {
+            return this.sourceCacheNodeId != null;
         }
     }
 }

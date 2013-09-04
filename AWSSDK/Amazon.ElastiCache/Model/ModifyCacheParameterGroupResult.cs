@@ -21,7 +21,12 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the name of a Cache Parameter Group. </para>
+    /// <para>Represents the output of one of the following operations:</para>
+    /// <ul>
+    /// <li> <i>ModifyCacheParameterGroup</i> </li>
+    /// <li> <i>ResetCacheParameterGroup</i> </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class ModifyCacheParameterGroupResult
     {
@@ -29,7 +34,7 @@ namespace Amazon.ElastiCache.Model
         private string cacheParameterGroupName;
 
         /// <summary>
-        /// The name of the Cache Parameter Group.
+        /// The name of the cache parameter group.
         ///  
         /// </summary>
         public string CacheParameterGroupName

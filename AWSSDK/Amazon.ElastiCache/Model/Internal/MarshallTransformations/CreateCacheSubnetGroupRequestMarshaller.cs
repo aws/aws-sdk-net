@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createCacheSubnetGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "CreateCacheSubnetGroup");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (createCacheSubnetGroupRequest != null && createCacheSubnetGroupRequest.IsSetCacheSubnetGroupName())
             {
                 request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(createCacheSubnetGroupRequest.CacheSubnetGroupName));

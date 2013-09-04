@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   IndexField Unmarshaller
      /// </summary>
-    internal class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext> 
+    internal class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext>, IUnmarshaller<IndexField, JsonUnmarshallerContext> 
     {
         public IndexField Unmarshall(XmlUnmarshallerContext context) 
         {
             IndexField indexField = new IndexField();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -82,6 +83,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return indexField;
+        }
+
+        public IndexField Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static IndexFieldUnmarshaller instance;

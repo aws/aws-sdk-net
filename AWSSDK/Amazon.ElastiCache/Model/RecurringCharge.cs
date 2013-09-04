@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
-    /// </para>
+    /// <para>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node
+    /// offering.</para>
     /// </summary>
     public class RecurringCharge
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private string recurringChargeFrequency;
 
         /// <summary>
-        /// The amount of the recurring charge.
+        /// The monetary amount of the recurring charge.
         ///  
         /// </summary>
         public double RecurringChargeAmount

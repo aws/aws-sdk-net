@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UpdateDefaultSearchFieldResult Unmarshaller
      /// </summary>
-    internal class UpdateDefaultSearchFieldResultUnmarshaller : IUnmarshaller<UpdateDefaultSearchFieldResult, XmlUnmarshallerContext> 
+    internal class UpdateDefaultSearchFieldResultUnmarshaller : IUnmarshaller<UpdateDefaultSearchFieldResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateDefaultSearchFieldResult, JsonUnmarshallerContext> 
     {
         public UpdateDefaultSearchFieldResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UpdateDefaultSearchFieldResult updateDefaultSearchFieldResult = new UpdateDefaultSearchFieldResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return updateDefaultSearchFieldResult;
+        }
+
+        public UpdateDefaultSearchFieldResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UpdateDefaultSearchFieldResultUnmarshaller instance;

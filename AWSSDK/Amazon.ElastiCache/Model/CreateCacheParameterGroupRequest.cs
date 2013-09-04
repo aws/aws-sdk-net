@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheParameterGroup operation.
-    /// <para> Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache Cluster.</para>
+    /// <para>The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group. A cache parameter group is a collection of
+    /// parameters that you apply to all of the nodes in a cache cluster.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.CreateCacheParameterGroup"/>
     public class CreateCacheParameterGroupRequest : AmazonWebServiceRequest
@@ -35,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string description;
 
         /// <summary>
-        /// The name of the Cache Parameter Group.
+        /// A user-specified name for the cache parameter group.
         ///  
         /// </summary>
         public string CacheParameterGroupName
@@ -64,8 +65,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The name of the Cache Parameter Group Family the Cache Parameter Group can be used with. <note>Currently, <i>memcached1.4</i> is the only
-        /// cache parameter group family supported by the service.</note>
+        /// The name of the cache parameter group family the cache parameter group can be used with. Valid values are: <c>memcached1.4</c> |
+        /// <c>redis2.6</c>
         ///  
         /// </summary>
         public string CacheParameterGroupFamily
@@ -94,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description for the Cache Parameter Group.
+        /// A user-specified description for the cache parameter group.
         ///  
         /// </summary>
         public string Description

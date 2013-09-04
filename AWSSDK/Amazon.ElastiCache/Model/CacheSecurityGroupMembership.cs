@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Links a CacheCluster to one or more CacheSecurityGroups. </para>
+    /// <para>Represents a cache cluster's status within a particular cache security group.</para>
     /// </summary>
     public class CacheSecurityGroupMembership
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private string status;
 
         /// <summary>
-        /// The name of the Cache Security Group.
+        /// The name of the cache security group.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -59,8 +59,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The status of the CacheSecurityGroupMembership, the status changes either when a CacheSecurityGroup is modified, or when the
-        /// CacheSecurityGroups assigned to a Cache Cluster are modified.
+        /// The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security
+        /// groups assigned to a cache cluster are modified.
         ///  
         /// </summary>
         public string Status

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> The status of the Cache Parameter Group. </para>
+    /// <para>The status of the cache parameter group.</para>
     /// </summary>
     public class CacheParameterGroupStatus
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> cacheNodeIdsToReboot = new List<string>();
 
         /// <summary>
-        /// The name of the Cache Parameter Group.
+        /// The name of the cache parameter group.
         ///  
         /// </summary>
         public string CacheParameterGroupName
@@ -89,7 +89,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of the Cache Node Ids which need to be rebooted for parameter changes to be applied.
+        /// A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002,
+        /// etc.).
         ///  
         /// </summary>
         public List<string> CacheNodeIdsToReboot

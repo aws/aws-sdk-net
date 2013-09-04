@@ -25,15 +25,15 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheClusters operation.
-    /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
-    /// Cluster if a Cache Cluster identifier is supplied. </para> <para> Cluster information will be returned by default. An optional
-    /// <i>ShowDetails</i> flag can be used to retrieve detailed information about the Cache Nodes associated with the Cache Cluster. Details
-    /// include the DNS address and port for the Cache Node endpoint. </para> <para> If the cluster is in the CREATING state, only cluster level
-    /// information will be displayed until all of the nodes are successfully provisioned. </para> <para> If the cluster is in the DELETING state,
-    /// only cluster level information will be displayed. </para> <para> While adding Cache Nodes, node endpoint information and creation time for
-    /// the additional nodes will not be displayed until they are completely provisioned. The cluster lifecycle tells the customer when new nodes
-    /// are AVAILABLE. </para> <para> While removing existing Cache Nodes from an cluster, endpoint information for the removed nodes will not be
-    /// displayed. </para> <para>DescribeCacheClusters supports pagination.</para>
+    /// <para>The <i>DescribeCacheClusters</i> operation returns information about all provisioned cache clusters if no cache cluster identifier is
+    /// specified, or about a specific cache cluster if a cache cluster identifier is supplied.</para> <para>By default, abbreviated information
+    /// about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the
+    /// cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</para> <para>If
+    /// the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully
+    /// provisioned.</para> <para>If the cluster is in the DELETING state, only cluster level information will be displayed.</para> <para>If cache
+    /// nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be
+    /// displayed until they are completely provisioned. When the cache cluster state is <i>available</i> , the cluster is ready for use.</para>
+    /// <para>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeCacheClusters"/>
     public class DescribeCacheClustersRequest : AmazonWebServiceRequest
@@ -44,7 +44,7 @@ namespace Amazon.ElastiCache.Model
         private bool? showCacheNodeInfo;
 
         /// <summary>
-        /// The user-supplied cluster identifier. If this parameter is specified, only information about that specific Cache Cluster is returned. This
+        /// The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This
         /// parameter isn't case sensitive.
         ///  
         /// </summary>
@@ -74,8 +74,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -104,8 +104,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker
@@ -134,7 +134,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional flag that can be included in the DescribeCacheCluster request to retrieve Cache Nodes information.
+        /// An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the individual cache nodes.
         ///  
         /// </summary>
         public bool ShowCacheNodeInfo

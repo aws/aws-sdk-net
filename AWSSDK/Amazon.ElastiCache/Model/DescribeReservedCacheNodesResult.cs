@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the DescribeReservedCacheNodes action. </para>
+    /// <para>Represents the output of a <i>DescribeReservedCacheNodes</i> operation.</para>
     /// </summary>
     public class DescribeReservedCacheNodesResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<ReservedCacheNode> reservedCacheNodes = new List<ReservedCacheNode>();
 
         /// <summary>
-        /// The marker provided for paginated results.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of of reserved Cache Nodes.
+        /// A list of reserved cache nodes. Each element in the list contains detailed information about one node.
         ///  
         /// </summary>
         public List<ReservedCacheNode> ReservedCacheNodes

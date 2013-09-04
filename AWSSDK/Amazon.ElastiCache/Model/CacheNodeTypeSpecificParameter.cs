@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A parameter that has a different value for each Cache Node Type it is applied to. </para>
+    /// <para>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a
+    /// <i>cache.m1.large</i> cache node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.</para>
     /// </summary>
     public class CacheNodeTypeSpecificParameter
     {
@@ -36,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
 
         /// <summary>
-        /// Specifies the name of the parameter.
+        /// The name of the parameter.
         ///  
         /// </summary>
         public string ParameterName
@@ -65,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides a description of the parameter.
+        /// A description of the parameter.
         ///  
         /// </summary>
         public string Description
@@ -94,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates the source of the parameter value.
+        /// The source of the parameter value.
         ///  
         /// </summary>
         public string Source
@@ -123,7 +124,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid data type for the parameter.
+        /// The valid data type for the parameter.
         ///  
         /// </summary>
         public string DataType
@@ -152,7 +153,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid range of values for the parameter.
+        /// The valid range of values for the parameter.
         ///  
         /// </summary>
         public string AllowedValues
@@ -211,7 +212,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The earliest engine version to which the parameter can apply.
+        /// The earliest cache engine version to which the parameter can apply.
         ///  
         /// </summary>
         public string MinimumEngineVersion
@@ -240,7 +241,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of Cache Node types and their corresponding values for this parameter.
+        /// A list of cache node types and their corresponding values for this parameter.
         ///  
         /// </summary>
         public List<CacheNodeTypeSpecificValue> CacheNodeTypeSpecificValues

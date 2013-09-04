@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SourceAttribute Unmarshaller
      /// </summary>
-    internal class SourceAttributeUnmarshaller : IUnmarshaller<SourceAttribute, XmlUnmarshallerContext> 
+    internal class SourceAttributeUnmarshaller : IUnmarshaller<SourceAttribute, XmlUnmarshallerContext>, IUnmarshaller<SourceAttribute, JsonUnmarshallerContext> 
     {
         public SourceAttribute Unmarshall(XmlUnmarshallerContext context) 
         {
             SourceAttribute sourceAttribute = new SourceAttribute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return sourceAttribute;
+        }
+
+        public SourceAttribute Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SourceAttributeUnmarshaller instance;

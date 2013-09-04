@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output from a DescribeCacheSubnetGroups action.</para>
+    /// <para>Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.</para>
     /// </summary>
     public class DescribeCacheSubnetGroupsResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheSubnetGroup> cacheSubnetGroups = new List<CacheSubnetGroup>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// One or more Cache Subnet Groups.
+        /// A list of cache subnet groups. Each element in the list contains detailed information about one group.
         ///  
         /// </summary>
         public List<CacheSubnetGroup> CacheSubnetGroups

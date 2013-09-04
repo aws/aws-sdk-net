@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains information about a Cache Cluster. </para>
+    /// <para>Contains all of the attributes of a specific cache cluster.</para>
     /// </summary>
     public class CacheCluster
     {
@@ -45,9 +45,10 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNode> cacheNodes = new List<CacheNode>();
         private bool? autoMinorVersionUpgrade;
         private List<SecurityGroupMembership> securityGroups = new List<SecurityGroupMembership>();
+        private string replicationGroupId;
 
         /// <summary>
-        /// Specifies a user-supplied identifier. This is the unique key that identifies a Cache Cluster.
+        /// The user-supplied identifier of the cache cluster. This is a unique key that identifies a cache cluster.
         ///  
         /// </summary>
         public string CacheClusterId
@@ -76,7 +77,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies a user-supplied identifier. This is the unique key that identifies a Cache Cluster.
+        /// Represents the information required for client programs to connect to a cache node.
         ///  
         /// </summary>
         public Endpoint ConfigurationEndpoint
@@ -105,7 +106,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the landing page to download the latest ElastiCache client library.
+        /// The URL of the web page where you can download the latest ElastiCache client library.
         ///  
         /// </summary>
         public string ClientDownloadLandingPage
@@ -134,7 +135,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the compute and memory capacity node type for the Cache Cluster.
+        /// The name of the compute and memory capacity node type for the cache cluster.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -163,7 +164,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the name of the cache engine to be used for this Cache Cluster.
+        /// The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
         ///  
         /// </summary>
         public string Engine
@@ -192,7 +193,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the cache engine version of the cache engine to be used for this Cache Cluster.
+        /// The version of the cache engine version that is used in this cache cluster.
         ///  
         /// </summary>
         public string EngineVersion
@@ -221,7 +222,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the current state of this Cache Cluster.
+        /// The current state of this cache cluster - <i>creating</i>, <i>available</i>, etc.
         ///  
         /// </summary>
         public string CacheClusterStatus
@@ -250,7 +251,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the number of Cache Nodes the Cache Cluster contains.
+        /// The number of cache nodes in the cache cluster.
         ///  
         /// </summary>
         public int NumCacheNodes
@@ -279,7 +280,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Availability Zone the Cache Cluster is located in.
+        /// The name of the Availability Zone in which the cache cluster is located.
         ///  
         /// </summary>
         public string PreferredAvailabilityZone
@@ -308,7 +309,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the date and time the Cache Cluster was created.
+        /// The date and time the cache cluster was created.
         ///  
         /// </summary>
         public DateTime CacheClusterCreateTime
@@ -337,7 +338,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the weekly time range (in UTC) during which system maintenance can occur.
+        /// The time range (in UTC) during which weekly system maintenance can occur.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -366,8 +367,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies that changes to the Cache Cluster are pending. This element is only included when changes are pending. Specific changes are
-        /// identified by sub-elements.
+        /// A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.
         ///  
         /// </summary>
         public PendingModifiedValues PendingModifiedValues
@@ -396,7 +396,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the notification details the Cache Cluster contains.
+        /// Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon
+        /// Simple Notification Service (SNS).
         ///  
         /// </summary>
         public NotificationConfiguration NotificationConfiguration
@@ -425,8 +426,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the list of Cache Security Group elements containing <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
-        /// sub-elements.
+        /// A list of cache security group elements, composed of name and status sub-elements.
         ///  
         /// </summary>
         public List<CacheSecurityGroupMembership> CacheSecurityGroups
@@ -473,7 +473,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the status of the Cache Parameter Group assigned to the Cache Cluster.
+        /// The status of the cache parameter group.
         ///  
         /// </summary>
         public CacheParameterGroupStatus CacheParameterGroup
@@ -502,7 +502,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Cache Subnet Group associated with the Cache Cluster.
+        /// The name of the cache subnet group associated with the cache cluster.
         ///  
         /// </summary>
         public string CacheSubnetGroupName
@@ -531,7 +531,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the list of Cache Nodes the Cache Cluster contains.
+        /// A list of cache nodes that are members of the cache cluster.
         ///  
         /// </summary>
         public List<CacheNode> CacheNodes
@@ -578,7 +578,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates that minor version patches are applied automatically.
+        /// If <c>true</c>, then minor version patches are applied automatically; if <c>false</c>, then automatic minor version patches are disabled.
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -607,7 +607,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the VPC Security Groups associated with the Cache Cluster.
+        /// A list of VPC Security Groups associated with the cache cluster.
         ///  
         /// </summary>
         public List<SecurityGroupMembership> SecurityGroups
@@ -651,6 +651,36 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSecurityGroups()
         {
             return this.securityGroups.Count > 0;
+        }
+
+        /// <summary>
+        /// The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not associated with any replication
+        /// group.
+        ///  
+        /// </summary>
+        public string ReplicationGroupId
+        {
+            get { return this.replicationGroupId; }
+            set { this.replicationGroupId = value; }
+        }
+
+        /// <summary>
+        /// Sets the ReplicationGroupId property
+        /// </summary>
+        /// <param name="replicationGroupId">The value to set for the ReplicationGroupId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CacheCluster WithReplicationGroupId(string replicationGroupId)
+        {
+            this.replicationGroupId = replicationGroupId;
+            return this;
+        }
+            
+
+        // Check to see if ReplicationGroupId property is set
+        internal bool IsSetReplicationGroupId()
+        {
+            return this.replicationGroupId != null;
         }
     }
 }

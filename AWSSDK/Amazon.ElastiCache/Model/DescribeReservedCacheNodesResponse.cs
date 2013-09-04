@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the DescribeReservedCacheNodesResult property.
-        /// Contains the result of a successful invocation of the DescribeReservedCacheNodes action.
+        /// Represents the output of a DescribeReservedCacheNodes operation.
         /// </summary>
         public DescribeReservedCacheNodesResult DescribeReservedCacheNodesResult
         {

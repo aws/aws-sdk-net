@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A named expression that can be evaluated at search time and used for ranking or thresholding in a search query. </para>
     /// </summary>
-    public class NamedRankExpression  
+    public class NamedRankExpression
     {
         
         private string rankName;
@@ -70,13 +70,13 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankName property is set
         internal bool IsSetRankName()
         {
-            return this.rankName != null;       
+            return this.rankName != null;
         }
 
         /// <summary>
         /// The expression to evaluate for ranking or thresholding while processing a search request. The <c>RankExpression</c> syntax is based on
         /// JavaScript expressions and supports:<ul> <li>Integer, floating point, hex and octal literals</li> <li>Shortcut evaluation of logical
-        /// operators such that an expression <c>a || b</c> evaluates to the value <c>a</c> if <c>a</c> is <c>true</c> without evaluting <c>b</c> at
+        /// operators such that an expression <c>a || b</c> evaluates to the value <c>a</c>, if <c>a</c> is true, without evaluating <c>b</c> at
         /// all</li> <li>JavaScript order of precendence for operators</li> <li>Arithmetic operators: <c>+ - * / %</c></li> <li>Boolean operators
         /// (including the ternary operator)</li> <li>Bitwise operators</li> <li>Comparison operators</li> <li>Common mathematic functions: <c>abs ceil
         /// erf exp floor lgamma ln log2 log10 max min sqrt pow</c></li> <li>Trigonometric library functions: <c>acosh acos asinh asin atanh atan cosh
@@ -123,7 +123,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankExpression property is set
         internal bool IsSetRankExpression()
         {
-            return this.rankExpression != null;       
+            return this.rankExpression != null;
         }
     }
 }

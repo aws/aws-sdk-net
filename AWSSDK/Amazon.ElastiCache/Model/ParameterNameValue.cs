@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A name and value pair used to update the value of a Parameter. </para>
+    /// <para>Describes a name-value pair that is used to update the value of a parameter.</para>
     /// </summary>
     public class ParameterNameValue
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private string parameterValue;
 
         /// <summary>
-        /// Specifies the name of the parameter.
+        /// The name of the parameter.
         ///  
         /// </summary>
         public string ParameterName
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the value of the parameter.
+        /// The value of the parameter.
         ///  
         /// </summary>
         public string ParameterValue

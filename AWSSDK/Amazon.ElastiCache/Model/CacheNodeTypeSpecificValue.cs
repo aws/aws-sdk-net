@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A value that applies only to a certain Cache Node Type. </para>
+    /// <para>A value that applies only to a certain cache node type.</para>
     /// </summary>
     public class CacheNodeTypeSpecificValue
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private string value;
 
         /// <summary>
-        /// Specifies the Cache Node type for which this value applies.
+        /// The cache node type for which this value applies.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the value for the Cache Node type.
+        /// The value for the cache node type.
         ///  
         /// </summary>
         public string Value

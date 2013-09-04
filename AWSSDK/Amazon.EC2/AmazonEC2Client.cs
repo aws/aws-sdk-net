@@ -3734,7 +3734,7 @@ namespace Amazon.EC2
             }
             if (request.IsSetAllowReassociation())
             {
-                parameters["allowReassociation"] = request.AllowReassociation.ToString().ToLower();
+                parameters["AllowReassociation"] = request.AllowReassociation.ToString().ToLower();
             }
 
             return parameters;

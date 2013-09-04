@@ -25,9 +25,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSecurityGroup operation.
-    /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para> <para> Only use cache
-    /// security groups when you are creating a cluster outside of an Amazon Virtual Private Cloud (VPC). Inside of a VPC, use VPC security groups.
-    /// </para>
+    /// <para>The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group. Use a cache security group to control access to one
+    /// or more cache clusters.</para> <para>Cache security groups are only used when you are creating a cluster outside of an Amazon Virtual
+    /// Private Cloud (VPC). If you are creating a cluster inside of a VPC, use a cache subnet group instead. For more information, see
+    /// <i>CreateCacheSubnetGroup</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.CreateCacheSecurityGroup"/>
     public class CreateCacheSecurityGroupRequest : AmazonWebServiceRequest
@@ -36,8 +37,8 @@ namespace Amazon.ElastiCache.Model
         private string description;
 
         /// <summary>
-        /// The name for the Cache Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
-        /// characters. Must not be "Default". Example: <c>mysecuritygroup</c>
+        /// A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// characters. Must not be the word "Default". Example: <c>mysecuritygroup</c>
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -66,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description for the Cache Security Group.
+        /// A description for the cache security group.
         ///  
         /// </summary>
         public string Description

@@ -22,8 +22,11 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Interface for accessing AmazonCloudSearch.
     ///  
-    ///  Amazon CloudSearch Configuration Service <para>You use the Configuration Service to create, configure, and manage search domains. Amazon
-    /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
+    ///  Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
+    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
+    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
+    /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
+    /// endpoints, see Regions and Endpoints.</para>
     /// </summary>
     public interface AmazonCloudSearch : IDisposable
     {
@@ -32,8 +35,9 @@ namespace Amazon.CloudSearch
         #region UpdateDefaultSearchField
 
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
-        /// which fields to search. By default, it is configured to include the contents of all of the domain's text fields.</para>
+        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
+        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
@@ -90,6 +94,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="BaseException"/>
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="InternalException"/>
+        /// <exception cref="InvalidTypeException"/>
         DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest);
 
         /// <summary>
@@ -215,7 +220,7 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
-        /// document is 100KB.</para>
+        /// document is 100 KB.</para>
         /// </summary>
         /// 
         /// <param name="updateServiceAccessPoliciesRequest">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service
@@ -582,7 +587,7 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
-        /// of the stopwords dictionary is 10KB.</para>
+        /// of the stopwords dictionary is 10 KB.</para>
         /// </summary>
         /// 
         /// <param name="updateStopwordOptionsRequest">Container for the necessary parameters to execute the UpdateStopwordOptions service method on
@@ -630,7 +635,7 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
-        /// that occur in text fields. The maximum size of the synonym dictionary is 100KB. </para>
+        /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>
         /// </summary>
         /// 
         /// <param name="updateSynonymOptionsRequest">Container for the necessary parameters to execute the UpdateSynonymOptions service method on
@@ -678,7 +683,7 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
-        /// requests. The maximum size of the stemming dictionary is 500KB.</para>
+        /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
         /// </summary>
         /// 
         /// <param name="updateStemmingOptionsRequest">Container for the necessary parameters to execute the UpdateStemmingOptions service method on
@@ -930,6 +935,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="BaseException"/>
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="InternalException"/>
+        /// <exception cref="InvalidTypeException"/>
         DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest);
 
         /// <summary>

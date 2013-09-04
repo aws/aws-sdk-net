@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A setting controlling some apsect of the service's behavior. </para>
+    /// <para>Describes an individual setting that controls some aspect of ElastiCache behavior.</para>
     /// </summary>
     public class Parameter
     {
@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string minimumEngineVersion;
 
         /// <summary>
-        /// Specifies the name of the parameter.
+        /// The name of the parameter.
         ///  
         /// </summary>
         public string ParameterName
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the value of the parameter.
+        /// The value of the parameter.
         ///  
         /// </summary>
         public string ParameterValue
@@ -94,7 +94,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides a description of the parameter.
+        /// A description of the parameter.
         ///  
         /// </summary>
         public string Description
@@ -123,7 +123,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates the source of the parameter value.
+        /// The source of the parameter.
         ///  
         /// </summary>
         public string Source
@@ -152,7 +152,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid data type for the parameter.
+        /// The valid data type for the parameter.
         ///  
         /// </summary>
         public string DataType
@@ -181,7 +181,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid range of values for the parameter.
+        /// The valid range of values for the parameter.
         ///  
         /// </summary>
         public string AllowedValues
@@ -240,7 +240,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The earliest engine version to which the parameter can apply.
+        /// The earliest cache engine version to which the parameter can apply.
         ///  
         /// </summary>
         public string MinimumEngineVersion

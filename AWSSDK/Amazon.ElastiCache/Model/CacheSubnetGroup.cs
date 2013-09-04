@@ -21,15 +21,12 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following actions: </para>
+    /// <para>Represents the output of one of the following operations:</para>
     /// <ul>
-    /// <li> CreateCacheSubnetGroup </li>
-    /// <li> ModifyCacheSubnetGroup </li>
-    /// <li> DescribeCacheSubnetGroups </li>
-    /// <li> DeleteCacheSubnetGroup </li>
+    /// <li> <i>CreateCacheSubnetGroup</i> </li>
+    /// <li> <i>ModifyCacheSubnetGroup</i> </li>
     /// 
     /// </ul>
-    /// <para>This data type is used as a response element in the DescribeCacheSubnetGroups action.</para>
     /// </summary>
     public class CacheSubnetGroup
     {
@@ -40,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private List<Subnet> subnets = new List<Subnet>();
 
         /// <summary>
-        /// Specifies the name of the Cache Subnet Group.
+        /// The name of the cache subnet group.
         ///  
         /// </summary>
         public string CacheSubnetGroupName
@@ -69,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the description of the Cache Subnet Group.
+        /// The description of the cache subnet group.
         ///  
         /// </summary>
         public string CacheSubnetGroupDescription
@@ -98,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the VPC ID of the Cache Subnet Group.
+        /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.
         ///  
         /// </summary>
         public string VpcId
@@ -127,7 +124,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Contains a list of subnets for this group.
+        /// A list of subnets associated with the cache subnet group.
         ///  
         /// </summary>
         public List<Subnet> Subnets

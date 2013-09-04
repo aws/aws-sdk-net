@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the DescribeCacheEngineVersions action. </para>
+    /// <para>Represents the output of a DescribeCacheEngineVersions operation.</para>
     /// </summary>
     public class DescribeCacheEngineVersionsResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheEngineVersion> cacheEngineVersions = new List<CacheEngineVersion>();
 
         /// <summary>
-        /// The identifier returned to allow retrieval of paginated results.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <c>CacheEngineVersion</c> elements.
+        /// A list of cache engine version details. Each element in the list contains detailed information about once cache engine version.
         ///  
         /// </summary>
         public List<CacheEngineVersion> CacheEngineVersions

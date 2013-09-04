@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEngineDefaultParameters operation.
-    /// <para> Returns the default engine and system parameter information for the specified cache engine. </para>
+    /// <para>The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and system parameter information for the specified
+    /// cache engine.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeEngineDefaultParameters"/>
     public class DescribeEngineDefaultParametersRequest : AmazonWebServiceRequest
@@ -35,8 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string marker;
 
         /// <summary>
-        /// The name of the Cache Parameter Group Family. <note>Currently, <i>memcached1.4</i> is the only cache parameter group family supported by the
-        /// service.</note>
+        /// The name of the cache parameter group family. Valid values are: <c>memcached1.4</c> | <c>redis2.6</c>
         ///  
         /// </summary>
         public string CacheParameterGroupFamily
@@ -65,8 +65,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be retrieved.
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -95,8 +95,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker

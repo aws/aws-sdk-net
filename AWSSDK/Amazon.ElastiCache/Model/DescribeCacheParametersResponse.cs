@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the DescribeCacheParametersResult property.
-        /// Contains a list of Parametes and CacheNodeTypeSpecificParameters.
+        /// Represents the output of a DescribeCacheParameters operation.
         /// </summary>
         public DescribeCacheParametersResult DescribeCacheParametersResult
         {

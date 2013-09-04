@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the DescribeCacheSubnetGroupsResult property.
-        /// Represents the output from a DescribeCacheSubnetGroups action.
+        /// Represents the output of a DescribeCacheSubnetGroups operation.
         /// </summary>
         public DescribeCacheSubnetGroupsResult DescribeCacheSubnetGroupsResult
         {

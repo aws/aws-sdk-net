@@ -21,7 +21,13 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Defines a set of EC2 Security groups that are allowed to access a Cache Cluster. </para>
+    /// <para>Represents the output of one of the following operations:</para>
+    /// <ul>
+    /// <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li>
+    /// <li> <i>CreateCacheSecurityGroup</i> </li>
+    /// <li> <i>RevokeCacheSecurityGroupIngress</i> </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class CacheSecurityGroup
     {
@@ -32,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
 
         /// <summary>
-        /// Provides the AWS ID of the owner of a specific Cache Security Group.
+        /// The AWS account ID of the cache security group owner.
         ///  
         /// </summary>
         public string OwnerId
@@ -61,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Cache Security Group.
+        /// The name of the cache security group.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -90,7 +96,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the description of the Cache Security Group.
+        /// The description of the cache security group.
         ///  
         /// </summary>
         public string Description
@@ -119,7 +125,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Contains a list of <a>EC2SecurityGroup</a> elements.
+        /// A list of Amazon EC2 security groups that are associated with this cache security group.
         ///  
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups

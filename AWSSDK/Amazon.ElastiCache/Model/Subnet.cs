@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Network Subnet associated with a Cache Cluster </para>
+    /// <para>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud
+    /// (Amazon VPC) and used with ElastiCache.</para>
     /// </summary>
     public class Subnet
     {
@@ -30,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private AvailabilityZone subnetAvailabilityZone;
 
         /// <summary>
-        /// Specifies the unique identifier for the Subnet
+        /// The unique identifier for the subnet
         ///  
         /// </summary>
         public string SubnetIdentifier
@@ -59,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the Availability Zone associated with the Subnet
+        /// The Availability Zone associated with the subnet
         ///  
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone

@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteCacheSecurityGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DeleteCacheSecurityGroup");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (deleteCacheSecurityGroupRequest != null && deleteCacheSecurityGroupRequest.IsSetCacheSecurityGroupName())
             {
                 request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(deleteCacheSecurityGroupRequest.CacheSecurityGroupName));

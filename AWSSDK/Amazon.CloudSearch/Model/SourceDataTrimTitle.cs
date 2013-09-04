@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Specifies how to trim common words from the beginning of a field to enable title sorting by that field.</para>
     /// </summary>
-    public class SourceDataTrimTitle  
+    public class SourceDataTrimTitle
     {
         
         private string sourceName;
@@ -70,11 +70,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceName property is set
         internal bool IsSetSourceName()
         {
-            return this.sourceName != null;       
+            return this.sourceName != null;
         }
 
         /// <summary>
-        /// The value of a field or source document attribute.
+        /// The default value to use if the source attribute is not specified in a document. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -108,7 +108,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Separator property is set
         internal bool IsSetSeparator()
         {
-            return this.separator != null;       
+            return this.separator != null;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Language property is set
         internal bool IsSetLanguage()
         {
-            return this.language != null;       
+            return this.language != null;
         }
     }
 }

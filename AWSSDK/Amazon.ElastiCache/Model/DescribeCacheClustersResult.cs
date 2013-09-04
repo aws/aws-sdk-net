@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains one or more Cache Clusters. </para>
+    /// <para>Represents the output of a <i>DescribeCacheClusters</i> operation.</para>
     /// </summary>
     public class DescribeCacheClustersResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheCluster> cacheClusters = new List<CacheCluster>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of CacheClusters.
+        /// A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
         ///  
         /// </summary>
         public List<CacheCluster> CacheClusters

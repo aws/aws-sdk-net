@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeSynonymOptionsResult Unmarshaller
      /// </summary>
-    internal class DescribeSynonymOptionsResultUnmarshaller : IUnmarshaller<DescribeSynonymOptionsResult, XmlUnmarshallerContext> 
+    internal class DescribeSynonymOptionsResultUnmarshaller : IUnmarshaller<DescribeSynonymOptionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeSynonymOptionsResult, JsonUnmarshallerContext> 
     {
         public DescribeSynonymOptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeSynonymOptionsResult describeSynonymOptionsResult = new DescribeSynonymOptionsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return describeSynonymOptionsResult;
+        }
+
+        public DescribeSynonymOptionsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeSynonymOptionsResultUnmarshaller instance;

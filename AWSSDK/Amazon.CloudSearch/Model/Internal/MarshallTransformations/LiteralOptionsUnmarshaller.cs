@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LiteralOptions Unmarshaller
      /// </summary>
-    internal class LiteralOptionsUnmarshaller : IUnmarshaller<LiteralOptions, XmlUnmarshallerContext> 
+    internal class LiteralOptionsUnmarshaller : IUnmarshaller<LiteralOptions, XmlUnmarshallerContext>, IUnmarshaller<LiteralOptions, JsonUnmarshallerContext> 
     {
         public LiteralOptions Unmarshall(XmlUnmarshallerContext context) 
         {
             LiteralOptions literalOptions = new LiteralOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return literalOptions;
+        }
+
+        public LiteralOptions Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static LiteralOptionsUnmarshaller instance;

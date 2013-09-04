@@ -25,8 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheParameterGroup operation.
-    /// <para> Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a list of ParameterName and
-    /// ParameterValue parameters. A maximum of 20 parameters can be modified in a single request. </para>
+    /// <para>The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters
+    /// in a single request by submitting a list parameter name and value pairs.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.ModifyCacheParameterGroup"/>
     public class ModifyCacheParameterGroupRequest : AmazonWebServiceRequest
@@ -64,8 +64,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An array of parameter names and values for the parameter update. At least one parameter name and value must be supplied; subsequent
-        /// arguments are optional. A maximum of 20 parameters may be modified in a single request.
+        /// An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments
+        /// are optional. A maximum of 20 parameters may be modified per request.
         ///  
         /// </summary>
         public List<ParameterNameValue> ParameterNameValues

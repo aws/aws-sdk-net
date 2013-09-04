@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the action DescribeCacheEngineVersions. </para>
+    /// <para>Provides all of the details about a particular cache engine version.</para>
     /// </summary>
     public class CacheEngineVersion
     {
@@ -91,7 +91,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The name of the CacheParameterGroupFamily for the cache engine.
+        /// The name of the cache parameter group family associated with this cache engine.
         ///  
         /// </summary>
         public string CacheParameterGroupFamily

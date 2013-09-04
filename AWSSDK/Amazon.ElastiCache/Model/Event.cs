@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> An event represents something interesting that has happened in the system. </para>
+    /// <para>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster,
+    /// adding or removing a cache node, or rebooting a node.</para>
     /// </summary>
     public class Event
     {
@@ -32,7 +33,8 @@ namespace Amazon.ElastiCache.Model
         private DateTime? date;
 
         /// <summary>
-        /// Provides the identifier for the source of the event.
+        /// The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name
+        /// of the cache cluster.
         ///  
         /// </summary>
         public string SourceIdentifier
@@ -61,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the source type for this event.
+        /// Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -99,7 +101,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the text of this event.
+        /// The text of the event.
         ///  
         /// </summary>
         public string Message
@@ -128,7 +130,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the date and time of the event.
+        /// The date and time when the event occurred.
         ///  
         /// </summary>
         public DateTime Date

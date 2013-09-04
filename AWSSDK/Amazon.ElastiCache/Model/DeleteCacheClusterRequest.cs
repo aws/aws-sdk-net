@@ -25,9 +25,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheCluster operation.
-    /// <para> Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received
-    /// correctly. This action cannot be canceled or reverted. DeleteCacheCluster deletes all associated Cache Nodes, node endpoints and the Cache
-    /// Cluster itself. </para>
+    /// <para>The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
+    /// associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this operation, Amazon
+    /// ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this operation.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DeleteCacheCluster"/>
     public class DeleteCacheClusterRequest : AmazonWebServiceRequest
@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
         private string cacheClusterId;
 
         /// <summary>
-        /// The Cache Cluster identifier for the Cache Cluster to be deleted. This parameter isn't case sensitive.
+        /// The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.
         ///  
         /// </summary>
         public string CacheClusterId

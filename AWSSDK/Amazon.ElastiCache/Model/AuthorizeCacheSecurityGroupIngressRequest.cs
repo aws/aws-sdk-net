@@ -25,9 +25,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeCacheSecurityGroupIngress operation.
-    /// <para> Authorizes ingress to a CacheSecurityGroup using EC2 Security Groups as authorization (therefore the application using the cache must
-    /// be running on EC2 clusters). This API requires the following parameters: EC2SecurityGroupName and EC2SecurityGroupOwnerId. </para>
-    /// <para><b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon Cache Cluster in another. </para>
+    /// <para>The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to a cache security group. Applications using
+    /// ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</para> <para><b>NOTE:</b>
+    /// You cannot authorize ingress from an Amazon EC2 security group in one Region to an ElastiCache cluster in another Region. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.AuthorizeCacheSecurityGroupIngress"/>
     public class AuthorizeCacheSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the Cache Security Group to authorize.
+        /// The cache security group which will allow network ingress.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -66,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Name of the EC2 Security Group to include in the authorization.
+        /// The Amazon EC2 security group to be authorized for ingress to the cache security group.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -95,8 +95,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// AWS Account Number of the owner of the security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-        /// acceptable value.
+        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must
+        /// provide a valid AWS account number for this parameter.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId

@@ -30,18 +30,7 @@ namespace Amazon.CloudSearch
         public AmazonCloudSearchConfig()
         {
             this.ServiceURL = "https://cloudsearch.us-east-1.amazonaws.com";
-            
-        }
-
-        /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2011-02-01";
-            }
+            this.AuthenticationServiceName = "cloudsearch";
         }
 
         /// <summary>
@@ -52,6 +41,17 @@ namespace Amazon.CloudSearch
             get
             {
                 return "cloudsearch";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2011-02-01";
             }
         }
     }

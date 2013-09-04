@@ -34,10 +34,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createCacheClusterRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "CreateCacheCluster");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetCacheClusterId())
             {
                 request.Parameters.Add("CacheClusterId", StringUtils.FromString(createCacheClusterRequest.CacheClusterId));
+            }
+            if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetReplicationGroupId())
+            {
+                request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(createCacheClusterRequest.ReplicationGroupId));
             }
             if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetNumCacheNodes())
             {
@@ -83,6 +87,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("SecurityGroupIds.member." + securityGroupIdsListIndex, StringUtils.FromString(securityGroupIdsListValue));
                     securityGroupIdsListIndex++;
+                }
+            }
+            if (createCacheClusterRequest != null)
+            {
+                List<string> snapshotArnsList = createCacheClusterRequest.SnapshotArns;
+
+                int snapshotArnsListIndex = 1;
+                foreach (string snapshotArnsListValue in snapshotArnsList)
+                { 
+                    request.Parameters.Add("SnapshotArns.member." + snapshotArnsListIndex, StringUtils.FromString(snapshotArnsListValue));
+                    snapshotArnsListIndex++;
                 }
             }
             if (createCacheClusterRequest != null && createCacheClusterRequest.IsSetPreferredAvailabilityZone())

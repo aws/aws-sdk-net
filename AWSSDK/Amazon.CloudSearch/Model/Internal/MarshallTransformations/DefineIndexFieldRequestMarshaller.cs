@@ -93,6 +93,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("IndexField.TextOptions.ResultEnabled", StringUtils.FromBool(textOptions.ResultEnabled));
                     }
+                    if (textOptions != null && textOptions.IsSetTextProcessor())
+                    {
+                        request.Parameters.Add("IndexField.TextOptions.TextProcessor", StringUtils.FromString(textOptions.TextProcessor));
+                    }
                 }
 
                 if (indexField != null)

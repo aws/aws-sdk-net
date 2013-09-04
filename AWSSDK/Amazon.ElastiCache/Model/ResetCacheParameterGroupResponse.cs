@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the ResetCacheParameterGroupResult property.
-        /// Contains the name of a Cache Parameter Group.
+        /// Represents the output of one of the following operations: ModifyCacheParameterGroup ResetCacheParameterGroup
         /// </summary>
         public ResetCacheParameterGroupResult ResetCacheParameterGroupResult
         {

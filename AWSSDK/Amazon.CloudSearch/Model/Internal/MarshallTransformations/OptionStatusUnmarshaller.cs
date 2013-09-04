@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   OptionStatus Unmarshaller
      /// </summary>
-    internal class OptionStatusUnmarshaller : IUnmarshaller<OptionStatus, XmlUnmarshallerContext> 
+    internal class OptionStatusUnmarshaller : IUnmarshaller<OptionStatus, XmlUnmarshallerContext>, IUnmarshaller<OptionStatus, JsonUnmarshallerContext> 
     {
         public OptionStatus Unmarshall(XmlUnmarshallerContext context) 
         {
             OptionStatus optionStatus = new OptionStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -59,6 +60,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         optionStatus.State = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("PendingDeletion", targetDepth))
+                    {
+                        optionStatus.PendingDeletion = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -70,6 +77,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return optionStatus;
+        }
+
+        public OptionStatus Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static OptionStatusUnmarshaller instance;

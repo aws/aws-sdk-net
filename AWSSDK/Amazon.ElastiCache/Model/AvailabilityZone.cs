@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Availability Zone in which the Cache Cluster is launched </para>
+    /// <para>Describes an availability zone in which the cache cluster is launched.</para>
     /// </summary>
     public class AvailabilityZone
     {
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
         private string name;
 
         /// <summary>
-        /// Specifies the name of the Availability Zone
+        /// The name of the availability zone.
         ///  
         /// </summary>
         public string Name

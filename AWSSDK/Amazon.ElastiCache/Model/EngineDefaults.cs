@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> The default Parameters and CacheNodeTypeSpecificParameters for a CacheParameterGroupFamily. </para>
+    /// <para>Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.</para>
     /// </summary>
     public class EngineDefaults
     {
@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
 
         /// <summary>
-        /// Specifies the name of the Cache Parameter Group Family which the engine default parameters apply to.
+        /// Specifies the name of the cache parameter group family to which the engine default parameters apply.
         ///  
         /// </summary>
         public string CacheParameterGroupFamily
@@ -137,7 +137,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+        /// A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.
         ///  
         /// </summary>
         public List<CacheNodeTypeSpecificParameter> CacheNodeTypeSpecificParameters

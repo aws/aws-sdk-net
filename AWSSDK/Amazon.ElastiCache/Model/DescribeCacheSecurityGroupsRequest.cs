@@ -25,8 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheSecurityGroups operation.
-    /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
-    /// description of the specified CacheSecurityGroup. </para>
+    /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
+    /// is specified, the list will contain only the description of that group.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeCacheSecurityGroups"/>
     public class DescribeCacheSecurityGroupsRequest : AmazonWebServiceRequest
@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string marker;
 
         /// <summary>
-        /// The name of the Cache Security Group to return details for.
+        /// The name of the cache security group to return details for.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -65,8 +65,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -95,8 +95,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker

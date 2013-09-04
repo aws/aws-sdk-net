@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Specifies how to map source attribute values to custom values when populating an <c>IndexField</c> .</para>
     /// </summary>
-    public class SourceDataMap  
+    public class SourceDataMap
     {
         
         private string sourceName;
@@ -69,11 +69,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceName property is set
         internal bool IsSetSourceName()
         {
-            return this.sourceName != null;       
+            return this.sourceName != null;
         }
 
         /// <summary>
-        /// The value of a field or source document attribute.
+        /// The default value to use if the source attribute is not specified in a document. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,7 +107,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Cases property is set
         internal bool IsSetCases()
         {
-            return this.cases != null;       
+            return this.cases != null;
         }
     }
 }
