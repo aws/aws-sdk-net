@@ -130,11 +130,11 @@ namespace Amazon.Util
                 switch (algorithm)
                 {
                     case SigningAlgorithm.HmacSHA256:
-                        return new HMACSHA256();
+                        return new SHA256Managed();
                     case SigningAlgorithm.HmacSHA1:
-                        return new HMACSHA1();
+                        return new SHA1Managed();
                     default:
-                        throw new Exception("Unknown signing algorithm: " + algorithm.ToString());
+                        throw new Exception("Unknown algorithm: " + algorithm.ToString());
                 }
             }
 
@@ -147,7 +147,7 @@ namespace Amazon.Util
                     case SigningAlgorithm.HmacSHA1:
                         return new HMACSHA1();
                     default:
-                        throw new Exception("Unknown signing algorithm: " + algorithm.ToString());
+                        throw new Exception("Unknown algorithm: " + algorithm.ToString());
                 }
             }
         }
