@@ -5349,7 +5349,7 @@ namespace Amazon.S3
             }
             if (request.IsSetUploadIdMarker())
             {
-                sb.Append(String.Concat("upload-idmarker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
+                sb.Append(String.Concat("upload-id-marker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
             }
             if (request.IsSetPrefix())
             {
