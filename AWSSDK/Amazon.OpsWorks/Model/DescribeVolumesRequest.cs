@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// <para>Describes an instance's Amazon EBS volumes.</para>
+    /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeVolumes"/>
     public class DescribeVolumesRequest : AmazonWebServiceRequest

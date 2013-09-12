@@ -25,9 +25,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLayer operation.
-    /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
+    /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for noncustom
     /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
-    /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
+    /// each noncustom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
     /// so you can call CreateLayer as many times as you like for that layer type.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
@@ -467,6 +467,14 @@ namespace Amazon.OpsWorks.Model
         {
             return this.customRecipes != null;
         }
+
+        /// <summary>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
+        /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
+        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        ///  
+        /// </summary>
         public bool InstallUpdatesOnBoot
         {
             get { return this.installUpdatesOnBoot ?? default(bool); }

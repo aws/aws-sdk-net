@@ -62,6 +62,12 @@
                 continue;
               }
   
+              if (context.TestExpression("VpcId", targetDepth))
+              {
+                stack.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Attributes", targetDepth))
               {
                 stack.Attributes = new Dictionary<String,String>();
@@ -109,6 +115,12 @@
               if (context.TestExpression("DefaultAvailabilityZone", targetDepth))
               {
                 stack.DefaultAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("DefaultSubnetId", targetDepth))
+              {
+                stack.DefaultSubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

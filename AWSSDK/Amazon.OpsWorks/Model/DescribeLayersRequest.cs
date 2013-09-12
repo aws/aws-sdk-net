@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLayers operation.
-    /// <para>Requests a description of one or more layers in a specified stack.</para>
+    /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b>You must specify at least one of the
+    /// parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLayers"/>
     public class DescribeLayersRequest : AmazonWebServiceRequest

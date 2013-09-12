@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private string amiId;
         private string sshKeyName;
         private string availabilityZone;
+        private string subnetId;
         private string architecture;
         private string rootDeviceType;
         private bool? installUpdatesOnBoot;
@@ -222,7 +223,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's operating system, which must be either "Amazon Linux" or "Ubuntu 12.04 LTS".
+        /// The instance operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
+        /// <c>Ubuntu 12.04 LTS</c></li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
+        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
+        /// information on the standard operating systems, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
+        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+        /// AMIs</a>.
         ///  
         /// </summary>
         public string Os
@@ -340,6 +347,36 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID
+        /// value and direct AWS OpsWorks to launch the instance in a different subnet.
+        ///  
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this.subnetId; }
+            set { this.subnetId = value; }
+        }
+
+        /// <summary>
+        /// Sets the SubnetId property
+        /// </summary>
+        /// <param name="subnetId">The value to set for the SubnetId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateInstanceRequest WithSubnetId(string subnetId)
+        {
+            this.subnetId = subnetId;
+            return this;
+        }
+            
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this.subnetId != null;
+        }
+
+        /// <summary>
         /// The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported
         /// by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
         /// Types</a>.
@@ -419,10 +456,10 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Whether to install updates when the instance boots. The default value is <c>true</c>. To control when updates are installed, set this value
-        /// to false. You must then update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c> stack command
-        /// or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We strongly recommend using the default
-        /// value of true, to ensure that your instances have the latest security updates.</note>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
+        /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
+        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot

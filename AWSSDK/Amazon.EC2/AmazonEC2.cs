@@ -2486,5 +2486,24 @@ namespace Amazon.EC2
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Cancel Export Task response from the service</returns>
         CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
+
+        /// <summary>
+        /// Describes modifications made to Reserved Instances in your account.
+        /// </summary>
+        /// <param name="request">Describe Reserved Instances Modifications request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Reserved Instances Modifications response from the service</returns>
+        DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request);
+
+        /// <summary>
+        /// Modifies the Availability Zone, instance count, or network platform (EC2-Classic or EC2-VPC) of
+        /// your Reserved Instances.
+        /// </summary>
+        /// <param name="request">Modify Reserved Instances request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Reserved Instances response from the service</returns>
+        ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request);
     }
 }

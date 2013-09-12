@@ -3286,6 +3286,31 @@ namespace Amazon.EC2
             return Invoke<CancelExportTaskResponse>(ConvertCancelExportTask(request));
         }
 
+        /// <summary>
+        /// Describes modifications made to Reserved Instances in your account.
+        /// </summary>
+        /// <param name="request">Describe Reserved Instances Modifications request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Reserved Instances Modifications response from the service</returns>
+        public DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
+        {
+            return Invoke<DescribeReservedInstancesModificationsResponse>(ConvertDescribeReservedInstancesModifications(request));
+        }
+
+        /// <summary>
+        /// Modifies the Availability Zone, instance count, or network platform (EC2-Classic or EC2-VPC) of
+        /// your Reserved Instances.
+        /// </summary>
+        /// <param name="request">Modify Reserved Instances request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Reserved Instances response from the service</returns>
+        public ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
+        {
+            return Invoke<ModifyReservedInstancesResponse>(ConvertModifyReservedInstances(request));
+        }
+
         #endregion
 
         #region Private API
@@ -8395,6 +8420,97 @@ namespace Amazon.EC2
 
             return parameters;
         }
+
+
+        /**
+         * Convert DescribeReservedInstancesModifications to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "DescribeReservedInstancesModifications";
+
+            List<string> reservedInstancesModificationIds = request.ReservedInstancesModificationIds;
+            int reservedInstancesModificationIdsIndex = 1;
+            foreach (string reservedInstancesModificationId in reservedInstancesModificationIds)
+            {
+                parameters[String.Concat("ReservedInstancesModificationId", ".", reservedInstancesModificationIdsIndex)] = reservedInstancesModificationId;
+                reservedInstancesModificationIdsIndex++;
+            }
+
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
+
+            List<Filter> describeReservedInstancesModificationsRequestFilterList = request.Filter;
+            int describeReservedInstancesModificationsRequestFilterListIndex = 1;
+            foreach (Filter describeReservedInstancesModificationsRequestFilter in describeReservedInstancesModificationsRequestFilterList)
+            {
+                if (describeReservedInstancesModificationsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesModificationsRequestFilterListIndex, ".", "Name")] = describeReservedInstancesModificationsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeReservedInstancesModificationsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesModificationsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeReservedInstancesModificationsRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeReservedInstancesModifications to name value pairs
+         */
+        private static IDictionary<string, string> ConvertModifyReservedInstances(ModifyReservedInstancesRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "ModifyReservedInstances";
+
+            if (request.IsSetClientToken())
+            {
+                parameters["ClientToken"] = request.ClientToken;
+            }
+
+            {
+                List<string> reservedInstancesIds = request.ReservedInstancesIds;
+                int reservedInstancesIdsIndex = 1;
+                foreach (string reservedInstancesId in reservedInstancesIds)
+                {
+                    parameters[String.Concat("ReservedInstancesId", ".", reservedInstancesIdsIndex)] = reservedInstancesId;
+                    reservedInstancesIdsIndex++;
+                }
+            }
+
+            List<ReservedInstancesConfiguration> targetConfigurations = request.TargetConfigurations;
+            int targetConfigurationsIndex = 1;
+            foreach (ReservedInstancesConfiguration targetConfiguration in targetConfigurations)
+            {
+                if (targetConfiguration.IsSetAvailabilityZone())
+                {
+                    parameters[String.Concat("ReservedInstancesConfigurationSetItemType", ".", targetConfigurationsIndex, ".", "AvailabilityZone")] = targetConfiguration.AvailabilityZone;
+                }
+                if (targetConfiguration.IsSetPlatform())
+                {
+                    parameters[String.Concat("ReservedInstancesConfigurationSetItemType", ".", targetConfigurationsIndex, ".", "Platform")] = targetConfiguration.Platform;
+                }
+                if (targetConfiguration.IsSetInstanceCount())
+                {
+                    parameters[String.Concat("ReservedInstancesConfigurationSetItemType", ".", targetConfigurationsIndex, ".", "InstanceCount")] = targetConfiguration.InstanceCount.ToString();
+                }
+
+                targetConfigurationsIndex++;
+            }
+
+            return parameters;
+        }
+
 
         /*
          *  Transforms response based on xslt template

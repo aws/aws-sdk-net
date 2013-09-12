@@ -125,6 +125,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("DefaultAvailabilityZone");
                     writer.Write(updateStackRequest.DefaultAvailabilityZone);
                 }
+                if (updateStackRequest != null && updateStackRequest.IsSetDefaultSubnetId()) 
+                {
+                    writer.WritePropertyName("DefaultSubnetId");
+                    writer.Write(updateStackRequest.DefaultSubnetId);
+                }
                 if (updateStackRequest != null && updateStackRequest.IsSetCustomJson()) 
                 {
                     writer.WritePropertyName("CustomJson");

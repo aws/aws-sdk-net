@@ -127,6 +127,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AvailabilityZone");
                     writer.Write(createInstanceRequest.AvailabilityZone);
                 }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetSubnetId()) 
+                {
+                    writer.WritePropertyName("SubnetId");
+                    writer.Write(createInstanceRequest.SubnetId);
+                }
                 if (createInstanceRequest != null && createInstanceRequest.IsSetArchitecture()) 
                 {
                     writer.WritePropertyName("Architecture");

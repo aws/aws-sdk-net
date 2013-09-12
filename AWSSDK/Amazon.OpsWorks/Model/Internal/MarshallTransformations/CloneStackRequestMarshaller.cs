@@ -88,6 +88,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("Region");
                     writer.Write(cloneStackRequest.Region);
                 }
+                if (cloneStackRequest != null && cloneStackRequest.IsSetVpcId()) 
+                {
+                    writer.WritePropertyName("VpcId");
+                    writer.Write(cloneStackRequest.VpcId);
+                }
                 if (cloneStackRequest != null) 
                 {
                     if (cloneStackRequest.Attributes != null && cloneStackRequest.Attributes.Count > 0)
@@ -129,6 +134,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("DefaultAvailabilityZone");
                     writer.Write(cloneStackRequest.DefaultAvailabilityZone);
+                }
+                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultSubnetId()) 
+                {
+                    writer.WritePropertyName("DefaultSubnetId");
+                    writer.Write(cloneStackRequest.DefaultSubnetId);
                 }
                 if (cloneStackRequest != null && cloneStackRequest.IsSetCustomJson()) 
                 {

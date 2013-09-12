@@ -141,6 +141,12 @@
                 continue;
               }
   
+              if (context.TestExpression("SubnetId", targetDepth))
+              {
+                instance.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("PublicDns", targetDepth))
               {
                 instance.PublicDns = StringUnmarshaller.GetInstance().Unmarshall(context);

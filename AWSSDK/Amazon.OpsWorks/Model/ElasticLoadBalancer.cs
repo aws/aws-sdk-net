@@ -33,6 +33,7 @@ namespace Amazon.OpsWorks.Model
         private string layerId;
         private string vpcId;
         private List<string> availabilityZones = new List<string>();
+        private List<string> subnetIds = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's Availability Zones.
+        /// A list of Availability Zones.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -254,6 +255,53 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZones()
         {
             return this.availabilityZones.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of subnet IDs, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public List<string> SubnetIds
+        {
+            get { return this.subnetIds; }
+            set { this.subnetIds = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SubnetIds collection
+        /// </summary>
+        /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticLoadBalancer WithSubnetIds(params string[] subnetIds)
+        {
+            foreach (string element in subnetIds)
+            {
+                this.subnetIds.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the SubnetIds collection
+        /// </summary>
+        /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticLoadBalancer WithSubnetIds(IEnumerable<string> subnetIds)
+        {
+            foreach (string element in subnetIds)
+            {
+                this.subnetIds.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this.subnetIds.Count > 0;
         }
 
         /// <summary>

@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDeployments operation.
-    /// <para>Requests a description of a specified set of deployments.</para>
+    /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b>You must specify at least one of the
+    /// parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeDeployments"/>
     public class DescribeDeploymentsRequest : AmazonWebServiceRequest

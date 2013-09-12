@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticIps operation.
-    /// <para>Describes an instance's Elastic IP addresses.</para>
+    /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticIps"/>
     public class DescribeElasticIpsRequest : AmazonWebServiceRequest

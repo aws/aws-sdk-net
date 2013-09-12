@@ -60,7 +60,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// The Chef version. This parameter must be set to "0.9" or "11.4". The default value is "0.9". However, we expect to change the default value
-        /// to "11.4" in late August.
+        /// to "11.4" in late August 2013.
         ///  
         /// </summary>
         public string Version

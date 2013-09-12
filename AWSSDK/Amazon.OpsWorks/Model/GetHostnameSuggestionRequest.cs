@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostnameSuggestion operation.
-    /// <para>Gets a generated hostname for the specified layer, based on the current hostname theme.</para>
+    /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
     public class GetHostnameSuggestionRequest : AmazonWebServiceRequest

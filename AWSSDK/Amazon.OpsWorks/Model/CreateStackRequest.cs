@@ -32,12 +32,14 @@ namespace Amazon.OpsWorks.Model
     {
         private string name;
         private string region;
+        private string vpcId;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
         private string serviceRoleArn;
         private string defaultInstanceProfileArn;
         private string defaultOs;
         private string hostnameTheme;
         private string defaultAvailabilityZone;
+        private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
@@ -102,6 +104,45 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRegion()
         {
             return this.region != null;
+        }
+
+        /// <summary>
+        /// The ID of the VPC that the stack is to be launched into. It must be in the specified region. All instances will be launched into this VPC,
+        /// and you cannot change the ID later. <ul> <li>If your account supports EC2 Classic, the default value is no VPC.</li> <li>If you account does
+        /// not support EC2 Classic, the default value is the default VPC for the specified region.</li> </ul> If the VPC ID corresponds to a default
+        /// VPC and you have specified either the <c>DefaultAvailabilityZone</c> or the <c>DefaultSubnetId</c> parameter only, AWS OpsWorks infers the
+        /// value of the other parameter. If you specify neither parameter, AWS OpsWorks sets these parameters to the first valid Availability Zone for
+        /// the specified region and the corresponding default VPC subnet ID, respectively. If you specify a nondefault VPC ID, note the following: <ul>
+        /// <li>It must belong to a VPC in your account that is in the specified region.</li> <li>You must specify a value for
+        /// <c>DefaultSubnetId</c>.</li> </ul> For more information on how to use AWS OpsWorks with a VPC, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information on
+        /// default VPC and EC2 Classic, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a>.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateStackRequest WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
         }
 
         /// <summary>
@@ -198,7 +239,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The cloned stack default operating system, which must be either "Amazon Linux" or "Ubuntu 12.04 LTS".
+        /// The stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is <c>Amazon
+        /// Linux</c>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -261,8 +303,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack default Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
+        /// The stack's default Availability Zone, which must be in the specified region. For more information, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for
+        /// <c>DefaultSubnetId</c>, the subnet must be in the same zone. For more information, see the <c>VpcId</c> parameter description.
         ///  
         /// </summary>
         public string DefaultAvailabilityZone
@@ -291,9 +334,40 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The stack's default subnet ID. All instances will be launched into this subnet unless you specify otherwise when you create the instance. If
+        /// you also specify a value for <c>DefaultAvailabilityZone</c>, the subnet must be in that zone. For information on default values and when
+        /// this parameter is required, see the <c>VpcId</c> parameter description.
+        ///  
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this.defaultSubnetId; }
+            set { this.defaultSubnetId = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultSubnetId property
+        /// </summary>
+        /// <param name="defaultSubnetId">The value to set for the DefaultSubnetId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateStackRequest WithDefaultSubnetId(string defaultSubnetId)
+        {
+            this.defaultSubnetId = defaultSubnetId;
+            return this;
+        }
+            
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this.defaultSubnetId != null;
+        }
+
+        /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
         /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
@@ -323,8 +397,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The configuration manager. When you create a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or
-        /// 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August.
+        /// The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version, 0.9 or
+        /// 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August 2013.
         ///  
         /// </summary>
         public StackConfigurationManager ConfigurationManager

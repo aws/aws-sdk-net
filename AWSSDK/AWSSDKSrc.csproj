@@ -3283,12 +3283,22 @@
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcAttributeResult.cs" />
     <Compile Include="Amazon.EC2\Model\DryRunResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DryRunResult.cs" />
     <Compile Include="Amazon.EC2\Model\EC2Request.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesResult.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesConfiguration.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesId.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesModification.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesModificationResult.cs" />
     <Compile Include="Amazon.EC2\Util\EC2Metadata.cs" />
     <Compile Include="Amazon.EC2\Util\ImageUtilities.cs" />
     <Compile Include="Amazon.EC2\Util\LaunchNATInstanceRequest.cs" />
@@ -10465,6 +10475,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpcAttributeResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\ModifyVpcAttributeResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyReservedInstancesResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

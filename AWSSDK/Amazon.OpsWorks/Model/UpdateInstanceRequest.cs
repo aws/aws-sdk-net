@@ -219,7 +219,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance operating system.
+        /// The instance operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
+        /// <c>Ubuntu 12.04 LTS</c></li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
+        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
+        /// information on the standard operating systems, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
+        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+        /// AMIs</a>.
         ///  
         /// </summary>
         public string Os
@@ -347,9 +353,10 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Whether to install updates when the instance boots. The default value is <c>true</c>. To control when updates are installed, set this value
-        /// to false. You must then update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c> stack command
-        /// or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances.
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
+        /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
+        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot

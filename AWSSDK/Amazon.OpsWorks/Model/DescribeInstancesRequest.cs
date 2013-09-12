@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// <para>Requests a description of a set of instances associated with a specified ID or IDs.</para>
+    /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeInstances"/>
     public class DescribeInstancesRequest : AmazonWebServiceRequest

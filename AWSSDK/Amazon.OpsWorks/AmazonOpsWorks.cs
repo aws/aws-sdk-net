@@ -27,9 +27,9 @@ namespace Amazon.OpsWorks
     /// service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to
     /// the AWS OpsWorks details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks supports only one endpoint,
     /// opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks to create
-    /// stacks in any AWS Region.</para> <para>When you call CreateStack CloneStack or UpdateStack you can optionally use the
-    /// <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to
-    /// change the default value to 11.4 in late August.</para>
+    /// stacks in any AWS Region.</para> <para> <b>Chef Version</b> </para> <para>When you call CreateStack, CloneStack, or UpdateStack we recommend
+    /// you use the <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we
+    /// expect to change the default value to 11.4 in late August 2013.</para>
     /// </summary>
     public interface AmazonOpsWorks : IDisposable
     {
@@ -189,7 +189,7 @@ namespace Amazon.OpsWorks
         #region DescribeInstances
 
         /// <summary>
-        /// <para>Requests a description of a set of instances associated with a specified ID or IDs.</para>
+        /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeInstancesRequest">Container for the necessary parameters to execute the DescribeInstances service method on
@@ -583,7 +583,7 @@ namespace Amazon.OpsWorks
         #region DescribeCommands
 
         /// <summary>
-        /// <para>Describes the results of specified commands.</para>
+        /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeCommandsRequest">Container for the necessary parameters to execute the DescribeCommands service method on
@@ -748,7 +748,7 @@ namespace Amazon.OpsWorks
         #region DescribeRaidArrays
 
         /// <summary>
-        /// <para>Describe an instance's RAID arrays.</para>
+        /// <para>Describe an instance's RAID arrays.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeRaidArraysRequest">Container for the necessary parameters to execute the DescribeRaidArrays service method on
@@ -792,7 +792,8 @@ namespace Amazon.OpsWorks
         #region DescribeLayers
 
         /// <summary>
-        /// <para>Requests a description of one or more layers in a specified stack.</para>
+        /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers service method on
@@ -836,7 +837,8 @@ namespace Amazon.OpsWorks
         #region DescribeLoadBasedAutoScaling
 
         /// <summary>
-        /// <para>Describes load-based auto scaling configurations for specified layers.</para>
+        /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling service
@@ -920,7 +922,7 @@ namespace Amazon.OpsWorks
         #region DescribeElasticLoadBalancers
 
         /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing instances.</para>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
@@ -958,7 +960,7 @@ namespace Amazon.OpsWorks
         DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing instances.</para>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
@@ -1048,7 +1050,7 @@ namespace Amazon.OpsWorks
         #region DescribeVolumes
 
         /// <summary>
-        /// <para>Describes an instance's Amazon EBS volumes.</para>
+        /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeVolumesRequest">Container for the necessary parameters to execute the DescribeVolumes service method on
@@ -1134,7 +1136,8 @@ namespace Amazon.OpsWorks
         #region DescribeTimeBasedAutoScaling
 
         /// <summary>
-        /// <para>Describes time-based auto scaling configurations for specified instances.</para>
+        /// <para>Describes time-based auto scaling configurations for specified instances.</para> <para><b>NOTE:</b>You must specify at least one of
+        /// the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeTimeBasedAutoScaling service
@@ -1350,7 +1353,8 @@ namespace Amazon.OpsWorks
         #region DescribeDeployments
 
         /// <summary>
-        /// <para>Requests a description of a specified set of deployments.</para>
+        /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeDeploymentsRequest">Container for the necessary parameters to execute the DescribeDeployments service method on
@@ -1465,7 +1469,7 @@ namespace Amazon.OpsWorks
         #region DescribeElasticIps
 
         /// <summary>
-        /// <para>Describes an instance's Elastic IP addresses.</para>
+        /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticIpsRequest">Container for the necessary parameters to execute the DescribeElasticIps service method on
@@ -1563,7 +1567,7 @@ namespace Amazon.OpsWorks
         #region DescribeApps
 
         /// <summary>
-        /// <para>Requests a description of a specified set of apps.</para>
+        /// <para>Requests a description of a specified set of apps.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeAppsRequest">Container for the necessary parameters to execute the DescribeApps service method on
@@ -1606,9 +1610,9 @@ namespace Amazon.OpsWorks
         #region CreateLayer
 
         /// <summary>
-        /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
+        /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for noncustom
         /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
-        /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
+        /// each noncustom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
         /// so you can call CreateLayer as many times as you like for that layer type.</para>
         /// </summary>
         /// 

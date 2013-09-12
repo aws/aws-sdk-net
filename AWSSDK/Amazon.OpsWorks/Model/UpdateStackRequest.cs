@@ -38,6 +38,7 @@ namespace Amazon.OpsWorks.Model
         private string defaultOs;
         private string hostnameTheme;
         private string defaultAvailabilityZone;
+        private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
@@ -199,7 +200,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The cloned stack default operating system, which must be either "Amazon Linux" or "Ubuntu 12.04 LTS".
+        /// The stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is <c>Amazon
+        /// Linux</c>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -262,8 +264,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack new default Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.
+        /// The stack's default Availability Zone, which must be in the specified region. For more information, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for
+        /// <c>DefaultSubnetId</c>, the subnet must be in the same zone. For more information, see <a>CreateStack</a>.
         ///  
         /// </summary>
         public string DefaultAvailabilityZone
@@ -292,9 +295,39 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The stack's default subnet ID. All instances will be launched into this subnet unless you specify otherwise when you create the instance. If
+        /// you also specify a value for <c>DefaultAvailabilityZone</c>, the subnet must be in that zone. For more information, see <a>CreateStack</a>.
+        ///  
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this.defaultSubnetId; }
+            set { this.defaultSubnetId = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultSubnetId property
+        /// </summary>
+        /// <param name="defaultSubnetId">The value to set for the DefaultSubnetId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultSubnetId(string defaultSubnetId)
+        {
+            this.defaultSubnetId = defaultSubnetId;
+            return this;
+        }
+            
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this.defaultSubnetId != null;
+        }
+
+        /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
         /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
@@ -324,8 +357,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The configuration manager. When you clone a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or 11.4.
-        /// The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August.
+        /// The configuration manager. When you update a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or
+        /// 11.4. If you omit this parameter, AWS OpsWorks does not change the Chef version.
         ///  
         /// </summary>
         public StackConfigurationManager ConfigurationManager
