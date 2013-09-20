@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the UpdateMaintenanceStartTimeResult property.
-        /// A JSON object containing the GatewayARN of the gateway whose maintenance start time is updated.
+        /// A JSON object containing the of the gateway whose maintenance start time is updated.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateMaintenanceStartTimeResult class are now available on the UpdateMaintenanceStartTimeResponse class. You should use the properties on UpdateMaintenanceStartTimeResponse instead of accessing them through UpdateMaintenanceStartTimeResult.")]
         public UpdateMaintenanceStartTimeResult UpdateMaintenanceStartTimeResult

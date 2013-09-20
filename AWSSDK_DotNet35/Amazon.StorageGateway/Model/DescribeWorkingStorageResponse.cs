@@ -28,8 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeWorkingStorageResult property.
-        /// A JSON object containing the following fields: DescribeWorkingStorageOutput$DiskIds GatewayARN
-        /// DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes DescribeWorkingStorageOutput$WorkingStorageUsedInBytes
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeWorkingStorageResult class are now available on the DescribeWorkingStorageResponse class. You should use the properties on DescribeWorkingStorageResponse instead of accessing them through DescribeWorkingStorageResult.")]
         public DescribeWorkingStorageResult DescribeWorkingStorageResult

@@ -30,11 +30,6 @@ namespace Amazon.S3
     /// 
     /// 
     /// </summary>
-    /// <summary>
-    /// Implementation for accessing AmazonS3.
-    /// 
-    /// 
-    /// </summary>
 	public partial class AmazonS3Client : AmazonWebServiceClient, Amazon.S3.IAmazonS3
     {
 

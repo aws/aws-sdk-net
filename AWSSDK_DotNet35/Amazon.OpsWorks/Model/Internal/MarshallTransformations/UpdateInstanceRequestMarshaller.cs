@@ -112,6 +112,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("Os");
                     writer.Write(updateInstanceRequest.Os);
                 }
+                if (updateInstanceRequest != null && updateInstanceRequest.IsSetAmiId()) 
+                {
+                    writer.WritePropertyName("AmiId");
+                    writer.Write(updateInstanceRequest.AmiId);
+                }
                 if (updateInstanceRequest != null && updateInstanceRequest.IsSetSshKeyName()) 
                 {
                     writer.WritePropertyName("SshKeyName");
@@ -121,6 +126,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("Architecture");
                     writer.Write(updateInstanceRequest.Architecture);
+                }
+                if (updateInstanceRequest != null && updateInstanceRequest.IsSetInstallUpdatesOnBoot()) 
+                {
+                    writer.WritePropertyName("InstallUpdatesOnBoot");
+                    writer.Write(updateInstanceRequest.InstallUpdatesOnBoot);
                 }
 
                 writer.WriteObjectEnd();

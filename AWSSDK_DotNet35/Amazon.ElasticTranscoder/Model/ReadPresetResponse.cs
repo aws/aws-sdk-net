@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ReadPresetResult property.
-        /// 
+        /// The ReadPresetResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ReadPresetResult class are now available on the ReadPresetResponse class. You should use the properties on ReadPresetResponse instead of accessing them through ReadPresetResult.")]
         public ReadPresetResult ReadPresetResult

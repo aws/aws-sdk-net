@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DynamoDBv2.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,25 +41,22 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("PutRequest", targetDepth))
               {
+                context.Read();
                 writeRequest.PutRequest = PutRequestUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DeleteRequest", targetDepth))
               {
+                context.Read();
                 writeRequest.DeleteRequest = DeleteRequestUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return writeRequest;
                 }

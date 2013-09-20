@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the UpdatePipelineResult property.
-        /// 
+        /// When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdatePipelineResult class are now available on the UpdatePipelineResponse class. You should use the properties on UpdatePipelineResponse instead of accessing them through UpdatePipelineResult.")]
         public UpdatePipelineResult UpdatePipelineResult

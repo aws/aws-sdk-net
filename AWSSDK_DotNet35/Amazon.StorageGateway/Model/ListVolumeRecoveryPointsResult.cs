@@ -21,13 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> ListVolumeRecoveryPointsOutput$GatewayARN </li>
-    /// <li> ListVolumeRecoveryPointsOutput$VolumeRecoveryPointInfos </li>
-    /// 
-    /// </ul>
+    /// <summary>List Volume Recovery Points Result
     /// </summary>
     public partial class ListVolumeRecoveryPointsResult : AmazonWebServiceResponse
     {
@@ -36,7 +30,8 @@ namespace Amazon.StorageGateway.Model
         private List<VolumeRecoveryPointInfo> volumeRecoveryPointInfos = new List<VolumeRecoveryPointInfo>();
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the activated gateway whose local disk information is returned.
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
+        /// region.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -59,12 +54,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of <a>VolumeRecoveryPointInfo</a> objects, where each object describes a recovery point. If no recovery points are defined for the
-        /// volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
-        ///  
-        /// </summary>
         public List<VolumeRecoveryPointInfo> VolumeRecoveryPointInfos
         {
             get { return this.volumeRecoveryPointInfos; }

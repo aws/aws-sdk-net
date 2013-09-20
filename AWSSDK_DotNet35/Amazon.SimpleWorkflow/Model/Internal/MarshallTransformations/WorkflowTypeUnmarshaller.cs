@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,25 +41,22 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("name", targetDepth))
               {
+                context.Read();
                 workflowType.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("version", targetDepth))
               {
+                context.Read();
                 workflowType.Version = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return workflowType;
                 }

@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,49 +41,50 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("VaultARN", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VaultName", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.VaultName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreationDate", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LastInventoryDate", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.LastInventoryDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NumberOfArchives", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.NumberOfArchives = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SizeInBytes", targetDepth))
               {
+                context.Read();
                 describeVaultOutput.SizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return describeVaultOutput;
                 }

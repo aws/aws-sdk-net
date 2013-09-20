@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the UpdateGatewaySoftwareNowResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was updated.
+        /// A JSON object containing the of the gateway that was updated.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateGatewaySoftwareNowResult class are now available on the UpdateGatewaySoftwareNowResponse class. You should use the properties on UpdateGatewaySoftwareNowResponse instead of accessing them through UpdateGatewaySoftwareNowResult.")]
         public UpdateGatewaySoftwareNowResult UpdateGatewaySoftwareNowResult

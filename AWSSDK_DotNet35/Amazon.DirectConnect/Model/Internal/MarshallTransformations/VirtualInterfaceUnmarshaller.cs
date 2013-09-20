@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,109 +41,120 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("virtualInterfaceId", targetDepth))
               {
+                context.Read();
                 virtualInterface.VirtualInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("location", targetDepth))
               {
+                context.Read();
                 virtualInterface.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("connectionId", targetDepth))
               {
+                context.Read();
                 virtualInterface.ConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("virtualInterfaceType", targetDepth))
               {
+                context.Read();
                 virtualInterface.VirtualInterfaceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("virtualInterfaceName", targetDepth))
               {
+                context.Read();
                 virtualInterface.VirtualInterfaceName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("vlan", targetDepth))
               {
+                context.Read();
                 virtualInterface.Vlan = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("asn", targetDepth))
               {
+                context.Read();
                 virtualInterface.Asn = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("authKey", targetDepth))
               {
+                context.Read();
                 virtualInterface.AuthKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("amazonAddress", targetDepth))
               {
+                context.Read();
                 virtualInterface.AmazonAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("customerAddress", targetDepth))
               {
+                context.Read();
                 virtualInterface.CustomerAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("virtualInterfaceState", targetDepth))
               {
+                context.Read();
                 virtualInterface.VirtualInterfaceState = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("customerRouterConfig", targetDepth))
               {
+                context.Read();
                 virtualInterface.CustomerRouterConfig = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("virtualGatewayId", targetDepth))
               {
+                context.Read();
                 virtualInterface.VirtualGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("routeFilterPrefixes", targetDepth))
               {
+                context.Read();
                 virtualInterface.RouteFilterPrefixes = new List<RouteFilterPrefix>();
                         RouteFilterPrefixUnmarshaller unmarshaller = RouteFilterPrefixUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     virtualInterface.RouteFilterPrefixes.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   virtualInterface.RouteFilterPrefixes.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return virtualInterface;
                 }

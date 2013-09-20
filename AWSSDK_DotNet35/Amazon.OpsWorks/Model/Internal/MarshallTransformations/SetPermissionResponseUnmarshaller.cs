@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.OpsWorks.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;

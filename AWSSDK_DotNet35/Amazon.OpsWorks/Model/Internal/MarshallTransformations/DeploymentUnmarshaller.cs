@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.OpsWorks.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,97 +41,106 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("DeploymentId", targetDepth))
               {
+                context.Read();
                 deployment.DeploymentId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StackId", targetDepth))
               {
+                context.Read();
                 deployment.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AppId", targetDepth))
               {
+                context.Read();
                 deployment.AppId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreatedAt", targetDepth))
               {
+                context.Read();
                 deployment.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CompletedAt", targetDepth))
               {
+                context.Read();
                 deployment.CompletedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Duration", targetDepth))
               {
+                context.Read();
                 deployment.Duration = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IamUserArn", targetDepth))
               {
+                context.Read();
                 deployment.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Comment", targetDepth))
               {
+                context.Read();
                 deployment.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Command", targetDepth))
               {
+                context.Read();
                 deployment.Command = DeploymentCommandUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
+                context.Read();
                 deployment.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CustomJson", targetDepth))
               {
+                context.Read();
                 deployment.CustomJson = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("InstanceIds", targetDepth))
               {
+                context.Read();
                 deployment.InstanceIds = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     deployment.InstanceIds.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   deployment.InstanceIds.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return deployment;
                 }

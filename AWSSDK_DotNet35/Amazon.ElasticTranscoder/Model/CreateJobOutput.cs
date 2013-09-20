@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>CreateJobOutput</c> structure.</para>
     /// </summary>
     public class CreateJobOutput
     {
@@ -31,6 +31,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string rotate;
         private string presetId;
         private string segmentDuration;
+        private List<JobWatermark> watermarks = new List<JobWatermark>();
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -173,6 +174,23 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetSegmentDuration()
         {
             return this.segmentDuration != null;
+        }
+
+        /// <summary>
+        /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
+        /// watermarks for each output. Settings for each watermark must be defined in the preset for the current output.
+        ///  
+        /// </summary>
+        public List<JobWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
         }
     }
 }

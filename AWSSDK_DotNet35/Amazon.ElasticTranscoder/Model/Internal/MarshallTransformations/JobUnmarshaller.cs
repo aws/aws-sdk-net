@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,85 +41,92 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Id", targetDepth))
               {
+                context.Read();
                 job.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PipelineId", targetDepth))
               {
+                context.Read();
                 job.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Input", targetDepth))
               {
+                context.Read();
                 job.Input = JobInputUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Output", targetDepth))
               {
+                context.Read();
                 job.Output = JobOutputUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Outputs", targetDepth))
               {
+                context.Read();
                 job.Outputs = new List<JobOutput>();
                         JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     job.Outputs.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   job.Outputs.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("OutputKeyPrefix", targetDepth))
               {
+                context.Read();
                 job.OutputKeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Playlists", targetDepth))
               {
+                context.Read();
                 job.Playlists = new List<Playlist>();
                         PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     job.Playlists.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   job.Playlists.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
+                context.Read();
                 job.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return job;
                 }

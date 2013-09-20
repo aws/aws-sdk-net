@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,37 +41,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Progressing", targetDepth))
               {
+                context.Read();
                 notifications.Progressing = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Completed", targetDepth))
               {
+                context.Read();
                 notifications.Completed = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Warning", targetDepth))
               {
+                context.Read();
                 notifications.Warning = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Error", targetDepth))
               {
+                context.Read();
                 notifications.Error = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return notifications;
                 }

@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,43 +45,43 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("VolumeARN", targetDepth))
               {
+                context.Read();
                 response.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StartAt", targetDepth))
               {
+                context.Read();
                 response.StartAt = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("RecurrenceInHours", targetDepth))
               {
+                context.Read();
                 response.RecurrenceInHours = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Description", targetDepth))
               {
+                context.Read();
                 response.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Timezone", targetDepth))
               {
+                context.Read();
                 response.Timezone = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

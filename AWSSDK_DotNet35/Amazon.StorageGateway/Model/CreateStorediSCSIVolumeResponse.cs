@@ -28,8 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the CreateStorediSCSIVolumeResult property.
-        /// A JSON object containing the following fields: CreateStorediSCSIVolumeOutput$TargetARN CreateStorediSCSIVolumeOutput$VolumeARN
-        /// CreateStorediSCSIVolumeOutput$VolumeSizeInBytes
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateStorediSCSIVolumeResult class are now available on the CreateStorediSCSIVolumeResponse class. You should use the properties on CreateStorediSCSIVolumeResponse instead of accessing them through CreateStorediSCSIVolumeResult.")]
         public CreateStorediSCSIVolumeResult CreateStorediSCSIVolumeResult

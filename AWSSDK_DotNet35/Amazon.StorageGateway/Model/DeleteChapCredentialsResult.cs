@@ -23,11 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DeleteChapCredentialsOutput$InitiatorName </li>
-    /// <li> DeleteChapCredentialsOutput$TargetARN </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class DeleteChapCredentialsResult : AmazonWebServiceResponse
     {

@@ -35,8 +35,10 @@ namespace Amazon.OpsWorks.Model
         private AutoScalingType autoScalingType;
         private string hostname;
         private string os;
+        private string amiId;
         private string sshKeyName;
         private Architecture architecture;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The instance ID.
@@ -71,9 +73,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance type. OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values
-        /// that you use to specify the various types are in the API Name column of the Available Instance Types table.
+        /// The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The
+        /// parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.
         ///  
         /// </summary>
         public string InstanceType
@@ -133,7 +135,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance operating system.
+        /// The instance operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
+        /// <c>Ubuntu 12.04 LTS</c></li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
+        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
+        /// information on the standard operating systems, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
+        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+        /// AMIs</a>.
         ///  
         /// </summary>
         public string Os
@@ -146,6 +154,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetOs()
         {
             return this.os != null;
+        }
+
+        /// <summary>
+        /// A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+        /// 12.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        ///  
+        /// </summary>
+        public string AmiId
+        {
+            get { return this.amiId; }
+            set { this.amiId = value; }
+        }
+
+        // Check to see if AmiId property is set
+        internal bool IsSetAmiId()
+        {
+            return this.amiId != null;
         }
 
         /// <summary>
@@ -189,6 +214,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetArchitecture()
         {
             return this.architecture != null;
+        }
+
+        /// <summary>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
+        /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
+        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        ///  
+        /// </summary>
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
 
     }

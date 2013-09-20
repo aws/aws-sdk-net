@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DeleteGatewayResult property.
-        /// A JSON object containing the GatewayARN of the deleted gateway.
+        /// A JSON object containing the of the deleted gateway.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteGatewayResult class are now available on the DeleteGatewayResponse class. You should use the properties on DeleteGatewayResponse instead of accessing them through DeleteGatewayResult.")]
         public DeleteGatewayResult DeleteGatewayResult

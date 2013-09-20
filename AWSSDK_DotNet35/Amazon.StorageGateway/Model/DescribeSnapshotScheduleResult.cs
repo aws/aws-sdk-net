@@ -143,7 +143,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that indicates the time zone of the gateway.
+        /// One of the values that indicates the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>

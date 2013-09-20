@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DeleteChapCredentialsResult property.
-        /// A JSON object containing the following fields: DeleteChapCredentialsOutput$InitiatorName DeleteChapCredentialsOutput$TargetARN
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteChapCredentialsResult class are now available on the DeleteChapCredentialsResponse class. You should use the properties on DeleteChapCredentialsResponse instead of accessing them through DeleteChapCredentialsResult.")]
         public DeleteChapCredentialsResult DeleteChapCredentialsResult

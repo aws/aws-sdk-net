@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DeleteSnapshotScheduleResult property.
-        /// A JSON object containing the following fields: DeleteSnapshotScheduleOutput$VolumeARN
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteSnapshotScheduleResult class are now available on the DeleteSnapshotScheduleResponse class. You should use the properties on DeleteSnapshotScheduleResponse instead of accessing them through DeleteSnapshotScheduleResult.")]
         public DeleteSnapshotScheduleResult DeleteSnapshotScheduleResult

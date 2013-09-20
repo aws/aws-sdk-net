@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ListPipelinesResult property.
-        /// 
+        /// A list of the pipelines associated with the current AWS account.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListPipelinesResult class are now available on the ListPipelinesResponse class. You should use the properties on ListPipelinesResponse instead of accessing them through ListPipelinesResult.")]
         public ListPipelinesResult ListPipelinesResult

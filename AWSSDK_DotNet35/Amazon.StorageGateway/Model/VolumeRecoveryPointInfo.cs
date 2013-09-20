@@ -20,8 +20,7 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>Lists information about the recovery points of a cached volume.</para>
+    /// <summary>Volume Recovery Point Info
     /// </summary>
     public class VolumeRecoveryPointInfo
     {
@@ -30,20 +29,6 @@ namespace Amazon.StorageGateway.Model
         private long? volumeSizeInBytes;
         private long? volumeUsageInBytes;
         private string volumeRecoveryPointTime;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume associated with the recovery point.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -55,11 +40,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.volumeARN != null;
         }
-
-        /// <summary>
-        /// The size, in bytes, of the volume to which the recovery point is associated.
-        ///  
-        /// </summary>
         public long VolumeSizeInBytes
         {
             get { return this.volumeSizeInBytes ?? default(long); }
@@ -71,11 +51,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.volumeSizeInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The size, in bytes, of the volume in use at the time of the recovery point.
-        ///  
-        /// </summary>
         public long VolumeUsageInBytes
         {
             get { return this.volumeUsageInBytes ?? default(long); }
@@ -87,11 +62,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.volumeUsageInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The time of the recovery point. The format of the time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-        ///  
-        /// </summary>
         public string VolumeRecoveryPointTime
         {
             get { return this.volumeRecoveryPointTime; }

@@ -21,33 +21,13 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateCachediSCSIVolume$TargetARN </li>
-    /// <li> CreateCachediSCSIVolume$VolumeARN </li>
-    /// 
-    /// </ul>
+    /// <summary>Create Cachedi S C S I Volume Result
     /// </summary>
     public partial class CreateCachediSCSIVolumeResult : AmazonWebServiceResponse
     {
         
         private string volumeARN;
         private string targetARN;
-
-        /// <summary>
-        /// The ARN of the configured volume.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -59,20 +39,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.volumeARN != null;
         }
-
-        /// <summary>
-        /// The ARN of the volume target that includes the iSCSI name that initiators can use to connect to the target.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 800</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string TargetARN
         {
             get { return this.targetARN; }

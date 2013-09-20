@@ -769,19 +769,6 @@ namespace Amazon.IdentityManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
-        /// <summary>
-        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
-        /// Policy.</para>
-        /// </summary>
-        /// 
-        /// <param name="getAccountPasswordPolicyRequest">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method
-        /// on AmazonIdentityManagementService.</param>
-        /// 
-        /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by AmazonIdentityManagementService.</returns>
-        /// 
-        /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
-		GetAccountPasswordPolicyResponse GetAccountPasswordPolicy();
- 
 
         /// <summary>
         /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
@@ -807,6 +794,19 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
+        /// Policy.</para>
+        /// </summary>
+        /// 
+        /// <param name="getAccountPasswordPolicyRequest">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method
+        /// on AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.IdentityManagement.Model.NoSuchEntityException" />
+		GetAccountPasswordPolicyResponse GetAccountPasswordPolicy();
  
 
         /// <summary>

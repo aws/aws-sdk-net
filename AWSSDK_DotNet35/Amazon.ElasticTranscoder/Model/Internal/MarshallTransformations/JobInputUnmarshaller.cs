@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,49 +41,50 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Key", targetDepth))
               {
+                context.Read();
                 jobInput.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("FrameRate", targetDepth))
               {
+                context.Read();
                 jobInput.FrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Resolution", targetDepth))
               {
+                context.Read();
                 jobInput.Resolution = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AspectRatio", targetDepth))
               {
+                context.Read();
                 jobInput.AspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Interlaced", targetDepth))
               {
+                context.Read();
                 jobInput.Interlaced = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Container", targetDepth))
               {
+                context.Read();
                 jobInput.Container = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return jobInput;
                 }

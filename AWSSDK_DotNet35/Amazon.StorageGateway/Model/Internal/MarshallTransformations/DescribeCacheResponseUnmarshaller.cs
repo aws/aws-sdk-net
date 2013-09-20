@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,67 +45,71 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("GatewayARN", targetDepth))
               {
+                context.Read();
                 response.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DiskIds", targetDepth))
               {
+                context.Read();
                 response.DiskIds = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.DiskIds.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.DiskIds.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("CacheAllocatedInBytes", targetDepth))
               {
+                context.Read();
                 response.CacheAllocatedInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CacheUsedPercentage", targetDepth))
               {
+                context.Read();
                 response.CacheUsedPercentage = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CacheDirtyPercentage", targetDepth))
               {
+                context.Read();
                 response.CacheDirtyPercentage = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CacheHitPercentage", targetDepth))
               {
+                context.Read();
                 response.CacheHitPercentage = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CacheMissPercentage", targetDepth))
               {
+                context.Read();
                 response.CacheMissPercentage = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

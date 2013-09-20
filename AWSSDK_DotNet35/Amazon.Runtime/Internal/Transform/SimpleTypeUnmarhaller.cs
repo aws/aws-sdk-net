@@ -19,6 +19,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Globalization;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -238,7 +239,8 @@ namespace Amazon.Runtime.Internal.Transform
         {
             DateTime ret;
             Double seconds;
-            if (Double.TryParse(context.ReadText(), NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
+            string text = context.ReadText();
+            if (Double.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
             {
                 ret = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 ret = ret.AddSeconds(seconds);
@@ -323,7 +325,7 @@ namespace Amazon.Runtime.Internal.Transform
             while (depth == context.CurrentDepth)
             {
                 context.Read();
-                if (context.IsLeafValue && context.TestExpression("ResponseMetadata/RequestId"))
+                if (context.TestExpression("ResponseMetadata/RequestId"))
                 {
                     metadata.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 }
@@ -382,7 +384,6 @@ namespace Amazon.Runtime.Internal.Transform
         {
             K key = this.keyUnmarshaller.Unmarshall(context);
             context.Read(); 
-            context.Read(); 
             V value = this.valueUnmarshaller.Unmarshall(context);
 
             return new KeyValuePair<K, V>(key, value);
@@ -399,7 +400,7 @@ namespace Amazon.Runtime.Internal.Transform
             this.iUnmarshaller = iUnmarshaller;
         }
 
-        List<I> IUnmarshaller<List<I>,XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        List<I> IUnmarshaller<List<I>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -412,29 +413,27 @@ namespace Amazon.Runtime.Internal.Transform
 
             while (context.Read())
             {
-                if ((context.IsStartArray || context.IsStartElement || context.IsLeafArrayElement) && (context.CurrentDepth == targetDepth))
-                {
-                    list.Add(iUnmarshaller.Unmarshall(context));
-                }
-                else if (context.IsEndArray || (context.CurrentDepth < originalDepth))
-                {
+                JsonToken token = context.CurrentTokenType;
+                if (token == JsonToken.ArrayStart)
+                    continue;
+                if (token == JsonToken.ArrayEnd)
                     break;
-                }
+                list.Add(iUnmarshaller.Unmarshall(context));
             }
 
             return list;
         }
     }
 
-    public class DictionaryUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> : IUnmarshaller<Dictionary<K,V>, XmlUnmarshallerContext>, IUnmarshaller<Dictionary<K, V>, JsonUnmarshallerContext>
+    public class DictionaryUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> : IUnmarshaller<Dictionary<K, V>, XmlUnmarshallerContext>, IUnmarshaller<Dictionary<K, V>, JsonUnmarshallerContext>
         where KUnmarshaller : IUnmarshaller<K, XmlUnmarshallerContext>, IUnmarshaller<K, JsonUnmarshallerContext>
         where VUnmarshaller : IUnmarshaller<V, XmlUnmarshallerContext>, IUnmarshaller<V, JsonUnmarshallerContext>
     {
-        private KeyValueUnmarshaller<K,V,KUnmarshaller,VUnmarshaller> KVUnmarshaller;
+        private KeyValueUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> KVUnmarshaller;
 
         public DictionaryUnmarshaller(KUnmarshaller kUnmarshaller, VUnmarshaller vUnmarshaller)
         {
-            KVUnmarshaller = new KeyValueUnmarshaller<K,V,KUnmarshaller,VUnmarshaller>(kUnmarshaller,vUnmarshaller);
+            KVUnmarshaller = new KeyValueUnmarshaller<K, V, KUnmarshaller, VUnmarshaller>(kUnmarshaller, vUnmarshaller);
         }
 
         Dictionary<K, V> IUnmarshaller<Dictionary<K, V>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
@@ -450,9 +449,10 @@ namespace Amazon.Runtime.Internal.Transform
 
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth+1))
+                JsonToken token = context.CurrentTokenType;
+                if (token == JsonToken.PropertyName && (context.CurrentDepth == targetDepth + 1))
                 {
-                    KeyValuePair<K,V> item = KVUnmarshaller.Unmarshall(context);
+                    KeyValuePair<K, V> item = KVUnmarshaller.Unmarshall(context);
                     dictionary.Add(item.Key, item.Value);
                 }
                 else if (context.IsEndElement || (context.CurrentDepth < originalDepth))

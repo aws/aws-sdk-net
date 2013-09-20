@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DynamoDBv2.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,37 +41,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("ProjectionType", targetDepth))
               {
+                context.Read();
                 projection.ProjectionType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NonKeyAttributes", targetDepth))
               {
+                context.Read();
                 projection.NonKeyAttributes = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     projection.NonKeyAttributes.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   projection.NonKeyAttributes.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return projection;
                 }

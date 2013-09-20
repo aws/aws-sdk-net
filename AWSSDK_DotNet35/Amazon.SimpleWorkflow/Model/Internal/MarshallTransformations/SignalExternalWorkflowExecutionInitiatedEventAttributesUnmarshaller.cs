@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,49 +41,50 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("workflowId", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.WorkflowId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("runId", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.RunId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("signalName", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.SignalName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("input", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("control", targetDepth))
               {
+                context.Read();
                 signalExternalWorkflowExecutionInitiatedEventAttributes.Control = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return signalExternalWorkflowExecutionInitiatedEventAttributes;
                 }

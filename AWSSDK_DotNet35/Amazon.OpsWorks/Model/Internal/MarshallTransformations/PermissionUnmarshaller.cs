@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.OpsWorks.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,37 +41,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("StackId", targetDepth))
               {
+                context.Read();
                 permission.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IamUserArn", targetDepth))
               {
+                context.Read();
                 permission.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AllowSsh", targetDepth))
               {
+                context.Read();
                 permission.AllowSsh = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AllowSudo", targetDepth))
               {
+                context.Read();
                 permission.AllowSudo = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return permission;
                 }

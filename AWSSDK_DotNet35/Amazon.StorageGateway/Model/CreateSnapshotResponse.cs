@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the CreateSnapshotResult property.
-        /// A JSON object containing the following fields: CreateSnapshotOutput$SnapshotId CreateSnapshotOutput$VolumeARN
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateSnapshotResult class are now available on the CreateSnapshotResponse class. You should use the properties on CreateSnapshotResponse instead of accessing them through CreateSnapshotResult.")]
         public CreateSnapshotResult CreateSnapshotResult

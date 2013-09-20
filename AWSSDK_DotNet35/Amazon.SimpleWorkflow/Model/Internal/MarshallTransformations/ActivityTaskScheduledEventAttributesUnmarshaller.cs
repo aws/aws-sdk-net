@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,73 +41,78 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("activityType", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.ActivityType = ActivityTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("activityId", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.ActivityId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("input", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("control", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.Control = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("scheduleToStartTimeout", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.ScheduleToStartTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("scheduleToCloseTimeout", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.ScheduleToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("startToCloseTimeout", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.StartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("taskList", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.TaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("heartbeatTimeout", targetDepth))
               {
+                context.Read();
                 activityTaskScheduledEventAttributes.HeartbeatTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return activityTaskScheduledEventAttributes;
                 }

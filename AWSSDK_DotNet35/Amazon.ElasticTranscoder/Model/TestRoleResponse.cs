@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the TestRoleResult property.
-        /// 
+        /// The TestRoleResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the TestRoleResult class are now available on the TestRoleResponse class. You should use the properties on TestRoleResponse instead of accessing them through TestRoleResult.")]
         public TestRoleResult TestRoleResult

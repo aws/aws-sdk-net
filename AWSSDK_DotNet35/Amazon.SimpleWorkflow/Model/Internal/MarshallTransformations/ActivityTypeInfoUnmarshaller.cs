@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,43 +41,43 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("activityType", targetDepth))
               {
+                context.Read();
                 activityTypeInfo.ActivityType = ActivityTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("status", targetDepth))
               {
+                context.Read();
                 activityTypeInfo.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("description", targetDepth))
               {
+                context.Read();
                 activityTypeInfo.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("creationDate", targetDepth))
               {
+                context.Read();
                 activityTypeInfo.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("deprecationDate", targetDepth))
               {
+                context.Read();
                 activityTypeInfo.DeprecationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return activityTypeInfo;
                 }

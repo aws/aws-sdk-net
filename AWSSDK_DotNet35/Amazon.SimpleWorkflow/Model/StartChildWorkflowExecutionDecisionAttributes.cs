@@ -21,25 +21,36 @@ using System.IO;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para>Provides details of the <c>StartChildWorkflowExecution</c> decision.</para> <para> <b>Access Control</b> </para> <para>You can use IAM
-    /// policies to control this decision's access to Amazon SWF in much the same way as for the regular API:</para>
+    /// <p>
+    /// Provides details of the <code>StartChildWorkflowExecution</code> decision.
+    /// </p>
+    /// <p>
+    /// <b>Access Control</b>
+    /// </p>
+    /// <p>
+    /// You can use IAM policies to control this decision's access to Amazon SWF in much the same way as for the regular API:
+    /// </p>
+    /// 
     /// <ul>
-    /// <li>Use a <c>Resource</c> element with the domain name to limit the decision to only specified domains.</li>
-    /// <li>Use an <c>Action</c> element to allow or deny permission to specify this decision.</li>
-    /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
+    /// <li>Use a <code>Resource</code> element with the domain name to limit the decision to only specified domains.</li>
+    /// <li>Use an <code>Action</code> element to allow or deny permission to specify this decision.</li>
+    /// <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
     /// <ul>
-    /// <li> <c>tagList.member.N</c> : TBD</li>
-    /// <li> <c>taskList</c> :String constraint. The key is "swf:taskList.name".</li>
-    /// <li> <c>workflowType.name</c> : String constraint. The key is “swf:workflowType.name”.</li>
-    /// <li> <c>workflowType.version</c> : String constraint. The key is “swf:workflowType.version”.</li>
+    /// <li><code>tagList.member.N</code>: TBD</li>
+    /// <li><code>taskList</code>:String constraint. The key is "swf:taskList.name".</li>
+    /// <li><code>workflowType.name</code>: String constraint. The key is â€œswf:workflowType.nameâ€�.</li>
+    /// <li><code>workflowType.version</code>: String constraint. The key is â€œswf:workflowType.versionâ€�.</li>
     /// 
     /// </ul>
     /// </li>
     /// 
     /// </ul>
-    /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-    /// constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows.</para>
+    /// <p>
+    /// If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the
+    /// action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+    /// policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+    /// Workflows</a>.
+    /// </p>
     /// </summary>
     public class StartChildWorkflowExecutionDecisionAttributes
     {

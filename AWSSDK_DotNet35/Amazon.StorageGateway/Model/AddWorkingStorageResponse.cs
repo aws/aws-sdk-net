@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the AddWorkingStorageResult property.
-        /// A JSON object containing the GatewayARN of the gateway for which working storage was configured.
+        /// A JSON object containing the of the gateway for which working storage was configured.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AddWorkingStorageResult class are now available on the AddWorkingStorageResponse class. You should use the properties on AddWorkingStorageResponse instead of accessing them through AddWorkingStorageResult.")]
         public AddWorkingStorageResult AddWorkingStorageResult

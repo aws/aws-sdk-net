@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ListJobsByPipelineResult property.
-        /// 
+        /// The ListJobsByPipelineResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListJobsByPipelineResult class are now available on the ListJobsByPipelineResponse class. You should use the properties on ListJobsByPipelineResponse instead of accessing them through ListJobsByPipelineResult.")]
         public ListJobsByPipelineResult ListJobsByPipelineResult

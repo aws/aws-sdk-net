@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ReadPipelineResult property.
-        /// 
+        /// The ReadPipelineResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ReadPipelineResult class are now available on the ReadPipelineResponse class. You should use the properties on ReadPipelineResponse instead of accessing them through ReadPipelineResult.")]
         public ReadPipelineResult ReadPipelineResult

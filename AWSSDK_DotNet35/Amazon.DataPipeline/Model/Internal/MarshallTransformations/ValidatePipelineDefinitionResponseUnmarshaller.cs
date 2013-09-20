@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.DataPipeline.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,55 +45,57 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("validationErrors", targetDepth))
               {
+                context.Read();
                 response.ValidationErrors = new List<ValidationError>();
                         ValidationErrorUnmarshaller unmarshaller = ValidationErrorUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.ValidationErrors.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.ValidationErrors.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("validationWarnings", targetDepth))
               {
+                context.Read();
                 response.ValidationWarnings = new List<ValidationWarning>();
                         ValidationWarningUnmarshaller unmarshaller = ValidationWarningUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.ValidationWarnings.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.ValidationWarnings.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("errored", targetDepth))
               {
+                context.Read();
                 response.Errored = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

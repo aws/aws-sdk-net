@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ReadJobResult property.
-        /// 
+        /// The ReadJobResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ReadJobResult class are now available on the ReadJobResponse class. You should use the properties on ReadJobResponse instead of accessing them through ReadJobResult.")]
         public ReadJobResult ReadJobResult

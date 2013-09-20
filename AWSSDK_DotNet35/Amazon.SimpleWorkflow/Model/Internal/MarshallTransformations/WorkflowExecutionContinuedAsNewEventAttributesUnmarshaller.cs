@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,79 +41,85 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("input", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("newExecutionRunId", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.NewExecutionRunId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("executionStartToCloseTimeout", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.ExecutionStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("taskList", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.TaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("taskStartToCloseTimeout", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.TaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("childPolicy", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.ChildPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("tagList", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.TagList = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     workflowExecutionContinuedAsNewEventAttributes.TagList.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   workflowExecutionContinuedAsNewEventAttributes.TagList.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("workflowType", targetDepth))
               {
+                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return workflowExecutionContinuedAsNewEventAttributes;
                 }

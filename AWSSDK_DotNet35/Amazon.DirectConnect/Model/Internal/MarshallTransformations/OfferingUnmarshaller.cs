@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,67 +41,71 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("offeringId", targetDepth))
               {
+                context.Read();
                 offering.OfferingId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("region", targetDepth))
               {
+                context.Read();
                 offering.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("location", targetDepth))
               {
+                context.Read();
                 offering.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("offeringName", targetDepth))
               {
+                context.Read();
                 offering.OfferingName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("description", targetDepth))
               {
+                context.Read();
                 offering.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("bandwidth", targetDepth))
               {
+                context.Read();
                 offering.Bandwidth = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("connectionCosts", targetDepth))
               {
+                context.Read();
                 offering.ConnectionCosts = new List<ConnectionCost>();
                         ConnectionCostUnmarshaller unmarshaller = ConnectionCostUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     offering.ConnectionCosts.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   offering.ConnectionCosts.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return offering;
                 }

@@ -35,7 +35,8 @@ namespace Amazon.StorageGateway.Model
         private List<string> diskIds = new List<string>();
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the ListGateways operation to return a list of gateways for your account and region.
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
+        /// region.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -58,12 +59,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of strings that identify disks that are to be configured as cache. Each string in the array must be minimum length of 1 and maximum
-        /// length of 300. You can get the disk IDs from the ListLocalDisks API.
-        ///  
-        /// </summary>
         public List<string> DiskIds
         {
             get { return this.diskIds; }

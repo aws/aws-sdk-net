@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,37 +45,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("GatewayARN", targetDepth))
               {
+                context.Read();
                 response.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeRecoveryPointInfos", targetDepth))
               {
+                context.Read();
                 response.VolumeRecoveryPointInfos = new List<VolumeRecoveryPointInfo>();
                         VolumeRecoveryPointInfoUnmarshaller unmarshaller = VolumeRecoveryPointInfoUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.VolumeRecoveryPointInfos.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.VolumeRecoveryPointInfos.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

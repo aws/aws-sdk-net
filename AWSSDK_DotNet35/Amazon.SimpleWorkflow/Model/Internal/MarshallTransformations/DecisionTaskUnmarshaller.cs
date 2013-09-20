@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.SimpleWorkflow.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,67 +41,71 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("taskToken", targetDepth))
               {
+                context.Read();
                 decisionTask.TaskToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("startedEventId", targetDepth))
               {
+                context.Read();
                 decisionTask.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("workflowExecution", targetDepth))
               {
+                context.Read();
                 decisionTask.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("workflowType", targetDepth))
               {
+                context.Read();
                 decisionTask.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("events", targetDepth))
               {
+                context.Read();
                 decisionTask.Events = new List<HistoryEvent>();
                         HistoryEventUnmarshaller unmarshaller = HistoryEventUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     decisionTask.Events.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   decisionTask.Events.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("nextPageToken", targetDepth))
               {
+                context.Read();
                 decisionTask.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("previousStartedEventId", targetDepth))
               {
+                context.Read();
                 decisionTask.PreviousStartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return decisionTask;
                 }

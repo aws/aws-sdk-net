@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the DeletePresetResult property.
-        /// 
+        /// The DeletePresetResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeletePresetResult class are now available on the DeletePresetResponse class. You should use the properties on DeletePresetResponse instead of accessing them through DeletePresetResult.")]
         public DeletePresetResult DeletePresetResult

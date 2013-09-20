@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an Elastic Load Balancing load balancer.</para>
+    /// <para>Describes an Elastic Load Balancing instance.</para>
     /// </summary>
     public class ElasticLoadBalancer
     {
@@ -31,11 +31,12 @@ namespace Amazon.OpsWorks.Model
         private string dnsName;
         private string stackId;
         private string layerId;
+        private string vpcId;
         private List<string> availabilityZones = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
         /// <summary>
-        /// The Elastic Load Balancing load balancer's name.
+        /// The Elastic Load Balancing instance's name.
         ///  
         /// </summary>
         public string ElasticLoadBalancerName
@@ -51,7 +52,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The load balancer's AWS region.
+        /// The instance's AWS region.
         ///  
         /// </summary>
         public string Region
@@ -67,7 +68,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The load balancer's public DNS name.
+        /// The instance's public DNS name.
         ///  
         /// </summary>
         public string DnsName
@@ -83,7 +84,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The ID of the stack that the load balancer is associated with.
+        /// The ID of the stack that the instance is associated with.
         ///  
         /// </summary>
         public string StackId
@@ -99,7 +100,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The ID of the layer that the load balancer is attached to.
+        /// The ID of the layer that the instance is attached to.
         ///  
         /// </summary>
         public string LayerId
@@ -115,7 +116,23 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The load balancer's Availability Zones.
+        /// The VPC ID.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
+        }
+
+        /// <summary>
+        /// The instance's Availability Zones.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -131,7 +148,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A list of the EC2 instances that the Elastic Load Balancing load balancer is managing traffic for.
+        /// A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
         ///  
         /// </summary>
         public List<string> Ec2InstanceIds

@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.AWSSupport.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,49 +41,50 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("checkId", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.CheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("timestamp", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.Timestamp = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("status", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("hasFlaggedResources", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.HasFlaggedResources = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourcesSummary", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.ResourcesSummary = TrustedAdvisorResourcesSummaryUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("categorySpecificSummary", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckSummary.CategorySpecificSummary = TrustedAdvisorCategorySpecificSummaryUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return trustedAdvisorCheckSummary;
                 }

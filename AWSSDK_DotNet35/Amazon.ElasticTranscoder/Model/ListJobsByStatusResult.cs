@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para> The <c>ListJobsByStatusResponse</c> structure. </para>
     /// </summary>
     public partial class ListJobsByStatusResult : AmazonWebServiceResponse
     {

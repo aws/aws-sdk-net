@@ -21,18 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeCacheOutput$CacheAllocatedInBytes </li>
-    /// <li> DescribeCacheOutput$CacheDirtyPercentage </li>
-    /// <li> DescribeCacheOutput$CacheHitPercentage </li>
-    /// <li> DescribeCacheOutput$CacheMissPercentage </li>
-    /// <li> DescribeCacheOutput$CacheUsedPercentage </li>
-    /// <li> DescribeCacheOutput$DiskIds </li>
-    /// <li> DescribeCacheOutput$GatewayARN </li>
-    /// 
-    /// </ul>
+    /// <summary>Describe Cache Result
     /// </summary>
     public partial class DescribeCacheResult : AmazonWebServiceResponse
     {
@@ -46,8 +35,8 @@ namespace Amazon.StorageGateway.Model
         private double? cacheMissPercentage;
 
         /// <summary>
-        /// In response, AWS Storage Gateway returns the ARN of the activated gateway. If you don't remember the ARN of a gateway, you can use the List
-        /// Gateways operations to return a list of gateways for your account and region.
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
+        /// region.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,12 +59,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of the gateway's local disk IDs that are configured as cache. Each local disk ID is specified as a string (minimum length of 1 and
-        /// maximum length of 300). If no local disks are configured as cache, then the <c>DiskIds</c> array is empty.
-        ///  
-        /// </summary>
         public List<string> DiskIds
         {
             get { return this.diskIds; }
@@ -87,11 +70,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.diskIds.Count > 0;
         }
-
-        /// <summary>
-        /// The size allocated, in bytes, for the cache. If no cache is defined for the gateway, this field returns 0.
-        ///  
-        /// </summary>
         public long CacheAllocatedInBytes
         {
             get { return this.cacheAllocatedInBytes ?? default(long); }
@@ -103,11 +81,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.cacheAllocatedInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The percentage (0 to 100) of the cache storage in use. If no cached is defined for the gateway, this field returns 0.
-        ///  
-        /// </summary>
         public double CacheUsedPercentage
         {
             get { return this.cacheUsedPercentage ?? default(double); }
@@ -119,12 +92,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.cacheUsedPercentage.HasValue;
         }
-
-        /// <summary>
-        /// The percentage of the cache that contains data that has not yet been persisted to Amazon S3. If no cached is defined for the gateway, this
-        /// field returns 0.
-        ///  
-        /// </summary>
         public double CacheDirtyPercentage
         {
             get { return this.cacheDirtyPercentage ?? default(double); }
@@ -136,12 +103,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.cacheDirtyPercentage.HasValue;
         }
-
-        /// <summary>
-        /// The percentage (0 to 100) of data read from the storage volume that was read from cache. If no cached is defined for the gateway, this field
-        /// returns 0.
-        ///  
-        /// </summary>
         public double CacheHitPercentage
         {
             get { return this.cacheHitPercentage ?? default(double); }
@@ -153,12 +114,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.cacheHitPercentage.HasValue;
         }
-
-        /// <summary>
-        /// TThe percentage (0 to 100) of data read from the storage volume that was not read from the cache, but was read from Amazon S3. If no cached
-        /// is defined for the gateway, this field returns 0.
-        ///  
-        /// </summary>
         public double CacheMissPercentage
         {
             get { return this.cacheMissPercentage ?? default(double); }

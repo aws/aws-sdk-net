@@ -40,6 +40,7 @@ namespace Amazon.OpsWorks.Model
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
         private Recipes customRecipes;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The layer ID.
@@ -74,8 +75,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer short name, which is used internally by OpsWorksand by Chef. The shortname is also used as the name for the directory where your
-        /// app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+        /// The layer short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where
+        /// your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
         ///  
         /// </summary>
         public string Shortname
@@ -218,6 +219,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomRecipes()
         {
             return this.customRecipes != null;
+        }
+
+        /// <summary>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
+        /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
+        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        ///  
+        /// </summary>
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
 
     }

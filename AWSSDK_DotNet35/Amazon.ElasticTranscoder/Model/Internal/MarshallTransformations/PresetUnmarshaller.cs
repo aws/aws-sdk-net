@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,61 +41,64 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Id", targetDepth))
               {
+                context.Read();
                 preset.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Name", targetDepth))
               {
+                context.Read();
                 preset.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Description", targetDepth))
               {
+                context.Read();
                 preset.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Container", targetDepth))
               {
+                context.Read();
                 preset.Container = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Audio", targetDepth))
               {
+                context.Read();
                 preset.Audio = AudioParametersUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Video", targetDepth))
               {
+                context.Read();
                 preset.Video = VideoParametersUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Thumbnails", targetDepth))
               {
+                context.Read();
                 preset.Thumbnails = ThumbnailsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Type", targetDepth))
               {
+                context.Read();
                 preset.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return preset;
                 }

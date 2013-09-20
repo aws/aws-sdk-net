@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DeleteVolumeResult property.
-        /// A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted
+        /// A JSON object containing the of the storage volume that was deleted
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteVolumeResult class are now available on the DeleteVolumeResponse class. You should use the properties on DeleteVolumeResponse instead of accessing them through DeleteVolumeResult.")]
         public DeleteVolumeResult DeleteVolumeResult

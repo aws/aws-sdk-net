@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.Glacier.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,109 +45,120 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("JobId", targetDepth))
               {
+                context.Read();
                 response.JobId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("JobDescription", targetDepth))
               {
+                context.Read();
                 response.JobDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Action", targetDepth))
               {
+                context.Read();
                 response.Action = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ArchiveId", targetDepth))
               {
+                context.Read();
                 response.ArchiveId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VaultARN", targetDepth))
               {
+                context.Read();
                 response.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreationDate", targetDepth))
               {
+                context.Read();
                 response.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Completed", targetDepth))
               {
+                context.Read();
                 response.Completed = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StatusCode", targetDepth))
               {
+                context.Read();
                 response.StatusCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StatusMessage", targetDepth))
               {
+                context.Read();
                 response.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
               {
+                context.Read();
                 response.ArchiveSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("InventorySizeInBytes", targetDepth))
               {
+                context.Read();
                 response.InventorySizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SNSTopic", targetDepth))
               {
+                context.Read();
                 response.SNSTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CompletionDate", targetDepth))
               {
+                context.Read();
                 response.CompletionDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SHA256TreeHash", targetDepth))
               {
+                context.Read();
                 response.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth))
               {
+                context.Read();
                 response.ArchiveSHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("RetrievalByteRange", targetDepth))
               {
+                context.Read();
                 response.RetrievalByteRange = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

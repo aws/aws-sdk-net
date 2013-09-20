@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.AWSSupport.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,55 +41,57 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("status", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourceDetail.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("region", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourceDetail.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourceId", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourceDetail.ResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("isSuppressed", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourceDetail.IsSuppressed = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("metadata", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourceDetail.Metadata = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     trustedAdvisorResourceDetail.Metadata.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   trustedAdvisorResourceDetail.Metadata.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return trustedAdvisorResourceDetail;
                 }

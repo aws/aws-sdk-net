@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the UpdatePipelineNotificationsResult property.
-        /// 
+        /// The UpdatePipelineNotificationsResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdatePipelineNotificationsResult class are now available on the UpdatePipelineNotificationsResponse class. You should use the properties on UpdatePipelineNotificationsResponse instead of accessing them through UpdatePipelineNotificationsResult.")]
         public UpdatePipelineNotificationsResult UpdatePipelineNotificationsResult

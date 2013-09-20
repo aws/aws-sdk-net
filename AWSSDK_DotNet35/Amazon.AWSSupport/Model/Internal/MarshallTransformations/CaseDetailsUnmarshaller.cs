@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.AWSSupport.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,97 +41,106 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("caseId", targetDepth))
               {
+                context.Read();
                 caseDetails.CaseId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("displayId", targetDepth))
               {
+                context.Read();
                 caseDetails.DisplayId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("subject", targetDepth))
               {
+                context.Read();
                 caseDetails.Subject = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("status", targetDepth))
               {
+                context.Read();
                 caseDetails.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("serviceCode", targetDepth))
               {
+                context.Read();
                 caseDetails.ServiceCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("categoryCode", targetDepth))
               {
+                context.Read();
                 caseDetails.CategoryCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("severityCode", targetDepth))
               {
+                context.Read();
                 caseDetails.SeverityCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("submittedBy", targetDepth))
               {
+                context.Read();
                 caseDetails.SubmittedBy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("timeCreated", targetDepth))
               {
+                context.Read();
                 caseDetails.TimeCreated = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("recentCommunications", targetDepth))
               {
+                context.Read();
                 caseDetails.RecentCommunications = RecentCaseCommunicationsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ccEmailAddresses", targetDepth))
               {
+                context.Read();
                 caseDetails.CcEmailAddresses = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     caseDetails.CcEmailAddresses.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   caseDetails.CcEmailAddresses.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("language", targetDepth))
               {
+                context.Read();
                 caseDetails.Language = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return caseDetails;
                 }

@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,79 +41,106 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Id", targetDepth))
               {
+                context.Read();
                 jobOutput.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Key", targetDepth))
               {
+                context.Read();
                 jobOutput.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ThumbnailPattern", targetDepth))
               {
+                context.Read();
                 jobOutput.ThumbnailPattern = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Rotate", targetDepth))
               {
+                context.Read();
                 jobOutput.Rotate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PresetId", targetDepth))
               {
+                context.Read();
                 jobOutput.PresetId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SegmentDuration", targetDepth))
               {
+                context.Read();
                 jobOutput.SegmentDuration = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
+                context.Read();
                 jobOutput.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StatusDetail", targetDepth))
               {
+                context.Read();
                 jobOutput.StatusDetail = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Duration", targetDepth))
               {
+                context.Read();
                 jobOutput.Duration = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Width", targetDepth))
               {
+                context.Read();
                 jobOutput.Width = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Height", targetDepth))
               {
+                context.Read();
                 jobOutput.Height = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
+              if (context.TestExpression("Watermarks", targetDepth))
+              {
+                context.Read();
+                jobOutput.Watermarks = new List<JobWatermark>();
+                        JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   jobOutput.Watermarks.Add(unmarshaller.Unmarshall(context));
                 }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                continue;
+              }
+  
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return jobOutput;
                 }

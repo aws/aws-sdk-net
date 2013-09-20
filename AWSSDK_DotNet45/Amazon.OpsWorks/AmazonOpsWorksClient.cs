@@ -28,7 +28,14 @@ namespace Amazon.OpsWorks
     /// <summary>
     /// Implementation for accessing AmazonOpsWorks.
     /// 
-    /// AWS OpsWorks
+    /// AWS OpsWorks <para>Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides descriptions, syntax, and usage examples about AWS
+    /// OpsWorks actions and data types, including common parameters and error codes. </para> <para>AWS OpsWorks is an application management
+    /// service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to
+    /// the AWS OpsWorks details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks supports only one endpoint,
+    /// opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks to create
+    /// stacks in any AWS Region.</para> <para> <b>Chef Version</b> </para> <para>When you call CreateStack, CloneStack, or UpdateStack we recommend
+    /// you use the <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we
+    /// expect to change the default value to 11.4 in late August 2013.</para>
     /// </summary>
 	public partial class AmazonOpsWorksClient : AmazonWebServiceClient, Amazon.OpsWorks.IAmazonOpsWorks
     {
@@ -204,9 +211,9 @@ namespace Amazon.OpsWorks
 
  
         /// <summary>
-        /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
-        /// Balancing load balancer separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load
-        /// Balancing Developer Guide.</para>
+        /// <para>Attaches an Elastic Load Balancing instance to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load Balancing
+        /// instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing Developer
+        /// Guide.</para>
         /// </summary>
         /// 
         /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer service
@@ -755,7 +762,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Requests a description of a specified set of apps.</para>
+        /// <para>Requests a description of a specified set of apps.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeAppsRequest">Container for the necessary parameters to execute the DescribeApps service method on
@@ -798,7 +805,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes the results of specified commands.</para>
+        /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeCommandsRequest">Container for the necessary parameters to execute the DescribeCommands service method on
@@ -841,7 +848,8 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Requests a description of a specified set of deployments.</para>
+        /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeDeploymentsRequest">Container for the necessary parameters to execute the DescribeDeployments service method on
@@ -884,7 +892,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes an instance's Elastic IP addresses.</para>
+        /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticIpsRequest">Container for the necessary parameters to execute the DescribeElasticIps service method on
@@ -927,7 +935,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing load balancers.</para>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
@@ -970,7 +978,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing load balancers.</para>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
@@ -986,7 +994,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Requests a description of a set of instances associated with a specified ID or IDs.</para>
+        /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeInstancesRequest">Container for the necessary parameters to execute the DescribeInstances service method on
@@ -1029,7 +1037,8 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Requests a description of one or more layers in a specified stack.</para>
+        /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers service method on
@@ -1072,7 +1081,8 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes load-based auto scaling configurations for specified layers.</para>
+        /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling service
@@ -1158,7 +1168,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describe an instance's RAID arrays.</para>
+        /// <para>Describe an instance's RAID arrays.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeRaidArraysRequest">Container for the necessary parameters to execute the DescribeRaidArrays service method on
@@ -1201,7 +1211,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes OpsWorks service errors.</para>
+        /// <para>Describes AWS OpsWorks service errors.</para>
         /// </summary>
         /// 
         /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors service method on
@@ -1244,7 +1254,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes OpsWorks service errors.</para>
+        /// <para>Describes AWS OpsWorks service errors.</para>
         /// </summary>
         /// 
         /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors service method on
@@ -1319,7 +1329,8 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes time-based auto scaling configurations for specified instances.</para>
+        /// <para>Describes time-based auto scaling configurations for specified instances.</para> <para><b>NOTE:</b>You must specify at least one of
+        /// the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeTimeBasedAutoScaling service
@@ -1405,7 +1416,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Describes an instance's Amazon EBS volumes.</para>
+        /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeVolumesRequest">Container for the necessary parameters to execute the DescribeVolumes service method on
@@ -1448,7 +1459,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Detaches a specified Elastic Load Balancing load balancer from it's layer.</para>
+        /// <para>Detaches a specified Elastic Load Balancing instance from it's layer.</para>
         /// </summary>
         /// 
         /// <param name="detachElasticLoadBalancerRequest">Container for the necessary parameters to execute the DetachElasticLoadBalancer service
@@ -1488,7 +1499,7 @@ namespace Amazon.OpsWorks
         }
  
         /// <summary>
-        /// <para>Gets a generated hostname for the specified layer, based on the current hostname theme.</para>
+        /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
         /// </summary>
         /// 
         /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion service method on

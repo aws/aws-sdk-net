@@ -840,19 +840,6 @@ namespace Amazon.RDS
         /// <exception cref="T:Amazon.RDS.Model.DBSnapshotNotFoundException" />
 		DescribeDBSnapshotsResponse DescribeDBSnapshots();
  
-        /// <summary>
-        /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
-        /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
-        /// </summary>
-        /// 
-        /// <param name="describeDBSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method on
-        /// AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupNotFoundException" />
-		DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups();
- 
 
         /// <summary>
         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
@@ -878,6 +865,19 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
+        /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeDBSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method on
+        /// AmazonRDS.</param>
+        /// 
+        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
+        /// 
+        /// <exception cref="T:Amazon.RDS.Model.DBSubnetGroupNotFoundException" />
+		DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups();
  
 
         /// <summary>

@@ -23,13 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeWorkingStorageOutput$DiskIds </li>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageUsedInBytes </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class DescribeWorkingStorageResult : AmazonWebServiceResponse
     {

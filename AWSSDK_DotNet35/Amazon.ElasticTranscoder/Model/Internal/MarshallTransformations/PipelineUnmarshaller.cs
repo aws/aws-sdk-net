@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,73 +41,78 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Id", targetDepth))
               {
+                context.Read();
                 pipeline.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Arn", targetDepth))
               {
+                context.Read();
                 pipeline.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Name", targetDepth))
               {
+                context.Read();
                 pipeline.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
+                context.Read();
                 pipeline.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("InputBucket", targetDepth))
               {
+                context.Read();
                 pipeline.InputBucket = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("OutputBucket", targetDepth))
               {
+                context.Read();
                 pipeline.OutputBucket = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Role", targetDepth))
               {
+                context.Read();
                 pipeline.Role = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Notifications", targetDepth))
               {
+                context.Read();
                 pipeline.Notifications = NotificationsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ContentConfig", targetDepth))
               {
+                context.Read();
                 pipeline.ContentConfig = PipelineOutputConfigUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ThumbnailConfig", targetDepth))
               {
+                context.Read();
                 pipeline.ThumbnailConfig = PipelineOutputConfigUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return pipeline;
                 }

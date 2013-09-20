@@ -219,7 +219,7 @@ namespace Amazon.Runtime
                 var eventStream = new EventStream(request.ContentStream, true);
                 var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, request.ContentStream.Length);
                 eventStream.OnRead += tracker.ReadProgress;
-                requestMessage.Content = new StreamContent(eventStream);
+                requestMessage.Content = new StreamContent(eventStream, this.config.BufferSize);
                 requestMessage.Content.Headers.ContentLength = request.ContentStream.Length;
             }
             else if ((requestData = GetRequestData(request)) != null)

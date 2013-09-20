@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the CreateJobResult property.
-        /// 
+        /// The CreateJobResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateJobResult class are now available on the CreateJobResponse class. You should use the properties on CreateJobResponse instead of accessing them through CreateJobResult.")]
         public CreateJobResult CreateJobResult

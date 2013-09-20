@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.DynamoDBv2.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,71 +45,73 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("UnprocessedItems", targetDepth))
               {
+                context.Read();
                 response.UnprocessedItems = new Dictionary<String,List<WriteRequest>>();
                 KeyValueUnmarshaller<string, List<WriteRequest>, StringUnmarshaller, ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>> unmarshaller = new KeyValueUnmarshaller<string, List<WriteRequest>, StringUnmarshaller, ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>(WriteRequestUnmarshaller.GetInstance()));
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, List<WriteRequest>> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, List<WriteRequest>> kvp = unmarshaller.Unmarshall(context);
                     response.UnprocessedItems.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
               if (context.TestExpression("ItemCollectionMetrics", targetDepth))
               {
+                context.Read();
                 response.ItemCollectionMetrics = new Dictionary<String,List<ItemCollectionMetrics>>();
                 KeyValueUnmarshaller<string, List<ItemCollectionMetrics>, StringUnmarshaller, ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>> unmarshaller = new KeyValueUnmarshaller<string, List<ItemCollectionMetrics>, StringUnmarshaller, ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>(ItemCollectionMetricsUnmarshaller.GetInstance()));
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, List<ItemCollectionMetrics>> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, List<ItemCollectionMetrics>> kvp = unmarshaller.Unmarshall(context);
                     response.ItemCollectionMetrics.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
               if (context.TestExpression("ConsumedCapacity", targetDepth))
               {
+                context.Read();
                 response.ConsumedCapacity = new List<ConsumedCapacity>();
                         ConsumedCapacityUnmarshaller unmarshaller = ConsumedCapacityUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.ConsumedCapacity.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.ConsumedCapacity.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

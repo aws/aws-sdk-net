@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the CancelJobResult property.
-        /// 
+        /// The response body contains a JSON object. If the job is successfully canceled, the value of Success is true.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CancelJobResult class are now available on the CancelJobResponse class. You should use the properties on CancelJobResponse instead of accessing them through CancelJobResult.")]
         public CancelJobResult CancelJobResult

@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the DeletePipelineResult property.
-        /// 
+        /// The DeletePipelineResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeletePipelineResult class are now available on the DeletePipelineResponse class. You should use the properties on DeletePipelineResponse instead of accessing them through DeletePipelineResult.")]
         public DeletePipelineResult DeletePipelineResult

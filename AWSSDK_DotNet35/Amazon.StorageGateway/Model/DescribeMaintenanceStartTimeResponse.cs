@@ -28,8 +28,8 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeMaintenanceStartTimeResult property.
-        /// A JSON object containing the following fields: GatewayARN DescribeMaintenanceStartTimeOutput$DayOfWeek
-        /// DescribeMaintenanceStartTimeOutput$HourOfDay DescribeMaintenanceStartTimeOutput$MinuteOfHour DescribeMaintenanceStartTimeOutput$Timezone
+        /// A JSON object containing the following fields: DescribeMaintenanceStartTimeOutput$DayOfWeek DescribeMaintenanceStartTimeOutput$HourOfDay
+        /// DescribeMaintenanceStartTimeOutput$MinuteOfHour DescribeMaintenanceStartTimeOutput$Timezone
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeMaintenanceStartTimeResult class are now available on the DescribeMaintenanceStartTimeResponse class. You should use the properties on DescribeMaintenanceStartTimeResponse instead of accessing them through DescribeMaintenanceStartTimeResult.")]
         public DescribeMaintenanceStartTimeResult DescribeMaintenanceStartTimeResult

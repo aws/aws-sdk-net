@@ -263,6 +263,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                         writer.WriteObjectEnd();
                     }
                 }
+                if (updateLayerRequest != null && updateLayerRequest.IsSetInstallUpdatesOnBoot()) 
+                {
+                    writer.WritePropertyName("InstallUpdatesOnBoot");
+                    writer.Write(updateLayerRequest.InstallUpdatesOnBoot);
+                }
 
                 writer.WriteObjectEnd();
                 

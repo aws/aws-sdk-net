@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage
     /// Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
     /// later use it when you want to create a volume from a snapshot.</para> <para><b>NOTE:</b>To list or delete a snapshot, you must use the
-    /// Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in the Amazon Elastic Compute Cloud API Reference.</para>
+    /// Amazon EC2 API. For more information, .</para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonWebServiceRequest
     {

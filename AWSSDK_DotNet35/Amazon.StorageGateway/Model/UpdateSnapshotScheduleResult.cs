@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.</para>
+    /// <para>A JSON object containing the of the updated storage volume.</para>
     /// </summary>
     public partial class UpdateSnapshotScheduleResult : AmazonWebServiceResponse
     {
@@ -30,8 +30,7 @@ namespace Amazon.StorageGateway.Model
         private string volumeARN;
 
         /// <summary>
-        /// The <a>UpdateSnapshotScheduleOutput$VolumeARN</a> of the storage volume whose snapshot schedule was updated. It is the same value you
-        /// provided in your request.
+        /// 
         ///  
         /// <para>
         /// <b>Constraints:</b>

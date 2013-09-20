@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachElasticLoadBalancer operation.
-    /// <para>Detaches a specified Elastic Load Balancing load balancer from it's layer.</para>
+    /// <para>Detaches a specified Elastic Load Balancing instance from it's layer.</para>
     /// </summary>
     public partial class DetachElasticLoadBalancerRequest : AmazonWebServiceRequest
     {
@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
         private string layerId;
 
         /// <summary>
-        /// The Elastic Load Balancing load balancer's name.
+        /// The Elastic Load Balancing instance's name.
         ///  
         /// </summary>
         public string ElasticLoadBalancerName
@@ -49,7 +49,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The ID of the layer that the Elastic Load Balancing load balancer is attached to.
+        /// The ID of the layer that the Elastic Load Balancing instance is attached to.
         ///  
         /// </summary>
         public string LayerId

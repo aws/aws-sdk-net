@@ -28,8 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeBandwidthRateLimitResult property.
-        /// A JSON object containing the following fields: GatewayARN DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec
-        /// DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeBandwidthRateLimitResult class are now available on the DescribeBandwidthRateLimitResponse class. You should use the properties on DescribeBandwidthRateLimitResponse instead of accessing them through DescribeBandwidthRateLimitResult.")]
         public DescribeBandwidthRateLimitResult DescribeBandwidthRateLimitResult

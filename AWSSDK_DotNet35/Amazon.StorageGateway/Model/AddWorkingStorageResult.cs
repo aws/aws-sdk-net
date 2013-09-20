@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the gateway for which working storage was configured.</para>
+    /// <para>A JSON object containing the of the gateway for which working storage was configured.</para>
     /// </summary>
     public partial class AddWorkingStorageResult : AmazonWebServiceResponse
     {

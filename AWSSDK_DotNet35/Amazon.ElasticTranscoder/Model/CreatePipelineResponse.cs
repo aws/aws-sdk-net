@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the CreatePipelineResult property.
-        /// 
+        /// When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreatePipelineResult class are now available on the CreatePipelineResponse class. You should use the properties on CreatePipelineResponse instead of accessing them through CreatePipelineResult.")]
         public CreatePipelineResult CreatePipelineResult

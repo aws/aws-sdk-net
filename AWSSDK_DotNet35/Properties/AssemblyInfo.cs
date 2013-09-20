@@ -54,9 +54,9 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.0.4")]
+[assembly: AssemblyFileVersion("2.0.0.4")]
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]
-[assembly: InternalsVisibleTo("AWS.Extensions,PublicKey=00240000048000009400000006020000002400005253413100040000010001006fe30670d8799591454f4143052b981d91d512647d0bff5a85c74bd9ce24413d9d91073cac76063f129c23c155e46433945d01a9d11d6d5207415b8a2a9cf2796507b677cceeca801c4824c3b27b2cfe9a6eaae4ea961013eb9a193159b9867fc9ecc03d650c07fd773e25c204b6c5aa546f736ccf391761c2a815ef175c3dc6")]
+[assembly: InternalsVisibleTo("AWS.Extensions,PublicKey=0024000004800000940000000602000000240000525341310004000001000100516caa6311db961cb07702d63876c5b8cbd661557cd18bde9fb966bb30a4442abb27a4a5aca5af15c97b77f3f8f683eb1ca32cd7e8d1edcbbb1a62fe215001d507c2437f052b29540b7a11edbdc7dfe12de00c37f9e70c7e85a04541858ca46bb2581099780121ee8041732b7214ec9b5c483ef13c1db6d5f86a71fcc014dcaf")]

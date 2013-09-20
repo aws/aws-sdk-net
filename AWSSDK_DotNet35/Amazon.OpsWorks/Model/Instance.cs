@@ -36,6 +36,7 @@ namespace Amazon.OpsWorks.Model
         private string instanceProfileArn;
         private string status;
         private string os;
+        private string amiId;
         private string availabilityZone;
         private string publicDns;
         private string privateDns;
@@ -51,6 +52,7 @@ namespace Amazon.OpsWorks.Model
         private Architecture architecture;
         private RootDeviceType rootDeviceType;
         private string rootDeviceVolumeId;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The instance ID.
@@ -149,9 +151,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance type. OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values
-        /// that specify the various types are in the API Name column of the Available Instance Types table.
+        /// The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The
+        /// parameter values that specify the various types are in the API Name column of the Available Instance Types table.
         ///  
         /// </summary>
         public string InstanceType
@@ -214,6 +216,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetOs()
         {
             return this.os != null;
+        }
+
+        /// <summary>
+        /// A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+        /// 12.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        ///  
+        /// </summary>
+        public string AmiId
+        {
+            get { return this.amiId; }
+            set { this.amiId = value; }
+        }
+
+        // Check to see if AmiId property is set
+        internal bool IsSetAmiId()
+        {
+            return this.amiId != null;
         }
 
         /// <summary>
@@ -486,6 +505,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRootDeviceVolumeId()
         {
             return this.rootDeviceVolumeId != null;
+        }
+
+        /// <summary>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. If this value is set to
+        /// <c>false</c>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c> stack
+        /// command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We strongly recommend using the
+        /// default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        ///  
+        /// </summary>
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
     }
 }

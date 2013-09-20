@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ListPresetsResult property.
-        /// 
+        /// The ListPresetsResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListPresetsResult class are now available on the ListPresetsResponse class. You should use the properties on ListPresetsResponse instead of accessing them through ListPresetsResult.")]
         public ListPresetsResult ListPresetsResult

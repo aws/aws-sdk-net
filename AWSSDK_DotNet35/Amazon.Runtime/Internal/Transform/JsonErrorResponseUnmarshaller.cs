@@ -46,31 +46,31 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 while (context.Read())
                 {
-                    if (context.IsLeafValue)
+                    if (context.TestExpression("__type"))
                     {
-                        if (context.TestExpression("__type"))
+                        context.Read();
+                        string type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Code = type.Substring(type.LastIndexOf("#") + 1);
+                        if (Enum.IsDefined(typeof(ErrorType), type))
                         {
-                            string type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            response.Code = type.Substring(type.LastIndexOf("#")+1);
-                            if (Enum.IsDefined(typeof(ErrorType), type))
-                            {
-                                response.Type = (ErrorType)Enum.Parse(typeof(ErrorType), type, true);
-                            }
-                            else
-                            {
-                                response.Type = ErrorType.Unknown;
-                            }
-                            continue;
+                            response.Type = (ErrorType)Enum.Parse(typeof(ErrorType), type, true);
                         }
-                        if (context.TestExpression("code"))
+                        else
                         {
-                            response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            continue;
+                            response.Type = ErrorType.Unknown;
                         }
-                        if (context.TestExpression("message"))
-                        {
-                            response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        }
+                        continue;
+                    }
+                    if (context.TestExpression("code"))
+                    {
+                        context.Read();
+                        response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("message"))
+                    {
+                        context.Read();
+                        response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }

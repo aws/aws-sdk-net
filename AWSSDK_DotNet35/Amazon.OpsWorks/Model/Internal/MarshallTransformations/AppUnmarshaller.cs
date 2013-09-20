@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.OpsWorks.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,111 +41,121 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("AppId", targetDepth))
               {
+                context.Read();
                 app.AppId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StackId", targetDepth))
               {
+                context.Read();
                 app.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Shortname", targetDepth))
               {
+                context.Read();
                 app.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Name", targetDepth))
               {
+                context.Read();
                 app.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Description", targetDepth))
               {
+                context.Read();
                 app.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Type", targetDepth))
               {
+                context.Read();
                 app.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AppSource", targetDepth))
               {
+                context.Read();
                 app.AppSource = SourceUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Domains", targetDepth))
               {
+                context.Read();
                 app.Domains = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     app.Domains.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   app.Domains.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("EnableSsl", targetDepth))
               {
+                context.Read();
                 app.EnableSsl = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SslConfiguration", targetDepth))
               {
+                context.Read();
                 app.SslConfiguration = SslConfigurationUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Attributes", targetDepth))
               {
+                context.Read();
                 app.Attributes = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
                     app.Attributes.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
               if (context.TestExpression("CreatedAt", targetDepth))
               {
+                context.Read();
                 app.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return app;
                 }

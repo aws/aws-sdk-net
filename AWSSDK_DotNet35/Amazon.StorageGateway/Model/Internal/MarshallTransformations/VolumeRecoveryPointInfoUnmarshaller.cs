@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,37 +41,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("VolumeARN", targetDepth))
               {
+                context.Read();
                 volumeRecoveryPointInfo.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeSizeInBytes", targetDepth))
               {
+                context.Read();
                 volumeRecoveryPointInfo.VolumeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeUsageInBytes", targetDepth))
               {
+                context.Read();
                 volumeRecoveryPointInfo.VolumeUsageInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
               {
+                context.Read();
                 volumeRecoveryPointInfo.VolumeRecoveryPointTime = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return volumeRecoveryPointInfo;
                 }

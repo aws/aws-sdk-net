@@ -23,12 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class DescribeBandwidthRateLimitResult : AmazonWebServiceResponse
     {

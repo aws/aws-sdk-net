@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,43 +41,43 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("MultipartUploadId", targetDepth))
               {
+                context.Read();
                 uploadListElement.MultipartUploadId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VaultARN", targetDepth))
               {
+                context.Read();
                 uploadListElement.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ArchiveDescription", targetDepth))
               {
+                context.Read();
                 uploadListElement.ArchiveDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PartSizeInBytes", targetDepth))
               {
+                context.Read();
                 uploadListElement.PartSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreationDate", targetDepth))
               {
+                context.Read();
                 uploadListElement.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return uploadListElement;
                 }

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.</para>
+    /// <para>A JSON object containing a .</para>
     /// </summary>
     public partial class DescribeChapCredentialsResult : AmazonWebServiceResponse
     {

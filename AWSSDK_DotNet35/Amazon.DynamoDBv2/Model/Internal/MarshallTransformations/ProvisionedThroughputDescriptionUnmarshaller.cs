@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DynamoDBv2.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,43 +41,43 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("LastIncreaseDateTime", targetDepth))
               {
+                context.Read();
                 provisionedThroughputDescription.LastIncreaseDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LastDecreaseDateTime", targetDepth))
               {
+                context.Read();
                 provisionedThroughputDescription.LastDecreaseDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NumberOfDecreasesToday", targetDepth))
               {
+                context.Read();
                 provisionedThroughputDescription.NumberOfDecreasesToday = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ReadCapacityUnits", targetDepth))
               {
+                context.Read();
                 provisionedThroughputDescription.ReadCapacityUnits = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("WriteCapacityUnits", targetDepth))
               {
+                context.Read();
                 provisionedThroughputDescription.WriteCapacityUnits = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return provisionedThroughputDescription;
                 }

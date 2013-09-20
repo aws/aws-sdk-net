@@ -28,9 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCacheResult property.
-        /// A JSON object containing the following fields: DescribeCacheOutput$CacheAllocatedInBytes DescribeCacheOutput$CacheDirtyPercentage
-        /// DescribeCacheOutput$CacheHitPercentage DescribeCacheOutput$CacheMissPercentage DescribeCacheOutput$CacheUsedPercentage
-        /// DescribeCacheOutput$DiskIds DescribeCacheOutput$GatewayARN
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCacheResult class are now available on the DescribeCacheResponse class. You should use the properties on DescribeCacheResponse instead of accessing them through DescribeCacheResult.")]
         public DescribeCacheResult DescribeCacheResult

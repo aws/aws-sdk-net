@@ -28,8 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeUploadBufferResult property.
-        /// A JSON object containing the following fields: DescribeUploadBufferOutput$DiskIds DescribeUploadBufferOutput$GatewayARN
-        /// DescribeUploadBufferOutput$UploadBufferUsedInBytes DescribeUploadBufferOutput$UploadBufferAllocatedInBytes
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeUploadBufferResult class are now available on the DescribeUploadBufferResponse class. You should use the properties on DescribeUploadBufferResponse instead of accessing them through DescribeUploadBufferResult.")]
         public DescribeUploadBufferResult DescribeUploadBufferResult

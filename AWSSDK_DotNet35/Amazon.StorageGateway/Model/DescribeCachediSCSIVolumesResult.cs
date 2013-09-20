@@ -23,10 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeCachediSCSIVolumesOutput$CachediSCSIVolumes </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class DescribeCachediSCSIVolumesResult : AmazonWebServiceResponse
     {
@@ -34,7 +30,7 @@ namespace Amazon.StorageGateway.Model
         private List<CachediSCSIVolume> cachediSCSIVolumes = new List<CachediSCSIVolume>();
 
         /// <summary>
-        /// An array of <a>CachediSCSIVolume</a> objects where each object contains metadata about one cached volume.
+        /// An array of objects where each object contains metadata about one cached volume.
         ///  
         /// </summary>
         public List<CachediSCSIVolume> CachediSCSIVolumes

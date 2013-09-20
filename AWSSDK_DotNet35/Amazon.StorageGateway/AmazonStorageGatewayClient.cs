@@ -28,9 +28,9 @@ namespace Amazon.StorageGateway
     /// <summary>
     /// Implementation for accessing AmazonStorageGateway.
     ///  
-    /// AWS Storage Gateway Service <para>AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage
-    /// to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure. The
-    /// service enables you to securely upload data to the AWS cloud for cost effective backup and rapid disaster recovery.</para> <para>Use the
+    /// AWS Storage Gateway Service <para>AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based
+    /// storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+    /// The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid disaster recovery.</para> <para>Use the
     /// following links to get started using the <i>AWS Storage Gateway Service API Reference</i> :</para>
     /// <ul>
     /// <li> AWS Storage Gateway Required Request Headers: Describes the required headers that you must send with every POST request to AWS Storage
@@ -215,8 +215,8 @@ namespace Amazon.StorageGateway
         #region ActivateGateway
 
         /// <summary>
-        /// <para>This operation activates the gateway you previously deployed on your VMware host. For more information, see Downloading and Deploying
-        /// AWS Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
+        /// <para>This operation activates the gateway you previously deployed on your host. For more information, see Downloading and Deploying AWS
+        /// Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
         /// zone for scheduled snapshots and the gateway schedule window, an activation key, and a name for your gateway. The activation process also
         /// associates your gateway with your account (see UpdateGatewayInformation).</para> <para><b>NOTE:</b>You must power on the gateway VM before
         /// you can activate your gateway.</para>
@@ -572,7 +572,7 @@ namespace Amazon.StorageGateway
         /// for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage
         /// Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
         /// later use it when you want to create a volume from a snapshot.</para> <para><b>NOTE:</b>To list or delete a snapshot, you must use the
-        /// Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in the Amazon Elastic Compute Cloud API Reference.</para>
+        /// Amazon EC2 API. For more information, .</para>
         /// </summary>
         /// 
         /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot service method on
@@ -640,14 +640,13 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// <para>This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached
-        /// volume architecture (see StorageGatewayConcepts).</para> <para>A volume recovery point is a point in time at which all data of the volume is
-        /// consistent and from which you can create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use
-        /// ListVolumeRecoveryPoints.</para> <para>In the <c>CreateSnapshotFromVolumeRecoveryPoint</c> request, you identify the volume by providing its
-        /// Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes a snapshot of the specified
-        /// volume, the snapshot and its description appear in the AWS Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot
-        /// ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</para>
-        /// <para><b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and
-        /// DescribeSnapshots in Amazon Elastic Compute Cloud API Reference. </para>
+        /// volume architecture (see ).</para> <para>A volume recovery point is a point in time at which all data of the volume is consistent and from
+        /// which you can create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use ListVolumeRecoveryPoints.</para>
+        /// <para>In the <c>CreateSnapshotFromVolumeRecoveryPoint</c> request, you identify the volume by providing its Amazon Resource Name (ARN). You
+        /// must also provide a description for the snapshot. When AWS Storage Gateway takes a snapshot of the specified volume, the snapshot and its
+        /// description appear in the AWS Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this
+        /// snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</para> <para><b>NOTE:</b> To
+        /// list or delete a snapshot, you must use the Amazon EC2 API. For more information, in Amazon Elastic Compute Cloud API Reference. </para>
         /// </summary>
         /// 
         /// <param name="createSnapshotFromVolumeRecoveryPointRequest">Container for the necessary parameters to execute the
@@ -1000,8 +999,7 @@ namespace Amazon.StorageGateway
         /// <para> This operation deletes a snapshot of a volume. </para> <para> You can take snapshots of your gateway volumes on a scheduled or ad-hoc
         /// basis. This API enables you to delete a snapshot schedule for a volume. For more information, see Working with Snapshots. In the
         /// <c>DeleteSnapshotSchedule</c> request, you identify the volume by providing its Amazon Resource Name (ARN). </para> <para><b>NOTE:</b> To
-        /// list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in Amazon
-        /// Elastic Compute Cloud API Reference. </para>
+        /// list or delete a snapshot, you must use the Amazon EC2 API. in Amazon Elastic Compute Cloud API Reference. </para>
         /// </summary>
         /// 
         /// <param name="deleteSnapshotScheduleRequest">Container for the necessary parameters to execute the DeleteSnapshotSchedule service method on

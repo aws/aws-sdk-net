@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBasedAutoScaling operation.
-    /// <para>Describes load-based auto scaling configurations for specified layers.</para>
+    /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b>You must specify at least one of the
+    /// parameters.</para>
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingRequest : AmazonWebServiceRequest
     {

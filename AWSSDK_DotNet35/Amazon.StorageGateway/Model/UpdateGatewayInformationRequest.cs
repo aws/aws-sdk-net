@@ -91,8 +91,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that represents the time zone for your gateway. The time zone is used, for example, when a time
-        /// stamp is given to a snapshot.
+        /// One of the values that represents the time zone for your gateway. The time zone is used, for example, when a time stamp is given to a
+        /// snapshot.
         ///  
         /// <para>
         /// <b>Constraints:</b>

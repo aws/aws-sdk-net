@@ -30,7 +30,7 @@ namespace Amazon.OpsWorks.Model
         private List<ElasticLoadBalancer> elasticLoadBalancers = new List<ElasticLoadBalancer>();
 
         /// <summary>
-        /// A list of <c>ElasticLoadBalancer</c> objects that describe the specified Elastic Load Balancing load balancers.
+        /// A list of <c>ElasticLoadBalancer</c> objects that describe the specified Elastic Load Balancing instances.
         ///  
         /// </summary>
         public List<ElasticLoadBalancer> ElasticLoadBalancers

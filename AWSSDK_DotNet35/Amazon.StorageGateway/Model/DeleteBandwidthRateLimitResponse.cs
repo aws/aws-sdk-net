@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DeleteBandwidthRateLimitResult property.
-        /// A JSON object containing the GatewayARN of the gateway whose bandwidth rate information was deleted.
+        /// A JSON object containing the of the gateway whose bandwidth rate information was deleted.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteBandwidthRateLimitResult class are now available on the DeleteBandwidthRateLimitResponse class. You should use the properties on DeleteBandwidthRateLimitResponse instead of accessing them through DeleteBandwidthRateLimitResult.")]
         public DeleteBandwidthRateLimitResult DeleteBandwidthRateLimitResult

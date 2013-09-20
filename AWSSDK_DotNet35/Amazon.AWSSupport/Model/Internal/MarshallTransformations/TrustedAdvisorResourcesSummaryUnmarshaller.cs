@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.AWSSupport.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,37 +41,36 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("resourcesProcessed", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourcesSummary.ResourcesProcessed = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourcesFlagged", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourcesSummary.ResourcesFlagged = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourcesIgnored", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourcesSummary.ResourcesIgnored = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourcesSuppressed", targetDepth))
               {
+                context.Read();
                 trustedAdvisorResourcesSummary.ResourcesSuppressed = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return trustedAdvisorResourcesSummary;
                 }

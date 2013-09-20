@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticLoadBalancers operation.
-    /// <para>Describes a stack's Elastic Load Balancing load balancers.</para>
+    /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     public partial class DescribeElasticLoadBalancersRequest : AmazonWebServiceRequest
     {
@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> layerIds = new List<string>();
 
         /// <summary>
-        /// A stack ID. The action describes the Elastic Load Balancing load balancers for the stack.
+        /// A stack ID. The action describes the Elastic Load Balancing instances for the stack.
         ///  
         /// </summary>
         public string StackId
@@ -49,7 +49,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A list of layer IDs. The action describes the Elastic Load Balancing load balancers for the specified layers.
+        /// A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.
         ///  
         /// </summary>
         public List<string> LayerIds

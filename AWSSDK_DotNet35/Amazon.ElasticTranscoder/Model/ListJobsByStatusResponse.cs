@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the ListJobsByStatusResult property.
-        /// 
+        /// The ListJobsByStatusResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListJobsByStatusResult class are now available on the ListJobsByStatusResponse class. You should use the properties on ListJobsByStatusResponse instead of accessing them through ListJobsByStatusResult.")]
         public ListJobsByStatusResult ListJobsByStatusResult

@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the ListVolumesResult property.
-        /// A JSON object containing the following fields: GatewayARN ListVolumesOutput$Marker ListVolumesOutput$VolumeInfos
+        /// A JSON object containing the following fields: ListVolumesOutput$Marker ListVolumesOutput$VolumeInfos
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListVolumesResult class are now available on the ListVolumesResponse class. You should use the properties on ListVolumesResponse instead of accessing them through ListVolumesResult.")]
         public ListVolumesResult ListVolumesResult

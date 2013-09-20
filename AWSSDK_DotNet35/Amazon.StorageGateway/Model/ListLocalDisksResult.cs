@@ -25,7 +25,6 @@ namespace Amazon.StorageGateway.Model
     /// <para>A JSON object containing the following fields:</para>
     /// <ul>
     /// <li> ListLocalDisksOutput$Disks </li>
-    /// <li> GatewayARN </li>
     /// 
     /// </ul>
     /// </summary>

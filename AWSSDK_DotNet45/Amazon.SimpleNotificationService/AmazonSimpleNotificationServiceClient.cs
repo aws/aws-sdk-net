@@ -31,10 +31,10 @@ namespace Amazon.SimpleNotificationService
     /// Amazon Simple Notification Service <para>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
     /// distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
     /// subscribers over multiple delivery protocols. For more information about this product see http://aws.amazon.com/sns. For detailed
-    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Getting Started Guide. </para> <para>We also
-    /// provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that
-    /// automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses.
-    /// For a list of available SDKs, go to Tools for Amazon Web Services. </para>
+    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Developer Guide. </para> <para>We also provide SDKs
+    /// that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care
+    /// of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
+    /// SDKs, go to Tools for Amazon Web Services. </para>
     /// </summary>
 	public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, Amazon.SimpleNotificationService.IAmazonSimpleNotificationService
     {
@@ -302,6 +302,106 @@ namespace Amazon.SimpleNotificationService
         }
  
         /// <summary>
+        /// <para>The <c>CreatePlatformApplication</c> action creates a platform application object for one of the supported push notification services,
+        /// such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes
+        /// when using the <c>CreatePlatformApplication</c> action. The PlatformPrincipal is received from the notification service. For
+        /// APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+        /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
+        /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
+        /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
+        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformApplicationRequest">Container for the necessary parameters to execute the CreatePlatformApplication service
+        /// method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformApplication service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
+        {
+            var task = CreatePlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformApplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePlatformApplicationRequestMarshaller();
+            var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePlatformApplicationRequest, CreatePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>CreatePlatformEndpoint</c> creates an endpoint for a device and mobile app on one of the supported push notification services,
+        /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
+        /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
+        /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
+        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="createPlatformEndpointRequest">Container for the necessary parameters to execute the CreatePlatformEndpoint service method on
+        /// AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformEndpoint service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
+        {
+            var task = CreatePlatformEndpointAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePlatformEndpointRequestMarshaller();
+            var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, CreatePlatformEndpointRequest, CreatePlatformEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
         /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
         /// information, see http://aws.amazon.com/sns. This action is idempotent, so if the requester already owns a topic with the specified name,
         /// that topic's ARN is returned without creating a new topic.</para>
@@ -349,6 +449,92 @@ namespace Amazon.SimpleNotificationService
         }
  
         /// <summary>
+        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see Using Amazon SNS
+        /// Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteEndpointRequest">Container for the necessary parameters to execute the DeleteEndpoint service method on
+        /// AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var task = DeleteEndpointAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpoint operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeleteEndpoint"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEndpointRequestMarshaller();
+            var unmarshaller = DeleteEndpointResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeleteEndpointRequest, DeleteEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>DeletePlatformApplication</c> action deletes a platform application object for one of the supported push notification services,
+        /// such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="deletePlatformApplicationRequest">Container for the necessary parameters to execute the DeletePlatformApplication service
+        /// method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
+        {
+            var task = DeletePlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeletePlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformApplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePlatformApplicationRequestMarshaller();
+            var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DeletePlatformApplicationRequest, DeletePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
         /// <para>The <c>DeleteTopic</c> action deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent
         /// to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an
         /// error.</para>
@@ -389,6 +575,98 @@ namespace Amazon.SimpleNotificationService
             var marshaller = new DeleteTopicRequestMarshaller();
             var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
             var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>GetEndpointAttributes</c> retrieves the endpoint attributes for a device on one of the supported push notification services,
+        /// such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="getEndpointAttributesRequest">Container for the necessary parameters to execute the GetEndpointAttributes service method on
+        /// AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the GetEndpointAttributes service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
+        {
+            var task = GetEndpointAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEndpointAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEndpointAttributesRequestMarshaller();
+            var unmarshaller = GetEndpointAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetEndpointAttributesRequest, GetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>GetPlatformApplicationAttributes</c> action retrieves the attributes of the platform application object for the supported push
+        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="getPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the GetPlatformApplicationAttributes
+        /// service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the GetPlatformApplicationAttributes service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
+        {
+            var task = GetPlatformApplicationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPlatformApplicationAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
+            var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }
@@ -482,6 +760,125 @@ namespace Amazon.SimpleNotificationService
             var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>ListEndpointsByPlatformApplication</c> action lists the endpoints and endpoint attributes for devices in a supported push
+        /// notification service, such as GCM and APNS. The results for <c>ListEndpointsByPlatformApplication</c> are paginated and return a limited
+        /// list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To
+        /// receive the next page, you call <c>ListEndpointsByPlatformApplication</c> again using the NextToken string received from the previous call.
+        /// When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="listEndpointsByPlatformApplicationRequest">Container for the necessary parameters to execute the
+        /// ListEndpointsByPlatformApplication service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the ListEndpointsByPlatformApplication service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
+        {
+            var task = ListEndpointsByPlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEndpointsByPlatformApplication operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListEndpointsByPlatformApplication"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpointsByPlatformApplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
+            var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>ListPlatformApplications</c> action lists the platform application objects for the supported push notification services, such
+        /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
+        /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
+        /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
+        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications service method
+        /// on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the ListPlatformApplications service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
+        {
+            var task = ListPlatformApplicationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformApplications operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListPlatformApplications"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformApplications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPlatformApplicationsRequestMarshaller();
+            var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListPlatformApplicationsRequest, ListPlatformApplicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>ListPlatformApplications</c> action lists the platform application objects for the supported push notification services, such
+        /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
+        /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
+        /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
+        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications service method
+        /// on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <returns>The response from the ListPlatformApplications service method, as returned by AmazonSimpleNotificationService.</returns>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public ListPlatformApplicationsResponse ListPlatformApplications()
+        {
+            return this.ListPlatformApplications(new ListPlatformApplicationsRequest());
         }
  
         /// <summary>
@@ -664,7 +1061,10 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
         /// has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each
-        /// subscribed endpoint depends on the notification protocol selected.</para>
+        /// subscribed endpoint depends on the notification protocol selected.</para> <para>To use the <c>Publish</c> action for sending a message to a
+        /// mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when
+        /// making a call with the <c>CreatePlatformEndpoint</c> action. The second example below shows a request and response for publishing to a
+        /// mobile endpoint. </para>
         /// </summary>
         /// 
         /// <param name="publishRequest">Container for the necessary parameters to execute the Publish service method on
@@ -673,6 +1073,8 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the Publish service method, as returned by AmazonSimpleNotificationService.</returns>
         /// 
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.EndpointDisabledException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
         /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
@@ -747,6 +1149,94 @@ namespace Amazon.SimpleNotificationService
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
             var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>SetEndpointAttributes</c> action sets the attributes for an endpoint for a device on one of the supported push notification
+        /// services, such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="setEndpointAttributesRequest">Container for the necessary parameters to execute the SetEndpointAttributes service method on
+        /// AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
+        {
+            var task = SetEndpointAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetEndpointAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetEndpointAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetEndpointAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetEndpointAttributesRequestMarshaller();
+            var unmarshaller = SetEndpointAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetEndpointAttributesRequest, SetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>The <c>SetPlatformApplicationAttributes</c> action sets the attributes of the platform application object for the supported push
+        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// </summary>
+        /// 
+        /// <param name="setPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the SetPlatformApplicationAttributes
+        /// service method on AmazonSimpleNotificationService.</param>
+        /// 
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.NotFoundException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.AuthorizationErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InternalErrorException" />
+        /// <exception cref="T:Amazon.SimpleNotificationService.Model.InvalidParameterException" />
+		public SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
+        {
+            var task = SetPlatformApplicationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetPlatformApplicationAttributes operation.
+        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetPlatformApplicationAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetPlatformApplicationAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
+            var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }

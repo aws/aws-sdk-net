@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the UpdateSnapshotScheduleResult property.
-        /// A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.
+        /// A JSON object containing the of the updated storage volume.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateSnapshotScheduleResult class are now available on the UpdateSnapshotScheduleResponse class. You should use the properties on UpdateSnapshotScheduleResponse instead of accessing them through UpdateSnapshotScheduleResult.")]
         public UpdateSnapshotScheduleResult UpdateSnapshotScheduleResult

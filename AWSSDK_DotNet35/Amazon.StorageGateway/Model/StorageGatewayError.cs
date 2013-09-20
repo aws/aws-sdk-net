@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>Provides additional information about an error that was returned by the service as an InvalidGatewayRequestException or
-    /// InternalServiceError. See the <c>errorCode</c> and <c>errorDetails</c> members for more information about the error.</para>
+    /// <para>Provides additional information about an error that was returned by the service as an or. See the <c>errorCode</c> and
+    /// <c>errorDetails</c> members for more information about the error.</para>
     /// </summary>
     public class StorageGatewayError
     {

@@ -28,8 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the CreateSnapshotFromVolumeRecoveryPointResult property.
-        /// A JSON object containing the following fields: CreateSnapshotFromVolumeRecoveryPointOutput$SnapshotId
-        /// CreateSnapshotFromVolumeRecoveryPointOutput$VolumeARN CreateSnapshotFromVolumeRecoveryPointOutput$VolumeRecoveryPointTime
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateSnapshotFromVolumeRecoveryPointResult class are now available on the CreateSnapshotFromVolumeRecoveryPointResponse class. You should use the properties on CreateSnapshotFromVolumeRecoveryPointResponse instead of accessing them through CreateSnapshotFromVolumeRecoveryPointResult.")]
         public CreateSnapshotFromVolumeRecoveryPointResult CreateSnapshotFromVolumeRecoveryPointResult

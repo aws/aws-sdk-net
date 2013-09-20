@@ -21,8 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.</para>
+    /// <summary>Add Cache Result
     /// </summary>
     public partial class AddCacheResult : AmazonWebServiceResponse
     {

@@ -23,15 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayId </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayNetworkInterfaces </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayState </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayTimezone </li>
-    /// <li> DescribeGatewayInformationOutput$NextUpdateAvailabilityDate </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class DescribeGatewayInformationResult : AmazonWebServiceResponse
     {
@@ -96,7 +87,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that indicates the time zone configured for the gateway.
+        /// One of the values that indicates the time zone configured for the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -121,7 +112,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// One of the <a>GatewayState</a> values that indicates the operating state of the gateway.
+        /// One of the values that indicates the operating state of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>

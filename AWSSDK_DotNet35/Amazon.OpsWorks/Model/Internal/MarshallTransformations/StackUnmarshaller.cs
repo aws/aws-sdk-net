@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.OpsWorks.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,117 +41,135 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("StackId", targetDepth))
               {
+                context.Read();
                 stack.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Name", targetDepth))
               {
+                context.Read();
                 stack.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Region", targetDepth))
               {
+                context.Read();
                 stack.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Attributes", targetDepth))
               {
+                context.Read();
                 stack.Attributes = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
                     stack.Attributes.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
               if (context.TestExpression("ServiceRoleArn", targetDepth))
               {
+                context.Read();
                 stack.ServiceRoleArn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DefaultInstanceProfileArn", targetDepth))
               {
+                context.Read();
                 stack.DefaultInstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DefaultOs", targetDepth))
               {
+                context.Read();
                 stack.DefaultOs = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("HostnameTheme", targetDepth))
               {
+                context.Read();
                 stack.HostnameTheme = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DefaultAvailabilityZone", targetDepth))
               {
+                context.Read();
                 stack.DefaultAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CustomJson", targetDepth))
               {
+                context.Read();
                 stack.CustomJson = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ConfigurationManager", targetDepth))
+              {
+                context.Read();
+                stack.ConfigurationManager = StackConfigurationManagerUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("UseCustomCookbooks", targetDepth))
               {
+                context.Read();
                 stack.UseCustomCookbooks = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CustomCookbooksSource", targetDepth))
               {
+                context.Read();
                 stack.CustomCookbooksSource = SourceUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DefaultSshKeyName", targetDepth))
               {
+                context.Read();
                 stack.DefaultSshKeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreatedAt", targetDepth))
               {
+                context.Read();
                 stack.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DefaultRootDeviceType", targetDepth))
               {
+                context.Read();
                 stack.DefaultRootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return stack;
                 }

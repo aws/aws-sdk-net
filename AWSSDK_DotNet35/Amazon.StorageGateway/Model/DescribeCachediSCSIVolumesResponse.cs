@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCachediSCSIVolumesResult property.
-        /// A JSON object containing the following fields: DescribeCachediSCSIVolumesOutput$CachediSCSIVolumes
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCachediSCSIVolumesResult class are now available on the DescribeCachediSCSIVolumesResponse class. You should use the properties on DescribeCachediSCSIVolumesResponse instead of accessing them through DescribeCachediSCSIVolumesResult.")]
         public DescribeCachediSCSIVolumesResult DescribeCachediSCSIVolumesResult

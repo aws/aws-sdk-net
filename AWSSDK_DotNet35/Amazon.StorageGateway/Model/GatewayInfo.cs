@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>Describes a gateway; contains one data member, the GatewayARN of this gateway.</para>
+    /// <para>Describes a gateway; contains one data member, the of this gateway.</para>
     /// </summary>
     public class GatewayInfo
     {

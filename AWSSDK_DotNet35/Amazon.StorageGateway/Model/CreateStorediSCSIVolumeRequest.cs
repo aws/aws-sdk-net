@@ -69,8 +69,7 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-        /// href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a
-        /// gateway.
+        /// href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -97,7 +96,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the
         /// iSCSI storage volume from a snapshot otherwise do not include this field. To list snapshots for your account use <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the
         /// <i>Amazon Elastic Compute Cloud API Reference</i>.
         ///  
         /// <para>

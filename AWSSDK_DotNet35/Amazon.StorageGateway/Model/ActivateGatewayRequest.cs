@@ -25,8 +25,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
-    /// <para>This operation activates the gateway you previously deployed on your VMware host. For more information, see Downloading and Deploying
-    /// AWS Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
+    /// <para>This operation activates the gateway you previously deployed on your host. For more information, see Downloading and Deploying AWS
+    /// Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
     /// zone for scheduled snapshots and the gateway schedule window, an activation key, and a name for your gateway. The activation process also
     /// associates your gateway with your account (see UpdateGatewayInformation).</para> <para><b>NOTE:</b>You must power on the gateway VM before
     /// you can activate your gateway.</para>
@@ -126,8 +126,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// One of the values that indicates the region where you want to store the snapshot backups. The gateway region specified must be the same
         /// region as the region in your <c>Host</c> header in the request. For more information about available regions and endpoints for AWS Storage
-        /// Gateway, see <a href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the <b>Amazon
-        /// Web Services Glossary</b>. <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1", "ap-southest-1",
+        /// Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the <b>Amazon Web
+        /// Services Glossary</b>. <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1", "ap-southest-1",
         /// "sa-east-1"
         ///  
         /// <para>

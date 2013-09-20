@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.ElasticTranscoder.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,61 +41,64 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Format", targetDepth))
               {
+                context.Read();
                 thumbnails.Format = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Interval", targetDepth))
               {
+                context.Read();
                 thumbnails.Interval = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Resolution", targetDepth))
               {
+                context.Read();
                 thumbnails.Resolution = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AspectRatio", targetDepth))
               {
+                context.Read();
                 thumbnails.AspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("MaxWidth", targetDepth))
               {
+                context.Read();
                 thumbnails.MaxWidth = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("MaxHeight", targetDepth))
               {
+                context.Read();
                 thumbnails.MaxHeight = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SizingPolicy", targetDepth))
               {
+                context.Read();
                 thumbnails.SizingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PaddingPolicy", targetDepth))
               {
+                context.Read();
                 thumbnails.PaddingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return thumbnails;
                 }

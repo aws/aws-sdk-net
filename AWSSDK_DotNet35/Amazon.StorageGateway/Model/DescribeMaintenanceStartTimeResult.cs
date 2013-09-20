@@ -24,7 +24,6 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
     /// <ul>
-    /// <li> GatewayARN </li>
     /// <li> DescribeMaintenanceStartTimeOutput$DayOfWeek </li>
     /// <li> DescribeMaintenanceStartTimeOutput$HourOfDay </li>
     /// <li> DescribeMaintenanceStartTimeOutput$MinuteOfHour </li>
@@ -146,8 +145,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that indicates the time zone that is set for the gateway. The start time and day of week specified
-        /// should be in the time zone of the gateway.
+        /// One of the values that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time
+        /// zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>

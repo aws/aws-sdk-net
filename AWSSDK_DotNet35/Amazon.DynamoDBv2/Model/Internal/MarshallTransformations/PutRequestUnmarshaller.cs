@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DynamoDBv2.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,33 +41,30 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("Item", targetDepth))
               {
+                context.Read();
                 putRequest.Item = new Dictionary<String,AttributeValue>();
                 KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(), AttributeValueUnmarshaller.GetInstance());
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, AttributeValue> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, AttributeValue> kvp = unmarshaller.Unmarshall(context);
                     putRequest.Item.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return putRequest;
                 }

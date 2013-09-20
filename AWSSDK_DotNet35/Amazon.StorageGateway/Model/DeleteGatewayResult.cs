@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the deleted gateway.</para>
+    /// <para>A JSON object containing the of the deleted gateway.</para>
     /// </summary>
     public partial class DeleteGatewayResult : AmazonWebServiceResponse
     {

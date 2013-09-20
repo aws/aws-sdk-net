@@ -38,6 +38,7 @@ namespace Amazon.OpsWorks.Model
         private string hostnameTheme;
         private string defaultAvailabilityZone;
         private string customJson;
+        private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
@@ -92,8 +93,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack AWS Identity and Access Management (IAM) role, which allows OpsWorks to work with AWS resources on your behalf. You must set this
-        /// parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
+        /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set
+        /// this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note>You must set this parameter to a
         /// valid service role ARN or the action will fail; there is no default value. You can specify the stack's current service role ARN, if you
         /// prefer, but you must do so explicitly.</note>
@@ -129,7 +130,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The cloned stack default operating system, which must be either "Amazon Linux" or "Ubuntu 12.04 LTS".
+        /// The stack default operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
+        /// <c>Ubuntu 12.04 LTS</c></li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
+        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
+        /// information on the standard operating systems, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
+        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+        /// AMIs</a>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -145,11 +152,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate hostnames for the stack's instances.
-        /// By default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates hostnames by appending integers to the layer's shortname. The
-        /// other themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
+        /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's
+        /// instances. By default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates host names by appending integers to the layer's short
+        /// name. The other themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
         /// <li>Legendary_Creatures_from_Japan</li> <li>Planets_and_Moons</li> <li>Roman_Deities</li> <li>Scottish_Islands</li> <li>US_Cities</li>
-        /// <li>Wild_Cats</li> </ul> To obtain a generated hostname, call <c>GetHostNameSuggestion</c>, which returns a hostname based on the current
+        /// <li>Wild_Cats</li> </ul> To obtain a generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current
         /// theme.
         ///  
         /// </summary>
@@ -185,7 +192,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
         /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
@@ -199,6 +206,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomJson()
         {
             return this.customJson != null;
+        }
+
+        /// <summary>
+        /// The configuration manager. When you update a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or
+        /// 11.4. If you omit this parameter, AWS OpsWorks does not change the Chef version.
+        ///  
+        /// </summary>
+        public StackConfigurationManager ConfigurationManager
+        {
+            get { return this.configurationManager; }
+            set { this.configurationManager = value; }
+        }
+
+        // Check to see if ConfigurationManager property is set
+        internal bool IsSetConfigurationManager()
+        {
+            return this.configurationManager != null;
         }
 
         /// <summary>
@@ -220,7 +244,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource

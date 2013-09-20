@@ -21,31 +21,12 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DeleteSnapshotScheduleOutput$VolumeARN </li>
-    /// 
-    /// </ul>
+    /// <summary>Delete Snapshot Schedule Result
     /// </summary>
     public partial class DeleteSnapshotScheduleResult : AmazonWebServiceResponse
     {
         
         private string volumeARN;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }

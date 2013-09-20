@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.AWSSupport.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,61 +41,64 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("checkId", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.CheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("timestamp", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.Timestamp = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("status", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("resourcesSummary", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.ResourcesSummary = TrustedAdvisorResourcesSummaryUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("categorySpecificSummary", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.CategorySpecificSummary = TrustedAdvisorCategorySpecificSummaryUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("flaggedResources", targetDepth))
               {
+                context.Read();
                 trustedAdvisorCheckResult.FlaggedResources = new List<TrustedAdvisorResourceDetail>();
                         TrustedAdvisorResourceDetailUnmarshaller unmarshaller = TrustedAdvisorResourceDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     trustedAdvisorCheckResult.FlaggedResources.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   trustedAdvisorCheckResult.FlaggedResources.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return trustedAdvisorCheckResult;
                 }

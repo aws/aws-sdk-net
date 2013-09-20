@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted</para>
+    /// <para>A JSON object containing the of the storage volume that was deleted</para>
     /// </summary>
     public partial class DeleteVolumeResult : AmazonWebServiceResponse
     {

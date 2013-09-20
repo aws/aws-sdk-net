@@ -21,8 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>The Amazon Resource Name (ARN) of the gateway for which upload buffer was configured.</para>
+    /// <summary>Add Upload Buffer Result
     /// </summary>
     public partial class AddUploadBufferResult : AmazonWebServiceResponse
     {

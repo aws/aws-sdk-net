@@ -64,8 +64,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the upscaling configuration, which defines how and when OpsWorks increases
-        /// the number of instances.
+        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the upscaling configuration, which defines how and when AWS OpsWorks
+        /// increases the number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds UpScaling
@@ -81,8 +81,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the downscaling configuration, which defines how and when OpsWorks reduces
-        /// the number of instances.
+        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the downscaling configuration, which defines how and when AWS OpsWorks
+        /// reduces the number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds DownScaling

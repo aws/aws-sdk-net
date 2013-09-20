@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the ListLocalDisksResult property.
-        /// A JSON object containing the following fields: ListLocalDisksOutput$Disks GatewayARN
+        /// A JSON object containing the following fields: ListLocalDisksOutput$Disks
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListLocalDisksResult class are now available on the ListLocalDisksResponse class. You should use the properties on ListLocalDisksResponse instead of accessing them through ListLocalDisksResult.")]
         public ListLocalDisksResult ListLocalDisksResult

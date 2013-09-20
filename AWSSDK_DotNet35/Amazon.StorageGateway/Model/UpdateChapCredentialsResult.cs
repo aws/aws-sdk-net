@@ -23,10 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> UpdateChapCredentialsOutput$InitiatorName </li>
-    /// UpdateChapCredentialsOutput$TargetARN
-    /// </ul>
     /// </summary>
     public partial class UpdateChapCredentialsResult : AmazonWebServiceResponse
     {

@@ -138,6 +138,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("FrameRate");
                             writer.Write(video.FrameRate);
                         }
+                        if (video != null && video.IsSetMaxFrameRate()) 
+                        {
+                            writer.WritePropertyName("MaxFrameRate");
+                            writer.Write(video.MaxFrameRate);
+                        }
                         if (video != null && video.IsSetResolution()) 
                         {
                             writer.WritePropertyName("Resolution");
@@ -172,6 +177,70 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                         {
                             writer.WritePropertyName("PaddingPolicy");
                             writer.Write(video.PaddingPolicy);
+                        }
+
+                        if (video != null && video.Watermarks != null && video.Watermarks.Count > 0)
+                        {
+                            List<PresetWatermark> watermarksList = video.Watermarks;
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+
+                            foreach (PresetWatermark watermarksListValue in watermarksList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (watermarksListValue != null && watermarksListValue.IsSetId()) 
+                                {
+                                    writer.WritePropertyName("Id");
+                                    writer.Write(watermarksListValue.Id);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetMaxWidth()) 
+                                {
+                                    writer.WritePropertyName("MaxWidth");
+                                    writer.Write(watermarksListValue.MaxWidth);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetMaxHeight()) 
+                                {
+                                    writer.WritePropertyName("MaxHeight");
+                                    writer.Write(watermarksListValue.MaxHeight);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetSizingPolicy()) 
+                                {
+                                    writer.WritePropertyName("SizingPolicy");
+                                    writer.Write(watermarksListValue.SizingPolicy);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetHorizontalAlign()) 
+                                {
+                                    writer.WritePropertyName("HorizontalAlign");
+                                    writer.Write(watermarksListValue.HorizontalAlign);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetHorizontalOffset()) 
+                                {
+                                    writer.WritePropertyName("HorizontalOffset");
+                                    writer.Write(watermarksListValue.HorizontalOffset);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetVerticalAlign()) 
+                                {
+                                    writer.WritePropertyName("VerticalAlign");
+                                    writer.Write(watermarksListValue.VerticalAlign);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetVerticalOffset()) 
+                                {
+                                    writer.WritePropertyName("VerticalOffset");
+                                    writer.Write(watermarksListValue.VerticalOffset);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetOpacity()) 
+                                {
+                                    writer.WritePropertyName("Opacity");
+                                    writer.Write(watermarksListValue.Opacity);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetTarget()) 
+                                {
+                                    writer.WritePropertyName("Target");
+                                    writer.Write(watermarksListValue.Target);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
                         }
                         writer.WriteObjectEnd();
                     }

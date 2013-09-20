@@ -59,12 +59,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of strings that identify disks that are to be configured as upload buffer. Each string in the array must be minimum length of 1 and
-        /// maximum length of 300. You can get disk IDs from the <a>ListLocalDisks</a> API.
-        ///  
-        /// </summary>
         public List<string> DiskIds
         {
             get { return this.diskIds; }

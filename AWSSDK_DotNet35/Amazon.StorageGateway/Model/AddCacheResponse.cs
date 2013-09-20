@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the AddCacheResult property.
-        /// The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AddCacheResult class are now available on the AddCacheResponse class. You should use the properties on AddCacheResponse instead of accessing them through AddCacheResult.")]
         public AddCacheResult AddCacheResult

@@ -15,6 +15,7 @@
     using System;
     using System.Net;
     using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime;
     using Amazon.Runtime.Internal;
@@ -44,67 +45,71 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("GatewayARN", targetDepth))
               {
+                context.Read();
                 response.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayId", targetDepth))
               {
+                context.Read();
                 response.GatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayTimezone", targetDepth))
               {
+                context.Read();
                 response.GatewayTimezone = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayState", targetDepth))
               {
+                context.Read();
                 response.GatewayState = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
               {
+                context.Read();
                 response.GatewayNetworkInterfaces = new List<NetworkInterface>();
                         NetworkInterfaceUnmarshaller unmarshaller = NetworkInterfaceUnmarshaller.GetInstance();
                 while (context.Read())
                 {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
                   {
-                     response.GatewayNetworkInterfaces.Add(unmarshaller.Unmarshall(context));
+                    continue;
                   }
-                  else if (context.IsEndArray)
+                  if (token == JsonToken.ArrayEnd)
                   {
                     break;
                   }
+                   response.GatewayNetworkInterfaces.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }
   
               if (context.TestExpression("GatewayType", targetDepth))
               {
+                context.Read();
                 response.GatewayType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
               {
+                context.Read();
                 response.NextUpdateAvailabilityDate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;
                 }

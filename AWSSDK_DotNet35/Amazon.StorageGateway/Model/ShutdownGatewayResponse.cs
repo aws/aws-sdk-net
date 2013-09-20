@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the ShutdownGatewayResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was shut down.
+        /// A JSON object containing the of the gateway that was shut down.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ShutdownGatewayResult class are now available on the ShutdownGatewayResponse class. You should use the properties on ShutdownGatewayResponse instead of accessing them through ShutdownGatewayResult.")]
         public ShutdownGatewayResult ShutdownGatewayResult

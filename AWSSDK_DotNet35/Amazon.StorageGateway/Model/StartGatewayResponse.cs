@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the StartGatewayResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was restarted.
+        /// A JSON object containing the of the gateway that was restarted.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the StartGatewayResult class are now available on the StartGatewayResponse class. You should use the properties on StartGatewayResponse instead of accessing them through StartGatewayResult.")]
         public StartGatewayResult StartGatewayResult

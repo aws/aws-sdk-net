@@ -28,9 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeGatewayInformationResult property.
-        /// A JSON object containing the following fields: GatewayARN DescribeGatewayInformationOutput$GatewayId
-        /// DescribeGatewayInformationOutput$GatewayNetworkInterfaces DescribeGatewayInformationOutput$GatewayState
-        /// DescribeGatewayInformationOutput$GatewayTimezone DescribeGatewayInformationOutput$NextUpdateAvailabilityDate
+        /// A JSON object containing the following fields:
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeGatewayInformationResult class are now available on the DescribeGatewayInformationResponse class. You should use the properties on DescribeGatewayInformationResponse instead of accessing them through DescribeGatewayInformationResult.")]
         public DescribeGatewayInformationResult DescribeGatewayInformationResult

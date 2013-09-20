@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,9 +14,10 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Collections.Specialized;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -43,17 +44,23 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        #region Private Members
-        private StreamReader jsonStream = null;
-        private Stack<string> keyChain = new Stack<string>();
-        private string keyChainString = "";
-        private bool key = true;
-        private bool addedKey = true;
-        private Stack<bool> inArray = new Stack<bool>();
-        private Token current = new Token();
+        #region Private members
+
+        private StreamReader streamReader = null;
+        private JsonReader jsonReader = null;
+        private Stack<string> stack = new Stack<string>();
+        private string stackString = "";
+        private string currentField;
+        private Dictionary<String, String> metadata = new Dictionary<string, string>();
+        private JsonToken? currentToken = null;
+
+        // The string that has been deleted from stackString when doing update on the stack
+        private string lastParsedParentElement;
+
         #endregion
 
         #region Constructors
+
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
@@ -71,10 +78,13 @@ namespace Amazon.Runtime.Internal.Transform
             }
 
             if (this.crcStream != null)
-                this.jsonStream = new StreamReader(this.crcStream);
+                streamReader = new StreamReader(this.crcStream);
             else
-                this.jsonStream = new StreamReader(responseStream);
+                streamReader = new StreamReader(responseStream);
+
+            jsonReader = new JsonReader(streamReader);
         }
+
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
@@ -82,131 +92,16 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="responseData">Response data coming back from the request</param>
         public JsonUnmarshallerContext(string responseBody, IWebResponseData responseData)
         {
-            this.responseContents = responseBody;
-            this.jsonStream = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
             this.webResponseData = responseData;
+            this.responseContents = responseBody;
+
+            streamReader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
+            jsonReader = new JsonReader(streamReader);
         }
 
         #endregion
 
-        #region Public Properties
-
-        /// <summary>
-        /// Is the current token the start of an object
-        /// </summary>
-        public override bool IsStartElement
-        {
-            get { return current.Type == TokenType.StartElement; }
-        }
-        /// <summary>
-        /// Is the current token the end of an object
-        /// </summary>    
-        public override bool IsEndElement
-        {
-            get { return current.Type == TokenType.EndElement; }
-        }
-        /// <summary>
-        /// Is the current token an element seperator
-        /// </summary>
-        public bool IsElementSeperator
-        {
-            get { return current.Type == TokenType.ElementSeperator; }
-        }
-        /// <summary>
-        /// Is the current token a string
-        /// </summary>
-        public bool IsText
-        {
-            get { return current.Type == TokenType.Text; }
-        }
-        /// <summary>
-        /// Is the current token a key value seperator
-        /// </summary>
-        public bool IsKeyValueSeperator
-        {
-            get { return current.Type == TokenType.KeyValueSeperator; }
-        }
-        /// <summary>
-        /// Is the current token the start of an array
-        /// </summary>
-        public bool IsStartArray
-        {
-            get { return current.Type == TokenType.StartArray; }
-        }
-        /// <summary>
-        /// Is the current token the end of an array
-        /// </summary>
-        public bool IsEndArray
-        {
-            get { return current.Type == TokenType.EndArray; }
-        }
-        /// <summary>
-        /// Is the current token a number
-        /// </summary>
-        public bool IsNumber
-        {
-            get { return current.Type == TokenType.Number; }
-        }
-        /// <summary>
-        /// Is the current token a Boolean.
-        /// </summary>
-        public bool IsBoolean
-        {
-            get { return current.Type == TokenType.Boolean; }
-        }
-        /// <summary>
-        /// Is the current token a null
-        /// </summary>
-        public bool IsNull
-        {
-            get { return current.Type == TokenType.Null; }
-        }
-
-        /// <summary>
-        /// The value of the token if the current token is a Boolean, false otherwise.
-        /// </summary>
-        public bool BooleanValue
-        {
-            get
-            {
-                bool ret = false;
-                if (IsBoolean)
-                {
-                    ret = Boolean.Parse(current.Text);
-                }
-                return ret;
-            }
-        }
-        /// <summary>
-        /// The text represention of the number if the current token is a Number, null otherwise.
-        /// </summary>
-        public string NumberValue
-        {
-            get
-            {
-                string ret = null;
-                if (IsNumber)
-                {
-                    ret = current.Text;
-                }
-                return ret;
-            }
-        }
-        /// <summary>
-        /// The text represention of the string if the current token is Text, null otherwise.
-        /// </summary> 
-        public string TextValue
-        {
-            get
-            {
-                string ret = null;
-                if (IsText)
-                {
-                    ret = current.Text;
-                }
-                return ret;
-            }
-        }
+        #region Overrides
 
         /// <summary>
         /// Are we at the start of the json document.
@@ -215,74 +110,24 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
-                return (CurrentTokenType == TokenType.None) && (!jsonStream.EndOfStream);
+                return (CurrentTokenType == JsonToken.None) && (!streamReader.EndOfStream);
             }
         }
-        /// <summary>
-        /// Are we at the end of the json document.
-        /// </summary>
-        public bool IsEndOfDocument
-        {
-            get
-            {
-                while (!jsonStream.EndOfStream && Char.IsWhiteSpace((char)StreamPeek()))
-                {
-                    jsonStream.Read();
-                }
 
-                return (!jsonStream.EndOfStream);
-            }
-        }
         /// <summary>
-        /// Is the current token a Text token that is a key.
-        /// </summary>
-        public bool IsKey
+        /// Is the current token the end of an object
+        /// </summary>    
+        public override bool IsEndElement
         {
-            get
-            {
-                return IsText && key;
-            }
+            get { return CurrentTokenType == JsonToken.ObjectEnd; }
         }
+
         /// <summary>
-        /// Is the current token a Number, Boolean, Null Token, or a Text token that is a value.
+        /// Is the current token the start of an object
         /// </summary>
-        public bool IsLeafValue
+        public override bool IsStartElement
         {
-            get
-            {
-                return (IsNumber || IsBoolean || IsNull || (IsText && !key));
-            }
-        }
-        /// <summary>
-        /// Is the current token a value token and an array element.
-        /// </summary>
-        public bool IsLeafArrayElement
-        {
-            get
-            {
-                return (IsLeafValue && inArray.Peek());
-            }
-        }
-        /// <summary>
-        /// Is the current token the start of an array element
-        /// </summary>
-        public bool IsArrayElement
-        {
-            get
-            {
-                bool ret = false;
-                ret |= IsLeafArrayElement;
-                if (IsStartArray || IsStartElement)
-                {
-                    bool store = inArray.Pop();
-                    if (inArray.Count != 0)
-                    {
-                        ret |= inArray.Peek();
-                    }
-                    inArray.Push(store);
-                }
-                return ret;
-            }
+            get { return CurrentTokenType == JsonToken.ObjectStart; }
         }
 
         /// <summary>
@@ -291,14 +136,24 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override int CurrentDepth
         {
-            get { return keyChain.Count; }
-        }
-        /// <summary>
-        /// The token type of the current token.
-        /// </summary>
-        public TokenType CurrentTokenType
-        {
-            get { return current.Type; }
+            get
+            {
+                int depth = 0;
+                foreach (string s in stack)
+                {
+                    if (!
+                            (
+                            s.Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase) ||
+                            s.Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase)
+                            )
+                        )
+                    {
+                        depth++;
+                    }
+                }
+                if (currentField != null) depth++;
+                return depth;
+            }
         }
 
         /// <summary>
@@ -306,21 +161,9 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override string CurrentPath
         {
-            get { return this.keyChainString; }
+            get { return stackString; }
         }
-        #endregion
 
-        #region Private Properties
-        /// <summary>
-        /// Get the base stream of the jsonStream.
-        /// </summary>
-        internal Stream Stream
-        {
-            get { return jsonStream.BaseStream; }
-        }
-        #endregion
-
-        #region Public Methods
         /// <summary>
         ///     Reads to the next token in the json document, and updates the context
         ///     accordingly.
@@ -330,81 +173,14 @@ namespace Amazon.Runtime.Internal.Transform
         /// </returns>
         public override bool Read()
         {
-            if (jsonStream.EndOfStream)
-            {
-                return false;
-            }
+            bool result = jsonReader.Read();
 
-            current = ReadToken();
-
-            if (current.Type == TokenType.None && jsonStream.EndOfStream)
+            if (result)
             {
-                return false;
+                currentToken = jsonReader.Token;
+                UpdateContext();
             }
-
-            if (current.Type != TokenType.EndElement)
-            {
-                addedKey = true;
-            }
-
-            switch (current.Type)
-            {
-                case TokenType.StartElement:
-                    inArray.Push(false);
-                    key = true;
-                    addedKey = false;
-                    break;
-                case TokenType.EndElement:
-                    if (inArray.Pop())
-                    {
-                        throw new InvalidDataException("']' expected but '}' found.");
-                    }
-                    if (addedKey)
-                    {
-                        keyChain.Pop();
-                        keyChainString = keyChainString.Substring(0, keyChainString.LastIndexOf('/'));
-                    }
-                    break;
-                case TokenType.ElementSeperator:
-                    if (inArray.Peek())
-                    {
-                        key = false;
-                    }
-                    else
-                    {
-                        key = true;
-                        keyChain.Pop();
-                        keyChainString = keyChainString.Substring(0, keyChainString.LastIndexOf('/'));
-                    }
-                    break;
-                case TokenType.Text:
-                    if (key)
-                    {
-                        keyChain.Push(current.Text);
-                        keyChainString = String.Format("{0}/{1}", keyChainString, current.Text);
-                    }
-                    break;
-                case TokenType.KeyValueSeperator:
-                    key = false;
-                    break;
-                case TokenType.StartArray:
-                    inArray.Push(true);
-                    key = false;
-                    break;
-                case TokenType.EndArray:
-                    if (!inArray.Pop())
-                    {
-                        throw new InvalidDataException("'}' expected but ']' found.");
-                    }
-                    break;
-                case TokenType.Number:
-                case TokenType.Boolean:
-                case TokenType.Null:
-                    break;
-                default:
-                    throw new InvalidDataException("Invalid json token");
-            }
-            return true;
+            return result;
         }
 
         /// <summary>
@@ -415,12 +191,45 @@ namespace Amazon.Runtime.Internal.Transform
         /// </returns>
         public override string ReadText()
         {
-            return current.Text;
+            object data = jsonReader.Value;
+            string text;
+            switch (currentToken)
+            {
+                case JsonToken.Null:
+                    text = null;
+                    break;
+                case JsonToken.String:
+                case JsonToken.PropertyName:
+                    text = data as string;
+                    break;
+                case JsonToken.Boolean:
+                case JsonToken.Double:
+                case JsonToken.Int:
+                case JsonToken.Long:
+                    IFormattable iformattable = data as IFormattable;
+                    if (iformattable != null)
+                        text = iformattable.ToString(null, CultureInfo.InvariantCulture);
+                    else
+                        text = data.ToString();
+                    break;
+                default:
+                    throw new AmazonClientException(
+                            "We expected a VALUE token but got: " + currentToken);
+            }
+            return text;
         }
 
         #endregion
 
-        #region Private Methods
+        #region Internal methods/properties
+
+        /// <summary>
+        /// Get the base stream of the jsonStream.
+        /// </summary>
+        internal Stream Stream
+        {
+            get { return streamReader.BaseStream; }
+        }
 
         /// <summary>
         /// Peeks at the next (non-whitespace) character in the jsonStream.
@@ -430,11 +239,23 @@ namespace Amazon.Runtime.Internal.Transform
         {
             while (Char.IsWhiteSpace((char)StreamPeek()))
             {
-                jsonStream.Read();
+                streamReader.Read();
             }
             return StreamPeek();
 
         }
+
+        /// <summary>
+        /// The type of the current token
+        /// </summary>
+        internal JsonToken CurrentTokenType
+        {
+            get { return currentToken.Value; }
+        }
+
+        #endregion
+
+        #region Private methods
 
         /// <summary>
         /// Peeks at the next character in the stream.
@@ -444,262 +265,75 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns></returns>
         private int StreamPeek()
         {
-            int peek = jsonStream.Peek();
+            int peek = streamReader.Peek();
             if (peek == -1)
             {
-                jsonStream.DiscardBufferedData();
-                peek = jsonStream.Peek();
+                streamReader.DiscardBufferedData();
+                peek = streamReader.Peek();
             }
             return peek;
         }
 
-        /// <summary>
-        /// Reads the next token from the stream
-        /// </summary>
-        /// <returns>The token read or an empty token if at the end of the stream.</returns>
-        private Token ReadToken()
+        private void UpdateContext()
         {
-            Token ret = new Token();
+            lastParsedParentElement = null;
+            if (!currentToken.HasValue) return;
 
-            int nextChar = jsonStream.Read();
-            if (nextChar == -1)
+            if (currentToken.Value == JsonToken.ObjectStart || currentToken.Value == JsonToken.ArrayStart)
             {
-                return ret;
-            }
-
-            while (Char.IsWhiteSpace((char)nextChar))
-            {
-                nextChar = jsonStream.Read();
-                if (jsonStream.EndOfStream)
+                if (currentField != null)
                 {
-                    return ret;
-                }
-
-                if (nextChar == -1)
-                {
-                    return ret;
+                    stack.Push(currentField);
+                    stack.Push(currentToken.ToString());
+                    currentField = null;
                 }
             }
-
-            switch (nextChar)
+            else if (currentToken.Value == JsonToken.ObjectEnd || currentToken.Value == JsonToken.ArrayEnd)
             {
-                case '{':
-                    ret.Type = TokenType.StartElement;
-                    break;
-                case '}':
-                    ret.Type = TokenType.EndElement;
-                    break;
-                case ',':
-                    ret.Type = TokenType.ElementSeperator;
-                    break;
-                case '"':
-                    ret.Type = TokenType.Text;
-                    StringBuilder sb = new StringBuilder();
-                    bool escaped = false;
-                    while ((((nextChar = jsonStream.Read()) != '"') || (escaped)) && (nextChar != -1))
+                if (stack.Count > 0)
+                {
+                    bool squareBracketsMatch = currentToken.Value == JsonToken.ArrayEnd && stack.Peek().Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase);
+                    bool curlyBracketsMatch = currentToken.Value == JsonToken.ObjectEnd && stack.Peek().Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase);
+                    if (squareBracketsMatch || curlyBracketsMatch)
                     {
-                        if ((char)nextChar == '\\')
-                        {
-                            if (escaped)
-                            {
-                                sb.Append((char)nextChar); // not calling GetEscapedChar, it would simply return \
-                            }
-                            escaped = !escaped;
-                        }
-                        else
-                        {
-                            if (escaped)
-                            {
-                                char escapedChar = GetEscapedChar(nextChar);
-                                sb.Append(escapedChar);
-                            }
-                            else
-                            {
-                                sb.Append((char)nextChar);
-                            }
-                            escaped = false;
-                        }
+                        stack.Pop();
+                        lastParsedParentElement = stack.Pop();
                     }
-                    ret.Text = sb.ToString();
-                    break;
-                case ':':
-                    ret.Type = TokenType.KeyValueSeperator;
-                    break;
-                case '[':
-                    ret.Type = TokenType.StartArray;
-                    break;
-                case ']':
-                    ret.Type = TokenType.EndArray;
-                    break;
-                case '-':
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
-                    ret.Type = TokenType.Number;
-                    ret.Text = ReadNumber((char)nextChar);
-                    break;
-                case 't':
-                case 'T':
-                    ret.Type = TokenType.Boolean;
-                    if (!Read("rue", jsonStream, StringComparison.OrdinalIgnoreCase))
-                    {
-                        throw new InvalidDataException("Invalid JSON data");
-                    }
-                    ret.Text = "true";
-                    break;
-                case 'f':
-                case 'F':
-                    ret.Type = TokenType.Boolean;
-                    if (!Read("alse", jsonStream, StringComparison.OrdinalIgnoreCase))
-                    {
-                        throw new InvalidDataException("Invalid JSON data");
-                    }
-                    ret.Text = "false";
-                    break;
-                case 'n':
-                case 'N':
-                    ret.Type = TokenType.Null;
-                    if (!Read("ull", jsonStream, StringComparison.OrdinalIgnoreCase))
-                    {
-                        throw new InvalidDataException("Invalid JSON data");
-                    }
-                    ret.Text = null;
-                    break;
-                default:
-                    throw new InvalidDataException("Invalid JSON data");
+                }
+                currentField = null;
             }
-            return ret;
+            else if (currentToken.Value == JsonToken.PropertyName)
+            {
+                string t = ReadText();
+                currentField = t;
+            }
+
+            RebuildStackString();
         }
 
-        private static char GetEscapedChar(int character)
+        private void RebuildStackString()
         {
-            switch (character)
+            stackString = "";
+
+            foreach (string s in stack)
             {
-                case 'n':
-                    return '\n';
-
-                case 't':
-                    return '\t';
-
-                case 'r':
-                    return '\r';
-
-                case 'b':
-                    return '\b';
-
-                case 'f':
-                    return '\f';
-
-                //case '"':
-                //case '\'':
-                //case '\\':
-                //case '/':
-                default:
-                    return Convert.ToChar(character);
-            }
-        }
-
-        /// <summary>
-        /// Reads a json number from the stream
-        /// </summary>
-        /// <param name="firstChar">first character of the numbers which has already been read</param>
-        /// <returns>the string representation of the number</returns>
-        private string ReadNumber(char firstChar)
-        {
-            StringBuilder sb = new StringBuilder(firstChar.ToString());
-            char nextChar;
-
-            while (Char.IsNumber((char)StreamPeek()))
-            {
-                nextChar = (char)jsonStream.Read();
-                sb.Append(nextChar);
-            }
-
-            if (((char)StreamPeek()) == '.')
-            {
-                nextChar = (char)jsonStream.Read();
-                sb.Append(nextChar);
-                while (Char.IsNumber((char)StreamPeek()))
+                if (
+                    !(
+                        s.Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase) ||
+                        s.Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase)))
                 {
-                    nextChar = (char)jsonStream.Read();
-                    sb.Append(nextChar);
+                    stackString += "/" + s;
                 }
             }
 
-            if ((((char)StreamPeek()) == 'e') || (((char)StreamPeek()) == 'E'))
+            if (currentField != null)
             {
-                nextChar = (char)jsonStream.Read();
-                sb.Append(nextChar);
-                if ((((char)StreamPeek()) == '+') || (((char)StreamPeek()) == '-'))
-                {
-                    nextChar = (char)jsonStream.Read();
-                    sb.Append(nextChar);
-                }
-                while (Char.IsNumber((char)StreamPeek()))
-                {
-                    nextChar = (char)jsonStream.Read();
-                    sb.Append(nextChar);
-                }
+                stackString += "/" + currentField;
             }
 
-            return sb.ToString();
+            if (stackString == "") stackString = "/";
         }
 
-        /// <summary>
-        /// Checks that the stream contains toRead next when matched using comparisonType
-        /// </summary>
-        /// <param name="toRead">The string to verify is next in the stream</param>
-        /// <param name="from">The stream to read from</param>
-        /// <param name="comparisonType">The type of comparison to perform</param>
-        /// <returns>If the stream started with toRead or not</returns>
-        private bool Read(string toRead, StreamReader from, StringComparison comparisonType)
-        {
-            bool ret = true;
-            char[] value = new char[toRead.Length];
-            from.Read(value, 0, value.Length);
-
-            if (!toRead.Equals(new string(value), comparisonType))
-            {
-                ret = false;
-            }
-            return ret;
-        }
-        #endregion
-
-        #region Data Structures
-        /// <summary>
-        /// Represents a token in the json document, with the TokenType and value if applicable.
-        /// </summary>
-        private struct Token
-        {
-            public TokenType Type { get; set; }
-            public string Text { get; set; }
-        }
-
-        /// <summary>
-        /// The different token types in the json document
-        /// </summary>
-        public enum TokenType
-        {
-            None,
-            StartElement,
-            EndElement,
-            ElementSeperator,
-            Text,
-            KeyValueSeperator,
-            StartArray,
-            EndArray,
-            Number,
-            Boolean,
-            Null
-        }
         #endregion
     }
 }

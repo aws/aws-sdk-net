@@ -15,6 +15,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using ThirdParty.Json.LitJson;
     using Amazon.DataPipeline.Model;
     using Amazon.Runtime.Internal.Transform;
 
@@ -40,51 +41,51 @@
             int targetDepth = originalDepth + 1;
             while (context.Read())
             {
-                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
-                {
-                context.Read();
-                context.Read();
               
               if (context.TestExpression("taskId", targetDepth))
               {
+                context.Read();
                 taskObject.TaskId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("pipelineId", targetDepth))
               {
+                context.Read();
                 taskObject.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("attemptId", targetDepth))
               {
+                context.Read();
                 taskObject.AttemptId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("objects", targetDepth))
               {
+                context.Read();
                 taskObject.Objects = new Dictionary<String,PipelineObject>();
                 KeyValueUnmarshaller<string, PipelineObject, StringUnmarshaller, PipelineObjectUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, PipelineObject, StringUnmarshaller, PipelineObjectUnmarshaller>(StringUnmarshaller.GetInstance(), PipelineObjectUnmarshaller.GetInstance());
                 while (context.Read())
                 {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                  JsonToken token = context.CurrentTokenType;
+                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
                   {
-                    KeyValuePair<string, PipelineObject> kvp = unmarshaller.Unmarshall(context);
+                      continue;
+                  }
+                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
+                  {
+                      break;
+                  }
+                  KeyValuePair<string, PipelineObject> kvp = unmarshaller.Unmarshall(context);
                     taskObject.Objects.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
                 }
                 continue;
               }
   
-                }
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return taskObject;
                 }

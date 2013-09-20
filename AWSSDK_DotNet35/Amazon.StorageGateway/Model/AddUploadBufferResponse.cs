@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the AddUploadBufferResult property.
-        /// The Amazon Resource Name (ARN) of the gateway for which upload buffer was configured.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AddUploadBufferResult class are now available on the AddUploadBufferResponse class. You should use the properties on AddUploadBufferResponse instead of accessing them through AddUploadBufferResult.")]
         public AddUploadBufferResult AddUploadBufferResult

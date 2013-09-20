@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCommands operation.
-    /// <para>Describes the results of specified commands.</para>
+    /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     public partial class DescribeCommandsRequest : AmazonWebServiceRequest
     {

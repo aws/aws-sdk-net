@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway.Model
     {
         /// <summary>
         /// Gets and sets the DescribeChapCredentialsResult property.
-        /// A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.
+        /// A JSON object containing a .
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeChapCredentialsResult class are now available on the DescribeChapCredentialsResponse class. You should use the properties on DescribeChapCredentialsResponse instead of accessing them through DescribeChapCredentialsResult.")]
         public DescribeChapCredentialsResult DescribeChapCredentialsResult

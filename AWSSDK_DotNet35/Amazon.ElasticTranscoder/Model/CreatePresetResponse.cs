@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         /// <summary>
         /// Gets and sets the CreatePresetResult property.
-        /// 
+        /// The CreatePresetResponse structure.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreatePresetResult class are now available on the CreatePresetResponse class. You should use the properties on CreatePresetResponse instead of accessing them through CreatePresetResult.")]
         public CreatePresetResult CreatePresetResult

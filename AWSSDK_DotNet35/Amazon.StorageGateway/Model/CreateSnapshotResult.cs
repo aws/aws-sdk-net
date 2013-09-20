@@ -23,11 +23,6 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateSnapshotOutput$SnapshotId </li>
-    /// <li> CreateSnapshotOutput$VolumeARN </li>
-    /// 
-    /// </ul>
     /// </summary>
     public partial class CreateSnapshotResult : AmazonWebServiceResponse
     {

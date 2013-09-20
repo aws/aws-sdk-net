@@ -32,12 +32,6 @@ namespace Amazon.StorageGateway.Model
     public partial class DescribeCachediSCSIVolumesRequest : AmazonWebServiceRequest
     {
         private List<string> volumeARNs = new List<string>();
-
-        /// <summary>
-        /// An array of strings, where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes
-        /// must be from the same gateway. Use <a>ListVolumes</a> to get volume ARNs of a gateway.
-        ///  
-        /// </summary>
         public List<string> VolumeARNs
         {
             get { return this.volumeARNs; }
