@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TopicARN property is set
         internal bool IsSetTopicARN()
         {
-            return this.topicARN != null;       
+            return this.topicARN != null;
         }
     }
 }

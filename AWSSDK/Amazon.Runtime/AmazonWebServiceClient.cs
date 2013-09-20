@@ -907,7 +907,7 @@ namespace Amazon.Runtime
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+                signer.Sign(request, this.config, metrics, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
             }
         }
 

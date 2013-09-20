@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The MetricGranularityType data type. </para>
     /// </summary>
-    public class MetricGranularityType  
+    public class MetricGranularityType
     {
         
         private string granularity;
@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;       
+            return this.granularity != null;
         }
     }
 }

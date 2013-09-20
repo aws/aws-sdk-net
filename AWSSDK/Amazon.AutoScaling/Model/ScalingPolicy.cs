@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>ScalingPolicy</c> data type. </para>
     /// </summary>
-    public class ScalingPolicy  
+    public class ScalingPolicy
     {
         
         private string autoScalingGroupName;
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingAdjustment property is set
         internal bool IsSetScalingAdjustment()
         {
-            return this.scalingAdjustment.HasValue;       
+            return this.scalingAdjustment.HasValue;
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentType property is set
         internal bool IsSetAdjustmentType()
         {
-            return this.adjustmentType != null;       
+            return this.adjustmentType != null;
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Cooldown property is set
         internal bool IsSetCooldown()
         {
-            return this.cooldown.HasValue;       
+            return this.cooldown.HasValue;
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyARN property is set
         internal bool IsSetPolicyARN()
         {
-            return this.policyARN != null;       
+            return this.policyARN != null;
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Alarms collection
         /// </summary>
@@ -307,7 +307,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this.alarms.Count > 0;       
+            return this.alarms.Count > 0;
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinAdjustmentStep property is set
         internal bool IsSetMinAdjustmentStep()
         {
-            return this.minAdjustmentStep.HasValue;       
+            return this.minAdjustmentStep.HasValue;
         }
     }
 }

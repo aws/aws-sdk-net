@@ -25,7 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetInstanceHealth operation.
-    /// <para> Sets the health status of an instance. </para>
+    /// <para> Sets the health status of a specified instance that belongs to any of your Auto Scaling groups. </para> <para>For more information,
+    /// see Configure Health Checks for Your Auto Scaling group.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SetInstanceHealth"/>
     public class SetInstanceHealthRequest : AmazonWebServiceRequest
@@ -73,12 +74,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
-        /// The health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the
-        /// instance is unhealthy. Auto Scaling should terminate and replace it.
+        /// The health status of the instance. Set to <c>Healthy</c> if you want the instance to remain in service. Set to <c>Unhealthy</c> if you want
+        /// the instance to be out of service. Auto Scaling will terminate and replace the unhealthy instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -116,11 +117,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthStatus property is set
         internal bool IsSetHealthStatus()
         {
-            return this.healthStatus != null;       
+            return this.healthStatus != null;
         }
 
         /// <summary>
-        /// If True, this call should respect the grace period associated with the group.
+        /// If the Auto Scaling group of the specified instance has a <c>HealthCheckGracePeriod</c> specified for the group, by default, this call will
+        /// respect the grace period. Set this to <c>False</c>, if you do not want the call to respect the grace period associated with the group. For
+        /// more information, see the <c>HealthCheckGracePeriod</c> parameter description in the <a>CreateAutoScalingGroup</a> action.
         ///  
         /// </summary>
         public bool ShouldRespectGracePeriod
@@ -145,7 +148,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ShouldRespectGracePeriod property is set
         internal bool IsSetShouldRespectGracePeriod()
         {
-            return this.shouldRespectGracePeriod.HasValue;       
+            return this.shouldRespectGracePeriod.HasValue;
         }
     }
 }

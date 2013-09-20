@@ -59,7 +59,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LaunchConfigurationNames collection
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationNames property is set
         internal bool IsSetLaunchConfigurationNames()
         {
-            return this.launchConfigurationNames.Count > 0;       
+            return this.launchConfigurationNames.Count > 0;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
     }
 }

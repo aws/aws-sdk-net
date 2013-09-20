@@ -23,14 +23,15 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>AutoScalingNotificationTypes</c> data type.</para>
     /// </summary>
-    public class DescribeAutoScalingNotificationTypesResult  
+    public class DescribeAutoScalingNotificationTypesResult
     {
         
         private List<string> autoScalingNotificationTypes = new List<string>();
 
         /// <summary>
-        /// Notification types supported by Auto Scaling. They are: autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_LAUNCH_ERROR,
-        /// autoscaling:EC2_INSTANCE_TERMINATE, autoscaling:EC2_INSTANCE_TERMINATE_ERROR, autoscaling:TEST_NOTIFICATION
+        /// Returns a list of all notification types supported by Auto Scaling. They are: <ul> <li><c>autoscaling:EC2_INSTANCE_LAUNCH</c></li>
+        /// <li><c>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</c></li> <li><c>autoscaling:EC2_INSTANCE_TERMINATE</c></li>
+        /// <li><c>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</c></li> <li><c>autoscaling:TEST_NOTIFICATION</c></li> </ul>
         ///  
         /// </summary>
         public List<string> AutoScalingNotificationTypes
@@ -53,7 +54,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingNotificationTypes collection
         /// </summary>
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingNotificationTypes property is set
         internal bool IsSetAutoScalingNotificationTypes()
         {
-            return this.autoScalingNotificationTypes.Count > 0;       
+            return this.autoScalingNotificationTypes.Count > 0;
         }
     }
 }

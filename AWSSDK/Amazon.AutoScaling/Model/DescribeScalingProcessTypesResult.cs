@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeScalingProcessTypes action. </para>
     /// </summary>
-    public class DescribeScalingProcessTypesResult  
+    public class DescribeScalingProcessTypesResult
     {
         
         private List<ProcessType> processes = new List<ProcessType>();
@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Processes collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Processes property is set
         internal bool IsSetProcesses()
         {
-            return this.processes.Count > 0;       
+            return this.processes.Count > 0;
         }
     }
 }

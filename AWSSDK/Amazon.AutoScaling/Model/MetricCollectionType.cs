@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The MetricCollectionType data type. </para>
     /// </summary>
-    public class MetricCollectionType  
+    public class MetricCollectionType
     {
         
         private string metric;
@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metric property is set
         internal bool IsSetMetric()
         {
-            return this.metric != null;       
+            return this.metric != null;
         }
     }
 }

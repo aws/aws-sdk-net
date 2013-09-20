@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>PoliciesType</c> data type. </para>
     /// </summary>
-    public class DescribePoliciesResult  
+    public class DescribePoliciesResult
     {
         
         private List<ScalingPolicy> scalingPolicies = new List<ScalingPolicy>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScalingPolicies collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingPolicies property is set
         internal bool IsSetScalingPolicies()
         {
-            return this.scalingPolicies.Count > 0;       
+            return this.scalingPolicies.Count > 0;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

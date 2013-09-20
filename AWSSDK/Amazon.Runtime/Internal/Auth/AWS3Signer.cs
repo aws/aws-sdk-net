@@ -51,26 +51,28 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
         /// <param name="secureKey">The AWS secret key stored in a secure string</param>
+        /// <param name="metrics">Request metrics</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey) 
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey) 
         {
             if (UseAws3Https)
             {
-                SignHttps(request, clientConfig, awsAccessKeyId, awsSecretAccessKey, secureKey);
+                SignHttps(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, secureKey);
             }
             else
             {
-                SignHttp(request, clientConfig, awsAccessKeyId, awsSecretAccessKey, secureKey);
+                SignHttp(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, secureKey);
             }
         }
 
-        private void SignHttps(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        private void SignHttps(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             string nonce = Guid.NewGuid().ToString();
             string date = AWSSDKUtils.FormattedCurrentTimestampRFC822;
             string stringToSign;
 
             stringToSign = date + nonce;
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, stringToSign);
 
             string signature = ComputeHash(stringToSign, awsSecretAccessKey, secureKey, clientConfig.SignatureMethod);
 
@@ -86,7 +88,7 @@ namespace Amazon.Runtime.Internal.Auth
             request.Headers["x-amz-date"] = date;
         }
 
-        private void SignHttp(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        private void SignHttp(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
             string nonce = Guid.NewGuid().ToString();
@@ -128,6 +130,7 @@ namespace Amazon.Runtime.Internal.Auth
 
                 bytesToSign = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
             }
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, stringToSign);
 
             string signature = ComputeHash(bytesToSign, awsSecretAccessKey, secureKey, algorithm);
 

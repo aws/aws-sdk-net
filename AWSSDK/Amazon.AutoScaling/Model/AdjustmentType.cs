@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c> parameter is an absolute number or a percentage of the current
     /// capacity. </para>
     /// </summary>
-    public class AdjustmentType  
+    public class AdjustmentType
     {
         
         private string adjustmentType;

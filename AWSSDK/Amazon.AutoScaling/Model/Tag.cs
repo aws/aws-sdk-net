@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The tag applied to an Auto Scaling group. </para>
     /// </summary>
-    public class Tag  
+    public class Tag
     {
         
         private string resourceId;
@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this.resourceId != null;       
+            return this.resourceId != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this.resourceType != null;       
+            return this.resourceType != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;       
+            return this.key != null;
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PropagateAtLaunch property is set
         internal bool IsSetPropagateAtLaunch()
         {
-            return this.propagateAtLaunch.HasValue;       
+            return this.propagateAtLaunch.HasValue;
         }
     }
 }

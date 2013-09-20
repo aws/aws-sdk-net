@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ShouldDecrementDesiredCapacity property is set
         internal bool IsSetShouldDecrementDesiredCapacity()
         {
-            return this.shouldDecrementDesiredCapacity.HasValue;       
+            return this.shouldDecrementDesiredCapacity.HasValue;
         }
     }
 }

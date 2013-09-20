@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>PolicyARNType</c> data type. </para>
     /// </summary>
-    public class PutScalingPolicyResult  
+    public class PutScalingPolicyResult
     {
         
         private string policyARN;
@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyARN property is set
         internal bool IsSetPolicyARN()
         {
-            return this.policyARN != null;       
+            return this.policyARN != null;
         }
     }
 }

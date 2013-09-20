@@ -78,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -151,12 +151,14 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingAdjustment property is set
         internal bool IsSetScalingAdjustment()
         {
-            return this.scalingAdjustment.HasValue;       
+            return this.scalingAdjustment.HasValue;
         }
 
         /// <summary>
         /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number or a percentage of the current capacity. Valid values are
-        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
+        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>. For more information about the adjustment types supported
+        /// by Auto Scaling, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale Based on
+        /// Demand</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -194,11 +196,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentType property is set
         internal bool IsSetAdjustmentType()
         {
-            return this.adjustmentType != null;       
+            return this.adjustmentType != null;
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes and before the next scaling acitvity can start.
+        /// The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a>
         ///  
         /// </summary>
         public int Cooldown
@@ -223,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Cooldown property is set
         internal bool IsSetCooldown()
         {
-            return this.cooldown.HasValue;       
+            return this.cooldown.HasValue;
         }
 
         /// <summary>
@@ -254,7 +257,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinAdjustmentStep property is set
         internal bool IsSetMinAdjustmentStep()
         {
-            return this.minAdjustmentStep.HasValue;       
+            return this.minAdjustmentStep.HasValue;
         }
     }
 }

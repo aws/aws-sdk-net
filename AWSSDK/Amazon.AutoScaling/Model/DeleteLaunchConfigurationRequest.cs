@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
     }
 }

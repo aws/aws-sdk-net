@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output for the TerminateInstanceInAutoScalingGroup action. </para>
     /// </summary>
-    public class TerminateInstanceInAutoScalingGroupResult  
+    public class TerminateInstanceInAutoScalingGroupResult
     {
         
         private Activity activity;
@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Activity property is set
         internal bool IsSetActivity()
         {
-            return this.activity != null;       
+            return this.activity != null;
         }
     }
 }

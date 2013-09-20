@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Metrics collection
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;       
+            return this.metrics.Count > 0;
         }
     }
 }

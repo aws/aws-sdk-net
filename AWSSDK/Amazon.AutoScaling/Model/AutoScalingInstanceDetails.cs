@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingInstanceDetails</c> data type. </para>
     /// </summary>
-    public class AutoScalingInstanceDetails  
+    public class AutoScalingInstanceDetails
     {
         
         private string instanceId;
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -156,11 +156,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
-        /// The life cycle state of this instance.
+        /// The life cycle state of this instance. for more information, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance Lifecycle State</a> in the
+        /// <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -198,7 +200,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleState property is set
         internal bool IsSetLifecycleState()
         {
-            return this.lifecycleState != null;       
+            return this.lifecycleState != null;
         }
 
         /// <summary>
@@ -241,7 +243,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthStatus property is set
         internal bool IsSetHealthStatus()
         {
-            return this.healthStatus != null;       
+            return this.healthStatus != null;
         }
 
         /// <summary>
@@ -283,7 +285,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
     }
 }

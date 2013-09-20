@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The output of the DescribeNotificationConfigurations action.</para>
     /// </summary>
-    public class DescribeNotificationConfigurationsResult  
+    public class DescribeNotificationConfigurationsResult
     {
         
         private List<NotificationConfiguration> notificationConfigurations = new List<NotificationConfiguration>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NotificationConfigurations collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationConfigurations property is set
         internal bool IsSetNotificationConfigurations()
         {
-            return this.notificationConfigurations.Count > 0;       
+            return this.notificationConfigurations.Count > 0;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

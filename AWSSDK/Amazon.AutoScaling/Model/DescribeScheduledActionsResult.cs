@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
     /// </para>
     /// </summary>
-    public class DescribeScheduledActionsResult  
+    public class DescribeScheduledActionsResult
     {
         
         private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
@@ -55,7 +55,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScheduledUpdateGroupActions collection
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledUpdateGroupActions property is set
         internal bool IsSetScheduledUpdateGroupActions()
         {
-            return this.scheduledUpdateGroupActions.Count > 0;       
+            return this.scheduledUpdateGroupActions.Count > 0;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

@@ -46,8 +46,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
         /// <param name="secureKey">The AWS secret key stored in a secure string</param>
+        /// <param name="metrics">Request metrics</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             // clean up request from previous execution
             request.Headers.Remove("Authorization");
@@ -83,15 +84,17 @@ namespace Amazon.Runtime.Internal.Auth
                                                           request.ContentStreamHash,
                                                           request.HttpMethod);
 
-            StringBuilder stringToSign = new StringBuilder();
-            stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
+            StringBuilder stringToSignBuilder = new StringBuilder();
+            stringToSignBuilder.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
             byte[] canonicalRequestHashBytes = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
-            stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
+            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(signingAlgorithm);
             kha.Key = ComposeSigningKey(signingAlgorithm, awsSecretAccessKey, secureKey, region, dateStamp, service);
-            byte[] signature = kha.ComputeHash(Encoding.UTF8.GetBytes(stringToSign.ToString()));
+            string stringToSign = stringToSignBuilder.ToString();
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, stringToSign);
+            byte[] signature = kha.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
 
             StringBuilder authorizationHeader = new StringBuilder();
             authorizationHeader.AppendFormat("{0}-{1} ", SCHEME, ALGORITHM);

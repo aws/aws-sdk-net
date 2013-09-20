@@ -26,7 +26,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
     /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto Scaling metrics collection
     /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
     /// </para>
     /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Metrics collection
         /// </summary>
@@ -125,7 +125,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;       
+            return this.metrics.Count > 0;
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;       
+            return this.granularity != null;
         }
     }
 }

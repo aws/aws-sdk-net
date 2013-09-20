@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> An Auto Scaling process that has been suspended. For more information, see ProcessType. </para>
     /// </summary>
-    public class SuspendedProcess  
+    public class SuspendedProcess
     {
         
         private string processName;
@@ -68,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ProcessName property is set
         internal bool IsSetProcessName()
         {
-            return this.processName != null;       
+            return this.processName != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SuspensionReason property is set
         internal bool IsSetSuspensionReason()
         {
-            return this.suspensionReason != null;       
+            return this.suspensionReason != null;
         }
     }
 }

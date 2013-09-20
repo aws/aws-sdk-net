@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class DescribeTagsResult  
+    public class DescribeTagsResult
     {
         
         private List<TagDescription> tags = new List<TagDescription>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

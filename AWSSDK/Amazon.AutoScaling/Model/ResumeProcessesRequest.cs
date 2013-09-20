@@ -25,7 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeProcesses operation.
-    /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
+    /// <para> Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information on suspending and resuming Auto Scaling
+    /// process, see Suspend and Resume Auto Scaling Process. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.ResumeProcesses"/>
     public class ResumeProcessesRequest : AmazonWebServiceRequest
@@ -72,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScalingProcesses collection
         /// </summary>
@@ -121,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingProcesses property is set
         internal bool IsSetScalingProcesses()
         {
-            return this.scalingProcesses.Count > 0;       
+            return this.scalingProcesses.Count > 0;
         }
     }
 }

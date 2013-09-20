@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>TerminationPolicyTypes</c> data type.</para>
     /// </summary>
-    public class DescribeTerminationPolicyTypesResult  
+    public class DescribeTerminationPolicyTypesResult
     {
         
         private List<string> terminationPolicyTypes = new List<string>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TerminationPolicyTypes collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicyTypes property is set
         internal bool IsSetTerminationPolicyTypes()
         {
-            return this.terminationPolicyTypes.Count > 0;       
+            return this.terminationPolicyTypes.Count > 0;
         }
     }
 }

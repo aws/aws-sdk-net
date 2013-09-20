@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The AutoScalingGroup data type. </para>
     /// </summary>
-    public class AutoScalingGroup  
+    public class AutoScalingGroup
     {
         
         private string autoScalingGroupName;
@@ -86,7 +86,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupARN property is set
         internal bool IsSetAutoScalingGroupARN()
         {
-            return this.autoScalingGroupARN != null;       
+            return this.autoScalingGroupARN != null;
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinSize property is set
         internal bool IsSetMinSize()
         {
-            return this.minSize.HasValue;       
+            return this.minSize.HasValue;
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxSize property is set
         internal bool IsSetMaxSize()
         {
-            return this.maxSize.HasValue;       
+            return this.maxSize.HasValue;
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;       
+            return this.desiredCapacity.HasValue;
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DefaultCooldown property is set
         internal bool IsSetDefaultCooldown()
         {
-            return this.defaultCooldown.HasValue;       
+            return this.defaultCooldown.HasValue;
         }
 
         /// <summary>
@@ -322,7 +322,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
@@ -342,7 +342,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LoadBalancerNames collection
         /// </summary>
@@ -389,7 +389,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this.loadBalancerNames.Count > 0;       
+            return this.loadBalancerNames.Count > 0;
         }
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthCheckType property is set
         internal bool IsSetHealthCheckType()
         {
-            return this.healthCheckType != null;       
+            return this.healthCheckType != null;
         }
 
         /// <summary>
@@ -461,7 +461,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthCheckGracePeriod property is set
         internal bool IsSetHealthCheckGracePeriod()
         {
-            return this.healthCheckGracePeriod.HasValue;       
+            return this.healthCheckGracePeriod.HasValue;
         }
 
         /// <summary>
@@ -488,7 +488,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
@@ -508,7 +508,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
 
         /// <summary>
@@ -537,7 +537,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;       
+            return this.createdTime.HasValue;
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SuspendedProcesses collection
         /// </summary>
@@ -584,13 +584,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SuspendedProcesses property is set
         internal bool IsSetSuspendedProcesses()
         {
-            return this.suspendedProcesses.Count > 0;       
+            return this.suspendedProcesses.Count > 0;
         }
 
         /// <summary>
         /// The name of the cluster placement group, if applicable. For more information, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2
-        /// User Guide.
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2 User
+        /// Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -628,7 +628,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PlacementGroup property is set
         internal bool IsSetPlacementGroup()
         {
-            return this.placementGroup != null;       
+            return this.placementGroup != null;
         }
 
         /// <summary>
@@ -672,7 +672,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if VPCZoneIdentifier property is set
         internal bool IsSetVPCZoneIdentifier()
         {
-            return this.vPCZoneIdentifier != null;       
+            return this.vPCZoneIdentifier != null;
         }
 
         /// <summary>
@@ -699,7 +699,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the EnabledMetrics collection
         /// </summary>
@@ -719,11 +719,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EnabledMetrics property is set
         internal bool IsSetEnabledMetrics()
         {
-            return this.enabledMetrics.Count > 0;       
+            return this.enabledMetrics.Count > 0;
         }
 
         /// <summary>
-        /// A list of status conditions for the Auto Scaling group.
+        /// The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -761,7 +761,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -788,7 +788,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -808,7 +808,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
 
         /// <summary>
@@ -835,7 +835,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TerminationPolicies collection
         /// </summary>
@@ -855,7 +855,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this.terminationPolicies.Count > 0;       
+            return this.terminationPolicies.Count > 0;
         }
     }
 }

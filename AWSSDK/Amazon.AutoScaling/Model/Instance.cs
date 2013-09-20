@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>Instance</c> data type. </para>
     /// </summary>
-    public class Instance  
+    public class Instance
     {
         
         private string instanceId;
@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -113,11 +113,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
-        /// Contains a description of the current <i>lifecycle</i> state.
+        /// Contains a description of the current <i>lifecycle</i> state. <note> The <c>Quarantined</c> lifecycle state is currently not used. </note>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -151,7 +151,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleState property is set
         internal bool IsSetLifecycleState()
         {
-            return this.lifecycleState != null;       
+            return this.lifecycleState != null;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthStatus property is set
         internal bool IsSetHealthStatus()
         {
-            return this.healthStatus != null;       
+            return this.healthStatus != null;
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
     }
 }

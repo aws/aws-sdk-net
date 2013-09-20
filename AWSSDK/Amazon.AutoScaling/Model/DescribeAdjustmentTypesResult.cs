@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeAdjustmentTypes action. </para>
     /// </summary>
-    public class DescribeAdjustmentTypesResult  
+    public class DescribeAdjustmentTypesResult
     {
         
         private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();
@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AdjustmentTypes collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentTypes property is set
         internal bool IsSetAdjustmentTypes()
         {
-            return this.adjustmentTypes.Count > 0;       
+            return this.adjustmentTypes.Count > 0;
         }
     }
 }

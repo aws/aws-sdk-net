@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The Ebs data type.</para>
     /// </summary>
-    public class Ebs  
+    public class Ebs
     {
         
         private string snapshotId;
@@ -68,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;       
+            return this.snapshotId != null;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if VolumeSize property is set
         internal bool IsSetVolumeSize()
         {
-            return this.volumeSize.HasValue;       
+            return this.volumeSize.HasValue;
         }
     }
 }

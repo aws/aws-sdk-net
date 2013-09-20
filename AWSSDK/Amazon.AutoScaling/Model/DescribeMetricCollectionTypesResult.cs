@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The output of the DescribeMetricCollectionTypes action.</para>
     /// </summary>
-    public class DescribeMetricCollectionTypesResult  
+    public class DescribeMetricCollectionTypesResult
     {
         
         private List<MetricCollectionType> metrics = new List<MetricCollectionType>();
@@ -55,7 +55,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Metrics collection
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;       
+            return this.metrics.Count > 0;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Granularities collection
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularities property is set
         internal bool IsSetGranularities()
         {
-            return this.granularities.Count > 0;       
+            return this.granularities.Count > 0;
         }
     }
 }

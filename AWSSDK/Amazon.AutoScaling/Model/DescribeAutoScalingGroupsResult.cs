@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingGroupsType</c> data type. </para>
     /// </summary>
-    public class DescribeAutoScalingGroupsResult  
+    public class DescribeAutoScalingGroupsResult
     {
         
         private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingGroups collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this.autoScalingGroups.Count > 0;       
+            return this.autoScalingGroups.Count > 0;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

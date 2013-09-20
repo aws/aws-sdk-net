@@ -29,12 +29,12 @@ namespace Amazon.AutoScaling.Model
     /// launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that collection of group metrics is disabled.
     /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
     /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
-    /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
-    /// </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize
-    /// is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new
-    /// MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the
-    /// current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other
-    /// optional parameters are left unchanged if not passed in the request. </para>
+    /// launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't
+    /// affected. </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the
+    /// new MinSize is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group
+    /// to the new MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller
+    /// than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize.
+    /// All other optional parameters are left unchanged if not passed in the request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.UpdateAutoScalingGroup"/>
     public class UpdateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinSize property is set
         internal bool IsSetMinSize()
         {
-            return this.minSize.HasValue;       
+            return this.minSize.HasValue;
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxSize property is set
         internal bool IsSetMaxSize()
         {
-            return this.maxSize.HasValue;       
+            return this.maxSize.HasValue;
         }
 
         /// <summary>
@@ -220,11 +220,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;       
+            return this.desiredCapacity.HasValue;
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before any further scaling activities can start. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a>.
         ///  
         /// </summary>
         public int DefaultCooldown
@@ -249,7 +250,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DefaultCooldown property is set
         internal bool IsSetDefaultCooldown()
         {
-            return this.defaultCooldown.HasValue;       
+            return this.defaultCooldown.HasValue;
         }
 
         /// <summary>
@@ -285,7 +286,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
@@ -305,11 +306,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
 
         /// <summary>
-        /// The service of interest for the health status check, either "EC2" for Amazon EC2 or "ELB" for Elastic Load Balancing.
+        /// The type of health check for the instances in the Auto Scaling group. The health check type can either be <c>EC2</c> for Amazon EC2 or
+        /// <c>ELB</c> for Elastic Load Balancing.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -347,7 +349,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthCheckType property is set
         internal bool IsSetHealthCheckType()
         {
-            return this.healthCheckType != null;       
+            return this.healthCheckType != null;
         }
 
         /// <summary>
@@ -377,13 +379,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthCheckGracePeriod property is set
         internal bool IsSetHealthCheckGracePeriod()
         {
-            return this.healthCheckGracePeriod.HasValue;       
+            return this.healthCheckGracePeriod.HasValue;
         }
 
         /// <summary>
         /// The name of the cluster placement group, if applicable. For more information, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2
-        /// User Guide.
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2 User
+        /// Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -421,13 +423,15 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PlacementGroup property is set
         internal bool IsSetPlacementGroup()
         {
-            return this.placementGroup != null;       
+            return this.placementGroup != null;
         }
 
         /// <summary>
         /// The subnet identifier for the Amazon VPC connection, if applicable. You can specify several subnets in a comma-separated list. When you
         /// specify <c>VPCZoneIdentifier</c> with <c>AvailabilityZones</c>, ensure that the subnets' Availability Zones match the values you specify for
-        /// <c>AvailabilityZones</c>.
+        /// <c>AvailabilityZones</c>. For more information on creating your Auto Scaling group in Amazon VPC by specifying subnets, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch Auto Scaling Instances into Amazon
+        /// VPC</a> in the the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -465,14 +469,14 @@ namespace Amazon.AutoScaling.Model
         // Check to see if VPCZoneIdentifier property is set
         internal bool IsSetVPCZoneIdentifier()
         {
-            return this.vPCZoneIdentifier != null;       
+            return this.vPCZoneIdentifier != null;
         }
 
         /// <summary>
         /// A standalone termination policy or a list of termination policies used to select the instance to terminate. The policies are executed in the
         /// order that they are listed. For more information on creating a termination policy for your Auto Scaling group, go to <a
-        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your
-        /// Auto Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your Auto
+        /// Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// </summary>
         public List<string> TerminationPolicies
@@ -495,7 +499,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TerminationPolicies collection
         /// </summary>
@@ -515,7 +519,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this.terminationPolicies.Count > 0;       
+            return this.terminationPolicies.Count > 0;
         }
     }
 }

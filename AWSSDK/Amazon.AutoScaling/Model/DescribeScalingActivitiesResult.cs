@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output for the DescribeScalingActivities action. </para>
     /// </summary>
-    public class DescribeScalingActivitiesResult  
+    public class DescribeScalingActivitiesResult
     {
         
         private List<Activity> activities = new List<Activity>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Activities collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this.activities.Count > 0;       
+            return this.activities.Count > 0;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -78,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The Alarm data type.</para>
     /// </summary>
-    public class Alarm  
+    public class Alarm
     {
         
         private string alarmName;
@@ -68,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AlarmName property is set
         internal bool IsSetAlarmName()
         {
-            return this.alarmName != null;       
+            return this.alarmName != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AlarmARN property is set
         internal bool IsSetAlarmARN()
         {
-            return this.alarmARN != null;       
+            return this.alarmARN != null;
         }
     }
 }

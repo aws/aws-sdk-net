@@ -62,7 +62,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceIds collection
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;       
+            return this.instanceIds.Count > 0;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

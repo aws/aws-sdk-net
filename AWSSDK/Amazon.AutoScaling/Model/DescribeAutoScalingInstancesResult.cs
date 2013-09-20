@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingInstancesType</c> data type. </para>
     /// </summary>
-    public class DescribeAutoScalingInstancesResult  
+    public class DescribeAutoScalingInstancesResult
     {
         
         private List<AutoScalingInstanceDetails> autoScalingInstances = new List<AutoScalingInstanceDetails>();
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingInstances collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingInstances property is set
         internal bool IsSetAutoScalingInstances()
         {
-            return this.autoScalingInstances.Count > 0;       
+            return this.autoScalingInstances.Count > 0;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

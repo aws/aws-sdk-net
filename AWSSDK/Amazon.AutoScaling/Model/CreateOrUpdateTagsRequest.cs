@@ -27,7 +27,8 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the CreateOrUpdateTags operation.
     /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
     /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
-    /// Parameters for more information. </para>
+    /// Parameters for more information. </para> <para>For information on creating tags for your Auto Scaling group, see Tag Your Auto Scaling
+    /// Groups and Amazon EC2 Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateOrUpdateTags"/>
     public class CreateOrUpdateTagsRequest : AmazonWebServiceRequest
@@ -65,7 +66,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
@@ -85,7 +86,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

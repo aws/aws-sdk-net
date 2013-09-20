@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
         private bool? forceDelete;
 
         /// <summary>
-        /// The name of the Auto Scaling group.
+        /// The name of the Auto Scaling group to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ForceDelete property is set
         internal bool IsSetForceDelete()
         {
-            return this.forceDelete.HasValue;       
+            return this.forceDelete.HasValue;
         }
     }
 }

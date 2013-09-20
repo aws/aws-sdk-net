@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>NotificationConfiguration</c> data type. </para>
     /// </summary>
-    public class NotificationConfiguration  
+    public class NotificationConfiguration
     {
         
         private string autoScalingGroupName;
@@ -69,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TopicARN property is set
         internal bool IsSetTopicARN()
         {
-            return this.topicARN != null;       
+            return this.topicARN != null;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationType property is set
         internal bool IsSetNotificationType()
         {
-            return this.notificationType != null;       
+            return this.notificationType != null;
         }
     }
 }

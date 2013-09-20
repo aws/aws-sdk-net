@@ -61,7 +61,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingGroupNames collection
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this.autoScalingGroupNames.Count > 0;       
+            return this.autoScalingGroupNames.Count > 0;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
     }
 }

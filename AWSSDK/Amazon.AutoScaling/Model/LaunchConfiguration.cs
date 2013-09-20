@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfiguration</c> data type. </para>
     /// </summary>
-    public class LaunchConfiguration  
+    public class LaunchConfiguration
     {
         
         private string launchConfigurationName;
@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private string iamInstanceProfile;
         private DateTime? createdTime;
         private bool? ebsOptimized;
+        private bool? associatePublicIpAddress;
 
         /// <summary>
         /// Specifies the name of the launch configuration.
@@ -81,7 +82,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationARN property is set
         internal bool IsSetLaunchConfigurationARN()
         {
-            return this.launchConfigurationARN != null;       
+            return this.launchConfigurationARN != null;
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ImageId property is set
         internal bool IsSetImageId()
         {
-            return this.imageId != null;       
+            return this.imageId != null;
         }
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KeyName property is set
         internal bool IsSetKeyName()
         {
-            return this.keyName != null;       
+            return this.keyName != null;
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
@@ -254,7 +255,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
 
         /// <summary>
@@ -296,7 +297,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if UserData property is set
         internal bool IsSetUserData()
         {
-            return this.userData != null;       
+            return this.userData != null;
         }
 
         /// <summary>
@@ -338,7 +339,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;       
+            return this.instanceType != null;
         }
 
         /// <summary>
@@ -380,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KernelId property is set
         internal bool IsSetKernelId()
         {
-            return this.kernelId != null;       
+            return this.kernelId != null;
         }
 
         /// <summary>
@@ -422,7 +423,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if RamdiskId property is set
         internal bool IsSetRamdiskId()
         {
-            return this.ramdiskId != null;       
+            return this.ramdiskId != null;
         }
 
         /// <summary>
@@ -449,7 +450,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BlockDeviceMappings collection
         /// </summary>
@@ -469,7 +470,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this.blockDeviceMappings.Count > 0;       
+            return this.blockDeviceMappings.Count > 0;
         }
 
         /// <summary>
@@ -498,7 +499,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceMonitoring property is set
         internal bool IsSetInstanceMonitoring()
         {
-            return this.instanceMonitoring != null;       
+            return this.instanceMonitoring != null;
         }
 
         /// <summary>
@@ -536,7 +537,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SpotPrice property is set
         internal bool IsSetSpotPrice()
         {
-            return this.spotPrice != null;       
+            return this.spotPrice != null;
         }
 
         /// <summary>
@@ -579,7 +580,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if IamInstanceProfile property is set
         internal bool IsSetIamInstanceProfile()
         {
-            return this.iamInstanceProfile != null;       
+            return this.iamInstanceProfile != null;
         }
 
         /// <summary>
@@ -608,11 +609,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;       
+            return this.createdTime.HasValue;
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) the instance is optimized for EBS I/O.
+        /// Specifies whether the instance is optimized for EBS I/O (<i>true</i>) or not (<i>false</i>).
         ///  
         /// </summary>
         public bool EbsOptimized
@@ -637,7 +638,36 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EbsOptimized property is set
         internal bool IsSetEbsOptimized()
         {
-            return this.ebsOptimized.HasValue;       
+            return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies whether the instance is associated with a public IP address (<c>true</c>) or not (<c>false</c>).
+        ///  
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress ?? default(bool); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        /// <summary>
+        /// Sets the AssociatePublicIpAddress property
+        /// </summary>
+        /// <param name="associatePublicIpAddress">The value to set for the AssociatePublicIpAddress property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithAssociatePublicIpAddress(bool associatePublicIpAddress)
+        {
+            this.associatePublicIpAddress = associatePublicIpAddress;
+            return this;
+        }
+            
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress.HasValue;
         }
     }
 }

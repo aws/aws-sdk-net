@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Filters collection
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;       
+            return this.filters.Count > 0;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
     }
 }

@@ -7786,11 +7786,11 @@ namespace Amazon.EC2
             }
             if (request.IsSetDescription())
             {
-                parameters["Description"] = request.Description;
+                parameters["Description.Value"] = request.Description;
             }
             if (request.IsSetSourceDestCheck())
             {
-                parameters["SourceDestCheck"] = request.SourceDestCheck.ToString();
+                parameters["SourceDestCheck.Value"] = request.SourceDestCheck.ToString();
             }
             if (request.IsSetGroupId())
             {

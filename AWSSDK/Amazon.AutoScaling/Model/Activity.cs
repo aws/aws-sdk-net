@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
     /// </para>
     /// </summary>
-    public class Activity  
+    public class Activity
     {
         
         private string activityId;
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;       
+            return this.cause != null;
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;       
+            return this.endTime.HasValue;
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StatusCode property is set
         internal bool IsSetStatusCode()
         {
-            return this.statusCode != null;       
+            return this.statusCode != null;
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StatusMessage property is set
         internal bool IsSetStatusMessage()
         {
-            return this.statusMessage != null;       
+            return this.statusMessage != null;
         }
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Progress property is set
         internal bool IsSetProgress()
         {
-            return this.progress.HasValue;       
+            return this.progress.HasValue;
         }
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;       
+            return this.details != null;
         }
     }
 }

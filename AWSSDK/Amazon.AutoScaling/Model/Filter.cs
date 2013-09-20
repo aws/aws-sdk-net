@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>Filter</c> data type.</para>
     /// </summary>
-    public class Filter  
+    public class Filter
     {
         
         private string name;
@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Values collection
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this.values.Count > 0;       
+            return this.values.Count > 0;
         }
     }
 }

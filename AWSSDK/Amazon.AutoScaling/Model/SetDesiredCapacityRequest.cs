@@ -25,19 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetDesiredCapacity operation.
-    /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
-    /// possible to define which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in
-    /// terminating instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
-    /// one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use
-    /// cases relate to the concept of cooldown. </para> <para> In the first case, if you use the Auto Scaling triggering system,
-    /// <c>SetDesiredCapacity</c> changes the size of your Auto Scaling group without regard to the cooldown period. This could be useful, for
-    /// example, if Auto Scaling did something unexpected for some reason. If your cooldown period is 10 minutes, Auto Scaling would normally reject
-    /// requests to change the size of the group for that entire 10-minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
-    /// this restriction and change the size of the group before the end of the cooldown period. </para> <para> In the second case, if you write
-    /// your own triggering system, you can use <c>SetDesiredCapacity</c> to control the size of your Auto Scaling group. If you want the same
-    /// cooldown functionality that Auto Scaling offers, you can configure <c>SetDesiredCapacity</c> to honor cooldown by setting the
-    /// <c>HonorCooldown</c> parameter to <c>true</c> .
-    /// </para>
+    /// <para> Sets the desired size of the specified AutoScalingGroup. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SetDesiredCapacity"/>
     public class SetDesiredCapacityRequest : AmazonWebServiceRequest
@@ -85,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -114,12 +102,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;       
+            return this.desiredCapacity.HasValue;
         }
 
         /// <summary>
-        /// By default, <c>SetDesiredCapacity</c> overrides any cooldown period. Set to <c>True</c> if you want Auto Scaling to reject this request when
-        /// the Auto Scaling group is in cooldown.
+        /// By default, <c>SetDesiredCapacity</c> overrides any cooldown period associated with the Auto Scaling group. Set to <c>True</c> if you want
+        /// Auto Scaling to wait for the cooldown period associated with the Auto Scaling group to complete before initiating a scaling activity to set
+        /// your Auto Scaling group to the new capacity setting.
         ///  
         /// </summary>
         public bool HonorCooldown
@@ -144,7 +133,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HonorCooldown property is set
         internal bool IsSetHonorCooldown()
         {
-            return this.honorCooldown.HasValue;       
+            return this.honorCooldown.HasValue;
         }
     }
 }

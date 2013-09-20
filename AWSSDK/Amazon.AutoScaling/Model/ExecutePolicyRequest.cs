@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecutePolicy operation.
-    /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
+    /// <para>Executes the specified policy. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.ExecutePolicy"/>
     public class ExecutePolicyRequest : AmazonWebServiceRequest
@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
         private bool? honorCooldown;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling group.
+        /// The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,11 +73,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
-        /// The name or PolicyARN of the policy you want to run.
+        /// The name or ARN of the policy you want to run.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -115,11 +115,15 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
-        /// Set to <c>True</c> if you want Auto Scaling to reject this request when the Auto Scaling group is in cooldown.
+        /// Set to <c>True</c> if you want Auto Scaling to wait for the cooldown period associated with the Auto Scaling group to complete before
+        /// executing the policy. Set to <c>False</c> if you want Auto Scaling to circumvent the cooldown period associated with the Auto Scaling group
+        /// and execute the policy before the cooldown period ends. For information about cooldown period, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a> in the <i>Auto Scaling
+        /// Developer Guide</i>.
         ///  
         /// </summary>
         public bool HonorCooldown
@@ -144,7 +148,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HonorCooldown property is set
         internal bool IsSetHonorCooldown()
         {
-            return this.honorCooldown.HasValue;       
+            return this.honorCooldown.HasValue;
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Amazon.AutoScaling.Model
         private string spotPrice;
         private string iamInstanceProfile;
         private bool? ebsOptimized;
+        private bool? associatePublicIpAddress;
 
         /// <summary>
         /// The name of the launch configuration to create.
@@ -88,12 +89,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
 
         /// <summary>
-        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned during registration. For more information about Amazon EC2 images,
-        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
+        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to launch your EC2 instances. For information about finding Amazon EC2
+        /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Suitable AMI</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -131,11 +133,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ImageId property is set
         internal bool IsSetImageId()
         {
-            return this.imageId != null;       
+            return this.imageId != null;
         }
 
         /// <summary>
-        /// The name of the Amazon EC2 key pair.
+        /// The name of the Amazon EC2 key pair. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/generating-a-keypair.html">Getting a Key Pair</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -173,17 +177,17 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KeyName property is set
         internal bool IsSetKeyName()
         {
-            return this.keyName != null;       
+            return this.keyName != null;
         }
 
         /// <summary>
-        /// The names of the security groups with which to associate Amazon EC2 or Amazon VPC instances. Specify Amazon EC2 security groups using
-        /// security group names, such as <c>websrv</c>. Specify Amazon VPC security groups using security group IDs, such as <c>sg-12345678</c>. For
-        /// more information about Amazon EC2 security groups, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html"> Using Security Groups</a> in the
-        /// Amazon EC2 product documentation. For more information about Amazon VPC security groups, go to <a
-        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html"> Security Groups</a> in the Amazon
-        /// VPC product documentation.
+        /// The security groups with which to associate Amazon EC2 or Amazon VPC instances. If your instances are launched in EC2, you can either
+        /// specify Amazon EC2 security group names or the security group IDs. For more information about Amazon EC2 security groups, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html"> Using Security Groups</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>. If your instances are launched within VPC, specify Amazon VPC security group IDs. For more information
+        /// about Amazon VPC security groups, see <a
+        /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security Groups</a> in the <i>Amazon Virtual
+        /// Private Cloud User Guide</i>.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -206,7 +210,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
@@ -226,12 +230,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
 
         /// <summary>
-        /// The user data available to the launched Amazon EC2 instances. For more information about Amazon EC2 user data, please see <a
-        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
+        /// The user data to make available to the launched Amazon EC2 instances. For more information about Amazon EC2 user data, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User Data
+        /// Retrieval</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -269,12 +274,13 @@ namespace Amazon.AutoScaling.Model
         // Check to see if UserData property is set
         internal bool IsSetUserData()
         {
-            return this.userData != null;       
+            return this.userData != null;
         }
 
         /// <summary>
-        /// The instance type of the Amazon EC2 instance. For more information about Amazon EC2 instance types, please see <a
-        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
+        /// The instance type of the Amazon EC2 instance. For information about available Amazon EC2 instance types, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"> Available Instance Types</a> in the
+        /// <i>Amazon Elastic Cloud Compute User Guide.</i>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -312,7 +318,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;       
+            return this.instanceType != null;
         }
 
         /// <summary>
@@ -354,7 +360,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KernelId property is set
         internal bool IsSetKernelId()
         {
-            return this.kernelId != null;       
+            return this.kernelId != null;
         }
 
         /// <summary>
@@ -396,15 +402,15 @@ namespace Amazon.AutoScaling.Model
         // Check to see if RamdiskId property is set
         internal bool IsSetRamdiskId()
         {
-            return this.ramdiskId != null;       
+            return this.ramdiskId != null;
         }
 
         /// <summary>
         /// A list of mappings that specify how block devices are exposed to the instance. Each mapping is made up of a <i>VirtualName</i>, a
         /// <i>DeviceName</i>, and an <i>ebs</i> data structure that contains information about the associated Elastic Block Storage volume. For more
         /// information about Amazon EC2 BlockDeviceMappings, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html"> Block Device Mapping</a> in
-        /// the Amazon EC2 product documentation.
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html"> Block Device Mapping</a> in the
+        /// Amazon EC2 product documentation.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -427,7 +433,7 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BlockDeviceMappings collection
         /// </summary>
@@ -447,13 +453,16 @@ namespace Amazon.AutoScaling.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this.blockDeviceMappings.Count > 0;       
+            return this.blockDeviceMappings.Count > 0;
         }
 
         /// <summary>
-        /// Enables detailed monitoring, which is enabled by default. When detailed monitoring is enabled, CloudWatch will generate metrics every minute
-        /// and your account will be charged a fee. When you disable detailed monitoring, by specifying <c>False</c>, Cloudwatch will generate metrics
-        /// every 5 minutes. For information about monitoring, see the <a href="http://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> product page.
+        /// Enables detailed monitoring if it is disabled. Detailed monitoring is enabled by default. When detailed monitoring is enabled, Amazon
+        /// Cloudwatch will generate metrics every minute and your account will be charged a fee. When you disable detailed monitoring, by specifying
+        /// <c>False</c>, Cloudwatch will generate metrics every 5 minutes. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor Your Auto Scaling Instances</a>. For
+        /// information about Amazon CloudWatch, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/Welcome.html">Amazon
+        /// CloudWatch Developer Guide</a>.
         ///  
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -478,14 +487,14 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceMonitoring property is set
         internal bool IsSetInstanceMonitoring()
         {
-            return this.instanceMonitoring != null;       
+            return this.instanceMonitoring != null;
         }
 
         /// <summary>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you
-        /// specify exceeds the current Spot market price. For more information on launching Spot Instances, go to <a
-        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"> Using Auto Scaling to Launch Spot
-        /// Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// specify exceeds the current Spot market price. For more information on launching Spot Instances, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"> Using Auto Scaling to Launch Spot Instances</a>
+        /// in the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -519,14 +528,15 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SpotPrice property is set
         internal bool IsSetSpotPrice()
         {
-            return this.spotPrice != null;       
+            return this.spotPrice != null;
         }
 
         /// <summary>
-        /// The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. For information on
-        /// launching EC2 instances with an IAM role, go to <a
-        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching Auto Scaling Instances With an IAM
-        /// Role</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. Amazon EC2 instances
+        /// launched with an IAM role will automatically have AWS security credentials available. You can use IAM roles with Auto Scaling to
+        /// automatically enable applications running on your Amazon EC2 instances to securely access other AWS resources. For information on launching
+        /// EC2 instances with an IAM role, go to <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching Auto
+        /// Scaling Instances With an IAM Role</a> in the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -564,14 +574,14 @@ namespace Amazon.AutoScaling.Model
         // Check to see if IamInstanceProfile property is set
         internal bool IsSetIamInstanceProfile()
         {
-            return this.iamInstanceProfile != null;       
+            return this.iamInstanceProfile != null;
         }
 
         /// <summary>
-        /// Whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration
+        /// Whether the instance is optimized for EBS I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration
         /// stack to provide optimal EBS I/O performance. This optimization is not available with all instance types. Additional usage charges apply
-        /// when using an EBS Optimized instance. For information about EBS-Optimized instances, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized">EBS-Optimized Instances</a> in the
+        /// when using an EBS Optimized instance. By default the instance is not optimized for EBS I/O. For information about EBS-optimized instances,
+        /// go to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized">EBS-Optimized Instances</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.
         ///  
         /// </summary>
@@ -597,7 +607,41 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EbsOptimized property is set
         internal bool IsSetEbsOptimized()
         {
-            return this.ebsOptimized.HasValue;       
+            return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// Used for Auto Scaling groups that launch instances into a Virtual Private Cloud (VPC). Specifies whether to assign a public IP address to
+        /// each instance launched in a Amazon VPC. <note> If you specify a value for this parameter, be sure to specify at least one VPC subnet using
+        /// the <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling group. </note> Default: If the instance is launched in default VPC,
+        /// the default is <c>true</c>. If the instance is launched in EC2-VPC, the default is <c>false</c>. For more information about the platforms
+        /// supported by Auto Scaling, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Basic Auto Scaling
+        /// Configuration</a>.
+        ///  
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress ?? default(bool); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        /// <summary>
+        /// Sets the AssociatePublicIpAddress property
+        /// </summary>
+        /// <param name="associatePublicIpAddress">The value to set for the AssociatePublicIpAddress property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateLaunchConfigurationRequest WithAssociatePublicIpAddress(bool associatePublicIpAddress)
+        {
+            this.associatePublicIpAddress = associatePublicIpAddress;
+            return this;
+        }
+            
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress.HasValue;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>InstanceMonitoring</c> data type. </para>
     /// </summary>
-    public class InstanceMonitoring  
+    public class InstanceMonitoring
     {
         
         private bool? enabled;
@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>EnabledMetric</c> data type. </para>
     /// </summary>
-    public class EnabledMetric  
+    public class EnabledMetric
     {
         
         private string metric;
@@ -68,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metric property is set
         internal bool IsSetMetric()
         {
-            return this.metric != null;       
+            return this.metric != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;       
+            return this.granularity != null;
         }
     }
 }

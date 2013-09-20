@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
     /// </summary>
-    public class ScheduledUpdateGroupAction  
+    public class ScheduledUpdateGroupAction
     {
         
         private string autoScalingGroupName;
@@ -76,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionName property is set
         internal bool IsSetScheduledActionName()
         {
-            return this.scheduledActionName != null;       
+            return this.scheduledActionName != null;
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionARN property is set
         internal bool IsSetScheduledActionARN()
         {
-            return this.scheduledActionARN != null;       
+            return this.scheduledActionARN != null;
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Time property is set
         internal bool IsSetTime()
         {
-            return this.time.HasValue;       
+            return this.time.HasValue;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;       
+            return this.endTime.HasValue;
         }
 
         /// <summary>
@@ -290,7 +290,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Recurrence property is set
         internal bool IsSetRecurrence()
         {
-            return this.recurrence != null;       
+            return this.recurrence != null;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinSize property is set
         internal bool IsSetMinSize()
         {
-            return this.minSize.HasValue;       
+            return this.minSize.HasValue;
         }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxSize property is set
         internal bool IsSetMaxSize()
         {
-            return this.maxSize.HasValue;       
+            return this.maxSize.HasValue;
         }
 
         /// <summary>
@@ -377,7 +377,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;       
+            return this.desiredCapacity.HasValue;
         }
     }
 }
