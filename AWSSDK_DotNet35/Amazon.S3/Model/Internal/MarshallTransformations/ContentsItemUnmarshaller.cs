@@ -63,7 +63,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Size", targetDepth))
                     {
-                        contentsItem.Size = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        contentsItem.Size = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
