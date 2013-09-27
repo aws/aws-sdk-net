@@ -1397,6 +1397,8 @@
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionResult.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CustomErrorResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CustomErrorResponses.cs" />
     <Compile Include="Amazon.CloudFront\Model\CustomOriginConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\DefaultCacheBehavior.cs" />
     <Compile Include="Amazon.CloudFront\Model\DeleteCloudFrontOriginAccessIdentityRequest.cs" />
@@ -1457,6 +1459,8 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomErrorResponsesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomErrorResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomOriginConfigUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DefaultCacheBehaviorUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DeleteCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
@@ -1537,11 +1541,14 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidationList.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidationSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidDefaultRootObjectException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidErrorCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidForwardCookiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidIfMatchVersionException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidRelativePathException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidRequiredProtocolException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidResponseCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidViewerCertificateException.cs" />
     <Compile Include="Amazon.CloudFront\Model\KeyPairIds.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListCloudFrontOriginAccessIdentitiesRequest.cs" />

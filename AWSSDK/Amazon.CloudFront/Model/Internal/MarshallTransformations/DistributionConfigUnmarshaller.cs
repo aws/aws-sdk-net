@@ -73,6 +73,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("CustomErrorResponses", targetDepth))
+                    {
+                        distributionConfig.CustomErrorResponses = CustomErrorResponsesUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Comment", targetDepth))
                     {
                         distributionConfig.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
