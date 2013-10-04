@@ -22,6 +22,7 @@
 
 using System;
 using System.Xml.Serialization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model
 {
@@ -86,7 +87,7 @@ namespace Amazon.S3.Model
         public string Key
         {
             get { return this.key; }
-            set { this.key = value; }
+            set { this.key = AWSSDKUtils.ToUnixPath(value); }
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.S3.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithKey(string key)
         {
-            this.key = key;
+            this.Key = key;
             return this;
         }
 

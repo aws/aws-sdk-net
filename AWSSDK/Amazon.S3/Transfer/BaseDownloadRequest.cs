@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer
 {
@@ -72,7 +73,7 @@ namespace Amazon.S3.Transfer
         public string Key
         {
             get { return this.key; }
-            set { this.key = value; }
+            set { this.key = AWSSDKUtils.ToUnixPath(value); }
         }
 
         /// <summary>

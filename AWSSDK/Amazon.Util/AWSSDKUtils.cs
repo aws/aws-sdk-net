@@ -441,6 +441,22 @@ namespace Amazon.Util
             return milli;
         }
 
+        /// <summary>
+        /// Returns a new path in which all occurrences of '\' are replaced with '/'.
+        /// AWS uses '/' to separate paths, but most of the .Net API use '\', therefore make sure to 
+        /// convert paths to Unix style before sending it to server. 
+        /// </summary>
+        public static string ToUnixPath(string path)
+        {
+            if (path == null)
+            {
+                return null;
+            }
+
+            return path.Replace('\\', '/');
+        }
+
+
         internal static int GetConnectionLimit(int? clientConfigValue)
         {
             // Connection limit has been explicitly set on the client.
@@ -472,7 +488,7 @@ namespace Amazon.Util
 
             return sb.ToString();
         }
-
+        
         /// <summary>
         /// Calls a specific EventHandler in a background thread
         /// </summary>
