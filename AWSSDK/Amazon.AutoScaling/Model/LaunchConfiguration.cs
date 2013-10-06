@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfiguration</c> data type. </para>
     /// </summary>
-    public class LaunchConfiguration  
+    public class LaunchConfiguration
     {
         
         private string launchConfigurationName;
@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private string iamInstanceProfile;
         private DateTime? createdTime;
         private bool? ebsOptimized;
+        private bool? associatePublicIpAddress;
 
         /// <summary>
         /// Specifies the name of the launch configuration.
@@ -70,6 +71,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithLaunchConfigurationName(string launchConfigurationName)
         {
             this.launchConfigurationName = launchConfigurationName;
@@ -80,7 +82,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationARN">The value to set for the LaunchConfigurationARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithLaunchConfigurationARN(string launchConfigurationARN)
         {
             this.launchConfigurationARN = launchConfigurationARN;
@@ -121,7 +124,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationARN property is set
         internal bool IsSetLaunchConfigurationARN()
         {
-            return this.launchConfigurationARN != null;       
+            return this.launchConfigurationARN != null;
         }
 
         /// <summary>
@@ -152,6 +155,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="imageId">The value to set for the ImageId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithImageId(string imageId)
         {
             this.imageId = imageId;
@@ -162,7 +166,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ImageId property is set
         internal bool IsSetImageId()
         {
-            return this.imageId != null;       
+            return this.imageId != null;
         }
 
         /// <summary>
@@ -193,6 +197,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="keyName">The value to set for the KeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithKeyName(string keyName)
         {
             this.keyName = keyName;
@@ -203,7 +208,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KeyName property is set
         internal bool IsSetKeyName()
         {
-            return this.keyName != null;       
+            return this.keyName != null;
         }
 
         /// <summary>
@@ -220,6 +225,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -229,12 +235,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -248,7 +255,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
 
         /// <summary>
@@ -279,6 +286,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="userData">The value to set for the UserData property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithUserData(string userData)
         {
             this.userData = userData;
@@ -289,7 +297,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if UserData property is set
         internal bool IsSetUserData()
         {
-            return this.userData != null;       
+            return this.userData != null;
         }
 
         /// <summary>
@@ -320,6 +328,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceType">The value to set for the InstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithInstanceType(string instanceType)
         {
             this.instanceType = instanceType;
@@ -330,7 +339,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;       
+            return this.instanceType != null;
         }
 
         /// <summary>
@@ -361,6 +370,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="kernelId">The value to set for the KernelId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithKernelId(string kernelId)
         {
             this.kernelId = kernelId;
@@ -371,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if KernelId property is set
         internal bool IsSetKernelId()
         {
-            return this.kernelId != null;       
+            return this.kernelId != null;
         }
 
         /// <summary>
@@ -402,6 +412,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ramdiskId">The value to set for the RamdiskId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithRamdiskId(string ramdiskId)
         {
             this.ramdiskId = ramdiskId;
@@ -412,7 +423,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if RamdiskId property is set
         internal bool IsSetRamdiskId()
         {
-            return this.ramdiskId != null;       
+            return this.ramdiskId != null;
         }
 
         /// <summary>
@@ -429,6 +440,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithBlockDeviceMappings(params BlockDeviceMapping[] blockDeviceMappings)
         {
             foreach (BlockDeviceMapping element in blockDeviceMappings)
@@ -438,12 +450,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BlockDeviceMappings collection
         /// </summary>
         /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithBlockDeviceMappings(IEnumerable<BlockDeviceMapping> blockDeviceMappings)
         {
             foreach (BlockDeviceMapping element in blockDeviceMappings)
@@ -457,7 +470,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this.blockDeviceMappings.Count > 0;       
+            return this.blockDeviceMappings.Count > 0;
         }
 
         /// <summary>
@@ -475,6 +488,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceMonitoring">The value to set for the InstanceMonitoring property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithInstanceMonitoring(InstanceMonitoring instanceMonitoring)
         {
             this.instanceMonitoring = instanceMonitoring;
@@ -485,7 +499,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceMonitoring property is set
         internal bool IsSetInstanceMonitoring()
         {
-            return this.instanceMonitoring != null;       
+            return this.instanceMonitoring != null;
         }
 
         /// <summary>
@@ -512,6 +526,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="spotPrice">The value to set for the SpotPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithSpotPrice(string spotPrice)
         {
             this.spotPrice = spotPrice;
@@ -522,7 +537,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SpotPrice property is set
         internal bool IsSetSpotPrice()
         {
-            return this.spotPrice != null;       
+            return this.spotPrice != null;
         }
 
         /// <summary>
@@ -554,6 +569,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="iamInstanceProfile">The value to set for the IamInstanceProfile property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithIamInstanceProfile(string iamInstanceProfile)
         {
             this.iamInstanceProfile = iamInstanceProfile;
@@ -564,7 +580,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if IamInstanceProfile property is set
         internal bool IsSetIamInstanceProfile()
         {
-            return this.iamInstanceProfile != null;       
+            return this.iamInstanceProfile != null;
         }
 
         /// <summary>
@@ -582,6 +598,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="createdTime">The value to set for the CreatedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithCreatedTime(DateTime createdTime)
         {
             this.createdTime = createdTime;
@@ -592,11 +609,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;       
+            return this.createdTime.HasValue;
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) the instance is optimized for EBS I/O.
+        /// Specifies whether the instance is optimized for EBS I/O (<i>true</i>) or not (<i>false</i>).
         ///  
         /// </summary>
         public bool EbsOptimized
@@ -610,6 +627,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimized = ebsOptimized;
@@ -620,7 +638,36 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EbsOptimized property is set
         internal bool IsSetEbsOptimized()
         {
-            return this.ebsOptimized.HasValue;       
+            return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies whether the instance is associated with a public IP address (<c>true</c>) or not (<c>false</c>).
+        ///  
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress ?? default(bool); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        /// <summary>
+        /// Sets the AssociatePublicIpAddress property
+        /// </summary>
+        /// <param name="associatePublicIpAddress">The value to set for the AssociatePublicIpAddress property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithAssociatePublicIpAddress(bool associatePublicIpAddress)
+        {
+            this.associatePublicIpAddress = associatePublicIpAddress;
+            return this;
+        }
+            
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress.HasValue;
         }
     }
 }

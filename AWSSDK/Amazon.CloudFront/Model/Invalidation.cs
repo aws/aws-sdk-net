@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation. </para>
     /// </summary>
-    public class Invalidation  
+    public class Invalidation
     {
         
         private string id;
@@ -46,6 +46,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithId(string id)
         {
             this.id = id;
@@ -56,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithStatus(string status)
         {
             this.status = status;
@@ -84,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="createTime">The value to set for the CreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithCreateTime(DateTime createTime)
         {
             this.createTime = createTime;
@@ -112,7 +115,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CreateTime property is set
         internal bool IsSetCreateTime()
         {
-            return this.createTime.HasValue;       
+            return this.createTime.HasValue;
         }
 
         /// <summary>
@@ -130,6 +133,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="invalidationBatch">The value to set for the InvalidationBatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {
             this.invalidationBatch = invalidationBatch;
@@ -140,7 +144,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if InvalidationBatch property is set
         internal bool IsSetInvalidationBatch()
         {
-            return this.invalidationBatch != null;       
+            return this.invalidationBatch != null;
         }
     }
 }

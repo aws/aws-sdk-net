@@ -433,15 +433,17 @@ namespace Amazon.Runtime
             }
             catch (WebException e)
             {
-                asyncResult.RequestState.WebRequest.Abort();
-                if (handleHttpWebErrorResponse(asyncResult, e))
+                try
                 {
+                    asyncResult.RequestState.WebRequest.Abort();
+                    handleHttpWebErrorResponse(asyncResult, e);
+                    
                     asyncResult.RetriesAttempt++;
                     InvokeHelper(asyncResult);
                 }
-                else
+                catch(Exception ei)
                 {
-                    asyncResult.Exception = e;
+                    asyncResult.Exception = ei;
 
                     asyncResult.SignalWaitHandle();
                     if (asyncResult.Callback != null)
@@ -882,6 +884,10 @@ namespace Amazon.Runtime
 
         private void SignRequest(IRequest request, AbstractAWSSigner signer, RequestMetrics metrics)
         {
+            // Check if request should be signed
+            if (credentials is AnonymousAWSCredentials)
+                return;
+
             metrics.StartEvent(RequestMetrics.Metric.CredentialsRequestTime);
             using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
             {
@@ -901,7 +907,7 @@ namespace Amazon.Runtime
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+                signer.Sign(request, this.config, metrics, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
             }
         }
 

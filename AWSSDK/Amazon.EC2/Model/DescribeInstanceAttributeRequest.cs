@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeInstanceAttributeRequest
+    public class DescribeInstanceAttributeRequest : EC2Request
     {    
         private string instanceIdField;
         private string attributeField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Instance IDs to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceAttributeRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// "sourceDestCheck", "groupSet",
         /// "rootDeviceName", "blockDeviceMapping", "productCodes" and "ebsOptimized"</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

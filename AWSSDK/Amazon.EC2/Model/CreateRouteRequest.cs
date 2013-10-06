@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
     /// Tables in the Amazon Virtual Private Cloud User Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateRouteRequest
+    public class CreateRouteRequest : EC2Request
     {    
         private string routeTableIdField;
         private string destinationCidrBlockField;
@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         /// <param name="routeTableId">The ID of the route table where the route will 
         /// be added.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -107,6 +108,7 @@ namespace Amazon.EC2.Model
         /// Routing decisions are based on the most
         /// specific match.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteRequest WithDestinationCidrBlock(string destinationCidrBlock)
         {
             this.destinationCidrBlockField = destinationCidrBlock;
@@ -137,6 +139,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="gatewayId">The ID of a gateway attached to your VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteRequest WithGatewayId(string gatewayId)
         {
             this.gatewayIdField = gatewayId;
@@ -167,6 +170,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of a NAT instance in your VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -201,6 +205,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;

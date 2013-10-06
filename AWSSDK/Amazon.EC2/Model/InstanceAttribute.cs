@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -94,6 +95,7 @@ namespace Amazon.EC2.Model
         /// m2.2xlarge, and so
         /// on).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -124,6 +126,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="kernelId">The kernel ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -154,6 +157,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ramdiskId">The RAM disk ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -184,6 +188,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithUserData(string userData)
         {
             this.userDataField = userData;
@@ -219,6 +224,7 @@ namespace Amazon.EC2.Model
         /// modify this attribute before you can
         /// terminate any "locked" instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithDisableApiTermination(bool disableApiTermination)
         {
             this.disableApiTerminationField = disableApiTermination;
@@ -253,6 +259,7 @@ namespace Amazon.EC2.Model
         /// volumes are deleted when the instance is shut down.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
         {
             this.instanceInitiatedShutdownBehaviorField = instanceInitiatedShutdownBehavior;
@@ -283,6 +290,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithRootDeviceName(string rootDeviceName)
         {
             this.rootDeviceNameField = rootDeviceName;
@@ -320,6 +328,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Block device mapping set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithBlockDeviceMapping(params InstanceBlockDeviceMapping[] list)
         {
             foreach (InstanceBlockDeviceMapping item in list)
@@ -358,6 +367,7 @@ namespace Amazon.EC2.Model
         /// The value must be false for the instance to perform NAT.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -395,6 +405,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Names of the security groups.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -435,6 +446,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the security groups.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -475,6 +487,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">list of product codes and types</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithProductCodes(params ProductCode[] list)
         {
             foreach (ProductCode item in list)
@@ -509,6 +522,7 @@ namespace Amazon.EC2.Model
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceAttribute WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimizedField = ebsOptimized;

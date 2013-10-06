@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the DescribeCacheSecurityGroupsResult property.
-        /// Contains a list of CacheSecurityGroups.
+        /// Represents the output of a DescribeCacheSecurityGroups operation.
         /// </summary>
         public DescribeCacheSecurityGroupsResult DescribeCacheSecurityGroupsResult
         {

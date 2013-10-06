@@ -31,7 +31,9 @@ namespace Amazon.OpsWorks.Model
         private string dnsName;
         private string stackId;
         private string layerId;
+        private string vpcId;
         private List<string> availabilityZones = new List<string>();
+        private List<string> subnetIds = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="elasticLoadBalancerName">The value to set for the ElasticLoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithElasticLoadBalancerName(string elasticLoadBalancerName)
         {
             this.elasticLoadBalancerName = elasticLoadBalancerName;
@@ -77,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithRegion(string region)
         {
             this.region = region;
@@ -105,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="dnsName">The value to set for the DnsName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithDnsName(string dnsName)
         {
             this.dnsName = dnsName;
@@ -133,6 +138,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -161,6 +167,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -175,7 +182,36 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's Availability Zones.
+        /// The VPC ID.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticLoadBalancer WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
+        }
+
+        /// <summary>
+        /// A list of Availability Zones.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -188,6 +224,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -203,6 +240,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -220,6 +258,53 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// A list of subnet IDs, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public List<string> SubnetIds
+        {
+            get { return this.subnetIds; }
+            set { this.subnetIds = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SubnetIds collection
+        /// </summary>
+        /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticLoadBalancer WithSubnetIds(params string[] subnetIds)
+        {
+            foreach (string element in subnetIds)
+            {
+                this.subnetIds.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the SubnetIds collection
+        /// </summary>
+        /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticLoadBalancer WithSubnetIds(IEnumerable<string> subnetIds)
+        {
+            foreach (string element in subnetIds)
+            {
+                this.subnetIds.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this.subnetIds.Count > 0;
+        }
+
+        /// <summary>
         /// A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
         ///  
         /// </summary>
@@ -233,6 +318,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ec2InstanceIds">The values to add to the Ec2InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithEc2InstanceIds(params string[] ec2InstanceIds)
         {
             foreach (string element in ec2InstanceIds)
@@ -248,6 +334,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ec2InstanceIds">The values to add to the Ec2InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticLoadBalancer WithEc2InstanceIds(IEnumerable<string> ec2InstanceIds)
         {
             foreach (string element in ec2InstanceIds)

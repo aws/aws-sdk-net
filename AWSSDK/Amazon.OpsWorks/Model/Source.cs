@@ -58,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithType(string type)
         {
             this.type = type;
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="url">The value to set for the Url property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithUrl(string url)
         {
             this.url = url;
@@ -115,6 +117,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="username">The value to set for the Username property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithUsername(string username)
         {
             this.username = username;
@@ -144,6 +147,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="password">The value to set for the Password property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithPassword(string password)
         {
             this.password = password;
@@ -172,6 +176,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshKey">The value to set for the SshKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithSshKey(string sshKey)
         {
             this.sshKey = sshKey;
@@ -186,8 +191,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The application's version. OpsWorks enables you to easily deploy new versions of an application. One of the simplest approaches is to have
-        /// branches or revisions in your repository that represent different versions that can potentially be deployed.
+        /// The application's version. AWS OpsWorks enables you to easily deploy new versions of an application. One of the simplest approaches is to
+        /// have branches or revisions in your repository that represent different versions that can potentially be deployed.
         ///  
         /// </summary>
         public string Revision
@@ -201,6 +206,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="revision">The value to set for the Revision property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Source WithRevision(string revision)
         {
             this.revision = revision;

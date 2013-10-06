@@ -34,14 +34,14 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         public AssumeRoleResult AssumeRoleResult
         {
-            get 
+            get
             {
                 if(this.assumeRoleResult == null)
                 {
                     this.assumeRoleResult = new AssumeRoleResult();
                 }
 
-                return this.assumeRoleResult; 
+                return this.assumeRoleResult;
             }
             set { this.assumeRoleResult = value; }
         }

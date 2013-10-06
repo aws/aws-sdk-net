@@ -60,6 +60,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Domain name that matches the expression.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsResult WithDomainName(params string[] list)
         {
             foreach (string item in list)
@@ -94,6 +95,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="nextToken">An opaque token indicating that there are more than MaxNumberOfDomains domains still available.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsResult WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;

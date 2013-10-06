@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verificationStatus">The value to set for the VerificationStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityVerificationAttributes WithVerificationStatus(string verificationStatus)
         {
             this.verificationStatus = verificationStatus;
@@ -81,6 +82,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verificationToken">The value to set for the VerificationToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityVerificationAttributes WithVerificationToken(string verificationToken)
         {
             this.verificationToken = verificationToken;

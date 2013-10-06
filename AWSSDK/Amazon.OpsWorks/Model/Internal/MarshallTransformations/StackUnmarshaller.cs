@@ -62,6 +62,12 @@
                 continue;
               }
   
+              if (context.TestExpression("VpcId", targetDepth))
+              {
+                stack.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Attributes", targetDepth))
               {
                 stack.Attributes = new Dictionary<String,String>();
@@ -112,9 +118,21 @@
                 continue;
               }
   
+              if (context.TestExpression("DefaultSubnetId", targetDepth))
+              {
+                stack.DefaultSubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("CustomJson", targetDepth))
               {
                 stack.CustomJson = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ConfigurationManager", targetDepth))
+              {
+                stack.ConfigurationManager = StackConfigurationManagerUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

@@ -46,6 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameterKey">The value to set for the ParameterKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TemplateParameter WithParameterKey(string parameterKey)
         {
             this.parameterKey = parameterKey;
@@ -74,6 +75,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TemplateParameter WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -102,6 +104,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="noEcho">The value to set for the NoEcho property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TemplateParameter WithNoEcho(bool noEcho)
         {
             this.noEcho = noEcho;
@@ -130,6 +133,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TemplateParameter WithDescription(string description)
         {
             this.description = description;

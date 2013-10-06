@@ -61,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EstimateTemplateCostRequest WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;
@@ -100,6 +101,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateURL">The value to set for the TemplateURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EstimateTemplateCostRequest WithTemplateURL(string templateURL)
         {
             this.templateURL = templateURL;
@@ -127,6 +129,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EstimateTemplateCostRequest WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -142,6 +145,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EstimateTemplateCostRequest WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)

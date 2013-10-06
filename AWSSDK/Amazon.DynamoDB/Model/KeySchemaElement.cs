@@ -53,6 +53,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeySchemaElement WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -90,6 +91,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="attributeType">The value to set for the AttributeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeySchemaElement WithAttributeType(string attributeType)
         {
             this.attributeType = attributeType;

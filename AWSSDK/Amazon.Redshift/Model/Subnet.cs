@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetIdentifier">The value to set for the SubnetIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetIdentifier(string subnetIdentifier)
         {
             this.subnetIdentifier = subnetIdentifier;
@@ -73,6 +74,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetAvailabilityZone">The value to set for the SubnetAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone)
         {
             this.subnetAvailabilityZone = subnetAvailabilityZone;
@@ -101,6 +103,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetStatus">The value to set for the SubnetStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetStatus(string subnetStatus)
         {
             this.subnetStatus = subnetStatus;

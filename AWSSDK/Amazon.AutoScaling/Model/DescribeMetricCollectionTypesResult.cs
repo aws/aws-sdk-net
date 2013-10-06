@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The output of the DescribeMetricCollectionTypes action.</para>
     /// </summary>
-    public class DescribeMetricCollectionTypesResult  
+    public class DescribeMetricCollectionTypesResult
     {
         
         private List<MetricCollectionType> metrics = new List<MetricCollectionType>();
@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithMetrics(params MetricCollectionType[] metrics)
         {
             foreach (MetricCollectionType element in metrics)
@@ -54,12 +55,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Metrics collection
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithMetrics(IEnumerable<MetricCollectionType> metrics)
         {
             foreach (MetricCollectionType element in metrics)
@@ -73,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;       
+            return this.metrics.Count > 0;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(params MetricGranularityType[] granularities)
         {
             foreach (MetricGranularityType element in granularities)
@@ -99,12 +102,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Granularities collection
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(IEnumerable<MetricGranularityType> granularities)
         {
             foreach (MetricGranularityType element in granularities)
@@ -118,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularities property is set
         internal bool IsSetGranularities()
         {
-            return this.granularities.Count > 0;       
+            return this.granularities.Count > 0;
         }
     }
 }

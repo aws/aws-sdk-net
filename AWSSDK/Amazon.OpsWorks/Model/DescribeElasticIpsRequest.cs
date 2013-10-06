@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticIps operation.
-    /// <para>Describes an instance's Elastic IP addresses.</para>
+    /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticIps"/>
     public class DescribeElasticIpsRequest : AmazonWebServiceRequest
@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ips">The values to add to the Ips collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsRequest WithIps(params string[] ips)
         {
             foreach (string element in ips)
@@ -92,6 +94,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ips">The values to add to the Ips collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsRequest WithIps(IEnumerable<string> ips)
         {
             foreach (string element in ips)

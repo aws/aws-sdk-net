@@ -39,6 +39,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 using ErrorResponse = Amazon.SimpleNotificationService.Model.ErrorResponse;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.SimpleNotificationService
 {
@@ -446,6 +447,157 @@ namespace Amazon.SimpleNotificationService
             return Invoke<PublishResponse>(request, ConvertPublish(request));
         }
 
+        /// <summary>
+        /// Creates a platform application object for one of the supported push notification services, 
+        /// such as APNS and GCM, to which devices and mobile apps may register.
+        /// </summary>
+        /// <remarks>
+        /// You must specify PlatformPrincipal and PlatformCredential attributes when using this method.
+        /// The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". 
+        /// For GCM, PlatformPrincipal is not applicable. For ADM PlatformPrincipal is "client id". The PlatformCredential is also received from the notification service. 
+        /// For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret".   
+        /// The PlatformApplicationArn that is returned by this method is then used as an attribute for the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.CreatePlatformEndpoint"/> method.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. 
+        /// </remarks>
+        /// <param name="request">Create Platform Application request.</param>
+        /// <returns>Create Platform Application response from the service.</returns>
+        public CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
+        {
+            return Invoke<CreatePlatformApplicationResponse>(request, ConvertCreatePlatformApplication(request));
+        }
+
+        /// <summary>
+        /// Creates an endpoint for a device on one of the supported push notification services, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// This method requires the PlatformApplicationArn that is returned from <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.CreatePlatformApplication"/>. 
+        /// The EndpointArn that is returned when using this method can then be used by the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.Publish"/> method to 
+        /// send a message to a mobile app or by the <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationService.Subscribe"/> action for subscription to a topic.        
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Create Platform Endpoint request.</param>
+        /// <returns>Create Platform Endpoint response from the service.</returns>
+        public CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
+        {
+            return Invoke<CreatePlatformEndpointResponse>(request, ConvertCreatePlatformEndpoint(request));
+        }
+
+        /// <summary>
+        /// Deletes the endpoint for a device on one of the supported push notification services, such as GCM and APNS. 
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Delete Endpoint request.</param>
+        /// <returns>Delete Endpoint response from the service.</returns>
+        public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            return Invoke<DeleteEndpointResponse>(request, ConvertDeleteEndpoint(request));
+        }
+
+        /// <summary>
+        /// Deletes a platform application object for one of the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Delete Platform Application request.</param>
+        /// <returns>Delete Platform Application response from the service.</returns>
+        public DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
+        {
+            return Invoke<DeletePlatformApplicationResponse>(request, ConvertDeletePlatformApplicationResponse(request));
+        }
+
+        /// <summary>
+        /// Sets the attributes of the platform application object for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Set Platform Application Attributes request.</param>
+        /// <returns>Set Platform Application Attributes response from the service.</returns>
+        public SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
+        {
+            return Invoke<SetPlatformApplicationAttributesResponse>(request, ConvertSetPlatformApplicationAttributesResponse(request));
+        }
+
+        /// <summary>
+        /// Sets the attributes for the an endpoint for a device on one of the supported push notification services, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Set Endpoint Attributes request.</param>
+        /// <returns>Set Endpoint Attributes response from the service.</returns>
+        public SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
+        {
+            return Invoke<SetEndpointAttributesResponse>(request, ConvertSetEndpointAttributesResponse(request));
+        }
+
+        /// <summary>
+        /// Retrieves the attributes of the platform application object for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Get Platform Application Attributes request.</param>
+        /// <returns>Get Platform Application Attributes response from the service.</returns>
+        public GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
+        {
+            return Invoke<GetPlatformApplicationAttributesResponse>(request, ConvertGetPlatformApplicationAttributes(request));
+        }
+
+        /// <summary>
+        /// Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS. 
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">Get Endpoint Attributes request.</param>
+        /// <returns>Get Endpoint Attributes response from the service.</returns>
+        public GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
+        {
+            return Invoke<GetEndpointAttributesResponse>(request, ConvertGetEndpointAttributes(request));
+        }
+
+        /// <summary>
+        /// Lists the platform application objects for the supported push notification services, 
+        /// such as APNS and GCM.
+        /// </summary>
+        /// <remarks>
+        /// The results for this method are paginated and return a limited list of applications, up to 100.
+        /// If additional records are available after the first page results, then a NextToken string will be returned. 
+        /// To receive the next page, you call this method again using the NextToken string received from the previous call. 
+        /// When there are no more records to return, NextToken will be null.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">List Platform Applications request.</param>
+        /// <returns>List Platform Applications response from the service.</returns>
+        public ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
+        {
+            return Invoke<ListPlatformApplicationsResponse>(request, ConvertListPlatformApplications(request));
+        }
+
+        /// <summary>
+        /// Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and APNS.
+        /// </summary>
+        /// <remarks>
+        /// The results for this method are paginated and return a limited list of endpoints, up to 100.
+        /// If additional records are available after the first page results, then a NextToken string will be returned. 
+        /// To receive the next page, you call this method again using the NextToken string received from the previous call. 
+        /// When there are no more records to return, NextToken will be null.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.
+        /// </remarks>
+        /// <param name="request">List Endpoints By Platform Application request.</param>
+        /// <returns>List Endpoints By Platform Application response from the service.</returns>
+        public ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
+        {
+            return Invoke<ListEndpointsByPlatformApplicationResponse>(request, ConvertListEndpointsByPlatformApplication(request));
+        }
+        
         #endregion
 
         #region Private API
@@ -454,14 +606,8 @@ namespace Amazon.SimpleNotificationService
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonSimpleNotificationServiceConfig instance
          */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleNotificationServiceConfig config, IDictionary<string, string> headers)
+        private static HttpWebRequest ConfigureWebRequest(int contentLength, string url, AmazonSimpleNotificationServiceConfig config, IDictionary<string, string> headers)
         {
-            string url;
-            if (config.RegionEndpoint != null)
-                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
-            else
-                url = config.ServiceURL;
-
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
@@ -476,7 +622,6 @@ namespace Amazon.SimpleNotificationService
                 {
                     request.Proxy.Credentials = config.ProxyCredentials;
                 }
-                request.UserAgent = headers[AWSSDKUtils.UserAgentHeader];
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
@@ -485,6 +630,8 @@ namespace Amazon.SimpleNotificationService
                 request.ServicePoint.Expect100Continue = false;
                 request.ServicePoint.UseNagleAlgorithm = false;
             }
+
+            Amazon.Runtime.AmazonWebServiceClient.AddHeaders(request, headers);
 
             return request;
         }
@@ -498,12 +645,21 @@ namespace Amazon.SimpleNotificationService
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
 
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
             /* Add required request parameters */
-            AddRequiredParameters(parameters);
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+            ProcessRequestHandlers(snsRequest, headers);
+            AddRequiredParameters(headers, parameters, url);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
-
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
+
             bool shouldRetry = true;
             int retries = 0;
             int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
@@ -511,10 +667,8 @@ namespace Amazon.SimpleNotificationService
             do
             {
                 string responseBody = null;
-                IDictionary<string, string> headers = new Dictionary<string, string>();
-                headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
-                ProcessRequestHandlers(snsRequest, headers);
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config, headers);
+
+                HttpWebRequest request = ConfigureWebRequest(requestData.Length, url, config, headers);
 
                 /* Submit the request and read response body */
                 try
@@ -711,7 +865,7 @@ namespace Amazon.SimpleNotificationService
         /**
          * Add authentication related and version parameters
          */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
+        private void AddRequiredParameters(IDictionary<string, string> headers, IDictionary<string, string> parameters, string url)
         {
             using (ImmutableCredentials immutableCredentials = this.credentials.GetCredentials())
             {
@@ -729,31 +883,19 @@ namespace Amazon.SimpleNotificationService
                 parameters["SignatureMethod"] = config.SignatureMethod;
                 parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
                 parameters["Version"] = config.ServiceVersion;
-                if (!config.SignatureVersion.Equals("2"))
+                if (!config.SignatureVersion.Equals("4"))
                 {
                     throw new AmazonSimpleNotificationServiceException("Invalid Signature Version specified");
                 }
-
-                string url;
-                if (config.RegionEndpoint != null)
-                    url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
-                else
-                    url = config.ServiceURL;
-
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, url);
-
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-                string auth;
-
-                if (immutableCredentials.UseSecureStringForSecretKey)
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
-                }
-                else
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
-                }
-                parameters["Signature"] = auth;
+                string region = this.config.AuthenticationRegion ?? AWSSDKUtils.DetermineRegion(url);
+                string authorizationHeader = AWS4Signer.CalculateSignature(headers,
+                                                                           parameters,
+                                                                           url,
+                                                                           "POST",
+                                                                           "sns",
+                                                                           region,
+                                                                           immutableCredentials);
+                headers.Add("Authorization", authorizationHeader);
             }
         }
 
@@ -1048,6 +1190,237 @@ namespace Amazon.SimpleNotificationService
             {
                 parameters["Subject"] = request.Subject;
             }
+            if (request.IsSetTargetArn())
+            {
+                parameters["TargetArn"] = request.TargetArn;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreatePlatformApplicationRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertCreatePlatformApplication(CreatePlatformApplicationRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "CreatePlatformApplication";
+
+            if (request.IsSetName())
+                parameters["Name"] = request.Name;
+
+            if (request.IsSetPlatform())
+                parameters["Platform"] = request.Platform;
+
+            if (request.IsSetAttributes())
+            {
+                int i = 1;
+
+                foreach (var kvp in request.Attributes)
+                {
+                    string k = String.Format("Attributes.entry.{0}.key", i);
+                    parameters[k] = kvp.Key;
+
+                    string v = String.Format("Attributes.entry.{0}.value", i);
+                    parameters[v] = kvp.Value;
+
+                    ++i;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreatePlatformEndpointRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertCreatePlatformEndpoint(CreatePlatformEndpointRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "CreatePlatformEndpoint";
+
+            if (request.IsSetPlatformApplicationArn())
+                parameters["PlatformApplicationArn"] = request.PlatformApplicationArn;
+
+            if (request.IsSetToken())
+                parameters["Token"] = request.Token;
+
+            if (request.IsSetCustomUserData())
+                parameters["CustomUserData"] = request.CustomUserData;
+
+            if (request.IsSetAttributes())
+            {
+                int i = 1;
+
+                foreach (var kvp in request.Attributes)
+                {
+                    string k = String.Format("Attributes.entry.{0}.key", i);
+                    parameters[k] = kvp.Key;
+
+                    string v = String.Format("Attributes.entry.{0}.value", i);
+                    parameters[v] = kvp.Value;
+
+                    ++i;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteEndpointRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertDeleteEndpoint(DeleteEndpointRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "DeleteEndpoint";
+
+            if (request.IsSetEndpointArn())
+                parameters["EndpointArn"] = request.EndpointArn;
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeletePlatformApplicationRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertDeletePlatformApplicationResponse(DeletePlatformApplicationRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "DeletePlatformApplication";
+
+            if (request.IsSetPlatformApplicationArn())
+                parameters["PlatformApplicationArn"] = request.PlatformApplicationArn;
+
+            return parameters;
+        }
+
+        /**
+         * Convert SetPlatformApplicationAttributesRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertSetPlatformApplicationAttributesResponse(SetPlatformApplicationAttributesRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "SetPlatformApplicationAttributes";
+
+            if (request.IsSetPlatformApplicationArn())
+                parameters["PlatformApplicationArn"] = request.PlatformApplicationArn;
+
+            if (request.IsSetAttributes())
+            {
+                int i = 1;
+
+                foreach (var kvp in request.Attributes)
+                {
+                    string k = String.Format("Attributes.entry.{0}.key", i);
+                    parameters[k] = kvp.Key;
+
+                    string v = String.Format("Attributes.entry.{0}.value", i);
+                    parameters[v] = kvp.Value;
+
+                    ++i;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert SetEndpointAttributesRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertSetEndpointAttributesResponse(SetEndpointAttributesRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "SetEndpointAttributes";
+
+            if (request.IsSetEndpointArn())
+                parameters["EndpointArn"] = request.EndpointArn;
+
+            if (request.IsSetAttributes())
+            {
+                int i = 1;
+
+                foreach (var kvp in request.Attributes)
+                {
+                    string k = String.Format("Attributes.entry.{0}.key", i);
+                    parameters[k] = kvp.Key;
+
+                    string v = String.Format("Attributes.entry.{0}.value", i);
+                    parameters[v] = kvp.Value;
+
+                    ++i;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert GetPlatformApplicationAttributesRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "GetPlatformApplicationAttributes";
+
+            if (request.IsSetPlatformApplicationArn())
+                parameters["PlatformApplicationArn"] = request.PlatformApplicationArn;
+
+            return parameters;
+        }
+
+        /**
+         * Convert GetEndpointAttributesRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertGetEndpointAttributes(GetEndpointAttributesRequest request)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters["Action"] = "GetEndpointAttributes";
+
+            if (request.IsSetEndpointArn())
+                parameters["EndpointArn"] = request.EndpointArn;
+
+            return parameters;
+        }
+
+        /**
+         * Convert ListEndpointsByPlatformApplicationRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ListEndpointsByPlatformApplication";
+            if (request.IsSetPlatformApplicationArn())
+            {
+                parameters["PlatformApplicationArn"] = request.PlatformApplicationArn;
+            }
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ListPlatformApplicationsRequest to name value pairs
+         */
+        private IDictionary<string, string> ConvertListPlatformApplications(ListPlatformApplicationsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ListPlatformApplications";
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
 
             return parameters;
         }
@@ -1085,6 +1458,6 @@ namespace Amazon.SimpleNotificationService
             }
         }
 
-        #endregion
+        #endregion        
     }
 }

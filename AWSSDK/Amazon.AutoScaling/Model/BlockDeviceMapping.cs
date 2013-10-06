@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>BlockDeviceMapping</c> data type. </para>
     /// </summary>
-    public class BlockDeviceMapping  
+    public class BlockDeviceMapping
     {
         
         private string virtualName;
@@ -58,6 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="virtualName">The value to set for the VirtualName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithVirtualName(string virtualName)
         {
             this.virtualName = virtualName;
@@ -68,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if VirtualName property is set
         internal bool IsSetVirtualName()
         {
-            return this.virtualName != null;       
+            return this.virtualName != null;
         }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="deviceName">The value to set for the DeviceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithDeviceName(string deviceName)
         {
             this.deviceName = deviceName;
@@ -109,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DeviceName property is set
         internal bool IsSetDeviceName()
         {
-            return this.deviceName != null;       
+            return this.deviceName != null;
         }
 
         /// <summary>
@@ -127,6 +129,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="ebs">The value to set for the Ebs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithEbs(Ebs ebs)
         {
             this.ebs = ebs;
@@ -137,7 +140,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Ebs property is set
         internal bool IsSetEbs()
         {
-            return this.ebs != null;       
+            return this.ebs != null;
         }
     }
 }

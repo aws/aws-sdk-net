@@ -59,6 +59,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Attribute associated with an Item.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAttributesResult WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

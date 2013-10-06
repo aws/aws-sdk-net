@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// are no running Amazon EC2 instances in the VPC).
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteVpcRequest
+    public class DeleteVpcRequest : EC2Request
     {    
         private string vpcIdField;
 
@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC you want to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVpcRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

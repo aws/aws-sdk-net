@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// to someone else, Amazon EC2 returns an
         /// error.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Storage WithBucket(string bucket)
         {
             this.bucketField = bucket;
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="prefix">Specifies the beginning of the file name of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Storage WithPrefix(string prefix)
         {
             this.prefixField = prefix;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="AWSAccessKeyId">The Access Key ID of the owner of the Amazon S3 bucket.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Storage WithAWSAccessKeyId(string AWSAccessKeyId)
         {
             this.AWSAccessKeyIdField = AWSAccessKeyId;
@@ -155,6 +158,7 @@ namespace Amazon.EC2.Model
         /// gives Amazon EC2 permission to upload items into
         /// Amazon S3 on the user's behalf</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Storage WithUploadPolicy(string uploadPolicy)
         {
             this.uploadPolicyField = uploadPolicy;
@@ -186,6 +190,7 @@ namespace Amazon.EC2.Model
         /// <param name="uploadPolicySignature">The signature of the Base64 encoded JSON
         /// document.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public S3Storage WithUploadPolicySignature(string uploadPolicySignature)
         {
             this.uploadPolicySignatureField = uploadPolicySignature;

@@ -12,69 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   ScriptBootstrapActionConfig Unmarshaller
-     /// </summary>
-    internal class ScriptBootstrapActionConfigUnmarshaller : IUnmarshaller<ScriptBootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<ScriptBootstrapActionConfig, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public ScriptBootstrapActionConfig Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// ScriptBootstrapActionConfigUnmarshaller
+      /// </summary>
+      internal class ScriptBootstrapActionConfigUnmarshaller : IUnmarshaller<ScriptBootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<ScriptBootstrapActionConfig, JsonUnmarshallerContext>
+      {
+        ScriptBootstrapActionConfig IUnmarshaller<ScriptBootstrapActionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public ScriptBootstrapActionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ScriptBootstrapActionConfig scriptBootstrapActionConfig = new ScriptBootstrapActionConfig();
+          scriptBootstrapActionConfig.Args = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Path", targetDepth))
-                    {
-                        scriptBootstrapActionConfig.Path = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Args/member", targetDepth))
-                    {
-                        scriptBootstrapActionConfig.Args.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("Path", targetDepth))
+              {
+                scriptBootstrapActionConfig.Path = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Args", targetDepth))
+              {
+                scriptBootstrapActionConfig.Args = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     scriptBootstrapActionConfig.Args.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                continue;
+              }
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return scriptBootstrapActionConfig;
                 }
             }
-                        
-
+          
 
             return scriptBootstrapActionConfig;
         }
 
-        public ScriptBootstrapActionConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static ScriptBootstrapActionConfigUnmarshaller instance;
-
-        public static ScriptBootstrapActionConfigUnmarshaller GetInstance() 
+        public static ScriptBootstrapActionConfigUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ScriptBootstrapActionConfigUnmarshaller();
-
+            if (instance == null)
+                instance = new ScriptBootstrapActionConfigUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

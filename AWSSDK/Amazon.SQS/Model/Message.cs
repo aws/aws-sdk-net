@@ -54,6 +54,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="messageId">Unique ID associated with the message.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithMessageId(string messageId)
         {
             this.messageIdField = messageId;
@@ -84,6 +85,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="receiptHandle">A string associated with a specific instance of receiving the message.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithReceiptHandle(string receiptHandle)
         {
             this.receiptHandleField = receiptHandle;
@@ -114,6 +116,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="MD5OfBody">An MD5 digest of the non-URL-encoded message body string.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithMD5OfBody(string MD5OfBody)
         {
             this.MD5OfBodyField = MD5OfBody;
@@ -144,6 +147,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="body">The message's contents (not URL encoded).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithBody(string body)
         {
             this.bodyField = body;
@@ -181,6 +185,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

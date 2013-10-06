@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeleteRankExpressionResult Unmarshaller
      /// </summary>
-    internal class DeleteRankExpressionResultUnmarshaller : IUnmarshaller<DeleteRankExpressionResult, XmlUnmarshallerContext> 
+    internal class DeleteRankExpressionResultUnmarshaller : IUnmarshaller<DeleteRankExpressionResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteRankExpressionResult, JsonUnmarshallerContext> 
     {
         public DeleteRankExpressionResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteRankExpressionResult deleteRankExpressionResult = new DeleteRankExpressionResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return deleteRankExpressionResult;
+        }
+
+        public DeleteRankExpressionResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DeleteRankExpressionResultUnmarshaller instance;

@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVirtualMFADeviceRequest WithPath(string path)
         {
             this.path = path;
@@ -110,6 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="virtualMFADeviceName">The value to set for the VirtualMFADeviceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVirtualMFADeviceRequest WithVirtualMFADeviceName(string virtualMFADeviceName)
         {
             this.virtualMFADeviceName = virtualMFADeviceName;

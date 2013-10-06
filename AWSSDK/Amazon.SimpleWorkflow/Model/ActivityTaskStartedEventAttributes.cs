@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskStartedEventAttributes WithIdentity(string identity)
         {
             this.identity = identity;
@@ -82,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduledEventId">The value to set for the ScheduledEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskStartedEventAttributes WithScheduledEventId(long scheduledEventId)
         {
             this.scheduledEventId = scheduledEventId;

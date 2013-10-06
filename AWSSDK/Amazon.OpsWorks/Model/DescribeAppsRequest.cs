@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApps operation.
-    /// <para>Requests a description of a specified set of apps.</para>
+    /// <para>Requests a description of a specified set of apps.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeApps"/>
     public class DescribeAppsRequest : AmazonWebServiceRequest
@@ -48,6 +48,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -76,6 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appIds">The values to add to the AppIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsRequest WithAppIds(params string[] appIds)
         {
             foreach (string element in appIds)
@@ -91,6 +93,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appIds">The values to add to the AppIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsRequest WithAppIds(IEnumerable<string> appIds)
         {
             foreach (string element in appIds)

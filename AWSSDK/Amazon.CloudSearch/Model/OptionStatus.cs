@@ -23,13 +23,14 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The status of an option, including when it was last updated and whether it is actively in use for searches.</para>
     /// </summary>
-    public class OptionStatus  
+    public class OptionStatus
     {
         
         private DateTime? creationDate;
         private DateTime? updateDate;
         private int? updateVersion;
         private string state;
+        private bool? pendingDeletion;
 
         /// <summary>
         /// A timestamp for when this option was created.
@@ -46,6 +47,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -56,7 +58,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="updateDate">The value to set for the UpdateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithUpdateDate(DateTime updateDate)
         {
             this.updateDate = updateDate;
@@ -84,7 +87,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if UpdateDate property is set
         internal bool IsSetUpdateDate()
         {
-            return this.updateDate.HasValue;       
+            return this.updateDate.HasValue;
         }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="updateVersion">The value to set for the UpdateVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithUpdateVersion(int updateVersion)
         {
             this.updateVersion = updateVersion;
@@ -121,7 +125,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if UpdateVersion property is set
         internal bool IsSetUpdateVersion()
         {
-            return this.updateVersion.HasValue;       
+            return this.updateVersion.HasValue;
         }
 
         /// <summary>
@@ -151,6 +155,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionStatus WithState(string state)
         {
             this.state = state;
@@ -161,7 +166,36 @@ namespace Amazon.CloudSearch.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
+        }
+
+        /// <summary>
+        /// Indicates that the option will be deleted once processing is complete.
+        ///  
+        /// </summary>
+        public bool PendingDeletion
+        {
+            get { return this.pendingDeletion ?? default(bool); }
+            set { this.pendingDeletion = value; }
+        }
+
+        /// <summary>
+        /// Sets the PendingDeletion property
+        /// </summary>
+        /// <param name="pendingDeletion">The value to set for the PendingDeletion property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public OptionStatus WithPendingDeletion(bool pendingDeletion)
+        {
+            this.pendingDeletion = pendingDeletion;
+            return this;
+        }
+            
+
+        // Check to see if PendingDeletion property is set
+        internal bool IsSetPendingDeletion()
+        {
+            return this.pendingDeletion.HasValue;
         }
     }
 }

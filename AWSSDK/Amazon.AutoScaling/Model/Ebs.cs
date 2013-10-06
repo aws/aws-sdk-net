@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The Ebs data type.</para>
     /// </summary>
-    public class Ebs  
+    public class Ebs
     {
         
         private string snapshotId;
@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="snapshotId">The value to set for the SnapshotId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Ebs WithSnapshotId(string snapshotId)
         {
             this.snapshotId = snapshotId;
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;       
+            return this.snapshotId != null;
         }
 
         /// <summary>
@@ -94,6 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="volumeSize">The value to set for the VolumeSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Ebs WithVolumeSize(int volumeSize)
         {
             this.volumeSize = volumeSize;
@@ -104,7 +106,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if VolumeSize property is set
         internal bool IsSetVolumeSize()
         {
-            return this.volumeSize.HasValue;       
+            return this.volumeSize.HasValue;
         }
     }
 }

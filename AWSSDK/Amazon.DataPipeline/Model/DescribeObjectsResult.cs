@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineObjects">The values to add to the PipelineObjects collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsResult WithPipelineObjects(params PipelineObject[] pipelineObjects)
         {
             foreach (PipelineObject element in pipelineObjects)
@@ -59,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineObjects">The values to add to the PipelineObjects collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsResult WithPipelineObjects(IEnumerable<PipelineObject> pipelineObjects)
         {
             foreach (PipelineObject element in pipelineObjects)
@@ -103,6 +105,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -131,6 +134,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="hasMoreResults">The value to set for the HasMoreResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeObjectsResult WithHasMoreResults(bool hasMoreResults)
         {
             this.hasMoreResults = hasMoreResults;

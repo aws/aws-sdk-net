@@ -52,6 +52,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="offeringId">The value to set for the OfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConnectionRequest WithOfferingId(string offeringId)
         {
             this.offeringId = offeringId;
@@ -80,6 +81,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionName">The value to set for the ConnectionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConnectionRequest WithConnectionName(string connectionName)
         {
             this.connectionName = connectionName;

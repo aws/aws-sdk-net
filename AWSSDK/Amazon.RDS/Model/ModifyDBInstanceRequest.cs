@@ -67,6 +67,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -87,7 +88,14 @@ namespace Amazon.RDS.Model
         /// 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>Oracle</b> Default:
         /// Uses existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are
         /// not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. <b>SQL Server</b>
-        /// Cannot be modified.
+        /// Cannot be modified. If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
+        /// Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as
+        /// database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale
+        /// storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the
+        /// migration, the DB instance will be available for use, but may experience performance degradation. While the migration takes place, nightly
+        /// backups for the instance will be suspended. No other Amazon RDS operations can take place for the instance, including modifying the
+        /// instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the
+        /// instance.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -101,6 +109,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithAllocatedStorage(int allocatedStorage)
         {
             this.allocatedStorage = allocatedStorage;
@@ -133,6 +142,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -162,6 +172,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithDBSecurityGroups(params string[] dBSecurityGroups)
         {
             foreach (string element in dBSecurityGroups)
@@ -177,6 +188,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithDBSecurityGroups(IEnumerable<string> dBSecurityGroups)
         {
             foreach (string element in dBSecurityGroups)
@@ -209,6 +221,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -224,6 +237,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -258,6 +272,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyImmediately">The value to set for the ApplyImmediately property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithApplyImmediately(bool applyImmediately)
         {
             this.applyImmediately = applyImmediately;
@@ -291,6 +306,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -321,6 +337,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
             this.dBParameterGroupName = dBParameterGroupName;
@@ -354,6 +371,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
             this.backupRetentionPeriod = backupRetentionPeriod;
@@ -385,6 +403,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithPreferredBackupWindow(string preferredBackupWindow)
         {
             this.preferredBackupWindow = preferredBackupWindow;
@@ -418,6 +437,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -448,6 +468,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -479,6 +500,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -509,6 +531,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allowMajorVersionUpgrade">The value to set for the AllowMajorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithAllowMajorVersionUpgrade(bool allowMajorVersionUpgrade)
         {
             this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
@@ -540,6 +563,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -557,7 +581,14 @@ namespace Amazon.RDS.Model
         /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. Changing this parameter does not result in an outage and
         /// the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this
         /// request. Default: Uses existing setting Constraints: Value supplied must be at least 10% greater than the current value. Values that are not
-        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer
+        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer If you choose
+        /// to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage,
+        /// the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type
+        /// (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration
+        /// times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance will be available
+        /// for use, but may experience performance degradation. While the migration takes place, nightly backups for the instance will be suspended. No
+        /// other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the
+        /// instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
         ///  
         /// </summary>
         public int Iops
@@ -571,6 +602,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iops">The value to set for the Iops property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithIops(int iops)
         {
             this.iops = iops;
@@ -588,7 +620,10 @@ namespace Amazon.RDS.Model
         /// Indicates that the DB Instance should be associated with the specified option group. Changing this parameter does not result in an outage
         /// except in the following case and the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is
         /// set to <c>true</c> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-        /// (sub-second) period during which new connections are rejected but existing connections are not interrupted.
+        /// (sub-second) period during which new connections are rejected but existing connections are not interrupted. <!-- Note that persistent
+        /// options, such as the TDE_SQLServer option for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated
+        /// with the option group. --> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+        /// group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName
@@ -602,6 +637,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -632,6 +668,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="newDBInstanceIdentifier">The value to set for the NewDBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBInstanceRequest WithNewDBInstanceIdentifier(string newDBInstanceIdentifier)
         {
             this.newDBInstanceIdentifier = newDBInstanceIdentifier;

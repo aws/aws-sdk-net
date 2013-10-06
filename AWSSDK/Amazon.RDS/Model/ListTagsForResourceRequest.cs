@@ -33,7 +33,9 @@ namespace Amazon.RDS.Model
         private string resourceName;
 
         /// <summary>
-        /// The DB Instance with tags to be listed.
+        /// The DB Instance with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName
@@ -47,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTagsForResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;

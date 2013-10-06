@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="outputKey">The value to set for the OutputKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithOutputKey(string outputKey)
         {
             this.outputKey = outputKey;
@@ -73,6 +74,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="outputValue">The value to set for the OutputValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithOutputValue(string outputValue)
         {
             this.outputValue = outputValue;
@@ -101,6 +103,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithDescription(string description)
         {
             this.description = description;

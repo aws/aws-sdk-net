@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// If no export task IDs are specified, all export tasks initiated by you are returned.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeExportTasksRequest
+    public class DescribeExportTasksRequest : EC2Request
     {
         private List<string> exportTaskIdsField;
 
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Collection of export task ids to describe</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeExportTasksRequest WithExportTaskIds(params string[] list)
         {
             foreach (string item in list)

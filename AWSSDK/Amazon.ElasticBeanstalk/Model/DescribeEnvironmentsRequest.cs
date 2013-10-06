@@ -61,6 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -99,6 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -126,6 +128,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentIds">The values to add to the EnvironmentIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithEnvironmentIds(params string[] environmentIds)
         {
             foreach (string element in environmentIds)
@@ -141,6 +144,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentIds">The values to add to the EnvironmentIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithEnvironmentIds(IEnumerable<string> environmentIds)
         {
             foreach (string element in environmentIds)
@@ -171,6 +175,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentNames">The values to add to the EnvironmentNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithEnvironmentNames(params string[] environmentNames)
         {
             foreach (string element in environmentNames)
@@ -186,6 +191,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentNames">The values to add to the EnvironmentNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithEnvironmentNames(IEnumerable<string> environmentNames)
         {
             foreach (string element in environmentNames)
@@ -218,6 +224,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="includeDeleted">The value to set for the IncludeDeleted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithIncludeDeleted(bool includeDeleted)
         {
             this.includeDeleted = includeDeleted;
@@ -246,6 +253,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="includedDeletedBackTo">The value to set for the IncludedDeletedBackTo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsRequest WithIncludedDeletedBackTo(DateTime includedDeletedBackTo)
         {
             this.includedDeletedBackTo = includedDeletedBackTo;

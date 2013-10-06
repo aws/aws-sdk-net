@@ -61,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteScheduledActionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -71,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -102,6 +103,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionName">The value to set for the ScheduledActionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteScheduledActionRequest WithScheduledActionName(string scheduledActionName)
         {
             this.scheduledActionName = scheduledActionName;
@@ -112,7 +114,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionName property is set
         internal bool IsSetScheduledActionName()
         {
-            return this.scheduledActionName != null;       
+            return this.scheduledActionName != null;
         }
     }
 }

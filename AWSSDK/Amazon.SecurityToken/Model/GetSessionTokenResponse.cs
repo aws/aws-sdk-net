@@ -34,14 +34,14 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         public GetSessionTokenResult GetSessionTokenResult
         {
-            get 
+            get
             {
                 if(this.getSessionTokenResult == null)
                 {
                     this.getSessionTokenResult = new GetSessionTokenResult();
                 }
 
-                return this.getSessionTokenResult; 
+                return this.getSessionTokenResult;
             }
             set { this.getSessionTokenResult = value; }
         }

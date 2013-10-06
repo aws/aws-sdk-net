@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
     /// </para>
     /// </summary>
-    public class Activity  
+    public class Activity
     {
         
         private string activityId;
@@ -63,6 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="activityId">The value to set for the ActivityId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithActivityId(string activityId)
         {
             this.activityId = activityId;
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;       
+            return this.activityId != null;
         }
 
         /// <summary>
@@ -104,6 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -114,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -141,6 +143,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithDescription(string description)
         {
             this.description = description;
@@ -151,7 +154,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -182,6 +185,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="cause">The value to set for the Cause property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithCause(string cause)
         {
             this.cause = cause;
@@ -192,7 +196,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;       
+            return this.cause != null;
         }
 
         /// <summary>
@@ -210,6 +214,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -220,7 +225,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -238,6 +243,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -248,7 +254,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;       
+            return this.endTime.HasValue;
         }
 
         /// <summary>
@@ -275,6 +281,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="statusCode">The value to set for the StatusCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithStatusCode(string statusCode)
         {
             this.statusCode = statusCode;
@@ -285,7 +292,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StatusCode property is set
         internal bool IsSetStatusCode()
         {
-            return this.statusCode != null;       
+            return this.statusCode != null;
         }
 
         /// <summary>
@@ -316,6 +323,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="statusMessage">The value to set for the StatusMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithStatusMessage(string statusMessage)
         {
             this.statusMessage = statusMessage;
@@ -326,7 +334,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StatusMessage property is set
         internal bool IsSetStatusMessage()
         {
-            return this.statusMessage != null;       
+            return this.statusMessage != null;
         }
 
         /// <summary>
@@ -344,6 +352,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="progress">The value to set for the Progress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithProgress(int progress)
         {
             this.progress = progress;
@@ -354,7 +363,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Progress property is set
         internal bool IsSetProgress()
         {
-            return this.progress.HasValue;       
+            return this.progress.HasValue;
         }
 
         /// <summary>
@@ -381,6 +390,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="details">The value to set for the Details property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithDetails(string details)
         {
             this.details = details;
@@ -391,7 +401,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;       
+            return this.details != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The configuration for the streaming distribution. </para>
     /// </summary>
-    public class StreamingDistributionConfig  
+    public class StreamingDistributionConfig
     {
         
         private string callerReference;
@@ -32,7 +32,7 @@ namespace Amazon.CloudFront.Model
         private string comment;
         private StreamingLoggingConfig logging;
         private TrustedSigners trustedSigners;
-        private string priceClass = "PriceClass_All";
+        private string priceClass;
         private bool? enabled;
 
         /// <summary>
@@ -55,6 +55,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -65,7 +66,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3Origin">The value to set for the S3Origin property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithS3Origin(S3Origin s3Origin)
         {
             this.s3Origin = s3Origin;
@@ -93,7 +95,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if S3Origin property is set
         internal bool IsSetS3Origin()
         {
-            return this.s3Origin != null;       
+            return this.s3Origin != null;
         }
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -121,7 +124,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;       
+            return this.aliases != null;
         }
 
         /// <summary>
@@ -139,6 +142,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithComment(string comment)
         {
             this.comment = comment;
@@ -149,7 +153,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
 
         /// <summary>
@@ -167,6 +171,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="logging">The value to set for the Logging property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithLogging(StreamingLoggingConfig logging)
         {
             this.logging = logging;
@@ -177,7 +182,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Logging property is set
         internal bool IsSetLogging()
         {
-            return this.logging != null;       
+            return this.logging != null;
         }
 
         /// <summary>
@@ -201,6 +206,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="trustedSigners">The value to set for the TrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithTrustedSigners(TrustedSigners trustedSigners)
         {
             this.trustedSigners = trustedSigners;
@@ -211,7 +217,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TrustedSigners property is set
         internal bool IsSetTrustedSigners()
         {
-            return this.trustedSigners != null;       
+            return this.trustedSigners != null;
         }
 
         /// <summary>
@@ -238,6 +244,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -248,7 +255,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if PriceClass property is set
         internal bool IsSetPriceClass()
         {
-            return this.priceClass != null;       
+            return this.priceClass != null;
         }
 
         /// <summary>
@@ -266,6 +273,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistributionConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -276,7 +284,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
     }
 }

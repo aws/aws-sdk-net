@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public ListCloudFrontOriginAccessIdentitiesResult ListCloudFrontOriginAccessIdentitiesResult
         {
-            get 
+            get
             {
                 if(this.listCloudFrontOriginAccessIdentitiesResult == null)
                 {
                     this.listCloudFrontOriginAccessIdentitiesResult = new ListCloudFrontOriginAccessIdentitiesResult();
                 }
 
-                return this.listCloudFrontOriginAccessIdentitiesResult; 
+                return this.listCloudFrontOriginAccessIdentitiesResult;
             }
             set { this.listCloudFrontOriginAccessIdentitiesResult = value; }
         }

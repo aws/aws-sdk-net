@@ -206,6 +206,12 @@
                 continue;
               }
   
+              if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
+              {
+                layer.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {

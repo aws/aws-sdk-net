@@ -58,6 +58,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -86,6 +87,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobDescription">The value to set for the JobDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithJobDescription(string jobDescription)
         {
             this.jobDescription = jobDescription;
@@ -123,6 +125,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="action">The value to set for the Action property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithAction(string action)
         {
             this.action = action;
@@ -151,6 +154,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveId">The value to set for the ArchiveId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithArchiveId(string archiveId)
         {
             this.archiveId = archiveId;
@@ -179,6 +183,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -207,6 +212,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -235,6 +241,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="completed">The value to set for the Completed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithCompleted(bool completed)
         {
             this.completed = completed;
@@ -272,6 +279,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="statusCode">The value to set for the StatusCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithStatusCode(string statusCode)
         {
             this.statusCode = statusCode;
@@ -300,6 +308,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="statusMessage">The value to set for the StatusMessage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithStatusMessage(string statusMessage)
         {
             this.statusMessage = statusMessage;
@@ -329,6 +338,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveSizeInBytes">The value to set for the ArchiveSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithArchiveSizeInBytes(long archiveSizeInBytes)
         {
             this.archiveSizeInBytes = archiveSizeInBytes;
@@ -358,6 +368,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="inventorySizeInBytes">The value to set for the InventorySizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithInventorySizeInBytes(long inventorySizeInBytes)
         {
             this.inventorySizeInBytes = inventorySizeInBytes;
@@ -386,6 +397,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sNSTopic">The value to set for the SNSTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithSNSTopic(string sNSTopic)
         {
             this.sNSTopic = sNSTopic;
@@ -414,6 +426,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="completionDate">The value to set for the CompletionDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithCompletionDate(DateTime completionDate)
         {
             this.completionDate = completionDate;
@@ -446,6 +459,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sHA256TreeHash">The value to set for the SHA256TreeHash property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithSHA256TreeHash(string sHA256TreeHash)
         {
             this.sHA256TreeHash = sHA256TreeHash;
@@ -474,6 +488,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveSHA256TreeHash">The value to set for the ArchiveSHA256TreeHash property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithArchiveSHA256TreeHash(string archiveSHA256TreeHash)
         {
             this.archiveSHA256TreeHash = archiveSHA256TreeHash;
@@ -504,6 +519,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="retrievalByteRange">The value to set for the RetrievalByteRange property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobResult WithRetrievalByteRange(string retrievalByteRange)
         {
             this.retrievalByteRange = retrievalByteRange;

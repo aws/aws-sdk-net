@@ -70,6 +70,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="subject">The value to set for the Subject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithSubject(string subject)
         {
             this.subject = subject;
@@ -107,6 +108,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="serviceCode">The value to set for the ServiceCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithServiceCode(string serviceCode)
         {
             this.serviceCode = serviceCode;
@@ -137,6 +139,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityCode">The value to set for the SeverityCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithSeverityCode(string severityCode)
         {
             this.severityCode = severityCode;
@@ -165,6 +168,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categoryCode">The value to set for the CategoryCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCategoryCode(string categoryCode)
         {
             this.categoryCode = categoryCode;
@@ -203,6 +207,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communicationBody">The value to set for the CommunicationBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCommunicationBody(string communicationBody)
         {
             this.communicationBody = communicationBody;
@@ -239,6 +244,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCcEmailAddresses(params string[] ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -254,6 +260,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCcEmailAddresses(IEnumerable<string> ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -286,6 +293,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithLanguage(string language)
         {
             this.language = language;
@@ -314,6 +322,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="issueType">The value to set for the IssueType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithIssueType(string issueType)
         {
             this.issueType = issueType;

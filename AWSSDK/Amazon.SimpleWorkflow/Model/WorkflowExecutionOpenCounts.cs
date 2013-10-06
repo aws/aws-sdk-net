@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="openActivityTasks">The value to set for the OpenActivityTasks property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionOpenCounts WithOpenActivityTasks(int openActivityTasks)
         {
             this.openActivityTasks = openActivityTasks;
@@ -92,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="openDecisionTasks">The value to set for the OpenDecisionTasks property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionOpenCounts WithOpenDecisionTasks(int openDecisionTasks)
         {
             this.openDecisionTasks = openDecisionTasks;
@@ -129,6 +131,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="openTimers">The value to set for the OpenTimers property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionOpenCounts WithOpenTimers(int openTimers)
         {
             this.openTimers = openTimers;
@@ -166,6 +169,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="openChildWorkflowExecutions">The value to set for the OpenChildWorkflowExecutions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionOpenCounts WithOpenChildWorkflowExecutions(int openChildWorkflowExecutions)
         {
             this.openChildWorkflowExecutions = openChildWorkflowExecutions;

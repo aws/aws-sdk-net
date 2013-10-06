@@ -21,7 +21,12 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the name of a Cache Parameter Group. </para>
+    /// <para>Represents the output of one of the following operations:</para>
+    /// <ul>
+    /// <li> <i>ModifyCacheParameterGroup</i> </li>
+    /// <li> <i>ResetCacheParameterGroup</i> </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class ModifyCacheParameterGroupResult
     {
@@ -29,7 +34,7 @@ namespace Amazon.ElastiCache.Model
         private string cacheParameterGroupName;
 
         /// <summary>
-        /// The name of the Cache Parameter Group.
+        /// The name of the cache parameter group.
         ///  
         /// </summary>
         public string CacheParameterGroupName
@@ -43,6 +48,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheParameterGroupResult WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;

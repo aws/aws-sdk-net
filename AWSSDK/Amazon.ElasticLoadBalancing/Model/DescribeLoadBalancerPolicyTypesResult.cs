@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeDescriptions">The values to add to the PolicyTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPolicyTypesResult WithPolicyTypeDescriptions(params PolicyTypeDescription[] policyTypeDescriptions)
         {
             foreach (PolicyTypeDescription element in policyTypeDescriptions)
@@ -58,6 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeDescriptions">The values to add to the PolicyTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPolicyTypesResult WithPolicyTypeDescriptions(IEnumerable<PolicyTypeDescription> policyTypeDescriptions)
         {
             foreach (PolicyTypeDescription element in policyTypeDescriptions)

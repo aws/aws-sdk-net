@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output from a DescribeCacheSubnetGroups action.</para>
+    /// <para>Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.</para>
     /// </summary>
     public class DescribeCacheSubnetGroupsResult
     {
@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheSubnetGroup> cacheSubnetGroups = new List<CacheSubnetGroup>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// One or more Cache Subnet Groups.
+        /// A list of cache subnet groups. Each element in the list contains detailed information about one group.
         ///  
         /// </summary>
         public List<CacheSubnetGroup> CacheSubnetGroups
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroups">The values to add to the CacheSubnetGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsResult WithCacheSubnetGroups(params CacheSubnetGroup[] cacheSubnetGroups)
         {
             foreach (CacheSubnetGroup element in cacheSubnetGroups)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroups">The values to add to the CacheSubnetGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheSubnetGroupsResult WithCacheSubnetGroups(IEnumerable<CacheSubnetGroup> cacheSubnetGroups)
         {
             foreach (CacheSubnetGroup element in cacheSubnetGroups)

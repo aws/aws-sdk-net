@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListStreamingDistributionsResult  
+    public class ListStreamingDistributionsResult
     {
         
         private StreamingDistributionList streamingDistributionList;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistributionList">The value to set for the StreamingDistributionList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStreamingDistributionsResult WithStreamingDistributionList(StreamingDistributionList streamingDistributionList)
         {
             this.streamingDistributionList = streamingDistributionList;
@@ -53,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionList property is set
         internal bool IsSetStreamingDistributionList()
         {
-            return this.streamingDistributionList != null;       
+            return this.streamingDistributionList != null;
         }
     }
 }

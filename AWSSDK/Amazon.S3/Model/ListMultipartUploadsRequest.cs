@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -55,6 +55,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -90,6 +91,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="maxUploads">Maximum uploads to return</param>
         /// <returns>the request with the MaxUploads set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithMaxUploads(int maxUploads)
         {
             this.maxUploads = maxUploads;
@@ -147,6 +149,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="keyMarker">The key marker</param>
         /// <returns>the request with the KeyMarker set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithKeyMarker(string keyMarker)
         {
             this.keyMarker = keyMarker;
@@ -190,6 +193,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="uploadIdMarker">The upload id marker value</param>
         /// <returns>the request with the UploadIdMarker set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithUploadIdMarker(string uploadIdMarker)
         {
             this.uploadIdMarker = uploadIdMarker;
@@ -229,6 +233,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithPrefix(string prefix)
         {
             this.prefix = prefix;
@@ -280,6 +285,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsRequest WithDelimiter(string delimiter)
         {
             this.delimiter = delimiter;

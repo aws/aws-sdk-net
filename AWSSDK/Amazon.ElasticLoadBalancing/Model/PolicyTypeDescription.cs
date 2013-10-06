@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeName">The value to set for the PolicyTypeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyTypeName(string policyTypeName)
         {
             this.policyTypeName = policyTypeName;
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithDescription(string description)
         {
             this.description = description;
@@ -100,6 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeTypeDescriptions">The values to add to the PolicyAttributeTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyAttributeTypeDescriptions(params PolicyAttributeTypeDescription[] policyAttributeTypeDescriptions)
         {
             foreach (PolicyAttributeTypeDescription element in policyAttributeTypeDescriptions)
@@ -115,6 +118,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeTypeDescriptions">The values to add to the PolicyAttributeTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyAttributeTypeDescriptions(IEnumerable<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions)
         {
             foreach (PolicyAttributeTypeDescription element in policyAttributeTypeDescriptions)

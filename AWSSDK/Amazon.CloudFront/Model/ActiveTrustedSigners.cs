@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     /// behavior or for any of the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for
     /// private content. </para>
     /// </summary>
-    public class ActiveTrustedSigners  
+    public class ActiveTrustedSigners
     {
         
         private bool? enabled;
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -57,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="quantity">The value to set for the Quantity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithQuantity(int quantity)
         {
             this.quantity = quantity;
@@ -86,7 +88,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithItems(params Signer[] items)
         {
             foreach (Signer element in items)
@@ -113,12 +116,13 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActiveTrustedSigners WithItems(IEnumerable<Signer> items)
         {
             foreach (Signer element in items)
@@ -132,7 +136,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

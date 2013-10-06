@@ -42,6 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelines">The values to add to the Pipelines collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithPipelines(params Pipeline[] pipelines)
         {
             foreach (Pipeline element in pipelines)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelines">The values to add to the Pipelines collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithPipelines(IEnumerable<Pipeline> pipelines)
         {
             foreach (Pipeline element in pipelines)

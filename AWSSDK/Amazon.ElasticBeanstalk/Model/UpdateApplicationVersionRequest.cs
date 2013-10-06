@@ -60,6 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateApplicationVersionRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -98,6 +99,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateApplicationVersionRequest WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -135,6 +137,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateApplicationVersionRequest WithDescription(string description)
         {
             this.description = description;

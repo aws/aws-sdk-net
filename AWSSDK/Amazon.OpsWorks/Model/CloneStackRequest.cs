@@ -33,13 +33,16 @@ namespace Amazon.OpsWorks.Model
         private string sourceStackId;
         private string name;
         private string region;
+        private string vpcId;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
         private string serviceRoleArn;
         private string defaultInstanceProfileArn;
         private string defaultOs;
         private string hostnameTheme;
         private string defaultAvailabilityZone;
+        private string defaultSubnetId;
         private string customJson;
+        private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
@@ -62,6 +65,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sourceStackId">The value to set for the SourceStackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithSourceStackId(string sourceStackId)
         {
             this.sourceStackId = sourceStackId;
@@ -90,6 +94,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithName(string name)
         {
             this.name = name;
@@ -119,6 +124,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithRegion(string region)
         {
             this.region = region;
@@ -130,6 +136,45 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRegion()
         {
             return this.region != null;
+        }
+
+        /// <summary>
+        /// The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances will be launched into this
+        /// VPC, and you cannot change the ID later. <ul> <li>If your account supports EC2 Classic, the default value is no VPC.</li> <li>If you account
+        /// does not support EC2 Classic, the default value is the default VPC for the specified region.</li> </ul> If the VPC ID corresponds to a
+        /// default VPC and you have specified either the <c>DefaultAvailabilityZone</c> or the <c>DefaultSubnetId</c> parameter only, AWS OpsWorks
+        /// infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks sets these parameters to the first valid
+        /// Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. If you specify a nondefault VPC ID,
+        /// note the following: <ul> <li>It must belong to a VPC in your account that is in the specified region.</li> <li>You must specify a value for
+        /// <c>DefaultSubnetId</c>.</li> </ul> For more information on how to use AWS OpsWorks with a VPC, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information on
+        /// default VPC and EC2 Classic, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a>.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CloneStackRequest WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
         }
 
         /// <summary>
@@ -147,6 +192,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -164,12 +210,12 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack AWS Identity and Access Management (IAM) role, which allows OpsWorks to work with AWS resources on your behalf. You must set this
-        /// parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the OpsWorks console, it creates the
-        /// role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about
-        /// IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note>You must set
-        /// this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service
-        /// role ARN, if you prefer, but you must do so explicitly.</note>
+        /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set
+        /// this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks console, it
+        /// creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more
+        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+        /// <note>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source
+        /// stack's service role ARN, if you prefer, but you must do so explicitly.</note>
         ///  
         /// </summary>
         public string ServiceRoleArn
@@ -183,6 +229,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceRoleArn">The value to set for the ServiceRoleArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithServiceRoleArn(string serviceRoleArn)
         {
             this.serviceRoleArn = serviceRoleArn;
@@ -212,6 +259,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultInstanceProfileArn">The value to set for the DefaultInstanceProfileArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithDefaultInstanceProfileArn(string defaultInstanceProfileArn)
         {
             this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -226,7 +274,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The cloned stack default operating system, which must be either "Amazon Linux" or "Ubuntu 12.04 LTS".
+        /// The cloned stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is
+        /// <c>Amazon Linux</c>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -240,6 +289,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultOs">The value to set for the DefaultOs property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithDefaultOs(string defaultOs)
         {
             this.defaultOs = defaultOs;
@@ -254,11 +304,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate hostnames for the stack's instances. By
-        /// default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates hostnames by appending integers to the layer's shortname. The other
+        /// The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By
+        /// default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates host names by appending integers to the layer's short name. The other
         /// themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
         /// <li>Legendary_Creatures_from_Japan</li> <li>Planets_and_Moons</li> <li>Roman_Deities</li> <li>Scottish_Islands</li> <li>US_Cities</li>
-        /// <li>Wild_Cats</li> </ul> To obtain a generated hostname, call <c>GetHostNameSuggestion</c>, which returns a hostname based on the current
+        /// <li>Wild_Cats</li> </ul> To obtain a generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current
         /// theme.
         ///  
         /// </summary>
@@ -273,6 +323,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="hostnameTheme">The value to set for the HostnameTheme property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithHostnameTheme(string hostnameTheme)
         {
             this.hostnameTheme = hostnameTheme;
@@ -287,8 +338,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The cloned stack's Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.
+        /// The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for
+        /// <c>DefaultSubnetId</c>, the subnet must be in the same zone. For more information, see the <c>VpcId</c> parameter description.
         ///  
         /// </summary>
         public string DefaultAvailabilityZone
@@ -302,6 +354,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultAvailabilityZone">The value to set for the DefaultAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithDefaultAvailabilityZone(string defaultAvailabilityZone)
         {
             this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -316,9 +369,40 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The stack's default subnet ID. All instances will be launched into this subnet unless you specify otherwise when you create the instance. If
+        /// you also specify a value for <c>DefaultAvailabilityZone</c>, the subnet must be in the same zone. For information on default values and when
+        /// this parameter is required, see the <c>VpcId</c> parameter description.
+        ///  
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this.defaultSubnetId; }
+            set { this.defaultSubnetId = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultSubnetId property
+        /// </summary>
+        /// <param name="defaultSubnetId">The value to set for the DefaultSubnetId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CloneStackRequest WithDefaultSubnetId(string defaultSubnetId)
+        {
+            this.defaultSubnetId = defaultSubnetId;
+            return this;
+        }
+            
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this.defaultSubnetId != null;
+        }
+
+        /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">. Use Custom
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
         /// JSON to Modify the Stack Configuration JSON</a>
         ///  
         /// </summary>
@@ -333,6 +417,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customJson">The value to set for the CustomJson property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithCustomJson(string customJson)
         {
             this.customJson = customJson;
@@ -344,6 +429,36 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomJson()
         {
             return this.customJson != null;
+        }
+
+        /// <summary>
+        /// The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9 or
+        /// 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August 2013.
+        ///  
+        /// </summary>
+        public StackConfigurationManager ConfigurationManager
+        {
+            get { return this.configurationManager; }
+            set { this.configurationManager = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConfigurationManager property
+        /// </summary>
+        /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CloneStackRequest WithConfigurationManager(StackConfigurationManager configurationManager)
+        {
+            this.configurationManager = configurationManager;
+            return this;
+        }
+            
+
+        // Check to see if ConfigurationManager property is set
+        internal bool IsSetConfigurationManager()
+        {
+            return this.configurationManager != null;
         }
 
         /// <summary>
@@ -361,6 +476,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="useCustomCookbooks">The value to set for the UseCustomCookbooks property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithUseCustomCookbooks(bool useCustomCookbooks)
         {
             this.useCustomCookbooks = useCustomCookbooks;
@@ -377,7 +493,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom Recipes and Cookbooks</a>.
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
         ///  
         /// </summary>
         public Source CustomCookbooksSource
@@ -391,6 +507,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customCookbooksSource">The value to set for the CustomCookbooksSource property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithCustomCookbooksSource(Source customCookbooksSource)
         {
             this.customCookbooksSource = customCookbooksSource;
@@ -419,6 +536,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultSshKeyName">The value to set for the DefaultSshKeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithDefaultSshKeyName(string defaultSshKeyName)
         {
             this.defaultSshKeyName = defaultSshKeyName;
@@ -447,6 +565,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="clonePermissions">The value to set for the ClonePermissions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithClonePermissions(bool clonePermissions)
         {
             this.clonePermissions = clonePermissions;
@@ -474,6 +593,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="cloneAppIds">The values to add to the CloneAppIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithCloneAppIds(params string[] cloneAppIds)
         {
             foreach (string element in cloneAppIds)
@@ -489,6 +609,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="cloneAppIds">The values to add to the CloneAppIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithCloneAppIds(IEnumerable<string> cloneAppIds)
         {
             foreach (string element in cloneAppIds)
@@ -531,6 +652,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultRootDeviceType">The value to set for the DefaultRootDeviceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackRequest WithDefaultRootDeviceType(string defaultRootDeviceType)
         {
             this.defaultRootDeviceType = defaultRootDeviceType;

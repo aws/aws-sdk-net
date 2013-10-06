@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTimeBasedAutoScalingRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="autoScalingSchedule">The value to set for the AutoScalingSchedule property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetTimeBasedAutoScalingRequest WithAutoScalingSchedule(WeeklyAutoScalingSchedule autoScalingSchedule)
         {
             this.autoScalingSchedule = autoScalingSchedule;

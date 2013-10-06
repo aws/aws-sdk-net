@@ -14,92 +14,160 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Add Job Flow Steps Request Marshaller
     /// </summary>       
-    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest>
+    internal class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest> 
     {
-        public IRequest Marshall(AddJobFlowStepsRequest addJobFlowStepsRequest)
+        
+
+        public IRequest Marshall(AddJobFlowStepsRequest addJobFlowStepsRequest) 
         {
+
             IRequest request = new DefaultRequest(addJobFlowStepsRequest, "AmazonElasticMapReduce");
-            request.Parameters.Add("Action", "AddJobFlowSteps");
-            request.Parameters.Add("Version", "2009-03-31");
-            if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.IsSetJobFlowId())
-            {
-                request.Parameters.Add("JobFlowId", StringUtils.FromString(addJobFlowStepsRequest.JobFlowId));
-            }
+            string target = "ElasticMapReduce.AddJobFlowSteps";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            if (addJobFlowStepsRequest != null)
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
             {
-                List<StepConfig> stepsList = addJobFlowStepsRequest.Steps;
-                int stepsListIndex = 1;
-                foreach (StepConfig stepsListValue in stepsList)
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
                 {
-                    if (stepsListValue != null && stepsListValue.IsSetName())
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
-                        request.Parameters.Add("Steps.member." + stepsListIndex + ".Name", StringUtils.FromString(stepsListValue.Name));
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
-                    if (stepsListValue != null && stepsListValue.IsSetActionOnFailure())
+                    else
                     {
-                        request.Parameters.Add("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.FromString(stepsListValue.ActionOnFailure));
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
-                    if (stepsListValue != null)
-                    {
-                        HadoopJarStepConfig hadoopJarStep = stepsListValue.HadoopJarStep;
-
-                        if (hadoopJarStep != null)
-                        {
-                            List<KeyValue> propertiesList = hadoopJarStep.Properties;
-                            int propertiesListIndex = 1;
-                            foreach (KeyValue propertiesListValue in propertiesList)
-                            {
-                                if (propertiesListValue != null && propertiesListValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.FromString(propertiesListValue.Key));
-                                }
-                                if (propertiesListValue != null && propertiesListValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.FromString(propertiesListValue.Value));
-                                }
-
-                                propertiesListIndex++;
-                            }
-                        }
-                        if (hadoopJarStep != null && hadoopJarStep.IsSetJar())
-                        {
-                            request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.FromString(hadoopJarStep.Jar));
-                        }
-                        if (hadoopJarStep != null && hadoopJarStep.IsSetMainClass())
-                        {
-                            request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.FromString(hadoopJarStep.MainClass));
-                        }
-                        if (hadoopJarStep != null)
-                        {
-                            List<string> argsList = hadoopJarStep.Args;
-
-                            int argsListIndex = 1;
-                            foreach (string argsListValue in argsList)
-                            { 
-                                request.Parameters.Add("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.FromString(argsListValue));
-                                argsListIndex++;
-                            }
-                        }
-                    }
-
-                    stepsListIndex++;
                 }
             }
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
+            using (StringWriter stringWriter = new StringWriter())
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                
+                if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.IsSetJobFlowId()) 
+                {
+                    writer.WritePropertyName("JobFlowId");
+                    writer.Write(addJobFlowStepsRequest.JobFlowId);
+                }
+
+                if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.Steps != null && addJobFlowStepsRequest.Steps.Count > 0)
+                {
+                    List<StepConfig> stepsList = addJobFlowStepsRequest.Steps;
+                    writer.WritePropertyName("Steps");
+                    writer.WriteArrayStart();
+
+                    foreach (StepConfig stepsListValue in stepsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (stepsListValue != null && stepsListValue.IsSetName()) 
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(stepsListValue.Name);
+                        }
+                        if (stepsListValue != null && stepsListValue.IsSetActionOnFailure()) 
+                        {
+                            writer.WritePropertyName("ActionOnFailure");
+                            writer.Write(stepsListValue.ActionOnFailure);
+                        }
+
+                        if (stepsListValue != null) 
+                        {
+                            HadoopJarStepConfig hadoopJarStep = stepsListValue.HadoopJarStep;
+                            if (hadoopJarStep != null)
+                            {
+                                writer.WritePropertyName("HadoopJarStep");
+                                writer.WriteObjectStart();
+
+                                if (hadoopJarStep != null && hadoopJarStep.Properties != null && hadoopJarStep.Properties.Count > 0)
+                                {
+                                    List<KeyValue> propertiesList = hadoopJarStep.Properties;
+                                    writer.WritePropertyName("Properties");
+                                    writer.WriteArrayStart();
+
+                                    foreach (KeyValue propertiesListValue in propertiesList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (propertiesListValue != null && propertiesListValue.IsSetKey()) 
+                                        {
+                                            writer.WritePropertyName("Key");
+                                            writer.Write(propertiesListValue.Key);
+                                        }
+                                        if (propertiesListValue != null && propertiesListValue.IsSetValue()) 
+                                        {
+                                            writer.WritePropertyName("Value");
+                                            writer.Write(propertiesListValue.Value);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                if (hadoopJarStep != null && hadoopJarStep.IsSetJar()) 
+                                {
+                                    writer.WritePropertyName("Jar");
+                                    writer.Write(hadoopJarStep.Jar);
+                                }
+                                if (hadoopJarStep != null && hadoopJarStep.IsSetMainClass()) 
+                                {
+                                    writer.WritePropertyName("MainClass");
+                                    writer.Write(hadoopJarStep.MainClass);
+                                }
+
+                                if (hadoopJarStep != null && hadoopJarStep.Args != null && hadoopJarStep.Args.Count > 0) 
+                                {
+                                    List<string> argsList = hadoopJarStep.Args;
+                                    writer.WritePropertyName("Args");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string argsListValue in argsList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(argsListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+        
 
             return request;
         }

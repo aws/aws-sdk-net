@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(removeSourceIdentifierFromSubscriptionRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RemoveSourceIdentifierFromSubscription");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-05-15");
             if (removeSourceIdentifierFromSubscriptionRequest != null && removeSourceIdentifierFromSubscriptionRequest.IsSetSubscriptionName())
             {
                 request.Parameters.Add("SubscriptionName", StringUtils.FromString(removeSourceIdentifierFromSubscriptionRequest.SubscriptionName));

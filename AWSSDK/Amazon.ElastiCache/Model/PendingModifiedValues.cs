@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains values that will be applied to the Cache Cluster in the future. </para>
+    /// <para>A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.</para>
     /// </summary>
     public class PendingModifiedValues
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private string engineVersion;
 
         /// <summary>
-        /// Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will be applied or is in progress.
+        /// The new number of cache nodes for the cache cluster.
         ///  
         /// </summary>
         public int NumCacheNodes
@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="numCacheNodes">The value to set for the NumCacheNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithNumCacheNodes(int numCacheNodes)
         {
             this.numCacheNodes = numCacheNodes;
@@ -59,7 +60,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Contains the list of node Ids to remove from the Cache Cluster that will be applied or is in progress.
+        /// A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+        /// etc.).
         ///  
         /// </summary>
         public List<string> CacheNodeIdsToRemove
@@ -72,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithCacheNodeIdsToRemove(params string[] cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -87,6 +90,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithCacheNodeIdsToRemove(IEnumerable<string> cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -104,7 +108,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Contains the new version of the Cache Engine the Cache Cluster will be upgraded to.
+        /// The new cache engine version that the cache cluster will run.
         ///  
         /// </summary>
         public string EngineVersion
@@ -118,6 +122,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;

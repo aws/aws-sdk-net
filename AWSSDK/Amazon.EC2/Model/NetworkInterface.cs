@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">The ID of the network interface.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -97,6 +98,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -127,6 +129,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -157,6 +160,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">Availability Zone</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -187,6 +191,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithDescription(string description)
         {
             this.descriptionField = description;
@@ -217,6 +222,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ownerId">The ID of the customer who created the interface.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -247,6 +253,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="requesterId">ID of the entity that launched the instance on your behalf (e.g., AWS Management Console, Auto Scaling, etc.)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithRequesterId(string requesterId)
         {
             this.requesterIdField = requesterId;
@@ -277,6 +284,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="requesterManaged">Requester Managed flag</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithRequesterManaged(bool requesterManaged)
         {
             this.requesterManagedField = requesterManaged;
@@ -304,6 +312,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">"available" or "in-use"</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithStatus(string status)
         {
             this.statusField = status;
@@ -334,6 +343,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="macAddress"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithMacAddress(string macAddress)
         {
             this.macAddressField = macAddress;
@@ -364,6 +374,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddress">IP address of the interface within the subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;
@@ -394,6 +405,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateDnsName">Private Dns Name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithPrivateDnsName(string privateDnsName)
         {
             this.privateDnsNameField = privateDnsName;
@@ -424,6 +436,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceDestCheck">Flag indicating whether traffic to or from the instance is validated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -461,6 +474,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -501,6 +515,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of security groups the instance is in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithGroupName(params string[] list)
         {
             foreach (string item in list)
@@ -534,6 +549,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachment">Network Interface Attachment</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithAttachment(NetworkInterfaceAttachment attachment)
         {
             this.attachmentField = attachment;
@@ -564,6 +580,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="association">Network Interface Association</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithAssociation(NetworkInterfaceAssociation association)
         {
             this.associationField = association;
@@ -601,6 +618,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the NetworkInterface.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -641,6 +659,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterface WithPrivateIpAddresses(params NetworkInterfacePrivateIpAddress[] privateIpAddresses)
         {
             foreach (NetworkInterfacePrivateIpAddress privateIpAddress in privateIpAddresses)

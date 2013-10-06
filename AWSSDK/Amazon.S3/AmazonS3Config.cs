@@ -55,9 +55,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
-        /// determines the endpoint to use.  If this is not set
-        /// then the client will fallback to the value of ServiceURL.
+        /// Gets and sets the RegionEndpoint property. 
+        /// This value is the region constant that 
+        /// determines the service endpoint to use.  If this value is not set,
+        /// then the client will use the value of ServiceURL.
         /// </summary>
         public RegionEndpoint RegionEndpoint
         {
@@ -81,6 +82,11 @@ namespace Amazon.S3
 
         /// <summary>
         /// Gets and sets the ServiceURL property.
+        /// This value specifies the endpoint to access with the client.
+        /// ServiceURL is ignored if RegionEndpoint is set.
+        /// This is an optional property; change it
+        /// only if you want to try a different service
+        /// endpoint or want to switch between https and http.
         /// </summary>
         public string ServiceURL
         {
@@ -93,6 +99,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="serviceURL">ServiceURL property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithServiceURL(string serviceURL)
         {
             this.serviceURL = serviceURL;
@@ -122,6 +129,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="userAgent">UserAgent property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithUserAgent(string userAgent)
         {
             this.userAgent = userAgent;
@@ -151,6 +159,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="proxyHost">ProxyHost property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithProxyHost(string proxyHost)
         {
             this.proxyHost = proxyHost;
@@ -180,6 +189,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="proxyPort">ProxyPort property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithProxyPort(int proxyPort)
         {
             this.proxyPort = proxyPort;
@@ -298,6 +308,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="proxyCredentials">ProxyCredentials property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithProxyCredentials(ICredentials proxyCredentials)
         {
             this.proxyCredentials = proxyCredentials;
@@ -328,6 +339,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="maxErrorRetry">MaxErrorRetry property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithMaxErrorRetry(int maxErrorRetry)
         {
             this.maxErrorRetry = maxErrorRetry;
@@ -361,6 +373,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="protocol">The protocol to use</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithCommunicationProtocol(Protocol protocol)
         {
             this.protocol = protocol;
@@ -411,6 +424,7 @@ namespace Amazon.S3
         /// recommended unless absolutely necessary.
         /// </remarks>
         /// <seealso cref="T:System.Security.SecureString"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonS3Config WithUseSecureStringForAwsSecretKey(bool fSecure)
         {
             fUseSecureString = fSecure;

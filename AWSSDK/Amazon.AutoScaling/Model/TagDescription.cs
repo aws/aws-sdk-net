@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The tag applied to an Auto Scaling group. </para>
     /// </summary>
-    public class TagDescription  
+    public class TagDescription
     {
         
         private string resourceId;
@@ -56,6 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="resourceId">The value to set for the ResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TagDescription WithResourceId(string resourceId)
         {
             this.resourceId = resourceId;
@@ -66,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this.resourceId != null;       
+            return this.resourceId != null;
         }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="resourceType">The value to set for the ResourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TagDescription WithResourceType(string resourceType)
         {
             this.resourceType = resourceType;
@@ -103,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this.resourceType != null;       
+            return this.resourceType != null;
         }
 
         /// <summary>
@@ -134,6 +136,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TagDescription WithKey(string key)
         {
             this.key = key;
@@ -144,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;       
+            return this.key != null;
         }
 
         /// <summary>
@@ -175,6 +178,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TagDescription WithValue(string value)
         {
             this.value = value;
@@ -185,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
 
         /// <summary>
@@ -204,6 +208,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="propagateAtLaunch">The value to set for the PropagateAtLaunch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TagDescription WithPropagateAtLaunch(bool propagateAtLaunch)
         {
             this.propagateAtLaunch = propagateAtLaunch;
@@ -214,7 +219,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PropagateAtLaunch property is set
         internal bool IsSetPropagateAtLaunch()
         {
-            return this.propagateAtLaunch.HasValue;       
+            return this.propagateAtLaunch.HasValue;
         }
     }
 }

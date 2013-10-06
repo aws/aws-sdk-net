@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeStopwordOptionsResult Unmarshaller
      /// </summary>
-    internal class DescribeStopwordOptionsResultUnmarshaller : IUnmarshaller<DescribeStopwordOptionsResult, XmlUnmarshallerContext> 
+    internal class DescribeStopwordOptionsResultUnmarshaller : IUnmarshaller<DescribeStopwordOptionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStopwordOptionsResult, JsonUnmarshallerContext> 
     {
         public DescribeStopwordOptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeStopwordOptionsResult describeStopwordOptionsResult = new DescribeStopwordOptionsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return describeStopwordOptionsResult;
+        }
+
+        public DescribeStopwordOptionsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeStopwordOptionsResultUnmarshaller instance;

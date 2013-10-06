@@ -55,6 +55,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="codec">The value to set for the Codec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithCodec(string codec)
         {
             this.codec = codec;
@@ -93,6 +94,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sampleRate">The value to set for the SampleRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithSampleRate(string sampleRate)
         {
             this.sampleRate = sampleRate;
@@ -130,6 +132,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="bitRate">The value to set for the BitRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithBitRate(string bitRate)
         {
             this.bitRate = bitRate;
@@ -168,6 +171,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="channels">The value to set for the Channels property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithChannels(string channels)
         {
             this.channels = channels;

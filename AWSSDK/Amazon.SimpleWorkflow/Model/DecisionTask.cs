@@ -59,6 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskToken">The value to set for the TaskToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithTaskToken(string taskToken)
         {
             this.taskToken = taskToken;
@@ -87,6 +88,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startedEventId">The value to set for the StartedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithStartedEventId(long startedEventId)
         {
             this.startedEventId = startedEventId;
@@ -115,6 +117,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecution">The value to set for the WorkflowExecution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithWorkflowExecution(WorkflowExecution workflowExecution)
         {
             this.workflowExecution = workflowExecution;
@@ -143,6 +146,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowType">The value to set for the WorkflowType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithWorkflowType(WorkflowType workflowType)
         {
             this.workflowType = workflowType;
@@ -170,6 +174,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithEvents(params HistoryEvent[] events)
         {
             foreach (HistoryEvent element in events)
@@ -185,6 +190,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithEvents(IEnumerable<HistoryEvent> events)
         {
             foreach (HistoryEvent element in events)
@@ -226,6 +232,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;
@@ -255,6 +262,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="previousStartedEventId">The value to set for the PreviousStartedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecisionTask WithPreviousStartedEventId(long previousStartedEventId)
         {
             this.previousStartedEventId = previousStartedEventId;

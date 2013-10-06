@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -47,6 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="file">The config file to merge with.</param>
         /// <param name="xmlPath">The path in S3 of the XML file.</param>
         /// <returns> A reference to this updated object so that method calls can be chained together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureHadoop WithXml(ConfigFile file, string xmlPath)
         {
             string arg = "";
@@ -82,6 +83,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="key">The config key.</param>
         /// <param name="value">The config value.</param>
         /// <returns>A reference to this updated object so that method calls can be chained together.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureHadoop WithKeyValue(ConfigFile file, String key, String value)
         {
             String arg = "";
@@ -115,11 +117,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>an object which can be used in a RunJobflow call.</returns>
         public BootstrapActionConfig Build()
         {
-            return new BootstrapActionConfig()
-              .WithName("Configure Hadoop")
-              .WithScriptBootstrapAction(new ScriptBootstrapActionConfig()
-                .WithPath("s3://" + bucket + "/bootstrap-actions/configure-hadoop")
-                .WithArgs(args.ToArray()));
+            return new BootstrapActionConfig
+            {
+                Name = "Configure Hadoop",
+                ScriptBootstrapAction = new ScriptBootstrapActionConfig
+                {
+                    Path = "s3://" + bucket + "/bootstrap-actions/configure-hadoop",
+                    Args = args
+                }
+            };
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class CreateInvalidationResult  
+    public class CreateInvalidationResult
     {
         
         private string location;
@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationResult WithLocation(string location)
         {
             this.location = location;
@@ -54,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="invalidation">The value to set for the Invalidation property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationResult WithInvalidation(Invalidation invalidation)
         {
             this.invalidation = invalidation;
@@ -82,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Invalidation property is set
         internal bool IsSetInvalidation()
         {
-            return this.invalidation != null;       
+            return this.invalidation != null;
         }
     }
 }

@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -94,6 +95,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Launch permissions.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithLaunchPermission(params LaunchPermission[] list)
         {
             foreach (LaunchPermission item in list)
@@ -177,6 +179,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product codes attached to this instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithProductCodes(params ProductCode[] list)
         {
             foreach (ProductCode item in list)
@@ -210,6 +213,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="kernelId">Kernel ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -240,6 +244,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ramdiskId">RAM disk ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -270,6 +275,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithDescription(string description)
         {
             this.descriptionField = description;
@@ -307,6 +313,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImageAttribute WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)

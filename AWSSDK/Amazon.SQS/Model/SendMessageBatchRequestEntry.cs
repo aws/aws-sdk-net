@@ -54,6 +54,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="id">An identifier for the message in this batch.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageBatchRequestEntry WithId(string id)
         {
             this.idField = id;
@@ -100,6 +101,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="messageBody">The message to send.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageBatchRequestEntry WithMessageBody(string messageBody)
         {
             this.messageBodyField = messageBody;
@@ -129,6 +131,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="delaySeconds">The number of seconds to delay the message from being available for processing.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendMessageBatchRequestEntry WithDelaySeconds(int delaySeconds)
         {
             this.delaySecondsField = delaySeconds;

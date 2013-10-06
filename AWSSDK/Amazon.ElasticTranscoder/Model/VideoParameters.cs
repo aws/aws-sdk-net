@@ -32,6 +32,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string fixedGOP;
         private string bitRate;
         private string frameRate;
+        private string maxFrameRate;
         private string resolution;
         private string aspectRatio;
         private string maxWidth;
@@ -39,6 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string displayAspectRatio;
         private string sizingPolicy;
         private string paddingPolicy;
+        private List<PresetWatermark> watermarks = new List<PresetWatermark>();
 
         /// <summary>
         /// The video codec for the output file. Valid values include <c>H.264</c> and <c>vp8</c>. You can only specify <c>vp8</c> when the container
@@ -65,6 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="codec">The value to set for the Codec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithCodec(string codec)
         {
             this.codec = codec;
@@ -82,17 +85,21 @@ namespace Amazon.ElasticTranscoder.Model
         /// <b>Profile</b> The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles: <ul>
         /// <li><c>baseline</c>: The profile most commonly used for videoconferencing and for mobile applications.</li> <li><c>main</c>: The profile
         /// used for standard-definition digital TV broadcasts.</li> <li><c>high</c>: The profile used for high-definition digital TV broadcasts and for
-        /// Blu-ray discs.</li> </ul> <b>Level</b> The H.264 level that you want to use for the output file. Elastic Transcoder supports the following
-        /// levels: <c>1</c>, <c>1b</c>, <c>1.1</c>, <c>1.2</c>, <c>1.3</c>, <c>2</c>, <c>2.1</c>, <c>2.2</c>, <c>3</c>, <c>3.1</c>, <c>3.2</c>,
-        /// <c>4</c>, <c>4.1</c> <b>MaxReferenceFrames</b> The maximum number of previously decoded frames to use as a reference for decoding future
-        /// frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following: <c>Min(Floor(Maximum
-        /// decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</c> where <i>Width in pixels</i> and <i>Height in
-        /// pixels</i> represent the resolution of the output video and <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the
-        /// <c>Level</c> object. (A macroblock is a block of pixels measuring 16x16.) Note that the calculation for maximum decoded picture buffer,
-        /// which is similar to the calculation for maximum reference frames, uses macroblocks instead of pixels for the width and height of the video.
-        /// To determine the value of maximum decoded picture buffer in macroblocks, see the following list (<i>Level</i> - <i>Maximum decoded picture
-        /// buffer</i>): <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 -
-        /// 4752</li> <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+        /// Blu-ray discs.</li> </ul> <b>Level (H.264 Only)</b> The H.264 level that you want to use for the output file. Elastic Transcoder supports
+        /// the following levels: <c>1</c>, <c>1b</c>, <c>1.1</c>, <c>1.2</c>, <c>1.3</c>, <c>2</c>, <c>2.1</c>, <c>2.2</c>, <c>3</c>, <c>3.1</c>,
+        /// <c>3.2</c>, <c>4</c>, <c>4.1</c> <b>MaxReferenceFrames (H.264 Only)</b> Applicable only when the value of Video:Codec is H.264. The maximum
+        /// number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we
+        /// recommend that you not use a value greater than the following: <c>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in
+        /// pixels * Height in pixels)), 16)</c> where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or
+        /// Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <c>Level</c> object. See the list below. (A
+        /// macroblock is a block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 -
+        /// 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 -
+        /// 32768</li> <li>4.1 - 32768</li> </ul> <b>MaxBitRate</b> The maximum number of bits per second in a video buffer; the size of the buffer is
+        /// specified by <c>BufferSize</c>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing
+        /// the maximum bit rate, but this also reduces the quality of the video. <b>BufferSize</b> The maximum number of bits in any x seconds of the
+        /// output video. This window is commonly 10 seconds, the standard segment duration when youâ€™re using MPEG-TS for the container type of the
+        /// output video. Specify an integer greater than 0. If you specify <c>MaxBitRate</c> and omit <c>BufferSize</c>, Elastic Transcoder sets
+        /// <c>BufferSize</c> to 10 times the value of <c>MaxBitRate</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -115,6 +122,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the CodecOptions dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithCodecOptions(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -133,8 +141,8 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// The maximum number of frames between key frames. Key frames are fully encoded frames; the frames between key frames are encoded based, in
-        /// part, on the content of the key frames. The value is an integer formatted as a string; valid values are between 1 and 100000, inclusive. A
-        /// higher value results in higher compression but may also discernibly decrease video quality.
+        /// part, on the content of the key frames. The value is an integer formatted as a string; valid values are between 1 (every frame is a key
+        /// frame) and 100000, inclusive. A higher value results in higher compression but may also discernibly decrease video quality.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -157,6 +165,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="keyframesMaxDist">The value to set for the KeyframesMaxDist property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithKeyframesMaxDist(string keyframesMaxDist)
         {
             this.keyframesMaxDist = keyframesMaxDist;
@@ -196,6 +205,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="fixedGOP">The value to set for the FixedGOP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithFixedGOP(string fixedGOP)
         {
             this.fixedGOP = fixedGOP;
@@ -239,6 +249,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="bitRate">The value to set for the BitRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithBitRate(string bitRate)
         {
             this.bitRate = bitRate;
@@ -285,6 +296,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="frameRate">The value to set for the FrameRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithFrameRate(string frameRate)
         {
             this.frameRate = frameRate;
@@ -296,6 +308,47 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetFrameRate()
         {
             return this.frameRate != null;
+        }
+
+        /// <summary>
+        /// If you specify <c>auto</c> for <c>FrameRate</c>, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output
+        /// video. Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than the
+        /// desired maximum frame rate of the output video. Valid values include: <c>10</c>, <c>15</c>, <c>23.97</c>, <c>24</c>, <c>25</c>,
+        /// <c>29.97</c>, <c>30</c>, <c>60</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string MaxFrameRate
+        {
+            get { return this.maxFrameRate; }
+            set { this.maxFrameRate = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxFrameRate property
+        /// </summary>
+        /// <param name="maxFrameRate">The value to set for the MaxFrameRate property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VideoParameters WithMaxFrameRate(string maxFrameRate)
+        {
+            this.maxFrameRate = maxFrameRate;
+            return this;
+        }
+            
+
+        // Check to see if MaxFrameRate property is set
+        internal bool IsSetMaxFrameRate()
+        {
+            return this.maxFrameRate != null;
         }
 
         /// <summary>
@@ -334,6 +387,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="resolution">The value to set for the Resolution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithResolution(string resolution)
         {
             this.resolution = resolution;
@@ -377,6 +431,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="aspectRatio">The value to set for the AspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithAspectRatio(string aspectRatio)
         {
             this.aspectRatio = aspectRatio;
@@ -415,6 +470,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxWidth">The value to set for the MaxWidth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithMaxWidth(string maxWidth)
         {
             this.maxWidth = maxWidth;
@@ -453,6 +509,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="maxHeight">The value to set for the MaxHeight property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithMaxHeight(string maxHeight)
         {
             this.maxHeight = maxHeight;
@@ -490,6 +547,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="displayAspectRatio">The value to set for the DisplayAspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithDisplayAspectRatio(string displayAspectRatio)
         {
             this.displayAspectRatio = displayAspectRatio;
@@ -539,6 +597,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sizingPolicy">The value to set for the SizingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithSizingPolicy(string sizingPolicy)
         {
             this.sizingPolicy = sizingPolicy;
@@ -577,6 +636,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="paddingPolicy">The value to set for the PaddingPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VideoParameters WithPaddingPolicy(string paddingPolicy)
         {
             this.paddingPolicy = paddingPolicy;
@@ -588,6 +648,58 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPaddingPolicy()
         {
             return this.paddingPolicy != null;
+        }
+
+        /// <summary>
+        /// Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using
+        /// this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the
+        /// specified opacity for the duration of the transcoded video. Watermarks can be in .png or .jpg format. If you want to display a watermark
+        /// that is not rectangular, use the .png format, which supports transparency. When you create a job that uses this preset, you specify the .png
+        /// or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you
+        /// specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
+        ///  
+        /// </summary>
+        public List<PresetWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VideoParameters WithWatermarks(params PresetWatermark[] watermarks)
+        {
+            foreach (PresetWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VideoParameters WithWatermarks(IEnumerable<PresetWatermark> watermarks)
+        {
+            foreach (PresetWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
         }
     }
 }

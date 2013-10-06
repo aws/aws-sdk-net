@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(params ConfigurationSettingsDescription[] configurationSettings)
         {
             foreach (ConfigurationSettingsDescription element in configurationSettings)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(IEnumerable<ConfigurationSettingsDescription> configurationSettings)
         {
             foreach (ConfigurationSettingsDescription element in configurationSettings)

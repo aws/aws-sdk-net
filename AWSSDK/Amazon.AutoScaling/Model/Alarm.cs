@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The Alarm data type.</para>
     /// </summary>
-    public class Alarm  
+    public class Alarm
     {
         
         private string alarmName;
@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Alarm WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AlarmName property is set
         internal bool IsSetAlarmName()
         {
-            return this.alarmName != null;       
+            return this.alarmName != null;
         }
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="alarmARN">The value to set for the AlarmARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Alarm WithAlarmARN(string alarmARN)
         {
             this.alarmARN = alarmARN;
@@ -108,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AlarmARN property is set
         internal bool IsSetAlarmARN()
         {
-            return this.alarmARN != null;       
+            return this.alarmARN != null;
         }
     }
 }

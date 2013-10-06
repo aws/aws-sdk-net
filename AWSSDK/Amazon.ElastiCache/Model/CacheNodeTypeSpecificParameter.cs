@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A parameter that has a different value for each Cache Node Type it is applied to. </para>
+    /// <para>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a
+    /// <i>cache.m1.large</i> cache node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.</para>
     /// </summary>
     public class CacheNodeTypeSpecificParameter
     {
@@ -36,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
 
         /// <summary>
-        /// Specifies the name of the parameter.
+        /// The name of the parameter.
         ///  
         /// </summary>
         public string ParameterName
@@ -50,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterName">The value to set for the ParameterName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithParameterName(string parameterName)
         {
             this.parameterName = parameterName;
@@ -64,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides a description of the parameter.
+        /// A description of the parameter.
         ///  
         /// </summary>
         public string Description
@@ -78,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithDescription(string description)
         {
             this.description = description;
@@ -92,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates the source of the parameter value.
+        /// The source of the parameter value.
         ///  
         /// </summary>
         public string Source
@@ -106,6 +109,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithSource(string source)
         {
             this.source = source;
@@ -120,7 +124,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid data type for the parameter.
+        /// The valid data type for the parameter.
         ///  
         /// </summary>
         public string DataType
@@ -134,6 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="dataType">The value to set for the DataType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithDataType(string dataType)
         {
             this.dataType = dataType;
@@ -148,7 +153,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the valid range of values for the parameter.
+        /// The valid range of values for the parameter.
         ///  
         /// </summary>
         public string AllowedValues
@@ -162,6 +167,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="allowedValues">The value to set for the AllowedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithAllowedValues(string allowedValues)
         {
             this.allowedValues = allowedValues;
@@ -191,6 +197,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="isModifiable">The value to set for the IsModifiable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithIsModifiable(bool isModifiable)
         {
             this.isModifiable = isModifiable;
@@ -205,7 +212,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The earliest engine version to which the parameter can apply.
+        /// The earliest cache engine version to which the parameter can apply.
         ///  
         /// </summary>
         public string MinimumEngineVersion
@@ -219,6 +226,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="minimumEngineVersion">The value to set for the MinimumEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithMinimumEngineVersion(string minimumEngineVersion)
         {
             this.minimumEngineVersion = minimumEngineVersion;
@@ -233,7 +241,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of Cache Node types and their corresponding values for this parameter.
+        /// A list of cache node types and their corresponding values for this parameter.
         ///  
         /// </summary>
         public List<CacheNodeTypeSpecificValue> CacheNodeTypeSpecificValues
@@ -246,6 +254,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeTypeSpecificValues">The values to add to the CacheNodeTypeSpecificValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithCacheNodeTypeSpecificValues(params CacheNodeTypeSpecificValue[] cacheNodeTypeSpecificValues)
         {
             foreach (CacheNodeTypeSpecificValue element in cacheNodeTypeSpecificValues)
@@ -261,6 +270,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeTypeSpecificValues">The values to add to the CacheNodeTypeSpecificValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificParameter WithCacheNodeTypeSpecificValues(IEnumerable<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues)
         {
             foreach (CacheNodeTypeSpecificValue element in cacheNodeTypeSpecificValues)

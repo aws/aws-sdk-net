@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithSourceIdentifier(string sourceIdentifier)
         {
             this.sourceIdentifier = sourceIdentifier;
@@ -84,6 +85,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -112,6 +114,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithMessage(string message)
         {
             this.message = message;
@@ -139,6 +142,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithEventCategories(params string[] eventCategories)
         {
             foreach (string element in eventCategories)
@@ -154,6 +158,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithEventCategories(IEnumerable<string> eventCategories)
         {
             foreach (string element in eventCategories)
@@ -185,6 +190,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="date">The value to set for the Date property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Event WithDate(DateTime date)
         {
             this.date = date;

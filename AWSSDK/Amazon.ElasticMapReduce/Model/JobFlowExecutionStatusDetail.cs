@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithState(string state)
         {
             this.state = state;
@@ -85,6 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithCreationDateTime(DateTime creationDateTime)
         {
             this.creationDateTime = creationDateTime;
@@ -113,6 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="startDateTime">The value to set for the StartDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithStartDateTime(DateTime startDateTime)
         {
             this.startDateTime = startDateTime;
@@ -141,6 +144,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="readyDateTime">The value to set for the ReadyDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithReadyDateTime(DateTime readyDateTime)
         {
             this.readyDateTime = readyDateTime;
@@ -169,6 +173,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="endDateTime">The value to set for the EndDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithEndDateTime(DateTime endDateTime)
         {
             this.endDateTime = endDateTime;
@@ -210,6 +215,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="lastStateChangeReason">The value to set for the LastStateChangeReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithLastStateChangeReason(string lastStateChangeReason)
         {
             this.lastStateChangeReason = lastStateChangeReason;

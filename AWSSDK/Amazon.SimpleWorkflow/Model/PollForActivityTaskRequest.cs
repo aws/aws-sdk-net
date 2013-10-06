@@ -74,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForActivityTaskRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -104,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskList">The value to set for the TaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForActivityTaskRequest WithTaskList(TaskList taskList)
         {
             this.taskList = taskList;
@@ -142,6 +144,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForActivityTaskRequest WithIdentity(string identity)
         {
             this.identity = identity;

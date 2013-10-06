@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The CloudFrontOriginAccessIdentityList type. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentityList  
+    public class CloudFrontOriginAccessIdentityList
     {
         
         private string marker;
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="nextMarker">The value to set for the NextMarker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithNextMarker(string nextMarker)
         {
             this.nextMarker = nextMarker;
@@ -87,7 +89,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if NextMarker property is set
         internal bool IsSetNextMarker()
         {
-            return this.nextMarker != null;       
+            return this.nextMarker != null;
         }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -115,7 +118,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
 
         /// <summary>
@@ -134,6 +137,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -144,7 +148,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -162,6 +166,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="quantity">The value to set for the Quantity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithQuantity(int quantity)
         {
             this.quantity = quantity;
@@ -172,7 +177,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;       
+            return this.quantity.HasValue;
         }
 
         /// <summary>
@@ -190,6 +195,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithItems(params CloudFrontOriginAccessIdentitySummary[] items)
         {
             foreach (CloudFrontOriginAccessIdentitySummary element in items)
@@ -199,12 +205,13 @@ namespace Amazon.CloudFront.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Items collection
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentityList WithItems(IEnumerable<CloudFrontOriginAccessIdentitySummary> items)
         {
             foreach (CloudFrontOriginAccessIdentitySummary element in items)
@@ -218,7 +225,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;       
+            return this.items.Count > 0;
         }
     }
 }

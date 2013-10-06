@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionName">The value to set for the OptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithOptionName(string optionName)
         {
             this.optionName = optionName;
@@ -75,6 +76,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithPort(int port)
         {
             this.port = port;
@@ -102,6 +104,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupMemberships">The values to add to the DBSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithDBSecurityGroupMemberships(params string[] dBSecurityGroupMemberships)
         {
             foreach (string element in dBSecurityGroupMemberships)
@@ -117,6 +120,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupMemberships">The values to add to the DBSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithDBSecurityGroupMemberships(IEnumerable<string> dBSecurityGroupMemberships)
         {
             foreach (string element in dBSecurityGroupMemberships)
@@ -147,6 +151,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithVpcSecurityGroupMemberships(params string[] vpcSecurityGroupMemberships)
         {
             foreach (string element in vpcSecurityGroupMemberships)
@@ -162,6 +167,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupMemberships">The values to add to the VpcSecurityGroupMemberships collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithVpcSecurityGroupMemberships(IEnumerable<string> vpcSecurityGroupMemberships)
         {
             foreach (string element in vpcSecurityGroupMemberships)
@@ -192,6 +198,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithOptionSettings(params OptionSetting[] optionSettings)
         {
             foreach (OptionSetting element in optionSettings)
@@ -207,6 +214,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionConfiguration WithOptionSettings(IEnumerable<OptionSetting> optionSettings)
         {
             foreach (OptionSetting element in optionSettings)

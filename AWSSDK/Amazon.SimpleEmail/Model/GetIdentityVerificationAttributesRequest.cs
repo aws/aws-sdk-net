@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetIdentityVerificationAttributesRequest WithIdentities(params string[] identities)
         {
             foreach (string element in identities)
@@ -62,6 +63,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetIdentityVerificationAttributesRequest WithIdentities(IEnumerable<string> identities)
         {
             foreach (string element in identities)

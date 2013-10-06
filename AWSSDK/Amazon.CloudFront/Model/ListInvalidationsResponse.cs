@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public ListInvalidationsResult ListInvalidationsResult
         {
-            get 
+            get
             {
                 if(this.listInvalidationsResult == null)
                 {
                     this.listInvalidationsResult = new ListInvalidationsResult();
                 }
 
-                return this.listInvalidationsResult; 
+                return this.listInvalidationsResult;
             }
             set { this.listInvalidationsResult = value; }
         }

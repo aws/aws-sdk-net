@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class CreateStreamingDistributionResult  
+    public class CreateStreamingDistributionResult
     {
         
         private StreamingDistribution streamingDistribution;
@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistribution">The value to set for the StreamingDistribution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStreamingDistributionResult WithStreamingDistribution(StreamingDistribution streamingDistribution)
         {
             this.streamingDistribution = streamingDistribution;
@@ -55,7 +56,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistribution property is set
         internal bool IsSetStreamingDistribution()
         {
-            return this.streamingDistribution != null;       
+            return this.streamingDistribution != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStreamingDistributionResult WithLocation(string location)
         {
             this.location = location;
@@ -84,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStreamingDistributionResult WithETag(string eTag)
         {
             this.eTag = eTag;
@@ -112,7 +115,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

@@ -46,6 +46,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cachediSCSIVolumes">The values to add to the CachediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCachediSCSIVolumesResult WithCachediSCSIVolumes(params CachediSCSIVolume[] cachediSCSIVolumes)
         {
             foreach (CachediSCSIVolume element in cachediSCSIVolumes)
@@ -61,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cachediSCSIVolumes">The values to add to the CachediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCachediSCSIVolumesResult WithCachediSCSIVolumes(IEnumerable<CachediSCSIVolume> cachediSCSIVolumes)
         {
             foreach (CachediSCSIVolume element in cachediSCSIVolumes)

@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupOptions">The values to add to the OptionGroupOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOptionGroupOptionsResult WithOptionGroupOptions(params OptionGroupOption[] optionGroupOptions)
         {
             foreach (OptionGroupOption element in optionGroupOptions)
@@ -58,6 +59,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupOptions">The values to add to the OptionGroupOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOptionGroupOptionsResult WithOptionGroupOptions(IEnumerable<OptionGroupOption> optionGroupOptions)
         {
             foreach (OptionGroupOption element in optionGroupOptions)
@@ -90,6 +92,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOptionGroupOptionsResult WithMarker(string marker)
         {
             this.marker = marker;

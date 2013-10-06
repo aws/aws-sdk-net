@@ -56,6 +56,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -109,6 +110,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="bucketRegion">The region locality to use for the new bucket</param>
         /// <returns>the request with the BucketRegion set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithBucketRegion(S3Region bucketRegion)
         {
             BucketRegion = bucketRegion;
@@ -136,6 +138,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketRegionName">The name of the region to contain the bucket</param>
         /// <returns>the request with the BucketRegionName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithBucketRegionName(string bucketRegionName)
         {
             BucketRegionName = bucketRegionName;
@@ -158,6 +161,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// If set to true the bucket will be created in the same region as the configuration of the AmazonS3 client.
         /// </summary>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithUseClientRegion(bool useClientRegion)
         {
             this.useClientRegion = useClientRegion;
@@ -176,6 +180,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -202,6 +207,7 @@ namespace Amazon.S3.Model
         /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         /// <param name="acl">The canned ACL to apply; you can specify only one canned ACL in your request</param>
         /// <returns>The request with the Grants set.</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;

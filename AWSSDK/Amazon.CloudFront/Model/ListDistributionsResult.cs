@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListDistributionsResult  
+    public class ListDistributionsResult
     {
         
         private DistributionList distributionList;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distributionList">The value to set for the DistributionList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsResult WithDistributionList(DistributionList distributionList)
         {
             this.distributionList = distributionList;
@@ -53,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DistributionList property is set
         internal bool IsSetDistributionList()
         {
-            return this.distributionList != null;       
+            return this.distributionList != null;
         }
     }
 }

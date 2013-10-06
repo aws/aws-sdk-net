@@ -20,6 +20,7 @@ using System.IO;
 using System.Linq;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using System.Text;
 
 namespace Amazon.Runtime.Internal
 {
@@ -48,6 +49,7 @@ namespace Amazon.Runtime.Internal
             ProxyHost,
             RequestSigningTime,
             RetryPauseTime,
+            StringToSign,
 
             // overall enums
             AsyncCall,
@@ -180,9 +182,42 @@ namespace Amazon.Runtime.Internal
         {
             errors.Add(new MetricError(metric, exception, messageFormat, args));
         }
-        private static void Log(StringWriter writer, Metric metric, object metricValue)
+        private static void Log(StringBuilder builder, Metric metric, object metricValue)
         {
-            writer.Write("{0} = {1}; ", metric, metricValue);
+            LogHelper(builder, metric, metricValue);
+        }
+        private static void Log(StringBuilder builder, Metric metric, List<object> metricValues)
+        {
+            if (metricValues == null || metricValues.Count == 0)
+                LogHelper(builder, metric);
+            else
+                LogHelper(builder, metric, metricValues.ToArray());
+        }
+        private static void LogHelper(StringBuilder builder, Metric metric, params object[] metricValues)
+        {
+            builder.AppendFormat(CultureInfo.InvariantCulture, "{0} = ", metric);
+            if (metricValues == null)
+            {
+                builder.Append(ObjectToString(metricValues));
+            }
+            else
+            {
+                for (int i = 0; i < metricValues.Length; i++)
+                {
+                    object metricValue = metricValues[i];
+                    string metricValueString = ObjectToString(metricValue);
+                    if (i > 0)
+                        builder.Append(", ");
+                    builder.Append(metricValueString);
+                }
+            }
+            builder.Append("; ");
+        }
+        private static string ObjectToString(object data)
+        {
+            if (data == null)
+                return "NULL";
+            return data.ToString();
         }
 
         #endregion
@@ -396,40 +431,35 @@ namespace Amazon.Runtime.Internal
             if (!IsEnabled)
                 return "Metrics logging disabled";
 
-            string log;
-            using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+            StringBuilder builder = new StringBuilder();
+            lock (metricsLock)
             {
-                lock (metricsLock)
+                foreach (var kvp in Properties)
                 {
-                    foreach (var kvp in Properties)
+                    Metric metric = kvp.Key;
+                    List<object> values = kvp.Value;
+                    Log(builder, metric, values);
+                }
+                foreach (var kvp in Timings)
+                {
+                    Metric metric = kvp.Key;
+                    List<Timing> list = kvp.Value;
+                    foreach (var timing in list)
                     {
-                        Metric metric = kvp.Key;
-                        List<object> values = kvp.Value;
-                        string[] stringValues = values.Select(o => o == null ? "NULL" : o.ToString()).ToArray();
-                        string metricValue = string.Join(", ", stringValues);
-                        Log(writer, metric, metricValue);
-                    }
-                    foreach (var kvp in Timings)
-                    {
-                        Metric metric = kvp.Key;
-                        List<Timing> list = kvp.Value;
-                        foreach (var timing in list)
-                        {
-                            if (timing.IsFinished)
-                                Log(writer, metric, timing.ElapsedTime);
-                        }
-                    }
-                    foreach (var kvp in Counters)
-                    {
-                        Metric metric = kvp.Key;
-                        long value = kvp.Value;
-                        Log(writer, metric, value);
+                        if (timing.IsFinished)
+                            Log(builder, metric, timing.ElapsedTime);
                     }
                 }
-                log = writer.ToString();
-                log = log.Replace(Environment.NewLine, string.Empty);
-                return log;
+                foreach (var kvp in Counters)
+                {
+                    Metric metric = kvp.Key;
+                    long value = kvp.Value;
+                    Log(builder, metric, value);
+                }
             }
+            builder.Replace("\r", "\\r").Replace("\n", "\\n");
+
+            return builder.ToString();
         }
 
         #endregion

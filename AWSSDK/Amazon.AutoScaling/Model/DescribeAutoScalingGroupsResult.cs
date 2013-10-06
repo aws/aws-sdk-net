@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingGroupsType</c> data type. </para>
     /// </summary>
-    public class DescribeAutoScalingGroupsResult  
+    public class DescribeAutoScalingGroupsResult
     {
         
         private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithAutoScalingGroups(params AutoScalingGroup[] autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingGroups collection
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithAutoScalingGroups(IEnumerable<AutoScalingGroup> autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this.autoScalingGroups.Count > 0;       
+            return this.autoScalingGroups.Count > 0;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingGroupsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

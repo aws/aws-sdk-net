@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that describes the Amazon S3 bucket or the HTTP server (for example, a web server) from which CloudFront gets your
     /// files.You must create at least one origin. </para>
     /// </summary>
-    public class Origin  
+    public class Origin
     {
         
         private string id;
@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithId(string id)
         {
             this.id = id;
@@ -59,7 +60,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -89,7 +91,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -108,6 +110,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3OriginConfig">The value to set for the S3OriginConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithS3OriginConfig(S3OriginConfig s3OriginConfig)
         {
             this.s3OriginConfig = s3OriginConfig;
@@ -118,7 +121,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if S3OriginConfig property is set
         internal bool IsSetS3OriginConfig()
         {
-            return this.s3OriginConfig != null;       
+            return this.s3OriginConfig != null;
         }
 
         /// <summary>
@@ -137,6 +140,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="customOriginConfig">The value to set for the CustomOriginConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Origin WithCustomOriginConfig(CustomOriginConfig customOriginConfig)
         {
             this.customOriginConfig = customOriginConfig;
@@ -147,7 +151,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CustomOriginConfig property is set
         internal bool IsSetCustomOriginConfig()
         {
-            return this.customOriginConfig != null;       
+            return this.customOriginConfig != null;
         }
     }
 }

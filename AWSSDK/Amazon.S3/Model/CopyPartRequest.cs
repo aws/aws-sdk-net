@@ -70,6 +70,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcBucket">Name of the bucket containing the object to copy</param>
         /// <returns>the request with the SourceBucket set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithSourceBucket(string srcBucket)
         {
             this.srcBucket = srcBucket;
@@ -103,6 +104,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcKey">Key of the S3 object to copy</param>
         /// <returns>the request with the SourceKey set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithSourceKey(string srcKey)
         {
             this.srcKey = srcKey;
@@ -137,6 +139,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="srcVersionId">Id of the version of the source object to be copied</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithSourceVersionId(string srcVersionId)
         {
             this.srcVersionId = srcVersionId;
@@ -170,6 +173,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="dstBucket">Name of the bucket to contain the copy</param>
         /// <returns>the request with the DestinationBucket set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithDestinationBucket(string dstBucket)
         {
             this.dstBucket = dstBucket;
@@ -202,6 +206,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="dstKey">Key of the copy of the source object</param>
         /// <returns>the response with the Destinationkey set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithDestinationKey(string dstKey)
         {
             this.dstKey = dstKey;
@@ -235,6 +240,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="uploadID">Id of the multipart upload</param>
         /// <returns>the request with the UploadID set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithUploadID(string uploadID)
         {
             this.uploadID = uploadID;
@@ -289,6 +295,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagsToMatch">The items to be added to the ETagsToMatch collection.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithETagsToMatch(params string[] etagsToMatch)
         {
             if (etagsToMatch != null)
@@ -309,6 +316,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagsToMatch">The items to be added to the ETagsToMatch collection.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithETagsToMatch(IEnumerable<String> etagsToMatch)
         {
             if (etagsToMatch != null)
@@ -365,6 +373,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagsToNotMatch">The ETags to add to the ETagsToNotMatch property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithETagsToNotMatch(params string[] etagsToNotMatch)
         {
             if (etagsToNotMatch != null)
@@ -385,6 +394,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="etagsToNotMatch">The ETags to add to the ETagsToNotMatch property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithETagsToNotMatch(IEnumerable<String> etagsToNotMatch)
         {
             if (etagsToNotMatch != null)
@@ -433,6 +443,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="modifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.modifiedSinceDate = modifiedSinceDate;
@@ -479,6 +490,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="unmodifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.unmodifiedSinceDate = unmodifiedSinceDate;
@@ -515,6 +527,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public CopyPartRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -532,6 +545,7 @@ namespace Amazon.S3.Model
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public CopyPartRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
@@ -566,6 +580,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="partNumber">value to set the PartNumber property to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithPartNumber(int partNumber)
         {
             this.partNumber = partNumber;
@@ -607,6 +622,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="firstByte">The value to set the FirstByte property too</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithFirstByte(long firstByte)
         {
             this.firstByte = firstByte;
@@ -648,6 +664,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="lastByte">The value to set the LastByte property to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithLastByte(long lastByte)
         {
             this.lastByte = lastByte;
@@ -691,6 +708,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="serverSideEncryption">ServerSideEncryptionMethod for the new object</param>
         /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyPartRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod serverSideEncryption)
         {
             this.serverSideEncryption = serverSideEncryption;

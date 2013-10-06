@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class AttachInternetGatewayRequest
+    public class AttachInternetGatewayRequest : EC2Request
     {    
         private string internetGatewayIdField;
         private string vpcIdField;
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to attach.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachInternetGatewayRequest WithInternetGatewayId(string internetGatewayId)
         {
             this.internetGatewayIdField = internetGatewayId;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachInternetGatewayRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

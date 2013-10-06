@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -98,6 +99,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;
@@ -138,6 +140,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateURL">The value to set for the TemplateURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithTemplateURL(string templateURL)
         {
             this.templateURL = templateURL;
@@ -165,6 +168,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -180,6 +184,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)
@@ -212,6 +217,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="disableRollback">The value to set for the DisableRollback property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithDisableRollback(bool disableRollback)
         {
             this.disableRollback = disableRollback;
@@ -250,6 +256,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="timeoutInMinutes">The value to set for the TimeoutInMinutes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithTimeoutInMinutes(int timeoutInMinutes)
         {
             this.timeoutInMinutes = timeoutInMinutes;
@@ -287,6 +294,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="notificationARNs">The values to add to the NotificationARNs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithNotificationARNs(params string[] notificationARNs)
         {
             foreach (string element in notificationARNs)
@@ -302,6 +310,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="notificationARNs">The values to add to the NotificationARNs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithNotificationARNs(IEnumerable<string> notificationARNs)
         {
             foreach (string element in notificationARNs)
@@ -338,6 +347,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithCapabilities(params string[] capabilities)
         {
             foreach (string element in capabilities)
@@ -353,6 +363,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="capabilities">The values to add to the Capabilities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithCapabilities(IEnumerable<string> capabilities)
         {
             foreach (string element in capabilities)
@@ -394,6 +405,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="onFailure">The value to set for the OnFailure property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithOnFailure(string onFailure)
         {
             this.onFailure = onFailure;
@@ -422,6 +434,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -437,6 +450,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)

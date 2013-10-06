@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeCacheClustersRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DescribeCacheClusters");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (describeCacheClustersRequest != null && describeCacheClustersRequest.IsSetCacheClusterId())
             {
                 request.Parameters.Add("CacheClusterId", StringUtils.FromString(describeCacheClustersRequest.CacheClusterId));

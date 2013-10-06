@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConsoleOutput WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="timestamp">The time the output was last updated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConsoleOutput WithTimestamp(string timestamp)
         {
             this.timestampField = timestamp;
@@ -110,6 +112,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="output">The console output, Base64 encoded.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConsoleOutput WithOutput(string output)
         {
             this.outputField = output;

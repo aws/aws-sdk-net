@@ -56,6 +56,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -84,6 +85,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="shortname">The value to set for the Shortname property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithShortname(string shortname)
         {
             this.shortname = shortname;
@@ -112,6 +114,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithName(string name)
         {
             this.name = name;
@@ -140,6 +143,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithDescription(string description)
         {
             this.description = description;
@@ -154,7 +158,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer.
+        /// The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS
         /// OpsWorks deploys an application to those instances that are members of the corresponding layer.
         ///  
         /// <para>
@@ -178,6 +182,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithType(string type)
         {
             this.type = type;
@@ -206,6 +211,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appSource">The value to set for the AppSource property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithAppSource(Source appSource)
         {
             this.appSource = appSource;
@@ -233,6 +239,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="domains">The values to add to the Domains collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithDomains(params string[] domains)
         {
             foreach (string element in domains)
@@ -248,6 +255,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="domains">The values to add to the Domains collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithDomains(IEnumerable<string> domains)
         {
             foreach (string element in domains)
@@ -279,6 +287,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enableSsl">The value to set for the EnableSsl property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithEnableSsl(bool enableSsl)
         {
             this.enableSsl = enableSsl;
@@ -307,6 +316,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sslConfiguration">The value to set for the SslConfiguration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithSslConfiguration(SslConfiguration sslConfiguration)
         {
             this.sslConfiguration = sslConfiguration;
@@ -335,6 +345,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppRequest WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)

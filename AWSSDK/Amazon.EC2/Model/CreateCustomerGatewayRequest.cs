@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// gateway's external interface. The IP address must be static and can't be
     /// behind a device performing network address translation (NAT).
     ///
-    /// For device’s that use Border Gateway Protocal (BGP), you can also provide the 
+    /// For deviceï¿½s that use Border Gateway Protocal (BGP), you can also provide the 
     /// device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can 
     /// use an existing ASN assigned to your network. If you don't have an ASN already, 
     /// you can use a private ASN (in the 64512 - 65534 range).
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
     /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateCustomerGatewayRequest
+    public class CreateCustomerGatewayRequest : EC2Request
     {    
         private string typeField;
         private string ipAddressField;
@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The type of VPN connection this customer gateway supports.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCustomerGatewayRequest WithType(string type)
         {
             this.typeField = type;
@@ -106,6 +107,7 @@ namespace Amazon.EC2.Model
         /// <param name="ipAddress">The Internet-routable IP address for the customer gateway's
         /// outside interface. The address must be static.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCustomerGatewayRequest WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -139,6 +141,7 @@ namespace Amazon.EC2.Model
         /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
         /// (BGP) Autonomous System Number (ASN).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCustomerGatewayRequest WithBgpAsn(Decimal bgpAsn)
         {
             this.bgpAsnField = bgpAsn;

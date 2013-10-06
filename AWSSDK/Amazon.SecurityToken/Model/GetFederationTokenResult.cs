@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetFederationToken action.</para>
     /// </summary>
-    public class GetFederationTokenResult  
+    public class GetFederationTokenResult
     {
         
         private Credentials credentials;
@@ -45,6 +45,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;
@@ -55,11 +56,12 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this.credentials != null;       
+            return this.credentials != null;
         }
 
         /// <summary>
-        /// Identifiers for the federated user associated with the credentials. You can use the federated user's ARN in your resource policies.
+        /// Identifiers for the federated user associated with the credentials (such as <c>arn:aws:sts::123456789012:federated-user/Bob</c> or
+        /// <c>123456789012:Bob</c>). You can use the federated user's ARN in your resource policies like in an Amazon S3 bucket policy.
         ///  
         /// </summary>
         public FederatedUser FederatedUser
@@ -73,6 +75,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="federatedUser">The value to set for the FederatedUser property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithFederatedUser(FederatedUser federatedUser)
         {
             this.federatedUser = federatedUser;
@@ -83,12 +86,12 @@ namespace Amazon.SecurityToken.Model
         // Check to see if FederatedUser property is set
         internal bool IsSetFederatedUser()
         {
-            return this.federatedUser != null;       
+            return this.federatedUser != null;
         }
 
         /// <summary>
-        /// A percentage value indicating the size of the policy in packed form. Policies for which the packed size is greater than 100% of the allowed
-        /// value are rejected by the service.
+        /// A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than
+        /// 100 percent of the allowed value.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -111,6 +114,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="packedPolicySize">The value to set for the PackedPolicySize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetFederationTokenResult WithPackedPolicySize(int packedPolicySize)
         {
             this.packedPolicySize = packedPolicySize;
@@ -121,7 +125,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if PackedPolicySize property is set
         internal bool IsSetPackedPolicySize()
         {
-            return this.packedPolicySize.HasValue;       
+            return this.packedPolicySize.HasValue;
         }
     }
 }

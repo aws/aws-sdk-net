@@ -51,6 +51,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="responseMetadata">Information about the request provided by Amazon SimpleDB.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchPutAttributesResponse WithResponseMetadata(ResponseMetadata responseMetadata)
         {
             this.responseMetadataField = responseMetadata;

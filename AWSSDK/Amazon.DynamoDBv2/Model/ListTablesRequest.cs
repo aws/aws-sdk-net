@@ -65,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="exclusiveStartTableName">The value to set for the ExclusiveStartTableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesRequest WithExclusiveStartTableName(string exclusiveStartTableName)
         {
             this.exclusiveStartTableName = exclusiveStartTableName;
@@ -102,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesRequest WithLimit(int limit)
         {
             this.limit = limit;

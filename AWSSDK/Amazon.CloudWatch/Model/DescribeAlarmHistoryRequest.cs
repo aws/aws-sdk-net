@@ -63,6 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmName">The value to set for the AlarmName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithAlarmName(string alarmName)
         {
             this.alarmName = alarmName;
@@ -100,6 +101,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="historyItemType">The value to set for the HistoryItemType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithHistoryItemType(string historyItemType)
         {
             this.historyItemType = historyItemType;
@@ -128,6 +130,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="startDate">The value to set for the StartDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithStartDate(DateTime startDate)
         {
             this.startDate = startDate;
@@ -156,6 +159,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="endDate">The value to set for the EndDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithEndDate(DateTime endDate)
         {
             this.endDate = endDate;
@@ -193,6 +197,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -221,6 +226,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmHistoryRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

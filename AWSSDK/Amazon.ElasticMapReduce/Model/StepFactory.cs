@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Amazon.ElasticMapReduce.Model
@@ -26,33 +27,37 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     /// <example>Create an interactive Hive job flow with debugging enabled:
     /// <code>
-    ///  AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
+    ///    AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
     ///
-    ///  StepFactory stepFactory = new StepFactory();
+    ///    StepFactory stepFactory = new StepFactory();
     ///
-    ///  StepConfig enableDebugging = new StepConfig()
-    ///     .WithName("Enable Debugging")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(stepFactory.NewEnableDebuggingStep());
+    ///  StepConfig enableDebugging = new StepConfig {
+    ///     Name = "Enable Debugging",
+    ///     ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///     HadoopJarStep = stepFactory.NewEnableDebuggingStep()
+    ///  };
     ///
-    ///  StepConfig installHive = new StepConfig()
-    ///     .WithName("Install Hive")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(stepFactory.NewInstallHiveStep());
+    ///  StepConfig installHive = new StepConfig {
+    ///     Name = "Install Hive",
+    ///     ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///     HadoopJarStep = stepFactory.NewInstallHiveStep()
+    ///  };
     ///
-    ///  RunJobFlowRequest request = new RunJobFlowRequest()
-    ///     .WithName("Hive Interactive")
-    ///     .WithSteps(enableDebugging, installHive)
-    ///     .WithLogUri("s3://log-bucket/")
-    ///     .WithInstances(new JobFlowInstancesConfig()
-    ///         .WithEc2KeyName("keypair")
-    ///         .WithHadoopVersion("0.20")
-    ///         .WithInstanceCount(5)
-    ///         .WithKeepJobFlowAliveWhenNoSteps(true)
-    ///         .WithMasterInstanceType("m1.small")
-    ///         .WithSlaveInstanceType("m1.small"));
+    ///  RunJobFlowRequest request = new RunJobFlowRequest {
+    ///     Name = "Hive Interactive",
+    ///     Steps = new List&lt;StepConfig> { enableDebugging, installHive },
+    ///     LogUri = "s3://log-bucket/",
+    ///     Instances = new JobFlowInstancesConfig {
+    ///         Ec2KeyName = "keypair",
+    ///         HadoopVersion = "0.20",
+    ///         InstanceCount = 5,
+    ///         KeepJobFlowAliveWhenNoSteps = true,
+    ///         MasterInstanceType = "m1.small",
+    ///         SlaveInstanceType = "m1.small"
+    ///     }
+    ///  };
     ///
-    /// RunJobFlowResponse response = emr.RunJobFlow(request);
+    ///    RunJobFlowResponse response = emr.RunJobFlow(request);
     /// </code>
     /// </example>
     public class StepFactory
@@ -94,13 +99,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewScriptRunnerStep(string script, params string[] args)
         {
-            string[] appendedArgs = new string[args.Length + 1];
-            appendedArgs[0] = script;
-            Array.Copy(args, 0, appendedArgs, 1, args.Length);
+            List<string> appendedArgs = new List<string>();
+            appendedArgs.Add(script);
+            foreach (var a in args)
+                appendedArgs.Add(a);
 
-            return new HadoopJarStepConfig()
-                .WithJar(String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket))
-                .WithArgs(appendedArgs);
+            return new HadoopJarStepConfig
+            {
+                Jar = String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket),
+                Args = appendedArgs.ToList()
+            };
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// to your data center before launching instances in it.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AttachVpnGatewayRequest
+    public class AttachVpnGatewayRequest : EC2Request
     {    
         private string vpnGatewayIdField;
         private string vpcIdField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnGatewayId">The ID of the virtual private gateway you want to attach
         /// to the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachVpnGatewayRequest WithVpnGatewayId(string vpnGatewayId)
         {
             this.vpnGatewayIdField = vpnGatewayId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpcId">The ID of the VPC you want to attach to the
         /// VPN gateway</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachVpnGatewayRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

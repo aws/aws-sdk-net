@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// and started.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateImageRequest
+    public class CreateImageRequest : EC2Request
     {    
         private string instanceIdField;
         private string nameField;
@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateImageRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// <param name="name">The name of the AMI that was provided during image
         /// creation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateImageRequest WithName(string name)
         {
             this.nameField = name;
@@ -125,6 +127,7 @@ namespace Amazon.EC2.Model
         /// The description of the new image. Can be up to 255 characters.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateImageRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -172,6 +175,7 @@ namespace Amazon.EC2.Model
         /// file system integrity on the created image cannot be guaranteed.
         /// Default is FALSE.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateImageRequest WithNoReboot(bool noReboot)
         {
             this.noRebootField = noReboot;
@@ -209,6 +213,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateImageRequest WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)

@@ -25,10 +25,10 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// <para>To create a job, send a POST request to the <c>/2012-09-25/jobs</c> resource.</para> <para> When you create a job, Elastic Transcoder
-    /// returns JSON data that includes the values that you specified plus information about the job that is created. </para> <para>If you have
-    /// specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you
-    /// currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</para>
+    /// <para> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the
+    /// job that is created. </para> <para>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and
+    /// another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS
+    /// Console).</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CreateJob"/>
     public class CreateJobRequest : AmazonWebServiceRequest
@@ -66,6 +66,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -94,6 +95,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithInput(JobInput input)
         {
             this.input = input;
@@ -122,6 +124,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="output">The value to set for the Output property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutput(CreateJobOutput output)
         {
             this.output = output;
@@ -159,6 +162,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputs(params CreateJobOutput[] outputs)
         {
             foreach (CreateJobOutput element in outputs)
@@ -174,6 +178,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputs(IEnumerable<CreateJobOutput> outputs)
         {
             foreach (CreateJobOutput element in outputs)
@@ -215,6 +220,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputKeyPrefix">The value to set for the OutputKeyPrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithOutputKeyPrefix(string outputKeyPrefix)
         {
             this.outputKeyPrefix = outputKeyPrefix;
@@ -253,6 +259,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPlaylists(params CreateJobPlaylist[] playlists)
         {
             foreach (CreateJobPlaylist element in playlists)
@@ -268,6 +275,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobRequest WithPlaylists(IEnumerable<CreateJobPlaylist> playlists)
         {
             foreach (CreateJobPlaylist element in playlists)

@@ -65,6 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -93,6 +94,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentId">The value to set for the EnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithEnvironmentId(string environmentId)
         {
             this.environmentId = environmentId;
@@ -130,6 +132,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -167,6 +170,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -204,6 +208,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithSolutionStackName(string solutionStackName)
         {
             this.solutionStackName = solutionStackName;
@@ -241,6 +246,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -278,6 +284,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithDescription(string description)
         {
             this.description = description;
@@ -306,6 +313,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="endpointURL">The value to set for the EndpointURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithEndpointURL(string endpointURL)
         {
             this.endpointURL = endpointURL;
@@ -343,6 +351,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="cNAME">The value to set for the CNAME property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithCNAME(string cNAME)
         {
             this.cNAME = cNAME;
@@ -371,6 +380,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateCreated">The value to set for the DateCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithDateCreated(DateTime dateCreated)
         {
             this.dateCreated = dateCreated;
@@ -399,6 +409,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateUpdated">The value to set for the DateUpdated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithDateUpdated(DateTime dateUpdated)
         {
             this.dateUpdated = dateUpdated;
@@ -439,6 +450,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithStatus(string status)
         {
             this.status = status;
@@ -484,6 +496,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="health">The value to set for the Health property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithHealth(string health)
         {
             this.health = health;
@@ -512,6 +525,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="resources">The value to set for the Resources property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentResult WithResources(EnvironmentResourcesDescription resources)
         {
             this.resources = resources;

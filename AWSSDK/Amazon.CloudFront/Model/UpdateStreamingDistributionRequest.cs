@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistributionConfig">The value to set for the StreamingDistributionConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStreamingDistributionRequest WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
         {
             this.streamingDistributionConfig = streamingDistributionConfig;
@@ -59,7 +60,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;       
+            return this.streamingDistributionConfig != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStreamingDistributionRequest WithId(string id)
         {
             this.id = id;
@@ -87,7 +89,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="ifMatch">The value to set for the IfMatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStreamingDistributionRequest WithIfMatch(string ifMatch)
         {
             this.ifMatch = ifMatch;
@@ -115,7 +118,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;       
+            return this.ifMatch != null;
         }
     }
 }

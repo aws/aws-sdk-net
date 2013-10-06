@@ -55,6 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -83,6 +84,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeSizeInBytes">The value to set for the VolumeSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeSizeInBytes(long volumeSizeInBytes)
         {
             this.volumeSizeInBytes = volumeSizeInBytes;
@@ -111,6 +113,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeUsageInBytes">The value to set for the VolumeUsageInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeUsageInBytes(long volumeUsageInBytes)
         {
             this.volumeUsageInBytes = volumeUsageInBytes;
@@ -139,6 +142,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeRecoveryPointTime">The value to set for the VolumeRecoveryPointTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeRecoveryPointTime(string volumeRecoveryPointTime)
         {
             this.volumeRecoveryPointTime = volumeRecoveryPointTime;

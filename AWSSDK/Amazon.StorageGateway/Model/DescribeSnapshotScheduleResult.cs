@@ -64,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotScheduleResult WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -102,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="startAt">The value to set for the StartAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotScheduleResult WithStartAt(int startAt)
         {
             this.startAt = startAt;
@@ -139,6 +141,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="recurrenceInHours">The value to set for the RecurrenceInHours property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotScheduleResult WithRecurrenceInHours(int recurrenceInHours)
         {
             this.recurrenceInHours = recurrenceInHours;
@@ -176,6 +179,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotScheduleResult WithDescription(string description)
         {
             this.description = description;
@@ -213,6 +217,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="timezone">The value to set for the Timezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotScheduleResult WithTimezone(string timezone)
         {
             this.timezone = timezone;

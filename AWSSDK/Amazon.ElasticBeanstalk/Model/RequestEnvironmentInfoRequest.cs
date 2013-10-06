@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentId">The value to set for the EnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestEnvironmentInfoRequest WithEnvironmentId(string environmentId)
         {
             this.environmentId = environmentId;
@@ -96,6 +97,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestEnvironmentInfoRequest WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -133,6 +135,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="infoType">The value to set for the InfoType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestEnvironmentInfoRequest WithInfoType(string infoType)
         {
             this.infoType = infoType;

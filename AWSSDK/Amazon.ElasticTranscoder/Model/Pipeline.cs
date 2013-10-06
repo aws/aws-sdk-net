@@ -62,6 +62,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithId(string id)
         {
             this.id = id;
@@ -74,6 +75,11 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this.id != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string Arn
         {
             get { return this.arn; }
@@ -85,6 +91,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithArn(string arn)
         {
             this.arn = arn;
@@ -123,6 +130,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithName(string name)
         {
             this.name = name;
@@ -161,6 +169,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithStatus(string status)
         {
             this.status = status;
@@ -175,7 +184,8 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding.
+        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for
+        /// watermarks.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -198,6 +208,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="inputBucket">The value to set for the InputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithInputBucket(string inputBucket)
         {
             this.inputBucket = inputBucket;
@@ -236,6 +247,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputBucket">The value to set for the OutputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithOutputBucket(string outputBucket)
         {
             this.outputBucket = outputBucket;
@@ -273,6 +285,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="role">The value to set for the Role property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithRole(string role)
         {
             this.role = role;
@@ -306,6 +319,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="notifications">The value to set for the Notifications property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithNotifications(Notifications notifications)
         {
             this.notifications = notifications;
@@ -349,6 +363,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="contentConfig">The value to set for the ContentConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithContentConfig(PipelineOutputConfig contentConfig)
         {
             this.contentConfig = contentConfig;
@@ -391,6 +406,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailConfig">The value to set for the ThumbnailConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Pipeline WithThumbnailConfig(PipelineOutputConfig thumbnailConfig)
         {
             this.thumbnailConfig = thumbnailConfig;

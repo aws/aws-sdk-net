@@ -54,6 +54,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetACLRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -94,6 +95,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="key">S3 object key</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetACLRequest WithKey(string key)
         {
             this.key = key;
@@ -134,6 +136,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="versionId">The id of the S3 object version</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetACLRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;

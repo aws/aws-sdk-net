@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>PoliciesType</c> data type. </para>
     /// </summary>
-    public class DescribePoliciesResult  
+    public class DescribePoliciesResult
     {
         
         private List<ScalingPolicy> scalingPolicies = new List<ScalingPolicy>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithScalingPolicies(params ScalingPolicy[] scalingPolicies)
         {
             foreach (ScalingPolicy element in scalingPolicies)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScalingPolicies collection
         /// </summary>
         /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithScalingPolicies(IEnumerable<ScalingPolicy> scalingPolicies)
         {
             foreach (ScalingPolicy element in scalingPolicies)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingPolicies property is set
         internal bool IsSetScalingPolicies()
         {
-            return this.scalingPolicies.Count > 0;       
+            return this.scalingPolicies.Count > 0;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

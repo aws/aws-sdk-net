@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithStatus(string status)
         {
             this.status = status;
@@ -75,6 +76,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="region">The value to set for the Region property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithRegion(string region)
         {
             this.region = region;
@@ -103,6 +105,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourceId">The value to set for the ResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithResourceId(string resourceId)
         {
             this.resourceId = resourceId;
@@ -131,6 +134,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="isSuppressed">The value to set for the IsSuppressed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithIsSuppressed(bool isSuppressed)
         {
             this.isSuppressed = isSuppressed;
@@ -160,6 +164,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="metadata">The values to add to the Metadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithMetadata(params string[] metadata)
         {
             foreach (string element in metadata)
@@ -175,6 +180,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="metadata">The values to add to the Metadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourceDetail WithMetadata(IEnumerable<string> metadata)
         {
             foreach (string element in metadata)

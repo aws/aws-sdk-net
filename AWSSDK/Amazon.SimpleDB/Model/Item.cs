@@ -52,6 +52,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="name">The name of the item.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Item WithName(string name)
         {
             this.nameField = name;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="nameEncoding">The encoding for the item's name. For example: base64</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Item WithNameEncoding(string nameEncoding)
         {
             this.nameEncodingField = nameEncoding;
@@ -120,6 +122,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Attribute associated with an Item.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Item WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

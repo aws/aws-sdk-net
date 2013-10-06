@@ -69,6 +69,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -97,6 +98,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithDiskIds(params string[] diskIds)
         {
             foreach (string element in diskIds)
@@ -112,6 +114,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithDiskIds(IEnumerable<string> diskIds)
         {
             foreach (string element in diskIds)
@@ -143,6 +146,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cacheAllocatedInBytes">The value to set for the CacheAllocatedInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithCacheAllocatedInBytes(long cacheAllocatedInBytes)
         {
             this.cacheAllocatedInBytes = cacheAllocatedInBytes;
@@ -171,6 +175,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cacheUsedPercentage">The value to set for the CacheUsedPercentage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithCacheUsedPercentage(double cacheUsedPercentage)
         {
             this.cacheUsedPercentage = cacheUsedPercentage;
@@ -200,6 +205,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cacheDirtyPercentage">The value to set for the CacheDirtyPercentage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithCacheDirtyPercentage(double cacheDirtyPercentage)
         {
             this.cacheDirtyPercentage = cacheDirtyPercentage;
@@ -229,6 +235,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cacheHitPercentage">The value to set for the CacheHitPercentage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithCacheHitPercentage(double cacheHitPercentage)
         {
             this.cacheHitPercentage = cacheHitPercentage;
@@ -258,6 +265,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cacheMissPercentage">The value to set for the CacheMissPercentage property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheResult WithCacheMissPercentage(double cacheMissPercentage)
         {
             this.cacheMissPercentage = cacheMissPercentage;

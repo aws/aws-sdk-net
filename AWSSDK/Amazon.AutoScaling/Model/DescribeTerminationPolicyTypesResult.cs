@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>TerminationPolicyTypes</c> data type.</para>
     /// </summary>
-    public class DescribeTerminationPolicyTypesResult  
+    public class DescribeTerminationPolicyTypesResult
     {
         
         private List<string> terminationPolicyTypes = new List<string>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="terminationPolicyTypes">The values to add to the TerminationPolicyTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTerminationPolicyTypesResult WithTerminationPolicyTypes(params string[] terminationPolicyTypes)
         {
             foreach (string element in terminationPolicyTypes)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the TerminationPolicyTypes collection
         /// </summary>
         /// <param name="terminationPolicyTypes">The values to add to the TerminationPolicyTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTerminationPolicyTypesResult WithTerminationPolicyTypes(IEnumerable<string> terminationPolicyTypes)
         {
             foreach (string element in terminationPolicyTypes)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicyTypes property is set
         internal bool IsSetTerminationPolicyTypes()
         {
-            return this.terminationPolicyTypes.Count > 0;       
+            return this.terminationPolicyTypes.Count > 0;
         }
     }
 }

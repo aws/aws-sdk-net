@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// the command fails and returns an exception.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CancelConversionTaskRequest
+    public class CancelConversionTaskRequest : EC2Request
     {    
         private string conversionTaskIdField;
 
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="conversionTaskId">The ID of the task you want to cancel.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelConversionTaskRequest WithConversionTaskId(string conversionTaskId)
         {
             this.conversionTaskIdField = conversionTaskId;

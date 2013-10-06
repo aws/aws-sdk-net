@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetARN">The value to set for the TargetARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithTargetARN(string targetARN)
         {
             this.targetARN = targetARN;
@@ -93,6 +94,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="networkInterfaceId">The value to set for the NetworkInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceId = networkInterfaceId;
@@ -121,6 +123,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="networkInterfacePort">The value to set for the NetworkInterfacePort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithNetworkInterfacePort(int networkInterfacePort)
         {
             this.networkInterfacePort = networkInterfacePort;
@@ -158,6 +161,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="lunNumber">The value to set for the LunNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithLunNumber(int lunNumber)
         {
             this.lunNumber = lunNumber;
@@ -186,6 +190,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="chapEnabled">The value to set for the ChapEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithChapEnabled(bool chapEnabled)
         {
             this.chapEnabled = chapEnabled;

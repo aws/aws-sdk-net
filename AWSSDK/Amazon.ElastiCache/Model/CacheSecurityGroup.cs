@@ -21,7 +21,13 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Defines a set of EC2 Security groups that are allowed to access a Cache Cluster. </para>
+    /// <para>Represents the output of one of the following operations:</para>
+    /// <ul>
+    /// <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li>
+    /// <li> <i>CreateCacheSecurityGroup</i> </li>
+    /// <li> <i>RevokeCacheSecurityGroupIngress</i> </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class CacheSecurityGroup
     {
@@ -32,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
 
         /// <summary>
-        /// Provides the AWS ID of the owner of a specific Cache Security Group.
+        /// The AWS account ID of the cache security group owner.
         ///  
         /// </summary>
         public string OwnerId
@@ -46,6 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="ownerId">The value to set for the OwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheSecurityGroup WithOwnerId(string ownerId)
         {
             this.ownerId = ownerId;
@@ -60,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Cache Security Group.
+        /// The name of the cache security group.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -74,6 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupName">The value to set for the CacheSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheSecurityGroup WithCacheSecurityGroupName(string cacheSecurityGroupName)
         {
             this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -88,7 +96,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Provides the description of the Cache Security Group.
+        /// The description of the cache security group.
         ///  
         /// </summary>
         public string Description
@@ -102,6 +110,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheSecurityGroup WithDescription(string description)
         {
             this.description = description;
@@ -116,7 +125,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Contains a list of <a>EC2SecurityGroup</a> elements.
+        /// A list of Amazon EC2 security groups that are associated with this cache security group.
         ///  
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
@@ -129,6 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheSecurityGroup WithEC2SecurityGroups(params EC2SecurityGroup[] eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)
@@ -144,6 +154,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheSecurityGroup WithEC2SecurityGroups(IEnumerable<EC2SecurityGroup> eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)

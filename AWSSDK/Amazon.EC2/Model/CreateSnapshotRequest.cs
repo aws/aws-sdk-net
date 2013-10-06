@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
     /// point to remove and click Remove.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateSnapshotRequest
+    public class CreateSnapshotRequest : EC2Request
     {    
         private string volumeIdField;
         private string descriptionField;
@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         /// <param name="volumeId">The ID of the Amazon EBS volume of which to
         /// take a snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSnapshotRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -99,6 +100,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSnapshotRequest WithDescription(string description)
         {
             this.descriptionField = description;

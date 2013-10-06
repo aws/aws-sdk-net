@@ -54,6 +54,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="bucket">The value to set for the Bucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithBucket(string bucket)
         {
             this.bucket = bucket;
@@ -91,6 +92,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="storageClass">The value to set for the StorageClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithStorageClass(string storageClass)
         {
             this.storageClass = storageClass;
@@ -127,6 +129,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithPermissions(params Permission[] permissions)
         {
             foreach (Permission element in permissions)
@@ -142,6 +145,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithPermissions(IEnumerable<Permission> permissions)
         {
             foreach (Permission element in permissions)

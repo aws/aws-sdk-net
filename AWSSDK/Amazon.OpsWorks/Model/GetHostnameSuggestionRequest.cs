@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostnameSuggestion operation.
-    /// <para>Gets a generated hostname for the specified layer, based on the current hostname theme.</para>
+    /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
     public class GetHostnameSuggestionRequest : AmazonWebServiceRequest
@@ -47,6 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetHostnameSuggestionRequest WithLayerId(string layerId)
         {
             this.layerId = layerId;

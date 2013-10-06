@@ -45,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="code">The value to set for the Code property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Category WithCode(string code)
         {
             this.code = code;
@@ -73,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Category WithName(string name)
         {
             this.name = name;

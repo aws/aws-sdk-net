@@ -65,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the UnprocessedItems dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithUnprocessedItems(params KeyValuePair<string, List<WriteRequest>>[] pairs)
         {
             foreach (KeyValuePair<string, List<WriteRequest>> pair in pairs)
@@ -102,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ItemCollectionMetrics dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithItemCollectionMetrics(params KeyValuePair<string, List<ItemCollectionMetrics>>[] pairs)
         {
             foreach (KeyValuePair<string, List<ItemCollectionMetrics>> pair in pairs)
@@ -133,6 +135,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The values to add to the ConsumedCapacity collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithConsumedCapacity(params ConsumedCapacity[] consumedCapacity)
         {
             foreach (ConsumedCapacity element in consumedCapacity)
@@ -148,6 +151,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The values to add to the ConsumedCapacity collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithConsumedCapacity(IEnumerable<ConsumedCapacity> consumedCapacity)
         {
             foreach (ConsumedCapacity element in consumedCapacity)

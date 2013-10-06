@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public GetStreamingDistributionConfigResult GetStreamingDistributionConfigResult
         {
-            get 
+            get
             {
                 if(this.getStreamingDistributionConfigResult == null)
                 {
                     this.getStreamingDistributionConfigResult = new GetStreamingDistributionConfigResult();
                 }
 
-                return this.getStreamingDistributionConfigResult; 
+                return this.getStreamingDistributionConfigResult;
             }
             set { this.getStreamingDistributionConfigResult = value; }
         }

@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Identifiers for the federated user associated with the credentials.</para>
+    /// <para>Identifiers for the federated user that is associated with the credentials.</para>
     /// </summary>
-    public class FederatedUser  
+    public class FederatedUser
     {
         
         private string federatedUserId;
         private string arn;
 
         /// <summary>
-        /// The string identifying the federated user associated with the credentials, similar to the UserId of an IAM user.
+        /// The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -57,6 +57,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="federatedUserId">The value to set for the FederatedUserId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public FederatedUser WithFederatedUserId(string federatedUserId)
         {
             this.federatedUserId = federatedUserId;
@@ -67,13 +68,13 @@ namespace Amazon.SecurityToken.Model
         // Check to see if FederatedUserId property is set
         internal bool IsSetFederatedUserId()
         {
-            return this.federatedUserId != null;       
+            return this.federatedUserId != null;
         }
 
         /// <summary>
-        /// The ARN specifying the federated user associated with the credentials. For more information about ARNs and how to use them in policies, see
-        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using IAM</i>.
+        /// The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in
+        /// policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using IAM</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -96,6 +97,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public FederatedUser WithArn(string arn)
         {
             this.arn = arn;
@@ -106,7 +108,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation batch. </para>
     /// </summary>
-    public class InvalidationBatch  
+    public class InvalidationBatch
     {
         
         private Paths paths;
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="paths">The value to set for the Paths property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InvalidationBatch WithPaths(Paths paths)
         {
             this.paths = paths;
@@ -57,7 +58,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this.paths != null;       
+            return this.paths != null;
         }
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InvalidationBatch WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -89,7 +91,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
     }
 }

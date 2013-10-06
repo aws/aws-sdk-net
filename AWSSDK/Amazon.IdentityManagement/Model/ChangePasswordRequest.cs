@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="oldPassword">The value to set for the OldPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangePasswordRequest WithOldPassword(string oldPassword)
         {
             this.oldPassword = oldPassword;
@@ -67,6 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newPassword">The value to set for the NewPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangePasswordRequest WithNewPassword(string newPassword)
         {
             this.newPassword = newPassword;

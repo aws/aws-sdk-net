@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// This command is only available in Amazon VPC
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class UnassignPrivateIpAddressesRequest
+    public class UnassignPrivateIpAddressesRequest : EC2Request
     {
         private string networkInterfaceIdField;
         private List<string> privateIpAddressesField;
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UnassignPrivateIpAddressesRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddresses">List of private IP addresses.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UnassignPrivateIpAddressesRequest WithPrivateIpAddresses(List<string> privateIpAddresses)
         {
             this.privateIpAddressesField = privateIpAddresses;

@@ -50,6 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="eventDate">The value to set for the EventDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithEventDate(DateTime eventDate)
         {
             this.eventDate = eventDate;
@@ -78,6 +79,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithMessage(string message)
         {
             this.message = message;
@@ -115,6 +117,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -152,6 +155,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -189,6 +193,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -226,6 +231,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -254,6 +260,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="requestId">The value to set for the RequestId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithRequestId(string requestId)
         {
             this.requestId = requestId;
@@ -291,6 +298,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="severity">The value to set for the Severity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithSeverity(string severity)
         {
             this.severity = severity;

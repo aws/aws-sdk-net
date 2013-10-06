@@ -52,6 +52,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -80,6 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="eventId">The value to set for the EventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithEventId(string eventId)
         {
             this.eventId = eventId;
@@ -108,6 +110,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -136,6 +139,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="logicalResourceId">The value to set for the LogicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithLogicalResourceId(string logicalResourceId)
         {
             this.logicalResourceId = logicalResourceId;
@@ -164,6 +168,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="physicalResourceId">The value to set for the PhysicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithPhysicalResourceId(string physicalResourceId)
         {
             this.physicalResourceId = physicalResourceId;
@@ -193,6 +198,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="resourceType">The value to set for the ResourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithResourceType(string resourceType)
         {
             this.resourceType = resourceType;
@@ -221,6 +227,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithTimestamp(DateTime timestamp)
         {
             this.timestamp = timestamp;
@@ -258,6 +265,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="resourceStatus">The value to set for the ResourceStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithResourceStatus(string resourceStatus)
         {
             this.resourceStatus = resourceStatus;
@@ -286,6 +294,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="resourceStatusReason">The value to set for the ResourceStatusReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithResourceStatusReason(string resourceStatusReason)
         {
             this.resourceStatusReason = resourceStatusReason;
@@ -314,6 +323,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="resourceProperties">The value to set for the ResourceProperties property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackEvent WithResourceProperties(string resourceProperties)
         {
             this.resourceProperties = resourceProperties;

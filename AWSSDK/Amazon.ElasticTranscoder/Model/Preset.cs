@@ -59,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithId(string id)
         {
             this.id = id;
@@ -96,6 +97,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithName(string name)
         {
             this.name = name;
@@ -133,6 +135,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithDescription(string description)
         {
             this.description = description;
@@ -170,6 +173,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="container">The value to set for the Container property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithContainer(string container)
         {
             this.container = container;
@@ -198,6 +202,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="audio">The value to set for the Audio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithAudio(AudioParameters audio)
         {
             this.audio = audio;
@@ -226,6 +231,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="video">The value to set for the Video property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithVideo(VideoParameters video)
         {
             this.video = video;
@@ -254,6 +260,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnails">The value to set for the Thumbnails property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithThumbnails(Thumbnails thumbnails)
         {
             this.thumbnails = thumbnails;
@@ -291,6 +298,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithType(string type)
         {
             this.type = type;

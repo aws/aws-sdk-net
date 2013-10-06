@@ -61,6 +61,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="serviceCodeList">The values to add to the ServiceCodeList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServicesRequest WithServiceCodeList(params string[] serviceCodeList)
         {
             foreach (string element in serviceCodeList)
@@ -76,6 +77,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="serviceCodeList">The values to add to the ServiceCodeList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServicesRequest WithServiceCodeList(IEnumerable<string> serviceCodeList)
         {
             foreach (string element in serviceCodeList)
@@ -108,6 +110,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServicesRequest WithLanguage(string language)
         {
             this.language = language;

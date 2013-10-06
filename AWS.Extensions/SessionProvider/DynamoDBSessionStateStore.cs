@@ -24,9 +24,9 @@ using System.Web.SessionState;
 using System.Text;
 using System.Threading;
 
-using Amazon.DynamoDB;
-using Amazon.DynamoDB.Model;
-using Amazon.DynamoDB.DocumentModel;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
+using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
 using Amazon.Util;
 
@@ -48,8 +48,8 @@ namespace Amazon.SessionProvider
     ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore"
     ///          AWSAccessKey="YOUR_ACCESS_KEY"
     ///          AWSSecretKey="YOUR_SECRET_KEY"
-	///          Region="us-east-1"
-	///			 Table="ASP.NET_SessionState"
+    ///          Region="us-east-1"
+    ///          Table="ASP.NET_SessionState"
     ///          /&gt;
     ///   &lt;/providers&gt;
     /// &lt;/sessionState&gt;
@@ -175,6 +175,16 @@ namespace Amazon.SessionProvider
         {
             this._ddbClient = ddbClient;
             SetupTable();
+        }
+
+        /// <summary>
+        /// Constructor for testing.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="config"></param>
+        public DynamoDBSessionStateStore(string name, NameValueCollection config)
+        {
+            Initialize(name, config);
         }
 
         /// <summary>
@@ -638,10 +648,11 @@ namespace Amazon.SessionProvider
             filter.AddCondition(ATTRIBUTE_EXPIRES, ScanOperator.LessThan, DateTime.Now);
 
             ScanOperationConfig config = new ScanOperationConfig();
-            config.AttributesToGet = new List<string>();
-            config.AttributesToGet.Add(ATTRIBUTE_SESSION_ID);
+            config.AttributesToGet = new List<string> { ATTRIBUTE_SESSION_ID };
+            config.Select = SelectValues.SpecificAttributes;
             config.Filter = filter;
 
+            DocumentBatchWrite batchWrite = table.CreateBatchWrite();
             Search search = table.Scan(config);
 
             do
@@ -649,9 +660,11 @@ namespace Amazon.SessionProvider
                 List<Document> page = search.GetNextSet();
                 foreach (var document in page)
                 {
-                    table.DeleteItem(document);
+                    batchWrite.AddItemToDelete(document);
                 }
             } while (!search.IsDone);
+
+            batchWrite.Execute();
         }
 
         /// <summary>
@@ -680,15 +693,29 @@ namespace Amazon.SessionProvider
 
         private Table CreateTable()
         {
-            CreateTableRequest createRequest = new CreateTableRequest()
-                .WithTableName(this._tableName)
-                .WithKeySchema(new KeySchema()
-                    .WithHashKeyElement(new KeySchemaElement()
-                        .WithAttributeName(ATTRIBUTE_SESSION_ID)
-                        .WithAttributeType("S")))
-                .WithProvisionedThroughput(new ProvisionedThroughput()
-                    .WithReadCapacityUnits(this._initialReadUnits)
-                    .WithWriteCapacityUnits(this._initialWriteUnits));
+            CreateTableRequest createRequest = new CreateTableRequest
+            {
+                TableName = this._tableName,
+                KeySchema = new List<KeySchemaElement>
+                {
+                    new KeySchemaElement
+                    {
+                        AttributeName = ATTRIBUTE_SESSION_ID, KeyType = "HASH"
+                    }
+                },
+                AttributeDefinitions = new List<AttributeDefinition>
+                {
+                    new AttributeDefinition
+                    {
+                        AttributeName = ATTRIBUTE_SESSION_ID, AttributeType = "S"
+                    }
+                },
+                ProvisionedThroughput = new ProvisionedThroughput
+                {
+                    ReadCapacityUnits = this._initialReadUnits,
+                    WriteCapacityUnits = this._initialWriteUnits
+                }
+            };
             createRequest.BeforeRequestEvent += this.UserAgentRequestEventHandler;
 
             CreateTableResponse response = this._ddbClient.CreateTable(createRequest);
@@ -718,13 +745,17 @@ namespace Amazon.SessionProvider
         /// </summary>
         private void ValidateTable()
         {
-            if (this._table.HashKeyType != DynamoDBEntryType.String)
+            if (this._table.HashKeys.Count != 1)
+                throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because it does not define a single hash key", this._tableName));
+            string hashKey = this._table.HashKeys[0];
+            KeyDescription hashKeyDescription = this._table.Keys[hashKey];
+            if (hashKeyDescription.Type != DynamoDBEntryType.String)
                 throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because hash key is not a string.", this._tableName));
 
-            if (this._table.RangeKeyIsDefined)
+            if (this._table.RangeKeys.Count > 0)
                 throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because it contains a range key in its schema.", this._tableName));
 
-            ATTRIBUTE_SESSION_ID = this._table.HashKeyName;
+            ATTRIBUTE_SESSION_ID = hashKey;
         }
 
         private void deleteItem(string sessionId)

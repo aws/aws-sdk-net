@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="group">The value to set for the Group property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetGroupResult WithGroup(Group group)
         {
             this.group = group;
@@ -73,6 +74,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="users">The values to add to the Users collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetGroupResult WithUsers(params User[] users)
         {
             foreach (User element in users)
@@ -88,6 +90,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="users">The values to add to the Users collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetGroupResult WithUsers(IEnumerable<User> users)
         {
             foreach (User element in users)
@@ -120,6 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetGroupResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -162,6 +166,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetGroupResult WithMarker(string marker)
         {
             this.marker = marker;

@@ -51,6 +51,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="requestId">A unique ID for tracking the request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseMetadata WithRequestId(string requestId)
         {
             this.requestIdField = requestId;
@@ -82,6 +83,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="boxUsage">The measure of machine utilization for this request. This does not include storage or transfer usage.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResponseMetadata WithBoxUsage(string boxUsage)
         {
             this.boxUsageField = boxUsage;

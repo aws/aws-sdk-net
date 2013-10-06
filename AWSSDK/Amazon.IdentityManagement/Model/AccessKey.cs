@@ -61,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKey WithUserName(string userName)
         {
             this.userName = userName;
@@ -102,6 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="accessKeyId">The value to set for the AccessKeyId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKey WithAccessKeyId(string accessKeyId)
         {
             this.accessKeyId = accessKeyId;
@@ -139,6 +141,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKey WithStatus(string status)
         {
             this.status = status;
@@ -167,6 +170,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="secretAccessKey">The value to set for the SecretAccessKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKey WithSecretAccessKey(string secretAccessKey)
         {
             this.secretAccessKey = secretAccessKey;
@@ -195,6 +199,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKey WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;

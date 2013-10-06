@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// specific address.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeAddressesRequest
+    public class DescribeAddressesRequest : EC2Request
     {    
         private List<string> publicIpField;
         private List<string> allocationIdField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Elastic IP address to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAddressesRequest WithPublicIp(params string[] list)
         {
             foreach (string item in list)
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">One or more allocation IDs corresponding to the address 
         /// or addresses to describe. Applies only to VPC addresses.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAddressesRequest WithAllocationId(params string[] list)
         {
             foreach (string item in list)
@@ -149,6 +151,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAddressesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

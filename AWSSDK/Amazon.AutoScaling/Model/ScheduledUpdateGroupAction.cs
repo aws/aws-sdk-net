@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
     /// </summary>
-    public class ScheduledUpdateGroupAction  
+    public class ScheduledUpdateGroupAction
     {
         
         private string autoScalingGroupName;
@@ -65,6 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -75,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -106,6 +107,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionName">The value to set for the ScheduledActionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithScheduledActionName(string scheduledActionName)
         {
             this.scheduledActionName = scheduledActionName;
@@ -116,7 +118,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionName property is set
         internal bool IsSetScheduledActionName()
         {
-            return this.scheduledActionName != null;       
+            return this.scheduledActionName != null;
         }
 
         /// <summary>
@@ -147,6 +149,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledActionARN">The value to set for the ScheduledActionARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithScheduledActionARN(string scheduledActionARN)
         {
             this.scheduledActionARN = scheduledActionARN;
@@ -157,7 +160,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionARN property is set
         internal bool IsSetScheduledActionARN()
         {
-            return this.scheduledActionARN != null;       
+            return this.scheduledActionARN != null;
         }
 
         /// <summary>
@@ -175,6 +178,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="time">The value to set for the Time property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithTime(DateTime time)
         {
             this.time = time;
@@ -185,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Time property is set
         internal bool IsSetTime()
         {
-            return this.time.HasValue;       
+            return this.time.HasValue;
         }
 
         /// <summary>
@@ -204,6 +208,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -214,7 +219,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;       
+            return this.startTime.HasValue;
         }
 
         /// <summary>
@@ -232,6 +237,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -242,7 +248,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;       
+            return this.endTime.HasValue;
         }
 
         /// <summary>
@@ -273,6 +279,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="recurrence">The value to set for the Recurrence property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithRecurrence(string recurrence)
         {
             this.recurrence = recurrence;
@@ -283,7 +290,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Recurrence property is set
         internal bool IsSetRecurrence()
         {
-            return this.recurrence != null;       
+            return this.recurrence != null;
         }
 
         /// <summary>
@@ -301,6 +308,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="minSize">The value to set for the MinSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithMinSize(int minSize)
         {
             this.minSize = minSize;
@@ -311,7 +319,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinSize property is set
         internal bool IsSetMinSize()
         {
-            return this.minSize.HasValue;       
+            return this.minSize.HasValue;
         }
 
         /// <summary>
@@ -329,6 +337,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxSize">The value to set for the MaxSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithMaxSize(int maxSize)
         {
             this.maxSize = maxSize;
@@ -339,7 +348,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxSize property is set
         internal bool IsSetMaxSize()
         {
-            return this.maxSize.HasValue;       
+            return this.maxSize.HasValue;
         }
 
         /// <summary>
@@ -357,6 +366,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="desiredCapacity">The value to set for the DesiredCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScheduledUpdateGroupAction WithDesiredCapacity(int desiredCapacity)
         {
             this.desiredCapacity = desiredCapacity;
@@ -367,7 +377,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;       
+            return this.desiredCapacity.HasValue;
         }
     }
 }

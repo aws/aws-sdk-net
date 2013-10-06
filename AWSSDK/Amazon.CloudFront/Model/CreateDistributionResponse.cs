@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public CreateDistributionResult CreateDistributionResult
         {
-            get 
+            get
             {
                 if(this.createDistributionResult == null)
                 {
                     this.createDistributionResult = new CreateDistributionResult();
                 }
 
-                return this.createDistributionResult; 
+                return this.createDistributionResult;
             }
             set { this.createDistributionResult = value; }
         }

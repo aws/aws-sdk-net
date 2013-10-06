@@ -49,6 +49,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="format">The value to set for the Format property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithFormat(string format)
         {
             this.format = format;
@@ -78,6 +79,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithType(string type)
         {
             this.type = type;
@@ -107,6 +109,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveId">The value to set for the ArchiveId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithArchiveId(string archiveId)
         {
             this.archiveId = archiveId;
@@ -136,6 +139,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithDescription(string description)
         {
             this.description = description;
@@ -165,6 +169,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sNSTopic">The value to set for the SNSTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithSNSTopic(string sNSTopic)
         {
             this.sNSTopic = sNSTopic;
@@ -197,6 +202,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="retrievalByteRange">The value to set for the RetrievalByteRange property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithRetrievalByteRange(string retrievalByteRange)
         {
             this.retrievalByteRange = retrievalByteRange;

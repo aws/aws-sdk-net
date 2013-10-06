@@ -57,6 +57,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="itemCount">The number of all items in the domain.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithItemCount(string itemCount)
         {
             this.itemCountField = itemCount;
@@ -88,6 +89,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="itemNamesSizeBytes">The total size of all item names in the domain, in bytes.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithItemNamesSizeBytes(string itemNamesSizeBytes)
         {
             this.itemNamesSizeBytesField = itemNamesSizeBytes;
@@ -119,6 +121,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="attributeNameCount">The number of unique attribute names in the domain.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithAttributeNameCount(string attributeNameCount)
         {
             this.attributeNameCountField = attributeNameCount;
@@ -150,6 +153,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="attributeNamesSizeBytes">The total size of all unique attribute names, in bytes.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithAttributeNamesSizeBytes(string attributeNamesSizeBytes)
         {
             this.attributeNamesSizeBytesField = attributeNamesSizeBytes;
@@ -181,6 +185,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="attributeValueCount">The number of all attribute name/value pairs in the domain.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithAttributeValueCount(string attributeValueCount)
         {
             this.attributeValueCountField = attributeValueCount;
@@ -212,6 +217,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="attributeValuesSizeBytes">The total size of all attribute values, in bytes.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithAttributeValuesSizeBytes(string attributeValuesSizeBytes)
         {
             this.attributeValuesSizeBytesField = attributeValuesSizeBytes;
@@ -243,6 +249,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="timestamp">The data and time when metadata was calculated in Epoch (UNIX) time.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DomainMetadataResult WithTimestamp(string timestamp)
         {
             this.timestampField = timestamp;

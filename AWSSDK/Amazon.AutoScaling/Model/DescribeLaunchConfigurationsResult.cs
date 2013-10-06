@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfigurationsType</c> data type. </para>
     /// </summary>
-    public class DescribeLaunchConfigurationsResult  
+    public class DescribeLaunchConfigurationsResult
     {
         
         private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLaunchConfigurationsResult WithLaunchConfigurations(params LaunchConfiguration[] launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LaunchConfigurations collection
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLaunchConfigurationsResult WithLaunchConfigurations(IEnumerable<LaunchConfiguration> launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurations property is set
         internal bool IsSetLaunchConfigurations()
         {
-            return this.launchConfigurations.Count > 0;       
+            return this.launchConfigurations.Count > 0;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLaunchConfigurationsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

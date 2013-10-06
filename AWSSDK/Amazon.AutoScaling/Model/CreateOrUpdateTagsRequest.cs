@@ -27,7 +27,8 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the CreateOrUpdateTags operation.
     /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
     /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
-    /// Parameters for more information. </para>
+    /// Parameters for more information. </para> <para>For information on creating tags for your Auto Scaling group, see Tag Your Auto Scaling
+    /// Groups and Amazon EC2 Instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateOrUpdateTags"/>
     public class CreateOrUpdateTagsRequest : AmazonWebServiceRequest
@@ -55,6 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOrUpdateTagsRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -64,12 +66,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateOrUpdateTagsRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)
@@ -83,7 +86,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

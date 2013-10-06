@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -48,6 +48,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithBucketName(string bucketName)
         {
             this.BucketName = bucketName;
@@ -65,6 +66,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithKey(string key)
         {
             this.Key = key;
@@ -82,6 +84,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithVersionId(string versionId)
         {
             this.VersionId = versionId;
@@ -106,6 +109,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.ModifiedSinceDate = modifiedSinceDate;
@@ -130,6 +134,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.UnmodifiedSinceDate = unmodifiedSinceDate;
@@ -156,6 +161,7 @@ namespace Amazon.S3.Transfer
         /// </returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithTimeout(int timeout)
         {
             this.Timeout = timeout;
@@ -198,6 +204,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithFilePath(string filePath)
         {
             this._filePath = filePath;
@@ -242,6 +249,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="handler">A method that is called when WriteObjectProgressEvent is fired.</param>
         /// <returns>this instance of the TransferUtilityDownloadRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityDownloadRequest WithSubscriber(EventHandler<WriteObjectProgressArgs> handler)
         {
             this.WriteObjectProgressEvent += handler;

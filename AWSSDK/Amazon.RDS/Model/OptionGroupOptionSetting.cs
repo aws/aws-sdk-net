@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="settingName">The value to set for the SettingName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithSettingName(string settingName)
         {
             this.settingName = settingName;
@@ -77,6 +78,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="settingDescription">The value to set for the SettingDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithSettingDescription(string settingDescription)
         {
             this.settingDescription = settingDescription;
@@ -105,6 +107,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -133,6 +136,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyType">The value to set for the ApplyType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithApplyType(string applyType)
         {
             this.applyType = applyType;
@@ -161,6 +165,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allowedValues">The value to set for the AllowedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithAllowedValues(string allowedValues)
         {
             this.allowedValues = allowedValues;
@@ -189,6 +194,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="isModifiable">The value to set for the IsModifiable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOptionSetting WithIsModifiable(bool isModifiable)
         {
             this.isModifiable = isModifiable;

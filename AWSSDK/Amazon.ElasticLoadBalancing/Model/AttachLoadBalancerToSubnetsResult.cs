@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachLoadBalancerToSubnetsResult WithSubnets(params string[] subnets)
         {
             foreach (string element in subnets)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachLoadBalancerToSubnetsResult WithSubnets(IEnumerable<string> subnets)
         {
             foreach (string element in subnets)

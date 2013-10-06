@@ -58,6 +58,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="fieldName">The value to set for the FieldName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Selector WithFieldName(string fieldName)
         {
             this.fieldName = fieldName;
@@ -86,6 +87,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="operatorValue">The value to set for the Operator property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Selector WithOperator(Operator operatorValue)
         {
             this.operatorValue = operatorValue;

@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(purchaseReservedCacheNodesOfferingRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "PurchaseReservedCacheNodesOffering");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (purchaseReservedCacheNodesOfferingRequest != null && purchaseReservedCacheNodesOfferingRequest.IsSetReservedCacheNodesOfferingId())
             {
                 request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(purchaseReservedCacheNodesOfferingRequest.ReservedCacheNodesOfferingId));

@@ -62,6 +62,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivatePipelineRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;

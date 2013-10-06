@@ -56,6 +56,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceId">The value to set for the VirtualInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVirtualInterfaceId(string virtualInterfaceId)
         {
             this.virtualInterfaceId = virtualInterfaceId;
@@ -84,6 +85,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithLocation(string location)
         {
             this.location = location;
@@ -112,6 +114,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -140,6 +143,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceType">The value to set for the VirtualInterfaceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVirtualInterfaceType(string virtualInterfaceType)
         {
             this.virtualInterfaceType = virtualInterfaceType;
@@ -168,6 +172,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceName">The value to set for the VirtualInterfaceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVirtualInterfaceName(string virtualInterfaceName)
         {
             this.virtualInterfaceName = virtualInterfaceName;
@@ -196,6 +201,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="vlan">The value to set for the Vlan property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVlan(int vlan)
         {
             this.vlan = vlan;
@@ -224,6 +230,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="asn">The value to set for the Asn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithAsn(int asn)
         {
             this.asn = asn;
@@ -252,6 +259,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="authKey">The value to set for the AuthKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithAuthKey(string authKey)
         {
             this.authKey = authKey;
@@ -280,6 +288,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="amazonAddress">The value to set for the AmazonAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithAmazonAddress(string amazonAddress)
         {
             this.amazonAddress = amazonAddress;
@@ -308,6 +317,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="customerAddress">The value to set for the CustomerAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithCustomerAddress(string customerAddress)
         {
             this.customerAddress = customerAddress;
@@ -350,6 +360,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceState">The value to set for the VirtualInterfaceState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVirtualInterfaceState(string virtualInterfaceState)
         {
             this.virtualInterfaceState = virtualInterfaceState;
@@ -378,6 +389,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="customerRouterConfig">The value to set for the CustomerRouterConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithCustomerRouterConfig(string customerRouterConfig)
         {
             this.customerRouterConfig = customerRouterConfig;
@@ -406,6 +418,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGatewayId">The value to set for the VirtualGatewayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithVirtualGatewayId(string virtualGatewayId)
         {
             this.virtualGatewayId = virtualGatewayId;
@@ -433,6 +446,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="routeFilterPrefixes">The values to add to the RouteFilterPrefixes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithRouteFilterPrefixes(params RouteFilterPrefix[] routeFilterPrefixes)
         {
             foreach (RouteFilterPrefix element in routeFilterPrefixes)
@@ -448,6 +462,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="routeFilterPrefixes">The values to add to the RouteFilterPrefixes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePublicVirtualInterfaceResult WithRouteFilterPrefixes(IEnumerable<RouteFilterPrefix> routeFilterPrefixes)
         {
             foreach (RouteFilterPrefix element in routeFilterPrefixes)

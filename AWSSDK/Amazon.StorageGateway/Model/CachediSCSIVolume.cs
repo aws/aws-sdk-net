@@ -59,6 +59,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -96,6 +97,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeId">The value to set for the VolumeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeId(string volumeId)
         {
             this.volumeId = volumeId;
@@ -133,6 +135,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeType">The value to set for the VolumeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeType(string volumeType)
         {
             this.volumeType = volumeType;
@@ -170,6 +173,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeStatus">The value to set for the VolumeStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeStatus(string volumeStatus)
         {
             this.volumeStatus = volumeStatus;
@@ -198,6 +202,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeSizeInBytes">The value to set for the VolumeSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeSizeInBytes(long volumeSizeInBytes)
         {
             this.volumeSizeInBytes = volumeSizeInBytes;
@@ -227,6 +232,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeProgress">The value to set for the VolumeProgress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeProgress(double volumeProgress)
         {
             this.volumeProgress = volumeProgress;
@@ -265,6 +271,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="sourceSnapshotId">The value to set for the SourceSnapshotId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithSourceSnapshotId(string sourceSnapshotId)
         {
             this.sourceSnapshotId = sourceSnapshotId;
@@ -293,6 +300,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeiSCSIAttributes">The value to set for the VolumeiSCSIAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CachediSCSIVolume WithVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes)
         {
             this.volumeiSCSIAttributes = volumeiSCSIAttributes;

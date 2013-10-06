@@ -47,6 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(params string[] stackIds)
         {
             foreach (string element in stackIds)
@@ -62,6 +63,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(IEnumerable<string> stackIds)
         {
             foreach (string element in stackIds)

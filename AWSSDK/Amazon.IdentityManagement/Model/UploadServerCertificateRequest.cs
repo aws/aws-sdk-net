@@ -73,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateRequest WithPath(string path)
         {
             this.path = path;
@@ -114,6 +115,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateName">The value to set for the ServerCertificateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateRequest WithServerCertificateName(string serverCertificateName)
         {
             this.serverCertificateName = serverCertificateName;
@@ -155,6 +157,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateBody">The value to set for the CertificateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateRequest WithCertificateBody(string certificateBody)
         {
             this.certificateBody = certificateBody;
@@ -196,6 +199,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="privateKey">The value to set for the PrivateKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateRequest WithPrivateKey(string privateKey)
         {
             this.privateKey = privateKey;
@@ -237,6 +241,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateChain">The value to set for the CertificateChain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateRequest WithCertificateChain(string certificateChain)
         {
             this.certificateChain = certificateChain;

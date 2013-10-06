@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeName">The value to set for the PolicyTypeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyTypeName(string policyTypeName)
         {
             this.policyTypeName = policyTypeName;
@@ -100,6 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeDescriptions">The values to add to the PolicyAttributeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyAttributeDescriptions(params PolicyAttributeDescription[] policyAttributeDescriptions)
         {
             foreach (PolicyAttributeDescription element in policyAttributeDescriptions)
@@ -115,6 +118,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeDescriptions">The values to add to the PolicyAttributeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyAttributeDescriptions(IEnumerable<PolicyAttributeDescription> policyAttributeDescriptions)
         {
             foreach (PolicyAttributeDescription element in policyAttributeDescriptions)

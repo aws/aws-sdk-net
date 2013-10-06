@@ -59,6 +59,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="id">The value that Id is set to</param>
         /// <returns>the request with the Id set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetOriginAccessIdentityConfigRequest WithId(string id)
         {
             this.distId = id;
@@ -86,6 +87,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="config">The value that OriginAccessIdentityConfig is set to</param>
         /// <returns>the request with the Configuration set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetOriginAccessIdentityConfigRequest WithOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig config)
         {
             this.oaiConfig = config;
@@ -122,6 +124,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="etag">The value that ETag is set to</param>
         /// <returns>the request with the ETag set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetOriginAccessIdentityConfigRequest WithETag(string etag)
         {
             this.etagHeader = etag;

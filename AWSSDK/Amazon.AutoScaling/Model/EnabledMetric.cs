@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>EnabledMetric</c> data type. </para>
     /// </summary>
-    public class EnabledMetric  
+    public class EnabledMetric
     {
         
         private string metric;
@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metric">The value to set for the Metric property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnabledMetric WithMetric(string metric)
         {
             this.metric = metric;
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metric property is set
         internal bool IsSetMetric()
         {
-            return this.metric != null;       
+            return this.metric != null;
         }
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularity">The value to set for the Granularity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnabledMetric WithGranularity(string granularity)
         {
             this.granularity = granularity;
@@ -108,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;       
+            return this.granularity != null;
         }
     }
 }

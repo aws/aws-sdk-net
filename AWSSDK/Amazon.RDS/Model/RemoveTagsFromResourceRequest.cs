@@ -34,7 +34,9 @@ namespace Amazon.RDS.Model
         private List<string> tagKeys = new List<string>();
 
         /// <summary>
-        /// The DB Instance the tags will be removed from.
+        /// The DB Instance the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName
@@ -48,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RemoveTagsFromResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;
@@ -75,6 +78,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tagKeys">The values to add to the TagKeys collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RemoveTagsFromResourceRequest WithTagKeys(params string[] tagKeys)
         {
             foreach (string element in tagKeys)
@@ -90,6 +94,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tagKeys">The values to add to the TagKeys collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RemoveTagsFromResourceRequest WithTagKeys(IEnumerable<string> tagKeys)
         {
             foreach (string element in tagKeys)

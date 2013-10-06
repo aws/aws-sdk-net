@@ -44,6 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="label">The value to set for the Label property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsResult WithLabel(string label)
         {
             this.label = label;
@@ -71,6 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="datapoints">The values to add to the Datapoints collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsResult WithDatapoints(params Datapoint[] datapoints)
         {
             foreach (Datapoint element in datapoints)
@@ -86,6 +88,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="datapoints">The values to add to the Datapoints collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsResult WithDatapoints(IEnumerable<Datapoint> datapoints)
         {
             foreach (Datapoint element in datapoints)

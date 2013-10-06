@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecordSets">The values to add to the ResourceRecordSets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithResourceRecordSets(params ResourceRecordSet[] resourceRecordSets)
         {
             foreach (ResourceRecordSet element in resourceRecordSets)
@@ -63,6 +64,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourceRecordSets">The values to add to the ResourceRecordSets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithResourceRecordSets(IEnumerable<ResourceRecordSet> resourceRecordSets)
         {
             foreach (ResourceRecordSet element in resourceRecordSets)
@@ -96,6 +98,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -134,6 +137,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nextRecordName">The value to set for the NextRecordName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithNextRecordName(string nextRecordName)
         {
             this.nextRecordName = nextRecordName;
@@ -172,6 +176,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nextRecordType">The value to set for the NextRecordType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithNextRecordType(string nextRecordType)
         {
             this.nextRecordType = nextRecordType;
@@ -210,6 +215,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nextRecordIdentifier">The value to set for the NextRecordIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithNextRecordIdentifier(string nextRecordIdentifier)
         {
             this.nextRecordIdentifier = nextRecordIdentifier;
@@ -238,6 +244,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListResourceRecordSetsResult WithMaxItems(string maxItems)
         {
             this.maxItems = maxItems;

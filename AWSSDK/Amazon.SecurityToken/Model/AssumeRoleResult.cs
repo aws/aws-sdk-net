@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the AssumeRole action.</para>
     /// </summary>
-    public class AssumeRoleResult  
+    public class AssumeRoleResult
     {
         
         private Credentials credentials;
@@ -31,7 +31,7 @@ namespace Amazon.SecurityToken.Model
         private int? packedPolicySize;
 
         /// <summary>
-        /// The temporary security credentials, which includes an Access Key ID, a Secret Access Key, and a security token.
+        /// The temporary security credentials, which include an access key ID, a secret access key, and a security token.
         ///  
         /// </summary>
         public Credentials Credentials
@@ -45,6 +45,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;
@@ -55,13 +56,13 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this.credentials != null;       
+            return this.credentials != null;
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) and the assumed role ID for the temporary security credentials. The ARN and the role ID are identifiers for
-        /// the temporary security credentials so that you can refer to the temporary credentials in a policy. For example, if you want to build a
-        /// policy that applies to these temporary credentials, you would specify the <c>AssumedRoleUser</c> ARN or role ID in that policy.
+        /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security
+        /// credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID.
+        /// The ARN and ID include the <c>RoleSessionName</c> that you specified when you called <c>AssumeRole</c>.
         ///  
         /// </summary>
         public AssumedRoleUser AssumedRoleUser
@@ -75,6 +76,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="assumedRoleUser">The value to set for the AssumedRoleUser property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithAssumedRoleUser(AssumedRoleUser assumedRoleUser)
         {
             this.assumedRoleUser = assumedRoleUser;
@@ -85,7 +87,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if AssumedRoleUser property is set
         internal bool IsSetAssumedRoleUser()
         {
-            return this.assumedRoleUser != null;       
+            return this.assumedRoleUser != null;
         }
 
         /// <summary>
@@ -113,6 +115,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="packedPolicySize">The value to set for the PackedPolicySize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithPackedPolicySize(int packedPolicySize)
         {
             this.packedPolicySize = packedPolicySize;
@@ -123,7 +126,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if PackedPolicySize property is set
         internal bool IsSetPackedPolicySize()
         {
-            return this.packedPolicySize.HasValue;       
+            return this.packedPolicySize.HasValue;
         }
     }
 }

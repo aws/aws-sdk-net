@@ -68,6 +68,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The value to set for the AccountId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVaultNotificationsRequest WithAccountId(string accountId)
         {
             this.accountId = accountId;
@@ -96,6 +97,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVaultNotificationsRequest WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -124,6 +126,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultNotificationConfig">The value to set for the VaultNotificationConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVaultNotificationsRequest WithVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig)
         {
             this.vaultNotificationConfig = vaultNotificationConfig;

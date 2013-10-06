@@ -66,6 +66,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskToken">The value to set for the TaskToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithTaskToken(string taskToken)
         {
             this.taskToken = taskToken;
@@ -94,6 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisions">The values to add to the Decisions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithDecisions(params Decision[] decisions)
         {
             foreach (Decision element in decisions)
@@ -109,6 +111,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisions">The values to add to the Decisions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithDecisions(IEnumerable<Decision> decisions)
         {
             foreach (Decision element in decisions)
@@ -149,6 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionContext">The value to set for the ExecutionContext property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithExecutionContext(string executionContext)
         {
             this.executionContext = executionContext;

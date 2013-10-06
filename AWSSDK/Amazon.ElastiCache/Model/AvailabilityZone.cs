@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Availability Zone in which the Cache Cluster is launched </para>
+    /// <para>Describes an availability zone in which the cache cluster is launched.</para>
     /// </summary>
     public class AvailabilityZone
     {
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
         private string name;
 
         /// <summary>
-        /// Specifies the name of the Availability Zone
+        /// The name of the availability zone.
         ///  
         /// </summary>
         public string Name
@@ -43,6 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithName(string name)
         {
             this.name = name;

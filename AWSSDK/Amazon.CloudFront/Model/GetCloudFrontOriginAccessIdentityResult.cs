@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetCloudFrontOriginAccessIdentityResult  
+    public class GetCloudFrontOriginAccessIdentityResult
     {
         
         private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cloudFrontOriginAccessIdentity">The value to set for the CloudFrontOriginAccessIdentity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetCloudFrontOriginAccessIdentityResult WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity)
         {
             this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -54,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentity property is set
         internal bool IsSetCloudFrontOriginAccessIdentity()
         {
-            return this.cloudFrontOriginAccessIdentity != null;       
+            return this.cloudFrontOriginAccessIdentity != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetCloudFrontOriginAccessIdentityResult WithETag(string eTag)
         {
             this.eTag = eTag;
@@ -82,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

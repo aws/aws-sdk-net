@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="logFileData">The value to set for the LogFileData property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DownloadDBLogFilePortionResult WithLogFileData(string logFileData)
         {
             this.logFileData = logFileData;
@@ -73,6 +74,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DownloadDBLogFilePortionResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -101,6 +103,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="additionalDataPending">The value to set for the AdditionalDataPending property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DownloadDBLogFilePortionResult WithAdditionalDataPending(bool additionalDataPending)
         {
             this.additionalDataPending = additionalDataPending;

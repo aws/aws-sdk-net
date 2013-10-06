@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         private Recipes defaultRecipes;
         private Recipes customRecipes;
         private string createdAt;
+        private bool? installUpdatesOnBoot;
 
         /// <summary>
         /// The layer stack ID.
@@ -58,6 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -86,6 +88,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -125,6 +128,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithType(string type)
         {
             this.type = type;
@@ -153,6 +157,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithName(string name)
         {
             this.name = name;
@@ -181,6 +186,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="shortname">The value to set for the Shortname property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithShortname(string shortname)
         {
             this.shortname = shortname;
@@ -209,6 +215,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithAttributes(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)
@@ -241,6 +248,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customInstanceProfileArn">The value to set for the CustomInstanceProfileArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithCustomInstanceProfileArn(string customInstanceProfileArn)
         {
             this.customInstanceProfileArn = customInstanceProfileArn;
@@ -268,6 +276,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customSecurityGroupIds">The values to add to the CustomSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithCustomSecurityGroupIds(params string[] customSecurityGroupIds)
         {
             foreach (string element in customSecurityGroupIds)
@@ -283,6 +292,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customSecurityGroupIds">The values to add to the CustomSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithCustomSecurityGroupIds(IEnumerable<string> customSecurityGroupIds)
         {
             foreach (string element in customSecurityGroupIds)
@@ -313,6 +323,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultSecurityGroupNames">The values to add to the DefaultSecurityGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithDefaultSecurityGroupNames(params string[] defaultSecurityGroupNames)
         {
             foreach (string element in defaultSecurityGroupNames)
@@ -328,6 +339,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultSecurityGroupNames">The values to add to the DefaultSecurityGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithDefaultSecurityGroupNames(IEnumerable<string> defaultSecurityGroupNames)
         {
             foreach (string element in defaultSecurityGroupNames)
@@ -358,6 +370,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="packages">The values to add to the Packages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithPackages(params string[] packages)
         {
             foreach (string element in packages)
@@ -373,6 +386,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="packages">The values to add to the Packages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithPackages(IEnumerable<string> packages)
         {
             foreach (string element in packages)
@@ -403,6 +417,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeConfigurations">The values to add to the VolumeConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithVolumeConfigurations(params VolumeConfiguration[] volumeConfigurations)
         {
             foreach (VolumeConfiguration element in volumeConfigurations)
@@ -418,6 +433,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeConfigurations">The values to add to the VolumeConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithVolumeConfigurations(IEnumerable<VolumeConfiguration> volumeConfigurations)
         {
             foreach (VolumeConfiguration element in volumeConfigurations)
@@ -449,6 +465,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enableAutoHealing">The value to set for the EnableAutoHealing property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithEnableAutoHealing(bool enableAutoHealing)
         {
             this.enableAutoHealing = enableAutoHealing;
@@ -478,6 +495,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="autoAssignElasticIps">The value to set for the AutoAssignElasticIps property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithAutoAssignElasticIps(bool autoAssignElasticIps)
         {
             this.autoAssignElasticIps = autoAssignElasticIps;
@@ -492,12 +510,12 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each
-        /// layer, OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events.
-        /// OpsWorks runs custom event recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a particular layer
-        /// to be run in response to each of the five events. To specify a recipe, use the cookbook's directory name in the repository followed by two
-        /// colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the
-        /// dbsetup.rb recipe in the repository's phpapp2 folder.
+        /// AWS OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+        /// each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers
+        /// and events. AWS OpsWorks runs custom event recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a
+        /// particular layer to be run in response to each of the five events. To specify a recipe, use the cookbook's directory name in the repository
+        /// followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup
+        /// specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
         ///  
         /// </summary>
         public Recipes DefaultRecipes
@@ -511,6 +529,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="defaultRecipes">The value to set for the DefaultRecipes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithDefaultRecipes(Recipes defaultRecipes)
         {
             this.defaultRecipes = defaultRecipes;
@@ -539,6 +558,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customRecipes">The value to set for the CustomRecipes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithCustomRecipes(Recipes customRecipes)
         {
             this.customRecipes = customRecipes;
@@ -567,6 +587,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="createdAt">The value to set for the CreatedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Layer WithCreatedAt(string createdAt)
         {
             this.createdAt = createdAt;
@@ -578,6 +599,38 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCreatedAt()
         {
             return this.createdAt != null;
+        }
+
+        /// <summary>
+        /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. If this value is set to
+        /// <c>false</c>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c> stack
+        /// command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We strongly recommend using the
+        /// default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        ///  
+        /// </summary>
+        public bool InstallUpdatesOnBoot
+        {
+            get { return this.installUpdatesOnBoot ?? default(bool); }
+            set { this.installUpdatesOnBoot = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstallUpdatesOnBoot property
+        /// </summary>
+        /// <param name="installUpdatesOnBoot">The value to set for the InstallUpdatesOnBoot property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Layer WithInstallUpdatesOnBoot(bool installUpdatesOnBoot)
+        {
+            this.installUpdatesOnBoot = installUpdatesOnBoot;
+            return this;
+        }
+            
+
+        // Check to see if InstallUpdatesOnBoot property is set
+        internal bool IsSetInstallUpdatesOnBoot()
+        {
+            return this.installUpdatesOnBoot.HasValue;
         }
     }
 }

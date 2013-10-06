@@ -28,7 +28,7 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class CloudFrontSigner : AbstractAWSSigner
     {
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             if (String.IsNullOrEmpty(awsAccessKeyId))
             {

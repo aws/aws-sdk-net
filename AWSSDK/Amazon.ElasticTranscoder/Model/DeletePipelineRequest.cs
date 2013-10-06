@@ -25,9 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// <para>To delete a pipeline, send a DELETE request to the <c>/2012-09-25/pipelines/[pipelineId] </c> resource. </para> <para> You can only
-    /// delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently
-    /// in use, <c>DeletePipeline</c> returns an error. </para>
+    /// <para>The DeletePipeline operation removes a pipeline.</para> <para> You can only delete a pipeline that has never been used or that is not
+    /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.DeletePipeline"/>
     public class DeletePipelineRequest : AmazonWebServiceRequest
@@ -58,6 +57,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeletePipelineRequest WithId(string id)
         {
             this.id = id;

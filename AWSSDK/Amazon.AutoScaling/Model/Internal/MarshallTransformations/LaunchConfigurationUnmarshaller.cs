@@ -126,6 +126,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         launchConfiguration.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("AssociatePublicIpAddress", targetDepth))
+                    {
+                        launchConfiguration.AssociatePublicIpAddress = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

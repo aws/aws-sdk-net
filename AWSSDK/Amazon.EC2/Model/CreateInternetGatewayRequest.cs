@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// it to a VPC using AttachInternetGateway.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateInternetGatewayRequest
+    public class CreateInternetGatewayRequest : EC2Request
     {    
 
     }

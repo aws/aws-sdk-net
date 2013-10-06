@@ -45,6 +45,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="dkimEnabled">The value to set for the DkimEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimEnabled(bool dkimEnabled)
         {
             this.dkimEnabled = dkimEnabled;
@@ -83,6 +84,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="dkimVerificationStatus">The value to set for the DkimVerificationStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimVerificationStatus(string dkimVerificationStatus)
         {
             this.dkimVerificationStatus = dkimVerificationStatus;
@@ -112,6 +114,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimTokens(params string[] dkimTokens)
         {
             foreach (string element in dkimTokens)
@@ -127,6 +130,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimTokens(IEnumerable<string> dkimTokens)
         {
             foreach (string element in dkimTokens)

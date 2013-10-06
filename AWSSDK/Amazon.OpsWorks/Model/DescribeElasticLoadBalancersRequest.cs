@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticLoadBalancers operation.
-    /// <para>Describes a stack's Elastic Load Balancing instances.</para>
+    /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
     public class DescribeElasticLoadBalancersRequest : AmazonWebServiceRequest
@@ -48,6 +48,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -75,6 +76,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersRequest WithLayerIds(params string[] layerIds)
         {
             foreach (string element in layerIds)
@@ -90,6 +92,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersRequest WithLayerIds(IEnumerable<string> layerIds)
         {
             foreach (string element in layerIds)

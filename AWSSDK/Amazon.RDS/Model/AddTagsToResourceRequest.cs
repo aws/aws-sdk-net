@@ -35,7 +35,9 @@ namespace Amazon.RDS.Model
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The DB Instance the tags will be added to.
+        /// The DB Instance the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName
@@ -49,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;
@@ -76,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -91,6 +95,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)

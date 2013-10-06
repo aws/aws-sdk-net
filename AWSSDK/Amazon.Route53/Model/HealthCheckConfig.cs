@@ -60,6 +60,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="iPAddress">The value to set for the IPAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheckConfig WithIPAddress(string iPAddress)
         {
             this.iPAddress = iPAddress;
@@ -97,6 +98,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheckConfig WithPort(int port)
         {
             this.port = port;
@@ -134,6 +136,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheckConfig WithType(string type)
         {
             this.type = type;
@@ -172,6 +175,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="resourcePath">The value to set for the ResourcePath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheckConfig WithResourcePath(string resourcePath)
         {
             this.resourcePath = resourcePath;
@@ -209,6 +213,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="fullyQualifiedDomainName">The value to set for the FullyQualifiedDomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheckConfig WithFullyQualifiedDomainName(string fullyQualifiedDomainName)
         {
             this.fullyQualifiedDomainName = fullyQualifiedDomainName;

@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultList">The values to add to the VaultList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithVaultList(params DescribeVaultOutput[] vaultList)
         {
             foreach (DescribeVaultOutput element in vaultList)
@@ -58,6 +59,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultList">The values to add to the VaultList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithVaultList(IEnumerable<DescribeVaultOutput> vaultList)
         {
             foreach (DescribeVaultOutput element in vaultList)
@@ -90,6 +92,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithMarker(string marker)
         {
             this.marker = marker;

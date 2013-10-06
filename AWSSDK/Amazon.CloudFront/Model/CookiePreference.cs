@@ -20,13 +20,29 @@ using System.IO;
 
 namespace Amazon.CloudFront.Model
 {
-    /// <summary>Cookie Preference
+    /// <summary>
+    /// <para> A complex type that specifies the cookie preferences associated with this cache behavior. </para>
     /// </summary>
-    public class CookiePreference  
+    public class CookiePreference
     {
         
         private string forward;
         private CookieNames whitelistedNames;
+
+        /// <summary>
+        /// Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You
+        /// can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>none, whitelist, all</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Forward
         {
             get { return this.forward; }
@@ -38,6 +54,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="forward">The value to set for the Forward property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookiePreference WithForward(string forward)
         {
             this.forward = forward;
@@ -48,8 +65,14 @@ namespace Amazon.CloudFront.Model
         // Check to see if Forward property is set
         internal bool IsSetForward()
         {
-            return this.forward != null;       
+            return this.forward != null;
         }
+
+        /// <summary>
+        /// A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with
+        /// this cache behavior.
+        ///  
+        /// </summary>
         public CookieNames WhitelistedNames
         {
             get { return this.whitelistedNames; }
@@ -61,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="whitelistedNames">The value to set for the WhitelistedNames property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CookiePreference WithWhitelistedNames(CookieNames whitelistedNames)
         {
             this.whitelistedNames = whitelistedNames;
@@ -71,7 +95,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if WhitelistedNames property is set
         internal bool IsSetWhitelistedNames()
         {
-            return this.whitelistedNames != null;       
+            return this.whitelistedNames != null;
         }
     }
 }

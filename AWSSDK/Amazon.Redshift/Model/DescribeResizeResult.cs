@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="targetNodeType">The value to set for the TargetNodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithTargetNodeType(string targetNodeType)
         {
             this.targetNodeType = targetNodeType;
@@ -77,6 +78,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="targetNumberOfNodes">The value to set for the TargetNumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithTargetNumberOfNodes(int targetNumberOfNodes)
         {
             this.targetNumberOfNodes = targetNumberOfNodes;
@@ -105,6 +107,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="targetClusterType">The value to set for the TargetClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithTargetClusterType(string targetClusterType)
         {
             this.targetClusterType = targetClusterType;
@@ -133,6 +136,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithStatus(string status)
         {
             this.status = status;
@@ -160,6 +164,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesCompleted">The values to add to the ImportTablesCompleted collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesCompleted(params string[] importTablesCompleted)
         {
             foreach (string element in importTablesCompleted)
@@ -175,6 +180,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesCompleted">The values to add to the ImportTablesCompleted collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesCompleted(IEnumerable<string> importTablesCompleted)
         {
             foreach (string element in importTablesCompleted)
@@ -205,6 +211,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesInProgress">The values to add to the ImportTablesInProgress collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesInProgress(params string[] importTablesInProgress)
         {
             foreach (string element in importTablesInProgress)
@@ -220,6 +227,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesInProgress">The values to add to the ImportTablesInProgress collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesInProgress(IEnumerable<string> importTablesInProgress)
         {
             foreach (string element in importTablesInProgress)
@@ -250,6 +258,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesNotStarted">The values to add to the ImportTablesNotStarted collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesNotStarted(params string[] importTablesNotStarted)
         {
             foreach (string element in importTablesNotStarted)
@@ -265,6 +274,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="importTablesNotStarted">The values to add to the ImportTablesNotStarted collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeResizeResult WithImportTablesNotStarted(IEnumerable<string> importTablesNotStarted)
         {
             foreach (string element in importTablesNotStarted)

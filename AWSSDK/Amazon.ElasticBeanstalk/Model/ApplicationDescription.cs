@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -94,6 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDescription(string description)
         {
             this.description = description;
@@ -122,6 +124,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateCreated">The value to set for the DateCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDateCreated(DateTime dateCreated)
         {
             this.dateCreated = dateCreated;
@@ -150,6 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateUpdated">The value to set for the DateUpdated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDateUpdated(DateTime dateUpdated)
         {
             this.dateUpdated = dateUpdated;
@@ -177,6 +181,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versions">The values to add to the Versions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithVersions(params string[] versions)
         {
             foreach (string element in versions)
@@ -192,6 +197,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versions">The values to add to the Versions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithVersions(IEnumerable<string> versions)
         {
             foreach (string element in versions)
@@ -222,6 +228,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationTemplates">The values to add to the ConfigurationTemplates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithConfigurationTemplates(params string[] configurationTemplates)
         {
             foreach (string element in configurationTemplates)
@@ -237,6 +244,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationTemplates">The values to add to the ConfigurationTemplates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithConfigurationTemplates(IEnumerable<string> configurationTemplates)
         {
             foreach (string element in configurationTemplates)

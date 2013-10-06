@@ -30,7 +30,7 @@ namespace Amazon.CloudFront
         public AmazonCloudFrontConfig()
         {
             this.ServiceURL = "https://cloudfront.amazonaws.com/";
-            
+            this.AuthenticationServiceName = "cloudfront";
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2012-07-01";
+                return "2013-08-26";
             }
         }
     }

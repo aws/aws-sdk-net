@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// only data for the specified IDs are returned.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeLicensesRequest
+    public class DescribeLicensesRequest : EC2Request
     {    
         private List<string> licenseIdField;
         private List<Filter> filterField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">Specifies the license registration for which
         /// details are to be returned.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLicensesRequest WithLicenseId(params string[] list)
         {
             foreach (string item in list)
@@ -109,6 +110,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLicensesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

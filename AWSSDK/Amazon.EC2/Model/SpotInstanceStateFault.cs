@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// <param name="code">The reason code for the Spot Instance request
         /// fault</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceStateFault WithCode(string code)
         {
             this.codeField = code;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// <param name="message">The message for the Spot Instance request
         /// fault.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceStateFault WithMessage(string message)
         {
             this.messageField = message;

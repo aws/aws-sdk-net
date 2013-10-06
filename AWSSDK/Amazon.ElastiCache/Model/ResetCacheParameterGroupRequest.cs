@@ -25,9 +25,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetCacheParameterGroup operation.
-    /// <para> Modifies the parameters of a CacheParameterGroup to the engine or system default value. To reset specific parameters submit a list of
-    /// the parameter names. To reset the entire CacheParameterGroup, specify the CacheParameterGroup name and ResetAllParameters parameters.
-    /// </para>
+    /// <para>The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter group to the engine or system default
+    /// value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the
+    /// <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.ResetCacheParameterGroup"/>
     public class ResetCacheParameterGroupRequest : AmazonWebServiceRequest
@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private List<ParameterNameValue> parameterNameValues = new List<ParameterNameValue>();
 
         /// <summary>
-        /// The name of the Cache Parameter Group.
+        /// The name of the cache parameter group to reset.
         ///  
         /// </summary>
         public string CacheParameterGroupName
@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -65,7 +66,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all parameters in the Cache Parameter Group to default values.
+        /// If <i>true</i>, all parameters in the cache parameter group will be reset to default values. If <i>false</i>, no such action occurs. Valid
+        /// values: <c>true</c> | <c>false</c>
         ///  
         /// </summary>
         public bool ResetAllParameters
@@ -79,6 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="resetAllParameters">The value to set for the ResetAllParameters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithResetAllParameters(bool resetAllParameters)
         {
             this.resetAllParameters = resetAllParameters;
@@ -93,8 +96,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An array of parameter names which should be reset. If not resetting the entire CacheParameterGroup, at least one parameter name must be
-        /// supplied.
+        /// An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter
+        /// name.
         ///  
         /// </summary>
         public List<ParameterNameValue> ParameterNameValues
@@ -107,6 +110,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithParameterNameValues(params ParameterNameValue[] parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)
@@ -122,6 +126,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameterNameValues">The values to add to the ParameterNameValues collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetCacheParameterGroupRequest WithParameterNameValues(IEnumerable<ParameterNameValue> parameterNameValues)
         {
             foreach (ParameterNameValue element in parameterNameValues)

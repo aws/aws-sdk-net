@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Describes an attribute of a volume.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVolumeAttributeRequest
+    public class DescribeVolumeAttributeRequest : EC2Request
     {
         private string volumeIdField;
         private string attributeField;
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeAttributeRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attribute">The new attribute</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

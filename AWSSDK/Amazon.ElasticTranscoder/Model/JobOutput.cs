@@ -39,6 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         private long? duration;
         private int? width;
         private int? height;
+        private List<JobWatermark> watermarks = new List<JobWatermark>();
 
         /// <summary>
         /// A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is
@@ -56,6 +57,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithId(string id)
         {
             this.id = id;
@@ -94,6 +96,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithKey(string key)
         {
             this.key = key;
@@ -143,6 +146,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailPattern">The value to set for the ThumbnailPattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithThumbnailPattern(string thumbnailPattern)
         {
             this.thumbnailPattern = thumbnailPattern;
@@ -182,6 +186,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="rotate">The value to set for the Rotate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithRotate(string rotate)
         {
             this.rotate = rotate;
@@ -222,6 +227,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presetId">The value to set for the PresetId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithPresetId(string presetId)
         {
             this.presetId = presetId;
@@ -263,6 +269,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithSegmentDuration(string segmentDuration)
         {
             this.segmentDuration = segmentDuration;
@@ -308,6 +315,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithStatus(string status)
         {
             this.status = status;
@@ -345,6 +353,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="statusDetail">The value to set for the StatusDetail property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithStatusDetail(string statusDetail)
         {
             this.statusDetail = statusDetail;
@@ -373,6 +382,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithDuration(long duration)
         {
             this.duration = duration;
@@ -401,6 +411,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="width">The value to set for the Width property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithWidth(int width)
         {
             this.width = width;
@@ -429,6 +440,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="height">The value to set for the Height property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobOutput WithHeight(int height)
         {
             this.height = height;
@@ -440,6 +452,58 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetHeight()
         {
             return this.height.HasValue;
+        }
+
+        /// <summary>
+        /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
+        /// watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <c>Preset</c> for the current
+        /// output. Watermarks are added to the output video in the sequence in which you list them in the job outputâ€�?the first watermark in the list
+        /// is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset
+        /// cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add will cover the first one, the third
+        /// one will cover the second, and the fourth one will cover the third.
+        ///  
+        /// </summary>
+        public List<JobWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobOutput WithWatermarks(params JobWatermark[] watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobOutput WithWatermarks(IEnumerable<JobWatermark> watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
         }
     }
 }

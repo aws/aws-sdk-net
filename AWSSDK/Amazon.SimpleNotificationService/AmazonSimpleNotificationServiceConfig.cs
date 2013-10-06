@@ -31,10 +31,11 @@ namespace Amazon.SimpleNotificationService
     public class AmazonSimpleNotificationServiceConfig
     {
         private string serviceVersion = "2010-03-31";
+        private string authRegion = null;
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://sns.us-east-1.amazonaws.com/";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
-        private string signatureVersion = "2";
+        private string signatureVersion = "4";
         private string signatureMethod = "HmacSHA256";
         private string proxyHost = null;
         private int proxyPort = -1;
@@ -66,6 +67,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="signatureMethod">SignatureMethod property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithSignatureMethod(string signatureMethod)
         {
             this.signatureMethod = signatureMethod;
@@ -94,6 +96,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="signatureVersion">SignatureVersion property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithSignatureVersion(string signatureVersion)
         {
             this.signatureVersion = signatureVersion;
@@ -123,6 +126,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="userAgent">UserAgent property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithUserAgent(string userAgent)
         {
             this.userAgent = userAgent;
@@ -164,6 +168,18 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
+        /// Gets and sets the AuthenticationRegion property.
+        /// Used in AWS4 request signing, this is an optional property; 
+        /// change it only if the region cannot be determined from the 
+        /// service endpoint.
+        /// </summary>
+        public string AuthenticationRegion
+        {
+            get { return this.authRegion; }
+            set { this.authRegion = value; }
+        }
+
+        /// <summary>
         /// Gets and sets of the ServiceURL property.
         /// This is an optional property; change it
         /// only if you want to try a different service
@@ -180,6 +196,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="serviceURL">ServiceURL property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithServiceURL(string serviceURL)
         {
             this.serviceURL = serviceURL;
@@ -209,6 +226,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="proxyHost">ProxyHost property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithProxyHost(string proxyHost)
         {
             this.proxyHost = proxyHost;
@@ -238,6 +256,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="proxyPort">ProxyPort property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithProxyPort(int proxyPort)
         {
             this.proxyPort = proxyPort;
@@ -267,6 +286,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="maxErrorRetry">MaxErrorRetry property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithMaxErrorRetry(int maxErrorRetry)
         {
             this.maxErrorRetry = maxErrorRetry;
@@ -326,6 +346,7 @@ namespace Amazon.SimpleNotificationService
         /// recommended unless absolutely necessary.
         /// </remarks>
         /// <seealso cref="T:System.Security.SecureString"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithUseSecureStringForAwsSecretKey(bool fSecure)
         {
             fUseSecureString = fSecure;
@@ -435,6 +456,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="proxyCredentials">ProxyCredentials property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSimpleNotificationServiceConfig WithProxyCredentials(ICredentials proxyCredentials)
         {
             this.proxyCredentials = proxyCredentials;

@@ -55,6 +55,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsRequest WithCaseId(string caseId)
         {
             this.caseId = caseId;
@@ -83,6 +84,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="beforeTime">The value to set for the BeforeTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsRequest WithBeforeTime(string beforeTime)
         {
             this.beforeTime = beforeTime;
@@ -111,6 +113,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="afterTime">The value to set for the AfterTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsRequest WithAfterTime(string afterTime)
         {
             this.afterTime = afterTime;
@@ -139,6 +142,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -176,6 +180,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="maxResults">The value to set for the MaxResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsRequest WithMaxResults(int maxResults)
         {
             this.maxResults = maxResults;

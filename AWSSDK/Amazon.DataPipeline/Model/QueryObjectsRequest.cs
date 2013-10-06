@@ -67,6 +67,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -96,6 +97,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="query">The value to set for the Query property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsRequest WithQuery(Query query)
         {
             this.query = query;
@@ -137,6 +139,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="sphere">The value to set for the Sphere property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsRequest WithSphere(string sphere)
         {
             this.sphere = sphere;
@@ -180,6 +183,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -208,6 +212,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsRequest WithLimit(int limit)
         {
             this.limit = limit;

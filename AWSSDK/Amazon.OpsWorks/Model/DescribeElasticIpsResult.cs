@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="elasticIps">The values to add to the ElasticIps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsResult WithElasticIps(params ElasticIp[] elasticIps)
         {
             foreach (ElasticIp element in elasticIps)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="elasticIps">The values to add to the ElasticIps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsResult WithElasticIps(IEnumerable<ElasticIp> elasticIps)
         {
             foreach (ElasticIp element in elasticIps)

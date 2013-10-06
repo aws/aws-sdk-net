@@ -12,66 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Net;
+    using System;
+    using System.Net;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime;
+    using Amazon.Runtime.Internal;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-    /// <summary>
-    ///    Response Unmarshaller for SetVisibleToAllUsers operation
-    /// </summary>
-    internal class SetVisibleToAllUsersResponseUnmarshaller : XmlResponseUnmarshaller
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// Response Unmarshaller for SetVisibleToAllUsers operation
+      /// </summary>
+      internal class SetVisibleToAllUsersResponseUnmarshaller : JsonResponseUnmarshaller
+      {
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SetVisibleToAllUsersResponse response = new SetVisibleToAllUsersResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
-                    }
-                }
-            }
-                
-
-            return response;
+          SetVisibleToAllUsersResponse response = new SetVisibleToAllUsersResponse();
+          
+          return response;
         }
-        
-        
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+          
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+          
+          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
+          {
+            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailure"))
-            {
-                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return ex;
+          }
+  
+          return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
+
         private static SetVisibleToAllUsersResponseUnmarshaller instance;
-
         public static SetVisibleToAllUsersResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new SetVisibleToAllUsersResponseUnmarshaller();
-            }
-            return instance;
+          if (instance == null)
+          {
+            instance = new SetVisibleToAllUsersResponseUnmarshaller();
+          }
+          return instance;
         }
-    
+  
+      }
     }
-}
-    
+  

@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsResult WithPermissions(params Permission[] permissions)
         {
             foreach (Permission element in permissions)
@@ -61,6 +62,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsResult WithPermissions(IEnumerable<Permission> permissions)
         {
             foreach (Permission element in permissions)

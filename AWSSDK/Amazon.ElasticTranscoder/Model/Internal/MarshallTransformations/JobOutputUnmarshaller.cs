@@ -33,7 +33,8 @@
         public JobOutput Unmarshall(JsonUnmarshallerContext context)
         {
             JobOutput jobOutput = new JobOutput();
-          
+          jobOutput.Watermarks = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -106,6 +107,24 @@
               if (context.TestExpression("Height", targetDepth))
               {
                 jobOutput.Height = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Watermarks", targetDepth))
+              {
+                jobOutput.Watermarks = new List<JobWatermark>();
+                        JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     jobOutput.Watermarks.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
                 continue;
               }
   

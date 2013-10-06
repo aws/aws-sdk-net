@@ -490,7 +490,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
                 new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.AttributesToGet != null)
-                request.WithAttributesToGet(currentConfig.AttributesToGet);
+                request.AttributesToGet = currentConfig.AttributesToGet;
 
             var result = DDBClient.GetItem(request);
             var attributeMap = result.GetItemResult.Item;
@@ -1194,7 +1194,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Limit = currentConfig.Limit,
                 Filter = currentConfig.Filter,
                 AttributesToGet = currentConfig.AttributesToGet,
-                Select = currentConfig.Select
+                Select = currentConfig.Select,
+                CollectResults = currentConfig.CollectResults
             };
 
             if (currentConfig.TotalSegments != 0)
@@ -1265,7 +1266,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 IsConsistentRead = config.ConsistentRead,
                 IsBackwardSearch = config.BackwardSearch,
                 IndexName = config.IndexName,
-                Select = config.Select
+                Select = config.Select,
+                CollectResults = config.CollectResults
             };
 
             return ret;

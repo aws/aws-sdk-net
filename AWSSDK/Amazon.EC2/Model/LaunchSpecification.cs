@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">The AMI ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">The name of the key pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithKeyName(string keyName)
         {
             this.keyNameField = keyName;
@@ -131,6 +133,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">The Security Groups to associate the launched
         /// instance with.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithSecurityGroup(params string[] list)
         {
             foreach (string item in list)
@@ -171,6 +174,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithSecurityGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -204,6 +208,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithUserData(string userData)
         {
             this.userDataField = userData;
@@ -235,6 +240,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="addressingType">Deprecated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithAddressingType(string addressingType)
         {
             this.addressingTypeField = addressingType;
@@ -271,6 +277,7 @@ namespace Amazon.EC2.Model
         /// c1.medium | c1.xlarge | m2.2xlarge | m2.4xlarge.
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -301,6 +308,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithPlacement(Placement placement)
         {
             this.placementField = placement;
@@ -331,6 +339,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="kernelId">The ID of the kernel to select.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -367,6 +376,7 @@ namespace Amazon.EC2.Model
         /// requirements for information on whether you need to
         /// specify a RAM disk.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -407,6 +417,7 @@ namespace Amazon.EC2.Model
         /// instance. Each mapping is made up of a virtualName
         /// and a deviceName.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)
@@ -440,6 +451,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="monitoring">Specifies whether to enable monitoring for the Spot Instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithMonitoring(MonitoringSpecification monitoring)
         {
             this.monitoringField = monitoring;
@@ -471,6 +483,7 @@ namespace Amazon.EC2.Model
         /// <param name="subnetId">Specifies the Amazon VPC subnet ID within which to
         /// launch the instance(s) for Amazon Virtual Private Cloud.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -508,6 +521,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Collection of NetworkInterfaceSet</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithNetworkInterfaceSet(params InstanceNetworkInterfaceSpecification[] list)
         {
             foreach (InstanceNetworkInterfaceSpecification item in list)
@@ -543,6 +557,7 @@ namespace Amazon.EC2.Model
         /// An Identity and Access Management Instance Profile to associate with the instance.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithInstanceProfile(IAMInstanceProfile instanceProfile)
         {
             this.instanceProfileField = instanceProfile;
@@ -574,6 +589,7 @@ namespace Amazon.EC2.Model
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchSpecification WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimizedField = ebsOptimized;

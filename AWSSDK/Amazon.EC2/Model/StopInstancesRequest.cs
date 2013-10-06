@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
     /// </para>
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class StopInstancesRequest
+    public class StopInstancesRequest : EC2Request
     {    
         private List<string> instanceIdField;
         private bool? forceField;
@@ -90,6 +90,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">The instance ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StopInstancesRequest WithInstanceId(params string[] list)
         {
             foreach (string item in list)
@@ -134,6 +135,7 @@ namespace Amazon.EC2.Model
         /// system check and repair procedures. This option is not
         /// recommended for Windows instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StopInstancesRequest WithForce(bool force)
         {
             this.forceField = force;

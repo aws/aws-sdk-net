@@ -63,6 +63,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="list">Items represent individual objects that contain one or more attribute name-value pairs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectResult WithItem(params Item[] list)
         {
             foreach (Item item in list)
@@ -99,6 +100,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="nextToken">An opaque token indicating that more than MaxNumberOfItems matched, the response size exceeded 1 megabyte,
         /// or the execution time exceeded 5 seconds.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectResult WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;

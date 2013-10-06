@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeAdjustmentTypes action. </para>
     /// </summary>
-    public class DescribeAdjustmentTypesResult  
+    public class DescribeAdjustmentTypesResult
     {
         
         private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();
@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="adjustmentTypes">The values to add to the AdjustmentTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAdjustmentTypesResult WithAdjustmentTypes(params AdjustmentType[] adjustmentTypes)
         {
             foreach (AdjustmentType element in adjustmentTypes)
@@ -51,12 +52,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AdjustmentTypes collection
         /// </summary>
         /// <param name="adjustmentTypes">The values to add to the AdjustmentTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAdjustmentTypesResult WithAdjustmentTypes(IEnumerable<AdjustmentType> adjustmentTypes)
         {
             foreach (AdjustmentType element in adjustmentTypes)
@@ -70,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentTypes property is set
         internal bool IsSetAdjustmentTypes()
         {
-            return this.adjustmentTypes.Count > 0;       
+            return this.adjustmentTypes.Count > 0;
         }
     }
 }

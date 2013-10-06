@@ -31,6 +31,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string rotate;
         private string presetId;
         private string segmentDuration;
+        private List<JobWatermark> watermarks = new List<JobWatermark>();
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -58,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithKey(string key)
         {
             this.key = key;
@@ -107,6 +109,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailPattern">The value to set for the ThumbnailPattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithThumbnailPattern(string thumbnailPattern)
         {
             this.thumbnailPattern = thumbnailPattern;
@@ -146,6 +149,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="rotate">The value to set for the Rotate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithRotate(string rotate)
         {
             this.rotate = rotate;
@@ -184,6 +188,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presetId">The value to set for the PresetId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithPresetId(string presetId)
         {
             this.presetId = presetId;
@@ -222,6 +227,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithSegmentDuration(string segmentDuration)
         {
             this.segmentDuration = segmentDuration;
@@ -233,6 +239,53 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetSegmentDuration()
         {
             return this.segmentDuration != null;
+        }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
+        public List<JobWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithWatermarks(params JobWatermark[] watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithWatermarks(IEnumerable<JobWatermark> watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
         }
     }
 }

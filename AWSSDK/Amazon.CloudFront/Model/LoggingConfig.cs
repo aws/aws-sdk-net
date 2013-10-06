@@ -23,11 +23,11 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that controls whether access logs are written for the distribution. </para>
     /// </summary>
-    public class LoggingConfig  
+    public class LoggingConfig
     {
         
         private bool? enabled;
-        private bool? includeCookies = false;
+        private bool? includeCookies;
         private string bucket;
         private string prefix;
 
@@ -49,6 +49,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoggingConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -59,7 +60,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="includeCookies">The value to set for the IncludeCookies property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoggingConfig WithIncludeCookies(bool includeCookies)
         {
             this.includeCookies = includeCookies;
@@ -90,7 +92,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IncludeCookies property is set
         internal bool IsSetIncludeCookies()
         {
-            return this.includeCookies.HasValue;       
+            return this.includeCookies.HasValue;
         }
 
         /// <summary>
@@ -108,6 +110,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="bucket">The value to set for the Bucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoggingConfig WithBucket(string bucket)
         {
             this.bucket = bucket;
@@ -118,7 +121,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;       
+            return this.bucket != null;
         }
 
         /// <summary>
@@ -137,6 +140,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="prefix">The value to set for the Prefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoggingConfig WithPrefix(string prefix)
         {
             this.prefix = prefix;
@@ -147,7 +151,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Prefix property is set
         internal bool IsSetPrefix()
         {
-            return this.prefix != null;       
+            return this.prefix != null;
         }
     }
 }

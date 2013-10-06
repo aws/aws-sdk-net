@@ -740,8 +740,10 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (search == null) throw new ArgumentNullException("search");
 
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            // Configure search to not collect results
+            search.CollectResults = false;
 
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             while (!search.IsDone)
             {
                 List<Document> set = search.GetNextSet();

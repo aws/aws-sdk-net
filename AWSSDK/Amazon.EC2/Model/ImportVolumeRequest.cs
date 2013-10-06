@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Creates a new import volume task using metadata from the specified disk image.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ImportVolumeRequest
+    public class ImportVolumeRequest : EC2Request
     {    
         private string availabilityZoneField;
         private DiskImageDetailType imageField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">Availability Zone where the resulting Amazon EBS volume will reside.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="image">Details about the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeRequest WithImage(DiskImageDetailType image)
         {
             this.imageField = image;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Optional description of the volume being imported.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -141,6 +144,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volume">Details about the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportVolumeRequest WithVolume(DiskImageVolumeType volume)
         {
             this.volumeField = volume;

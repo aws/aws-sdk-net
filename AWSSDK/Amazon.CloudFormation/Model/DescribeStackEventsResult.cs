@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackEvents">The values to add to the StackEvents collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackEventsResult WithStackEvents(params StackEvent[] stackEvents)
         {
             foreach (StackEvent element in stackEvents)
@@ -58,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackEvents">The values to add to the StackEvents collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackEventsResult WithStackEvents(IEnumerable<StackEvent> stackEvents)
         {
             foreach (StackEvent element in stackEvents)
@@ -98,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackEventsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

@@ -52,6 +52,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nameServers">The values to add to the NameServers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DelegationSet WithNameServers(params string[] nameServers)
         {
             foreach (string element in nameServers)
@@ -67,6 +68,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="nameServers">The values to add to the NameServers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DelegationSet WithNameServers(IEnumerable<string> nameServers)
         {
             foreach (string element in nameServers)

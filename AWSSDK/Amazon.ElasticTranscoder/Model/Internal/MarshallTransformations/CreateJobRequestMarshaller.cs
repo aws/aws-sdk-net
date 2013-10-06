@@ -152,6 +152,30 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("SegmentDuration");
                             writer.Write(output.SegmentDuration);
                         }
+
+                        if (output != null && output.Watermarks != null && output.Watermarks.Count > 0)
+                        {
+                            List<JobWatermark> watermarksList = output.Watermarks;
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+
+                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                {
+                                    writer.WritePropertyName("PresetWatermarkId");
+                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+                                {
+                                    writer.WritePropertyName("InputKey");
+                                    writer.Write(watermarksListValue.InputKey);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
                         writer.WriteObjectEnd();
                     }
                 }
@@ -189,6 +213,30 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                         {
                             writer.WritePropertyName("SegmentDuration");
                             writer.Write(outputsListValue.SegmentDuration);
+                        }
+
+                        if (outputsListValue != null && outputsListValue.Watermarks != null && outputsListValue.Watermarks.Count > 0)
+                        {
+                            List<JobWatermark> watermarksList = outputsListValue.Watermarks;
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+
+                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                {
+                                    writer.WritePropertyName("PresetWatermarkId");
+                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+                                {
+                                    writer.WritePropertyName("InputKey");
+                                    writer.Write(watermarksListValue.InputKey);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
                         }
                         writer.WriteObjectEnd();
                     }

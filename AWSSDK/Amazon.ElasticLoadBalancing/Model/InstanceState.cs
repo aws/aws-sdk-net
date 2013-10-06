@@ -52,6 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -80,6 +81,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithState(string state)
         {
             this.state = state;
@@ -109,6 +111,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="reasonCode">The value to set for the ReasonCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithReasonCode(string reasonCode)
         {
             this.reasonCode = reasonCode;
@@ -137,6 +140,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithDescription(string description)
         {
             this.description = description;

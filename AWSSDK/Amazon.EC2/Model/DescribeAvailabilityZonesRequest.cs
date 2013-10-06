@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// Zone assignments are mapped independently for each account.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeAvailabilityZonesRequest
+    public class DescribeAvailabilityZonesRequest : EC2Request
     {    
         private List<string> zoneNameField;
         private List<Filter> filterField;
@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Availability Zone name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAvailabilityZonesRequest WithZoneName(params string[] list)
         {
             foreach (string item in list)
@@ -110,6 +111,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAvailabilityZonesRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

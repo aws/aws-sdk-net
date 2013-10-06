@@ -66,6 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRoleRequest WithPath(string path)
         {
             this.path = path;
@@ -107,6 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRoleRequest WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -148,6 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="assumeRolePolicyDocument">The value to set for the AssumeRolePolicyDocument property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRoleRequest WithAssumeRolePolicyDocument(string assumeRolePolicyDocument)
         {
             this.assumeRolePolicyDocument = assumeRolePolicyDocument;

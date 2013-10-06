@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthResult WithInstanceStates(params InstanceState[] instanceStates)
         {
             foreach (InstanceState element in instanceStates)
@@ -57,6 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthResult WithInstanceStates(IEnumerable<InstanceState> instanceStates)
         {
             foreach (InstanceState element in instanceStates)

@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="count">The value to set for the Count property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingTaskCount WithCount(int count)
         {
             this.count = count;
@@ -82,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="truncated">The value to set for the Truncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingTaskCount WithTruncated(bool truncated)
         {
             this.truncated = truncated;

@@ -48,6 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="minimumPasswordLength">The value to set for the MinimumPasswordLength property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithMinimumPasswordLength(int minimumPasswordLength)
         {
             this.minimumPasswordLength = minimumPasswordLength;
@@ -71,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireSymbols">The value to set for the RequireSymbols property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithRequireSymbols(bool requireSymbols)
         {
             this.requireSymbols = requireSymbols;
@@ -94,6 +96,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireNumbers">The value to set for the RequireNumbers property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithRequireNumbers(bool requireNumbers)
         {
             this.requireNumbers = requireNumbers;
@@ -117,6 +120,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireUppercaseCharacters">The value to set for the RequireUppercaseCharacters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithRequireUppercaseCharacters(bool requireUppercaseCharacters)
         {
             this.requireUppercaseCharacters = requireUppercaseCharacters;
@@ -140,6 +144,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireLowercaseCharacters">The value to set for the RequireLowercaseCharacters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithRequireLowercaseCharacters(bool requireLowercaseCharacters)
         {
             this.requireLowercaseCharacters = requireLowercaseCharacters;
@@ -163,6 +168,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="allowUsersToChangePassword">The value to set for the AllowUsersToChangePassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAccountPasswordPolicyRequest WithAllowUsersToChangePassword(bool allowUsersToChangePassword)
         {
             this.allowUsersToChangePassword = allowUsersToChangePassword;

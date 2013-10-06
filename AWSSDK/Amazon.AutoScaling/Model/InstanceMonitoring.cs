@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>InstanceMonitoring</c> data type. </para>
     /// </summary>
-    public class InstanceMonitoring  
+    public class InstanceMonitoring
     {
         
         private bool? enabled;
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceMonitoring WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -53,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
         }
     }
 }

@@ -46,6 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="bounceTopic">The value to set for the BounceTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithBounceTopic(string bounceTopic)
         {
             this.bounceTopic = bounceTopic;
@@ -74,6 +75,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="complaintTopic">The value to set for the ComplaintTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithComplaintTopic(string complaintTopic)
         {
             this.complaintTopic = complaintTopic;
@@ -103,6 +105,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="forwardingEnabled">The value to set for the ForwardingEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithForwardingEnabled(bool forwardingEnabled)
         {
             this.forwardingEnabled = forwardingEnabled;

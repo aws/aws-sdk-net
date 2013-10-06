@@ -71,6 +71,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -108,6 +109,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithAttributesToGet(params string[] attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -123,6 +125,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithAttributesToGet(IEnumerable<string> attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -166,6 +169,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithLimit(int limit)
         {
             this.limit = limit;
@@ -194,6 +198,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="consistentRead">The value to set for the ConsistentRead property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithConsistentRead(bool consistentRead)
         {
             this.consistentRead = consistentRead;
@@ -224,6 +229,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="count">The value to set for the Count property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithCount(bool count)
         {
             this.count = count;
@@ -252,6 +258,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="hashKeyValue">The value to set for the HashKeyValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithHashKeyValue(AttributeValue hashKeyValue)
         {
             this.hashKeyValue = hashKeyValue;
@@ -280,6 +287,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="rangeKeyCondition">The value to set for the RangeKeyCondition property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithRangeKeyCondition(Condition rangeKeyCondition)
         {
             this.rangeKeyCondition = rangeKeyCondition;
@@ -309,6 +317,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="scanIndexForward">The value to set for the ScanIndexForward property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithScanIndexForward(bool scanIndexForward)
         {
             this.scanIndexForward = scanIndexForward;
@@ -339,6 +348,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="exclusiveStartKey">The value to set for the ExclusiveStartKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithExclusiveStartKey(Key exclusiveStartKey)
         {
             this.exclusiveStartKey = exclusiveStartKey;

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an OpsWorks service error.</para>
+    /// <para>Describes an AWS OpsWorks service error.</para>
     /// </summary>
     public class ServiceError
     {
@@ -48,6 +48,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceErrorId">The value to set for the ServiceErrorId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithServiceErrorId(string serviceErrorId)
         {
             this.serviceErrorId = serviceErrorId;
@@ -76,6 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -104,6 +106,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -132,6 +135,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithType(string type)
         {
             this.type = type;
@@ -160,6 +164,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithMessage(string message)
         {
             this.message = message;
@@ -188,6 +193,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="createdAt">The value to set for the CreatedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServiceError WithCreatedAt(string createdAt)
         {
             this.createdAt = createdAt;

@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterParameterGroup WithParameterGroupName(string parameterGroupName)
         {
             this.parameterGroupName = parameterGroupName;
@@ -73,6 +74,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupFamily">The value to set for the ParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterParameterGroup WithParameterGroupFamily(string parameterGroupFamily)
         {
             this.parameterGroupFamily = parameterGroupFamily;
@@ -101,6 +103,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterParameterGroup WithDescription(string description)
         {
             this.description = description;

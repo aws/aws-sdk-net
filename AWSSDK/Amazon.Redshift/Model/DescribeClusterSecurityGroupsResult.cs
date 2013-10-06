@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsResult WithClusterSecurityGroups(params ClusterSecurityGroup[] clusterSecurityGroups)
         {
             foreach (ClusterSecurityGroup element in clusterSecurityGroups)
@@ -87,6 +89,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsResult WithClusterSecurityGroups(IEnumerable<ClusterSecurityGroup> clusterSecurityGroups)
         {
             foreach (ClusterSecurityGroup element in clusterSecurityGroups)

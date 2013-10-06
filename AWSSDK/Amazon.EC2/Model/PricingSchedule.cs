@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="term">Number of months remaining</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PricingSchedule WithTerm(Decimal term)
         {
             this.termField = term;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="price">Fixed price, up to 3 decimal position</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PricingSchedule WithPrice(Decimal price)
         {
             this.priceField = price;
@@ -115,6 +117,7 @@ namespace Amazon.EC2.Model
         /// <param name="currencyCode">Currency code</param>
         /// <returns>this instance</returns>
         /// <remarks>Possible values "USD"</remarks>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PricingSchedule WithCurrencyCode(string currencyCode)
         {
             this.currencyCodeField = currencyCode;

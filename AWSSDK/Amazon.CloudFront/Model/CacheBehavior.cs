@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
     /// distribution configuration and include only an empty CacheBehaviors element. To add, change, or remove one or more cache behaviors, update
     /// the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution. </para>
     /// </summary>
-    public class CacheBehavior  
+    public class CacheBehavior
     {
         
         private string pathPattern;
@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="pathPattern">The value to set for the PathPattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithPathPattern(string pathPattern)
         {
             this.pathPattern = pathPattern;
@@ -68,7 +69,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if PathPattern property is set
         internal bool IsSetPathPattern()
         {
-            return this.pathPattern != null;       
+            return this.pathPattern != null;
         }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="targetOriginId">The value to set for the TargetOriginId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithTargetOriginId(string targetOriginId)
         {
             this.targetOriginId = targetOriginId;
@@ -97,7 +99,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TargetOriginId property is set
         internal bool IsSetTargetOriginId()
         {
-            return this.targetOriginId != null;       
+            return this.targetOriginId != null;
         }
 
         /// <summary>
@@ -115,6 +117,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="forwardedValues">The value to set for the ForwardedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithForwardedValues(ForwardedValues forwardedValues)
         {
             this.forwardedValues = forwardedValues;
@@ -125,7 +128,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ForwardedValues property is set
         internal bool IsSetForwardedValues()
         {
-            return this.forwardedValues != null;       
+            return this.forwardedValues != null;
         }
 
         /// <summary>
@@ -149,6 +152,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="trustedSigners">The value to set for the TrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithTrustedSigners(TrustedSigners trustedSigners)
         {
             this.trustedSigners = trustedSigners;
@@ -159,7 +163,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if TrustedSigners property is set
         internal bool IsSetTrustedSigners()
         {
-            return this.trustedSigners != null;       
+            return this.trustedSigners != null;
         }
 
         /// <summary>
@@ -188,6 +192,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="viewerProtocolPolicy">The value to set for the ViewerProtocolPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithViewerProtocolPolicy(string viewerProtocolPolicy)
         {
             this.viewerProtocolPolicy = viewerProtocolPolicy;
@@ -198,7 +203,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ViewerProtocolPolicy property is set
         internal bool IsSetViewerProtocolPolicy()
         {
-            return this.viewerProtocolPolicy != null;       
+            return this.viewerProtocolPolicy != null;
         }
 
         /// <summary>
@@ -217,6 +222,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="minTTL">The value to set for the MinTTL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheBehavior WithMinTTL(long minTTL)
         {
             this.minTTL = minTTL;
@@ -227,7 +233,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MinTTL property is set
         internal bool IsSetMinTTL()
         {
-            return this.minTTL.HasValue;       
+            return this.minTTL.HasValue;
         }
     }
 }

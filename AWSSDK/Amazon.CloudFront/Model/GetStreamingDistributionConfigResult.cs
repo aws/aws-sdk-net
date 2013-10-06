@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetStreamingDistributionConfigResult  
+    public class GetStreamingDistributionConfigResult
     {
         
         private StreamingDistributionConfig streamingDistributionConfig;
@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistributionConfig">The value to set for the StreamingDistributionConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStreamingDistributionConfigResult WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
         {
             this.streamingDistributionConfig = streamingDistributionConfig;
@@ -54,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;       
+            return this.streamingDistributionConfig != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStreamingDistributionConfigResult WithETag(string eTag)
         {
             this.eTag = eTag;
@@ -82,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

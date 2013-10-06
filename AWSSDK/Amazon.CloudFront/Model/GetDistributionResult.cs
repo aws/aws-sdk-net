@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetDistributionResult  
+    public class GetDistributionResult
     {
         
         private Distribution distribution;
@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distribution">The value to set for the Distribution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetDistributionResult WithDistribution(Distribution distribution)
         {
             this.distribution = distribution;
@@ -54,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Distribution property is set
         internal bool IsSetDistribution()
         {
-            return this.distribution != null;       
+            return this.distribution != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="eTag">The value to set for the ETag property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetDistributionResult WithETag(string eTag)
         {
             this.eTag = eTag;
@@ -82,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;       
+            return this.eTag != null;
         }
     }
 }

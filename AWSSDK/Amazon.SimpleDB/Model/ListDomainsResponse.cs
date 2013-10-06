@@ -58,6 +58,7 @@ namespace Amazon.SimpleDB.Model
         /// A NextToken is returned if there are more than MaxNumberOfDomains domains. Calling ListDomains successive times
         /// with the NextToken returns up to MaxNumberOfDomains more domain names each time.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsResponse WithListDomainsResult(ListDomainsResult listDomainsResult)
         {
             this.listDomainsResultField = listDomainsResult;
@@ -89,6 +90,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="responseMetadata">Information about the request provided by Amazon SimpleDB.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsResponse WithResponseMetadata(ResponseMetadata responseMetadata)
         {
             this.responseMetadataField = responseMetadata;

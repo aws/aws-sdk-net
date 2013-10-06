@@ -72,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetWorkflowExecutionHistoryRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -100,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="execution">The value to set for the Execution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetWorkflowExecutionHistoryRequest WithExecution(WorkflowExecution execution)
         {
             this.execution = execution;
@@ -138,6 +140,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetWorkflowExecutionHistoryRequest WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;
@@ -178,6 +181,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="maximumPageSize">The value to set for the MaximumPageSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetWorkflowExecutionHistoryRequest WithMaximumPageSize(int maximumPageSize)
         {
             this.maximumPageSize = maximumPageSize;
@@ -207,6 +211,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="reverseOrder">The value to set for the ReverseOrder property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetWorkflowExecutionHistoryRequest WithReverseOrder(bool reverseOrder)
         {
             this.reverseOrder = reverseOrder;

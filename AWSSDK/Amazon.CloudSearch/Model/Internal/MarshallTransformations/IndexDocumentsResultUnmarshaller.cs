@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   IndexDocumentsResult Unmarshaller
      /// </summary>
-    internal class IndexDocumentsResultUnmarshaller : IUnmarshaller<IndexDocumentsResult, XmlUnmarshallerContext> 
+    internal class IndexDocumentsResultUnmarshaller : IUnmarshaller<IndexDocumentsResult, XmlUnmarshallerContext>, IUnmarshaller<IndexDocumentsResult, JsonUnmarshallerContext> 
     {
         public IndexDocumentsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             IndexDocumentsResult indexDocumentsResult = new IndexDocumentsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return indexDocumentsResult;
+        }
+
+        public IndexDocumentsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static IndexDocumentsResultUnmarshaller instance;

@@ -58,6 +58,54 @@ namespace Amazon.Redshift
     {
         
 
+        #region RevokeSnapshotAccess
+
+        /// <summary>
+        /// <para> Removes the ability of the specified AWS customer account to restore the specified snapshot. If the account is currently restoring
+        /// the snapshot, the restore will run to completion. </para> <para> For more information about working with snapshots, go to Amazon Redshift
+        /// Snapshots in the <i>Amazon Redshift Management Guide</i> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="revokeSnapshotAccessRequest">Container for the necessary parameters to execute the RevokeSnapshotAccess service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the RevokeSnapshotAccess service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="AccessToSnapshotDeniedException"/>
+        /// <exception cref="ClusterSnapshotNotFoundException"/>
+        /// <exception cref="AuthorizationNotFoundException"/>
+        RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeSnapshotAccess operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.RevokeSnapshotAccess"/>
+        /// </summary>
+        /// 
+        /// <param name="revokeSnapshotAccessRequest">Container for the necessary parameters to execute the RevokeSnapshotAccess operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndRevokeSnapshotAccess operation.</returns>
+        IAsyncResult BeginRevokeSnapshotAccess(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RevokeSnapshotAccess operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.RevokeSnapshotAccess"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeSnapshotAccess.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonRedshift.</returns>
+        RevokeSnapshotAccessResponse EndRevokeSnapshotAccess(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region ModifyClusterSubnetGroup
 
         /// <summary>
@@ -72,6 +120,7 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="SubnetAlreadyInUseException"/>
         /// <exception cref="InvalidSubnetException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="ClusterSubnetQuotaExceededException"/>
         /// <exception cref="ClusterSubnetGroupNotFoundException"/>
         ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest);
@@ -174,6 +223,7 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="InvalidClusterSecurityGroupStateException"/>
         /// <exception cref="InsufficientClusterCapacityException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="InvalidClusterStateException"/>
         /// <exception cref="NumberOfNodesQuotaExceededException"/>
         /// <exception cref="ClusterNotFoundException"/>
@@ -438,6 +488,7 @@ namespace Amazon.Redshift
         /// <returns>The response from the CreateClusterSubnetGroup service method, as returned by AmazonRedshift.</returns>
         /// 
         /// <exception cref="InvalidSubnetException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="ClusterSubnetQuotaExceededException"/>
         /// <exception cref="ClusterSubnetGroupAlreadyExistsException"/>
         /// <exception cref="ClusterSubnetGroupQuotaExceededException"/>
@@ -610,54 +661,6 @@ namespace Amazon.Redshift
         
     
 
-        #region CreateClusterSnapshot
-
-        /// <summary>
-        /// <para> Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state. </para> <para> For more information
-        /// about working with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
-        /// </para>
-        /// </summary>
-        /// 
-        /// <param name="createClusterSnapshotRequest">Container for the necessary parameters to execute the CreateClusterSnapshot service method on
-        ///          AmazonRedshift.</param>
-        /// 
-        /// <returns>The response from the CreateClusterSnapshot service method, as returned by AmazonRedshift.</returns>
-        /// 
-        /// <exception cref="ClusterSnapshotAlreadyExistsException"/>
-        /// <exception cref="InvalidClusterStateException"/>
-        /// <exception cref="ClusterNotFoundException"/>
-        /// <exception cref="ClusterSnapshotQuotaExceededException"/>
-        CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
-        /// </summary>
-        /// 
-        /// <param name="createClusterSnapshotRequest">Container for the necessary parameters to execute the CreateClusterSnapshot operation on
-        ///          AmazonRedshift.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateClusterSnapshot operation.</returns>
-        IAsyncResult BeginCreateClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSnapshot.</param>
-        /// 
-        /// <returns>Returns a Snapshot from AmazonRedshift.</returns>
-        CreateClusterSnapshotResponse EndCreateClusterSnapshot(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DeleteCluster
 
         /// <summary>
@@ -708,6 +711,54 @@ namespace Amazon.Redshift
         
     
 
+        #region CreateClusterSnapshot
+
+        /// <summary>
+        /// <para> Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state. </para> <para> For more information
+        /// about working with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="createClusterSnapshotRequest">Container for the necessary parameters to execute the CreateClusterSnapshot service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateClusterSnapshot service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="ClusterSnapshotAlreadyExistsException"/>
+        /// <exception cref="InvalidClusterStateException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        /// <exception cref="ClusterSnapshotQuotaExceededException"/>
+        CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="createClusterSnapshotRequest">Container for the necessary parameters to execute the CreateClusterSnapshot operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateClusterSnapshot operation.</returns>
+        IAsyncResult BeginCreateClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateClusterSnapshot operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSnapshot.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonRedshift.</returns>
+        CreateClusterSnapshotResponse EndCreateClusterSnapshot(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region CreateCluster
 
         /// <summary>
@@ -723,10 +774,13 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="InvalidSubnetException"/>
         /// <exception cref="InsufficientClusterCapacityException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="NumberOfNodesQuotaExceededException"/>
         /// <exception cref="NumberOfNodesPerClusterLimitExceededException"/>
         /// <exception cref="ClusterSubnetGroupNotFoundException"/>
+        /// <exception cref="InvalidClusterSubnetGroupStateException"/>
         /// <exception cref="ClusterAlreadyExistsException"/>
         /// <exception cref="ClusterSecurityGroupNotFoundException"/>
         /// <exception cref="ClusterQuotaExceededException"/>
@@ -765,9 +819,10 @@ namespace Amazon.Redshift
         #region DeleteClusterSnapshot
 
         /// <summary>
-        /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state. </para> <para> Unlike automated snapshots,
-        /// manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete
-        /// manual snapshot explicitly to avoid getting charged. </para>
+        /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state, with no other users authorized to access the
+        /// snapshot. </para> <para> Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does
+        /// not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to
+        /// access the snapshot, you must revoke all of the authorizations before you can delete the snapshot. </para>
         /// </summary>
         /// 
         /// <param name="deleteClusterSnapshotRequest">Container for the necessary parameters to execute the DeleteClusterSnapshot service method on
@@ -1129,6 +1184,53 @@ namespace Amazon.Redshift
         /// 
         /// <returns>Returns a DefaultClusterParameters from AmazonRedshift.</returns>
         DescribeDefaultClusterParametersResponse EndDescribeDefaultClusterParameters(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region AuthorizeSnapshotAccess
+
+        /// <summary>
+        /// <para> Authorizes the specified AWS customer account to restore the specified snapshot. </para> <para> For more information about working
+        /// with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="authorizeSnapshotAccessRequest">Container for the necessary parameters to execute the AuthorizeSnapshotAccess service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the AuthorizeSnapshotAccess service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="AuthorizationAlreadyExistsException"/>
+        /// <exception cref="ClusterSnapshotNotFoundException"/>
+        /// <exception cref="AuthorizationQuotaExceededException"/>
+        AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeSnapshotAccess operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.AuthorizeSnapshotAccess"/>
+        /// </summary>
+        /// 
+        /// <param name="authorizeSnapshotAccessRequest">Container for the necessary parameters to execute the AuthorizeSnapshotAccess operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndAuthorizeSnapshotAccess operation.</returns>
+        IAsyncResult BeginAuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AuthorizeSnapshotAccess operation.
+        /// <seealso cref="Amazon.Redshift.AmazonRedshift.AuthorizeSnapshotAccess"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeSnapshotAccess.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonRedshift.</returns>
+        AuthorizeSnapshotAccessResponse EndAuthorizeSnapshotAccess(IAsyncResult asyncResult);
         
         #endregion
         
@@ -1503,7 +1605,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
-        /// information about all snapshots of all clusters that are owned by the AWS account. </para>
+        /// information about all snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned
+        /// by inactive AWS customer accounts. </para>
         /// </summary>
         /// 
         /// <param name="describeClusterSnapshotsRequest">Container for the necessary parameters to execute the DescribeClusterSnapshots service method
@@ -1541,7 +1644,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
-        /// information about all snapshots of all clusters that are owned by the AWS account. </para>
+        /// information about all snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned
+        /// by inactive AWS customer accounts. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by AmazonRedshift.</returns>
@@ -1680,14 +1784,20 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the RestoreFromClusterSnapshot service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="InvalidSubnetException"/>
+        /// <exception cref="ClusterSubnetGroupNotFoundException"/>
+        /// <exception cref="InvalidClusterSubnetGroupStateException"/>
+        /// <exception cref="ClusterAlreadyExistsException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
+        /// <exception cref="InvalidClusterSnapshotStateException"/>
+        /// <exception cref="AccessToSnapshotDeniedException"/>
         /// <exception cref="InvalidRestoreException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="InsufficientClusterCapacityException"/>
         /// <exception cref="NumberOfNodesQuotaExceededException"/>
         /// <exception cref="NumberOfNodesPerClusterLimitExceededException"/>
         /// <exception cref="ClusterSnapshotNotFoundException"/>
-        /// <exception cref="ClusterAlreadyExistsException"/>
         /// <exception cref="ClusterQuotaExceededException"/>
-        /// <exception cref="InvalidClusterSnapshotStateException"/>
         RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest);
 
         /// <summary>

@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="timeoutType">The value to set for the TimeoutType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionTimedOutEventAttributes WithTimeoutType(string timeoutType)
         {
             this.timeoutType = timeoutType;
@@ -94,6 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childPolicy">The value to set for the ChildPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionTimedOutEventAttributes WithChildPolicy(string childPolicy)
         {
             this.childPolicy = childPolicy;

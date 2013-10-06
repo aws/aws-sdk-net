@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Adds or remove permission settings for the specified snapshot
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifySnapshotAttributeRequest
+    public class ModifySnapshotAttributeRequest : EC2Request
     {    
         private string snapshotIdField;
         private string attributeField;
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifySnapshotAttributeRequest WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// <param name="attribute">Specifies the attribute to modify. Valid
         /// Values: createVolumePermission</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifySnapshotAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// attribute.
         /// Valid Values: add | remove</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifySnapshotAttributeRequest WithOperationType(string operationType)
         {
             this.operationTypeField = operationType;
@@ -155,6 +158,7 @@ namespace Amazon.EC2.Model
         /// <param name="list">User ID of a user that can create volumes from
         /// the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifySnapshotAttributeRequest WithUserId(params string[] list)
         {
             foreach (string item in list)
@@ -198,6 +202,7 @@ namespace Amazon.EC2.Model
         /// the snapshot (currently
         /// supports "all").</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifySnapshotAttributeRequest WithUserGroup(params string[] list)
         {
             foreach (string item in list)

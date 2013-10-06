@@ -45,6 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionSetting WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -73,6 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionName">The value to set for the OptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionSetting WithOptionName(string optionName)
         {
             this.optionName = optionName;
@@ -101,6 +103,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionSetting WithValue(string value)
         {
             this.value = value;

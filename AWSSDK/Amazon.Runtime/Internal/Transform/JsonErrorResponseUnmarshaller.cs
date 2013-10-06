@@ -70,7 +70,14 @@ namespace Amazon.Runtime.Internal.Transform
                         if (context.TestExpression("message"))
                         {
                             response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            continue;
                         }
+
+                        // When all expressions fall through, push the current node as a string into Metadata
+                        int keyIndex = context.CurrentPath.LastIndexOf('/') + 1;
+                        string key = context.CurrentPath.Substring(keyIndex);
+                        string value = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Metadata.Add(key, value);
                     }
                 }
             }

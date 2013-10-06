@@ -26,7 +26,8 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusterSnapshots operation.
     /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
-    /// information about all snapshots of all clusters that are owned by the AWS account. </para>
+    /// information about all snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned
+    /// by inactive AWS customer accounts. </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterSnapshots"/>
     public class DescribeClusterSnapshotsRequest : AmazonWebServiceRequest
@@ -38,6 +39,7 @@ namespace Amazon.Redshift.Model
         private DateTime? endTime;
         private int? maxRecords;
         private string marker;
+        private string ownerAccount;
 
         /// <summary>
         /// The identifier of the cluster for which information about snapshots is requested.
@@ -54,6 +56,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -82,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -111,6 +115,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotType">The value to set for the SnapshotType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithSnapshotType(string snapshotType)
         {
             this.snapshotType = snapshotType;
@@ -141,6 +146,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -171,6 +177,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -201,6 +208,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -230,6 +238,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSnapshotsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -241,6 +250,36 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMarker()
         {
             return this.marker != null;
+        }
+
+        /// <summary>
+        /// The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular
+        /// account. To describe snapshots you own, either specify your AWS customer account, or do not specify the parameter.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerAccount property
+        /// </summary>
+        /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeClusterSnapshotsRequest WithOwnerAccount(string ownerAccount)
+        {
+            this.ownerAccount = ownerAccount;
+            return this;
+        }
+            
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
         }
     }
 }

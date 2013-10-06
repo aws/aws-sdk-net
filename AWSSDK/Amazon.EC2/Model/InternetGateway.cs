@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InternetGateway WithInternetGatewayId(string internetGatewayId)
         {
             this.internetGatewayIdField = internetGatewayId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of VPCs attached to the Internet gateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InternetGateway WithAttachments(params InternetGatewayAttachment[] list)
         {
             foreach (InternetGatewayAttachment item in list)
@@ -127,6 +129,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the License.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InternetGateway WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

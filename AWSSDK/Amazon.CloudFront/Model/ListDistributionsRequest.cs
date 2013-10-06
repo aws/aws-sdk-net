@@ -50,6 +50,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -60,7 +61,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsRequest WithMaxItems(string maxItems)
         {
             this.maxItems = maxItems;
@@ -88,7 +90,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;       
+            return this.maxItems != null;
         }
     }
 }

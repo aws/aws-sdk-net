@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -32,12 +32,13 @@ namespace Amazon.EC2.Model
     /// Only information about instances in the running state is returned.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeInstanceStatusRequest
+    public class DescribeInstanceStatusRequest : EC2Request
     {
         private List<string> instanceIdField;
         private List<Filter> filterField;
         private string nextTokenField;
         private int? maxResultsField;
+        private bool? includeAllInstancesField;
 
         /// <summary>
         /// List of instance IDs.
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Instance IDs to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceStatusRequest WithInstanceId(params string[] list)
         {
             foreach (string item in list)
@@ -109,6 +111,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceStatusRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)
@@ -141,6 +144,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="nextToken"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceStatusRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;
@@ -170,6 +174,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxResults">Maximum number of paginated instance items</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceStatusRequest WithMaxResults(int maxResults)
         {
             this.maxResultsField = maxResults;
@@ -183,6 +188,41 @@ namespace Amazon.EC2.Model
         public bool IsSetMaxResults()
         {
             return this.maxResultsField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets whether the request includes all or only running instances.
+        /// When true, returns the health status for all instances (e.g., running, stopped, pending, shutting down, etc.). 
+        /// When false (default), returns only the health status for running instances. 
+        /// </summary>
+        public bool IncludeAllInstances
+        {
+            get { return this.includeAllInstancesField.GetValueOrDefault(); }
+            set { this.includeAllInstancesField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether the request includes all or only running instances.
+        /// </summary>
+        /// <param name="includeAllInstances">
+        /// Set true to return the health status for all instances (e.g., running, stopped, pending, shutting down, etc.). 
+        /// Set false to return only the health status for running instances. 
+        /// </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeInstanceStatusRequest WithIncludeAllInstances(bool includeAllInstances)
+        {
+            this.includeAllInstancesField = includeAllInstances;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the IncludeAllInstances property is set.
+        /// </summary>
+        /// <returns>True if the IncludeAllInstances property is set.</returns>
+        public bool IsSetIncludeAllInstances()
+        {
+            return this.includeAllInstancesField != null;
         }
     }
 }

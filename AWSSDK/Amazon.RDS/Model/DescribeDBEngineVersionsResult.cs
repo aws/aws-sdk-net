@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBEngineVersions">The values to add to the DBEngineVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsResult WithDBEngineVersions(params DBEngineVersion[] dBEngineVersions)
         {
             foreach (DBEngineVersion element in dBEngineVersions)
@@ -87,6 +89,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBEngineVersions">The values to add to the DBEngineVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsResult WithDBEngineVersions(IEnumerable<DBEngineVersion> dBEngineVersions)
         {
             foreach (DBEngineVersion element in dBEngineVersions)

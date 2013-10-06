@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Instance ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceMonitoring WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// Valid Values: monitoring-enabled (enabled) | monitoring-pending
         /// (pending) | monitoring-disabled (disabled)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceMonitoring WithMonitoring(Monitoring monitoring)
         {
             this.monitoringField = monitoring;

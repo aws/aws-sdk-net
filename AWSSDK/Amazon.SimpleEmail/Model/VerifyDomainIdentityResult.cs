@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verificationToken">The value to set for the VerificationToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainIdentityResult WithVerificationToken(string verificationToken)
         {
             this.verificationToken = verificationToken;

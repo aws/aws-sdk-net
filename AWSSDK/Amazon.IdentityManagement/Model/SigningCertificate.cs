@@ -61,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SigningCertificate WithUserName(string userName)
         {
             this.userName = userName;
@@ -102,6 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateId">The value to set for the CertificateId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SigningCertificate WithCertificateId(string certificateId)
         {
             this.certificateId = certificateId;
@@ -143,6 +145,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateBody">The value to set for the CertificateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SigningCertificate WithCertificateBody(string certificateBody)
         {
             this.certificateBody = certificateBody;
@@ -180,6 +183,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SigningCertificate WithStatus(string status)
         {
             this.status = status;
@@ -208,6 +212,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="uploadDate">The value to set for the UploadDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SigningCertificate WithUploadDate(DateTime uploadDate)
         {
             this.uploadDate = uploadDate;

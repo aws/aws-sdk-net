@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// 
         /// Valid Values: i386 | x86_64</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithArchitecture(string architecture)
         {
             this.architectureField = architecture;
@@ -98,6 +99,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">One or more security group names.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithSecurityGroup(params string[] list)
         {
             foreach (string item in list)
@@ -138,6 +140,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">One or more security group IDs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithSecurityGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -171,6 +174,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userData">User data to be made available to the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithUserData(string userData)
         {
             this.userDataField = userData;
@@ -215,6 +219,7 @@ namespace Amazon.EC2.Model
         ///
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -245,6 +250,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithPlacement(Placement placement)
         {
             this.placementField = placement;
@@ -275,6 +281,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="monitoring">Enables monitoring for the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithMonitoring(MonitoringSpecification monitoring)
         {
             this.monitoringField = monitoring;
@@ -305,6 +312,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">If you're using Amazon Virtual Private Cloud, this specifies the ID of the subnet you want to launch the instance into.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -339,6 +347,7 @@ namespace Amazon.EC2.Model
         /// 
         /// Valid Values: stop | terminate</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
         {
             this.instanceInitiatedShutdownBehaviorField = instanceInitiatedShutdownBehavior;
@@ -374,6 +383,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddress">If you're using Amazon Virtual Private Cloud, you can optionally use this parameter to assign the instance a specific available IP address from the subnet (e.g., 10.0.0.25).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceLaunchSpecificationType WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;

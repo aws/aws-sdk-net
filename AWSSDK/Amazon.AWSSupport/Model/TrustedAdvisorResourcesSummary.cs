@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesProcessed">The value to set for the ResourcesProcessed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesProcessed(long resourcesProcessed)
         {
             this.resourcesProcessed = resourcesProcessed;
@@ -75,6 +76,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesFlagged">The value to set for the ResourcesFlagged property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesFlagged(long resourcesFlagged)
         {
             this.resourcesFlagged = resourcesFlagged;
@@ -103,6 +105,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesIgnored">The value to set for the ResourcesIgnored property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesIgnored(long resourcesIgnored)
         {
             this.resourcesIgnored = resourcesIgnored;
@@ -131,6 +134,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesSuppressed">The value to set for the ResourcesSuppressed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesSuppressed(long resourcesSuppressed)
         {
             this.resourcesSuppressed = resourcesSuppressed;

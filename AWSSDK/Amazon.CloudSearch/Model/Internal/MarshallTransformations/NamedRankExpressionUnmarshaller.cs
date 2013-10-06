@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   NamedRankExpression Unmarshaller
      /// </summary>
-    internal class NamedRankExpressionUnmarshaller : IUnmarshaller<NamedRankExpression, XmlUnmarshallerContext> 
+    internal class NamedRankExpressionUnmarshaller : IUnmarshaller<NamedRankExpression, XmlUnmarshallerContext>, IUnmarshaller<NamedRankExpression, JsonUnmarshallerContext> 
     {
         public NamedRankExpression Unmarshall(XmlUnmarshallerContext context) 
         {
             NamedRankExpression namedRankExpression = new NamedRankExpression();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return namedRankExpression;
+        }
+
+        public NamedRankExpression Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static NamedRankExpressionUnmarshaller instance;

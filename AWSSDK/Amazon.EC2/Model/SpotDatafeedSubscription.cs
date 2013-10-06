@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// <param name="ownerId">The AWS account ID associated with the
         /// subscription.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotDatafeedSubscription WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// <param name="bucket">The Amazon S3 bucket where the Spot Instance
         /// datafeed is located.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotDatafeedSubscription WithBucket(string bucket)
         {
             this.bucketField = bucket;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="prefix">The prefix prepended to the datafeed files.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotDatafeedSubscription WithPrefix(string prefix)
         {
             this.prefixField = prefix;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="state">The state of the Spot Instance request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotDatafeedSubscription WithState(string state)
         {
             this.stateField = state;
@@ -175,6 +179,7 @@ namespace Amazon.EC2.Model
         /// <param name="fault">Fault details for the Spot Instance request, if
         /// any.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotDatafeedSubscription WithFault(SpotInstanceStateFault fault)
         {
             this.faultField = fault;

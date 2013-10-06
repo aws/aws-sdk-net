@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when OpsWorks starts or stops
-    /// load-based instances.</para>
+    /// <para>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or
+    /// stops load-based instances.</para>
     /// </summary>
     public class AutoScalingThresholds
     {
@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceCount">The value to set for the InstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="thresholdsWaitTime">The value to set for the ThresholdsWaitTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithThresholdsWaitTime(int thresholdsWaitTime)
         {
             this.thresholdsWaitTime = thresholdsWaitTime;
@@ -100,10 +102,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The amount of time (in minutes) after a scaling event occurs that OpsWorks should ignore metrics and not raise any additional scaling
-        /// events. For example, OpsWorks adds new instances following an upscaling event but the instances won't start reducing the load until they
+        /// The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and not raise any additional scaling
+        /// events. For example, AWS OpsWorks adds new instances following an upscaling event but the instances won't start reducing the load until they
         /// have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several
-        /// minutes. <c>IgnoreMetricsTime</c> allows you to direct OpsWorks to not raise any scaling events long enough to get the new instances online.
+        /// minutes. <c>IgnoreMetricsTime</c> allows you to direct AWS OpsWorks to not raise any scaling events long enough to get the new instances
+        /// online.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,6 +129,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="ignoreMetricsTime">The value to set for the IgnoreMetricsTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithIgnoreMetricsTime(int ignoreMetricsTime)
         {
             this.ignoreMetricsTime = ignoreMetricsTime;
@@ -154,6 +158,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="cpuThreshold">The value to set for the CpuThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithCpuThreshold(double cpuThreshold)
         {
             this.cpuThreshold = cpuThreshold;
@@ -182,6 +187,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="memoryThreshold">The value to set for the MemoryThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithMemoryThreshold(double memoryThreshold)
         {
             this.memoryThreshold = memoryThreshold;
@@ -211,6 +217,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="loadThreshold">The value to set for the LoadThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AutoScalingThresholds WithLoadThreshold(double loadThreshold)
         {
             this.loadThreshold = loadThreshold;

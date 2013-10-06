@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(downloadDBLogFilePortionRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DownloadDBLogFilePortion");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-05-15");
             if (downloadDBLogFilePortionRequest != null && downloadDBLogFilePortionRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(downloadDBLogFilePortionRequest.DBInstanceIdentifier));

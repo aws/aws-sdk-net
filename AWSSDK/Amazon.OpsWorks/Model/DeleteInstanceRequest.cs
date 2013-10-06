@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deleteElasticIp">The value to set for the DeleteElasticIp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceRequest WithDeleteElasticIp(bool deleteElasticIp)
         {
             this.deleteElasticIp = deleteElasticIp;
@@ -105,6 +107,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deleteVolumes">The value to set for the DeleteVolumes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceRequest WithDeleteVolumes(bool deleteVolumes)
         {
             this.deleteVolumes = deleteVolumes;

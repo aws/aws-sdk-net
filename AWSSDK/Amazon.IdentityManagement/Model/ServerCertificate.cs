@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateMetadata">The value to set for the ServerCertificateMetadata property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata)
         {
             this.serverCertificateMetadata = serverCertificateMetadata;
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateBody">The value to set for the CertificateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateBody(string certificateBody)
         {
             this.certificateBody = certificateBody;
@@ -128,6 +130,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateChain">The value to set for the CertificateChain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateChain(string certificateChain)
         {
             this.certificateChain = certificateChain;

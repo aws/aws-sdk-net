@@ -59,6 +59,7 @@ namespace Amazon.S3.Model
        /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -105,6 +106,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithPrefix(string prefix)
         {
             this.prefix = prefix;
@@ -139,6 +141,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="marker">The key marker value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithKeyMarker(string marker)
         {
             this.keyMarker = marker;
@@ -173,6 +176,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="marker">The version id marker</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithVersionIdMarker(string marker)
         {
             this.versionIdMarker = marker;
@@ -223,6 +227,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="maxKeys">The maximum keys to return</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithMaxKeys(int maxKeys)
         {
             this.maxKeys = maxKeys;
@@ -271,6 +276,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithDelimiter(string delimiter)
         {
             this.delimiter = delimiter;

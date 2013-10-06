@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> CloudFront origin access identity. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentity  
+    public class CloudFrontOriginAccessIdentity
     {
         
         private string id;
@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithId(string id)
         {
             this.id = id;
@@ -55,7 +56,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="s3CanonicalUserId">The value to set for the S3CanonicalUserId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithS3CanonicalUserId(string s3CanonicalUserId)
         {
             this.s3CanonicalUserId = s3CanonicalUserId;
@@ -84,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if S3CanonicalUserId property is set
         internal bool IsSetS3CanonicalUserId()
         {
-            return this.s3CanonicalUserId != null;       
+            return this.s3CanonicalUserId != null;
         }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cloudFrontOriginAccessIdentityConfig">The value to set for the CloudFrontOriginAccessIdentityConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentity WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {
             this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -112,7 +115,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;       
+            return this.cloudFrontOriginAccessIdentityConfig != null;
         }
     }
 }

@@ -63,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeUploadBufferResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -91,6 +92,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeUploadBufferResult WithDiskIds(params string[] diskIds)
         {
             foreach (string element in diskIds)
@@ -106,6 +108,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeUploadBufferResult WithDiskIds(IEnumerable<string> diskIds)
         {
             foreach (string element in diskIds)
@@ -137,6 +140,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="uploadBufferUsedInBytes">The value to set for the UploadBufferUsedInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeUploadBufferResult WithUploadBufferUsedInBytes(long uploadBufferUsedInBytes)
         {
             this.uploadBufferUsedInBytes = uploadBufferUsedInBytes;
@@ -165,6 +169,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="uploadBufferAllocatedInBytes">The value to set for the UploadBufferAllocatedInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeUploadBufferResult WithUploadBufferAllocatedInBytes(long uploadBufferAllocatedInBytes)
         {
             this.uploadBufferAllocatedInBytes = uploadBufferAllocatedInBytes;

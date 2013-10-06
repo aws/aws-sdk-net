@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodeId">The value to set for the ReservedNodeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithReservedNodeId(string reservedNodeId)
         {
             this.reservedNodeId = reservedNodeId;
@@ -82,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithReservedNodeOfferingId(string reservedNodeOfferingId)
         {
             this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -110,6 +112,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -138,6 +141,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -166,6 +170,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithDuration(int duration)
         {
             this.duration = duration;
@@ -194,6 +199,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="fixedPrice">The value to set for the FixedPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithFixedPrice(double fixedPrice)
         {
             this.fixedPrice = fixedPrice;
@@ -222,6 +228,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="usagePrice">The value to set for the UsagePrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithUsagePrice(double usagePrice)
         {
             this.usagePrice = usagePrice;
@@ -250,6 +257,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="currencyCode">The value to set for the CurrencyCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithCurrencyCode(string currencyCode)
         {
             this.currencyCode = currencyCode;
@@ -278,6 +286,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeCount">The value to set for the NodeCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithNodeCount(int nodeCount)
         {
             this.nodeCount = nodeCount;
@@ -308,6 +317,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithState(string state)
         {
             this.state = state;
@@ -336,6 +346,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="offeringType">The value to set for the OfferingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithOfferingType(string offeringType)
         {
             this.offeringType = offeringType;
@@ -363,6 +374,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithRecurringCharges(params RecurringCharge[] recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)
@@ -378,6 +390,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithRecurringCharges(IEnumerable<RecurringCharge> recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)

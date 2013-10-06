@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetARN">The value to set for the TargetARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChapInfo WithTargetARN(string targetARN)
         {
             this.targetARN = targetARN;
@@ -93,6 +94,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="secretToAuthenticateInitiator">The value to set for the SecretToAuthenticateInitiator property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChapInfo WithSecretToAuthenticateInitiator(string secretToAuthenticateInitiator)
         {
             this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -134,6 +136,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="initiatorName">The value to set for the InitiatorName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChapInfo WithInitiatorName(string initiatorName)
         {
             this.initiatorName = initiatorName;
@@ -171,6 +174,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="secretToAuthenticateTarget">The value to set for the SecretToAuthenticateTarget property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChapInfo WithSecretToAuthenticateTarget(string secretToAuthenticateTarget)
         {
             this.secretToAuthenticateTarget = secretToAuthenticateTarget;

@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineObjects">The values to add to the PipelineObjects collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPipelineDefinitionResult WithPipelineObjects(params PipelineObject[] pipelineObjects)
         {
             foreach (PipelineObject element in pipelineObjects)
@@ -57,6 +58,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineObjects">The values to add to the PipelineObjects collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPipelineDefinitionResult WithPipelineObjects(IEnumerable<PipelineObject> pipelineObjects)
         {
             foreach (PipelineObject element in pipelineObjects)

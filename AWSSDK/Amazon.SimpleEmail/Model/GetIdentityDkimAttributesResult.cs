@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the DkimAttributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetIdentityDkimAttributesResult WithDkimAttributes(params KeyValuePair<string, IdentityDkimAttributes>[] pairs)
         {
             foreach (KeyValuePair<string, IdentityDkimAttributes> pair in pairs)

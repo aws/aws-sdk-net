@@ -23,11 +23,11 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that specifies how CloudFront handles query strings. </para>
     /// </summary>
-    public class ForwardedValues  
+    public class ForwardedValues
     {
         
         private bool? queryString;
-        private CookiePreference cookies = new CookiePreference() { Forward = "none" };
+        private CookiePreference cookies;
 
         /// <summary>
         /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify
@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="queryString">The value to set for the QueryString property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ForwardedValues WithQueryString(bool queryString)
         {
             this.queryString = queryString;
@@ -55,7 +56,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if QueryString property is set
         internal bool IsSetQueryString()
         {
-            return this.queryString.HasValue;       
+            return this.queryString.HasValue;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cookies">The value to set for the Cookies property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ForwardedValues WithCookies(CookiePreference cookies)
         {
             this.cookies = cookies;
@@ -83,7 +85,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Cookies property is set
         internal bool IsSetCookies()
         {
-            return this.cookies != null;       
+            return this.cookies != null;
         }
     }
 }

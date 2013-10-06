@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model
         /// <li><c></c>execute_recipes: Execute the recipes that are specified by the <c>Args</c> parameter.</li> <li><c></c>install_dependencies:
         /// Installs the stack's dependencies.</li> <li><c></c>update_custom_cookbooks: Update the stack's custom cookbooks.</li>
         /// <li><c></c>update_dependencies: Update the stack's dependencies.</li> </ul> For apps, the available commands are: <ul> <li><c>deploy</c>:
-        /// Deploy the app.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, OpsWorks stores the previous
+        /// Deploy the app.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, AWS OpsWorks stores the previous
         /// version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li> <li><c>start</c>:
         /// Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li> <li><c>restart</c>: Restart
         /// the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
@@ -60,6 +60,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeploymentCommand WithName(string name)
         {
             this.name = name;
@@ -89,6 +90,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Args dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeploymentCommand WithArgs(params KeyValuePair<string, List<string>>[] pairs)
         {
             foreach (KeyValuePair<string, List<string>> pair in pairs)

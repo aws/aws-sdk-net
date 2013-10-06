@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c> parameter is an absolute number or a percentage of the current
     /// capacity. </para>
     /// </summary>
-    public class AdjustmentType  
+    public class AdjustmentType
     {
         
         private string adjustmentType;
@@ -56,6 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AdjustmentType WithName(string name)
         {
             this.adjustmentType = name;

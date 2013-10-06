@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A streaming distribution. </para>
     /// </summary>
-    public class StreamingDistribution  
+    public class StreamingDistribution
     {
         
         private string id;
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithId(string id)
         {
             this.id = id;
@@ -58,7 +59,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithStatus(string status)
         {
             this.status = status;
@@ -87,7 +89,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="lastModifiedTime">The value to set for the LastModifiedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithLastModifiedTime(DateTime lastModifiedTime)
         {
             this.lastModifiedTime = lastModifiedTime;
@@ -115,7 +118,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if LastModifiedTime property is set
         internal bool IsSetLastModifiedTime()
         {
-            return this.lastModifiedTime.HasValue;       
+            return this.lastModifiedTime.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -143,7 +147,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -165,6 +169,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="activeTrustedSigners">The value to set for the ActiveTrustedSigners property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners)
         {
             this.activeTrustedSigners = activeTrustedSigners;
@@ -175,7 +180,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ActiveTrustedSigners property is set
         internal bool IsSetActiveTrustedSigners()
         {
-            return this.activeTrustedSigners != null;       
+            return this.activeTrustedSigners != null;
         }
 
         /// <summary>
@@ -193,6 +198,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="streamingDistributionConfig">The value to set for the StreamingDistributionConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StreamingDistribution WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
         {
             this.streamingDistributionConfig = streamingDistributionConfig;
@@ -203,7 +209,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;       
+            return this.streamingDistributionConfig != null;
         }
     }
 }

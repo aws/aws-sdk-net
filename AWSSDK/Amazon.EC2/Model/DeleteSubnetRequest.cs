@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// no running Amazon EC2 instances in the subnet).
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteSubnetRequest
+    public class DeleteSubnetRequest : EC2Request
     {    
         private string subnetIdField;
 
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet you want to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSubnetRequest WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;

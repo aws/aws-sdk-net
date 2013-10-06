@@ -62,6 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateInstanceInAutoScalingGroupRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -72,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="shouldDecrementDesiredCapacity">The value to set for the ShouldDecrementDesiredCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateInstanceInAutoScalingGroupRequest WithShouldDecrementDesiredCapacity(bool shouldDecrementDesiredCapacity)
         {
             this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
@@ -101,7 +103,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ShouldDecrementDesiredCapacity property is set
         internal bool IsSetShouldDecrementDesiredCapacity()
         {
-            return this.shouldDecrementDesiredCapacity.HasValue;       
+            return this.shouldDecrementDesiredCapacity.HasValue;
         }
     }
 }

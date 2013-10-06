@@ -25,7 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeProcesses operation.
-    /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
+    /// <para> Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information on suspending and resuming Auto Scaling
+    /// process, see Suspend and Resume Auto Scaling Process. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.ResumeProcesses"/>
     public class ResumeProcessesRequest : AmazonWebServiceRequest
@@ -61,6 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResumeProcessesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResumeProcessesRequest WithScalingProcesses(params string[] scalingProcesses)
         {
             foreach (string element in scalingProcesses)
@@ -99,12 +102,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScalingProcesses collection
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResumeProcessesRequest WithScalingProcesses(IEnumerable<string> scalingProcesses)
         {
             foreach (string element in scalingProcesses)
@@ -118,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingProcesses property is set
         internal bool IsSetScalingProcesses()
         {
-            return this.scalingProcesses.Count > 0;       
+            return this.scalingProcesses.Count > 0;
         }
     }
 }

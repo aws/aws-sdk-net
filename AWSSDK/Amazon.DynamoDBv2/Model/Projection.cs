@@ -57,6 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projectionType">The value to set for the ProjectionType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithProjectionType(string projectionType)
         {
             this.projectionType = projectionType;
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nonKeyAttributes">The values to add to the NonKeyAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithNonKeyAttributes(params string[] nonKeyAttributes)
         {
             foreach (string element in nonKeyAttributes)
@@ -110,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nonKeyAttributes">The values to add to the NonKeyAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithNonKeyAttributes(IEnumerable<string> nonKeyAttributes)
         {
             foreach (string element in nonKeyAttributes)

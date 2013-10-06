@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroups">The values to add to the ParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsResult WithParameterGroups(params ClusterParameterGroup[] parameterGroups)
         {
             foreach (ClusterParameterGroup element in parameterGroups)
@@ -87,6 +89,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroups">The values to add to the ParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsResult WithParameterGroups(IEnumerable<ClusterParameterGroup> parameterGroups)
         {
             foreach (ClusterParameterGroup element in parameterGroups)

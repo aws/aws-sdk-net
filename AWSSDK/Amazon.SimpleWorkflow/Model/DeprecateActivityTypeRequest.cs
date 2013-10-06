@@ -76,6 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeprecateActivityTypeRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -104,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityType">The value to set for the ActivityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeprecateActivityTypeRequest WithActivityType(ActivityType activityType)
         {
             this.activityType = activityType;

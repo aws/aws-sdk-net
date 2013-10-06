@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="address">The value to set for the Address property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithAddress(string address)
         {
             this.address = address;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithPort(int port)
         {
             this.port = port;

@@ -53,6 +53,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="name">The name of the attribute used for the conditional check.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateCondition WithName(string name)
         {
             this.nameField = name;
@@ -84,6 +85,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="value">The value of the attribute used for the conditional check.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateCondition WithValue(string value)
         {
             this.valueField = value;
@@ -121,6 +123,7 @@ namespace Amazon.SimpleDB.Model
         /// If this field is false, UpdateCondition.Value should not have a value assigned to it.
         /// If no value is associated with this field, SimpleDB uses a default value of 'true'</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateCondition WithExists(bool exists)
         {
             this.existsField = exists;

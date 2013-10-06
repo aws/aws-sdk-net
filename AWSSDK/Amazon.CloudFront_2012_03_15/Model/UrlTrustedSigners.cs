@@ -116,6 +116,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="awsAccounts">Value that the AwsAccountNumbers property will be set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UrlTrustedSigners WithAwsAccountNumbers(params string[] awsAccounts)
         {
             foreach (string account in awsAccounts)
@@ -155,6 +156,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="enableSelf">EnableSelf property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UrlTrustedSigners WithEnableSelf(bool enableSelf)
         {
             this.enableSelf = enableSelf;

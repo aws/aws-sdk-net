@@ -50,6 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVisibleToAllUsersRequest WithJobFlowIds(params string[] jobFlowIds)
         {
             foreach (string element in jobFlowIds)
@@ -65,6 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVisibleToAllUsersRequest WithJobFlowIds(IEnumerable<string> jobFlowIds)
         {
             foreach (string element in jobFlowIds)
@@ -98,6 +100,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="visibleToAllUsers">The value to set for the VisibleToAllUsers property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetVisibleToAllUsersRequest WithVisibleToAllUsers(bool visibleToAllUsers)
         {
             this.visibleToAllUsers = visibleToAllUsers;

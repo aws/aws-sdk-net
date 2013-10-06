@@ -250,16 +250,20 @@ namespace Amazon.S3.IO
                     }
                     else
                     {
+                        ListObjectsRequest listObjectsRequest = new ListObjectsRequest
+                        {
+                            BucketName = bucket,
+                            Prefix = S3Helper.EncodeKey(key)
+                        };
+                        listObjectsRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+
                         S3Object lastWrittenObject =
                                 ((IEnumerable<S3Object>)
                                     PaginatedResourceFactory.Create(new PaginatedResourceInfo()
                                         .WithClient(s3Client)
                                         .WithItemListPropertyPath("S3Objects")
                                         .WithMethodName("ListObjects")
-                                        .WithRequest(new ListObjectsRequest()
-                                            .WithBucketName(bucket)
-                                            .WithPrefix(S3Helper.EncodeKey(key))
-                                            .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as ListObjectsRequest)
+                                        .WithRequest(listObjectsRequest)
                                         .WithTokenRequestPropertyPath("Marker")
                                         .WithTokenResponsePropertyPath("NextMarker")))
                                     .OrderByDescending(s3Object => DateTime.ParseExact(s3Object.LastModified, "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T", null))
@@ -379,10 +383,13 @@ namespace Amazon.S3.IO
             {
                 if (String.IsNullOrEmpty(key))
                 {
-                    s3Client.PutBucket(new PutBucketRequest()
-                        .WithBucketName(bucket)
-                        .WithUseClientRegion(true)
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as PutBucketRequest);
+                    PutBucketRequest putBucketRequest = new PutBucketRequest
+                    {
+                        BucketName = bucket,
+                        UseClientRegion = true
+                    };
+                    putBucketRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    s3Client.PutBucket(putBucketRequest);
 
                     WaitTillBucketS3StateIsConsistent(true);
                 }
@@ -390,18 +397,24 @@ namespace Amazon.S3.IO
                 {
                     if (!bucketExists)
                     {
-                        s3Client.PutBucket(new PutBucketRequest()
-                            .WithBucketName(bucket)
-                            .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as PutBucketRequest);
+                        PutBucketRequest putBucketRequest = new PutBucketRequest
+                        {
+                            BucketName = bucket,
+                        };
+                        putBucketRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                        s3Client.PutBucket(putBucketRequest);
 
                         WaitTillBucketS3StateIsConsistent(true);
                     }
 
-                    s3Client.PutObject((PutObjectRequest)new PutObjectRequest()
-                        .WithBucketName(bucket)
-                        .WithKey(S3Helper.EncodeKey(key))
-                        .WithInputStream(new MemoryStream())
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as PutObjectRequest);
+                    PutObjectRequest putObjectRequest = new PutObjectRequest
+                    {
+                        BucketName = bucket,
+                        Key = S3Helper.EncodeKey(key),
+                        InputStream = new MemoryStream()
+                    };
+                    putObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    s3Client.PutObject(putObjectRequest);
                 }
             }
         }
@@ -449,14 +462,18 @@ namespace Amazon.S3.IO
 
             if (recursive)
             {
-                ListObjectsRequest listRequest = new ListObjectsRequest()
-                    .WithBucketName(bucket)
-                    .WithPrefix(S3Helper.EncodeKey(this.key))
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as ListObjectsRequest;
+                ListObjectsRequest listRequest = new ListObjectsRequest
+                {
+                    BucketName = bucket,
+                    Prefix = S3Helper.EncodeKey(this.key)
+                };
+                listRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
 
-                DeleteObjectsRequest deleteRequest = new DeleteObjectsRequest()
-                    .WithBucketName(bucket)
-                    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as DeleteObjectsRequest;
+                DeleteObjectsRequest deleteRequest = new DeleteObjectsRequest
+                {
+                    BucketName = bucket
+                };
+                deleteRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
                 ListObjectsResponse listResponse = null;
                 do
                 {
@@ -485,17 +502,22 @@ namespace Amazon.S3.IO
 
             if (String.IsNullOrEmpty(key) && Exists)
             {
-                s3Client.DeleteBucket(new DeleteBucketRequest().WithBucketName(bucket).WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as DeleteBucketRequest);
+                DeleteBucketRequest deleteBucketRequest = new DeleteBucketRequest { BucketName = bucket };
+                deleteBucketRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                s3Client.DeleteBucket(deleteBucketRequest);
                 WaitTillBucketS3StateIsConsistent(false);
             }
             else
             {
                 if (!EnumerateFileSystemInfos().GetEnumerator().MoveNext() && Exists)
                 {                        
-                    s3Client.DeleteObject(new DeleteObjectRequest()
-                        .WithBucketName(bucket)
-                        .WithKey(S3Helper.EncodeKey(key))
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as DeleteObjectRequest);
+                    DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest
+                    {
+                        BucketName = bucket,
+                        Key = S3Helper.EncodeKey(key)
+                    };
+                    deleteObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
+                    s3Client.DeleteObject(deleteObjectRequest);
                     Parent.Create();
                 }
             }
@@ -542,15 +564,18 @@ namespace Amazon.S3.IO
             }
             else
             {
+                ListObjectsRequest listObjectsRequest = new ListObjectsRequest
+                {
+                    BucketName = bucket,
+                    Delimiter = "/",
+                    Prefix = S3Helper.EncodeKey(key)
+                };
+                listObjectsRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
                 folders = new EnumerableConverter<string, S3DirectoryInfo>
                     ((IEnumerable<string>)(PaginatedResourceFactory.Create(new PaginatedResourceInfo()
                             .WithClient(s3Client)
                             .WithMethodName("ListObjects")
-                            .WithRequest(new ListObjectsRequest()
-                                .WithBucketName(bucket)
-                                .WithDelimiter("/")
-                                .WithPrefix(S3Helper.EncodeKey(key))
-                                .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as ListObjectsRequest)
+                            .WithRequest(listObjectsRequest)
                             .WithItemListPropertyPath("CommonPrefixes")
                             .WithTokenRequestPropertyPath("Marker")
                             .WithTokenResponsePropertyPath("NextMarker"))),
@@ -614,15 +639,18 @@ namespace Amazon.S3.IO
             }
             else
             {
+                ListObjectsRequest listObjectsRequest = new ListObjectsRequest
+                {
+                    BucketName = bucket,
+                    Delimiter = "/",
+                    Prefix = S3Helper.EncodeKey(key)
+                };
+                listObjectsRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
                 files = new EnumerableConverter<S3Object, S3FileInfo>
                     (((IEnumerable<S3Object>)(PaginatedResourceFactory.Create(new PaginatedResourceInfo()
                             .WithClient(s3Client)
                             .WithMethodName("ListObjects")
-                            .WithRequest(new ListObjectsRequest()
-                                .WithBucketName(bucket)
-                                .WithDelimiter("/")
-                                .WithPrefix(S3Helper.EncodeKey(key))
-                                .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as ListObjectsRequest)
+                            .WithRequest(listObjectsRequest)
                             .WithItemListPropertyPath("S3Objects")
                             .WithTokenRequestPropertyPath("Marker")
                             .WithTokenResponsePropertyPath("NextMarker"))))

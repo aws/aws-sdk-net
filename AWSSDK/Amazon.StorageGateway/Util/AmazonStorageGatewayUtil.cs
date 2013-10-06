@@ -20,6 +20,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
+using Amazon.Util;
 
 namespace Amazon.StorageGateway.Util
 {
@@ -30,6 +31,8 @@ namespace Amazon.StorageGateway.Util
     /// </summary>
     public static class AmazonStorageGatewayUtil
     {
+        private const string activationKeyName = "activationKey";
+
         /// <summary>
         /// Sends a request to the AWS Storage Gateway server running at the
         /// specified address, and returns the activation key for that server.
@@ -80,18 +83,16 @@ namespace Amazon.StorageGateway.Util
                                                                         + "' expected '302'");
 
                         string locnHeader = response.Headers["Location"];
-                        String[] locnHeaderParts = locnHeader.Split('=');
-                        if (locnHeaderParts.Length != 2 || string.IsNullOrEmpty(locnHeaderParts[1]))
-                            throw new AmazonStorageGatewayException("Unable to get activation key from : " + response.ResponseUri);
+                        var parameters = AWSSDKUtils.ParseQueryParameters(locnHeader);
+                        string activationKey;
+                        if (parameters.TryGetValue(activationKeyName, out activationKey) && !string.IsNullOrEmpty(activationKey))
+                            return activationKey;
 
-                        return locnHeaderParts[1];
+                        throw new AmazonStorageGatewayException("Unable to get activation key from : " + response.ResponseUri);
                     }
                 }
-                catch (WebException e)
+                catch (WebException)
                 {
-                    if (e.Status != WebExceptionStatus.ConnectFailure)
-                        throw new AmazonStorageGatewayException("Caught non-ConnectFailure exception whilst requesting activation key", e);
-
                     retries++;
                     if (retries == maxRetries)
                         break;

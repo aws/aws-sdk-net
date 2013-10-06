@@ -44,6 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="pattern">The value to set for the Pattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionRestrictionRegex WithPattern(string pattern)
         {
             this.pattern = pattern;
@@ -72,6 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="label">The value to set for the Label property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionRestrictionRegex WithLabel(string label)
         {
             this.label = label;

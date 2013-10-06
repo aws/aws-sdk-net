@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// <param name="userId">User ID of a user that can create volumes from
         /// the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumePermission WithUserId(string userId)
         {
             this.userIdField = userId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// <param name="groupName">Group that is allowed to create volumes from
         /// the snapshot (currently supports "all").</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumePermission WithGroupName(string groupName)
         {
             this.groupNameField = groupName;

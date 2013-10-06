@@ -67,6 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -95,6 +96,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeSizeInBytes">The value to set for the VolumeSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithVolumeSizeInBytes(long volumeSizeInBytes)
         {
             this.volumeSizeInBytes = volumeSizeInBytes;
@@ -135,6 +137,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="snapshotId">The value to set for the SnapshotId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithSnapshotId(string snapshotId)
         {
             this.snapshotId = snapshotId;
@@ -179,6 +182,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetName">The value to set for the TargetName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithTargetName(string targetName)
         {
             this.targetName = targetName;
@@ -217,6 +221,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="networkInterfaceId">The value to set for the NetworkInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceId = networkInterfaceId;
@@ -254,6 +259,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="clientToken">The value to set for the ClientToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCachediSCSIVolumeRequest WithClientToken(string clientToken)
         {
             this.clientToken = clientToken;

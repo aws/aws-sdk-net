@@ -56,6 +56,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="id">An identifier for this particular receipt handle.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityBatchRequestEntry WithId(string id)
         {
             this.idField = id;
@@ -88,6 +89,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="receiptHandle">A receipt handle.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityBatchRequestEntry WithReceiptHandle(string receiptHandle)
         {
             this.receiptHandleField = receiptHandle;
@@ -117,6 +119,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="visibilityTimeout">The new value (in seconds) for the message's visibility timeout.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeMessageVisibilityBatchRequestEntry WithVisibilityTimeout(int visibilityTimeout)
         {
             this.visibilityTimeoutField = visibilityTimeout;

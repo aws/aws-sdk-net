@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Modifies a volume attribute.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyVolumeAttributeRequest
+    public class ModifyVolumeAttributeRequest : EC2Request
     {
         private string volumeIdField;
         private bool? autoEnableIOField;
@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The new volume id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyVolumeAttributeRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="autoEnableIO">The new AutoEnableIO value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyVolumeAttributeRequest WithAutoEnableIO(bool autoEnableIO)
         {
             this.autoEnableIOField = autoEnableIO;

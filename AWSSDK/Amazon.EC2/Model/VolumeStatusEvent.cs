@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="eventType">The new event type</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusEvent WithEventType(string eventType)
         {
             this.eventTypeField = eventType;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="notBefore">The new NotBefore value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusEvent WithNotBefore(DateTime notBefore)
         {
             this.notBeforeField = notBefore;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="notAfter">The new NotAfter value</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusEvent WithNotAfter(DateTime notAfter)
         {
             this.notAfterField = notAfter;
@@ -139,6 +142,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="eventId">The new event id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusEvent WithEventId(string eventId)
         {
             this.eventIdField = eventId;
@@ -166,6 +170,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">The new description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusEvent WithDescription(string description)
         {
             this.descriptionField = description;

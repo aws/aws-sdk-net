@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Activations can be done against a specific license ID.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ActivateLicenseRequest
+    public class ActivateLicenseRequest : EC2Request
     {    
         private string licenseIdField;
         private Decimal? capacityField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// <param name="licenseId">Specifies the ID for the specific license to
         /// activate against.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateLicenseRequest WithLicenseId(string licenseId)
         {
             this.licenseIdField = licenseId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// <param name="capacity">Specifies the additional number of licenses to
         /// activate.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateLicenseRequest WithCapacity(Decimal capacity)
         {
             this.capacityField = capacity;

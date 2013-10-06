@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="table">The value to set for the Table property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTableResult WithTable(TableDescription table)
         {
             this.table = table;

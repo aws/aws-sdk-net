@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListInvalidationsResult  
+    public class ListInvalidationsResult
     {
         
         private InvalidationList invalidationList;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="invalidationList">The value to set for the InvalidationList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInvalidationsResult WithInvalidationList(InvalidationList invalidationList)
         {
             this.invalidationList = invalidationList;
@@ -53,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if InvalidationList property is set
         internal bool IsSetInvalidationList()
         {
-            return this.invalidationList != null;       
+            return this.invalidationList != null;
         }
     }
 }

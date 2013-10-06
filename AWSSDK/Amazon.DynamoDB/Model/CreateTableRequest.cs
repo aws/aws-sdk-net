@@ -66,6 +66,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -96,6 +97,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="keySchema">The value to set for the KeySchema property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithKeySchema(KeySchema keySchema)
         {
             this.keySchema = keySchema;
@@ -127,6 +129,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithProvisionedThroughput(ProvisionedThroughput provisionedThroughput)
         {
             this.provisionedThroughput = provisionedThroughput;

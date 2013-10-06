@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TextOptions Unmarshaller
      /// </summary>
-    internal class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext> 
+    internal class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext>, IUnmarshaller<TextOptions, JsonUnmarshallerContext> 
     {
         public TextOptions Unmarshall(XmlUnmarshallerContext context) 
         {
             TextOptions textOptions = new TextOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -53,6 +54,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         textOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("TextProcessor", targetDepth))
+                    {
+                        textOptions.TextProcessor = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -64,6 +71,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return textOptions;
+        }
+
+        public TextOptions Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static TextOptionsUnmarshaller instance;

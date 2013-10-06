@@ -85,6 +85,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("CustomErrorResponses", targetDepth))
+                    {
+                        distributionSummary.CustomErrorResponses = CustomErrorResponsesUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Comment", targetDepth))
                     {
                         distributionSummary.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -100,6 +106,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Enabled", targetDepth))
                     {
                         distributionSummary.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ViewerCertificate", targetDepth))
+                    {
+                        distributionSummary.ViewerCertificate = ViewerCertificateUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

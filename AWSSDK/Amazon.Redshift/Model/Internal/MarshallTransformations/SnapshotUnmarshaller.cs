@@ -129,6 +129,54 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         snapshot.Encrypted = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth))
+                    {
+                        snapshot.AccountsWithRestoreAccess.Add(AccountWithRestoreAccessUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("OwnerAccount", targetDepth))
+                    {
+                        snapshot.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("TotalBackupSizeInMegaBytes", targetDepth))
+                    {
+                        snapshot.TotalBackupSizeInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ActualIncrementalBackupSizeInMegaBytes", targetDepth))
+                    {
+                        snapshot.ActualIncrementalBackupSizeInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("BackupProgressInMegaBytes", targetDepth))
+                    {
+                        snapshot.BackupProgressInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("CurrentBackupRateInMegaBytesPerSecond", targetDepth))
+                    {
+                        snapshot.CurrentBackupRateInMegaBytesPerSecond = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("EstimatedSecondsToCompletion", targetDepth))
+                    {
+                        snapshot.EstimatedSecondsToCompletion = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
+                    {
+                        snapshot.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

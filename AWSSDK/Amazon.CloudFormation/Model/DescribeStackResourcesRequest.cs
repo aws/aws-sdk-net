@@ -57,6 +57,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -85,6 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="logicalResourceId">The value to set for the LogicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithLogicalResourceId(string logicalResourceId)
         {
             this.logicalResourceId = logicalResourceId;
@@ -117,6 +119,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="physicalResourceId">The value to set for the PhysicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithPhysicalResourceId(string physicalResourceId)
         {
             this.physicalResourceId = physicalResourceId;

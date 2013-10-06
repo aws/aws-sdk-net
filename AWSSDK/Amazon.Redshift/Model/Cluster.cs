@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -92,6 +93,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -121,6 +123,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterStatus">The value to set for the ClusterStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterStatus(string clusterStatus)
         {
             this.clusterStatus = clusterStatus;
@@ -149,6 +152,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="modifyStatus">The value to set for the ModifyStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithModifyStatus(string modifyStatus)
         {
             this.modifyStatus = modifyStatus;
@@ -177,6 +181,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithMasterUsername(string masterUsername)
         {
             this.masterUsername = masterUsername;
@@ -206,6 +211,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -234,6 +240,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="endpoint">The value to set for the Endpoint property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithEndpoint(Endpoint endpoint)
         {
             this.endpoint = endpoint;
@@ -262,6 +269,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterCreateTime">The value to set for the ClusterCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterCreateTime(DateTime clusterCreateTime)
         {
             this.clusterCreateTime = clusterCreateTime;
@@ -290,6 +298,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
             this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -320,6 +329,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterSecurityGroups(params ClusterSecurityGroupMembership[] clusterSecurityGroups)
         {
             foreach (ClusterSecurityGroupMembership element in clusterSecurityGroups)
@@ -335,6 +345,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterSecurityGroups(IEnumerable<ClusterSecurityGroupMembership> clusterSecurityGroups)
         {
             foreach (ClusterSecurityGroupMembership element in clusterSecurityGroups)
@@ -366,6 +377,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithVpcSecurityGroups(params VpcSecurityGroupMembership[] vpcSecurityGroups)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
@@ -381,6 +393,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroups">The values to add to the VpcSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithVpcSecurityGroups(IEnumerable<VpcSecurityGroupMembership> vpcSecurityGroups)
         {
             foreach (VpcSecurityGroupMembership element in vpcSecurityGroups)
@@ -411,6 +424,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroups">The values to add to the ClusterParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterParameterGroups(params ClusterParameterGroupStatus[] clusterParameterGroups)
         {
             foreach (ClusterParameterGroupStatus element in clusterParameterGroups)
@@ -426,6 +440,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroups">The values to add to the ClusterParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterParameterGroups(IEnumerable<ClusterParameterGroupStatus> clusterParameterGroups)
         {
             foreach (ClusterParameterGroupStatus element in clusterParameterGroups)
@@ -457,6 +472,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -485,6 +501,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -513,6 +530,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -541,6 +559,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -569,6 +588,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="pendingModifiedValues">The value to set for the PendingModifiedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithPendingModifiedValues(PendingModifiedValues pendingModifiedValues)
         {
             this.pendingModifiedValues = pendingModifiedValues;
@@ -597,6 +617,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -625,6 +646,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="allowVersionUpgrade">The value to set for the AllowVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
             this.allowVersionUpgrade = allowVersionUpgrade;
@@ -653,6 +675,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -681,6 +704,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -709,6 +733,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="encrypted">The value to set for the Encrypted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Cluster WithEncrypted(bool encrypted)
         {
             this.encrypted = encrypted;

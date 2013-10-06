@@ -53,6 +53,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="id">The OriginAccessIdentity's id</param>
         /// <returns>The request with the Id property set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteOriginAccessIdentityRequest WithId(string id)
         {
             this.distId = id;
@@ -83,6 +84,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="etag">The OriginAccessIdentity's etag</param>
         /// <returns>The request with the ETag property set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteOriginAccessIdentityRequest WithETag(string etag)
         {
             this.etagHeader = etag;

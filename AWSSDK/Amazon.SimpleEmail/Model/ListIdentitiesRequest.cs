@@ -60,6 +60,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identityType">The value to set for the IdentityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithIdentityType(string identityType)
         {
             this.identityType = identityType;
@@ -88,6 +89,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -116,6 +118,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;

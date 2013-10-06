@@ -24,28 +24,31 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     /// <example>
     /// <code>
-    ///     AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
+    ///    AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
     ///  
-    ///     BootstrapActions bootstrapActions = new BootstrapActions();
-    ///     
-    ///     RunJobFlowRequest request = new RunJobFlowRequest()
-    ///         .WithName("Job Flow With Bootstrap Actions")
-    ///         .WithBootstrapActions(
-    ///             bootstrapActions.NewRunIf(
-    ///                 "instance.isMaster=true",
-    ///                 bootstrapActions.NewConfigureDaemons()
-    ///                     .WithHeapSize(Daemon.JobTracker, 2048)
-    ///                     .Build()))
-    ///         .WithLogUri("s3://log-bucket/")
-    ///         .WithInstances(new JobFlowInstancesConfig()
-    ///            .WithEc2KeyName("keypair")
-    ///             .WithHadoopVersion("0.20")
-    ///             .WithInstanceCount(5)
-    ///             .WithKeepJobFlowAliveWhenNoSteps(true)
-    ///             .WithMasterInstanceType("m1.small")
-    ///             .WithSlaveInstanceType("m1.small"));
-    ///  
-    ///     RunJobFlowResponse response = emr.RunJobFlow(request);
+    ///    BootstrapActions bootstrapActions = new BootstrapActions();
+    ///    RunJobFlowRequest request = new RunJobFlowRequest
+    ///    {
+    ///        Name = "Job Flow With Bootstrap Actions",
+    ///        BootstrapActions = new List&lt;BootstrapActionConfig&gt;
+    ///        {
+    ///            bootstrapActions.NewRunIf(
+    ///                "instance.isMaster=true",
+    ///                bootstrapActions.NewConfigureDaemons()
+    ///                    .WithHeapSize(Daemon.JobTracker, 2048)
+    ///                    .Build())
+    ///        },
+    ///        LogUri = "s3://log-bucket/",
+    ///        Instances = new JobFlowInstancesConfig
+    ///        {
+    ///            Ec2KeyName = "keypair",
+    ///            HadoopVersion = "0.20",
+    ///            InstanceCount = 5,
+    ///            KeepJobFlowAliveWhenNoSteps = true,
+    ///            MasterInstanceType = "m1.small",
+    ///            SlaveInstanceType = "m1.small"
+    ///        }
+    ///    };
     /// </code>
     /// </example> 
     public class BootstrapActions
@@ -72,17 +75,21 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="condition">The condition to evaluate, if true the bootstrap action executes.</param>
         /// <param name="config">The bootstrap action to execute in case of successful evaluation.</param>
         /// <returns>A BootstrapActionConfig to be provided when running a job flow.</returns>
-        public BootstrapActionConfig NewRunIf(string condition, BootstrapActionConfig config) 
+        public BootstrapActionConfig NewRunIf(string condition, BootstrapActionConfig config)
         {
             List<string> args = config.ScriptBootstrapAction.Args;
             args.Add(condition);
             args.Add(config.ScriptBootstrapAction.Path);
 
-            return new BootstrapActionConfig()
-              .WithName("Run If, " + config.Name)
-              .WithScriptBootstrapAction(new ScriptBootstrapActionConfig()
-                .WithPath("s3://" + bucket + "/bootstrap-actions/run-if")
-                .WithArgs(args.ToArray()));
+            return new BootstrapActionConfig
+            {
+                Name = "Run If, " + config.Name,
+                ScriptBootstrapAction = new ScriptBootstrapActionConfig
+                {
+                    Path = "s3://" + bucket + "/bootstrap-actions/run-if",
+                    Args = args
+                }
+            };
         }
 
         /// <summary>

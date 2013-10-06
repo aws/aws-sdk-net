@@ -25,9 +25,10 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSnapshot operation.
-    /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state. </para> <para> Unlike automated snapshots,
-    /// manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete
-    /// manual snapshot explicitly to avoid getting charged. </para>
+    /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state, with no other users authorized to access the
+    /// snapshot. </para> <para> Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does
+    /// not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to
+    /// access the snapshot, you must revoke all of the authorizations before you can delete the snapshot. </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteClusterSnapshot"/>
     public class DeleteClusterSnapshotRequest : AmazonWebServiceRequest
@@ -50,6 +51,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;

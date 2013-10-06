@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SourceDataMap Unmarshaller
      /// </summary>
-    internal class SourceDataMapUnmarshaller : IUnmarshaller<SourceDataMap, XmlUnmarshallerContext> 
+    internal class SourceDataMapUnmarshaller : IUnmarshaller<SourceDataMap, XmlUnmarshallerContext>, IUnmarshaller<SourceDataMap, JsonUnmarshallerContext> 
     {
         public SourceDataMap Unmarshall(XmlUnmarshallerContext context) 
         {
             SourceDataMap sourceDataMap = new SourceDataMap();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -65,6 +66,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return sourceDataMap;
+        }
+
+        public SourceDataMap Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SourceDataMapUnmarshaller instance;

@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
     /// </para>
     /// </summary>
-    public class DescribeScheduledActionsResult  
+    public class DescribeScheduledActionsResult
     {
         
         private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(params ScheduledUpdateGroupAction[] scheduledUpdateGroupActions)
         {
             foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
@@ -54,12 +55,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScheduledUpdateGroupActions collection
         /// </summary>
         /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(IEnumerable<ScheduledUpdateGroupAction> scheduledUpdateGroupActions)
         {
             foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
@@ -73,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledUpdateGroupActions property is set
         internal bool IsSetScheduledUpdateGroupActions()
         {
-            return this.scheduledUpdateGroupActions.Count > 0;       
+            return this.scheduledUpdateGroupActions.Count > 0;
         }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -110,7 +113,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

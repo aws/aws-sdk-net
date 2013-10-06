@@ -54,6 +54,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="errorCode">The value to set for the ErrorCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StorageGatewayError WithErrorCode(string errorCode)
         {
             this.errorCode = errorCode;
@@ -82,6 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ErrorDetails dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StorageGatewayError WithErrorDetails(params KeyValuePair<string, string>[] pairs)
         {
             foreach (KeyValuePair<string, string> pair in pairs)

@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePipeline operation.
-    /// <para>To create a pipeline, send a POST request to the <c>2012-09-25/pipelines</c> resource.</para>
+    /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CreatePipeline"/>
     public class CreatePipelineRequest : AmazonWebServiceRequest
@@ -63,6 +63,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithName(string name)
         {
             this.name = name;
@@ -100,6 +101,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="inputBucket">The value to set for the InputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithInputBucket(string inputBucket)
         {
             this.inputBucket = inputBucket;
@@ -145,6 +147,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputBucket">The value to set for the OutputBucket property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithOutputBucket(string outputBucket)
         {
             this.outputBucket = outputBucket;
@@ -182,6 +185,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="role">The value to set for the Role property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithRole(string role)
         {
             this.role = role;
@@ -219,6 +223,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="notifications">The value to set for the Notifications property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithNotifications(Notifications notifications)
         {
             this.notifications = notifications;
@@ -271,6 +276,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="contentConfig">The value to set for the ContentConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithContentConfig(PipelineOutputConfig contentConfig)
         {
             this.contentConfig = contentConfig;
@@ -321,6 +327,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailConfig">The value to set for the ThumbnailConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineRequest WithThumbnailConfig(PipelineOutputConfig thumbnailConfig)
         {
             this.thumbnailConfig = thumbnailConfig;

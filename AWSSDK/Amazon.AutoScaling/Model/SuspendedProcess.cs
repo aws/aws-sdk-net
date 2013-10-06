@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> An Auto Scaling process that has been suspended. For more information, see ProcessType. </para>
     /// </summary>
-    public class SuspendedProcess  
+    public class SuspendedProcess
     {
         
         private string processName;
@@ -57,6 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="processName">The value to set for the ProcessName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithProcessName(string processName)
         {
             this.processName = processName;
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ProcessName property is set
         internal bool IsSetProcessName()
         {
-            return this.processName != null;       
+            return this.processName != null;
         }
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="suspensionReason">The value to set for the SuspensionReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithSuspensionReason(string suspensionReason)
         {
             this.suspensionReason = suspensionReason;
@@ -108,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SuspensionReason property is set
         internal bool IsSetSuspensionReason()
         {
-            return this.suspensionReason != null;       
+            return this.suspensionReason != null;
         }
     }
 }

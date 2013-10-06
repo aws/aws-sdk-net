@@ -24,18 +24,19 @@ namespace Amazon.CloudSearch.Model
     /// <para>A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those
     /// policies.</para>
     /// </summary>
-    public class AccessPoliciesStatus  
+    public class AccessPoliciesStatus
     {
         
         private string options;
         private OptionStatus status;
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
         /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
-        /// document is 100KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:search/movies",
-        /// "Condition": { "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</c>
+        /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
+        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
+        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
+        /// ["203.0.113.1/32"] } }} ] }</c>
         ///  
         /// </summary>
         public string Options
@@ -49,6 +50,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="options">The value to set for the Options property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessPoliciesStatus WithOptions(string options)
         {
             this.options = options;
@@ -59,7 +61,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -77,6 +79,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessPoliciesStatus WithStatus(OptionStatus status)
         {
             this.status = status;
@@ -87,7 +90,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

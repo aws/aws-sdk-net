@@ -77,6 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -118,6 +119,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithIndexName(string indexName)
         {
             this.indexName = indexName;
@@ -169,6 +171,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="select">The value to set for the Select property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithSelect(string select)
         {
             this.select = select;
@@ -211,6 +214,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithAttributesToGet(params string[] attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -226,6 +230,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributesToGet">The values to add to the AttributesToGet collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithAttributesToGet(IEnumerable<string> attributesToGet)
         {
             foreach (string element in attributesToGet)
@@ -272,6 +277,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithLimit(int limit)
         {
             this.limit = limit;
@@ -300,6 +306,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consistentRead">The value to set for the ConsistentRead property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithConsistentRead(bool consistentRead)
         {
             this.consistentRead = consistentRead;
@@ -365,6 +372,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the KeyConditions dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithKeyConditions(params KeyValuePair<string, Condition>[] pairs)
         {
             foreach (KeyValuePair<string, Condition> pair in pairs)
@@ -399,6 +407,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="scanIndexForward">The value to set for the ScanIndexForward property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithScanIndexForward(bool scanIndexForward)
         {
             this.scanIndexForward = scanIndexForward;
@@ -430,6 +439,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ExclusiveStartKey dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithExclusiveStartKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -471,6 +481,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;

@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBSnapshotsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSnapshots">The values to add to the DBSnapshots collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBSnapshotsResult WithDBSnapshots(params DBSnapshot[] dBSnapshots)
         {
             foreach (DBSnapshot element in dBSnapshots)
@@ -87,6 +89,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSnapshots">The values to add to the DBSnapshots collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBSnapshotsResult WithDBSnapshots(IEnumerable<DBSnapshot> dBSnapshots)
         {
             foreach (DBSnapshot element in dBSnapshots)

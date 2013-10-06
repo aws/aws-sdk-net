@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSubnetGroup operation.
-    /// <para> Creates a new Cache Subnet Group. </para>
+    /// <para>The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.</para> <para>Use this parameter only when you are
+    /// creating a cluster in an Amazon Virtual Private Cloud (VPC).</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.CreateCacheSubnetGroup"/>
     public class CreateCacheSubnetGroupRequest : AmazonWebServiceRequest
@@ -35,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> subnetIds = new List<string>();
 
         /// <summary>
-        /// The name for the Cache Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// A name for the cache subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
         /// characters or hyphens. Example: <c>mysubnetgroup</c>
         ///  
         /// </summary>
@@ -50,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupName">The value to set for the CacheSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithCacheSubnetGroupName(string cacheSubnetGroupName)
         {
             this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -64,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description for the Cache Subnet Group.
+        /// A description for the cache subnet group.
         ///  
         /// </summary>
         public string CacheSubnetGroupDescription
@@ -78,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSubnetGroupDescription">The value to set for the CacheSubnetGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithCacheSubnetGroupDescription(string cacheSubnetGroupDescription)
         {
             this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
@@ -92,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The EC2 Subnet IDs for the Cache Subnet Group.
+        /// A list of VPC subnet IDs for the cache subnet group.
         ///  
         /// </summary>
         public List<string> SubnetIds
@@ -105,6 +108,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -120,6 +124,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCacheSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)

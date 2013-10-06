@@ -47,6 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="typeInfo">The value to set for the TypeInfo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeDetail WithTypeInfo(ActivityTypeInfo typeInfo)
         {
             this.typeInfo = typeInfo;
@@ -75,6 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="configuration">The value to set for the Configuration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTypeDetail WithConfiguration(ActivityTypeConfiguration configuration)
         {
             this.configuration = configuration;

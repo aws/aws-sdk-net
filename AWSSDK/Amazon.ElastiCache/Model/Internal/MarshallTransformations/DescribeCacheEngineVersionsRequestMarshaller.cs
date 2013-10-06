@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeCacheEngineVersionsRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DescribeCacheEngineVersions");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (describeCacheEngineVersionsRequest != null && describeCacheEngineVersionsRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(describeCacheEngineVersionsRequest.Engine));

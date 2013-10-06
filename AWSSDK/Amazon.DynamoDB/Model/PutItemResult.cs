@@ -43,6 +43,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutItemResult WithAttributes(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -76,6 +77,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="consumedCapacityUnits">The value to set for the ConsumedCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutItemResult WithConsumedCapacityUnits(double consumedCapacityUnits)
         {
             this.consumedCapacityUnits = consumedCapacityUnits;

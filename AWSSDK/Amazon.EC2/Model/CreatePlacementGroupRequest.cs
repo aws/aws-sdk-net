@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// name unique within the scope of the user account.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreatePlacementGroupRequest
+    public class CreatePlacementGroupRequest : EC2Request
     {    
         private string groupNameField;
         private string strategyField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePlacementGroupRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="strategy">The PlacementGroup strategy.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePlacementGroupRequest WithStrategy(string strategy)
         {
             this.strategyField = strategy;

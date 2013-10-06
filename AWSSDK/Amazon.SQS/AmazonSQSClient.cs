@@ -26,18 +26,16 @@ using System.Net;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Security.Cryptography;
 using System.Xml;
 using System.Xml.Serialization;
 
-using Amazon.SQS.Model;
-using Attribute = Amazon.SQS.Model.Attribute;
-
-using Amazon.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-
+using Amazon.SQS.Model;
+using Amazon.SQS.Util;
+using Amazon.Util;
+using Attribute = Amazon.SQS.Model.Attribute;
 using ErrorResponse = Amazon.SQS.Model.ErrorResponse;
 
 namespace Amazon.SQS
@@ -500,7 +498,9 @@ namespace Amazon.SQS
         /// <returns>Receive Message  Response from the service</returns>
         public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
-            return Invoke<ReceiveMessageResponse>(request, ConvertReceiveMessage(request));
+            ReceiveMessageResponse response = Invoke<ReceiveMessageResponse>(request, ConvertReceiveMessage(request));
+            AmazonSQSUtil.ValidateReceiveMessage(response);
+            return response;
         }
 
         /// <summary>
@@ -510,7 +510,9 @@ namespace Amazon.SQS
         /// <returns>Send Message  Response from the service</returns>
         public SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            return Invoke<SendMessageResponse>(request, ConvertSendMessage(request));
+            SendMessageResponse response = Invoke<SendMessageResponse>(request, ConvertSendMessage(request));
+            AmazonSQSUtil.ValidateSendMessage(request, response);
+            return response;
         }
 
         /// <summary>
@@ -524,8 +526,11 @@ namespace Amazon.SQS
         /// <returns>SendMessageBatch Response from the service</returns>
         public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
-            return Invoke<SendMessageBatchResponse>(request, ConvertSendMessageBatch(request));
+            SendMessageBatchResponse response = Invoke<SendMessageBatchResponse>(request, ConvertSendMessageBatch(request));
+            AmazonSQSUtil.ValidateSendMessageBatch(request, response);
+            return response;
         }
+
 
         /// <summary>
         /// <para>

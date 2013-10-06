@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud Developer Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class PurchaseReservedInstancesOfferingRequest
+    public class PurchaseReservedInstancesOfferingRequest : EC2Request
     {    
         private string reservedInstancesOfferingIdField;
         private string instanceCountField;
@@ -60,6 +60,7 @@ namespace Amazon.EC2.Model
         /// <param name="reservedInstancesOfferingId">The offering ID of the Reserved Instance to
         /// purchase.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedInstancesOfferingRequest WithReservedInstancesOfferingId(string reservedInstancesOfferingId)
         {
             this.reservedInstancesOfferingIdField = reservedInstancesOfferingId;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceCount">The number of Reserved Instances to purchase.
         /// Default: None</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedInstancesOfferingRequest WithInstanceCount(string instanceCount)
         {
             this.instanceCountField = instanceCount;
@@ -125,6 +127,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="limitPrice">Price limit</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedInstancesOfferingRequest WithLimitPrice(ReservedInstanceLimitPrice limitPrice)
         {
             this.limitPriceField = limitPrice;

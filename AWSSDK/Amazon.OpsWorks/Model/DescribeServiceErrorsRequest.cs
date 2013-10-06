@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// <para>Describes OpsWorks service errors.</para>
+    /// <para>Describes AWS OpsWorks service errors.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
     public class DescribeServiceErrorsRequest : AmazonWebServiceRequest
@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -107,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceErrorIds">The values to add to the ServiceErrorIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithServiceErrorIds(params string[] serviceErrorIds)
         {
             foreach (string element in serviceErrorIds)
@@ -122,6 +125,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="serviceErrorIds">The values to add to the ServiceErrorIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithServiceErrorIds(IEnumerable<string> serviceErrorIds)
         {
             foreach (string element in serviceErrorIds)

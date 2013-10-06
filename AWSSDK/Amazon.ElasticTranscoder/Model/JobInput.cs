@@ -60,6 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithKey(string key)
         {
             this.key = key;
@@ -100,6 +101,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="frameRate">The value to set for the FrameRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithFrameRate(string frameRate)
         {
             this.frameRate = frameRate;
@@ -137,6 +139,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="resolution">The value to set for the Resolution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithResolution(string resolution)
         {
             this.resolution = resolution;
@@ -176,6 +179,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="aspectRatio">The value to set for the AspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithAspectRatio(string aspectRatio)
         {
             this.aspectRatio = aspectRatio;
@@ -215,6 +219,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="interlaced">The value to set for the Interlaced property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithInterlaced(string interlaced)
         {
             this.interlaced = interlaced;
@@ -255,6 +260,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="container">The value to set for the Container property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithContainer(string container)
         {
             this.container = container;

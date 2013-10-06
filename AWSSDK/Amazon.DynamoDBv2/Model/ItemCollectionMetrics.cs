@@ -45,6 +45,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ItemCollectionKey dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ItemCollectionMetrics WithItemCollectionKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -78,6 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="sizeEstimateRangeGB">The values to add to the SizeEstimateRangeGB collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ItemCollectionMetrics WithSizeEstimateRangeGB(params double[] sizeEstimateRangeGB)
         {
             foreach (double element in sizeEstimateRangeGB)
@@ -93,6 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="sizeEstimateRangeGB">The values to add to the SizeEstimateRangeGB collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ItemCollectionMetrics WithSizeEstimateRangeGB(IEnumerable<double> sizeEstimateRangeGB)
         {
             foreach (double element in sizeEstimateRangeGB)

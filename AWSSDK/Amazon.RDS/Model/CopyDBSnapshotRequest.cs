@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceDBSnapshotIdentifier">The value to set for the SourceDBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyDBSnapshotRequest WithSourceDBSnapshotIdentifier(string sourceDBSnapshotIdentifier)
         {
             this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="targetDBSnapshotIdentifier">The value to set for the TargetDBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyDBSnapshotRequest WithTargetDBSnapshotIdentifier(string targetDBSnapshotIdentifier)
         {
             this.targetDBSnapshotIdentifier = targetDBSnapshotIdentifier;

@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OrderableClusterOption WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -74,6 +75,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterType">The value to set for the ClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OrderableClusterOption WithClusterType(string clusterType)
         {
             this.clusterType = clusterType;
@@ -102,6 +104,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OrderableClusterOption WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -129,6 +132,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OrderableClusterOption WithAvailabilityZones(params AvailabilityZone[] availabilityZones)
         {
             foreach (AvailabilityZone element in availabilityZones)
@@ -144,6 +148,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OrderableClusterOption WithAvailabilityZones(IEnumerable<AvailabilityZone> availabilityZones)
         {
             foreach (AvailabilityZone element in availabilityZones)

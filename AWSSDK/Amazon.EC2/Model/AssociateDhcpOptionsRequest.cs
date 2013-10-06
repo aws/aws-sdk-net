@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// Developer Guide.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AssociateDhcpOptionsRequest
+    public class AssociateDhcpOptionsRequest : EC2Request
     {    
         private string dhcpOptionsIdField;
         private string vpcIdField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// <param name="dhcpOptionsId">The ID of the DHCP options you want to associate with the VPC, or
         /// "default" if you want to associate the default DHCP options with the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateDhcpOptionsRequest WithDhcpOptionsId(string dhcpOptionsId)
         {
             this.dhcpOptionsIdField = dhcpOptionsId;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC you want to associate the DHCP options with.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateDhcpOptionsRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

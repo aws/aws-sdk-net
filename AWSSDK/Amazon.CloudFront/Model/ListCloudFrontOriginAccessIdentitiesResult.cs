@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListCloudFrontOriginAccessIdentitiesResult  
+    public class ListCloudFrontOriginAccessIdentitiesResult
     {
         
         private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cloudFrontOriginAccessIdentityList">The value to set for the CloudFrontOriginAccessIdentityList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListCloudFrontOriginAccessIdentitiesResult WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList)
         {
             this.cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityList;
@@ -53,7 +54,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CloudFrontOriginAccessIdentityList property is set
         internal bool IsSetCloudFrontOriginAccessIdentityList()
         {
-            return this.cloudFrontOriginAccessIdentityList != null;       
+            return this.cloudFrontOriginAccessIdentityList != null;
         }
     }
 }

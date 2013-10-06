@@ -49,6 +49,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="multipartUploadId">The value to set for the MultipartUploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithMultipartUploadId(string multipartUploadId)
         {
             this.multipartUploadId = multipartUploadId;
@@ -77,6 +78,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -105,6 +107,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;
@@ -133,6 +136,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="partSizeInBytes">The value to set for the PartSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithPartSizeInBytes(long partSizeInBytes)
         {
             this.partSizeInBytes = partSizeInBytes;
@@ -161,6 +165,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -188,6 +193,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="parts">The values to add to the Parts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithParts(params PartListElement[] parts)
         {
             foreach (PartListElement element in parts)
@@ -203,6 +209,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="parts">The values to add to the Parts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithParts(IEnumerable<PartListElement> parts)
         {
             foreach (PartListElement element in parts)
@@ -235,6 +242,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithMarker(string marker)
         {
             this.marker = marker;

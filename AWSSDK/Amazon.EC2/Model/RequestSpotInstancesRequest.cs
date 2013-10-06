@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// Spot Instance capacity and current Spot Instance requests.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class RequestSpotInstancesRequest
+    public class RequestSpotInstancesRequest : EC2Request
     {    
         private string spotPriceField;
         private Decimal? instanceCountField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// <param name="spotPrice">Specifies the maximum price you will pay to
         /// launch one or more Spot Instances.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithSpotPrice(string spotPrice)
         {
             this.spotPriceField = spotPrice;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceCount">The maximum number of Spot Instances to launch. Default - 1.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithInstanceCount(Decimal instanceCount)
         {
             this.instanceCountField = instanceCount;
@@ -127,6 +129,7 @@ namespace Amazon.EC2.Model
         /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
         /// Default - m1.small.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithType(string type)
         {
             this.typeField = type;
@@ -167,6 +170,7 @@ namespace Amazon.EC2.Model
         /// is canceled.
         /// Default: Request is effective immediately</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithValidFrom(string validFrom)
         {
             this.validFromField = validFrom;
@@ -207,6 +211,7 @@ namespace Amazon.EC2.Model
         /// is canceled.
         /// Default: Request remains open until criteria for closing are met</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithValidUntil(string validUntil)
         {
             this.validUntilField = validUntil;
@@ -243,6 +248,7 @@ namespace Amazon.EC2.Model
         /// together.
         /// Default: Instances are launched and terminated individually</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithLaunchGroup(string launchGroup)
         {
             this.launchGroupField = launchGroup;
@@ -281,6 +287,7 @@ namespace Amazon.EC2.Model
         /// Availability Zone.
         /// Default: Instances are launched in any available Availability Zone.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithAvailabilityZoneGroup(string availabilityZoneGroup)
         {
             this.availabilityZoneGroupField = availabilityZoneGroup;
@@ -311,6 +318,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="launchSpecification">Specifies additional launch instance information.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithLaunchSpecification(LaunchSpecification launchSpecification)
         {
             this.launchSpecificationField = launchSpecification;

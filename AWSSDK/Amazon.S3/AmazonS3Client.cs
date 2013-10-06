@@ -23,8 +23,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -35,17 +34,14 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
-
-
-using Amazon.Util;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
+using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-
-using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
-using System.Globalization;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3
 {
@@ -277,7 +273,7 @@ namespace Amazon.S3
         /// the request to a user or embed the request in a web page.
         /// </para>
         /// <para>
-        /// A PreSigned URL can be generated for GET, PUT and HEAD
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
         /// operations on your bucket, keys, and versions.
         /// </para>
         /// </remarks>
@@ -301,14 +297,6 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The Expires Specified is null!");
-            }
-
-            if (request.Verb > HttpVerb.PUT)
-            {
-                throw new ArgumentException(
-                    "An Invalid HttpVerb was specified for the GetPreSignedURL request. Valid - GET, HEAD, PUT",
-                    S3Constants.RequestParam
-                    );
             }
 
             ConvertGetPreSignedUrl(request);
@@ -5361,7 +5349,7 @@ namespace Amazon.S3
             }
             if (request.IsSetUploadIdMarker())
             {
-                sb.Append(String.Concat("upload-idmarker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
+                sb.Append(String.Concat("upload-id-marker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
             }
             if (request.IsSetPrefix())
             {
@@ -5801,8 +5789,8 @@ namespace Amazon.S3
             s3AsyncResult.S3Request.Headers[AWSSDKUtils.UserAgentHeader] = userAgent;
 
             ProcessRequestHandlers(s3AsyncResult.S3Request);
-
-            ImmutableCredentials immutableCredentials = credentials == null ? null : credentials.GetCredentials();
+                        
+            ImmutableCredentials immutableCredentials = credentials == null || credentials is AnonymousAWSCredentials ? null : credentials.GetCredentials();
             try
             {
                 if (!isRedirect)
@@ -6164,7 +6152,7 @@ namespace Amazon.S3
             }
 
             // Add token if available
-            if (credentials != null && immutableCredentials.UseToken)
+            if (immutableCredentials != null && immutableCredentials.UseToken ) 
             {
                 webHeaders[S3Constants.AmzSecurityTokenHeader] = immutableCredentials.Token;
             }
@@ -6309,10 +6297,8 @@ namespace Amazon.S3
             {
                 if (httpResponse != null && string.IsNullOrEmpty(httpResponse.Headers["Location"]))
                 {
-                    throw new WebException(
-                        "A redirect was returned without a new location.  This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.",
-                        WebExceptionStatus.ProtocolError
-                        );
+                    throw new AmazonS3Exception(
+                        "A redirect was returned without a new location. This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.");
                 }
 
                 shouldRetry = true;

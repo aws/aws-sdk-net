@@ -55,6 +55,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Domain", targetDepth))
+              {
+                elasticIp.Domain = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Region", targetDepth))
               {
                 elasticIp.Region = StringUnmarshaller.GetInstance().Unmarshall(context);

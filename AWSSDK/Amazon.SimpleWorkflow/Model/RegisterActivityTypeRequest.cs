@@ -83,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -122,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithName(string name)
         {
             this.name = name;
@@ -161,6 +163,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="version">The value to set for the Version property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithVersion(string version)
         {
             this.version = version;
@@ -198,6 +201,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDescription(string description)
         {
             this.description = description;
@@ -237,6 +241,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskStartToCloseTimeout">The value to set for the DefaultTaskStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDefaultTaskStartToCloseTimeout(string defaultTaskStartToCloseTimeout)
         {
             this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -280,6 +285,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskHeartbeatTimeout">The value to set for the DefaultTaskHeartbeatTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDefaultTaskHeartbeatTimeout(string defaultTaskHeartbeatTimeout)
         {
             this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
@@ -309,6 +315,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskList">The value to set for the DefaultTaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDefaultTaskList(TaskList defaultTaskList)
         {
             this.defaultTaskList = defaultTaskList;
@@ -349,6 +356,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskScheduleToStartTimeout">The value to set for the DefaultTaskScheduleToStartTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDefaultTaskScheduleToStartTimeout(string defaultTaskScheduleToStartTimeout)
         {
             this.defaultTaskScheduleToStartTimeout = defaultTaskScheduleToStartTimeout;
@@ -388,6 +396,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="defaultTaskScheduleToCloseTimeout">The value to set for the DefaultTaskScheduleToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterActivityTypeRequest WithDefaultTaskScheduleToCloseTimeout(string defaultTaskScheduleToCloseTimeout)
         {
             this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;

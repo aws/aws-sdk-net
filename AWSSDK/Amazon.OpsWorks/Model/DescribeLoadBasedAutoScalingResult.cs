@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="loadBasedAutoScalingConfigurations">The values to add to the LoadBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingResult WithLoadBasedAutoScalingConfigurations(params LoadBasedAutoScalingConfiguration[] loadBasedAutoScalingConfigurations)
         {
             foreach (LoadBasedAutoScalingConfiguration element in loadBasedAutoScalingConfigurations)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="loadBasedAutoScalingConfigurations">The values to add to the LoadBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingResult WithLoadBasedAutoScalingConfigurations(IEnumerable<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations)
         {
             foreach (LoadBasedAutoScalingConfiguration element in loadBasedAutoScalingConfigurations)

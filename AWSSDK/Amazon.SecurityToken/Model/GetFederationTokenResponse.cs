@@ -34,14 +34,14 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         public GetFederationTokenResult GetFederationTokenResult
         {
-            get 
+            get
             {
                 if(this.getFederationTokenResult == null)
                 {
                     this.getFederationTokenResult = new GetFederationTokenResult();
                 }
 
-                return this.getFederationTokenResult; 
+                return this.getFederationTokenResult;
             }
             set { this.getFederationTokenResult = value; }
         }

@@ -26,8 +26,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the PutNotificationConfiguration operation.
     /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
-    /// for events delivered to an endpoint such as a web server or email address. </para> <para> A new <c>PutNotificationConfiguration</c>
-    /// overwrites an existing configuration.</para>
+    /// for events delivered to an endpoint such as a web server or email address. </para> <para>For more information see Get Email Notifications
+    /// When Your Auto Scaling Group Changes </para> <para>A new <c>PutNotificationConfiguration</c> overwrites an existing configuration. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutNotificationConfiguration"/>
     public class PutNotificationConfigurationRequest : AmazonWebServiceRequest
@@ -64,6 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutNotificationConfigurationRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -74,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -105,6 +106,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="topicARN">The value to set for the TopicARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutNotificationConfigurationRequest WithTopicARN(string topicARN)
         {
             this.topicARN = topicARN;
@@ -115,11 +117,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TopicARN property is set
         internal bool IsSetTopicARN()
         {
-            return this.topicARN != null;       
+            return this.topicARN != null;
         }
 
         /// <summary>
-        /// The type of events that will trigger the notification. For more information, go to <a>DescribeAutoScalingNotificationTypes</a>.
+        /// The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see
+        /// <a>DescribeAutoScalingNotificationTypes</a>.
         ///  
         /// </summary>
         public List<string> NotificationTypes
@@ -132,6 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="notificationTypes">The values to add to the NotificationTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutNotificationConfigurationRequest WithNotificationTypes(params string[] notificationTypes)
         {
             foreach (string element in notificationTypes)
@@ -141,12 +145,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NotificationTypes collection
         /// </summary>
         /// <param name="notificationTypes">The values to add to the NotificationTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutNotificationConfigurationRequest WithNotificationTypes(IEnumerable<string> notificationTypes)
         {
             foreach (string element in notificationTypes)
@@ -160,7 +165,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationTypes property is set
         internal bool IsSetNotificationTypes()
         {
-            return this.notificationTypes.Count > 0;       
+            return this.notificationTypes.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution Configuration. </para>
     /// </summary>
-    public class DistributionConfig  
+    public class DistributionConfig
     {
         
         private string callerReference;
@@ -32,10 +32,12 @@ namespace Amazon.CloudFront.Model
         private Origins origins;
         private DefaultCacheBehavior defaultCacheBehavior;
         private CacheBehaviors cacheBehaviors;
+        private CustomErrorResponses customErrorResponses;
         private string comment;
         private LoggingConfig logging;
-        private string priceClass = "PriceClass_All";
+        private string priceClass;
         private bool? enabled;
+        private ViewerCertificate viewerCertificate;
 
         /// <summary>
         /// A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig
@@ -57,6 +59,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -67,7 +70,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;       
+            return this.callerReference != null;
         }
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="aliases">The value to set for the Aliases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithAliases(Aliases aliases)
         {
             this.aliases = aliases;
@@ -95,7 +99,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;       
+            return this.aliases != null;
         }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="defaultRootObject">The value to set for the DefaultRootObject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithDefaultRootObject(string defaultRootObject)
         {
             this.defaultRootObject = defaultRootObject;
@@ -128,7 +133,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DefaultRootObject property is set
         internal bool IsSetDefaultRootObject()
         {
-            return this.defaultRootObject != null;       
+            return this.defaultRootObject != null;
         }
 
         /// <summary>
@@ -146,6 +151,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="origins">The value to set for the Origins property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithOrigins(Origins origins)
         {
             this.origins = origins;
@@ -156,7 +162,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Origins property is set
         internal bool IsSetOrigins()
         {
-            return this.origins != null;       
+            return this.origins != null;
         }
 
         /// <summary>
@@ -175,6 +181,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="defaultCacheBehavior">The value to set for the DefaultCacheBehavior property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior)
         {
             this.defaultCacheBehavior = defaultCacheBehavior;
@@ -185,7 +192,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if DefaultCacheBehavior property is set
         internal bool IsSetDefaultCacheBehavior()
         {
-            return this.defaultCacheBehavior != null;       
+            return this.defaultCacheBehavior != null;
         }
 
         /// <summary>
@@ -203,6 +210,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="cacheBehaviors">The value to set for the CacheBehaviors property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithCacheBehaviors(CacheBehaviors cacheBehaviors)
         {
             this.cacheBehaviors = cacheBehaviors;
@@ -213,7 +221,36 @@ namespace Amazon.CloudFront.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this.cacheBehaviors != null;       
+            return this.cacheBehaviors != null;
+        }
+
+        /// <summary>
+        /// A complex type that contains zero or more CustomErrorResponse elements.
+        ///  
+        /// </summary>
+        public CustomErrorResponses CustomErrorResponses
+        {
+            get { return this.customErrorResponses; }
+            set { this.customErrorResponses = value; }
+        }
+
+        /// <summary>
+        /// Sets the CustomErrorResponses property
+        /// </summary>
+        /// <param name="customErrorResponses">The value to set for the CustomErrorResponses property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DistributionConfig WithCustomErrorResponses(CustomErrorResponses customErrorResponses)
+        {
+            this.customErrorResponses = customErrorResponses;
+            return this;
+        }
+            
+
+        // Check to see if CustomErrorResponses property is set
+        internal bool IsSetCustomErrorResponses()
+        {
+            return this.customErrorResponses != null;
         }
 
         /// <summary>
@@ -231,6 +268,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithComment(string comment)
         {
             this.comment = comment;
@@ -241,7 +279,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;       
+            return this.comment != null;
         }
 
         /// <summary>
@@ -259,6 +297,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="logging">The value to set for the Logging property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithLogging(LoggingConfig logging)
         {
             this.logging = logging;
@@ -269,7 +308,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Logging property is set
         internal bool IsSetLogging()
         {
-            return this.logging != null;       
+            return this.logging != null;
         }
 
         /// <summary>
@@ -296,6 +335,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="priceClass">The value to set for the PriceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithPriceClass(string priceClass)
         {
             this.priceClass = priceClass;
@@ -306,7 +346,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if PriceClass property is set
         internal bool IsSetPriceClass()
         {
-            return this.priceClass != null;       
+            return this.priceClass != null;
         }
 
         /// <summary>
@@ -324,6 +364,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DistributionConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -334,7 +375,36 @@ namespace Amazon.CloudFront.Model
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;       
+            return this.enabled.HasValue;
+        }
+
+        /// <summary>
+        /// A complex type that contains information about viewer certificates for this distribution.
+        ///  
+        /// </summary>
+        public ViewerCertificate ViewerCertificate
+        {
+            get { return this.viewerCertificate; }
+            set { this.viewerCertificate = value; }
+        }
+
+        /// <summary>
+        /// Sets the ViewerCertificate property
+        /// </summary>
+        /// <param name="viewerCertificate">The value to set for the ViewerCertificate property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DistributionConfig WithViewerCertificate(ViewerCertificate viewerCertificate)
+        {
+            this.viewerCertificate = viewerCertificate;
+            return this;
+        }
+            
+
+        // Check to see if ViewerCertificate property is set
+        internal bool IsSetViewerCertificate()
+        {
+            return this.viewerCertificate != null;
         }
     }
 }

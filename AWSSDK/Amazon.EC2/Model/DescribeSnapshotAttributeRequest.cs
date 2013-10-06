@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeSnapshotAttributeRequest
+    public class DescribeSnapshotAttributeRequest : EC2Request
     {    
         private string snapshotIdField;
         private string attributeField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotAttributeRequest WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attribute">The snapshot attribute.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSnapshotAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;
