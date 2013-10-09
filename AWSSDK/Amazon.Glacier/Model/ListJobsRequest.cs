@@ -43,8 +43,9 @@ namespace Amazon.Glacier.Model
     /// specified status are returned. The <c>completed</c> parameter allows you to specify that only jobs in a specific completion state are
     /// returned.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management
     /// (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more
-    /// information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For the underlying REST API, go to List Jobs
-    /// </para>
+    /// information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS
+    /// Identity and Access Management (IAM) </a> .</para> <para>For the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a> </para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.ListJobs"/>
     public class ListJobsRequest : AmazonWebServiceRequest
@@ -83,7 +84,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;       
+            return this.limit.HasValue;
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -202,7 +203,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Statuscode property is set
         internal bool IsSetStatuscode()
         {
-            return this.statuscode != null;       
+            return this.statuscode != null;
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Completed property is set
         internal bool IsSetCompleted()
         {
-            return this.completed.HasValue;       
+            return this.completed.HasValue;
         }
     }
 }

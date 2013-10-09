@@ -32,6 +32,8 @@
 
         public DescribeRaidArraysResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeRaidArraysResult describeRaidArraysResult = new DescribeRaidArraysResult();
           describeRaidArraysResult.RaidArrays = null;
                         

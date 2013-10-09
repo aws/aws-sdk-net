@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>Thumbnails for videos.</para>
     /// </summary>
     public class Thumbnails
     {

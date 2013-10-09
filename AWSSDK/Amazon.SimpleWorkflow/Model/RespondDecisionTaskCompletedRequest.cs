@@ -29,8 +29,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// <c>decisions</c> argument specifies the list of decisions made while processing the task. </para> <para> A
     /// <c>DecisionTaskCompleted</c> event is added to the workflow history. The <c>executionContext</c> specified is attached
     /// to the event in the workflow execution history. </para> <para> <b>Access Control</b> </para> <para>If an IAM policy grants permission to use
-    /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter in the same way
-    /// as for the regular API. This approach maintains a uniform conceptual model and helps keep policies readable. For more information, see Using
+    /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter. Each of the
+    /// decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express
+    /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see Using
     /// IAM to Manage Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RespondDecisionTaskCompleted"/>

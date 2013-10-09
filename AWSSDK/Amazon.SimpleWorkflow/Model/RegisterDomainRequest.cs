@@ -124,9 +124,9 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Specifies the duration--<b><i>in days</i></b>--for which the record (including the history) of workflow executions in this domain should be
-        /// kept by the service. After the retention period, the workflow execution will not be available in the results of visibility calls. If a
-        /// duration of <c>NONE</c> is specified, the records for workflow executions in this domain are not retained at all.
+        /// A duration (in days) for which the record (including the history) of workflow executions in this domain should be kept by the service. After
+        /// the retention period, the workflow execution will not be available in the results of visibility calls. If you pass the value <c>NONE</c>
+        /// then there is no expiration for workflow execution history (effectively an infinite retention period).
         ///  
         /// <para>
         /// <b>Constraints:</b>

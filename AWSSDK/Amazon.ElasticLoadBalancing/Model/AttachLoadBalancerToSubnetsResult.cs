@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the AttachLoadBalancerToSubnets action. </para>
     /// </summary>
-    public class AttachLoadBalancerToSubnetsResult  
+    public class AttachLoadBalancerToSubnetsResult
     {
         
         private List<string> subnets = new List<string>();
 
         /// <summary>
-        /// A list of subnet IDs added for the LoadBalancer.
+        /// A list of subnet IDs attached to the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Subnets collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;       
+            return this.subnets.Count > 0;
         }
     }
 }

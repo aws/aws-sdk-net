@@ -32,6 +32,8 @@
 
         public WeeklyAutoScalingSchedule Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             WeeklyAutoScalingSchedule weeklyAutoScalingSchedule = new WeeklyAutoScalingSchedule();
           weeklyAutoScalingSchedule.Monday = null;
                         weeklyAutoScalingSchedule.Tuesday = null;

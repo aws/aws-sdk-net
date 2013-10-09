@@ -32,6 +32,8 @@
 
         public TestRoleResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TestRoleResult testRoleResult = new TestRoleResult();
           testRoleResult.Messages = null;
                         

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DeleteLoadBalander action. </para>
+    /// <para> The output for the DeleteLoadBalancer action. </para>
     /// </summary>
-    public class DeleteLoadBalancerResult  
+    public class DeleteLoadBalancerResult
     {
         
     }

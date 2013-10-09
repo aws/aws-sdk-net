@@ -378,10 +378,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
 
-            ICollection collection = value as ICollection;
+            IEnumerable enumerable = value as IEnumerable;
 
             Primitive primitive;
-            if (collection == null)
+            // Strings are collections of chars, don't treat them as collections
+            if (enumerable == null || value is string)
             {
                 if (canReturnPrimitive &&
                     value.GetType().IsAssignableFrom(elementType) &&
@@ -397,7 +398,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             PrimitiveList primitiveList = new PrimitiveList();
             DynamoDBEntryType? listType = null;
-            foreach (var item in collection)
+            foreach (var item in enumerable)
             {
                 if (TryToPrimitive(elementType, item, out primitive))
                 {

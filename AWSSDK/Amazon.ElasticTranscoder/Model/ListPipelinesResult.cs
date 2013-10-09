@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>A list of the pipelines associated with the current AWS account.</para>
     /// </summary>
     public class ListPipelinesResult
     {

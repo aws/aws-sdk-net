@@ -31,7 +31,8 @@ namespace Amazon.Glacier.Model
     /// <ul>
     /// <li> <para> <b>SHA256 tree hash does not match</b> To ensure that part data is not corrupted in transmission, you compute a SHA256 tree
     /// hash of the part and include it in your request. Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If these
-    /// hash values don't match, the operation fails. For information about computing a SHA256 tree hash, see Computing Checksums.</para> </li>
+    /// hash values don't match, the operation fails. For information about computing a SHA256 tree hash, see <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html" >Computing Checksums</a> .</para> </li>
     /// <li> <para> <b>Part size does not match</b> The size of each part except the last must match the size specified in the corresponding
     /// InitiateMultipartUpload request. The size of the last part must be the same size as, or smaller than, the specified size.</para>
     /// <para><b>NOTE:</b> If you upload a part whose size is smaller than the part size you specified in your initiate multipart upload request and
@@ -46,9 +47,11 @@ namespace Amazon.Glacier.Model
     /// <para>This operation is idempotent. If you upload the same part multiple times, the data included in the most recent request overwrites the
     /// previously uploaded data.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
     /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-    /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para> For conceptual information and
-    /// underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Upload Part in the <i>Amazon Glacier Developer
-    /// Guide</i> .</para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control
+    /// Using AWS Identity and Access Management (IAM)</a> .</para> <para> For conceptual information and underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+    /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html" >Upload Part </a> in the <i>Amazon
+    /// Glacier Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.UploadMultipartPart"/>
     public class UploadMultipartPartRequest : AmazonWebServiceRequest
@@ -87,7 +90,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -116,7 +119,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
@@ -145,7 +148,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadId property is set
         internal bool IsSetUploadId()
         {
-            return this.uploadId != null;       
+            return this.uploadId != null;
         }
 
         /// <summary>
@@ -174,7 +177,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
 
         /// <summary>
@@ -204,7 +207,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Range property is set
         internal bool IsSetRange()
         {
-            return this.range != null;       
+            return this.range != null;
         }
 
         /// <summary>
@@ -233,7 +236,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Body property is set
         internal bool IsSetBody()
         {
-            return this.body != null;       
+            return this.body != null;
         }
 
         /// <summary>

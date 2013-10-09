@@ -313,7 +313,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>l</c>, <c>Canceled</c>, or <c>Error</c>.
+        /// The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

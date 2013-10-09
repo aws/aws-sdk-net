@@ -30,9 +30,10 @@ namespace Amazon.OpsWorks.Model
         private string name;
         private string domain;
         private string region;
+        private string instanceId;
 
         /// <summary>
-        /// The IP address
+        /// The IP address.
         ///  
         /// </summary>
         public string Ip
@@ -145,6 +146,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRegion()
         {
             return this.region != null;
+        }
+
+        /// <summary>
+        /// The ID of the instance that the address is attached to.
+        ///  
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceId property
+        /// </summary>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticIp WithInstanceId(string instanceId)
+        {
+            this.instanceId = instanceId;
+            return this;
+        }
+            
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
     }
 }

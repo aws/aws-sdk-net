@@ -32,6 +32,8 @@
 
         public DescribeAppsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeAppsResult describeAppsResult = new DescribeAppsResult();
           describeAppsResult.Apps = null;
                         

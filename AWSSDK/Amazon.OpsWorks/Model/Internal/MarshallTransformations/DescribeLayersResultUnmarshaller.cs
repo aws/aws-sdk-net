@@ -32,6 +32,8 @@
 
         public DescribeLayersResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeLayersResult describeLayersResult = new DescribeLayersResult();
           describeLayersResult.Layers = null;
                         

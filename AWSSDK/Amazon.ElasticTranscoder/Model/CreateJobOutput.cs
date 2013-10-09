@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>CreateJobOutput</c> structure.</para>
     /// </summary>
     public class CreateJobOutput
     {
@@ -242,7 +242,8 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// 
+        /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
+        /// watermarks for each output. Settings for each watermark must be defined in the preset for the current output.
         ///  
         /// </summary>
         public List<JobWatermark> Watermarks

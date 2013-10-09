@@ -182,6 +182,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AutoAssignElasticIps");
                     writer.Write(updateLayerRequest.AutoAssignElasticIps);
                 }
+                if (updateLayerRequest != null && updateLayerRequest.IsSetAutoAssignPublicIps()) 
+                {
+                    writer.WritePropertyName("AutoAssignPublicIps");
+                    writer.Write(updateLayerRequest.AutoAssignPublicIps);
+                }
 
                 if (updateLayerRequest != null) 
                 {

@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the UpdatePipelineResult property.
-        /// 
+        /// When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
         /// </summary>
         public UpdatePipelineResult UpdatePipelineResult
         {

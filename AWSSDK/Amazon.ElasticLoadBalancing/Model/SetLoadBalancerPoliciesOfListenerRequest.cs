@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesOfListener operation.
-    /// <para> Associates, updates, or disables a policy with a listener on the LoadBalancer. You can associate multiple policies with a listener.
+    /// <para> Associates, updates, or disables a policy with a listener on the load balancer. You can associate multiple policies with a listener.
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.SetLoadBalancerPoliciesOfListener"/>
@@ -46,11 +46,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="loadBalancerPort"> The external port of the LoadBalancer with which this policy applies to. </param>
-        /// <param name="policyNames"> List of policies to be associated with the listener. Currently this list can have at most one policy. If the list
-        /// is empty, the current policy is removed from the listener. </param>
-        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames) 
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="loadBalancerPort"> The external port of the load balancer to associate the policy. </param>
+        /// <param name="policyNames"> List of policies to be associated with the listener. If the list is empty, the current policy is removed from the
+        /// listener. </param>
+        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
         {
             this.loadBalancerName = loadBalancerName;
             this.loadBalancerPort = loadBalancerPort;
@@ -59,7 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name of the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -84,11 +84,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// The external port of the LoadBalancer with which this policy applies to.
+        /// The external port of the load balancer to associate the policy.
         ///  
         /// </summary>
         public int LoadBalancerPort
@@ -113,12 +113,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerPort property is set
         internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPort.HasValue;       
+            return this.loadBalancerPort.HasValue;
         }
 
         /// <summary>
-        /// List of policies to be associated with the listener. Currently this list can have at most one policy. If the list is empty, the current
-        /// policy is removed from the listener.
+        /// List of policies to be associated with the listener. If the list is empty, the current policy is removed from the listener.
         ///  
         /// </summary>
         public List<string> PolicyNames
@@ -141,7 +140,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
@@ -161,7 +160,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public DescribePermissionsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribePermissionsResult describePermissionsResult = new DescribePermissionsResult();
           describePermissionsResult.Permissions = null;
                         

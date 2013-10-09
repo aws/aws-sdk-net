@@ -77,7 +77,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// 
+        /// The Amazon Resource Name (ARN) for the pipeline.
         ///  
         /// </summary>
         public string Arn

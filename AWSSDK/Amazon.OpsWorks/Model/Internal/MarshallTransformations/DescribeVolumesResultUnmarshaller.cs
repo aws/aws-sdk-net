@@ -32,6 +32,8 @@
 
         public DescribeVolumesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeVolumesResult describeVolumesResult = new DescribeVolumesResult();
           describeVolumesResult.Volumes = null;
                         

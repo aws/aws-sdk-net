@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the CreatePresetResult property.
-        /// 
+        /// The CreatePresetResponse structure.
         /// </summary>
         public CreatePresetResult CreatePresetResult
         {

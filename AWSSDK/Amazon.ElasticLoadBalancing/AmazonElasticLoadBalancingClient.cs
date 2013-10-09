@@ -35,10 +35,17 @@ namespace Amazon.ElasticLoadBalancing
     /// that can be used for sending a query request. Query requests are HTTP or HTTPS requests that use the HTTP verb GET or POST and a query
     /// parameter named Action or Operation. Action is used throughout this documentation, although Operation is supported for backward
     /// compatibility with other AWS Query APIs.</para> <para>For detailed information on constructing a query request using the actions, data
-    /// types, and parameters mentioned in this guide, go to Using the Query API in the <i>Elastic Load Balancing Developer Guide</i> .</para>
-    /// <para>For detailed information about Elastic Load Balancing features and their associated actions, go to Using Elastic Load Balancing in the
-    /// <i>Elastic Load Balancing Developer Guide</i> .</para> <para>This reference guide is based on the current WSDL, which is available at:
-    /// </para>
+    /// types, and parameters mentioned in this guide, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html" >Using the Query API</a> in the <i>Elastic
+    /// Load Balancing Developer Guide</i> .</para> <para>For detailed information about Elastic Load Balancing features and their associated
+    /// actions, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html" >Using Elastic Load
+    /// Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>This reference guide is based on the current WSDL, which
+    /// is available at: <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"
+    /// >http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The
+    /// examples in this guide assume that your load balancers are created in the US East (Northern Virginia) region and use us-east-1 as the
+    /// endpoint.</para> <para>You can create your load balancers in other AWS regions. For information about regions and endpoints supported by
+    /// Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> in the
+    /// Amazon Web Services General Reference. </para>
     /// </summary>
     public class AmazonElasticLoadBalancingClient : AmazonWebServiceClient, AmazonElasticLoadBalancing
     {
@@ -64,7 +71,7 @@ namespace Amazon.ElasticLoadBalancing
         ///
         /// </summary>
         public AmazonElasticLoadBalancingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -84,7 +91,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticLoadBalancingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -104,7 +111,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancing Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AmazonElasticLoadBalancingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Credentials
@@ -132,7 +139,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AWSCredentials credentials, AmazonElasticLoadBalancingConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -168,19 +175,57 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticLoadBalancingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
-        
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticLoadBalancingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticLoadBalancingConfig(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonElasticLoadBalancingClient Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
+        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticLoadBalancingConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
 
         #endregion
    
         #region DescribeLoadBalancerPolicyTypes
 
         /// <summary>
-        /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
-        /// are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will be
-        /// applied to an Elastic LoadBalancer. </para>
+        /// <para> Returns meta-information on the specified load balancer policies defined by the Elastic Load Balancing service. The policy types
+        /// that are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will
+        /// be applied to a load balancer. </para>
         /// </summary>
         /// 
         /// <param name="describeLoadBalancerPolicyTypesRequest">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes
@@ -242,9 +287,9 @@ namespace Amazon.ElasticLoadBalancing
         
 
         /// <summary>
-        /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
-        /// are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will be
-        /// applied to an Elastic LoadBalancer. </para>
+        /// <para> Returns meta-information on the specified load balancer policies defined by the Elastic Load Balancing service. The policy types
+        /// that are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will
+        /// be applied to a load balancer. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by AmazonElasticLoadBalancing.</returns>
@@ -261,7 +306,9 @@ namespace Amazon.ElasticLoadBalancing
         #region ConfigureHealthCheck
 
         /// <summary>
-        /// <para> Enables the client to define an application healthcheck for the instances. </para>
+        /// <para> Specifies the health check settings to use for evaluating the health state of your back-end instances. </para> <para>For more
+        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"
+        /// >Health Check</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="configureHealthCheckRequest">Container for the necessary parameters to execute the ConfigureHealthCheck service method on
@@ -327,9 +374,10 @@ namespace Amazon.ElasticLoadBalancing
         #region DetachLoadBalancerFromSubnets
 
         /// <summary>
-        /// <para> Removes subnets from the set of configured subnets in the VPC for the LoadBalancer. </para> <para> After a subnet is removed all of
-        /// the EndPoints registered with the LoadBalancer that are in the removed subnet will go into the <i>OutOfService</i> state. When a subnet is
-        /// removed, the LoadBalancer will balance the traffic among the remaining routable subnets for the LoadBalancer. </para>
+        /// <para> Removes subnets from the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer. </para>
+        /// <para> After a subnet is removed all of the EC2 instances registered with the load balancer that are in the removed subnet will go into the
+        /// <i>OutOfService</i> state. When a subnet is removed, the load balancer will balance the traffic among the remaining routable subnets for the
+        /// load balancer. </para>
         /// </summary>
         /// 
         /// <param name="detachLoadBalancerFromSubnetsRequest">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets
@@ -396,10 +444,10 @@ namespace Amazon.ElasticLoadBalancing
         #region DescribeLoadBalancerPolicies
 
         /// <summary>
-        /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
-        /// the specified policies, or descriptions of all the policies created for the LoadBalancer. If you don't specify a LoadBalancer name, the
-        /// operation returns descriptions of the specified sample policies, or descriptions of all the sample policies. The names of the sample
-        /// policies have the <c>ELBSample-</c> prefix. </para>
+        /// <para>Returns detailed descriptions of the policies. If you specify a load balancer name, the action returns the descriptions of all the
+        /// policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description
+        /// of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions
+        /// of all the sample policies. The names of the sample policies have the <c>ELBSample-</c> prefix. </para>
         /// </summary>
         /// 
         /// <param name="describeLoadBalancerPoliciesRequest">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies service
@@ -462,10 +510,10 @@ namespace Amazon.ElasticLoadBalancing
         
 
         /// <summary>
-        /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
-        /// the specified policies, or descriptions of all the policies created for the LoadBalancer. If you don't specify a LoadBalancer name, the
-        /// operation returns descriptions of the specified sample policies, or descriptions of all the sample policies. The names of the sample
-        /// policies have the <c>ELBSample-</c> prefix. </para>
+        /// <para>Returns detailed descriptions of the policies. If you specify a load balancer name, the action returns the descriptions of all the
+        /// policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description
+        /// of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions
+        /// of all the sample policies. The names of the sample policies have the <c>ELBSample-</c> prefix. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by AmazonElasticLoadBalancing.</returns>
@@ -483,7 +531,7 @@ namespace Amazon.ElasticLoadBalancing
         #region SetLoadBalancerPoliciesOfListener
 
         /// <summary>
-        /// <para> Associates, updates, or disables a policy with a listener on the LoadBalancer. You can associate multiple policies with a listener.
+        /// <para> Associates, updates, or disables a policy with a listener on the load balancer. You can associate multiple policies with a listener.
         /// </para>
         /// </summary>
         /// 
@@ -553,13 +601,13 @@ namespace Amazon.ElasticLoadBalancing
         #region DisableAvailabilityZonesForLoadBalancer
 
         /// <summary>
-        /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the LoadBalancer. </para> <para> There
-        /// must be at least one Availability Zone registered with a LoadBalancer at all times. A client cannot remove all the Availability Zones from a
-        /// LoadBalancer. Once an Availability Zone is removed, all the instances registered with the LoadBalancer that are in the removed Availability
-        /// Zone go into the OutOfService state. Upon Availability Zone removal, the LoadBalancer attempts to equally balance the traffic among its
-        /// remaining usable Availability Zones. Trying to remove an Availability Zone that was not associated with the LoadBalancer does nothing.
-        /// </para> <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide
-        /// the same account credentials as those that were used to create the LoadBalancer. </para>
+        /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the load balancer. </para> <para>
+        /// There must be at least one Availability Zone registered with a load balancer at all times. Once an Availability Zone is removed, all the
+        /// instances registered with the load balancer that are in the removed Availability Zone go into the <i>OutOfService</i> state. Upon
+        /// Availability Zone removal, the load balancer attempts to equally balance the traffic among its remaining usable Availability Zones. Trying
+        /// to remove an Availability Zone that was not associated with the load balancer does nothing. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a
+        /// Load-Balanced Application </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="disableAvailabilityZonesForLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -626,10 +674,9 @@ namespace Amazon.ElasticLoadBalancing
         #region DescribeInstanceHealth
 
         /// <summary>
-        /// <para> Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of all the
-        /// instances for the LoadBalancer is returned. </para> <para><b>NOTE:</b> The client must have created the specified input LoadBalancer in
-        /// order to retrieve this information; the client must provide the same account credentials as those that were used to create the LoadBalancer.
-        /// </para>
+        /// <para> Returns the current state of the specified instances registered with the specified load balancer. If no instances are specified, the
+        /// state of all the instances registered with the load balancer is returned. </para> <para><b>NOTE:</b> You must provide the same account
+        /// credentials as those that were used to create the load balancer. </para>
         /// </summary>
         /// 
         /// <param name="describeInstanceHealthRequest">Container for the necessary parameters to execute the DescribeInstanceHealth service method on
@@ -696,7 +743,7 @@ namespace Amazon.ElasticLoadBalancing
         #region DeleteLoadBalancerPolicy
 
         /// <summary>
-        /// <para> Deletes a policy from the LoadBalancer. The specified policy must not be enabled for any listeners. </para>
+        /// <para> Deletes a policy from the load balancer. The specified policy must not be enabled for any listeners. </para>
         /// </summary>
         /// 
         /// <param name="deleteLoadBalancerPolicyRequest">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy service method
@@ -764,8 +811,8 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// <para> Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for
-        /// your Elastic LoadBalancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy
-        /// type. </para>
+        /// your load balancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createLoadBalancerPolicyRequest">Container for the necessary parameters to execute the CreateLoadBalancerPolicy service method
@@ -835,10 +882,11 @@ namespace Amazon.ElasticLoadBalancing
         #region EnableAvailabilityZonesForLoadBalancer
 
         /// <summary>
-        /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer. </para> <para> The LoadBalancer evenly distributes requests across all
-        /// its registered Availability Zones that contain instances. As a result, the client must ensure that its LoadBalancer is appropriately scaled
-        /// for each registered Availability Zone. </para> <para><b>NOTE:</b> The new EC2 Availability Zones to be added must be in the same EC2 Region
-        /// as the Availability Zones for which the LoadBalancer was created. </para>
+        /// <para> Adds one or more EC2 Availability Zones to the load balancer. </para> <para> The load balancer evenly distributes requests across all
+        /// its registered Availability Zones that contain instances. </para> <para><b>NOTE:</b> The new EC2 Availability Zones to be added must be in
+        /// the same EC2 Region as the Availability Zones for which the load balancer was created. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced
+        /// Application to an Additional Availability Zone </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="enableAvailabilityZonesForLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -901,11 +949,83 @@ namespace Amazon.ElasticLoadBalancing
 
         #endregion
     
+        #region DeleteLoadBalancer
+
+        /// <summary>
+        /// <para> Deletes the specified load balancer. </para> <para> If attempting to recreate the load balancer, you must reconfigure all the
+        /// settings. The DNS name associated with a deleted load balancer will no longer be usable. Once deleted, the name and associated DNS record of
+        /// the load balancer no longer exist and traffic sent to any of its IP addresses will no longer be delivered to back-end instances. </para>
+        /// <para> To successfully call this API, you must provide the same account credentials as were used to create the load balancer. </para>
+        /// <para><b>NOTE:</b> By design, if the load balancer does not exist or has already been deleted, a call to DeleteLoadBalancer action still
+        /// succeeds. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteLoadBalancerRequest">Container for the necessary parameters to execute the DeleteLoadBalancer service method on
+        ///          AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the DeleteLoadBalancer service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteLoadBalancer(deleteLoadBalancerRequest, null, null, true);
+            return EndDeleteLoadBalancer(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteLoadBalancerRequest">Container for the necessary parameters to execute the DeleteLoadBalancer operation on
+        ///          AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDeleteLoadBalancer operation.</returns>
+        public IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteLoadBalancer(deleteLoadBalancerRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteLoadBalancer operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancer.</param>
+        /// 
+        /// <returns>Returns a DeleteLoadBalancerResult from AmazonElasticLoadBalancing.</returns>
+        public DeleteLoadBalancerResponse EndDeleteLoadBalancer(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteLoadBalancerResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteLoadBalancerRequestMarshaller().Marshall(deleteLoadBalancerRequest);
+            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region CreateLoadBalancerListeners
 
         /// <summary>
-        /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
-        /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para>
+        /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
+        /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
+        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to
+        /// Your Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createLoadBalancerListenersRequest">Container for the necessary parameters to execute the CreateLoadBalancerListeners service
@@ -974,18 +1094,27 @@ namespace Amazon.ElasticLoadBalancing
         #region CreateLoadBalancer
 
         /// <summary>
-        /// <para> Creates a new LoadBalancer. </para> <para> After the call has completed successfully, a new LoadBalancer is created; however, it will
-        /// not be usable until at least one instance has been registered. When the LoadBalancer creation is completed, the client can check whether or
-        /// not it is usable by using the DescribeInstanceHealth action. The LoadBalancer is usable as soon as any registered instance is
-        /// <i>InService</i> .
-        /// </para> <para><b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to ten per Region. </para> <para><b>NOTE:</b>
-        /// LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends
-        /// with: us-east-1.elb.amazonaws.com (for the US Standard Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For
-        /// LoadBalancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para> <para>For information on using
-        /// CreateLoadBalancer to create a new LoadBalancer in Amazon EC2, go to Using Query API section in the <i>Creating a Load Balancer With SSL
-        /// Cipher Settings and Back-end Authentication</i> topic of the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
-        /// using CreateLoadBalancer to create a new LoadBalancer in Amazon VPC, go to Using Query API section in the <i>Creating a Basic Load Balancer
-        /// in Amazon VPC</i> topic of the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// <para> Creates a new load balancer. </para> <para> After the call has completed successfully, a new load balancer is created with a unique
+        /// Domain Name Service (DNS) name. The DNS name includes the name of the AWS region in which the load balance was created. For example, if your
+        /// load balancer was created in the United States, the DNS name might end with either of the following:</para>
+        /// <ul>
+        /// <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia Region) </li>
+        /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California Region) </li>
+        /// 
+        /// </ul>
+        /// <para>For information about the AWS regions supported by Elastic Load Balancing, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a> .</para> <para>You can create up to 10
+        /// load balancers per region per account.</para> <para>Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within
+        /// any one of the following platforms:</para>
+        /// <ul>
+        /// <li> <i>EC2-Classic</i> <para>For information on creating and managing your load balancers in EC2-Classic, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in
+        /// Amazon EC2-Classic </a> .</para> </li>
+        /// <li> <i>EC2-VPC</i> <para>For information on creating and managing your load balancers in EC2-VPC, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in
+        /// Amazon VPC </a> .</para> </li>
+        /// 
+        /// </ul>
         /// </summary>
         /// 
         /// <param name="createLoadBalancerRequest">Container for the necessary parameters to execute the CreateLoadBalancer service method on
@@ -1055,83 +1184,16 @@ namespace Amazon.ElasticLoadBalancing
 
         #endregion
     
-        #region DeleteLoadBalancer
-
-        /// <summary>
-        /// <para> Deletes the specified LoadBalancer. </para> <para> If attempting to recreate the LoadBalancer, the client must reconfigure all the
-        /// settings. The DNS name associated with a deleted LoadBalancer will no longer be usable. Once deleted, the name and associated DNS record of
-        /// the LoadBalancer no longer exist and traffic sent to any of its IP addresses will no longer be delivered to client instances. The client
-        /// will not receive the same DNS name even if a new LoadBalancer with same LoadBalancerName is created. </para> <para> To successfully call
-        /// this API, the client must provide the same account credentials as were used to create the LoadBalancer. </para> <para><b>NOTE:</b> By
-        /// design, if the LoadBalancer does not exist or has already been deleted, DeleteLoadBalancer still succeeds. </para>
-        /// </summary>
-        /// 
-        /// <param name="deleteLoadBalancerRequest">Container for the necessary parameters to execute the DeleteLoadBalancer service method on
-        ///          AmazonElasticLoadBalancing.</param>
-        /// 
-        /// <returns>The response from the DeleteLoadBalancer service method, as returned by AmazonElasticLoadBalancing.</returns>
-        /// 
-        public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
-        {
-            IAsyncResult asyncResult = invokeDeleteLoadBalancer(deleteLoadBalancerRequest, null, null, true);
-            return EndDeleteLoadBalancer(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteLoadBalancerRequest">Container for the necessary parameters to execute the DeleteLoadBalancer operation on
-        ///          AmazonElasticLoadBalancing.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteLoadBalancer operation.</returns>
-        public IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest, AsyncCallback callback, object state)
-        {
-            return invokeDeleteLoadBalancer(deleteLoadBalancerRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancer.</param>
-        /// 
-        /// <returns>Returns a DeleteLoadBalancerResult from AmazonElasticLoadBalancing.</returns>
-        public DeleteLoadBalancerResponse EndDeleteLoadBalancer(IAsyncResult asyncResult)
-        {
-            return endOperation<DeleteLoadBalancerResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteLoadBalancerRequestMarshaller().Marshall(deleteLoadBalancerRequest);
-            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
         #region SetLoadBalancerPoliciesForBackendServer
 
         /// <summary>
         /// <para> Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies.
         /// After the policies have been created using CreateLoadBalancerPolicy, they can be applied here as a list. At this time, only the back-end
         /// server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.
-        /// </para>
+        /// </para> <para><b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the current set of policies associated with the specified
+        /// instance port. Every time you use this action to enable the policies, use the PolicyNames parameter to list all the policies you want to
+        /// enable. </para> <para>You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies action to verify that the policy has been associated
+        /// with the back-end server.</para>
         /// </summary>
         /// 
         /// <param name="setLoadBalancerPoliciesForBackendServerRequest">Container for the necessary parameters to execute the
@@ -1199,7 +1261,7 @@ namespace Amazon.ElasticLoadBalancing
         #region DeleteLoadBalancerListeners
 
         /// <summary>
-        /// <para> Deletes listeners from the LoadBalancer for the specified port. </para>
+        /// <para> Deletes listeners from the load balancer for the specified port. </para>
         /// </summary>
         /// 
         /// <param name="deleteLoadBalancerListenersRequest">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service
@@ -1265,9 +1327,12 @@ namespace Amazon.ElasticLoadBalancing
         #region DeregisterInstancesFromLoadBalancer
 
         /// <summary>
-        /// <para> Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic from the LoadBalancer.
-        /// </para> <para> In order to successfully call this API, the same account credentials as those used to create the LoadBalancer must be
-        /// provided. </para>
+        /// <para> Deregisters instances from the load balancer. Once the instance is deregistered, it will stop receiving traffic from the load
+        /// balancer. </para> <para> In order to successfully call this API, the same account credentials as those used to create the load balancer must
+        /// be provided. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon
+        /// EC2 Instances </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>You can use DescribeLoadBalancers to verify if the
+        /// instance is deregistered from the load balancer.</para>
         /// </summary>
         /// 
         /// <param name="deregisterInstancesFromLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -1335,9 +1400,9 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
-        /// certificate that was used on the same LoadBalancer and port. </para> <para>For information on using SetLoadBalancerListenerSSLCertificate,
-        /// go to Using the Query API in <i>Updating an SSL Certificate for a Load Balancer</i> section of the <i>Elastic Load Balancing Developer
-        /// Guide</i> .</para>
+        /// certificate that was used on the same load balancer and port. </para> <para>For more information on updating your SSL certificate, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate
+        /// for a Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="setLoadBalancerListenerSSLCertificateRequest">Container for the necessary parameters to execute the
@@ -1407,12 +1472,14 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// <para> Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified
-        /// expiration period. This policy can be associated only with HTTP/HTTPS listeners. </para> <para> When a LoadBalancer implements this policy,
-        /// the LoadBalancer uses a special cookie to track the backend server instance for each request. When the LoadBalancer receives a request, it
-        /// first checks to see if this cookie is present in the request. If so, the LoadBalancer sends the request to the application server specified
-        /// in the cookie. If not, the LoadBalancer sends the request to a server that is chosen based on the existing load balancing algorithm. </para>
-        /// <para> A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie
-        /// is based on the cookie expiration time, which is specified in the policy configuration. </para>
+        /// expiration period. This policy can be associated only with HTTP/HTTPS listeners. </para> <para> When a load balancer implements this policy,
+        /// the load balancer uses a special cookie to track the backend server instance for each request. When the load balancer receives a request, it
+        /// first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified
+        /// in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load balancing algorithm.
+        /// </para> <para> A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the
+        /// cookie is based on the cookie expiration time, which is specified in the policy configuration. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"
+        /// >Enabling Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createLBCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy
@@ -1481,8 +1548,11 @@ namespace Amazon.ElasticLoadBalancing
         #region AttachLoadBalancerToSubnets
 
         /// <summary>
-        /// <para> Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer. </para> <para> The Loadbalancers evenly
-        /// distribute requests across all of the registered subnets. </para>
+        /// <para> Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
+        /// </para> <para> The load balancers evenly distribute requests across all of the registered subnets. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in
+        /// Amazon VPC </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="attachLoadBalancerToSubnetsRequest">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets service
@@ -1554,10 +1624,13 @@ namespace Amazon.ElasticLoadBalancing
         /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
         /// associated only with HTTP/HTTPS listeners. </para> <para> This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
         /// except that the lifetime of the special Elastic Load Balancing cookie follows the lifetime of the application-generated cookie specified in
-        /// the policy configuration. The LoadBalancer only inserts a new stickiness cookie when the application response includes a new application
+        /// the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application
         /// cookie. </para> <para> If the application cookie is explicitly removed or expires, the session stops being sticky until a new application
         /// cookie is issued. </para> <para><b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and
-        /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para>
+        /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para> <para>For more
+        /// information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"
+        /// >Enabling Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createAppCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy
@@ -1626,12 +1699,19 @@ namespace Amazon.ElasticLoadBalancing
         #region RegisterInstancesWithLoadBalancer
 
         /// <summary>
-        /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
-        /// the LoadBalancer. Any instance that is not in any of the Availability Zones registered for the LoadBalancer will be moved to the
-        /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the LoadBalancer. </para>
-        /// <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide the same
-        /// account credentials as those that were used to create the LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does not guarantee
-        /// that operation has completed. Rather, it means that the request has been registered and the changes will happen shortly. </para>
+        /// <para> Adds new instances to the load balancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests
+        /// from the load balancer. Any instance that is not in any of the Availability Zones registered for the load balancer will be moved to the
+        /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the load balancer. </para>
+        /// <para>When an instance registered with a load balancer is stopped and then restarted, the IP addresses associated with the instance changes.
+        /// Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you
+        /// de-register your Amazon EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your
+        /// instance after you've restarted. To de-register your instances from load balancer, use DeregisterInstancesFromLoadBalancer action.</para>
+        /// <para>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"
+        /// >De-register and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para><b>NOTE:</b> In order
+        /// for this call to be successful, you must provide the same account credentials as those that were used to create the load balancer. </para>
+        /// <para><b>NOTE:</b> Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been
+        /// registered and the changes will happen shortly. </para> <para>You can use DescribeLoadBalancers or DescribeInstanceHealth action to check
+        /// the state of the newly registered instances.</para>
         /// </summary>
         /// 
         /// <param name="registerInstancesWithLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -1698,8 +1778,10 @@ namespace Amazon.ElasticLoadBalancing
         #region ApplySecurityGroupsToLoadBalancer
 
         /// <summary>
-        /// <para> Associates one or more security groups with your LoadBalancer in VPC. The provided security group IDs will override any currently
-        /// applied security groups. </para>
+        /// <para> Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security
+        /// group IDs will override any currently applied security groups. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html" >Manage Security Groups in Amazon VPC</a> in
+        /// the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="applySecurityGroupsToLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -1767,10 +1849,9 @@ namespace Amazon.ElasticLoadBalancing
         #region DescribeLoadBalancers
 
         /// <summary>
-        /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
-        /// configuration information for all LoadBalancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the specified
-        /// input LoadBalancers in order to retrieve this information; the client must provide the same account credentials as those that were used to
-        /// create the LoadBalancer. </para>
+        /// <para> Returns detailed configuration information for all the load balancers created for the account. If you specify load balancer names,
+        /// the action returns configuration information of the specified load balancers. </para> <para><b>NOTE:</b> In order to retrieve this
+        /// information, you must provide the same account credentials that was used to create the load balancer.</para>
         /// </summary>
         /// 
         /// <param name="describeLoadBalancersRequest">Container for the necessary parameters to execute the DescribeLoadBalancers service method on
@@ -1832,10 +1913,9 @@ namespace Amazon.ElasticLoadBalancing
         
 
         /// <summary>
-        /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
-        /// configuration information for all LoadBalancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the specified
-        /// input LoadBalancers in order to retrieve this information; the client must provide the same account credentials as those that were used to
-        /// create the LoadBalancer. </para>
+        /// <para> Returns detailed configuration information for all the load balancers created for the account. If you specify load balancer names,
+        /// the action returns configuration information of the specified load balancers. </para> <para><b>NOTE:</b> In order to retrieve this
+        /// information, you must provide the same account credentials that was used to create the load balancer.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by AmazonElasticLoadBalancing.</returns>

@@ -32,6 +32,8 @@
 
         public DescribeDeploymentsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeDeploymentsResult describeDeploymentsResult = new DescribeDeploymentsResult();
           describeDeploymentsResult.Deployments = null;
                         

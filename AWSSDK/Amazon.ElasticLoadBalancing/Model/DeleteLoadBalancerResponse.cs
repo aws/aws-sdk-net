@@ -30,18 +30,18 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DeleteLoadBalancerResult property.
-        /// The output for the DeleteLoadBalander action.
+        /// The output for the DeleteLoadBalancer action.
         /// </summary>
         public DeleteLoadBalancerResult DeleteLoadBalancerResult
         {
-            get 
+            get
             {
                 if(this.deleteLoadBalancerResult == null)
                 {
                     this.deleteLoadBalancerResult = new DeleteLoadBalancerResult();
                 }
 
-                return this.deleteLoadBalancerResult; 
+                return this.deleteLoadBalancerResult;
             }
             set { this.deleteLoadBalancerResult = value; }
         }

@@ -26,9 +26,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerListenerSSLCertificate operation.
     /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
-    /// certificate that was used on the same LoadBalancer and port. </para> <para>For information on using SetLoadBalancerListenerSSLCertificate,
-    /// go to Using the Query API in <i>Updating an SSL Certificate for a Load Balancer</i> section of the <i>Elastic Load Balancing Developer
-    /// Guide</i> .</para>
+    /// certificate that was used on the same load balancer and port. </para> <para>For more information on updating your SSL certificate, see <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate
+    /// for a Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate"/>
     public class SetLoadBalancerListenerSSLCertificateRequest : AmazonWebServiceRequest
@@ -48,12 +48,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name of the the LoadBalancer. </param>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
         /// <param name="loadBalancerPort"> The port that uses the specified SSL certificate. </param>
-        /// <param name="sSLCertificateId"> The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates </a> in the AWS
-        /// Identity and Access Management documentation. </param>
-        public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int loadBalancerPort, string sSLCertificateId) 
+        /// <param name="sSLCertificateId"> The Amazon Resource Number (ARN) of the SSL certificate chain to use. For more information on SSL
+        /// certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates</a> in
+        /// the <i>AWS Identity and Access Management User Guide</i>. </param>
+        public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int loadBalancerPort, string sSLCertificateId)
         {
             this.loadBalancerName = loadBalancerName;
             this.loadBalancerPort = loadBalancerPort;
@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name of the the LoadBalancer.
+        /// The name of the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -87,7 +87,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -116,13 +116,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerPort property is set
         internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPort.HasValue;       
+            return this.loadBalancerPort.HasValue;
         }
 
         /// <summary>
-        /// The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates </a> in the AWS
-        /// Identity and Access Management documentation.
+        /// The Amazon Resource Number (ARN) of the SSL certificate chain to use. For more information on SSL certificates, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates</a> in the <i>AWS Identity and
+        /// Access Management User Guide</i>.
         ///  
         /// </summary>
         public string SSLCertificateId
@@ -147,7 +147,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SSLCertificateId property is set
         internal bool IsSetSSLCertificateId()
         {
-            return this.sSLCertificateId != null;       
+            return this.sSLCertificateId != null;
         }
     }
 }

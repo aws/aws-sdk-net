@@ -32,6 +32,8 @@
 
         public CreateAppResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateAppResult createAppResult = new CreateAppResult();
           
             int originalDepth = context.CurrentDepth;

@@ -32,7 +32,8 @@ namespace Amazon.OpsWorks.Model
     /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
     /// 
     /// </ul>
-    /// <para>For more information, see Deploying Apps and Run Stack Commands.</para>
+    /// <para>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html" >Deploying
+    /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html" >Run Stack Commands</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateDeployment"/>
     public class CreateDeploymentRequest : AmazonWebServiceRequest

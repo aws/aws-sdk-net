@@ -2497,7 +2497,7 @@ namespace Amazon.EC2
         DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request);
 
         /// <summary>
-        /// Modifies the Availability Zone, instance count, or network platform (EC2-Classic or EC2-VPC) of
+        /// Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of
         /// your Reserved Instances.
         /// </summary>
         /// <param name="request">Modify Reserved Instances request</param>

@@ -34,15 +34,17 @@ namespace Amazon.Glacier
     /// scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and
     /// recovery, or time-consuming hardware migrations.</para> <para>Amazon Glacier is a great storage choice when low storage cost is paramount,
     /// your data is rarely retrieved, and retrieval latency of several hours is acceptable. If your application requires fast or frequent access to
-    /// your data, consider using Amazon S3. For more information, go to Amazon Simple Storage Service (Amazon S3).</para> <para>You can store any
-    /// kind of data in any format. There is no maximum limit on the total amount of data you can store in Amazon Glacier. </para> <para>If you are
-    /// a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections in the <i>Amazon Glacier Developer
-    /// Guide</i> :</para>
+    /// your data, consider using Amazon S3. For more information, go to <a href="http://aws.amazon.com/s3/"> Amazon Simple Storage Service (Amazon
+    /// S3) </a> .</para> <para>You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in
+    /// Amazon Glacier. </para> <para>If you are a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections
+    /// in the <i>Amazon Glacier Developer Guide</i> :</para>
     /// <ul>
-    /// <li> <para> What is Amazon Glacier - This section of the Developer Guide describes the underlying data model, the operations it supports,
-    /// and the AWS SDKs that you can use to interact with the service.</para> </li>
-    /// <li> <para> Getting Started with Amazon Glacier - The Getting Started section walks you through the process of creating a vault, uploading
-    /// archives, creating jobs to download archives, retrieving the job output, and deleting archives.</para> </li>
+    /// <li> <para> <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"> What is Amazon Glacier </a> - This section of
+    /// the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the
+    /// service.</para> </li>
+    /// <li> <para> <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html"> Getting Started with Amazon
+    /// Glacier </a> - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download
+    /// archives, retrieving the job output, and deleting archives.</para> </li>
     /// 
     /// </ul>
     /// </summary>
@@ -229,8 +231,10 @@ namespace Amazon.Glacier
         /// you obtained from a previous List Vaults request. You can also limit the number of vaults returned in the response by specifying the
         /// <c>limit</c> parameter in the request. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS
         /// Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
-        /// specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual
-        /// information and underlying REST API, go to Retrieving Vault Metadata in Amazon Glacier and List Vaults in the <i>Amazon Glacier Developer
+        /// specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"
+        /// >Access Control Using AWS Identity and Access Management (IAM)</a> .</para> <para>For conceptual information and underlying REST API, go to
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html" >Retrieving Vault Metadata in Amazon Glacier</a>
+        /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html" >List Vaults </a> in the <i>Amazon Glacier Developer
         /// Guide</i> .
         /// </para>
         /// </summary>
@@ -302,8 +306,10 @@ namespace Amazon.Glacier
         /// you obtained from a previous List Vaults request. You can also limit the number of vaults returned in the response by specifying the
         /// <c>limit</c> parameter in the request. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS
         /// Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
-        /// specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual
-        /// information and underlying REST API, go to Retrieving Vault Metadata in Amazon Glacier and List Vaults in the <i>Amazon Glacier Developer
+        /// specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"
+        /// >Access Control Using AWS Identity and Access Management (IAM)</a> .</para> <para>For conceptual information and underlying REST API, go to
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html" >Retrieving Vault Metadata in Amazon Glacier</a>
+        /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html" >List Vaults </a> in the <i>Amazon Glacier Developer
         /// Guide</i> .
         /// </para>
         /// </summary>
@@ -332,8 +338,10 @@ namespace Amazon.Glacier
         /// topic after it completes the job. </para> <para>A job ID will not expire for at least 24 hours after Amazon Glacier completes the job.
         /// </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM)
         /// users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see
-        /// Access Control Using AWS Identity and Access Management (IAM).</para> <para> For information about the underlying REST API, go to Working
-        /// with Archives in Amazon Glacier in the <i>Amazon Glacier Developer Guide</i> .
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and
+        /// Access Management (IAM) </a> .</para> <para> For information about the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a> in the
+        /// <i>Amazon Glacier Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -410,8 +418,11 @@ namespace Amazon.Glacier
         /// previous List Parts request. You can also limit the number of parts returned in the response by specifying the <c>limit</c> parameter in the
         /// request. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management
         /// (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more
-        /// information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and the underlying
-        /// REST API, go to Working with Archives in Amazon Glacier and List Parts in the <i>Amazon Glacier Developer Guide</i> .</para>
+        /// information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS
+        /// Identity and Access Management (IAM) </a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"> List Parts </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="listPartsRequest">Container for the necessary parameters to execute the ListParts service method on AmazonGlacier.</param>
@@ -480,12 +491,15 @@ namespace Amazon.Glacier
         /// <summary>
         /// <para>This operation retrieves the <c>notification-configuration</c> subresource of the specified vault.</para> <para>For information about
         /// setting a notification configuration on a vault, see SetVaultNotifications. If a notification configuration for a vault is not set, the
-        /// operation returns a <c>404 Not Found</c> error. For more information about vault notifications, see Configuring Vault Notifications in
-        /// Amazon Glacier. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access
+        /// operation returns a <c>404 Not Found</c> error. For more information about vault notifications, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html" >Configuring Vault Notifications in Amazon
+        /// Glacier</a> . </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access
         /// Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more
-        /// information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and underlying REST
-        /// API, go to Configuring Vault Notifications in Amazon Glacier and Get Vault Notification Configuration in the <i>Amazon Glacier Developer
-        /// Guide</i> .
+        /// information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS
+        /// Identity and Access Management (IAM) </a> .</para> <para>For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html" >Configuring Vault Notifications in Amazon
+        /// Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html" >Get Vault Notification
+        /// Configuration </a> in the <i>Amazon Glacier Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -573,8 +587,9 @@ namespace Amazon.Glacier
         /// specified status are returned. The <c>completed</c> parameter allows you to specify that only jobs in a specific completion state are
         /// returned.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management
         /// (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more
-        /// information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For the underlying REST API, go to List Jobs
-        /// </para>
+        /// information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS
+        /// Identity and Access Management (IAM) </a> .</para> <para>For the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a> </para>
         /// </summary>
         /// 
         /// <param name="listJobsRequest">Container for the necessary parameters to execute the ListJobs service method on AmazonGlacier.</param>
@@ -651,9 +666,11 @@ namespace Amazon.Glacier
         /// </ul>
         /// </para> <para>This operation is idempotent.</para> <para>An AWS account has full permission to perform all operations (actions). However,
         /// AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
-        /// specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para> For conceptual
-        /// information and underlying REST API, go to Creating a Vault in Amazon Glacier and Create Vault in the <i>Amazon Glacier Developer Guide</i>
-        /// .
+        /// specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"
+        /// >Access Control Using AWS Identity and Access Management (IAM)</a> .</para> <para> For conceptual information and underlying REST API, go to
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html" >Creating a Vault in Amazon Glacier</a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -733,9 +750,11 @@ namespace Amazon.Glacier
         /// Amazon Glacier also removes the multipart upload resource if you cancel the multipart upload or it may be removed if there is no activity
         /// for a period of 24 hours.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
         /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-        /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and
-        /// underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Initiate Multipart Upload in the <i>Amazon Glacier
-        /// Developer Guide</i> .</para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control
+        /// Using AWS Identity and Access Management (IAM) </a> .</para> <para>For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+        /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html" >Initiate Multipart
+        /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="initiateMultipartUploadRequest">Container for the necessary parameters to execute the InitiateMultipartUpload service method on
@@ -807,11 +826,14 @@ namespace Amazon.Glacier
         /// <para>This operation aborts a multipart upload identified by the upload ID.</para> <para>After the Abort Multipart Upload request succeeds,
         /// you cannot upload any more parts to the multipart upload or complete the multipart upload. Aborting a completed upload fails. However,
         /// aborting an already-aborted upload will succeed, for a short time. For more information about uploading a part and completing a multipart
-        /// upload, see UploadPart and CompleteMultipartUpload.</para> <para>This operation is idempotent.</para> <para>An AWS account has full
+        /// upload, see UploadMultipartPart and CompleteMultipartUpload.</para> <para>This operation is idempotent.</para> <para>An AWS account has full
         /// permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by
-        /// default. You must grant them explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity
-        /// and Access Management (IAM).</para> <para> For conceptual information and underlying REST API, go to Working with Archives in Amazon Glacier
-        /// and Abort Multipart Upload in the <i>Amazon Glacier Developer Guide</i> .
+        /// default. You must grant them explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"> Abort Multipart Upload </a> in the <i>Amazon
+        /// Glacier Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -885,9 +907,12 @@ namespace Amazon.Glacier
         /// </ul>
         /// <para>This operation is idempotent. Attempting to delete an already-deleted archive does not result in an error. </para> <para>An AWS
         /// account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
-        /// permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access Control Using
-        /// AWS Identity and Access Management (IAM).</para> <para> For conceptual information and underlying REST API, go to Deleting an Archive in
-        /// Amazon Glacier and Delete Archive in the <i>Amazon Glacier Developer Guide</i> .
+        /// permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html"> Deleting an Archive in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -966,9 +991,13 @@ namespace Amazon.Glacier
         /// output. The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you
         /// computed to ensure you have downloaded the entire archive content with no errors.</para> </li>
         /// </ol> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users
-        /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access
-        /// Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and the underlying REST API, go to
-        /// Downloading a Vault Inventory, Downloading an Archive, and Get Job Output </para>
+        /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a> ,
+        /// 
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html"> Downloading an Archive </a> ,
+        /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"> Get Job Output </a> </para>
         /// </summary>
         /// 
         /// <param name="getJobOutputRequest">Container for the necessary parameters to execute the GetJobOutput service method on
@@ -1048,27 +1077,36 @@ namespace Amazon.Glacier
         /// <li> <para> <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification Service (Amazon SNS) topic to which Amazon
         /// Glacier can post a notification after the job is completed. You can specify an SNS topic per job request. The notification is sent only
         /// after Amazon Glacier completes the job. In addition to specifying an SNS topic per job request, you can configure vault notifications for a
-        /// vault so that job notifications are always sent. For more information, see SetVaultNotificationConfiguration.</para> </li>
+        /// vault so that job notifications are always sent. For more information, see SetVaultNotifications.</para> </li>
         /// <li> <para> <b>Get job details</b> You can make a DescribeJob request to obtain job status information while a job is in progress. However,
         /// it is more efficient to use an Amazon SNS notification to determine when a job is complete.</para> </li>
         /// 
         /// </ul>
         /// <para><b>NOTE:</b> The information you get via notification is same that you get by calling DescribeJob. </para> <para>If for a specific
         /// event, you add both the notification configuration on the vault and also specify an SNS topic in your initiate job request, Amazon Glacier
-        /// sends both notifications. For more information, see SetVaultNotificationConfiguration.</para> <para>An AWS account has full permission to
-        /// perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must
-        /// grant them explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access
-        /// Management (IAM).</para> <para> <b>About the Vault Inventory</b> </para> <para>Amazon Glacier prepares an inventory for each vault
+        /// sends both notifications. For more information, see SetVaultNotifications.</para> <para>An AWS account has full permission to perform all
+        /// operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them
+        /// explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para> <b>About the Vault Inventory</b> </para> <para>Amazon Glacier prepares an inventory for each vault
         /// periodically, every 24 hours. When you initiate a job for a vault inventory, Amazon Glacier returns the last inventory for the vault. The
         /// inventory data you get might be up to a day or two days old. Also, the initiate inventory job might take some time to complete before you
         /// can download the vault inventory. So you do not want to retrieve a vault inventory for each vault operation. However, in some scenarios, you
         /// might find the vault inventory useful. For example, when you upload an archive, you can provide an archive description but not an archive
         /// name. Amazon Glacier provides you a unique archive ID, an opaque string of characters. So, you might maintain your own database that maps
         /// archive names to their corresponding Amazon Glacier assigned archive IDs. You might find the vault inventory useful in the event you need to
-        /// reconcile information in your database with the actual vault inventory. </para> <para>An AWS account has full permission to perform all
-        /// operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them
-        /// explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access Management
-        /// (IAM).</para> <para>For conceptual information and the underlying REST API, go to Initiate a Job and Downloading a Vault Inventory </para>
+        /// reconcile information in your database with the actual vault inventory. </para> <para> <b>About Ranged Archive Retrieval</b> </para> <para>
+        /// You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of ranged archive retrieval, you specify
+        /// a byte range to return or the whole archive. The range specified must be megabyte (MB) aligned, that is the range start value must be
+        /// divisible by 1 MB and range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If the ranged archive retrieval is
+        /// not megabyte aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum values for data you download using Get
+        /// Job Output API, the range must be tree hash aligned. </para> <para>An AWS account has full permission to perform all operations (actions).
+        /// However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to
+        /// perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a> </para>
         /// </summary>
         /// 
         /// <param name="initiateJobRequest">Container for the necessary parameters to execute the InitiateJob service method on AmazonGlacier.</param>
@@ -1142,15 +1180,18 @@ namespace Amazon.Glacier
         /// searching. You can also use the optional archive description field to specify how the archive is referred to in an external index of
         /// archives, such as you might create in Amazon DynamoDB. You can also get the vault inventory to obtain a list of archive IDs in a vault. For
         /// more information, see InitiateJob. </para> <para>You must provide a SHA256 tree hash of the data you are uploading. For information about
-        /// computing a SHA256 tree hash, see Computing Checksums. </para> <para>You can optionally specify an archive description of up to 1,024
-        /// printable ASCII characters. You can get the archive description when you either retrieve the archive or get the vault inventory. For more
-        /// information, see InitiateJob. Amazon Glacier does not interpret the description in any way. An archive description does not need to be
-        /// unique. You cannot use the description to retrieve or sort the archive list. </para> <para>Archives are immutable. After you upload an
-        /// archive, you cannot edit the archive or its description. </para> <para>An AWS account has full permission to perform all operations
-        /// (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit
-        /// permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para>
-        /// <para> For conceptual information and underlying REST API, go to Uploading an Archive in Amazon Glacier and Upload Archive in the <i>Amazon
-        /// Glacier Developer Guide</i> .
+        /// computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing
+        /// Checksums </a> . </para> <para>You can optionally specify an archive description of up to 1,024 printable ASCII characters. You can get the
+        /// archive description when you either retrieve the archive or get the vault inventory. For more information, see InitiateJob. Amazon Glacier
+        /// does not interpret the description in any way. An archive description does not need to be unique. You cannot use the description to retrieve
+        /// or sort the archive list. </para> <para>Archives are immutable. After you upload an archive, you cannot edit the archive or its description.
+        /// </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM)
+        /// users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and
+        /// Access Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -1235,9 +1276,12 @@ namespace Amazon.Glacier
         /// 
         /// </ul>
         /// <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't
-        /// have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access
-        /// Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and underlying REST API, go to Configuring
-        /// Vault Notifications in Amazon Glacier and Set Vault Notification Configuration in the <i>Amazon Glacier Developer Guide</i> .
+        /// have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para>For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html" >Configuring Vault Notifications in Amazon
+        /// Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html" >Set Vault Notification
+        /// Configuration </a> in the <i>Amazon Glacier Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -1305,8 +1349,9 @@ namespace Amazon.Glacier
         /// the newly created archive resource. Using the URI path, you can then access the archive. After you upload an archive, you should save the
         /// archive ID returned to retrieve the archive at a later point. You can also get the vault inventory to obtain a list of archive IDs in a
         /// vault. For more information, see InitiateJob.</para> <para>In the request, you must include the computed SHA256 tree hash of the entire
-        /// archive you have uploaded. For information about computing a SHA256 tree hash, see Computing Checksums. On the server side, Amazon Glacier
-        /// also constructs the SHA256 tree hash of the assembled archive. If the values match, Amazon Glacier saves the archive to the vault;
+        /// archive you have uploaded. For information about computing a SHA256 tree hash, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> . On the server side, Amazon
+        /// Glacier also constructs the SHA256 tree hash of the assembled archive. If the values match, Amazon Glacier saves the archive to the vault;
         /// otherwise, it returns an error, and the operation fails. The ListParts operation returns a list of parts uploaded for a specific multipart
         /// upload. It includes checksum information for each uploaded part that can be used to debug a bad checksum issue.</para> <para>Additionally,
         /// Amazon Glacier also checks for any missing content ranges when assembling the archive, if missing content ranges are found, Amazon Glacier
@@ -1317,9 +1362,12 @@ namespace Amazon.Glacier
         /// after the multipart upload completes, you cannot call the List Parts operation and the multipart upload will not appear in List Multipart
         /// Uploads response, even if idempotent complete is possible.</para> <para>An AWS account has full permission to perform all operations
         /// (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit
-        /// permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para>
-        /// <para> For conceptual information and underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Complete Multipart
-        /// Upload in the <i>Amazon Glacier Developer Guide</i> .
+        /// permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+        /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html" >Complete Multipart
+        /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -1395,7 +1443,8 @@ namespace Amazon.Glacier
         /// <ul>
         /// <li> <para> <b>SHA256 tree hash does not match</b> To ensure that part data is not corrupted in transmission, you compute a SHA256 tree
         /// hash of the part and include it in your request. Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If these
-        /// hash values don't match, the operation fails. For information about computing a SHA256 tree hash, see Computing Checksums.</para> </li>
+        /// hash values don't match, the operation fails. For information about computing a SHA256 tree hash, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> .</para> </li>
         /// <li> <para> <b>Part size does not match</b> The size of each part except the last must match the size specified in the corresponding
         /// InitiateMultipartUpload request. The size of the last part must be the same size as, or smaller than, the specified size.</para>
         /// <para><b>NOTE:</b> If you upload a part whose size is smaller than the part size you specified in your initiate multipart upload request and
@@ -1410,9 +1459,11 @@ namespace Amazon.Glacier
         /// <para>This operation is idempotent. If you upload the same part multiple times, the data included in the most recent request overwrites the
         /// previously uploaded data.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
         /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-        /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para> For conceptual information and
-        /// underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Upload Part in the <i>Amazon Glacier Developer
-        /// Guide</i> .</para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control
+        /// Using AWS Identity and Access Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+        /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html" >Upload Part </a> in the <i>Amazon
+        /// Glacier Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="uploadMultipartPartRequest">Container for the necessary parameters to execute the UploadMultipartPart service method on
@@ -1486,11 +1537,15 @@ namespace Amazon.Glacier
         /// the number of archives it contains, and the total size of all the archives in the vault. The number of archives and their total size are as
         /// of the last inventory generation. This means that if you add or remove an archive from a vault, and then immediately use Describe Vault, the
         /// change in contents will not be immediately reflected. If you want to retrieve the latest inventory of the vault, use InitiateJob. Amazon
-        /// Glacier generates vault inventories approximately daily. For more information, see Downloading a Vault Inventory in Amazon Glacier. </para>
-        /// <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't
-        /// have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access
-        /// Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and underlying REST API, go to Retrieving
-        /// Vault Metadata in Amazon Glacier and Describe Vault in the <i>Amazon Glacier Developer Guide</i> .
+        /// Glacier generates vault inventories approximately daily. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory in Amazon Glacier </a> .
+        /// </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM)
+        /// users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and
+        /// Access Management (IAM) </a> .</para> <para>For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -1563,9 +1618,11 @@ namespace Amazon.Glacier
         /// some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after
         /// you send the delete request. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
         /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-        /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para> For conceptual information and
-        /// underlying REST API, go to Configuring Vault Notifications in Amazon Glacier and Delete Vault Notification Configuration in the Amazon
-        /// Glacier Developer Guide. </para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS
+        /// Identity and Access Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html" >Configuring Vault Notifications in Amazon
+        /// Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html" >Delete Vault Notification
+        /// Configuration </a> in the Amazon Glacier Developer Guide. </para>
         /// </summary>
         /// 
         /// <param name="deleteVaultNotificationsRequest">Container for the necessary parameters to execute the DeleteVaultNotifications service method
@@ -1638,9 +1695,12 @@ namespace Amazon.Glacier
         /// Multipart Uploads operation lists all multipart uploads for a vault and does not require a multipart upload ID. The List Parts operation
         /// requires a multipart upload ID since parts are associated with a single upload.</para> <para>An AWS account has full permission to perform
         /// all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them
-        /// explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access Management
-        /// (IAM).</para> <para>For conceptual information and the underlying REST API, go to Working with Archives in Amazon Glacier and List Multipart
-        /// Uploads in the <i>Amazon Glacier Developer Guide</i> .</para>
+        /// explicit permission to perform specific actions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
+        /// Management (IAM) </a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html"> List Multipart Uploads </a> in the <i>Amazon
+        /// Glacier Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="listMultipartUploadsRequest">Container for the necessary parameters to execute the ListMultipartUploads service method on
@@ -1712,12 +1772,16 @@ namespace Amazon.Glacier
         /// <para>This operation deletes a vault. Amazon Glacier will delete a vault only if there are no archives in the vault as of the last inventory
         /// and there have been no writes to the vault since the last inventory. If either of these conditions is not satisfied, the vault deletion
         /// fails (that is, the vault is not removed) and Amazon Glacier returns an error. You can use DescribeVault to return the number of archives in
-        /// a vault, and you can use Initiate a Job (POST jobs) to initiate a new inventory retrieval for a vault. The inventory contains the archive
-        /// IDs you use to delete archives using Delete Archive (DELETE archive).</para> <para>This operation is idempotent.</para> <para>An AWS account
-        /// has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions
-        /// by default. You must grant them explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity
-        /// and Access Management (IAM).</para> <para> For conceptual information and underlying REST API, go to Deleting a Vault in Amazon Glacier and
-        /// Delete Vault in the <i>Amazon Glacier Developer Guide</i> .
+        /// a vault, and you can use <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job (POST
+        /// jobs) </a> to initiate a new inventory retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive (DELETE archive) </a> .</para> <para>This
+        /// operation is idempotent.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
+        /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control
+        /// Using AWS Identity and Access Management (IAM) </a> .</para> <para> For conceptual information and underlying REST API, go to <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a> in the <i>Amazon Glacier Developer
+        /// Guide</i> .
         /// </para>
         /// </summary>
         /// 

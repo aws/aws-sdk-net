@@ -37,9 +37,11 @@ namespace Amazon.Glacier.Model
     /// Amazon Glacier also removes the multipart upload resource if you cancel the multipart upload or it may be removed if there is no activity
     /// for a period of 24 hours.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
     /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-    /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and
-    /// underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Initiate Multipart Upload in the <i>Amazon Glacier
-    /// Developer Guide</i> .</para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control
+    /// Using AWS Identity and Access Management (IAM)</a> .</para> <para>For conceptual information and underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+    /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html" >Initiate Multipart
+    /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.InitiateMultipartUpload"/>
     public class InitiateMultipartUploadRequest : AmazonWebServiceRequest
@@ -76,7 +78,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -105,13 +107,13 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
-        /// The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2—for example,
-        /// 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB
-        /// (4096 MB).
+        /// The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2â€�?for
+        /// example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum
+        /// is 4 GB (4096 MB).
         ///  
         /// </summary>
         public string ArchiveDescription
@@ -136,7 +138,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
 
         /// <summary>
@@ -165,7 +167,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSize property is set
         internal bool IsSetPartSize()
         {
-            return this.partSize.HasValue;       
+            return this.partSize.HasValue;
         }
     }
 }

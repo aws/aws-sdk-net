@@ -32,6 +32,8 @@
 
         public DescribeServiceErrorsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeServiceErrorsResult describeServiceErrorsResult = new DescribeServiceErrorsResult();
           describeServiceErrorsResult.ServiceErrors = null;
                         

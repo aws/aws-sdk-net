@@ -32,6 +32,8 @@
 
         public CreateDeploymentResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateDeploymentResult createDeploymentResult = new CreateDeploymentResult();
           
             int originalDepth = context.CurrentDepth;

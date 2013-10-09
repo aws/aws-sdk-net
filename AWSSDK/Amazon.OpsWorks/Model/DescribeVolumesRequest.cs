@@ -31,6 +31,7 @@ namespace Amazon.OpsWorks.Model
     public class DescribeVolumesRequest : AmazonWebServiceRequest
     {
         private string instanceId;
+        private string stackId;
         private string raidArrayId;
         private List<string> volumeIds = new List<string>();
 
@@ -62,6 +63,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstanceId()
         {
             return this.instanceId != null;
+        }
+
+        /// <summary>
+        /// A stack ID. The action describes the stack's registered Amazon EBS volumes.
+        ///  
+        /// </summary>
+        public string StackId
+        {
+            get { return this.stackId; }
+            set { this.stackId = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeVolumesRequest WithStackId(string stackId)
+        {
+            this.stackId = stackId;
+            return this;
+        }
+            
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this.stackId != null;
         }
 
         /// <summary>

@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DisableAvailabilityZonesForLoadBalancer action. </para>
     /// </summary>
-    public class DisableAvailabilityZonesForLoadBalancerResult  
+    public class DisableAvailabilityZonesForLoadBalancerResult
     {
         
         private List<string> availabilityZones = new List<string>();
 
         /// <summary>
-        /// A list of updated Availability Zones for the LoadBalancer.
+        /// A list of updated Availability Zones for the load balancer.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
     }
 }

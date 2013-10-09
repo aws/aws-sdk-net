@@ -32,6 +32,8 @@
 
         public ListJobsByStatusResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ListJobsByStatusResult listJobsByStatusResult = new ListJobsByStatusResult();
           listJobsByStatusResult.Jobs = null;
                         

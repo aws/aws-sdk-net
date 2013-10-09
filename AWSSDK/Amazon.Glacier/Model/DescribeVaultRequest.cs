@@ -29,11 +29,15 @@ namespace Amazon.Glacier.Model
     /// the number of archives it contains, and the total size of all the archives in the vault. The number of archives and their total size are as
     /// of the last inventory generation. This means that if you add or remove an archive from a vault, and then immediately use Describe Vault, the
     /// change in contents will not be immediately reflected. If you want to retrieve the latest inventory of the vault, use InitiateJob. Amazon
-    /// Glacier generates vault inventories approximately daily. For more information, see Downloading a Vault Inventory in Amazon Glacier. </para>
-    /// <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't
-    /// have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access
-    /// Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and underlying REST API, go to Retrieving
-    /// Vault Metadata in Amazon Glacier and Describe Vault in the <i>Amazon Glacier Developer Guide</i> .
+    /// Glacier generates vault inventories approximately daily. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory in Amazon Glacier </a> .
+    /// </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM)
+    /// users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and
+    /// Access Management (IAM) </a> .</para> <para>For conceptual information and underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a> in the <i>Amazon Glacier Developer
+    /// Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.DescribeVault"/>
@@ -69,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -98,7 +102,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
     }
 }

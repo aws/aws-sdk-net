@@ -21,10 +21,12 @@ using System.IO;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// <para>Contains the Amazon Glacier response to your request.</para> <para>For information about the underlying REST API, go to Upload
-    /// Archive. For conceptual information, go to Working with Archives in Amazon Glacier.</para>
+    /// <para>Contains the Amazon Glacier response to your request.</para> <para>For information about the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a> .
+    /// For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working
+    /// with Archives in Amazon Glacier </a> .</para>
     /// </summary>
-    public class UploadArchiveResult  
+    public class UploadArchiveResult
     {
         
         private string location;
@@ -57,7 +59,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -86,7 +88,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
 
         /// <summary>
@@ -115,7 +117,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveId property is set
         internal bool IsSetArchiveId()
         {
-            return this.archiveId != null;       
+            return this.archiveId != null;
         }
     }
 }

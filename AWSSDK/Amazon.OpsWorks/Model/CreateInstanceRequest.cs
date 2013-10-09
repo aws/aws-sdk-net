@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
-    /// <para>Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.</para>
+    /// <para>Creates an instance in a specified stack. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateInstance"/>
     public class CreateInstanceRequest : AmazonWebServiceRequest

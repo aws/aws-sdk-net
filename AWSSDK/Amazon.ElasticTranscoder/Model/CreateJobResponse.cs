@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the CreateJobResult property.
-        /// 
+        /// The CreateJobResponse structure.
         /// </summary>
         public CreateJobResult CreateJobResult
         {

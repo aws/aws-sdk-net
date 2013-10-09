@@ -25,8 +25,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTimeBasedAutoScaling operation.
-    /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see Managing Load with Time-based
-    /// and Load-based Instances.</para>
+    /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
+    /// Instances</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
     public class SetTimeBasedAutoScalingRequest : AmazonWebServiceRequest

@@ -723,6 +723,9 @@ namespace Amazon.ElasticTranscoder
         #region UpdatePipeline
 
         /// <summary>
+        /// <para> Use the <c>UpdatePipeline</c> operation to update settings for a pipeline. <para><b>IMPORTANT:</b>When you change pipeline settings,
+        /// your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are
+        /// affected in addition to jobs that you submit after you change settings. </para> </para>
         /// </summary>
         /// 
         /// <param name="updatePipelineRequest">Container for the necessary parameters to execute the UpdatePipeline service method on

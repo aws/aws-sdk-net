@@ -25,9 +25,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachElasticLoadBalancer operation.
-    /// <para>Attaches an Elastic Load Balancing instance to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load Balancing
-    /// instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing Developer
-    /// Guide.</para>
+    /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
+    /// Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing
+    /// Developer Guide.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
     public class AttachElasticLoadBalancerRequest : AmazonWebServiceRequest

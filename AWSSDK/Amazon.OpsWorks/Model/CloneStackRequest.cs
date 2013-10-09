@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CloneStack operation.
-    /// <para>Creates a clone of a specified stack. For more information, see Clone a Stack.</para>
+    /// <para>Creates a clone of a specified stack. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html" >Clone a Stack</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CloneStack"/>
     public class CloneStackRequest : AmazonWebServiceRequest
@@ -140,9 +141,9 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances will be launched into this
-        /// VPC, and you cannot change the ID later. <ul> <li>If your account supports EC2 Classic, the default value is no VPC.</li> <li>If you account
-        /// does not support EC2 Classic, the default value is the default VPC for the specified region.</li> </ul> If the VPC ID corresponds to a
-        /// default VPC and you have specified either the <c>DefaultAvailabilityZone</c> or the <c>DefaultSubnetId</c> parameter only, AWS OpsWorks
+        /// VPC, and you cannot change the ID later. <ul> <li>If your account supports EC2 Classic, the default value is no VPC.</li> <li>If your
+        /// account does not support EC2 Classic, the default value is the default VPC for the specified region.</li> </ul> If the VPC ID corresponds to
+        /// a default VPC and you have specified either the <c>DefaultAvailabilityZone</c> or the <c>DefaultSubnetId</c> parameter only, AWS OpsWorks
         /// infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks sets these parameters to the first valid
         /// Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. If you specify a nondefault VPC ID,
         /// note the following: <ul> <li>It must belong to a VPC in your account that is in the specified region.</li> <li>You must specify a value for
@@ -433,7 +434,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9 or
-        /// 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August 2013.
+        /// 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.
         ///  
         /// </summary>
         public StackConfigurationManager ConfigurationManager

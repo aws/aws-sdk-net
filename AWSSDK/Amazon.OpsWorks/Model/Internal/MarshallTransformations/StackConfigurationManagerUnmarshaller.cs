@@ -32,6 +32,8 @@
 
         public StackConfigurationManager Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             StackConfigurationManager stackConfigurationManager = new StackConfigurationManager();
           
             int originalDepth = context.CurrentDepth;

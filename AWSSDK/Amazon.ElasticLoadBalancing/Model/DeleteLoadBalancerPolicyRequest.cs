@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerPolicy operation.
-    /// <para> Deletes a policy from the LoadBalancer. The specified policy must not be enabled for any listeners. </para>
+    /// <para> Deletes a policy from the load balancer. The specified policy must not be enabled for any listeners. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerPolicy"/>
     public class DeleteLoadBalancerPolicyRequest : AmazonWebServiceRequest
@@ -44,10 +44,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. The name must be unique within your AWS account.
-        /// </param>
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
         /// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
-        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName) 
+        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
         {
             this.loadBalancerName = loadBalancerName;
             this.policyName = policyName;
@@ -55,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. The name must be unique within your AWS account.
+        /// The mnemonic name associated with the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -80,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -109,7 +108,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
     }
 }

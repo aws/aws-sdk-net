@@ -32,6 +32,8 @@
 
         public JobWatermark Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             JobWatermark jobWatermark = new JobWatermark();
           
             int originalDepth = context.CurrentDepth;

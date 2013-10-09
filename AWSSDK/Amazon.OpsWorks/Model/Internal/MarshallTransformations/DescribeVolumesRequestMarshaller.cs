@@ -78,6 +78,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("InstanceId");
                     writer.Write(describeVolumesRequest.InstanceId);
                 }
+                if (describeVolumesRequest != null && describeVolumesRequest.IsSetStackId()) 
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(describeVolumesRequest.StackId);
+                }
                 if (describeVolumesRequest != null && describeVolumesRequest.IsSetRaidArrayId()) 
                 {
                     writer.WritePropertyName("RaidArrayId");

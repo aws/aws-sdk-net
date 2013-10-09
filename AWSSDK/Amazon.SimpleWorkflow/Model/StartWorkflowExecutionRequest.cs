@@ -33,7 +33,11 @@ namespace Amazon.SimpleWorkflow.Model
     /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
     /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
     /// <ul>
-    /// <li> <c>tagList.member.0</c> : TBD</li>
+    /// <li> <c>tagList.member.0</c> : The key is <c>swf:tagList.member.0</c> .</li>
+    /// <li> <c>tagList.member.1</c> : The key is <c>swf:tagList.member.1</c> .</li>
+    /// <li> <c>tagList.member.2</c> : The key is <c>swf:tagList.member.2</c> .</li>
+    /// <li> <c>tagList.member.3</c> : The key is <c>swf:tagList.member.3</c> .</li>
+    /// <li> <c>tagList.member.4</c> : The key is <c>swf:tagList.member.4</c> .</li>
     /// <li> <c>taskList</c> : String constraint. The key is <c>swf:taskList.name</c> .</li>
     /// <li> <c>name</c> : String constraint. The key is <c>swf:workflowType.name</c> .</li>
     /// <li> <c>version</c> : String constraint. The key is <c>swf:workflowType.version</c> .</li>

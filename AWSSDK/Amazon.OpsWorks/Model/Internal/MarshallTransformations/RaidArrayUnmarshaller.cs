@@ -32,6 +32,8 @@
 
         public RaidArray Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             RaidArray raidArray = new RaidArray();
           
             int originalDepth = context.CurrentDepth;

@@ -47,7 +47,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 List<string> policyNamesList = setLoadBalancerPoliciesForBackendServerRequest.PolicyNames;
 
-                if (policyNamesList.Count == 0) request.Parameters.Add("PolicyNames", "");
                 int policyNamesListIndex = 1;
                 foreach (string policyNamesListValue in policyNamesList)
                 { 

@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private List<VolumeConfiguration> volumeConfigurations = new List<VolumeConfiguration>();
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
+        private bool? autoAssignPublicIps;
         private Recipes defaultRecipes;
         private Recipes customRecipes;
         private string createdAt;
@@ -480,8 +481,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Whether the layer has an automatically assigned <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.
+        /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+        /// address</a> to the layer's instances. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
         ///  
         /// </summary>
         public bool AutoAssignElasticIps
@@ -507,6 +509,36 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAutoAssignElasticIps()
         {
             return this.autoAssignElasticIps.HasValue;
+        }
+
+        /// <summary>
+        /// For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
+        ///  
+        /// </summary>
+        public bool AutoAssignPublicIps
+        {
+            get { return this.autoAssignPublicIps ?? default(bool); }
+            set { this.autoAssignPublicIps = value; }
+        }
+
+        /// <summary>
+        /// Sets the AutoAssignPublicIps property
+        /// </summary>
+        /// <param name="autoAssignPublicIps">The value to set for the AutoAssignPublicIps property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Layer WithAutoAssignPublicIps(bool autoAssignPublicIps)
+        {
+            this.autoAssignPublicIps = autoAssignPublicIps;
+            return this;
+        }
+            
+
+        // Check to see if AutoAssignPublicIps property is set
+        internal bool IsSetAutoAssignPublicIps()
+        {
+            return this.autoAssignPublicIps.HasValue;
         }
 
         /// <summary>

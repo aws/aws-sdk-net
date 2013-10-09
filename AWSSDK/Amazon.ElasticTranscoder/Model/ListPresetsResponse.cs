@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ListPresetsResult property.
-        /// 
+        /// The ListPresetsResponse structure.
         /// </summary>
         public ListPresetsResult ListPresetsResult
         {

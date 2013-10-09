@@ -11,72 +11,96 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
-    using System; 
+ */
+    using System;
     using System.Net;
-    using Amazon.Glacier.Model; 
-    using Amazon.Runtime; 
-    using Amazon.Runtime.Internal; 
-    using Amazon.Runtime.Internal.Transform; 
-    
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// Response Unmarshaller for GetJobOutput operation 
-      /// </summary> 
-      internal class GetJobOutputResponseUnmarshaller : JsonResponseUnmarshaller 
-      { 
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
-        { 
+    using Amazon.Glacier.Model;
+    using Amazon.Runtime;
+    using Amazon.Runtime.Internal;
+    using Amazon.Runtime.Internal.Transform;
+
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// Response Unmarshaller for GetJobOutput operation
+      /// </summary>
+      internal class GetJobOutputResponseUnmarshaller : JsonResponseUnmarshaller
+      {
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
           GetJobOutputResponse response = new GetJobOutputResponse();
           
-          response.GetJobOutputResult = GetJobOutputResultUnmarshaller.GetInstance().Unmarshall(context); 
-           
-          return response; 
-        } 
-         
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
-        { 
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
-           
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException")) 
-          { 
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException")) 
-          { 
-            return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException")) 
-          { 
-            return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException")) 
-          { 
-            return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-        } 
+          response.GetJobOutputResult = GetJobOutputResultUnmarshaller.GetInstance().Unmarshall(context);
+          
+          return response;
+        }
+        
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+          
+          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+          {
+            ResourceNotFoundException ex = new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            ex.Type = errorResponse.Metadata["Type"];
+            
+            ex.Code = errorResponse.Metadata["Code"];
+            
+            return ex;
+          }
   
-        private static GetJobOutputResponseUnmarshaller instance; 
-        public static GetJobOutputResponseUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
-          { 
-            instance = new GetJobOutputResponseUnmarshaller(); 
-          } 
+          if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+          {
+            MissingParameterValueException ex = new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            ex.Type = errorResponse.Metadata["Type"];
+            
+            ex.Code = errorResponse.Metadata["Code"];
+            
+            return ex;
+          }
+  
+          if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+          {
+            ServiceUnavailableException ex = new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            ex.Type = errorResponse.Metadata["Type"];
+            
+            ex.Code = errorResponse.Metadata["Code"];
+            
+            return ex;
+          }
+  
+          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+          {
+            InvalidParameterValueException ex = new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            ex.Type = errorResponse.Metadata["Type"];
+            
+            ex.Code = errorResponse.Metadata["Code"];
+            
+            return ex;
+          }
+  
+          return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+
+        private static GetJobOutputResponseUnmarshaller instance;
+        public static GetJobOutputResponseUnmarshaller GetInstance()
+        {
+          if (instance == null)
+          {
+            instance = new GetJobOutputResponseUnmarshaller();
+          }
           return instance;
-        } 
+        }
   
         internal override bool HasStreamingProperty
         {
            get { return true;}
-        }            
+        }
         
-      } 
-    } 
+      }
+    }
   

@@ -32,6 +32,8 @@
 
         public Layer Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Layer layer = new Layer();
           layer.Attributes = null;
                         layer.CustomSecurityGroupIds = null;
@@ -185,6 +187,12 @@
               if (context.TestExpression("AutoAssignElasticIps", targetDepth))
               {
                 layer.AutoAssignElasticIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("AutoAssignPublicIps", targetDepth))
+              {
+                layer.AutoAssignPublicIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

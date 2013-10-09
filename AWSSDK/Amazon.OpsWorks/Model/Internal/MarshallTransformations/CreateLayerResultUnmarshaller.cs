@@ -32,6 +32,8 @@
 
         public CreateLayerResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateLayerResult createLayerResult = new CreateLayerResult();
           
             int originalDepth = context.CurrentDepth;

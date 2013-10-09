@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ReadPresetResult property.
-        /// 
+        /// The ReadPresetResponse structure.
         /// </summary>
         public ReadPresetResult ReadPresetResult
         {

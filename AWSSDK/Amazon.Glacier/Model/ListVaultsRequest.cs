@@ -32,8 +32,10 @@ namespace Amazon.Glacier.Model
     /// you obtained from a previous List Vaults request. You can also limit the number of vaults returned in the response by specifying the
     /// <c>limit</c> parameter in the request. </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
-    /// specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual
-    /// information and underlying REST API, go to Retrieving Vault Metadata in Amazon Glacier and List Vaults in the <i>Amazon Glacier Developer
+    /// specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"
+    /// >Access Control Using AWS Identity and Access Management (IAM)</a> .</para> <para>For conceptual information and underlying REST API, go to
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html" >Retrieving Vault Metadata in Amazon Glacier</a>
+    /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html" >List Vaults </a> in the <i>Amazon Glacier Developer
     /// Guide</i> .
     /// </para>
     /// </summary>
@@ -71,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -100,7 +102,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
@@ -129,7 +131,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;       
+            return this.limit.HasValue;
         }
     }
 }

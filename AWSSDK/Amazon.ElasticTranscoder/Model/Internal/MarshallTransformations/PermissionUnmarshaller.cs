@@ -32,6 +32,8 @@
 
         public Permission Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Permission permission = new Permission();
           permission.Access = null;
                         

@@ -25,12 +25,19 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterInstancesWithLoadBalancer operation.
-    /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
-    /// the LoadBalancer. Any instance that is not in any of the Availability Zones registered for the LoadBalancer will be moved to the
-    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the LoadBalancer. </para>
-    /// <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide the same
-    /// account credentials as those that were used to create the LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does not guarantee
-    /// that operation has completed. Rather, it means that the request has been registered and the changes will happen shortly. </para>
+    /// <para> Adds new instances to the load balancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests
+    /// from the load balancer. Any instance that is not in any of the Availability Zones registered for the load balancer will be moved to the
+    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the load balancer. </para>
+    /// <para>When an instance registered with a load balancer is stopped and then restarted, the IP addresses associated with the instance changes.
+    /// Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you
+    /// de-register your Amazon EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your
+    /// instance after you've restarted. To de-register your instances from load balancer, use DeregisterInstancesFromLoadBalancer action.</para>
+    /// <para>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"
+    /// >De-register and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para><b>NOTE:</b> In order
+    /// for this call to be successful, you must provide the same account credentials as those that were used to create the load balancer. </para>
+    /// <para><b>NOTE:</b> Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been
+    /// registered and the changes will happen shortly. </para> <para>You can use DescribeLoadBalancers or DescribeInstanceHealth action to check
+    /// the state of the newly registered instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.RegisterInstancesWithLoadBalancer"/>
     public class RegisterInstancesWithLoadBalancerRequest : AmazonWebServiceRequest
@@ -49,13 +56,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="instances"> A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then
-        /// restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which
-        /// prevents it from routing traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer
-        /// after you stop your instance, and then register the load balancer with your instance after you've restarted. To de-register your instances
-        /// from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a> action.</note> </param>
-        public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances) 
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers.
+        /// </param>
+        /// <param name="instances"> A list of instance IDs that should be registered with the load balancer. </param>
+        public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
         {
             this.loadBalancerName = loadBalancerName;
             this.instances = instances;
@@ -63,7 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within your set of load balancers.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -88,15 +92,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then restarted, the IP
-        /// addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing
-        /// traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer after you stop your instance,
-        /// and then register the load balancer with your instance after you've restarted. To de-register your instances from load balancer, use
-        /// <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
+        /// A list of instance IDs that should be registered with the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -119,7 +119,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
     }
 }

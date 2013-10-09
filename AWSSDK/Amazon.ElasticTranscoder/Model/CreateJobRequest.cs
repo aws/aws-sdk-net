@@ -110,7 +110,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// 
+        /// The <c>CreateJobOutput</c> structure.
         ///  
         /// </summary>
         public CreateJobOutput Output

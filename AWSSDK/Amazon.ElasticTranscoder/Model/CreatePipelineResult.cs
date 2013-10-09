@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</para>
     /// </summary>
     public class CreatePipelineResult
     {

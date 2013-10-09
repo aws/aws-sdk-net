@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The CreateJobResponse structure.</para>
     /// </summary>
     public class CreateJobResult
     {

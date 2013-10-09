@@ -32,6 +32,8 @@
 
         public DescribeUserProfilesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeUserProfilesResult describeUserProfilesResult = new DescribeUserProfilesResult();
           describeUserProfilesResult.UserProfiles = null;
                         

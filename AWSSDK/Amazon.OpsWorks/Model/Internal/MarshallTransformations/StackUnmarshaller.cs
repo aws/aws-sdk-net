@@ -32,6 +32,8 @@
 
         public Stack Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Stack stack = new Stack();
           stack.Attributes = null;
                         

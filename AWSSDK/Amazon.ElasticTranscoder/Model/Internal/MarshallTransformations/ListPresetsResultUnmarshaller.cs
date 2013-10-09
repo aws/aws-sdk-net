@@ -32,6 +32,8 @@
 
         public ListPresetsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ListPresetsResult listPresetsResult = new ListPresetsResult();
           listPresetsResult.Presets = null;
                         

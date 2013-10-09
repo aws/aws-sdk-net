@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DeregisterInstancesFromLoadBalancer action. </para>
     /// </summary>
-    public class DeregisterInstancesFromLoadBalancerResult  
+    public class DeregisterInstancesFromLoadBalancerResult
     {
         
         private List<Instance> instances = new List<Instance>();
 
         /// <summary>
-        /// An updated list of remaining instances registered with the LoadBalancer.
+        /// An updated list of remaining instances registered with the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public DescribeStacksResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeStacksResult describeStacksResult = new DescribeStacksResult();
           describeStacksResult.Stacks = null;
                         

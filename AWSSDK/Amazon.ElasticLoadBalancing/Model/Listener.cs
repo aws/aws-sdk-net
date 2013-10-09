@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The Listener data type. </para>
     /// </summary>
-    public class Listener  
+    public class Listener
     {
         
         private string protocol;
@@ -43,13 +43,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="protocol"> Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be
-        /// modified for the life of the LoadBalancer. </param>
-        /// <param name="loadBalancerPort"> Specifies the external LoadBalancer port number. This property cannot be modified for the life of the
-        /// LoadBalancer. </param>
+        /// <param name="protocol"> Specifies the load balancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be
+        /// modified for the life of the load balancer. </param>
+        /// <param name="loadBalancerPort"> Specifies the external load balancer port number. This property cannot be modified for the life of the load
+        /// balancer. </param>
         /// <param name="instancePort"> Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life
-        /// of the LoadBalancer. </param>
-        public Listener(string protocol, int loadBalancerPort, int instancePort) 
+        /// of the load balancer. </param>
+        public Listener(string protocol, int loadBalancerPort, int instancePort)
         {
             this.protocol = protocol;
             this.loadBalancerPort = loadBalancerPort;
@@ -58,8 +58,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life of
-        /// the LoadBalancer.
+        /// Specifies the load balancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life
+        /// of the load balancer.
         ///  
         /// </summary>
         public string Protocol
@@ -84,11 +84,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Protocol property is set
         internal bool IsSetProtocol()
         {
-            return this.protocol != null;       
+            return this.protocol != null;
         }
 
         /// <summary>
-        /// Specifies the external LoadBalancer port number. This property cannot be modified for the life of the LoadBalancer.
+        /// Specifies the external load balancer port number. This property cannot be modified for the life of the load balancer.
         ///  
         /// </summary>
         public int LoadBalancerPort
@@ -113,12 +113,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerPort property is set
         internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPort.HasValue;       
+            return this.loadBalancerPort.HasValue;
         }
 
         /// <summary>
         /// Specifies the protocol to use for routing traffic to back-end instances - HTTP, HTTPS, TCP, or SSL. This property cannot be modified for the
-        /// life of the LoadBalancer. <note> If the front-end protocol is HTTP or HTTPS, <c>InstanceProtocol</c> has to be at the same protocol layer,
+        /// life of the load balancer. <note> If the front-end protocol is HTTP or HTTPS, <c>InstanceProtocol</c> has to be at the same protocol layer,
         /// i.e., HTTP or HTTPS. Likewise, if the front-end protocol is TCP or SSL, InstanceProtocol has to be TCP or SSL. </note> <note> If there is
         /// another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c> is secure, i.e., HTTPS or SSL, the listener's
         /// <c>InstanceProtocol</c> has to be secure, i.e., HTTPS or SSL. If there is another listener with the same <c>InstancePort</c> whose
@@ -147,11 +147,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceProtocol property is set
         internal bool IsSetInstanceProtocol()
         {
-            return this.instanceProtocol != null;       
+            return this.instanceProtocol != null;
         }
 
         /// <summary>
-        /// Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life of the LoadBalancer.
+        /// Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life of the load balancer.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -185,13 +185,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;       
+            return this.instancePort.HasValue;
         }
 
         /// <summary>
         /// The ARN string of the server certificate. To get the ARN of the server certificate, call the AWS Identity and Access Management <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate </a>
-        /// API.
+        /// href="http://docs.aws.amazon.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate </a> API.
         ///  
         /// </summary>
         public string SSLCertificateId
@@ -216,7 +215,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SSLCertificateId property is set
         internal bool IsSetSSLCertificateId()
         {
-            return this.sSLCertificateId != null;       
+            return this.sSLCertificateId != null;
         }
     }
 }

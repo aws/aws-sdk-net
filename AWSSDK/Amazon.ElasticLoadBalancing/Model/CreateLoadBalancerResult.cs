@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the CreateLoadBalancer action. </para>
     /// </summary>
-    public class CreateLoadBalancerResult  
+    public class CreateLoadBalancerResult
     {
         
         private string dNSName;
 
         /// <summary>
-        /// The DNS name for the LoadBalancer.
+        /// The DNS name for the load balancer.
         ///  
         /// </summary>
         public string DNSName
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;       
+            return this.dNSName != null;
         }
     }
 }

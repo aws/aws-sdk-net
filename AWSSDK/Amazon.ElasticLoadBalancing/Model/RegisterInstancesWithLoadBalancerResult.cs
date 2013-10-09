@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the RegisterInstancesWithLoadBalancer action. </para>
     /// </summary>
-    public class RegisterInstancesWithLoadBalancerResult  
+    public class RegisterInstancesWithLoadBalancerResult
     {
         
         private List<Instance> instances = new List<Instance>();
 
         /// <summary>
-        /// An updated list of instances for the LoadBalancer.
+        /// An updated list of instances for the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
     }
 }

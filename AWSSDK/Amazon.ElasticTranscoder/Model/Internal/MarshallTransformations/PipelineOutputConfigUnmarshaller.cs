@@ -32,6 +32,8 @@
 
         public PipelineOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             PipelineOutputConfig pipelineOutputConfig = new PipelineOutputConfig();
           pipelineOutputConfig.Permissions = null;
                         

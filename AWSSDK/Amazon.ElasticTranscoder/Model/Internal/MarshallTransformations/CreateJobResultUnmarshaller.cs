@@ -32,6 +32,8 @@
 
         public CreateJobResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateJobResult createJobResult = new CreateJobResult();
           
             int originalDepth = context.CurrentDepth;

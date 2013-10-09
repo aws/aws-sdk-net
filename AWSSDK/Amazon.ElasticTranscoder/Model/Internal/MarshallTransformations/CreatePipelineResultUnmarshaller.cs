@@ -32,6 +32,8 @@
 
         public CreatePipelineResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreatePipelineResult createPipelineResult = new CreatePipelineResult();
           
             int originalDepth = context.CurrentDepth;

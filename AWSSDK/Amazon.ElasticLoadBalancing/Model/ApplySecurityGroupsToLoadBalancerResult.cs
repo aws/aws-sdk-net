@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The out for the ApplySecurityGroupsToLoadBalancer action. </para>
     /// </summary>
-    public class ApplySecurityGroupsToLoadBalancerResult  
+    public class ApplySecurityGroupsToLoadBalancerResult
     {
         
         private List<string> securityGroups = new List<string>();
 
         /// <summary>
-        /// A list of security group IDs associated with your LoadBalancer.
+        /// A list of security group IDs associated with your load balancer.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
     }
 }

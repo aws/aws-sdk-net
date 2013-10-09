@@ -40,7 +40,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// <ul>
     /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
     /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-    /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+    /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+    /// action to access only certain task lists.</li>
     /// 
     /// </ul>
     /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified

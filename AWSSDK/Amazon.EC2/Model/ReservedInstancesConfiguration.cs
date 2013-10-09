@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string availabilityZoneField;
         private string platformField;
         private int? instanceCountField;
+        private string instanceTypeField;
 
         /// <summary>
         /// The Availability Zone for the modified Reserved Instances.
@@ -87,5 +88,22 @@ namespace Amazon.EC2.Model
         {
             return this.instanceCountField.HasValue;
         }
+
+        /// <summary>
+        /// The instance type for the modified Reserved Instances.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceType")]
+        public string InstanceType
+        {
+            get { return this.instanceTypeField; }
+            set { this.instanceTypeField = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this.instanceTypeField != null;
+        }
+
     }
 }

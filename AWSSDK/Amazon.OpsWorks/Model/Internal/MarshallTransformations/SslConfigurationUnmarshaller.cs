@@ -32,6 +32,8 @@
 
         public SslConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             SslConfiguration sslConfiguration = new SslConfiguration();
           
             int originalDepth = context.CurrentDepth;

@@ -25,12 +25,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticIps operation.
-    /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+    /// <para>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP addresses</a>
+    /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticIps"/>
     public class DescribeElasticIpsRequest : AmazonWebServiceRequest
     {
         private string instanceId;
+        private string stackId;
         private List<string> ips = new List<string>();
 
         /// <summary>
@@ -61,6 +63,36 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstanceId()
         {
             return this.instanceId != null;
+        }
+
+        /// <summary>
+        /// A stack ID. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the Elastic IP addresses that are registered
+        /// with the specified stack.
+        ///  
+        /// </summary>
+        public string StackId
+        {
+            get { return this.stackId; }
+            set { this.stackId = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeElasticIpsRequest WithStackId(string stackId)
+        {
+            this.stackId = stackId;
+            return this;
+        }
+            
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this.stackId != null;
         }
 
         /// <summary>

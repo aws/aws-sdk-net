@@ -32,6 +32,8 @@
 
         public CreateInstanceResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateInstanceResult createInstanceResult = new CreateInstanceResult();
           
             int originalDepth = context.CurrentDepth;

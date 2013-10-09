@@ -32,6 +32,8 @@
 
         public ListPipelinesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ListPipelinesResult listPipelinesResult = new ListPipelinesResult();
           listPipelinesResult.Pipelines = null;
                         

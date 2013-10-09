@@ -32,6 +32,8 @@
 
         public Source Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Source source = new Source();
           
             int originalDepth = context.CurrentDepth;

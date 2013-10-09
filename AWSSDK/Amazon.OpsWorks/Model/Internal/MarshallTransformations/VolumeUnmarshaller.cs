@@ -32,6 +32,8 @@
 
         public Volume Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Volume volume = new Volume();
           
             int originalDepth = context.CurrentDepth;

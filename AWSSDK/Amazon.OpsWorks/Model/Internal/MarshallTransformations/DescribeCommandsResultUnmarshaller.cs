@@ -32,6 +32,8 @@
 
         public DescribeCommandsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeCommandsResult describeCommandsResult = new DescribeCommandsResult();
           describeCommandsResult.Commands = null;
                         

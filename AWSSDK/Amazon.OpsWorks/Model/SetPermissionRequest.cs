@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the SetPermission operation.
-    /// <para>Specifies a stack's permissions. For more information, see Security and Permissions.</para>
+    /// <para>Specifies a stack's permissions. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetPermission"/>
     public class SetPermissionRequest : AmazonWebServiceRequest

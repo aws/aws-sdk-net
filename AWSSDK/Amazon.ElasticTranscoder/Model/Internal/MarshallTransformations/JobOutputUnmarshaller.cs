@@ -32,6 +32,8 @@
 
         public JobOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             JobOutput jobOutput = new JobOutput();
           jobOutput.Watermarks = null;
                         

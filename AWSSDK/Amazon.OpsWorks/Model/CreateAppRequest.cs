@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
-    /// <para>Creates an app for a specified stack. For more information, see Creating Apps.</para>
+    /// <para>Creates an app for a specified stack. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateApp"/>
     public class CreateAppRequest : AmazonWebServiceRequest

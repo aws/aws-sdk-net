@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachElasticLoadBalancer operation.
-    /// <para>Detaches a specified Elastic Load Balancing instance from it's layer.</para>
+    /// <para>Detaches a specified Elastic Load Balancing instance from its layer.</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DetachElasticLoadBalancer"/>
     public class DetachElasticLoadBalancerRequest : AmazonWebServiceRequest

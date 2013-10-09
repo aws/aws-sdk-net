@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>Information about the master playlist.</para>
     /// </summary>
     public class CreateJobPlaylist
     {

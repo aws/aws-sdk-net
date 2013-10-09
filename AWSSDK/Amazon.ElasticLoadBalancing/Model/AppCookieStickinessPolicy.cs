@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para>The AppCookieStickinessPolicy data type. </para>
     /// </summary>
-    public class AppCookieStickinessPolicy  
+    public class AppCookieStickinessPolicy
     {
         
         private string policyName;
@@ -40,10 +40,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this
-        /// LoadBalancer. </param>
+        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this load
+        /// balancer. </param>
         /// <param name="cookieName"> The name of the application cookie used for stickiness. </param>
-        public AppCookieStickinessPolicy(string policyName, string cookieName) 
+        public AppCookieStickinessPolicy(string policyName, string cookieName)
         {
             this.policyName = policyName;
             this.cookieName = cookieName;
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this LoadBalancer.
+        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -76,7 +76,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CookieName property is set
         internal bool IsSetCookieName()
         {
-            return this.cookieName != null;       
+            return this.cookieName != null;
         }
     }
 }

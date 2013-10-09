@@ -32,6 +32,8 @@
 
         public Thumbnails Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Thumbnails thumbnails = new Thumbnails();
           
             int originalDepth = context.CurrentDepth;

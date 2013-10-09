@@ -34,9 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
     /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
     /// <ul>
-    /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
-    /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
-    /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+    /// <li> <c>tagFilter.tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> .</li>
+    /// <li> <c>typeFilter.name</c> : String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+    /// <li> <c>typeFilter.version</c> : String constraint. The key is <c>swf:typeFilter.version</c> .</li>
     /// 
     /// </ul>
     /// </li>

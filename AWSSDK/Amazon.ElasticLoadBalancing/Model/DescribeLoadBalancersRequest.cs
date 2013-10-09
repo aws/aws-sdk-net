@@ -25,10 +25,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
-    /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
-    /// configuration information for all LoadBalancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the specified
-    /// input LoadBalancers in order to retrieve this information; the client must provide the same account credentials as those that were used to
-    /// create the LoadBalancer. </para>
+    /// <para> Returns detailed configuration information for all the load balancers created for the account. If you specify load balancer names,
+    /// the action returns configuration information of the specified load balancers. </para> <para><b>NOTE:</b> In order to retrieve this
+    /// information, you must provide the same account credentials that was used to create the load balancer.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancers"/>
     public class DescribeLoadBalancersRequest : AmazonWebServiceRequest
@@ -47,15 +46,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerNames"> A list of names associated with the LoadBalancers at creation time. </param>
-        public DescribeLoadBalancersRequest(List<string> loadBalancerNames) 
+        /// <param name="loadBalancerNames"> A list of load balancer names associated with the account. </param>
+        public DescribeLoadBalancersRequest(List<string> loadBalancerNames)
         {
             this.loadBalancerNames = loadBalancerNames;
         }
     
 
         /// <summary>
-        /// A list of names associated with the LoadBalancers at creation time.
+        /// A list of load balancer names associated with the account.
         ///  
         /// </summary>
         public List<string> LoadBalancerNames
@@ -78,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LoadBalancerNames collection
         /// </summary>
@@ -98,7 +97,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this.loadBalancerNames.Count > 0;       
+            return this.loadBalancerNames.Count > 0;
         }
 
         /// <summary>
@@ -127,7 +126,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }
