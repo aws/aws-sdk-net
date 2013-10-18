@@ -130,6 +130,12 @@
                 continue;
               }
   
+              if (context.TestExpression("AlbumArt", targetDepth))
+              {
+                jobOutput.AlbumArt = JobAlbumArtUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {

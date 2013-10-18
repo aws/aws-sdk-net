@@ -1373,6 +1373,7 @@
     <Compile Include="Amazon.CloudFront\Model\AccessDeniedException.cs" />
     <Compile Include="Amazon.CloudFront\Model\ActiveTrustedSigners.cs" />
     <Compile Include="Amazon.CloudFront\Model\Aliases.cs" />
+    <Compile Include="Amazon.CloudFront\Model\AllowedMethods.cs" />
     <Compile Include="Amazon.CloudFront\Model\BatchTooLargeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehavior.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehaviors.cs" />
@@ -1439,6 +1440,7 @@
     <Compile Include="Amazon.CloudFront\Model\InconsistentQuantitiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ActiveTrustedSignersUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\AliasesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\AllowedMethodsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CacheBehaviorsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CacheBehaviorUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CloudFrontOriginAccessIdentityConfigUnmarshaller.cs" />
@@ -5000,6 +5002,7 @@
     <Compile Include="Amazon.ElasticTranscoder\AmazonElasticTranscoderConfig.cs" />
     <Compile Include="Amazon.ElasticTranscoder\AmazonElasticTranscoderException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AccessDeniedException.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Artwork.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AudioParameters.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResponse.cs" />
@@ -5023,6 +5026,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\DeletePresetResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\IncompatibleVersionException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\InternalServiceException.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ArtworkUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\AudioParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobResponseUnmarshaller.cs" />
@@ -5042,6 +5046,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePresetRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePresetResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePresetResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobAlbumArtUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobInputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobOutputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobUnmarshaller.cs" />
@@ -5089,6 +5094,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineStatusResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\VideoParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Job.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\JobAlbumArt.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobInput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobOutput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobWatermark.cs" />

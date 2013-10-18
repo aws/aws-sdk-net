@@ -558,23 +558,6 @@ namespace Amazon.ElasticTranscoder
         
         
 
-        /// <summary>
-        /// <para>The ReadPreset operation gets detailed information about a preset.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public ReadPresetResponse ReadPreset()
-        {
-            return ReadPreset(new ReadPresetRequest());
-        }
-        
-
         #endregion
     
         #region CreatePipeline
@@ -1020,7 +1003,7 @@ namespace Amazon.ElasticTranscoder
             return result;
         }
         
-        
+
 
         #endregion
     
@@ -1175,23 +1158,6 @@ namespace Amazon.ElasticTranscoder
             return result;
         }
         
-        
-
-        /// <summary>
-        /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        public ReadPipelineResponse ReadPipeline()
-        {
-            return ReadPipeline(new ReadPipelineRequest());
-        }
         
 
         #endregion

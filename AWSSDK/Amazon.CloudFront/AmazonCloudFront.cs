@@ -28,6 +28,262 @@ namespace Amazon.CloudFront
     {
         
 
+        #region ListStreamingDistributions
+
+        /// <summary>
+        /// <para> List streaming distributions. </para>
+        /// </summary>
+        /// 
+        /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions service
+        ///          method on AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="InvalidArgumentException"/>
+        ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListStreamingDistributions"/>
+        /// </summary>
+        /// 
+        /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions operation
+        ///          on AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListStreamingDistributions operation.</returns>
+        IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListStreamingDistributions operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListStreamingDistributions"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreamingDistributions.</param>
+        /// 
+        /// <returns>Returns a ListStreamingDistributionsResult from AmazonCloudFront.</returns>
+        ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> List streaming distributions. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="InvalidArgumentException"/>
+        ListStreamingDistributionsResponse ListStreamingDistributions();
+        
+        #endregion
+        
+    
+
+        #region UpdateCloudFrontOriginAccessIdentity
+
+        /// <summary>
+        /// <para> Update an origin access identity. </para>
+        /// </summary>
+        /// 
+        /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
+        ///          UpdateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="IllegalUpdateException"/>
+        /// <exception cref="MissingBodyException"/>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="InconsistentQuantitiesException"/>
+        UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity"/>
+        /// </summary>
+        /// 
+        /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
+        ///          UpdateCloudFrontOriginAccessIdentity operation on AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndUpdateCloudFrontOriginAccessIdentity operation.</returns>
+        IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCloudFrontOriginAccessIdentity.</param>
+        /// 
+        /// <returns>Returns a UpdateCloudFrontOriginAccessIdentityResult from AmazonCloudFront.</returns>
+        UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateInvalidation
+
+        /// <summary>
+        /// <para> Create a new invalidation. </para>
+        /// </summary>
+        /// 
+        /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation service method on
+        ///          AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the CreateInvalidation service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="TooManyInvalidationsInProgressException"/>
+        /// <exception cref="MissingBodyException"/>
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="BatchTooLargeException"/>
+        /// <exception cref="AccessDeniedException"/>
+        /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="InconsistentQuantitiesException"/>
+        CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest createInvalidationRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateInvalidation"/>
+        /// </summary>
+        /// 
+        /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation operation on
+        ///          AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateInvalidation operation.</returns>
+        IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest createInvalidationRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateInvalidation"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvalidation.</param>
+        /// 
+        /// <returns>Returns a CreateInvalidationResult from AmazonCloudFront.</returns>
+        CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeleteStreamingDistribution
+
+        /// <summary>
+        /// <para> Delete a streaming distribution. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution service
+        ///          method on AmazonCloudFront.</param>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="NoSuchStreamingDistributionException"/>
+        /// <exception cref="StreamingDistributionNotDisabledException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteStreamingDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution operation
+        ///          on AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteStreamingDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStreamingDistribution.</param>
+        DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Delete a streaming distribution. </para>
+        /// </summary>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="NoSuchStreamingDistributionException"/>
+        /// <exception cref="StreamingDistributionNotDisabledException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution();
+        
+        #endregion
+        
+    
+
+        #region GetDistributionConfig
+
+        /// <summary>
+        /// <para> Get the configuration information about a distribution. </para>
+        /// </summary>
+        /// 
+        /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig service method on
+        ///          AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="AccessDeniedException"/>
+        GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistributionConfig"/>
+        /// </summary>
+        /// 
+        /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig operation on
+        ///          AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetDistributionConfig operation.</returns>
+        IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistributionConfig"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionConfig.</param>
+        /// 
+        /// <returns>Returns a GetDistributionConfigResult from AmazonCloudFront.</returns>
+        GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Get the configuration information about a distribution. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="AccessDeniedException"/>
+        GetDistributionConfigResponse GetDistributionConfig();
+        
+        #endregion
+        
+    
+
         #region UpdateStreamingDistribution
 
         /// <summary>
@@ -78,6 +334,105 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a UpdateStreamingDistributionResult from AmazonCloudFront.</returns>
         UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region GetDistribution
+
+        /// <summary>
+        /// <para> Get the information about a distribution. </para>
+        /// </summary>
+        /// 
+        /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution service method on
+        ///          AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="AccessDeniedException"/>
+        GetDistributionResponse GetDistribution(GetDistributionRequest getDistributionRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution operation on
+        ///          AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistribution
+        ///         operation.</returns>
+        IAsyncResult BeginGetDistribution(GetDistributionRequest getDistributionRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistribution.</param>
+        /// 
+        /// <returns>Returns a GetDistributionResult from AmazonCloudFront.</returns>
+        GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Get the information about a distribution. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="AccessDeniedException"/>
+        GetDistributionResponse GetDistribution();
+        
+        #endregion
+        
+    
+
+        #region ListInvalidations
+
+        /// <summary>
+        /// <para> List invalidation batches. </para>
+        /// </summary>
+        /// 
+        /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations service method on
+        ///          AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the ListInvalidations service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="AccessDeniedException"/>
+        ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest listInvalidationsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInvalidations operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListInvalidations"/>
+        /// </summary>
+        /// 
+        /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations operation on
+        ///          AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidations
+        ///         operation.</returns>
+        IAsyncResult BeginListInvalidations(ListInvalidationsRequest listInvalidationsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListInvalidations operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListInvalidations"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvalidations.</param>
+        /// 
+        /// <returns>Returns a ListInvalidationsResult from AmazonCloudFront.</returns>
+        ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult);
         
         #endregion
         
@@ -150,6 +505,57 @@ namespace Amazon.CloudFront
         
     
 
+        #region DeleteDistribution
+
+        /// <summary>
+        /// <para> Delete a distribution. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution service method on
+        ///          AmazonCloudFront.</param>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="DistributionNotDisabledException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution operation on
+        ///          AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest deleteDistributionRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDistribution.</param>
+        DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Delete a distribution. </para>
+        /// </summary>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="NoSuchDistributionException"/>
+        /// <exception cref="DistributionNotDisabledException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        DeleteDistributionResponse DeleteDistribution();
+        
+        #endregion
+        
+    
+
         #region CreateCloudFrontOriginAccessIdentity
 
         /// <summary>
@@ -197,311 +603,55 @@ namespace Amazon.CloudFront
         
     
 
-        #region GetDistributionConfig
+        #region GetStreamingDistribution
 
         /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
+        /// <para> Get the information about a streaming distribution. </para>
         /// </summary>
         /// 
-        /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig service method on
-        ///          AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistributionConfig"/>
-        /// </summary>
-        /// 
-        /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig operation on
-        ///          AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetDistributionConfig operation.</returns>
-        IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistributionConfig"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionConfig.</param>
-        /// 
-        /// <returns>Returns a GetDistributionConfigResult from AmazonCloudFront.</returns>
-        GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetDistributionConfigResponse GetDistributionConfig();
-        
-        #endregion
-        
-    
-
-        #region GetCloudFrontOriginAccessIdentityConfig
-
-        /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
-        ///          GetCloudFrontOriginAccessIdentityConfig service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig"/>
-        /// </summary>
-        /// 
-        /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
-        ///          GetCloudFrontOriginAccessIdentityConfig operation on AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetCloudFrontOriginAccessIdentityConfig operation.</returns>
-        IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentityConfig.</param>
-        /// 
-        /// <returns>Returns a GetCloudFrontOriginAccessIdentityConfigResult from AmazonCloudFront.</returns>
-        GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
-        
-        #endregion
-        
-    
-
-        #region GetInvalidation
-
-        /// <summary>
-        /// <para> Get the information about an invalidation. </para>
-        /// </summary>
-        /// 
-        /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation service method on
-        ///          AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchInvalidationException"/>
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetInvalidationResponse GetInvalidation(GetInvalidationRequest getInvalidationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
-        /// </summary>
-        /// 
-        /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation operation on
-        ///          AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidation
-        ///         operation.</returns>
-        IAsyncResult BeginGetInvalidation(GetInvalidationRequest getInvalidationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvalidation.</param>
-        /// 
-        /// <returns>Returns a GetInvalidationResult from AmazonCloudFront.</returns>
-        GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region ListStreamingDistributions
-
-        /// <summary>
-        /// <para> List streaming distributions. </para>
-        /// </summary>
-        /// 
-        /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions service
-        ///          method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="InvalidArgumentException"/>
-        ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListStreamingDistributions"/>
-        /// </summary>
-        /// 
-        /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions operation
+        /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution service method
         ///          on AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="NoSuchStreamingDistributionException"/>
+        /// <exception cref="AccessDeniedException"/>
+        GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution operation on
+        ///          AmazonCloudFront.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListStreamingDistributions operation.</returns>
-        IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest, AsyncCallback callback, object state);
+        ///         EndGetStreamingDistribution operation.</returns>
+        IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListStreamingDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListStreamingDistributions"/>
+        /// Finishes the asynchronous execution of the GetStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistribution"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreamingDistributions.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistribution.</param>
         /// 
-        /// <returns>Returns a ListStreamingDistributionsResult from AmazonCloudFront.</returns>
-        ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult);
+        /// <returns>Returns a GetStreamingDistributionResult from AmazonCloudFront.</returns>
+        GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para> List streaming distributions. </para>
+        /// <para> Get the information about a streaming distribution. </para>
         /// </summary>
         /// 
-        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
-        /// <exception cref="InvalidArgumentException"/>
-        ListStreamingDistributionsResponse ListStreamingDistributions();
-        
-        #endregion
-        
-    
-
-        #region CreateStreamingDistribution
-
-        /// <summary>
-        /// <para> Create a new streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution service
-        ///          method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="TooManyTrustedSignersException"/>
-        /// <exception cref="MissingBodyException"/>
-        /// <exception cref="TooManyStreamingDistributionCNAMEsException"/>
-        /// <exception cref="StreamingDistributionAlreadyExistsException"/>
-        /// <exception cref="CNAMEAlreadyExistsException"/>
+        /// <exception cref="NoSuchStreamingDistributionException"/>
         /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="TooManyStreamingDistributionsException"/>
-        /// <exception cref="InvalidArgumentException"/>
-        /// <exception cref="InconsistentQuantitiesException"/>
-        /// <exception cref="InvalidOriginAccessIdentityException"/>
-        /// <exception cref="TrustedSignerDoesNotExistException"/>
-        /// <exception cref="InvalidOriginException"/>
-        CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateStreamingDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution operation
-        ///          on AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateStreamingDistribution operation.</returns>
-        IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateStreamingDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistribution.</param>
-        /// 
-        /// <returns>Returns a CreateStreamingDistributionResult from AmazonCloudFront.</returns>
-        CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteDistribution
-
-        /// <summary>
-        /// <para> Delete a distribution. </para>
-        /// </summary>
-        /// 
-        /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution service method on
-        ///          AmazonCloudFront.</param>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="DistributionNotDisabledException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution operation on
-        ///          AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest deleteDistributionRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDistribution.</param>
-        DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Delete a distribution. </para>
-        /// </summary>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="DistributionNotDisabledException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteDistributionResponse DeleteDistribution();
+        GetStreamingDistributionResponse GetStreamingDistribution();
         
         #endregion
         
@@ -611,46 +761,106 @@ namespace Amazon.CloudFront
         
     
 
-        #region ListInvalidations
+        #region DeleteCloudFrontOriginAccessIdentity
 
         /// <summary>
-        /// <para> List invalidation batches. </para>
+        /// <para> Delete an origin access identity. </para>
         /// </summary>
         /// 
-        /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations service method on
-        ///          AmazonCloudFront.</param>
+        /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
+        ///          DeleteCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
         /// 
-        /// <returns>The response from the ListInvalidations service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="CloudFrontOriginAccessIdentityInUseException"/>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
+        /// <exception cref="PreconditionFailedException"/>
         /// <exception cref="AccessDeniedException"/>
-        ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest listInvalidationsRequest);
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListInvalidations operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListInvalidations"/>
+        /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity"/>
         /// </summary>
         /// 
-        /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations operation on
-        ///          AmazonCloudFront.</param>
+        /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
+        ///          DeleteCloudFrontOriginAccessIdentity operation on AmazonCloudFront.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCloudFrontOriginAccessIdentity.</param>
+        DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Delete an origin access identity. </para>
+        /// </summary>
+        /// 
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="CloudFrontOriginAccessIdentityInUseException"/>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
+        /// <exception cref="PreconditionFailedException"/>
+        /// <exception cref="AccessDeniedException"/>
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
+        
+        #endregion
+        
+    
+
+        #region CreateStreamingDistribution
+
+        /// <summary>
+        /// <para> Create a new streaming distribution. </para>
+        /// </summary>
+        /// 
+        /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution service
+        ///          method on AmazonCloudFront.</param>
+        /// 
+        /// <returns>The response from the CreateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// 
+        /// <exception cref="TooManyTrustedSignersException"/>
+        /// <exception cref="MissingBodyException"/>
+        /// <exception cref="TooManyStreamingDistributionCNAMEsException"/>
+        /// <exception cref="StreamingDistributionAlreadyExistsException"/>
+        /// <exception cref="CNAMEAlreadyExistsException"/>
+        /// <exception cref="AccessDeniedException"/>
+        /// <exception cref="TooManyStreamingDistributionsException"/>
+        /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="InconsistentQuantitiesException"/>
+        /// <exception cref="InvalidOriginAccessIdentityException"/>
+        /// <exception cref="TrustedSignerDoesNotExistException"/>
+        /// <exception cref="InvalidOriginException"/>
+        CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateStreamingDistribution"/>
+        /// </summary>
+        /// 
+        /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution operation
+        ///          on AmazonCloudFront.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidations
-        ///         operation.</returns>
-        IAsyncResult BeginListInvalidations(ListInvalidationsRequest listInvalidationsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateStreamingDistribution operation.</returns>
+        IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListInvalidations operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListInvalidations"/>
+        /// Finishes the asynchronous execution of the CreateStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateStreamingDistribution"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvalidations.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistribution.</param>
         /// 
-        /// <returns>Returns a ListInvalidationsResult from AmazonCloudFront.</returns>
-        ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult);
+        /// <returns>Returns a CreateStreamingDistributionResult from AmazonCloudFront.</returns>
+        CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult);
         
         #endregion
         
@@ -722,259 +932,100 @@ namespace Amazon.CloudFront
         
     
 
-        #region UpdateCloudFrontOriginAccessIdentity
+        #region GetInvalidation
 
         /// <summary>
-        /// <para> Update an origin access identity. </para>
+        /// <para> Get the information about an invalidation. </para>
         /// </summary>
         /// 
-        /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        ///          UpdateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="IllegalUpdateException"/>
-        /// <exception cref="MissingBodyException"/>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InvalidArgumentException"/>
-        /// <exception cref="InconsistentQuantitiesException"/>
-        UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity"/>
-        /// </summary>
-        /// 
-        /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        ///          UpdateCloudFrontOriginAccessIdentity operation on AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateCloudFrontOriginAccessIdentity operation.</returns>
-        IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCloudFrontOriginAccessIdentity.</param>
-        /// 
-        /// <returns>Returns a UpdateCloudFrontOriginAccessIdentityResult from AmazonCloudFront.</returns>
-        UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetDistribution
-
-        /// <summary>
-        /// <para> Get the information about a distribution. </para>
-        /// </summary>
-        /// 
-        /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution service method on
+        /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation service method on
         ///          AmazonCloudFront.</param>
         /// 
-        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetInvalidation service method, as returned by AmazonCloudFront.</returns>
         /// 
+        /// <exception cref="NoSuchInvalidationException"/>
         /// <exception cref="NoSuchDistributionException"/>
         /// <exception cref="AccessDeniedException"/>
-        GetDistributionResponse GetDistribution(GetDistributionRequest getDistributionRequest);
+        GetInvalidationResponse GetInvalidation(GetInvalidationRequest getInvalidationRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistribution"/>
+        /// Initiates the asynchronous execution of the GetInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
         /// </summary>
         /// 
-        /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution operation on
+        /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation operation on
         ///          AmazonCloudFront.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistribution
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidation
         ///         operation.</returns>
-        IAsyncResult BeginGetDistribution(GetDistributionRequest getDistributionRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetInvalidation(GetInvalidationRequest getInvalidationRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetDistribution"/>
+        /// Finishes the asynchronous execution of the GetInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistribution.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvalidation.</param>
         /// 
-        /// <returns>Returns a GetDistributionResult from AmazonCloudFront.</returns>
-        GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Get the information about a distribution. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="AccessDeniedException"/>
-        GetDistributionResponse GetDistribution();
+        /// <returns>Returns a GetInvalidationResult from AmazonCloudFront.</returns>
+        GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult);
         
         #endregion
         
     
 
-        #region GetStreamingDistributionConfig
+        #region GetCloudFrontOriginAccessIdentityConfig
 
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
+        /// <para> Get the configuration information about an origin access identity. </para>
         /// </summary>
         /// 
-        /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
-        ///          service method on AmazonCloudFront.</param>
+        /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
+        ///          GetCloudFrontOriginAccessIdentityConfig service method on AmazonCloudFront.</param>
         /// 
-        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
         /// 
-        /// <exception cref="NoSuchStreamingDistributionException"/>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
         /// <exception cref="AccessDeniedException"/>
-        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistributionConfig"/>
+        /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig"/>
         /// </summary>
         /// 
-        /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
-        ///          operation on AmazonCloudFront.</param>
+        /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
+        ///          GetCloudFrontOriginAccessIdentityConfig operation on AmazonCloudFront.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetStreamingDistributionConfig operation.</returns>
-        IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, AsyncCallback callback, object state);
+        ///         EndGetCloudFrontOriginAccessIdentityConfig operation.</returns>
+        IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetStreamingDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistributionConfig"/>
+        /// Finishes the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistributionConfig.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentityConfig.</param>
         /// 
-        /// <returns>Returns a GetStreamingDistributionConfigResult from AmazonCloudFront.</returns>
-        GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult);
+        /// <returns>Returns a GetCloudFrontOriginAccessIdentityConfigResult from AmazonCloudFront.</returns>
+        GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
+        /// <para> Get the configuration information about an origin access identity. </para>
         /// </summary>
         /// 
-        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
         /// 
-        /// <exception cref="NoSuchStreamingDistributionException"/>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
         /// <exception cref="AccessDeniedException"/>
-        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
-        
-        #endregion
-        
-    
-
-        #region CreateInvalidation
-
-        /// <summary>
-        /// <para> Create a new invalidation. </para>
-        /// </summary>
-        /// 
-        /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation service method on
-        ///          AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="TooManyInvalidationsInProgressException"/>
-        /// <exception cref="MissingBodyException"/>
-        /// <exception cref="NoSuchDistributionException"/>
-        /// <exception cref="BatchTooLargeException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InvalidArgumentException"/>
-        /// <exception cref="InconsistentQuantitiesException"/>
-        CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest createInvalidationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateInvalidation"/>
-        /// </summary>
-        /// 
-        /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation operation on
-        ///          AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateInvalidation operation.</returns>
-        IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest createInvalidationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateInvalidation"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvalidation.</param>
-        /// 
-        /// <returns>Returns a CreateInvalidationResult from AmazonCloudFront.</returns>
-        CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteStreamingDistribution
-
-        /// <summary>
-        /// <para> Delete a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution service
-        ///          method on AmazonCloudFront.</param>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="NoSuchStreamingDistributionException"/>
-        /// <exception cref="StreamingDistributionNotDisabledException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteStreamingDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution operation
-        ///          on AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteStreamingDistribution"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStreamingDistribution.</param>
-        DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Delete a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="NoSuchStreamingDistributionException"/>
-        /// <exception cref="StreamingDistributionNotDisabledException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteStreamingDistributionResponse DeleteStreamingDistribution();
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
         
         #endregion
         
@@ -1034,106 +1085,55 @@ namespace Amazon.CloudFront
         
     
 
-        #region DeleteCloudFrontOriginAccessIdentity
+        #region GetStreamingDistributionConfig
 
         /// <summary>
-        /// <para> Delete an origin access identity. </para>
+        /// <para> Get the configuration information about a streaming distribution. </para>
         /// </summary>
         /// 
-        /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        ///          DeleteCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
+        /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
+        ///          service method on AmazonCloudFront.</param>
         /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="CloudFrontOriginAccessIdentityInUseException"/>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        ///          DeleteCloudFrontOriginAccessIdentity operation on AmazonCloudFront.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCloudFrontOriginAccessIdentity.</param>
-        DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para> Delete an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="CloudFrontOriginAccessIdentityInUseException"/>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException"/>
-        /// <exception cref="PreconditionFailedException"/>
-        /// <exception cref="AccessDeniedException"/>
-        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
-        
-        #endregion
-        
-    
-
-        #region GetStreamingDistribution
-
-        /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution service method
-        ///          on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="NoSuchStreamingDistributionException"/>
         /// <exception cref="AccessDeniedException"/>
-        GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistribution"/>
+        /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistributionConfig"/>
         /// </summary>
         /// 
-        /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution operation on
-        ///          AmazonCloudFront.</param>
+        /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
+        ///          operation on AmazonCloudFront.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetStreamingDistribution operation.</returns>
-        IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest, AsyncCallback callback, object state);
+        ///         EndGetStreamingDistributionConfig operation.</returns>
+        IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistribution"/>
+        /// Finishes the asynchronous execution of the GetStreamingDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistributionConfig"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistribution.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistributionConfig.</param>
         /// 
-        /// <returns>Returns a GetStreamingDistributionResult from AmazonCloudFront.</returns>
-        GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult);
+        /// <returns>Returns a GetStreamingDistributionConfigResult from AmazonCloudFront.</returns>
+        GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
+        /// <para> Get the configuration information about a streaming distribution. </para>
         /// </summary>
         /// 
-        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="NoSuchStreamingDistributionException"/>
         /// <exception cref="AccessDeniedException"/>
-        GetStreamingDistributionResponse GetStreamingDistribution();
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
         
         #endregion
         

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// Parameters required for transcoding audio.
     /// </summary>
     public class AudioParameters
     {
@@ -32,14 +32,14 @@ namespace Amazon.ElasticTranscoder.Model
         private string channels;
 
         /// <summary>
-        /// The audio codec for the output file. This value must be <c>AAC</c>.
+        /// the audio codec for the output file. Valid values include <c>aac</c>, <c>mp3</c>, and <c>vorbis</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^AAC$)|(^vorbis$)</description>
+        ///         <description>(^AAC$)|(^vorbis$)|(^mp3$)</description>
         ///     </item>
         /// </list>
         /// </para>

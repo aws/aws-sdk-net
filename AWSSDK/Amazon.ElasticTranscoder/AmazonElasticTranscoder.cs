@@ -265,19 +265,6 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a ReadPresetResult from AmazonElasticTranscoder.</returns>
         ReadPresetResponse EndReadPreset(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>The ReadPreset operation gets detailed information about a preset.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        ReadPresetResponse ReadPreset();
         
         #endregion
         
@@ -583,7 +570,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a TestRoleResult from AmazonElasticTranscoder.</returns>
         TestRoleResponse EndTestRole(IAsyncResult asyncResult);
-        
+                
         #endregion
         
     
@@ -688,19 +675,6 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a ReadPipelineResult from AmazonElasticTranscoder.</returns>
         ReadPipelineResponse EndReadPipeline(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="InternalServiceException"/>
-        /// <exception cref="ValidationException"/>
-        /// <exception cref="IncompatibleVersionException"/>
-        ReadPipelineResponse ReadPipeline();
         
         #endregion
         

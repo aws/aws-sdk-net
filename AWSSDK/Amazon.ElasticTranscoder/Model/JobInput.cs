@@ -85,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)</description>
+        ///         <description>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -235,16 +235,16 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify
-        /// <c>auto</c>. If you want to specify the container type for the input file, enter one of the following values: <c>3gp</c>, <c>asf</c>,
-        /// <c>avi</c>, <c>divx</c>, <c>flv</c>, <c>mkv</c>, <c>mov</c>, <c>mp4</c>, <c>mpeg</c>, <c>mpeg-ps</c>, <c>mpeg-ts</c>, <c>mxf</c>,
-        /// <c>ogg</c>, <c>vob</c>, <c>wav</c>, <c>webm</c>
+        /// <c>auto</c>. If you want to specify the container type for the input file, enter one of the following values: <c>3gp</c>, <c>aac</c>,
+        /// <c>asf</c>, <c>avi</c>, <c>divx</c>, <c>flv</c>, <c>m4a</c>, <c>mkv</c>, <c>mov</c>, <c>mp3</c>, <c>mp4</c>, <c>mpeg</c>, <c>mpeg-ps</c>,
+        /// <c>mpeg-ts</c>, <c>mxf</c>, <c>ogg</c>, <c>vob</c>, <c>wav</c>, <c>webm</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)</description>
+        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)</description>
         ///     </item>
         /// </list>
         /// </para>

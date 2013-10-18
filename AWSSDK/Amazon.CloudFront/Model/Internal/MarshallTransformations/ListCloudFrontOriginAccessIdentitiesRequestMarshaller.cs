@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2013-08-26/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
+            string uriResourcePath = "2013-09-27/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listCloudFrontOriginAccessIdentitiesRequest.Marker ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listCloudFrontOriginAccessIdentitiesRequest.MaxItems ?? "" ); 
             

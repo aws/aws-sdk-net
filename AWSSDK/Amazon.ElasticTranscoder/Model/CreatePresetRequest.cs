@@ -121,14 +121,14 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The container type for the output file. This value must be <c>mp4</c>.
+        /// The container type for the output file. Valid values include <c>mp3</c>, <c>mp4</c>, <c>ogg</c>, <c>ts</c>, and <c>webm</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^mp4$)|(^ts$)|(^webm$)</description>
+        ///         <description>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)</description>
         ///     </item>
         /// </list>
         /// </para>

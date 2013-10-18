@@ -51,7 +51,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2013-08-26";
+                return "2013-09-27";
             }
         }
     }

@@ -66,6 +66,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         defaultCacheBehavior.MinTTL = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("AllowedMethods", targetDepth))
+                    {
+                        defaultCacheBehavior.AllowedMethods = AllowedMethodsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

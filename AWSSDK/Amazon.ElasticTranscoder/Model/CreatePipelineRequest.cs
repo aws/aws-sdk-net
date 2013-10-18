@@ -313,7 +313,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Amazon S3 bucket.</li> <li><c>FULL_CONTROL</c>: The grantee has <c>READ</c>, <c>READ_ACP</c>, and <c>WRITE_ACP</c> permissions for the
         /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The Amazon S3 storage class,
         /// <c>Standard</c> or <c>ReducedRedundancy</c>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3
-        /// bucket. </li> </ul>
+        /// bucket.</li> </ul>
         ///  
         /// </summary>
         public PipelineOutputConfig ThumbnailConfig

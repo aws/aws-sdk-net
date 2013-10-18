@@ -176,6 +176,66 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             }
                             writer.WriteArrayEnd();
                         }
+
+                        if (output != null) 
+                        {
+                            JobAlbumArt albumArt = output.AlbumArt;
+                            if (albumArt != null)
+                            {
+                                writer.WritePropertyName("AlbumArt");
+                                writer.WriteObjectStart();
+                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
+                                {
+                                    writer.WritePropertyName("MergePolicy");
+                                    writer.Write(albumArt.MergePolicy);
+                                }
+
+                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
+                                {
+                                    List<Artwork> artworkList = albumArt.Artwork;
+                                    writer.WritePropertyName("Artwork");
+                                    writer.WriteArrayStart();
+
+                                    foreach (Artwork artworkListValue in artworkList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
+                                        {
+                                            writer.WritePropertyName("InputKey");
+                                            writer.Write(artworkListValue.InputKey);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
+                                        {
+                                            writer.WritePropertyName("MaxWidth");
+                                            writer.Write(artworkListValue.MaxWidth);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
+                                        {
+                                            writer.WritePropertyName("MaxHeight");
+                                            writer.Write(artworkListValue.MaxHeight);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("SizingPolicy");
+                                            writer.Write(artworkListValue.SizingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("PaddingPolicy");
+                                            writer.Write(artworkListValue.PaddingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
+                                        {
+                                            writer.WritePropertyName("AlbumArtFormat");
+                                            writer.Write(artworkListValue.AlbumArtFormat);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
                         writer.WriteObjectEnd();
                     }
                 }
@@ -237,6 +297,66 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                                 writer.WriteObjectEnd();
                             }
                             writer.WriteArrayEnd();
+                        }
+
+                        if (outputsListValue != null) 
+                        {
+                            JobAlbumArt albumArt = outputsListValue.AlbumArt;
+                            if (albumArt != null)
+                            {
+                                writer.WritePropertyName("AlbumArt");
+                                writer.WriteObjectStart();
+                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
+                                {
+                                    writer.WritePropertyName("MergePolicy");
+                                    writer.Write(albumArt.MergePolicy);
+                                }
+
+                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
+                                {
+                                    List<Artwork> artworkList = albumArt.Artwork;
+                                    writer.WritePropertyName("Artwork");
+                                    writer.WriteArrayStart();
+
+                                    foreach (Artwork artworkListValue in artworkList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
+                                        {
+                                            writer.WritePropertyName("InputKey");
+                                            writer.Write(artworkListValue.InputKey);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
+                                        {
+                                            writer.WritePropertyName("MaxWidth");
+                                            writer.Write(artworkListValue.MaxWidth);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
+                                        {
+                                            writer.WritePropertyName("MaxHeight");
+                                            writer.Write(artworkListValue.MaxHeight);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("SizingPolicy");
+                                            writer.Write(artworkListValue.SizingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("PaddingPolicy");
+                                            writer.Write(artworkListValue.PaddingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
+                                        {
+                                            writer.WritePropertyName("AlbumArtFormat");
+                                            writer.Write(artworkListValue.AlbumArtFormat);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
                         }
                         writer.WriteObjectEnd();
                     }
